@@ -31,9 +31,6 @@ public class FarmGrid : MonoBehaviour
     public int TempTillCost => tempTillCost;
     public int PermTillCost => permTillCost;
 
-    [Header("Debug")]
-    [SerializeField] private bool showDebugInfo = true;
-
     // Storage for all tiles organized by zone
     private Dictionary<int, SoilTile[,]> zoneGrids = new Dictionary<int, SoilTile[,]>();
     private List<SoilTile> allTiles = new List<SoilTile>();
@@ -104,11 +101,6 @@ public class FarmGrid : MonoBehaviour
 
         int gridSizeLevel = UpgradeManager.Instance.GetPermanentLevel("grid_size");
         tilesPerZone = 2 + gridSizeLevel; // Level 0→2, Level 1→3, Level 2→4, Level 3→5
-        
-        if (showDebugInfo)
-        {
-            Debug.Log($"🌾 Applied Grid Size: Level {gridSizeLevel} = {tilesPerZone}×{tilesPerZone} per zone");
-        }
     }
 
     /// <summary>
@@ -122,7 +114,6 @@ public class FarmGrid : MonoBehaviour
             upgradeId == "zone_unlock_3" || 
             upgradeId == "zone_unlock_4")
         {
-            Debug.Log($"🔄 Grid upgrade purchased: {upgradeId} - Regenerating farm...");
             RegenerateGrid();
         }
     }
@@ -158,7 +149,6 @@ public class FarmGrid : MonoBehaviour
         // Update camera
         NotifyCameraController();
 
-        Debug.Log("✅ Farm grid regenerated!");
     }
 
     /// <summary>
@@ -210,15 +200,6 @@ public class FarmGrid : MonoBehaviour
         // Hide zones that aren't unlocked
         ApplyZoneVisibility();
 
-        if (showDebugInfo)
-        {
-            Debug.Log($"=== FARM GRID CREATED ===");
-            Debug.Log($"Layout: {layoutType}");
-            Debug.Log($"Grid Size: {tilesPerZone}x{tilesPerZone} per zone");
-            Debug.Log($"Tile Size: {tileSize} Unity units (32 pixels @ 32 PPU)");
-            Debug.Log($"Total tiles: {allTiles.Count}");
-            Debug.Log($"Total Grid Size: {TotalGridWidth:F2} x {TotalGridHeight:F2}");
-        }
     }
 
     /// <summary>
@@ -246,16 +227,6 @@ public class FarmGrid : MonoBehaviour
         if (zone2Parent != null) zone2Parent.SetActive(zone2Unlocked);
         if (zone3Parent != null) zone3Parent.SetActive(zone3Unlocked);
         if (zone4Parent != null) zone4Parent.SetActive(zone4Unlocked);
-
-        int visibleZones = 1;
-        if (zone2Unlocked) visibleZones = 2;
-        if (zone3Unlocked) visibleZones = 3;
-        if (zone4Unlocked) visibleZones = 4;
-
-        if (showDebugInfo)
-        {
-            Debug.Log($"🗺️ Visible Zones: {visibleZones} (Z2:{zone2Unlocked}, Z3:{zone3Unlocked}, Z4:{zone4Unlocked})");
-        }
     }
 
     /// <summary>
@@ -560,10 +531,6 @@ public class FarmGrid : MonoBehaviour
             tile.ResetForNewRun();
         }
 
-        if (showDebugInfo)
-        {
-            Debug.Log("Farm grid reset for new run - temporary tilling removed");
-        }
     }
 
     /// <summary>

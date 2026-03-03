@@ -173,10 +173,8 @@ public abstract class Helper : MonoBehaviour
                 SetState(HelperState.PerformingTask);
                 taskTimer = UpgradedTaskDuration;
 
-                if (showMovementDebug)
-                {
-                    Debug.Log($"{helperName} arrived at {targetPos}, starting task");
-                }
+
+
             }
             else
             {
@@ -192,10 +190,8 @@ public abstract class Helper : MonoBehaviour
 
                 transform.position = currentPos + direction * moveDistance;
 
-                if (showMovementDebug && Time.frameCount % 60 == 0)
-                {
-                    Debug.Log($"{helperName} moving to {targetPos}, distance: {distance:F2}, speed: {UpgradedMoveSpeed:F2}");
-                }
+
+
             }
         }
     }
@@ -241,7 +237,6 @@ public abstract class Helper : MonoBehaviour
         currentTask.IsClaimed = true;
         SetState(HelperState.MovingToTask);
         
-        Debug.Log($"{helperName} assigned task: {task}");
         return true;
     }
 
@@ -278,7 +273,7 @@ public abstract class Helper : MonoBehaviour
         if (currentTask != null)
         {
             currentTask.IsCompleted = true;
-            Debug.Log($"{helperName} completed: {currentTask}");
+
         }
 
         currentTask = null;
@@ -293,7 +288,7 @@ public abstract class Helper : MonoBehaviour
         if (currentTask != null)
         {
             currentTask.IsClaimed = false;
-            Debug.Log($"{helperName} cancelled: {currentTask}");
+
         }
 
         currentTask = null;

@@ -44,7 +44,7 @@ public class RunManager : MonoBehaviour
     {
         // Start in Town Mode (between runs)
         // Player must click "Start New Run" button to begin playing
-        Debug.Log("=== TOWN MODE - Click 'Start New Run' to begin ===");
+        // Town Mode - player must click "Start New Run" to begin
     }
 
     private void Update()
@@ -77,7 +77,7 @@ public class RunManager : MonoBehaviour
             
             SeedSelectionPopup.Instance.Show();
             
-            Debug.Log("🌱 Showing seed selection popup...");
+            // Seed selection popup shown
         }
         else
         {
@@ -120,7 +120,7 @@ public class RunManager : MonoBehaviour
             SeedSelectionPopup.Instance.OnCancelled -= OnSeedSelectionCancelled;
         }
 
-        Debug.Log("🌱 Seed selection cancelled - run not started");
+        // Seed selection cancelled - run not started
     }
 
     /// <summary>
@@ -203,7 +203,7 @@ public class RunManager : MonoBehaviour
             int coinsFromMoney = leftoverMoney / coinsPerMoneyRatio;
             totalCoins += coinsFromMoney;
 
-            Debug.Log($"Leftover Money: ${leftoverMoney} → {coinsFromMoney} coins (ratio: {coinsPerMoneyRatio}:1)");
+            // Leftover money converted to coins
         }
 
         // In future chunks, we'll add:

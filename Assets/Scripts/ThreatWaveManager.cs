@@ -108,8 +108,7 @@ public class ThreatWaveManager : MonoBehaviour
         ClearAllThreats();
         StartCoroutine(SpawnLoop());
 
-        if (showDebugLogs)
-            Debug.Log("[ThreatWaveManager] Run started — threat spawn loop active.");
+
     }
 
     private void OnRunEnded()
@@ -117,8 +116,7 @@ public class ThreatWaveManager : MonoBehaviour
         StopAllCoroutines();
         ClearAllThreats();
 
-        if (showDebugLogs)
-            Debug.Log("[ThreatWaveManager] Run ended — all threats cleared.");
+
     }
 
     // ─────────────────────────────────────────────────────────────────────
@@ -147,13 +145,6 @@ public class ThreatWaveManager : MonoBehaviour
             debugCurrentWave = wave;
             debugActiveDeer  = CountActiveOfType(AnimalThreatType.Deer);
             debugActiveCrows = CountActiveOfType(AnimalThreatType.Crow);
-
-            if (showDebugLogs)
-            {
-                Debug.Log($"[Wave {wave}] Deer: {debugActiveDeer}/{targetDeer}  " +
-                          $"Crows: {debugActiveCrows}/{targetCrows}  " +
-                          $"Hunger: {hunger:F0} ({hungerMult:F2}x)");
-            }
 
             int deerToSpawn = targetDeer - CountActiveOfType(AnimalThreatType.Deer);
             for (int i = 0; i < deerToSpawn; i++)
@@ -202,12 +193,7 @@ public class ThreatWaveManager : MonoBehaviour
         if (data == null) return;
 
         int zoneId = PickZoneWithPlants();
-        if (zoneId < 0)
-        {
-            if (showDebugLogs)
-                Debug.Log($"[ThreatWaveManager] No occupied zones — skipping {data.threatName} spawn.");
-            return;
-        }
+        if (zoneId < 0) return;
 
         GameObject go;
 
@@ -236,8 +222,7 @@ public class ThreatWaveManager : MonoBehaviour
 
         activeThreats.Add(threat);
 
-        if (showDebugLogs)
-            Debug.Log($"[ThreatWaveManager] Spawned {data.threatName} → Zone {zoneId}, hunger {hunger:F0}");
+
     }
 
     // ─────────────────────────────────────────────────────────────────────

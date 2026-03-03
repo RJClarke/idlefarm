@@ -198,7 +198,6 @@ public class BottomNav : MonoBehaviour
 
         UpdateButtonVisuals();
 
-        Debug.Log($"🔄 BottomNav: Switched to {(isTownMode ? "Town" : "Farm")} Mode");
     }
 
     /// <summary>

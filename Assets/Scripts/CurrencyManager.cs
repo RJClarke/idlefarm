@@ -41,24 +41,19 @@ public class CurrencyManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("=== CurrencyManager Starting ===");
-        
         // Try to load saved data
         if (SaveManager.Instance != null && SaveManager.Instance.LoadGame())
         {
-            Debug.Log("Loaded saved coins!");
             // Coins are already set by LoadGame()
         }
         else
         {
             // New game - use starting values
             SetCoins(startingCoins);
-            Debug.Log("Starting new game with default coins.");
         }
         
         // Always reset money for new run
         ResetMoneyForNewRun();
-        Debug.Log($"Initial Money: ${currentMoney}, Initial Coins: {currentCoins}");
     }
 
     #region Money Management (Run-Based Currency)
@@ -76,7 +71,6 @@ public class CurrencyManager : MonoBehaviour
 
         currentMoney += amount;
         OnMoneyChanged?.Invoke(currentMoney);
-        Debug.Log($"Added ${amount} money. New total: ${currentMoney}");
     }
 
     /// <summary>
@@ -94,12 +88,10 @@ public class CurrencyManager : MonoBehaviour
         {
             currentMoney -= amount;
             OnMoneyChanged?.Invoke(currentMoney);
-            Debug.Log($"Spent ${amount} money. Remaining: ${currentMoney}");
             return true;
         }
         else
         {
-            Debug.Log($"Not enough money! Need ${amount}, have ${currentMoney}");
             return false;
         }
     }
@@ -119,7 +111,6 @@ public class CurrencyManager : MonoBehaviour
     {
         currentMoney = startingMoney;
         OnMoneyChanged?.Invoke(currentMoney);
-        Debug.Log($"Money reset to ${currentMoney} for new run");
     }
 
     #endregion
@@ -139,7 +130,6 @@ public class CurrencyManager : MonoBehaviour
 
         currentCoins += amount;
         OnCoinsChanged?.Invoke(currentCoins);
-        Debug.Log($"Added {amount} coins. New total: {currentCoins}");
     }
 
     /// <summary>
@@ -157,12 +147,10 @@ public class CurrencyManager : MonoBehaviour
         {
             currentCoins -= amount;
             OnCoinsChanged?.Invoke(currentCoins);
-            Debug.Log($"Spent {amount} coins. Remaining: {currentCoins}");
             return true;
         }
         else
         {
-            Debug.Log($"Not enough coins! Need {amount}, have {currentCoins}");
             return false;
         }
     }

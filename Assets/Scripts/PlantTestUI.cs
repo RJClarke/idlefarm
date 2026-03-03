@@ -112,9 +112,6 @@ public class PlantTestUI : MonoBehaviour
         Time.timeScale = isSpeedUp ? fastTimeScale : normalTimeScale;
         UpdateSpeedButtonText();
         
-        Debug.Log(isSpeedUp 
-            ? $"⚡ TIME SPEED UP! {fastTimeScale}x faster" 
-            : "⏸️ Normal time speed");
     }
 
     // Phase 3.1: Water button handlers
@@ -256,7 +253,7 @@ public class PlantTestUI : MonoBehaviour
         }
         else
         {
-            info += $"✓ All plants hydrated\n";
+            info += $"[OK] All plants hydrated\n";
         }
         
         // Phase 3.2: Growth speed stats
@@ -269,7 +266,7 @@ public class PlantTestUI : MonoBehaviour
         }
         else if (avgSpeed > 1.2f)
         {
-            info += $"✓ <color=green>Fast growth!</color>\n";
+            info += $"[OK] <color=green>Fast growth!</color>\n";
         }
         else if (avgSpeed < 0.5f && growingPlants > 0)
         {
@@ -277,7 +274,7 @@ public class PlantTestUI : MonoBehaviour
         }
         else
         {
-            info += $"✓ Normal growth\n";
+            info += $"[OK] Normal growth\n";
         }
         
         if (isSpeedUp)

@@ -112,7 +112,6 @@ public class SoilTile : MonoBehaviour
         c.a = 0f;
         moistureOverlay.color = c;
         
-        Debug.Log($"Created moisture overlay for tile [{zoneID}]({gridX},{gridY}) at sorting order {moistureOverlay.sortingOrder}");
     }
 
     /// <summary>
@@ -162,12 +161,6 @@ public class SoilTile : MonoBehaviour
                 moistureOverlay.color = c;
             }
             
-            // Debug logging (reduced frequency)
-            if (Time.frameCount % 120 == 0)
-            {
-                string zone = moisturePercent > transitionPoint ? "WET" : "DRY";
-                Debug.Log($"Tile [{zoneID}]({gridX},{gridY}): {moisturePercent:F0}% moisture → {zone} zone, Alpha: {moistureOverlay.color.a:F2}");
-            }
         }
     }
 
@@ -205,7 +198,6 @@ public class SoilTile : MonoBehaviour
         {
             currentState = TileState.Tilled;
             UpdateBaseVisuals();
-            Debug.Log($"Tilled tile [{zoneID}]({gridX},{gridY}) for ${cost} (temporary)");
             return true;
         }
 
@@ -227,7 +219,6 @@ public class SoilTile : MonoBehaviour
             isPermanentlyTilled = true;
             currentState = TileState.Tilled;
             UpdateBaseVisuals();
-            Debug.Log($"Permanently tilled tile [{zoneID}]({gridX},{gridY}) for {cost} coins");
             return true;
         }
 
@@ -291,8 +282,6 @@ public class SoilTile : MonoBehaviour
             currentPlant = null;
             return false;
         }
-        
-        Debug.Log($"Planted {cropData.cropName} at [{zoneID}]({gridX},{gridY})");
         
         // Show moisture overlay at full (plant starts at 100% moisture)
         if (showMoistureOverlay)

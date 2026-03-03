@@ -172,7 +172,7 @@ public class SeedSelectionPopup : MonoBehaviour
 
         isOpen = true;
 
-        Debug.Log("🌱 Seed selection popup opened");
+
     }
 
     /// <summary>
@@ -186,7 +186,7 @@ public class SeedSelectionPopup : MonoBehaviour
 
         isOpen = false;
 
-        Debug.Log("🌱 Seed selection popup closed");
+
     }
 
     /// <summary>
@@ -249,7 +249,7 @@ public class SeedSelectionPopup : MonoBehaviour
             }
         }
 
-        Debug.Log($"Created {seedPacketButtons.Count} seed packet buttons");
+
     }
 
     /// <summary>
@@ -294,7 +294,7 @@ public class SeedSelectionPopup : MonoBehaviour
         if (newSlot != null)
             newSlot.SetSelected(true);
 
-        Debug.Log($"Zone {zoneID} selected");
+
     }
 
     /// <summary>
@@ -316,7 +316,7 @@ public class SeedSelectionPopup : MonoBehaviour
         UpdateAllSeedPacketAvailability();
         ValidateAndUpdateBeginButton();
 
-        Debug.Log($"Cleared zone {zoneID}");
+
     }
 
     /// <summary>
@@ -329,7 +329,6 @@ public class SeedSelectionPopup : MonoBehaviour
         // Check if already assigned
         if (selectionData.IsCropAssigned(crop.cropName))
         {
-            Debug.Log($"Crop {crop.cropName} already assigned");
             return;
         }
 
@@ -370,7 +369,7 @@ public class SeedSelectionPopup : MonoBehaviour
         UpdateAllSeedPacketAvailability();
         ValidateAndUpdateBeginButton();
 
-        Debug.Log($"Assigned {crop.cropName} to Zone {targetZone}");
+
     }
 
     /// <summary>

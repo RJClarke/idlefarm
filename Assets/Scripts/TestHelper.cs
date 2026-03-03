@@ -39,7 +39,6 @@ public class TestHelper : Helper
                 if (currentTask.TargetPlant != null)
                 {
                     currentTask.TargetPlant.Harvest();
-                    Debug.Log($"{helperName} harvested {currentTask.TargetPlant.CropData.cropName}!");
                 }
                 break;
 
@@ -47,18 +46,15 @@ public class TestHelper : Helper
                 if (currentTask.TargetPlant != null)
                 {
                     currentTask.TargetPlant.Water();
-                    Debug.Log($"{helperName} watered {currentTask.TargetPlant.CropData.cropName}!");
                 }
                 break;
 
             case HelperTask.TaskType.Plant:
                 // TODO: Implement in Phase 5.4
-                Debug.Log($"{helperName} would plant here (not implemented yet)");
                 break;
 
             case HelperTask.TaskType.Till:
                 // TODO: Implement tilling
-                Debug.Log($"{helperName} would till here (not implemented yet)");
                 break;
         }
 

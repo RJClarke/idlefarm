@@ -36,7 +36,6 @@ public class CropDatabase : ScriptableObject
             }
         }
 
-        Debug.Log($"CropDatabase initialized with {allCrops.Count} crops");
     }
 
     /// <summary>

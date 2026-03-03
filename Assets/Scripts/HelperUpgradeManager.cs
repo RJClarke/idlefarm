@@ -57,11 +57,8 @@ public class HelperUpgradeManager : MonoBehaviour
         // Calculate initial bonuses
         RecalculateBonuses();
         
-        Debug.Log($"=== HELPER UPGRADE MANAGER ===");
-        Debug.Log($"Max Helpers: {currentMaxHelpers}");
-        Debug.Log($"Movement Speed: {currentMovementSpeedMultiplier:F2}x");
-        Debug.Log($"Task Speed: {currentTaskSpeedMultiplier:F2}x");
-        Debug.Log($"Auto-Spawn: {autoSpawnCount} helpers");
+
+
     }
 
     /// <summary>
@@ -122,7 +119,6 @@ public class HelperUpgradeManager : MonoBehaviour
 
         if (!CurrencyManager.Instance.CanAffordCoins(upgrade.coinCost))
         {
-            Debug.Log($"Not enough coins for {upgrade.upgradeName}! Need {upgrade.coinCost}, have {CurrencyManager.Instance.Coins}");
             return false;
         }
 
@@ -261,7 +257,8 @@ public class HelperUpgradeManager : MonoBehaviour
     {
         // TODO: Extend GameData to include purchased upgrades
         // For now, just log
-        Debug.Log($"Saved {purchasedUpgradeIDs.Count} purchased upgrades");
+
+
     }
 
     /// <summary>

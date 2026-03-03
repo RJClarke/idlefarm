@@ -58,7 +58,6 @@ public class MobileCameraController : MonoBehaviour
         // Apply to camera
         cam.orthographicSize = targetSize;
 
-        Debug.Log($"Camera adjusted: Ortho Size = {targetSize}, Screen = {Screen.width}x{Screen.height}, Aspect = {screenAspect:F2}");
     }
 
     /// <summary>

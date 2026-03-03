@@ -68,7 +68,6 @@ public class Plant : MonoBehaviour
         if (visuals != null)
             visuals.UpdateVisuals(currentStage, crop);
 
-        Debug.Log($"Plant initialized: {crop.cropName}, moisture: {currentMoisture}%");
     }
 
     private void Update()
@@ -135,7 +134,6 @@ public class Plant : MonoBehaviour
                 if (!isDriedOut)
                 {
                     isDriedOut = true;
-                    Debug.Log($"⚠️ {cropData.cropName} has DRIED OUT! Losing HP!");
                     if (visuals != null)
                         visuals.UpdateVisuals(currentStage, cropData, isDriedOut);
                 }
@@ -154,7 +152,6 @@ public class Plant : MonoBehaviour
             if (isDriedOut)
             {
                 isDriedOut = false;
-                Debug.Log($"✔ {cropData.cropName} recovered from dried-out state!");
                 if (visuals != null)
                     visuals.UpdateVisuals(currentStage, cropData, isDriedOut);
             }
@@ -169,7 +166,6 @@ public class Plant : MonoBehaviour
         {
             isInHarvestWindow = false;
             isRotting = true;
-            Debug.Log($"⚠️ {cropData.cropName} harvest window expired! Entering ROT state.");
 
             if (visuals != null)
                 visuals.UpdateVisuals(currentStage, cropData, isDriedOut, isRotting);
@@ -194,13 +190,11 @@ public class Plant : MonoBehaviour
             case GrowthStage.Seed:
                 currentStage = GrowthStage.Sprout;
                 stageTimer = cropData.GetStageTime(GrowthStage.Sprout);
-                Debug.Log($"{cropData.cropName} grew to Sprout");
                 break;
 
             case GrowthStage.Sprout:
                 currentStage = GrowthStage.Sapling;
                 stageTimer = cropData.GetStageTime(GrowthStage.Sapling);
-                Debug.Log($"{cropData.cropName} grew to Sapling");
                 break;
 
             case GrowthStage.Sapling:
@@ -209,7 +203,6 @@ public class Plant : MonoBehaviour
                 isGrowing = false;
                 isInHarvestWindow = true;
                 harvestWindowTimer = cropData.harvestWindowSeconds;
-                Debug.Log($"{cropData.cropName} is HARVESTABLE! Harvest window: {harvestWindowTimer}s");
                 break;
         }
 
@@ -232,7 +225,6 @@ public class Plant : MonoBehaviour
         if (wasDriedOut && visuals != null)
             visuals.UpdateVisuals(currentStage, cropData, isDriedOut);
 
-        Debug.Log($"💧 Watered {cropData.cropName}! Moisture: {currentMoisture:F0}%");
     }
 
     public void Harvest()
@@ -246,9 +238,6 @@ public class Plant : MonoBehaviour
         int harvestValue = cropData.harvestValue;
         if (GameConstants.Instance != null)
             harvestValue = GameConstants.Instance.CalculateHarvestValue(cropData.harvestValue, isRotting);
-
-        string rotStatus = isRotting ? " (ROTTING - 25% value)" : "";
-        Debug.Log($"Harvested {cropData.cropName} for ${harvestValue}{rotStatus}!");
 
         if (CurrencyManager.Instance != null)
             CurrencyManager.Instance.AddMoney(harvestValue);
@@ -283,11 +272,9 @@ public class Plant : MonoBehaviour
             if (cropData.harvestedSprite != null)
             {
                 visuals.GetComponent<SpriteRenderer>().sprite = cropData.harvestedSprite;
-                Debug.Log($"{cropData.cropName} showing harvested sprite while regrowing!");
             }
         }
 
-        Debug.Log($"{cropData.cropName} regrowing!");
     }
 
     private void RemovePlant()
@@ -334,8 +321,6 @@ public class Plant : MonoBehaviour
         {
             isDriedOut  = false;
             dryOutTimer = 0f;
-            Debug.Log($"🌧️ {cropData.cropName} rescued from dried-out by rain!");
-
             if (visuals != null)
                 visuals.UpdateVisuals(currentStage, cropData, isDriedOut);
         }

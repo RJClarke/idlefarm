@@ -115,14 +115,12 @@ public class ThunderstormManager : MonoBehaviour
         }
 
         monitorCoroutine = StartCoroutine(WaveMonitorLoop());
-        Debug.Log("[ThunderstormManager] Monitoring started.");
     }
 
     private void OnRunEnded()
     {
         StopAllCoroutines();
         EndAllEffectsImmediately();
-        Debug.Log("[ThunderstormManager] Run ended — all weather cleared.");
     }
 
     // ─────────────────────────────────────────────────────────────────────
@@ -171,10 +169,6 @@ public class ThunderstormManager : MonoBehaviour
         float rainDuration      = Mathf.Max(5f, windDuration - (rainOffset * 2f));
         float lightningDuration = Mathf.Max(3f, rainDuration  - (lightningOffset * 2f));
 
-        Debug.Log($"[Storm {stormNumber}] Wind: {windDuration:F0}s  " +
-                  $"Rain: {rainDuration:F0}s (starts +{rainOffset:F0}s)  " +
-                  $"Lightning: {lightningDuration:F0}s (starts +{rainOffset + lightningOffset:F0}s from wind)");
-
         Coroutine windCo      = StartCoroutine(WindPhase(windDuration, stormNumber));
         Coroutine rainCo      = StartCoroutine(DelayedRainPhase(rainOffset, rainDuration, stormNumber));
         Coroutine lightningCo = StartCoroutine(DelayedLightningPhase(rainOffset + lightningOffset, lightningDuration, stormNumber));
@@ -184,7 +178,6 @@ public class ThunderstormManager : MonoBehaviour
         yield return lightningCo;
 
         stormActive = false;
-        Debug.Log($"[Storm {stormNumber}] Complete.");
     }
 
     // ─────────────────────────────────────────────────────────────────────
@@ -197,8 +190,6 @@ public class ThunderstormManager : MonoBehaviour
         float damage   = weatherData.GetWindDamage(stormNumber);
         float elapsed  = 0f;
         float nextTick = weatherData.windTickInterval;
-
-        Debug.Log($"[Wind] Started — {damage:F1} HP every {weatherData.windTickInterval}s for {duration:F0}s");
 
         while (elapsed < duration)
         {
@@ -216,7 +207,6 @@ public class ThunderstormManager : MonoBehaviour
         }
 
         windActive = false;
-        Debug.Log("[Wind] Ended.");
     }
 
     private void ApplyWindDamage(float damage)
@@ -252,8 +242,6 @@ public class ThunderstormManager : MonoBehaviour
         if (RainOverlayUI.Instance != null)
             RainOverlayUI.Instance.FadeIn();
 
-        Debug.Log($"[Rain] Started — +{moisture:F1} moisture every {weatherData.rainTickInterval}s for {duration:F0}s");
-
         while (elapsed < duration)
         {
             float dt  = Time.deltaTime;
@@ -273,7 +261,6 @@ public class ThunderstormManager : MonoBehaviour
             RainOverlayUI.Instance.FadeOut();
 
         rainActive = false;
-        Debug.Log("[Rain] Ended.");
     }
 
     private void ApplyRainMoisture(float amount)
@@ -305,8 +292,6 @@ public class ThunderstormManager : MonoBehaviour
         int   totalStrikes = weatherData.GetLightningStrikeCount(stormNumber, duration);
         float interval     = duration / Mathf.Max(1, totalStrikes);
 
-        Debug.Log($"[Lightning] Started — {totalStrikes} strikes over {duration:F0}s (every {interval:F1}s)");
-
         for (int i = 0; i < totalStrikes; i++)
         {
             yield return new WaitForSeconds(interval);
@@ -317,7 +302,6 @@ public class ThunderstormManager : MonoBehaviour
         }
 
         lightningActive = false;
-        Debug.Log("[Lightning] Ended.");
     }
 
     private void StrikeLightning(int stormNumber)
@@ -341,10 +325,6 @@ public class ThunderstormManager : MonoBehaviour
                 plant.TakeDamage(damage);
                 Debug.Log($"[Lightning] ⚡ Strike on {plant.CropData?.cropName} ({plant.CurrentStage}) — {damage:F0} HP!");
             }
-        }
-        else
-        {
-            Debug.Log($"[Lightning] ⚡ Strike on empty tile at {target.transform.position}");
         }
     }
 

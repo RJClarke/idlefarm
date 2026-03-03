@@ -151,7 +151,6 @@ public class SeedSelectionData
         string json = JsonUtility.ToJson(new SerializableData(zoneAssignments));
         PlayerPrefs.SetString(PREFS_KEY, json);
         PlayerPrefs.Save();
-        Debug.Log($"💾 Saved seed selection: {zoneAssignments.Count} zones");
     }
 
     /// <summary>
@@ -172,7 +171,6 @@ public class SeedSelectionData
                 {
                     data.zoneAssignments[loadedData.keys[i]] = loadedData.values[i];
                 }
-                Debug.Log($"📂 Loaded seed selection: {data.zoneAssignments.Count} zones");
             }
         }
 

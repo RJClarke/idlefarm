@@ -295,13 +295,11 @@ public class UnlockButton : MonoBehaviour
 
         if (isUnlocked)
         {
-            Debug.Log($"{unlockData.displayName} already unlocked!");
             return;
         }
 
         if (!unlockData.MeetsPrerequisites())
         {
-            Debug.Log($"Prerequisites not met for {unlockData.displayName}!");
             return;
         }
 
@@ -314,7 +312,6 @@ public class UnlockButton : MonoBehaviour
         // Check if can afford
         if (!CurrencyManager.Instance.CanAffordCoins(unlockData.coinCost))
         {
-            Debug.Log($"Cannot afford {unlockData.displayName}! Need {unlockData.coinCost} coins, have {CurrencyManager.Instance.Coins}");
             return;
         }
 

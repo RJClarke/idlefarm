@@ -13,18 +13,12 @@ public abstract class MenuPanel : MonoBehaviour
     // Called when panel becomes active
     protected virtual void OnEnable()
     {
-        if (debugMode)
-            Debug.Log($"📂 {menuTitle} panel opened");
-
         OnPanelOpened();
     }
 
     // Called when panel becomes inactive
     protected virtual void OnDisable()
     {
-        if (debugMode)
-            Debug.Log($"📂 {menuTitle} panel closed");
-
         OnPanelClosed();
     }
 

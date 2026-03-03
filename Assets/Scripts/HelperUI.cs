@@ -70,7 +70,6 @@ public class HelperUI : MonoBehaviour
         if (HelperManager.Instance != null)
         {
             HelperManager.Instance.SpawnUniversalHelper();
-            Debug.Log("Spawned universal helper from UI button");
         }
     }
 

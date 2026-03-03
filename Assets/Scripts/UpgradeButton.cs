@@ -232,7 +232,6 @@ public class UpgradeButton : MonoBehaviour
         
         if (permanentLevel >= upgradeData.maxLevel)
         {
-            Debug.Log("Already at max level!");
             return;
         }
 
@@ -241,14 +240,9 @@ public class UpgradeButton : MonoBehaviour
 
         if (UpgradeManager.Instance.PurchasePermanentUpgrade(upgradeData.upgradeID, coinCost))
         {
-            Debug.Log($"✅ Purchased {upgradeData.displayName} → Level {nextLevel}");
             UpdateDisplay();
-            
+
             // TODO: Apply upgrade effect (increase actual helper speed, grid size, etc.)
-        }
-        else
-        {
-            Debug.Log($"❌ Cannot afford {upgradeData.displayName} upgrade (Need {coinCost} Coins)");
         }
     }
 
@@ -258,10 +252,9 @@ public class UpgradeButton : MonoBehaviour
     private void PurchaseTemporary()
     {
         int currentLevel = UpgradeManager.Instance.GetCurrentLevel(upgradeData.upgradeID);
-        
+
         if (currentLevel >= upgradeData.maxLevel)
         {
-            Debug.Log("Already at max level!");
             return;
         }
 
@@ -270,14 +263,9 @@ public class UpgradeButton : MonoBehaviour
 
         if (UpgradeManager.Instance.PurchaseTemporaryUpgrade(upgradeData.upgradeID, moneyCost))
         {
-            Debug.Log($"⚡ Purchased {upgradeData.displayName} → Level {nextLevel} (This Run)");
             UpdateDisplay();
-            
+
             // TODO: Apply upgrade effect (increase actual helper speed, grid size, etc.)
-        }
-        else
-        {
-            Debug.Log($"❌ Cannot afford {upgradeData.displayName} upgrade (Need ${moneyCost} Money)");
         }
     }
 

@@ -113,20 +113,13 @@ public class ZoneUnlockVisuals : MonoBehaviour
     /// </summary>
     private void UnlockZone(int zoneID, GameObject obstacle, GameObject dirtTilemap)
     {
-        if (showDebugInfo)
-        {
-            Debug.Log($"🌳 Unlocking Zone {zoneID} - Transforming grass to dirt!");
-        }
-
         // Remove the obstacle (tree/rock)
         if (obstacle != null)
         {
             Destroy(obstacle);
             
-            if (showDebugInfo)
-            {
-                Debug.Log($"  ✓ Removed obstacle: {obstacle.name}");
-            }
+
+
         }
         else if (showDebugInfo)
         {
@@ -138,20 +131,16 @@ public class ZoneUnlockVisuals : MonoBehaviour
         {
             dirtTilemap.SetActive(true);
             
-            if (showDebugInfo)
-            {
-                Debug.Log($"  ✓ Revealed dirt tilemap: {dirtTilemap.name}");
-            }
+
+
         }
         else if (showDebugInfo)
         {
             Debug.LogWarning($"  ⚠️ No dirt tilemap assigned for Zone {zoneID}");
         }
 
-        if (showDebugInfo)
-        {
-            Debug.Log($"✅ Zone {zoneID} unlocked successfully!");
-        }
+
+
     }
 
 #if UNITY_EDITOR

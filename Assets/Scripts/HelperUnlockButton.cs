@@ -208,7 +208,6 @@ public class HelperUnlockButton : MonoBehaviour
     {
         if (CurrencyManager.Instance == null || !CurrencyManager.Instance.SpendMoney(rentCost))
         {
-            Debug.Log("Not enough money to rent helper!");
             return;
         }
 

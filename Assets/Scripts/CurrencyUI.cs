@@ -40,7 +40,6 @@ public class CurrencyUI : MonoBehaviour
             UpdateMoneyDisplay(CurrencyManager.Instance.Money);
             UpdateCoinsDisplay(CurrencyManager.Instance.Coins);
             
-            Debug.Log($"CurrencyUI initialized! Money: ${CurrencyManager.Instance.Money}, Coins: {CurrencyManager.Instance.Coins}");
         }
         else
         {

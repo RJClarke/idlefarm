@@ -134,7 +134,7 @@ public class HelperManager : MonoBehaviour
         
         if (showDebugInfo && cachedPlants.Count > 0)
         {
-            Debug.Log($"🔄 Rebuilt plant cache: {cachedPlants.Count} plants");
+
         }
     }
 
@@ -176,11 +176,8 @@ public class HelperManager : MonoBehaviour
                 currentZoneSeeds[kvp.Key] = kvp.Value;
             }
             
-            Debug.Log($"🌱 Zone seeds configured for run:");
-            foreach (var kvp in currentZoneSeeds)
-            {
-                Debug.Log($"  Zone {kvp.Key}: {kvp.Value.cropName}");
-            }
+
+
         }
     }
 
@@ -218,7 +215,7 @@ public class HelperManager : MonoBehaviour
             
             int current = GetHelperCount();
             int max = HelperUpgradeManager.Instance?.MaxHelpers ?? 1;
-            Debug.Log($"✓ Spawned universal helper at {spawnPos} ({current}/{max})");
+
         }
         else
         {
@@ -241,8 +238,6 @@ public class HelperManager : MonoBehaviour
         
         if (autoSpawnCount > 0)
         {
-            Debug.Log($"🤖 Auto-spawning {autoSpawnCount} helpers from upgrades...");
-            
             int spawned = 0;
             for (int i = 0; i < autoSpawnCount; i++)
             {
@@ -280,8 +275,6 @@ public class HelperManager : MonoBehaviour
     {
         // Clear zone seed configuration
         currentZoneSeeds.Clear();
-        
-        Debug.Log($"🧹 Clearing {activeHelpers.Count} helpers at run end");
         
         for (int i = activeHelpers.Count - 1; i >= 0; i--)
         {
@@ -671,7 +664,7 @@ public class HelperManager : MonoBehaviour
         }
         else if (bestTask != null && showDebugInfo)
         {
-            Debug.Log($"✓ {helper.name} assigned: {bestTask.Type} (priority {bestTask.Priority}, score {bestScore:F0})");
+
         }
 
         return bestTask;

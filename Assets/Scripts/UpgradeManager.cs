@@ -55,7 +55,6 @@ public class UpgradeManager : MonoBehaviour
     private void OnRunStarted()
     {
         temporaryLevels.Clear();
-        Debug.Log("🔄 Temporary upgrade levels reset for new run");
     }
 
     /// <summary>

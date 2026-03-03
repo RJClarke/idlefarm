@@ -28,7 +28,7 @@ public class SaveManager : MonoBehaviour
 
         // Set save file path (works on mobile)
         saveFilePath = Path.Combine(Application.persistentDataPath, SAVE_FILE_NAME);
-        Debug.Log($"Save file path: {saveFilePath}");
+        // Save file path set
     }
 
     /// <summary>
@@ -131,13 +131,11 @@ public class SaveManager : MonoBehaviour
     {
         if (!enableAutoSave)
         {
-            Debug.Log("Auto-save disabled. Skipping save on quit.");
             return;
         }
 
         // Auto-save when game closes
         SaveGame();
-        Debug.Log("Auto-saved on quit.");
     }
 
     private void OnApplicationPause(bool pause)
@@ -148,7 +146,6 @@ public class SaveManager : MonoBehaviour
         if (pause)
         {
             SaveGame();
-            Debug.Log("Auto-saved on pause.");
         }
     }
 

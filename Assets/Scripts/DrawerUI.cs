@@ -109,7 +109,6 @@ public class DrawerUI : MonoBehaviour
         // Open position: at bottom of screen (y=0 since anchor is at bottom)
         openPosition = new Vector2(0f, 0f);
         
-        Debug.Log($"Drawer positions calculated - Closed: {closedPosition.y}, Open: {openPosition.y}, Height: {drawerHeight}");
     }
 
     /// <summary>

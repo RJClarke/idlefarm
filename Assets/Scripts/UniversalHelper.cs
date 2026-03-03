@@ -29,8 +29,6 @@ public class UniversalHelper : Helper
 
     protected override void ExecuteTask()
     {
-        Debug.Log($"{helperName} ExecuteTask called! Task type: {currentTask?.Type}");
-        
         if (currentTask == null || !currentTask.IsValid())
         {
             Debug.LogWarning($"{helperName} task is null or invalid, cancelling");
@@ -64,13 +62,7 @@ public class UniversalHelper : Helper
         // Only complete task if not chaining to another one
         if (shouldComplete)
         {
-            Debug.Log($"{helperName} calling CompleteTask...");
             CompleteTask();
-            Debug.Log($"{helperName} CompleteTask done! Should be idle now.");
-        }
-        else
-        {
-            Debug.Log($"{helperName} chaining to next task - staying in PerformingTask state");
         }
     }
 
@@ -86,8 +78,6 @@ public class UniversalHelper : Helper
         }
         
         // Tile should already be tilled (player paid for it)
-        Debug.Log($"{helperName} tilled tile at [{currentTask.TargetTile.ZoneID}]({currentTask.TargetTile.GridX},{currentTask.TargetTile.GridY})");
-
         // Mark till task as completed
         if (currentTask != null)
         {
@@ -107,7 +97,6 @@ public class UniversalHelper : Helper
                 currentTask.IsClaimed = true;
                 taskTimer = taskDuration; // Reset timer for planting
                 
-                Debug.Log($"{helperName} chaining to plant {seedType.cropName}");
                 return false; // DON'T complete - continue with plant task
             }
             else
@@ -123,9 +112,7 @@ public class UniversalHelper : Helper
     {
         if (currentTask.TargetPlant != null)
         {
-            string status = currentTask.TargetPlant.IsRotting ? " (ROTTING!)" : "";
             currentTask.TargetPlant.Harvest();
-            Debug.Log($"{helperName} harvested {currentTask.TargetPlant.CropData.cropName}{status}");
         }
     }
 
@@ -133,16 +120,12 @@ public class UniversalHelper : Helper
     {
         if (currentTask.TargetPlant != null)
         {
-            float moistureBefore = currentTask.TargetPlant.CurrentMoisture;
             currentTask.TargetPlant.Water();
-            Debug.Log($"{helperName} watered {currentTask.TargetPlant.CropData.cropName} ({moistureBefore:F0}% → {currentTask.TargetPlant.CurrentMoisture:F0}%)");
         }
     }
 
     private void ExecutePlantTask()
     {
-        Debug.Log($"{helperName} executing plant task...");
-        
         if (currentTask.TargetTile == null)
         {
             Debug.LogError($"{helperName} plant task has null TargetTile!");
@@ -157,7 +140,6 @@ public class UniversalHelper : Helper
         
         // Get seed type for this zone
         int zoneID = currentTask.TargetTile.ZoneID;
-        Debug.Log($"{helperName} planting in zone {zoneID}");
         
         CropData seedType = HelperManager.Instance.GetSeedForZone(zoneID);
         
@@ -167,22 +149,15 @@ public class UniversalHelper : Helper
             return;
         }
         
-        Debug.Log($"{helperName} got seed type: {seedType.cropName}");
-        
         if (seedType.plantPrefab == null)
         {
             Debug.LogError($"{helperName} seed {seedType.cropName} has NO PLANT PREFAB! Check CropData settings!");
             return;
         }
         
-        Debug.Log($"{helperName} calling PlantCrop...");
         bool success = currentTask.TargetTile.PlantCrop(seedType.plantPrefab, seedType);
         
-        if (success)
-        {
-            Debug.Log($"{helperName} ✓ planted {seedType.cropName} in zone {zoneID}!");
-        }
-        else
+        if (!success)
         {
             Debug.LogWarning($"{helperName} ✗ PlantCrop failed for {seedType.cropName} in zone {zoneID}");
         }
@@ -192,8 +167,6 @@ public class UniversalHelper : Helper
     {
         base.OnStateChanged(newState);
         
-        Debug.Log($"{helperName} STATE CHANGED → {newState}");
-
         // Visual feedback based on state and task type
         if (spriteRenderer != null)
         {
