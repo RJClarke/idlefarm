@@ -1,0 +1,405 @@
+using UnityEngine;
+
+/// <summary>
+/// Represents a single planted crop that grows through stages
+/// Phase 3.1: Moisture tracked internally, displayed on soil tile
+/// </summary>
+[RequireComponent(typeof(PlantVisuals))]
+public class Plant : MonoBehaviour
+{
+    [Header("Crop Configuration")]
+    [SerializeField] private CropData cropData;
+
+    [Header("Current State (Read-Only)")]
+    [SerializeField] private GrowthStage currentStage = GrowthStage.Seed;
+    [SerializeField] private float currentHP;
+    [SerializeField] private float stageTimer;
+    [SerializeField] private bool isGrowing = true;
+
+    [Header("Moisture System (Phase 3.1)")]
+    [SerializeField] private float currentMoisture = 100f; // 0-100%
+    [SerializeField] private bool isDriedOut = false;
+    [SerializeField] private float dryOutTimer = 0f;
+
+    [Header("Harvest & Rot System (Phase 4)")]
+    [SerializeField] private bool isInHarvestWindow = false;
+    [SerializeField] private float harvestWindowTimer = 0f;
+    [SerializeField] private bool isRotting = false;
+
+    // Components
+    private PlantVisuals visuals;
+    private SoilTile parentTile;
+
+    // Properties
+    public GrowthStage CurrentStage => currentStage;
+    public CropData CropData => cropData;
+    public float CurrentHP => currentHP;
+    public bool IsHarvestable => currentStage == GrowthStage.Harvestable;
+    public SoilTile ParentTile => parentTile;
+    public float CurrentMoisture => currentMoisture;
+    public bool IsDriedOut => isDriedOut;
+    public float CurrentGrowthSpeed { get; private set; } = 1.0f;
+    public bool IsInHarvestWindow => isInHarvestWindow;
+    public float HarvestWindowTimer => harvestWindowTimer;
+    public bool IsRotting => isRotting;
+
+    private void Awake()
+    {
+        visuals = GetComponent<PlantVisuals>();
+    }
+
+    /// <summary>
+    /// Initialize the plant with crop data and parent tile
+    /// </summary>
+    public void Initialize(CropData crop, SoilTile tile)
+    {
+        cropData = crop;
+        parentTile = tile;
+        
+        currentStage = GrowthStage.Seed;
+        currentHP = crop.maxHP;
+        stageTimer = crop.GetStageTime(currentStage);
+        isGrowing = true;
+
+        currentMoisture = 100f;
+        isDriedOut = false;
+        dryOutTimer = 0f;
+
+        if (visuals != null)
+            visuals.UpdateVisuals(currentStage, crop);
+
+        Debug.Log($"Plant initialized: {crop.cropName}, moisture: {currentMoisture}%");
+    }
+
+    private void Update()
+    {
+        if (cropData == null) return;
+
+        if (RunManager.Instance != null && !RunManager.Instance.IsRunActive)
+            return;
+
+        if (isGrowing)
+            UpdateGrowth(Time.deltaTime);
+
+        UpdateMoisture(Time.deltaTime);
+
+        if (isInHarvestWindow)
+            UpdateHarvestWindow(Time.deltaTime);
+
+        if (isRotting)
+            UpdateRot(Time.deltaTime);
+    }
+
+    private void UpdateGrowth(float deltaTime)
+    {
+        if (currentStage == GrowthStage.Harvestable)
+        {
+            isGrowing = false;
+            CurrentGrowthSpeed = 0f;
+            return;
+        }
+
+        float speedMultiplier = CalculateGrowthSpeed();
+        CurrentGrowthSpeed = speedMultiplier;
+        stageTimer -= deltaTime * speedMultiplier;
+
+        if (stageTimer <= 0f)
+            AdvanceToNextStage();
+    }
+
+    private float CalculateGrowthSpeed()
+    {
+        if (currentMoisture <= 0f)   return 0f;
+        if (currentMoisture <= 50f)  return 1.0f;
+
+        float bonus = (currentMoisture - 50f) / 100f;
+        return 1.0f + bonus;
+    }
+
+    private void UpdateMoisture(float deltaTime)
+    {
+        if (GameConstants.Instance == null) return;
+
+        float depletionRate = GameConstants.Instance.baseMoistureDepletionRate;
+        depletionRate *= cropData.moistureDepletionRate;
+
+        currentMoisture -= depletionRate * deltaTime;
+        currentMoisture = Mathf.Clamp(currentMoisture, 0f, 100f);
+
+        if (currentMoisture <= 0f)
+        {
+            dryOutTimer += deltaTime;
+            
+            if (dryOutTimer >= GameConstants.Instance.dryOutThreshold)
+            {
+                if (!isDriedOut)
+                {
+                    isDriedOut = true;
+                    Debug.Log($"⚠️ {cropData.cropName} has DRIED OUT! Losing HP!");
+                    if (visuals != null)
+                        visuals.UpdateVisuals(currentStage, cropData, isDriedOut);
+                }
+                
+                currentHP -= GameConstants.Instance.dryOutDecayRate * deltaTime;
+                currentHP = Mathf.Max(currentHP, 0f);
+                
+                if (currentHP <= 0f)
+                    Die("dry-out");
+            }
+        }
+        else
+        {
+            dryOutTimer = 0f;
+            
+            if (isDriedOut)
+            {
+                isDriedOut = false;
+                Debug.Log($"✔ {cropData.cropName} recovered from dried-out state!");
+                if (visuals != null)
+                    visuals.UpdateVisuals(currentStage, cropData, isDriedOut);
+            }
+        }
+    }
+
+    private void UpdateHarvestWindow(float deltaTime)
+    {
+        harvestWindowTimer -= deltaTime;
+
+        if (harvestWindowTimer <= 0f)
+        {
+            isInHarvestWindow = false;
+            isRotting = true;
+            Debug.Log($"⚠️ {cropData.cropName} harvest window expired! Entering ROT state.");
+
+            if (visuals != null)
+                visuals.UpdateVisuals(currentStage, cropData, isDriedOut, isRotting);
+        }
+    }
+
+    private void UpdateRot(float deltaTime)
+    {
+        if (GameConstants.Instance == null) return;
+
+        currentHP -= GameConstants.Instance.rotDecayRate * deltaTime;
+        currentHP = Mathf.Max(currentHP, 0f);
+
+        if (currentHP <= 0f)
+            Die("rot");
+    }
+
+    private void AdvanceToNextStage()
+    {
+        switch (currentStage)
+        {
+            case GrowthStage.Seed:
+                currentStage = GrowthStage.Sprout;
+                stageTimer = cropData.GetStageTime(GrowthStage.Sprout);
+                Debug.Log($"{cropData.cropName} grew to Sprout");
+                break;
+
+            case GrowthStage.Sprout:
+                currentStage = GrowthStage.Sapling;
+                stageTimer = cropData.GetStageTime(GrowthStage.Sapling);
+                Debug.Log($"{cropData.cropName} grew to Sapling");
+                break;
+
+            case GrowthStage.Sapling:
+                currentStage = GrowthStage.Harvestable;
+                stageTimer = 0f;
+                isGrowing = false;
+                isInHarvestWindow = true;
+                harvestWindowTimer = cropData.harvestWindowSeconds;
+                Debug.Log($"{cropData.cropName} is HARVESTABLE! Harvest window: {harvestWindowTimer}s");
+                break;
+        }
+
+        if (visuals != null)
+            visuals.UpdateVisuals(currentStage, cropData, isDriedOut, isRotting);
+    }
+
+    public void Water()
+    {
+        if (GameConstants.Instance == null) return;
+
+        float waterAmount = GameConstants.Instance.manualWaterAmount;
+        currentMoisture += waterAmount;
+        currentMoisture = Mathf.Clamp(currentMoisture, 0f, 100f);
+
+        bool wasDriedOut = isDriedOut;
+        isDriedOut = false;
+        dryOutTimer = 0f;
+
+        if (wasDriedOut && visuals != null)
+            visuals.UpdateVisuals(currentStage, cropData, isDriedOut);
+
+        Debug.Log($"💧 Watered {cropData.cropName}! Moisture: {currentMoisture:F0}%");
+    }
+
+    public void Harvest()
+    {
+        if (!IsHarvestable)
+        {
+            Debug.LogWarning($"Cannot harvest {cropData.cropName} - not ready!");
+            return;
+        }
+
+        int harvestValue = cropData.harvestValue;
+        if (GameConstants.Instance != null)
+            harvestValue = GameConstants.Instance.CalculateHarvestValue(cropData.harvestValue, isRotting);
+
+        string rotStatus = isRotting ? " (ROTTING - 25% value)" : "";
+        Debug.Log($"Harvested {cropData.cropName} for ${harvestValue}{rotStatus}!");
+
+        if (CurrencyManager.Instance != null)
+            CurrencyManager.Instance.AddMoney(harvestValue);
+
+        isInHarvestWindow = false;
+        isRotting = false;
+        harvestWindowTimer = 0f;
+
+        if (cropData.canRegrow)
+            StartRegrowth();
+        else
+            RemovePlant();
+    }
+
+    private void StartRegrowth()
+    {
+        currentStage = GrowthStage.Seed;
+        stageTimer = cropData.regrowSeconds > 0 ? cropData.regrowSeconds : cropData.GetStageTime(GrowthStage.Seed);
+        isGrowing = true;
+
+        currentMoisture = 100f;
+        isDriedOut = false;
+        dryOutTimer = 0f;
+        isInHarvestWindow = false;
+        isRotting = false;
+        harvestWindowTimer = 0f;
+
+        if (visuals != null)
+        {
+            visuals.UpdateVisuals(currentStage, cropData, isDriedOut, isRotting);
+
+            if (cropData.harvestedSprite != null)
+            {
+                visuals.GetComponent<SpriteRenderer>().sprite = cropData.harvestedSprite;
+                Debug.Log($"{cropData.cropName} showing harvested sprite while regrowing!");
+            }
+        }
+
+        Debug.Log($"{cropData.cropName} regrowing!");
+    }
+
+    private void RemovePlant()
+    {
+        if (parentTile != null)
+            parentTile.ClearPlant();
+
+        Destroy(gameObject);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // Phase 6: Threat & Weather Damage
+    // ─────────────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Apply damage from an animal threat (crow, deer) or weather effect (lightning, wind).
+    /// Stage multipliers are applied by the caller before this is invoked.
+    /// </summary>
+    public void TakeDamage(float damage)
+    {
+        if (damage <= 0f) return;
+
+        currentHP -= damage;
+        currentHP  = Mathf.Max(currentHP, 0f);
+
+        if (currentHP <= 0f)
+            Die("threat/weather damage");
+    }
+
+    /// <summary>
+    /// Apply rain moisture directly to the moisture system.
+    /// Feeds into existing currentMoisture — recovers dried-out state if moisture rises above 0.
+    /// Called by ThunderstormManager on each rain tick.
+    /// </summary>
+    public void ApplyRain(float amount)
+    {
+        if (amount <= 0f) return;
+
+        currentMoisture += amount;
+        currentMoisture  = Mathf.Clamp(currentMoisture, 0f, 100f);
+
+        // If rain rescues a dried-out plant, recover it
+        if (isDriedOut && currentMoisture > 0f)
+        {
+            isDriedOut  = false;
+            dryOutTimer = 0f;
+            Debug.Log($"🌧️ {cropData.cropName} rescued from dried-out by rain!");
+
+            if (visuals != null)
+                visuals.UpdateVisuals(currentStage, cropData, isDriedOut);
+        }
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Plant dies. Cause string is used for debug logging only.
+    /// Default "unknown" keeps all internal call sites valid without changes.
+    /// </summary>
+    private void Die(string cause = "unknown")
+    {
+        Debug.Log($"💀 {cropData.cropName} DIED from {cause}!");
+        RemovePlant();
+    }
+
+    private void OnMouseDown()
+    {
+        if (IsHarvestable) Harvest();
+        else               Water();
+    }
+
+#if UNITY_EDITOR
+    [ContextMenu("Show Plant Info")]
+    private void ShowPlantInfo()
+    {
+        Debug.Log($"=== {cropData.cropName} ===");
+        Debug.Log($"Stage: {currentStage}");
+        Debug.Log($"Timer: {stageTimer:F1}s");
+        Debug.Log($"HP: {currentHP}/{cropData.maxHP}");
+        Debug.Log($"Moisture: {currentMoisture:F1}%");
+        Debug.Log($"Growth Speed: {CurrentGrowthSpeed:F2}x");
+        Debug.Log($"Dried Out: {isDriedOut}");
+        Debug.Log($"In Harvest Window: {isInHarvestWindow}");
+        if (isInHarvestWindow)
+            Debug.Log($"  Window Time Left: {harvestWindowTimer:F1}s");
+        Debug.Log($"Rotting: {isRotting}");
+    }
+
+    [ContextMenu("Force Harvestable")]
+    private void ForceHarvestable()
+    {
+        currentStage = GrowthStage.Harvestable;
+        stageTimer = 0f;
+        isGrowing = false;
+        if (visuals != null)
+            visuals.UpdateVisuals(currentStage, cropData);
+    }
+
+    [ContextMenu("Force Dry (0% Moisture)")]
+    private void ForceDry()
+    {
+        currentMoisture = 0f;
+        Debug.Log($"Forced dry");
+    }
+
+    [ContextMenu("Force Dried Out State")]
+    private void ForceDriedOut()
+    {
+        currentMoisture = 0f;
+        dryOutTimer = 999f;
+        isDriedOut = true;
+        Debug.Log($"Forced dried-out state");
+    }
+#endif
+}

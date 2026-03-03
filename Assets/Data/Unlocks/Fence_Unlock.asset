@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6068e2ae2ea61644787132c20d749068, type: 3}
+  m_Name: Fence_Unlock
+  m_EditorClassIdentifier: Assembly-CSharp::UnlockData
+  unlockID: fence_unlock
+  displayName: Fence
+  icon: "\U0001FAB5"
+  category: 1
+  coinCost: 1000
+  lockedDescription: Blocks deer from entering protected zones
+  unlockedMessage: Fence Unlocked!
+  iconSprite: {fileID: 0}
+  requiredUnlocks: []

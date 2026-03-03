@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6068e2ae2ea61644787132c20d749068, type: 3}
+  m_Name: Corn_Unlock
+  m_EditorClassIdentifier: Assembly-CSharp::UnlockData
+  unlockID: corn_unlock
+  displayName: Corn
+  icon: "\U0001F33D"
+  category: 0
+  cropData: {fileID: 11400000, guid: baf50166bc8262a4da60283258d6093d, type: 2}
+  equipmentSprite: {fileID: 0}
+  coinCost: 200
+  lockedDescription: Fast-growing crop, good for early game income.
+  unlockedMessage: Corn Seed Packet Unlocked
+  requiredUnlocks: []

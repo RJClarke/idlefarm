@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39385f228cd3dd242ae2361ab5eafc5f, type: 3}
+  m_Name: ThunderstormData
+  m_EditorClassIdentifier: Assembly-CSharp::WeatherData
+  stormWaveInterval: 25
+  initialGracePeriod: 30
+  baseWindDuration: 60
+  rainLeadOffset: 15
+  lightningLeadOffset: 10
+  timingJitter: 5
+  durationScalePerStorm: 0.1
+  rainMoisturePerTick: 1
+  rainTickInterval: 2
+  rainIntensityScalePerStorm: 0.05
+  windDamagePerTick: 1
+  windTickInterval: 5
+  windDamageScalePerStorm: 0.05
+  lightningMinDamage: 80
+  lightningMaxDamage: 100
+  lightningStrikeInterval: 8
+  lightningStrikeScalePerStorm: 0.5
+  lightningDamageScalePerStorm: 0.05
+  rainOverlayMaxAlpha: 0.35
+  rainOverlayColor: {r: 0.05, g: 0.1, b: 0.25, a: 1}
+  rainFadeInDuration: 3
+  rainFadeOutDuration: 4
+  rainParticleRate: 150

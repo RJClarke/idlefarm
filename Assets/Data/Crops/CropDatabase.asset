@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8273e6380a0ac84418ded034e720fc01, type: 3}
+  m_Name: CropDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::CropDatabase
+  allCrops:
+  - {fileID: 11400000, guid: 599dcc7392388f44e8843b4f73d24c46, type: 2}
+  - {fileID: 11400000, guid: e576b6472e8d2f1499f854fc6f246aa9, type: 2}
+  - {fileID: 11400000, guid: 054488f738e218441998922c61a2d911, type: 2}
+  - {fileID: 11400000, guid: e68fb3bfddaae894da1a1c054e5a53bd, type: 2}
+  - {fileID: 11400000, guid: 2401bfdb6627c11408438d468d477259, type: 2}
+  - {fileID: 11400000, guid: b615cd3c16d74c24985492d488d3b8f8, type: 2}
+  - {fileID: 11400000, guid: cc274cf29515c254488e4d3fa21d4d15, type: 2}
+  startingCrops:
+  - {fileID: 11400000, guid: 599dcc7392388f44e8843b4f73d24c46, type: 2}
+  - {fileID: 11400000, guid: e576b6472e8d2f1499f854fc6f246aa9, type: 2}

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05cff0ca51ccad4584e481192123c35, type: 3}
+  m_Name: Crop_Carrot
+  m_EditorClassIdentifier: Assembly-CSharp::CropData
+  cropName: Carrot
+  cropType: 5
+  description: A classic root vegetable. Fast growing and reliable.
+  seedSeconds: 40
+  sproutSeconds: 60
+  saplingSeconds: 200
+  maxHP: 78
+  harvestWindowSeconds: 50
+  harvestValue: 15
+  canRegrow: 0
+  regrowSeconds: 0
+  plantPrefab: {fileID: 8146968038167197194, guid: 97d89bffd06bc2d43b83fabe1fa849d3, type: 3}
+  seedSprite: {fileID: 6293162352832674552, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  sproutSprite: {fileID: 2703366999216813090, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  saplingSprite: {fileID: -8628334740047116483, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  harvestableSprite: {fileID: 2365333951913284671, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  driedOutSprite: {fileID: 0}
+  rottingSprite: {fileID: 0}
+  seedPacketSprite: {fileID: -6390835187060877471, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  cropSprite: {fileID: 922582119360321394, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  moistureDepletionRate: 1
+  threatResistance: 1

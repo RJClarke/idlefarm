@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6068e2ae2ea61644787132c20d749068, type: 3}
+  m_Name: Blueberry_Unlock
+  m_EditorClassIdentifier: Assembly-CSharp::UnlockData
+  unlockID: blueberry_unlock
+  displayName: Blueberries
+  icon: 
+  category: 0
+  cropData: {fileID: 11400000, guid: e68fb3bfddaae894da1a1c054e5a53bd, type: 2}
+  equipmentSprite: {fileID: 0}
+  coinCost: 500
+  lockedDescription: Delicious Blueberries.
+  unlockedMessage: Blueberry Packet Unlocked
+  requiredUnlocks:
+  - {fileID: 11400000, guid: 04d50c8a59a2abc4cbbfa8f27ccd1680, type: 2}
+  - {fileID: 11400000, guid: d01acc804c317904d9ac464f6c38613d, type: 2}

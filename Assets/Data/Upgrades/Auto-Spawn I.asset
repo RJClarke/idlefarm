@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dcf13dbedf937d4c8fd736ad7014fcb, type: 3}
+  m_Name: Auto-Spawn I
+  m_EditorClassIdentifier: Assembly-CSharp::HelperUpgrade
+  upgradeName: Task Speed I
+  description: Helpers complete tasks 20% faster
+  upgradeID: task_speed_1
+  upgradeType: 1
+  coinCost: 100
+  upgradeValue: 0.8
+  requiredUpgrades: []
+  minRunsRequired: 0
+  icon: {fileID: 0}

@@ -1,0 +1,5865 @@
+fileFormatVersion: 2
+guid: d5be38aaa5d9838489645c20dbb518c4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1569945488147587712
+    second: CL_Crops_Mining_0
+  - first:
+      213: 5310530057854753309
+    second: CL_Crops_Mining_1
+  - first:
+      213: 6678882550156909808
+    second: CL_Crops_Mining_2
+  - first:
+      213: 6846734926791027510
+    second: CL_Crops_Mining_3
+  - first:
+      213: -3912749450539699125
+    second: CL_Crops_Mining_4
+  - first:
+      213: -6265823121492426959
+    second: CL_Crops_Mining_5
+  - first:
+      213: -6153356132890103828
+    second: CL_Crops_Mining_6
+  - first:
+      213: -8655250705536626284
+    second: CL_Crops_Mining_7
+  - first:
+      213: 646470649645627498
+    second: CL_Crops_Mining_8
+  - first:
+      213: 2674060437123045847
+    second: CL_Crops_Mining_9
+  - first:
+      213: 1228204421143514434
+    second: CL_Crops_Mining_10
+  - first:
+      213: -1770643262615999758
+    second: CL_Crops_Mining_11
+  - first:
+      213: 1726333761540201801
+    second: CL_Crops_Mining_12
+  - first:
+      213: -6923193480849849420
+    second: CL_Crops_Mining_13
+  - first:
+      213: 8635378994143969120
+    second: CL_Crops_Mining_14
+  - first:
+      213: 7188030964878444364
+    second: CL_Crops_Mining_15
+  - first:
+      213: -175381965077286491
+    second: CL_Crops_Mining_16
+  - first:
+      213: -3309453895758867990
+    second: CL_Crops_Mining_17
+  - first:
+      213: -1439584136451277544
+    second: CL_Crops_Mining_18
+  - first:
+      213: 1626522942629454886
+    second: CL_Crops_Mining_19
+  - first:
+      213: -7539393175627563276
+    second: CL_Crops_Mining_20
+  - first:
+      213: -810820319444354179
+    second: CL_Crops_Mining_21
+  - first:
+      213: -4937228829635442148
+    second: CL_Crops_Mining_22
+  - first:
+      213: -1449128383499467295
+    second: CL_Crops_Mining_23
+  - first:
+      213: -6893517904170921001
+    second: CL_Crops_Mining_24
+  - first:
+      213: -990721511798661886
+    second: CL_Crops_Mining_25
+  - first:
+      213: -6449572290422167936
+    second: CL_Crops_Mining_26
+  - first:
+      213: 9209680828038071874
+    second: CL_Crops_Mining_27
+  - first:
+      213: 3198458734171502668
+    second: CL_Crops_Mining_28
+  - first:
+      213: -8841890362433731108
+    second: CL_Crops_Mining_29
+  - first:
+      213: 8649183225580047826
+    second: CL_Crops_Mining_30
+  - first:
+      213: -7367598500121239406
+    second: CL_Crops_Mining_31
+  - first:
+      213: -2554914794393276864
+    second: CL_Crops_Mining_32
+  - first:
+      213: -4511194645843912265
+    second: CL_Crops_Mining_33
+  - first:
+      213: -7107250490222982259
+    second: CL_Crops_Mining_34
+  - first:
+      213: 8117906732687287236
+    second: CL_Crops_Mining_35
+  - first:
+      213: -5166890997122943110
+    second: CL_Crops_Mining_36
+  - first:
+      213: -7364219717195643112
+    second: CL_Crops_Mining_37
+  - first:
+      213: -6795681572751872497
+    second: CL_Crops_Mining_38
+  - first:
+      213: -8415200704808140704
+    second: CL_Crops_Mining_39
+  - first:
+      213: -3475747129262419176
+    second: CL_Crops_Mining_40
+  - first:
+      213: -4626135825644025936
+    second: CL_Crops_Mining_41
+  - first:
+      213: 4382319732836191019
+    second: CL_Crops_Mining_42
+  - first:
+      213: 8104741377577353065
+    second: CL_Crops_Mining_43
+  - first:
+      213: 4147129709633304395
+    second: CL_Crops_Mining_44
+  - first:
+      213: -4077264995419976964
+    second: CL_Crops_Mining_45
+  - first:
+      213: 8421945549763103090
+    second: CL_Crops_Mining_46
+  - first:
+      213: 2335905759334087169
+    second: CL_Crops_Mining_47
+  - first:
+      213: -215958242341156383
+    second: CL_Crops_Mining_48
+  - first:
+      213: -469012787259855548
+    second: CL_Crops_Mining_49
+  - first:
+      213: -5561610127479562760
+    second: CL_Crops_Mining_50
+  - first:
+      213: -4143670234373046720
+    second: CL_Crops_Mining_51
+  - first:
+      213: -2419261919087593864
+    second: CL_Crops_Mining_52
+  - first:
+      213: -3439257915936802255
+    second: CL_Crops_Mining_53
+  - first:
+      213: -5242555845900806480
+    second: CL_Crops_Mining_54
+  - first:
+      213: 6995374495036434318
+    second: CL_Crops_Mining_55
+  - first:
+      213: -1369129298888055804
+    second: CL_Crops_Mining_56
+  - first:
+      213: 5177798275492787413
+    second: CL_Crops_Mining_57
+  - first:
+      213: -3970134405206944544
+    second: CL_Crops_Mining_58
+  - first:
+      213: 1363631698089673872
+    second: CL_Crops_Mining_59
+  - first:
+      213: -7196988106980625342
+    second: CL_Crops_Mining_60
+  - first:
+      213: -6806033779370544636
+    second: CL_Crops_Mining_61
+  - first:
+      213: -2853568393931057514
+    second: CL_Crops_Mining_62
+  - first:
+      213: 8679312121679298584
+    second: CL_Crops_Mining_63
+  - first:
+      213: -681668044466841974
+    second: CL_Crops_Mining_64
+  - first:
+      213: 8891115711381261102
+    second: CL_Crops_Mining_65
+  - first:
+      213: -7031657593161221571
+    second: CL_Crops_Mining_66
+  - first:
+      213: -210306236419657328
+    second: CL_Crops_Mining_67
+  - first:
+      213: -1836092902118127680
+    second: CL_Crops_Mining_68
+  - first:
+      213: 7471159180102663485
+    second: CL_Crops_Mining_69
+  - first:
+      213: 2335403385649038724
+    second: CL_Crops_Mining_70
+  - first:
+      213: -1798770582133672151
+    second: CL_Crops_Mining_71
+  - first:
+      213: 1891719608972110627
+    second: CL_Crops_Mining_72
+  - first:
+      213: -1392132512204606760
+    second: CL_Crops_Mining_73
+  - first:
+      213: -6422016801992539337
+    second: CL_Crops_Mining_74
+  - first:
+      213: 8038035632142357274
+    second: CL_Crops_Mining_75
+  - first:
+      213: 3802846706208534244
+    second: CL_Crops_Mining_76
+  - first:
+      213: 5453929798641431608
+    second: CL_Crops_Mining_77
+  - first:
+      213: 926297158411035097
+    second: CL_Crops_Mining_78
+  - first:
+      213: -6687025887613734646
+    second: CL_Crops_Mining_79
+  - first:
+      213: -6971666747609896557
+    second: CL_Crops_Mining_80
+  - first:
+      213: 7065254045365052369
+    second: CL_Crops_Mining_81
+  - first:
+      213: 6593910471418514874
+    second: CL_Crops_Mining_82
+  - first:
+      213: -8003940606170773875
+    second: CL_Crops_Mining_83
+  - first:
+      213: -1469742994379453474
+    second: CL_Crops_Mining_84
+  - first:
+      213: -3982774654945482378
+    second: CL_Crops_Mining_85
+  - first:
+      213: 7227573407195618401
+    second: CL_Crops_Mining_86
+  - first:
+      213: 3443966495654013144
+    second: CL_Crops_Mining_87
+  - first:
+      213: 2785965190123682583
+    second: CL_Crops_Mining_88
+  - first:
+      213: 7276870088108097565
+    second: CL_Crops_Mining_89
+  - first:
+      213: -3750409946025607185
+    second: CL_Crops_Mining_90
+  - first:
+      213: -7026619378557266955
+    second: CL_Crops_Mining_91
+  - first:
+      213: -6777633012209802092
+    second: CL_Crops_Mining_92
+  - first:
+      213: 7528208965663987384
+    second: CL_Crops_Mining_93
+  - first:
+      213: -174406041497868706
+    second: CL_Crops_Mining_94
+  - first:
+      213: 2896894091507949657
+    second: CL_Crops_Mining_95
+  - first:
+      213: -3772024254680198704
+    second: CL_Crops_Mining_96
+  - first:
+      213: -2249763422147537176
+    second: CL_Crops_Mining_97
+  - first:
+      213: -3033743133309631873
+    second: CL_Crops_Mining_98
+  - first:
+      213: 2919736547599973458
+    second: CL_Crops_Mining_99
+  - first:
+      213: -3862906241107851721
+    second: CL_Crops_Mining_100
+  - first:
+      213: 5484735643620001432
+    second: CL_Crops_Mining_101
+  - first:
+      213: -4444971275231507248
+    second: CL_Crops_Mining_102
+  - first:
+      213: 6400097610941325928
+    second: CL_Crops_Mining_103
+  - first:
+      213: -7904473076147852924
+    second: CL_Crops_Mining_104
+  - first:
+      213: 6449900970205332426
+    second: CL_Crops_Mining_105
+  - first:
+      213: 6178688708191447437
+    second: CL_Crops_Mining_106
+  - first:
+      213: 4325150047244506495
+    second: CL_Crops_Mining_107
+  - first:
+      213: -1407375401980719438
+    second: CL_Crops_Mining_108
+  - first:
+      213: 8309216781530312435
+    second: CL_Crops_Mining_109
+  - first:
+      213: -4561663348077138851
+    second: CL_Crops_Mining_110
+  - first:
+      213: 2024549408202823877
+    second: CL_Crops_Mining_111
+  - first:
+      213: 5966085481980849247
+    second: CL_Crops_Mining_112
+  - first:
+      213: 6334038392955928812
+    second: CL_Crops_Mining_113
+  - first:
+      213: -6141080642310890108
+    second: CL_Crops_Mining_114
+  - first:
+      213: 8373272952709666796
+    second: CL_Crops_Mining_115
+  - first:
+      213: -3441875748663387523
+    second: CL_Crops_Mining_116
+  - first:
+      213: 7965507362246114982
+    second: CL_Crops_Mining_117
+  - first:
+      213: -6468340522351179836
+    second: CL_Crops_Mining_118
+  - first:
+      213: 8427453596970115845
+    second: CL_Crops_Mining_119
+  - first:
+      213: -6172728060381276790
+    second: CL_Crops_Mining_120
+  - first:
+      213: -3559217653539498635
+    second: CL_Crops_Mining_121
+  - first:
+      213: -1684912639561838758
+    second: CL_Crops_Mining_122
+  - first:
+      213: 5635450421333992238
+    second: CL_Crops_Mining_123
+  - first:
+      213: -3452126215549309226
+    second: CL_Crops_Mining_124
+  - first:
+      213: -6819523620387478297
+    second: CL_Crops_Mining_125
+  - first:
+      213: -4977104604118758005
+    second: CL_Crops_Mining_126
+  - first:
+      213: 8788758565588477987
+    second: CL_Crops_Mining_127
+  - first:
+      213: -5311179733769599418
+    second: CL_Crops_Mining_128
+  - first:
+      213: -8721482420497175514
+    second: CL_Crops_Mining_129
+  - first:
+      213: 1448750351800781423
+    second: CL_Crops_Mining_130
+  - first:
+      213: 1550242810522349341
+    second: CL_Crops_Mining_131
+  - first:
+      213: 9091744052708691378
+    second: CL_Crops_Mining_132
+  - first:
+      213: 6928591771732301807
+    second: CL_Crops_Mining_133
+  - first:
+      213: -6247276037711077161
+    second: CL_Crops_Mining_134
+  - first:
+      213: 322545990556410298
+    second: CL_Crops_Mining_135
+  - first:
+      213: 7196204118683552569
+    second: CL_Crops_Mining_136
+  - first:
+      213: -4765420755938042611
+    second: CL_Crops_Mining_137
+  - first:
+      213: 9065264473920484245
+    second: CL_Crops_Mining_138
+  - first:
+      213: 7597997462438837095
+    second: CL_Crops_Mining_139
+  - first:
+      213: -8425725622617219983
+    second: CL_Crops_Mining_140
+  - first:
+      213: -6286295482687621359
+    second: CL_Crops_Mining_141
+  - first:
+      213: 6862725416986578267
+    second: CL_Crops_Mining_142
+  - first:
+      213: 998496267646272355
+    second: CL_Crops_Mining_143
+  - first:
+      213: -5727034278155493270
+    second: CL_Crops_Mining_144
+  - first:
+      213: 7547656520941787949
+    second: CL_Crops_Mining_145
+  - first:
+      213: 1392748102482190963
+    second: CL_Crops_Mining_146
+  - first:
+      213: 378647155908926686
+    second: CL_Crops_Mining_147
+  - first:
+      213: -862598868812084748
+    second: CL_Crops_Mining_148
+  - first:
+      213: 7027054720529048415
+    second: CL_Crops_Mining_149
+  - first:
+      213: 454797761097270105
+    second: CL_Crops_Mining_150
+  - first:
+      213: -8487368170775370531
+    second: CL_Crops_Mining_151
+  - first:
+      213: 5368787370356310773
+    second: CL_Crops_Mining_152
+  - first:
+      213: -6716915415551269369
+    second: CL_Crops_Mining_153
+  - first:
+      213: -5658900384324587919
+    second: CL_Crops_Mining_154
+  - first:
+      213: 2314530892819404001
+    second: CL_Crops_Mining_155
+  - first:
+      213: 1959946842842691679
+    second: CL_Crops_Mining_156
+  - first:
+      213: 1242723519147529558
+    second: CL_Crops_Mining_157
+  - first:
+      213: -3870971613148175092
+    second: CL_Crops_Mining_158
+  - first:
+      213: -757609084400568426
+    second: CL_Crops_Mining_159
+  - first:
+      213: -5892118011026286681
+    second: CL_Crops_Mining_160
+  - first:
+      213: 2391169775318719605
+    second: CL_Crops_Mining_161
+  - first:
+      213: 5855159471812381268
+    second: CL_Crops_Mining_162
+  - first:
+      213: -6390835187060877471
+    second: CL_Crops_Mining_163
+  - first:
+      213: 6293162352832674552
+    second: CL_Crops_Mining_164
+  - first:
+      213: 2365333951913284671
+    second: CL_Crops_Mining_165
+  - first:
+      213: 922582119360321394
+    second: CL_Crops_Mining_166
+  - first:
+      213: 5956556478088750424
+    second: CL_Crops_Mining_167
+  - first:
+      213: -2528322206756040507
+    second: CL_Crops_Mining_168
+  - first:
+      213: 586396854151759011
+    second: CL_Crops_Mining_169
+  - first:
+      213: 2987216937838746734
+    second: CL_Crops_Mining_170
+  - first:
+      213: 645286559212896247
+    second: CL_Crops_Mining_171
+  - first:
+      213: -6201834201181262206
+    second: CL_Crops_Mining_172
+  - first:
+      213: 1523621330958578028
+    second: CL_Crops_Mining_173
+  - first:
+      213: -1450223164561897308
+    second: CL_Crops_Mining_174
+  - first:
+      213: -2696994305677156204
+    second: CL_Crops_Mining_175
+  - first:
+      213: -7853990276037668996
+    second: CL_Crops_Mining_176
+  - first:
+      213: 2295699917803268035
+    second: CL_Crops_Mining_177
+  - first:
+      213: 2190929862246037659
+    second: CL_Crops_Mining_178
+  - first:
+      213: 2703366999216813090
+    second: CL_Crops_Mining_179
+  - first:
+      213: -8628334740047116483
+    second: CL_Crops_Mining_180
+  - first:
+      213: -2829252553219942912
+    second: CL_Crops_Mining_181
+  - first:
+      213: 7324677650918126683
+    second: CL_Crops_Mining_182
+  - first:
+      213: -4018761851410495339
+    second: CL_Crops_Mining_183
+  - first:
+      213: -1145102825311974007
+    second: CL_Crops_Mining_184
+  - first:
+      213: -6539820868728430723
+    second: CL_Crops_Mining_185
+  - first:
+      213: 6909897661352979240
+    second: CL_Crops_Mining_186
+  - first:
+      213: -4809304420658024577
+    second: CL_Crops_Mining_187
+  - first:
+      213: -6131174612223543604
+    second: CL_Crops_Mining_188
+  - first:
+      213: 213293800881120158
+    second: CL_Crops_Mining_189
+  - first:
+      213: -8957448169214793501
+    second: CL_Crops_Mining_190
+  - first:
+      213: 6124576109214746155
+    second: CL_Crops_Mining_191
+  - first:
+      213: -6985184025402895209
+    second: CL_Crops_Mining_192
+  - first:
+      213: -6805735759826548755
+    second: CL_Crops_Mining_193
+  - first:
+      213: 7357897992471194223
+    second: CL_Crops_Mining_194
+  - first:
+      213: -4781181724563569343
+    second: CL_Crops_Mining_195
+  - first:
+      213: -8516213754690902637
+    second: CL_Crops_Mining_196
+  - first:
+      213: 2296706105974120041
+    second: CL_Crops_Mining_197
+  - first:
+      213: -1604169939524408575
+    second: CL_Crops_Mining_198
+  - first:
+      213: 4834548014334931520
+    second: CL_Crops_Mining_199
+  - first:
+      213: 7742753776518343775
+    second: CL_Crops_Mining_200
+  - first:
+      213: -3385512821649987041
+    second: CL_Crops_Mining_201
+  - first:
+      213: 397813293608086149
+    second: CL_Crops_Mining_202
+  - first:
+      213: 6831139753921842797
+    second: CL_Crops_Mining_203
+  - first:
+      213: 4435784651841869115
+    second: CL_Crops_Mining_204
+  - first:
+      213: 8915863871280154342
+    second: CL_Crops_Mining_205
+  - first:
+      213: 4073867245294059953
+    second: CL_Crops_Mining_206
+  - first:
+      213: -1590332283287351897
+    second: CL_Crops_Mining_207
+  - first:
+      213: -8002180169244777330
+    second: CL_Crops_Mining_208
+  - first:
+      213: 7523208478377835892
+    second: CL_Crops_Mining_209
+  - first:
+      213: 5521697704494594036
+    second: CL_Crops_Mining_210
+  - first:
+      213: -5937456557063367429
+    second: CL_Crops_Mining_211
+  - first:
+      213: -3676017889046491194
+    second: CL_Crops_Mining_212
+  - first:
+      213: -370496922810213871
+    second: CL_Crops_Mining_213
+  - first:
+      213: 2170216308796203962
+    second: CL_Crops_Mining_214
+  - first:
+      213: -8501320129074669555
+    second: CL_Crops_Mining_215
+  - first:
+      213: 3497127663545459159
+    second: CL_Crops_Mining_216
+  - first:
+      213: 6357666663028819263
+    second: CL_Crops_Mining_217
+  - first:
+      213: -5992473607244275056
+    second: CL_Crops_Mining_218
+  - first:
+      213: -1806843878030330421
+    second: CL_Crops_Mining_219
+  - first:
+      213: -3862281119969268306
+    second: CL_Crops_Mining_220
+  - first:
+      213: 7020751223343756479
+    second: CL_Crops_Mining_221
+  - first:
+      213: -5702518030297451495
+    second: CL_Crops_Mining_222
+  - first:
+      213: 2196587850673688242
+    second: CL_Crops_Mining_223
+  - first:
+      213: 8046985539559220638
+    second: CL_Crops_Mining_224
+  - first:
+      213: -8050936812182709587
+    second: CL_Crops_Mining_225
+  - first:
+      213: -962780733524250315
+    second: CL_Crops_Mining_226
+  - first:
+      213: -7821049608219898433
+    second: CL_Crops_Mining_227
+  - first:
+      213: -772248330253839540
+    second: CL_Crops_Mining_228
+  - first:
+      213: -5787619620070669517
+    second: CL_Crops_Mining_229
+  - first:
+      213: 3286784192888241414
+    second: CL_Crops_Mining_230
+  - first:
+      213: -5382679637799660420
+    second: CL_Crops_Mining_231
+  - first:
+      213: -3582891429151642919
+    second: CL_Crops_Mining_232
+  - first:
+      213: -2931530619173929020
+    second: CL_Crops_Mining_233
+  - first:
+      213: 6596977040720608589
+    second: CL_Crops_Mining_234
+  - first:
+      213: -7222082607475648065
+    second: CL_Crops_Mining_235
+  - first:
+      213: -5415401139211786194
+    second: CL_Crops_Mining_236
+  - first:
+      213: -4047666869907740080
+    second: CL_Crops_Mining_237
+  - first:
+      213: -5507590667492458181
+    second: CL_Crops_Mining_238
+  - first:
+      213: -5569862041181514800
+    second: CL_Crops_Mining_239
+  - first:
+      213: 3861873979945414964
+    second: CL_Crops_Mining_240
+  - first:
+      213: -4139015936850525992
+    second: CL_Crops_Mining_241
+  - first:
+      213: -8798832663524441528
+    second: CL_Crops_Mining_242
+  - first:
+      213: 3407694431314945038
+    second: CL_Crops_Mining_243
+  - first:
+      213: -2565503238885247165
+    second: CL_Crops_Mining_244
+  - first:
+      213: -3710977748065763369
+    second: CL_Crops_Mining_245
+  - first:
+      213: -3275908217236465559
+    second: CL_Crops_Mining_246
+  - first:
+      213: 4339089262534242483
+    second: CL_Crops_Mining_247
+  - first:
+      213: -2672298398210383095
+    second: CL_Crops_Mining_248
+  - first:
+      213: 9168213863207009200
+    second: CL_Crops_Mining_249
+  - first:
+      213: 2038266066820636051
+    second: CL_Crops_Mining_250
+  - first:
+      213: -7446573835522786220
+    second: CL_Crops_Mining_251
+  - first:
+      213: -5975105467210459912
+    second: CL_Crops_Mining_252
+  - first:
+      213: -2310056762829591286
+    second: CL_Crops_Mining_253
+  - first:
+      213: 5199727654652536998
+    second: CL_Crops_Mining_254
+  - first:
+      213: -3446264329504938187
+    second: CL_Crops_Mining_255
+  - first:
+      213: -6351569731526715640
+    second: CL_Crops_Mining_256
+  - first:
+      213: 4709467391096450210
+    second: CL_Crops_Mining_257
+  - first:
+      213: -601880910850122691
+    second: CL_Crops_Mining_258
+  - first:
+      213: -1377444135385901245
+    second: CL_Crops_Mining_259
+  - first:
+      213: -5909421930688716367
+    second: CL_Crops_Mining_260
+  - first:
+      213: -1687110953465654709
+    second: CL_Crops_Mining_261
+  - first:
+      213: 1799096514892269510
+    second: CL_Crops_Mining_262
+  - first:
+      213: 8899545440036634653
+    second: CL_Crops_Mining_263
+  - first:
+      213: -3897982534507482883
+    second: CL_Crops_Mining_264
+  - first:
+      213: 563584489289030380
+    second: CL_Crops_Mining_265
+  - first:
+      213: 6771721754043724798
+    second: CL_Crops_Mining_266
+  - first:
+      213: -5121846660019126235
+    second: CL_Crops_Mining_267
+  - first:
+      213: -2061974159547794773
+    second: CL_Crops_Mining_268
+  - first:
+      213: 2527274755825092277
+    second: CL_Crops_Mining_269
+  - first:
+      213: -1559280379129493527
+    second: CL_Crops_Mining_270
+  - first:
+      213: 5454729682283419551
+    second: CL_Crops_Mining_271
+  - first:
+      213: -7224813070277082815
+    second: CL_Crops_Mining_272
+  - first:
+      213: 1455621001347679882
+    second: CL_Crops_Mining_273
+  - first:
+      213: 5166906888149732878
+    second: CL_Crops_Mining_274
+  - first:
+      213: 767327098738829262
+    second: CL_Crops_Mining_275
+  - first:
+      213: 7000221179813823119
+    second: CL_Crops_Mining_276
+  - first:
+      213: 1480885492355348881
+    second: CL_Crops_Mining_277
+  - first:
+      213: 8782469658539910297
+    second: CL_Crops_Mining_278
+  - first:
+      213: 5460604433447207708
+    second: CL_Crops_Mining_279
+  - first:
+      213: -2924631007326733733
+    second: CL_Crops_Mining_280
+  - first:
+      213: 2229018923646416293
+    second: CL_Crops_Mining_281
+  - first:
+      213: -5990934982055149062
+    second: CL_Crops_Mining_282
+  - first:
+      213: 8164607714757790798
+    second: CL_Crops_Mining_283
+  - first:
+      213: 6054878084370955042
+    second: CL_Crops_Mining_284
+  - first:
+      213: -6696874746967162011
+    second: CL_Crops_Mining_285
+  - first:
+      213: 2687250546549446529
+    second: CL_Crops_Mining_286
+  - first:
+      213: 6863493110389696534
+    second: CL_Crops_Mining_287
+  - first:
+      213: 1570311125307600529
+    second: CL_Crops_Mining_288
+  - first:
+      213: -5593257395143543451
+    second: CL_Crops_Mining_289
+  - first:
+      213: -2410793471134216924
+    second: CL_Crops_Mining_290
+  - first:
+      213: -2006125320364168665
+    second: CL_Crops_Mining_291
+  - first:
+      213: 6601832236507728873
+    second: CL_Crops_Mining_292
+  - first:
+      213: -4566471581769381714
+    second: CL_Crops_Mining_293
+  - first:
+      213: -2586154693348341235
+    second: CL_Crops_Mining_294
+  - first:
+      213: -6049004885787124339
+    second: CL_Crops_Mining_295
+  - first:
+      213: -8900408803805780697
+    second: CL_Crops_Mining_296
+  - first:
+      213: 4254821756061591869
+    second: CL_Crops_Mining_297
+  - first:
+      213: -1275083526543818181
+    second: CL_Crops_Mining_298
+  - first:
+      213: 4670446308142825516
+    second: CL_Crops_Mining_299
+  - first:
+      213: -2839635736360204513
+    second: CL_Crops_Mining_300
+  - first:
+      213: -1963167540777017609
+    second: CL_Crops_Mining_301
+  - first:
+      213: 7644043052272898840
+    second: CL_Crops_Mining_302
+  - first:
+      213: 2074422873892976334
+    second: CL_Crops_Mining_303
+  - first:
+      213: -9047362152706377323
+    second: CL_Crops_Mining_304
+  - first:
+      213: 279133052048965975
+    second: CL_Crops_Mining_305
+  - first:
+      213: -8804063337083304733
+    second: CL_Crops_Mining_306
+  - first:
+      213: 5277835423467673109
+    second: CL_Crops_Mining_307
+  - first:
+      213: 7838861588344207700
+    second: CL_Crops_Mining_308
+  - first:
+      213: -7387877426830904853
+    second: CL_Crops_Mining_309
+  - first:
+      213: -104024114446692951
+    second: CL_Crops_Mining_310
+  - first:
+      213: -3374055481724874355
+    second: CL_Crops_Mining_311
+  - first:
+      213: -5286114104911224460
+    second: CL_Crops_Mining_312
+  - first:
+      213: 2667194898581995407
+    second: CL_Crops_Mining_313
+  - first:
+      213: 7666571108086105428
+    second: CL_Crops_Mining_314
+  - first:
+      213: 3882046195037440837
+    second: CL_Crops_Mining_315
+  - first:
+      213: -8497350441100202568
+    second: CL_Crops_Mining_316
+  - first:
+      213: -4362581191054236552
+    second: CL_Crops_Mining_317
+  - first:
+      213: 8320488506888735359
+    second: CL_Crops_Mining_318
+  - first:
+      213: -30851537160859112
+    second: CL_Crops_Mining_319
+  - first:
+      213: -8041481734350780768
+    second: CL_Crops_Mining_320
+  - first:
+      213: -7747562580917820140
+    second: CL_Crops_Mining_321
+  - first:
+      213: -2443972237029614974
+    second: CL_Crops_Mining_322
+  - first:
+      213: 1293630813464954594
+    second: CL_Crops_Mining_323
+  - first:
+      213: -1055834622716526254
+    second: CL_Crops_Mining_324
+  - first:
+      213: -1857011369416646877
+    second: CL_Crops_Mining_325
+  - first:
+      213: 2633669675102096989
+    second: CL_Crops_Mining_326
+  - first:
+      213: 3682329733028542582
+    second: CL_Crops_Mining_327
+  - first:
+      213: -7682421860337117375
+    second: CL_Crops_Mining_328
+  - first:
+      213: -882763699235611233
+    second: CL_Crops_Mining_329
+  - first:
+      213: -5860358483436274831
+    second: CL_Crops_Mining_330
+  - first:
+      213: -3501528027085458908
+    second: CL_Crops_Mining_331
+  - first:
+      213: -6109774386050278269
+    second: CL_Crops_Mining_332
+  - first:
+      213: 1528868109070849299
+    second: CL_Crops_Mining_333
+  - first:
+      213: 3595516410037664015
+    second: CL_Crops_Mining_334
+  - first:
+      213: 5689502509768146842
+    second: CL_Crops_Mining_335
+  - first:
+      213: -4946200713837256179
+    second: CL_Crops_Mining_336
+  - first:
+      213: 62408340068144813
+    second: CL_Crops_Mining_337
+  - first:
+      213: -2433691266316259583
+    second: CL_Crops_Mining_338
+  - first:
+      213: -2741022127030756093
+    second: CL_Crops_Mining_339
+  - first:
+      213: 5758953916847818044
+    second: CL_Crops_Mining_340
+  - first:
+      213: 535308395847025928
+    second: CL_Crops_Mining_341
+  - first:
+      213: 8073486974305160046
+    second: CL_Crops_Mining_342
+  - first:
+      213: 439152015473002568
+    second: CL_Crops_Mining_343
+  - first:
+      213: -8984017242776099777
+    second: CL_Crops_Mining_344
+  - first:
+      213: 3071417358425945744
+    second: CL_Crops_Mining_345
+  - first:
+      213: -5314137525221591428
+    second: CL_Crops_Mining_346
+  - first:
+      213: 5742173706770147759
+    second: CL_Crops_Mining_347
+  - first:
+      213: -6942215271510212534
+    second: CL_Crops_Mining_348
+  - first:
+      213: -2969975925958060623
+    second: CL_Crops_Mining_349
+  - first:
+      213: 2031998080919879092
+    second: CL_Crops_Mining_350
+  - first:
+      213: 5825069580705326305
+    second: CL_Crops_Mining_351
+  - first:
+      213: -7667751336089097128
+    second: CL_Crops_Mining_352
+  - first:
+      213: 4050327701345965911
+    second: CL_Crops_Mining_353
+  - first:
+      213: 7900804680729064497
+    second: CL_Crops_Mining_354
+  - first:
+      213: -8073316598716206179
+    second: CL_Crops_Mining_355
+  - first:
+      213: 5633153565634992467
+    second: CL_Crops_Mining_356
+  - first:
+      213: -7505170340409733096
+    second: CL_Crops_Mining_357
+  - first:
+      213: -5116975035218462475
+    second: CL_Crops_Mining_358
+  - first:
+      213: -5515134424041039055
+    second: CL_Crops_Mining_359
+  - first:
+      213: 4390505272057430455
+    second: CL_Crops_Mining_360
+  - first:
+      213: 1106488863094957974
+    second: CL_Crops_Mining_361
+  - first:
+      213: 432182594402757138
+    second: CL_Crops_Mining_362
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 21
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Packet_Corn
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2faa5db75596d67e0800000000000000
+      internalID: -1770643262615999758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corn_seed
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d1e5cd86b25f710800000000000000
+      internalID: 1726333761540201801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_Grape
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae192ce47357212d0800000000000000
+      internalID: -3309453895758867990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grape_seed
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 1060
+        width: 32
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81db88aead1950ce0800000000000000
+      internalID: -1439584136451277544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bean_destroyed
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1025
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d17e9b8004042f0800000000000000
+      internalID: -990721511798661886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corn_seedling
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1056
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5003ccf8b4b4580800000000000000
+      internalID: -8841890362433731108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Corn
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1056
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 290a298033801c990800000000000000
+      internalID: -7367598500121239406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Grape
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1055
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04e6cc0f78e1b8cd0800000000000000
+      internalID: -2554914794393276864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_Potato
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3e391b92998a070800000000000000
+      internalID: 8117906732687287236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_seed
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77b25373048b48b0800000000000000
+      internalID: -5166890997122943110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_harvest
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 992
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81740ac3f290dc990800000000000000
+      internalID: -7364219717195643112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_destroyed
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ee4795d93e0b1a0800000000000000
+      internalID: -6795681572751872497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CL_Crops_Mining_39
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 995
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0604b4c6b83373b80800000000000000
+      internalID: -8415200704808140704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_Tomato
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813da37b66aa3cfc0800000000000000
+      internalID: -3475747129262419176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tomato_seed
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b787c51af9accfb0800000000000000
+      internalID: -4626135825644025936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tomato_sapling
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 992
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2bc2e7149021dc30800000000000000
+      internalID: 4382319732836191019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tomato_sapling2
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 992
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f78e69753d97070800000000000000
+      internalID: 8104741377577353065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tomato_harvest
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 992
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47792c9f709d8930800000000000000
+      internalID: 4147129709633304395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tomato_harveted
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 992
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfa8bd4c615aa67c0800000000000000
+      internalID: -4077264995419976964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tomato_destroyed
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 279cf4b2bd2c0e470800000000000000
+      internalID: 8421945549763103090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_Bean
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1024
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e900fe6f13c00df0800000000000000
+      internalID: -215958242341156383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bean_seed
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 997
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44da24cda5bbd79f0800000000000000
+      internalID: -469012787259855548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bean_seedling1
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 997
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd9d544e0131d2b0800000000000000
+      internalID: -5561610127479562760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bean_seedling2
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 997
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04eb5dd30e9be76c0800000000000000
+      internalID: -4143670234373046720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bean_sapling
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 997
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87677263a1e0d6ed0800000000000000
+      internalID: -2419261919087593864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bean_sapling2
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 997
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13af2adb52d4540d0800000000000000
+      internalID: -3439257915936802255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bean_harvest
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 997
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b65fe10c33be37b0800000000000000
+      internalID: -5242555845900806480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_seedling
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 992
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d4b061391c3bd740800000000000000
+      internalID: 5177798275492787413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_seedling2
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 992
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e4551b0bcf37e8c0800000000000000
+      internalID: -3970134405206944544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potato_sapling
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 992
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0940919fdc79ce210800000000000000
+      internalID: 1363631698089673872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Potato
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 992
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24475bea2792f1c90800000000000000
+      internalID: -7196988106980625342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tomato_seedling
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 992
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4023f4b665c1c81a0800000000000000
+      internalID: -6806033779370544636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tomato_seedling2
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 992
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69615712aa61668d0800000000000000
+      internalID: -2853568393931057514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Tomato
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 992
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 810cf63c36c137870800000000000000
+      internalID: 8679312121679298584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_Onio
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 927ff739fab7907e0800000000000000
+      internalID: -1798770582133672151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_seed
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 960
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32b6c6b26fcb04a10800000000000000
+      internalID: 1891719608972110627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CL_Crops_Mining_75
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 931
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1317c1f1d6dc8f60800000000000000
+      internalID: 8038035632142357274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_RPepper
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eee2d25eec66c430800000000000000
+      internalID: 3802846706208534244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPepper_seed
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 960
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834b0f5714040bb40800000000000000
+      internalID: 5453929798641431608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPepper_seedlin
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 928
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d12b8b9b5edadc00800000000000000
+      internalID: 926297158411035097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPepper_destroyed
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 960
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abd01a143a6428b50800000000000000
+      internalID: 6593910471418514874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPepper_seedling
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 928
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef3d0d460ed3fbc0800000000000000
+      internalID: -3750409946025607185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_RPepper
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49426415fa201f1a0800000000000000
+      internalID: -6777633012209802092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CL_Crops_Mining_93
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 927
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b610590b22997860800000000000000
+      internalID: 7528208965663987384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_Garlic
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e69a3a561c37c0e0800000000000000
+      internalID: -2249763422147537176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garlic_seed
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 896
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f728c4791baf5e5d0800000000000000
+      internalID: -3033743133309631873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garlic_destroyed
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73680228d33346ac0800000000000000
+      internalID: -3862906241107851721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CL_Crops_Mining_101
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 867
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 896c4ec2202bd1c40800000000000000
+      internalID: 5484735643620001432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_OPepper
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dcc207fc2a4052c0800000000000000
+      internalID: -4444971275231507248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pumpkin_seed
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862ebf33ed6b1d850800000000000000
+      internalID: 6400097610941325928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pumpkin_sapling1
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 864
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac3498562c6a28950800000000000000
+      internalID: 6449900970205332426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OPepper_sapling2
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 864
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d89e77dd4ac1fb550800000000000000
+      internalID: 6178688708191447437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OPepper_harvest
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 864
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75d5466d05060c30800000000000000
+      internalID: 4325150047244506495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OPepper_destroyed
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 896
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe24d083a4405370800000000000000
+      internalID: 8309216781530312435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garlic_seedling
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 864
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d180251bf76caa0800000000000000
+      internalID: -6141080642310890108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Garlic
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 864
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae307e2eba2b8e60800000000000000
+      internalID: 7965507362246114982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OPepper_seedling
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 864
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c74efec096db36a0800000000000000
+      internalID: -6468340522351179836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OPepper_seedling2
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 864
+        width: 32
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 503ed78556454f470800000000000000
+      internalID: 8427453596970115845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_OPepper
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 864
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8553e99880165aa0800000000000000
+      internalID: -6172728060381276790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_raddish
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 646c8660c26ea46b0800000000000000
+      internalID: -5311179733769599418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raddish_seed
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 832
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62ca37b62f117f680800000000000000
+      internalID: -8721482420497175514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raddish_destroyed
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 832
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6ace47e4cefa1410800000000000000
+      internalID: 1448750351800781423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CL_Crops_Mining_131
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 800
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1fa9c46f91938510800000000000000
+      internalID: 1550242810522349341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_GPepper
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bdc87abb0d5c2e70800000000000000
+      internalID: 9091744052708691378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GPepper_seed
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 832
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe75cc3d18d472060800000000000000
+      internalID: 6928591771732301807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_Blueberry
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c5ef8003fc11b80800000000000000
+      internalID: -8425725622617219983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blueberry_seed
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 832
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d878e086c4d3f50800000000000000
+      internalID: 6862725416986578267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blueberry_saplin
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 800
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3630c9ea01f5bdd00800000000000000
+      internalID: 998496267646272355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blueberry_sapl
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 800
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a606e0acaac7580b0800000000000000
+      internalID: -5727034278155493270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Blueberry
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 800
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b5569dd99aeb860800000000000000
+      internalID: 7547656520941787949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raddish_seedling
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 800
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd42afedd9fc63a80800000000000000
+      internalID: -8487368170775370531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raddish_sapling
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 800
+        width: 32
+        height: 36
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 706a8bd6409b8c2a0800000000000000
+      internalID: -6716915415551269369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raddish_harvest
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 800
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ee205251c8771b0800000000000000
+      internalID: -5658900384324587919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Raddish
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 800
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e41b28859dde1020800000000000000
+      internalID: 2314530892819404001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GPepper_seedling
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 800
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f587942f441233b10800000000000000
+      internalID: 1959946842842691679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_GPepper
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 800
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c05aeaeb3db874ac0800000000000000
+      internalID: -3870971613148175092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blueberry_seedling
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 800
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 697f1bd3d8e6c75f0800000000000000
+      internalID: -757609084400568426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blueberry_sapling
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 800
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a7d81203edfa3ea0800000000000000
+      internalID: -5892118011026286681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blueberry_sapling2
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 800
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57cd58fdd342f2120800000000000000
+      internalID: 2391169775318719605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_Carrot
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1675b29e1413f47a0800000000000000
+      internalID: -6390835187060877471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_seed
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 768
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8faf37a31ddc55750800000000000000
+      internalID: 6293162352832674552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_harvest
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 736
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3456fa72ba53d020800000000000000
+      internalID: 2365333951913284671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Carrot
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 736
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 277599cac8badcc00800000000000000
+      internalID: 922582119360321394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_Zucchini
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8552801ce80f9a250800000000000000
+      internalID: 5956556478088750424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zucchini_destroyed
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 768
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a44f1df4dc432800800000000000000
+      internalID: 586396854151759011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CL_Crops_Mining_170
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 739
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c98ee5af9b47920800000000000000
+      internalID: 2987216937838746734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CL_Crops_Mining_171
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 767
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fff73ce4b484f800800000000000000
+      internalID: 645286559212896247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_seedling
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 736
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224f4d576f9448520800000000000000
+      internalID: 2703366999216813090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_seedling2
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 736
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d374450d44ff14880800000000000000
+      internalID: -8628334740047116483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_sapling
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 736
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0065579fac97cb8d0800000000000000
+      internalID: -2829252553219942912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Zucchini
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 736
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b2f331053e4ef50800000000000000
+      internalID: 6909897661352979240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pear
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 546
+        width: 84
+        height: 154
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b351a2993a21f8d30800000000000000
+      internalID: 4435784651841869115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CL_Crops_Mining_215
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 609
+        width: 30
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0850a0726e350a80800000000000000
+      internalID: -8501320129074669555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CL_Crops_Mining_216
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 647
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d1a1d7d41b488030800000000000000
+      internalID: 3497127663545459159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Packet_Strawberry
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 640
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2be085d1309db7e10800000000000000
+      internalID: 2196587850673688242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_seed
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 640
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e95e126a6b2acaf60800000000000000
+      internalID: 8046985539559220638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_seedling
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 608
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9daef986a33074ec0800000000000000
+      internalID: -3582891429151642919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_seedling2
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 608
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cff4fb0f6c1157d0800000000000000
+      internalID: -2931530619173929020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_sapling
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 608
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4d3f8f8aab2d8b50800000000000000
+      internalID: 6596977040720608589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_harvest
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 608
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb913eaf12206cb90800000000000000
+      internalID: -7222082607475648065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Strawberry
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 608
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28290d1b51a8d4b0800000000000000
+      internalID: -5415401139211786194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Full1
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 352
+        width: 84
+        height: 160
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5200a83799b8be8b0800000000000000
+      internalID: -5121846660019126235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine1.0
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a864de8a697633410800000000000000
+      internalID: 1455621001347679882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine1.4
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 352
+        width: 72
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0e0fa7707a84b740800000000000000
+      internalID: 5166906888149732878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine1.2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 352
+        width: 32
+        height: 76
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af1442a006cebdca0800000000000000
+      internalID: -5990934982055149062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine1.3
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 352
+        width: 44
+        height: 96
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c4d8865738e4170800000000000000
+      internalID: 8164607714757790798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stump_1
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 356
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eb04cbe07b6e9b50800000000000000
+      internalID: 6601832236507728873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine1.1
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 352
+        width: 20
+        height: 52
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea848b36a42a0a0c0800000000000000
+      internalID: -4566471581769381714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Full2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 192
+        width: 72
+        height: 154
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 471a5968a33f3a6b0800000000000000
+      internalID: -5286114104911224460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine2.4
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 194
+        width: 52
+        height: 136
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 455ceb6bdc1256a60800000000000000
+      internalID: 7666571108086105428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine2.3
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 194
+        width: 44
+        height: 112
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a6ca3cd7fae66090800000000000000
+      internalID: -8041481734350780768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine2.1
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 194
+        width: 24
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f1f069ff19a36e0800000000000000
+      internalID: -1857011369416646877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine2.2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 194
+        width: 32
+        height: 74
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5ecd20ad9cac8420800000000000000
+      internalID: 2633669675102096989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Birch
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 96
+        height: 192
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9d9376b71bcfb3f0800000000000000
+      internalID: -882763699235611233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Log
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 127
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17b75524203dbaea0800000000000000
+      internalID: -5860358483436274831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Item_Rock
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3155795e171a73510800000000000000
+      internalID: 1528868109070849299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log1
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 96
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6bc332c0a9ca0070800000000000000
+      internalID: 8073486974305160046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock1
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 96
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8484aac6e6e281600800000000000000
+      internalID: 439152015473002568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 96
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f34a854caeb525380800000000000000
+      internalID: -8984017242776099777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock3
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 96
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09672fd70dddf9a20800000000000000
+      internalID: 3071417358425945744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boulder
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 64
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76f79983146046b0800000000000000
+      internalID: -5314137525221591428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stump_3
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 5
+        width: 32
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75796a6b597a53830800000000000000
+      internalID: 4050327701345965911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carrot_destroyed
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 768
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae88240bf8b5754ba5096c313ea2872
+      internalID: 1463870494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_sapling2
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 608
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e0dd2f5798ce144965f98ff18361bc
+      internalID: -2109744495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blueberry_harvest
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 800
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615e462cd715f68458c234db3ff2291f
+      internalID: 1395149289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blueberry_harvested
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 800
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25de832f63090c4eaa9d8e5783c0753
+      internalID: 246376732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Raddish_seedling2
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 800
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf64a6948c2282449d469cd77223956
+      internalID: 164968718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garlic_seedling2
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 864
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0736fcff8232e0e4fa58b6577a005744
+      internalID: -256337396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garlic_sapling
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 864
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a012e62cc93b0b4fa7ed6700a929f48
+      internalID: -346788734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Garlic_harvest
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 864
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189810bf8b4febb46a688aef69c8b190
+      internalID: 600571453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_seedling
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 928
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e81711c752c9d0478e9ee51fe85bbf3
+      internalID: -1047960892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_seedling2
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 928
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e838ce95c36d9f64083ad1e8b752f167
+      internalID: -891334815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_sapling
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 928
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61eddc921634064ebaa9ea11f4f74ab
+      internalID: -292458730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_harvest
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 928
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d9316b582d041478a0d187bb0a6a57
+      internalID: -755609206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Onion
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6a3e346a55e0f4e99470995e8ce6cb
+      internalID: 97389323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Onion_destroyed
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 960
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f67d8c867cdbca448f8cf3cf1c780b4
+      internalID: 1530200358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_destroyed
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 640
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29df6c1eac5675c48bd5429c908b5cbb
+      internalID: -778351951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPepper_seedling2
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 928
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe057b028630d848b0e30197019e824
+      internalID: -1210511890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPepper_sapling2
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 928
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2340321ddb32a9418e0dd96499dbef2
+      internalID: 1663745391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPepper_harvest
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 928
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e696898ff4f8c84fbdfc196e6a1f49e
+      internalID: 824772362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GPepper_destroyed
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 832
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06c6f86d64b3bfb4eab05cfaf0ed05d4
+      internalID: -892209457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GPepper_seedling2
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 800
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490f5b094d756df48bbff7160c8c60bf
+      internalID: 1990001992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GPepper_sapling
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 800
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e81168311df9cf441892299f617ce59c
+      internalID: 340311652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GPepper_sapling2
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 800
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551b70d32a042554487696ae24d2fe7a
+      internalID: 626619765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GPepper_harvest
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 800
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d229b47e9a38664a9b4d51c54489d6c
+      internalID: -1913972127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_bean
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 993
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987bc627466494c4b8944d6ab856729f
+      internalID: -267039659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blueberry_destroye
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6268bfcbaa7c3341abc1fbf1aa4992b
+      internalID: -1405865095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_harvested
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 608
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c4a4ce017329b4986bfe993e372f8f
+      internalID: 2127049310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine1.5
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 352
+        width: 92
+        height: 154
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b0faf052f8299a47978103f4c572784
+      internalID: 548253568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine2.5
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 194
+        width: 92
+        height: 158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7866afd3f48a9e449996cf16cf364c3
+      internalID: 237843054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock4
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bba3314f26c6374db7e36fb49010f8a
+      internalID: -1185807714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock5
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac9ef4ff93df5794284e520015d60ed3
+      internalID: -2004060472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock6
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d26acfcdc903a4d882ac04e41f45ea
+      internalID: 590190578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corn_seedling2
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1056
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3b804206d4d00439bb1b456c24b7c5
+      internalID: -1327617037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corn_sapling
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1056
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656b8364906466a4a96b24dd59187ce0
+      internalID: -1816629848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corn_sapling2
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1056
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01462c1e56df05648a84beecf0543729
+      internalID: 307870410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corn_harvest
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1056
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f14e16874225df439e45749fdfccbf0
+      internalID: -851100232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corn_destroyed
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2206eea11136a48bc37158d9f80009
+      internalID: -2048584681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zucchini_seedling
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 736
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975ed63a777471b419c6f0e46d10a994
+      internalID: -705461591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zucchini_seed
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 768
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f957411e121d38849b2883a789563237
+      internalID: -1699168241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zucchini_seedling2
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 736
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ae12e97d5046f44aa622ceadf920ad
+      internalID: -1512694981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zucchini_sapling
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 736
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf42ec1c218ac5946b90a5293d7f57bc
+      internalID: 868820000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zucchini_sapling2
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 736
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fffd0ccf3813d994aa2e931b349547f4
+      internalID: 1298400913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zucchini_harvest
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 736
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: febbb3986859f8047a7a576b70cd788e
+      internalID: 360663305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zucchini_harvested
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 736
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48bac11f377213044baf6f42490c5e9a
+      internalID: -719398281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bean_harvested
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 997
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4fe6983e8814b4d87ac56488111503
+      internalID: 364132745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grape_seedling
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 1060
+        width: 32
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3d2ea1b46820944a24b3990e7353d2
+      internalID: 1757435754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grape_seedling2
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 1060
+        width: 32
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe9b1c1c14ff3644a6b00faa972c9e0
+      internalID: 835400407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grape_sapling
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 1060
+        width: 32
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa977725cde1ab40b1cefe59db44e28
+      internalID: -301025276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grape_sapling2
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 1060
+        width: 32
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c3693efbe71f0241805397fdaeeafb7
+      internalID: -852246789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grape_harvest
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 1060
+        width: 32
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638d3f90bdf86e84e8a0541a9f328514
+      internalID: 217594138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grape_harvested
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 1060
+        width: 32
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ce3de998d2fec439af4ba96e6a3458
+      internalID: 1758826282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grape_destroyed
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 1088
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c15a77e486cbf498fa7c70c5f39775
+      internalID: -435289141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log2
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1a1a7f7fc922334ea1da5acb7209135
+      internalID: -252339999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6f94567f3052a4aab8c8e8e9bfe681
+      internalID: -1184126829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91103e9fab159cb4dbdc20036c054e5c
+      internalID: -1129636048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log2.1
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f360443975ed15045ad7f54e1863f3bf
+      internalID: -305634180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log1.1
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 96
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d22bc35edb90e8d4cad0a219e720c5be
+      internalID: 1930906070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log3.1
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a910256691616d48933030325915512
+      internalID: 1178518675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log4.1
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21279bcbaa0214941b6fc88fcd047716
+      internalID: 1538596705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log3.2
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba23e59cdaa47d439591f329dd662f7
+      internalID: 2093388595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log4.3
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2e13af6999bce42ba03ba9aee2b649
+      internalID: -1789998563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log2.3
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883339ae5c1f08745866d907eb02bacb
+      internalID: -1028950942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Log1.3
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 96
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd466dc8fb5d30c4084838f3be6b3147
+      internalID: -1556311712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boulder_Ore
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 0
+        width: 64
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e070a1e8902dcff4f881dc05153c81ec
+      internalID: 1612977885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stump_2
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 196
+        width: 32
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac66beadf65cecf47a427fa94ba8f19f
+      internalID: -1888074974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine2_stump
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 194
+        width: 32
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858e44cd36032344998701f8ea893717
+      internalID: -673369824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine1_stump
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 352
+        width: 32
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b852bfdfb7f544fa3b3d925d2b79e4
+      internalID: -166696881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GPepper_harvested
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 800
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ac5f8c8b73b4742ac1eac49be107f1
+      internalID: 2054125897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OPepper_harvested
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 864
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03eb6c693c61c91439e9cd787fe9f144
+      internalID: 1335009731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RPepper_harvested
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 928
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d0ec85745b7fde4bb05492f3fba4eb0
+      internalID: -1688227288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tree_Pine2.0
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 288
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d1e073a1e4ec0418b72e4ccc627563
+      internalID: -1988638327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8eb0470ea9fa76548a7a92e134f794bb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      4: 5166906888149732878
+      Bean_destroyed: -990721511798661886
+      Bean_harvest: -5242555845900806480
+      Bean_harvested: 364132745
+      Bean_sapling: -2419261919087593864
+      Bean_sapling2: -3439257915936802255
+      Bean_seed: -469012787259855548
+      Bean_seedling1: -5561610127479562760
+      Bean_seedling2: -4143670234373046720
+      Blueberry_destroye: -1405865095
+      Blueberry_harvest: 1395149289
+      Blueberry_harvested: 246376732
+      Blueberry_sapl: -5727034278155493270
+      Blueberry_sapli: 1569945488147587712
+      Blueberry_saplin: 998496267646272355
+      Blueberry_sapling: -5892118011026286681
+      Blueberry_sapling2: 2391169775318719605
+      Blueberry_seed: 6862725416986578267
+      Blueberry_seedling: -757609084400568426
+      Boulder: -5314137525221591428
+      Boulder_Ore: 1612977885
+      CL_Crops_Mining_1: 5310530057854753309
+      CL_Crops_Mining_10: 1228204421143514434
+      CL_Crops_Mining_101: 5484735643620001432
+      CL_Crops_Mining_104: -7904473076147852924
+      CL_Crops_Mining_110: -4561663348077138851
+      CL_Crops_Mining_111: 2024549408202823877
+      CL_Crops_Mining_112: 5966085481980849247
+      CL_Crops_Mining_113: 6334038392955928812
+      CL_Crops_Mining_115: 8373272952709666796
+      CL_Crops_Mining_116: -3441875748663387523
+      CL_Crops_Mining_121: -3559217653539498635
+      CL_Crops_Mining_122: -1684912639561838758
+      CL_Crops_Mining_123: 5635450421333992238
+      CL_Crops_Mining_124: -3452126215549309226
+      CL_Crops_Mining_125: -6819523620387478297
+      CL_Crops_Mining_126: -4977104604118758005
+      CL_Crops_Mining_127: 8788758565588477987
+      CL_Crops_Mining_13: -6923193480849849420
+      CL_Crops_Mining_131: 1550242810522349341
+      CL_Crops_Mining_134: -6247276037711077161
+      CL_Crops_Mining_135: 322545990556410298
+      CL_Crops_Mining_136: 7196204118683552569
+      CL_Crops_Mining_137: -4765420755938042611
+      CL_Crops_Mining_138: 9065264473920484245
+      CL_Crops_Mining_139: 7597997462438837095
+      CL_Crops_Mining_14: 8635378994143969120
+      CL_Crops_Mining_141: -6286295482687621359
+      CL_Crops_Mining_146: 1392748102482190963
+      CL_Crops_Mining_147: 378647155908926686
+      CL_Crops_Mining_148: -862598868812084748
+      CL_Crops_Mining_149: 7027054720529048415
+      CL_Crops_Mining_15: 7188030964878444364
+      CL_Crops_Mining_150: 454797761097270105
+      CL_Crops_Mining_152: 5368787370356310773
+      CL_Crops_Mining_157: 1242723519147529558
+      CL_Crops_Mining_16: -175381965077286491
+      CL_Crops_Mining_162: 5855159471812381268
+      CL_Crops_Mining_168: -2528322206756040507
+      CL_Crops_Mining_170: 2987216937838746734
+      CL_Crops_Mining_171: 645286559212896247
+      CL_Crops_Mining_172: -6201834201181262206
+      CL_Crops_Mining_173: 1523621330958578028
+      CL_Crops_Mining_174: -1450223164561897308
+      CL_Crops_Mining_175: -2696994305677156204
+      CL_Crops_Mining_176: -7853990276037668996
+      CL_Crops_Mining_177: 2295699917803268035
+      CL_Crops_Mining_178: 2190929862246037659
+      CL_Crops_Mining_182: 7324677650918126683
+      CL_Crops_Mining_183: -4018761851410495339
+      CL_Crops_Mining_184: -1145102825311974007
+      CL_Crops_Mining_185: -6539820868728430723
+      CL_Crops_Mining_187: -4809304420658024577
+      CL_Crops_Mining_188: -6131174612223543604
+      CL_Crops_Mining_189: 213293800881120158
+      CL_Crops_Mining_19: 1626522942629454886
+      CL_Crops_Mining_190: -8957448169214793501
+      CL_Crops_Mining_191: 6124576109214746155
+      CL_Crops_Mining_192: -6985184025402895209
+      CL_Crops_Mining_193: -6805735759826548755
+      CL_Crops_Mining_194: 7357897992471194223
+      CL_Crops_Mining_195: -4781181724563569343
+      CL_Crops_Mining_196: -8516213754690902637
+      CL_Crops_Mining_197: 2296706105974120041
+      CL_Crops_Mining_198: -1604169939524408575
+      CL_Crops_Mining_199: 4834548014334931520
+      CL_Crops_Mining_2: 6678882550156909808
+      CL_Crops_Mining_20: -7539393175627563276
+      CL_Crops_Mining_200: 7742753776518343775
+      CL_Crops_Mining_201: -3385512821649987041
+      CL_Crops_Mining_202: 397813293608086149
+      CL_Crops_Mining_203: 6831139753921842797
+      CL_Crops_Mining_205: 8915863871280154342
+      CL_Crops_Mining_206: 4073867245294059953
+      CL_Crops_Mining_207: -1590332283287351897
+      CL_Crops_Mining_208: -8002180169244777330
+      CL_Crops_Mining_209: 7523208478377835892
+      CL_Crops_Mining_21: -810820319444354179
+      CL_Crops_Mining_210: 5521697704494594036
+      CL_Crops_Mining_211: -5937456557063367429
+      CL_Crops_Mining_212: -3676017889046491194
+      CL_Crops_Mining_213: -370496922810213871
+      CL_Crops_Mining_214: 2170216308796203962
+      CL_Crops_Mining_215: -8501320129074669555
+      CL_Crops_Mining_216: 3497127663545459159
+      CL_Crops_Mining_217: 6357666663028819263
+      CL_Crops_Mining_218: -5992473607244275056
+      CL_Crops_Mining_219: -1806843878030330421
+      CL_Crops_Mining_22: -4937228829635442148
+      CL_Crops_Mining_220: -3862281119969268306
+      CL_Crops_Mining_221: 7020751223343756479
+      CL_Crops_Mining_222: -5702518030297451495
+      CL_Crops_Mining_225: -8050936812182709587
+      CL_Crops_Mining_226: -962780733524250315
+      CL_Crops_Mining_227: -7821049608219898433
+      CL_Crops_Mining_228: -772248330253839540
+      CL_Crops_Mining_229: -5787619620070669517
+      CL_Crops_Mining_23: -1449128383499467295
+      CL_Crops_Mining_230: 3286784192888241414
+      CL_Crops_Mining_231: -5382679637799660420
+      CL_Crops_Mining_237: -4047666869907740080
+      CL_Crops_Mining_238: -5507590667492458181
+      CL_Crops_Mining_239: -5569862041181514800
+      CL_Crops_Mining_24: -6893517904170921001
+      CL_Crops_Mining_240: 3861873979945414964
+      CL_Crops_Mining_241: -4139015936850525992
+      CL_Crops_Mining_242: -8798832663524441528
+      CL_Crops_Mining_243: 3407694431314945038
+      CL_Crops_Mining_244: -2565503238885247165
+      CL_Crops_Mining_245: -3710977748065763369
+      CL_Crops_Mining_246: -3275908217236465559
+      CL_Crops_Mining_247: 4339089262534242483
+      CL_Crops_Mining_248: -2672298398210383095
+      CL_Crops_Mining_249: 9168213863207009200
+      CL_Crops_Mining_250: 2038266066820636051
+      CL_Crops_Mining_251: -7446573835522786220
+      CL_Crops_Mining_252: -5975105467210459912
+      CL_Crops_Mining_253: -2310056762829591286
+      CL_Crops_Mining_254: 5199727654652536998
+      CL_Crops_Mining_255: -3446264329504938187
+      CL_Crops_Mining_256: -6351569731526715640
+      CL_Crops_Mining_257: 4709467391096450210
+      CL_Crops_Mining_258: -601880910850122691
+      CL_Crops_Mining_259: -1377444135385901245
+      CL_Crops_Mining_26: -6449572290422167936
+      CL_Crops_Mining_260: -5909421930688716367
+      CL_Crops_Mining_261: -1687110953465654709
+      CL_Crops_Mining_262: 1799096514892269510
+      CL_Crops_Mining_263: 8899545440036634653
+      CL_Crops_Mining_264: -3897982534507482883
+      CL_Crops_Mining_265: 563584489289030380
+      CL_Crops_Mining_266: 6771721754043724798
+      CL_Crops_Mining_268: -2061974159547794773
+      CL_Crops_Mining_269: 2527274755825092277
+      CL_Crops_Mining_27: 9209680828038071874
+      CL_Crops_Mining_270: -1559280379129493527
+      CL_Crops_Mining_271: 5454729682283419551
+      CL_Crops_Mining_275: 767327098738829262
+      CL_Crops_Mining_276: 7000221179813823119
+      CL_Crops_Mining_277: 1480885492355348881
+      CL_Crops_Mining_278: 8782469658539910297
+      CL_Crops_Mining_279: 5460604433447207708
+      CL_Crops_Mining_28: 3198458734171502668
+      CL_Crops_Mining_280: -2924631007326733733
+      CL_Crops_Mining_281: 2229018923646416293
+      CL_Crops_Mining_284: 6054878084370955042
+      CL_Crops_Mining_285: -6696874746967162011
+      CL_Crops_Mining_286: 2687250546549446529
+      CL_Crops_Mining_287: 6863493110389696534
+      CL_Crops_Mining_288: 1570311125307600529
+      CL_Crops_Mining_289: -5593257395143543451
+      CL_Crops_Mining_290: -2410793471134216924
+      CL_Crops_Mining_291: -2006125320364168665
+      CL_Crops_Mining_294: -2586154693348341235
+      CL_Crops_Mining_295: -6049004885787124339
+      CL_Crops_Mining_296: -8900408803805780697
+      CL_Crops_Mining_297: 4254821756061591869
+      CL_Crops_Mining_298: -1275083526543818181
+      CL_Crops_Mining_299: 4670446308142825516
+      CL_Crops_Mining_3: 6846734926791027510
+      CL_Crops_Mining_30: 8649183225580047826
+      CL_Crops_Mining_300: -2839635736360204513
+      CL_Crops_Mining_301: -1963167540777017609
+      CL_Crops_Mining_302: 7644043052272898840
+      CL_Crops_Mining_303: 2074422873892976334
+      CL_Crops_Mining_304: -9047362152706377323
+      CL_Crops_Mining_305: 279133052048965975
+      CL_Crops_Mining_306: -8804063337083304733
+      CL_Crops_Mining_307: 5277835423467673109
+      CL_Crops_Mining_308: 7838861588344207700
+      CL_Crops_Mining_309: -7387877426830904853
+      CL_Crops_Mining_310: -104024114446692951
+      CL_Crops_Mining_311: -3374055481724874355
+      CL_Crops_Mining_313: 2667194898581995407
+      CL_Crops_Mining_315: 3882046195037440837
+      CL_Crops_Mining_316: -8497350441100202568
+      CL_Crops_Mining_317: -4362581191054236552
+      CL_Crops_Mining_318: 8320488506888735359
+      CL_Crops_Mining_319: -30851537160859112
+      CL_Crops_Mining_321: -7747562580917820140
+      CL_Crops_Mining_322: -2443972237029614974
+      CL_Crops_Mining_323: 1293630813464954594
+      CL_Crops_Mining_324: -1055834622716526254
+      CL_Crops_Mining_327: 3682329733028542582
+      CL_Crops_Mining_328: -7682421860337117375
+      CL_Crops_Mining_33: -4511194645843912265
+      CL_Crops_Mining_331: -3501528027085458908
+      CL_Crops_Mining_332: -6109774386050278269
+      CL_Crops_Mining_334: 3595516410037664015
+      CL_Crops_Mining_335: 5689502509768146842
+      CL_Crops_Mining_336: -4946200713837256179
+      CL_Crops_Mining_337: 62408340068144813
+      CL_Crops_Mining_339: -2741022127030756093
+      CL_Crops_Mining_34: -7107250490222982259
+      CL_Crops_Mining_340: 5758953916847818044
+      CL_Crops_Mining_341: 535308395847025928
+      CL_Crops_Mining_347: 5742173706770147759
+      CL_Crops_Mining_348: -6942215271510212534
+      CL_Crops_Mining_349: -2969975925958060623
+      CL_Crops_Mining_350: 2031998080919879092
+      CL_Crops_Mining_351: 5825069580705326305
+      CL_Crops_Mining_352: -7667751336089097128
+      CL_Crops_Mining_354: 7900804680729064497
+      CL_Crops_Mining_355: -8073316598716206179
+      CL_Crops_Mining_356: 5633153565634992467
+      CL_Crops_Mining_357: -7505170340409733096
+      CL_Crops_Mining_358: -5116975035218462475
+      CL_Crops_Mining_359: -5515134424041039055
+      CL_Crops_Mining_360: 4390505272057430455
+      CL_Crops_Mining_361: 1106488863094957974
+      CL_Crops_Mining_362: 432182594402757138
+      CL_Crops_Mining_39: -8415200704808140704
+      CL_Crops_Mining_4: -3912749450539699125
+      CL_Crops_Mining_47: 2335905759334087169
+      CL_Crops_Mining_5: -6265823121492426959
+      CL_Crops_Mining_55: 6995374495036434318
+      CL_Crops_Mining_56: -1369129298888055804
+      CL_Crops_Mining_6: -6153356132890103828
+      CL_Crops_Mining_64: -681668044466841974
+      CL_Crops_Mining_65: 8891115711381261102
+      CL_Crops_Mining_66: -7031657593161221571
+      CL_Crops_Mining_67: -210306236419657328
+      CL_Crops_Mining_68: -1836092902118127680
+      CL_Crops_Mining_69: 7471159180102663485
+      CL_Crops_Mining_7: -8655250705536626284
+      CL_Crops_Mining_70: 2335403385649038724
+      CL_Crops_Mining_73: -1392132512204606760
+      CL_Crops_Mining_74: -6422016801992539337
+      CL_Crops_Mining_75: 8038035632142357274
+      CL_Crops_Mining_79: -6687025887613734646
+      CL_Crops_Mining_8: 646470649645627498
+      CL_Crops_Mining_80: -6971666747609896557
+      CL_Crops_Mining_81: 7065254045365052369
+      CL_Crops_Mining_83: -8003940606170773875
+      CL_Crops_Mining_84: -1469742994379453474
+      CL_Crops_Mining_85: -3982774654945482378
+      CL_Crops_Mining_86: 7227573407195618401
+      CL_Crops_Mining_87: 3443966495654013144
+      CL_Crops_Mining_88: 2785965190123682583
+      CL_Crops_Mining_89: 7276870088108097565
+      CL_Crops_Mining_9: 2674060437123045847
+      CL_Crops_Mining_91: -7026619378557266955
+      CL_Crops_Mining_93: 7528208965663987384
+      CL_Crops_Mining_94: -174406041497868706
+      CL_Crops_Mining_95: 2896894091507949657
+      CL_Crops_Mining_96: -3772024254680198704
+      CL_Crops_Mining_99: 2919736547599973458
+      Carrot_destroyed: 1463870494
+      Carrot_harvest: 2365333951913284671
+      Carrot_sapling: -2829252553219942912
+      Carrot_seed: 6293162352832674552
+      Carrot_seedling: 2703366999216813090
+      Carrot_seedling2: -8628334740047116483
+      Corn_destroyed: -2048584681
+      Corn_harvest: -851100232
+      Corn_harvested: -1071671801
+      Corn_sapling: -1816629848
+      Corn_sapling2: 307870410
+      Corn_seed: 1726333761540201801
+      Corn_seedling: -8841890362433731108
+      Corn_seedling2: -1327617037
+      Crop_Blueberry: 7547656520941787949
+      Crop_Carrot: 922582119360321394
+      Crop_Corn: -7367598500121239406
+      Crop_GPepper: -3870971613148175092
+      Crop_Garlic: 7965507362246114982
+      Crop_Grape: -2554914794393276864
+      Crop_OPepper: -6172728060381276790
+      Crop_Onion: 97389323
+      Crop_Potato: -7196988106980625342
+      Crop_RPepper: -6777633012209802092
+      Crop_Raddish: 2314530892819404001
+      Crop_Strawberry: -5415401139211786194
+      Crop_Tomato: 8679312121679298584
+      Crop_Zucchini: 6909897661352979240
+      Crop_bean: -267039659
+      GPepper_destroyed: -892209457
+      GPepper_harvest: -1913972127
+      GPepper_harvested: 2054125897
+      GPepper_sapling: 340311652
+      GPepper_sapling2: 626619765
+      GPepper_seed: 6928591771732301807
+      GPepper_seedling: 1959946842842691679
+      GPepper_seedling2: 1990001992
+      Garlic: 1959946842842691679
+      Garlic_destroyed: -3862906241107851721
+      Garlic_harvest: 600571453
+      Garlic_sapling: -346788734
+      Garlic_seed: -3033743133309631873
+      Garlic_seedling: -6141080642310890108
+      Garlic_seedling2: -256337396
+      Grape_destroyed: -435289141
+      Grape_harvest: 217594138
+      Grape_harvested: 1758826282
+      Grape_sapling: -301025276
+      Grape_sapling2: -852246789
+      Grape_seed: -1439584136451277544
+      Grape_seedling: 1757435754
+      Grape_seedling2: 835400407
+      Item_Log: -5860358483436274831
+      Item_Rock: 1528868109070849299
+      Log1: 8073486974305160046
+      Log1.1: 1930906070
+      Log1.3: -1556311712
+      Log2: -252339999
+      Log2.1: -305634180
+      Log2.3: -1028950942
+      Log3: -1184126829
+      Log3.1: 1178518675
+      Log3.2: 2093388595
+      Log4: -1129636048
+      Log4.1: 1538596705
+      Log4.3: -1789998563
+      OPepper_destroyed: 8309216781530312435
+      OPepper_harvest: 4325150047244506495
+      OPepper_harvested: 1335009731
+      OPepper_sapling2: 6178688708191447437
+      OPepper_seedling: -6468340522351179836
+      OPepper_seedling2: 8427453596970115845
+      Onion_destroyed: 1530200358
+      Onion_harvest: -755609206
+      Onion_sapling: -292458730
+      Onion_seed: 1891719608972110627
+      Onion_seedling: -1047960892
+      Onion_seedling2: -891334815
+      Packet_Bean: -215958242341156383
+      Packet_Birch: -2433691266316259583
+      Packet_Blueberry: -8425725622617219983
+      Packet_Carrot: -6390835187060877471
+      Packet_Corn: -1770643262615999758
+      Packet_GPepper: 9091744052708691378
+      Packet_Garlic: -2249763422147537176
+      Packet_Grape: -3309453895758867990
+      Packet_OPepper: -4444971275231507248
+      Packet_Onio: -1798770582133672151
+      Packet_Pine: -7224813070277082815
+      Packet_Potato: 8117906732687287236
+      Packet_RPepper: 3802846706208534244
+      Packet_Strawberry: 2196587850673688242
+      Packet_Tomato: -3475747129262419176
+      Packet_Zucchini: 5956556478088750424
+      Packet_raddish: -5311179733769599418
+      Potato_destroyed: -6795681572751872497
+      Potato_harvest: -7364219717195643112
+      Potato_sapling: 1363631698089673872
+      Potato_seed: -5166890997122943110
+      Potato_seedling: 5177798275492787413
+      Potato_seedling2: -3970134405206944544
+      Pumpkin_sapling1: 6449900970205332426
+      Pumpkin_seed: 6400097610941325928
+      RPepper_destroyed: 6593910471418514874
+      RPepper_harvest: 824772362
+      RPepper_harvested: -1688227288
+      RPepper_sapling2: 1663745391
+      RPepper_seed: 5453929798641431608
+      RPepper_seedlin: 926297158411035097
+      RPepper_seedling: -3750409946025607185
+      RPepper_seedling2: -1210511890
+      Raddish_destroyed: 1448750351800781423
+      Raddish_harvest: -5658900384324587919
+      Raddish_sapling: -6716915415551269369
+      Raddish_seed: -8721482420497175514
+      Raddish_seedling: -8487368170775370531
+      Raddish_seedling2: 164968718
+      Rock1: 439152015473002568
+      Rock2: -8984017242776099777
+      Rock3: 3071417358425945744
+      Rock4: -1185807714
+      Rock5: -2004060472
+      Rock6: 590190578
+      Strawberry_destroyed: -778351951
+      Strawberry_harvest: -7222082607475648065
+      Strawberry_harvested: 2127049310
+      Strawberry_sapling: 6596977040720608589
+      Strawberry_sapling2: -2109744495
+      Strawberry_seed: 8046985539559220638
+      Strawberry_seedling: -3582891429151642919
+      Strawberry_seedling2: -2931530619173929020
+      Stump_1: 6601832236507728873
+      Stump_2: -1888074974
+      Stump_3: 4050327701345965911
+      Tomato_destroyed: 8421945549763103090
+      Tomato_harvest: 4147129709633304395
+      Tomato_harveted: -4077264995419976964
+      Tomato_sapling: 4382319732836191019
+      Tomato_sapling2: 8104741377577353065
+      Tomato_seed: -4626135825644025936
+      Tomato_seedling: -6806033779370544636
+      Tomato_seedling2: -2853568393931057514
+      Tree_Birch: -882763699235611233
+      Tree_Full1: -5121846660019126235
+      Tree_Full2: -5286114104911224460
+      Tree_Pear: 4435784651841869115
+      Tree_Pine1.0: 1455621001347679882
+      Tree_Pine1.1: -4566471581769381714
+      Tree_Pine1.2: -5990934982055149062
+      Tree_Pine1.3: 8164607714757790798
+      Tree_Pine1.4: 5166906888149732878
+      Tree_Pine1.5: 548253568
+      Tree_Pine1_stump: -166696881
+      Tree_Pine2.0: -1988638327
+      Tree_Pine2.1: -1857011369416646877
+      Tree_Pine2.2: 2633669675102096989
+      Tree_Pine2.3: -8041481734350780768
+      Tree_Pine2.4: 7666571108086105428
+      Tree_Pine2.5: 237843054
+      Tree_Pine2_stump: -673369824
+      Zucchini_destroyed: 586396854151759011
+      Zucchini_harvest: 360663305
+      Zucchini_harvested: -719398281
+      Zucchini_sapling: 868820000
+      Zucchini_sapling2: 1298400913
+      Zucchini_seed: -1699168241
+      Zucchini_seedling: -705461591
+      Zucchini_seedling2: -1512694981
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

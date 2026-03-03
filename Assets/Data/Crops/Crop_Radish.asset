@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05cff0ca51ccad4584e481192123c35, type: 3}
+  m_Name: Crop_Radish
+  m_EditorClassIdentifier: Assembly-CSharp::CropData
+  cropName: Radish
+  cropType: 1
+  description: Super fast growing. Perfect for quick harvests.
+  seedSeconds: 25
+  sproutSeconds: 35
+  saplingSeconds: 80
+  maxHP: 70
+  harvestWindowSeconds: 35
+  harvestValue: 8
+  canRegrow: 0
+  regrowSeconds: 0
+  plantPrefab: {fileID: 8146968038167197194, guid: 97d89bffd06bc2d43b83fabe1fa849d3, type: 3}
+  seedSprite: {fileID: -8721482420497175514, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  sproutSprite: {fileID: -8487368170775370531, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  saplingSprite: {fileID: 164968718, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  harvestableSprite: {fileID: -5658900384324587919, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  driedOutSprite: {fileID: 0}
+  rottingSprite: {fileID: 0}
+  seedPacketSprite: {fileID: -5311179733769599418, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  cropSprite: {fileID: 2314530892819404001, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  moistureDepletionRate: 1
+  threatResistance: 1

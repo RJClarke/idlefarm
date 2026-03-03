@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05cff0ca51ccad4584e481192123c35, type: 3}
+  m_Name: Crop_Bean
+  m_EditorClassIdentifier: Assembly-CSharp::CropData
+  cropName: Green Beans
+  cropType: 9
+  description: Grown on supports, a stringy green bean.
+  seedSeconds: 60
+  sproutSeconds: 75
+  saplingSeconds: 140
+  maxHP: 80
+  harvestWindowSeconds: 50
+  harvestValue: 25
+  canRegrow: 1
+  regrowSeconds: 0
+  plantPrefab: {fileID: 8146968038167197194, guid: 97d89bffd06bc2d43b83fabe1fa849d3, type: 3}
+  seedSprite: {fileID: -469012787259855548, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  sproutSprite: {fileID: -4143670234373046720, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  saplingSprite: {fileID: -2419261919087593864, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  harvestableSprite: {fileID: -5242555845900806480, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  harvestedSprite: {fileID: 364132745, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  driedOutSprite: {fileID: 0}
+  rottingSprite: {fileID: 0}
+  seedPacketSprite: {fileID: -215958242341156383, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  cropSprite: {fileID: -267039659, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  moistureDepletionRate: 1
+  threatResistance: 1

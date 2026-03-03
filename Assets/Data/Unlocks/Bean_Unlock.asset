@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6068e2ae2ea61644787132c20d749068, type: 3}
+  m_Name: Bean_Unlock
+  m_EditorClassIdentifier: Assembly-CSharp::UnlockData
+  unlockID: bean_unlock
+  displayName: Green Beans
+  icon: 
+  category: 0
+  cropData: {fileID: 11400000, guid: debbc4950dd7c834cb7e7f99f1a031cd, type: 2}
+  equipmentSprite: {fileID: 0}
+  coinCost: 600
+  lockedDescription: Climbing green beans, great for multi-harvest
+  unlockedMessage: Bean Seed Packet Unlocked
+  requiredUnlocks:
+  - {fileID: 11400000, guid: 04d50c8a59a2abc4cbbfa8f27ccd1680, type: 2}

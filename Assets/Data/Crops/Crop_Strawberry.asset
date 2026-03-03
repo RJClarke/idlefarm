@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05cff0ca51ccad4584e481192123c35, type: 3}
+  m_Name: Crop_Strawberry
+  m_EditorClassIdentifier: Assembly-CSharp::CropData
+  cropName: Strawberry
+  cropType: 6
+  description: A classic root vegetable. Fast growing and reliable.
+  seedSeconds: 40
+  sproutSeconds: 60
+  saplingSeconds: 200
+  maxHP: 78
+  harvestWindowSeconds: 50
+  harvestValue: 15
+  canRegrow: 1
+  regrowSeconds: 0
+  plantPrefab: {fileID: 8146968038167197194, guid: 97d89bffd06bc2d43b83fabe1fa849d3, type: 3}
+  seedSprite: {fileID: 8046985539559220638, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  sproutSprite: {fileID: -3582891429151642919, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  saplingSprite: {fileID: 6596977040720608589, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  harvestableSprite: {fileID: -7222082607475648065, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  harvestedSprite: {fileID: 2127049310, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  driedOutSprite: {fileID: 0}
+  rottingSprite: {fileID: 0}
+  seedPacketSprite: {fileID: 2196587850673688242, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  cropSprite: {fileID: -5415401139211786194, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  moistureDepletionRate: 1
+  threatResistance: 1
