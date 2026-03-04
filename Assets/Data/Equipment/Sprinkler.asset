@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2330d73f08d6977429f3bc3523d91bd4, type: 3}
+  m_Name: Sprinkler
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentData
+  equipmentID: sprinkler
+  displayName: Sprinkler
+  equipmentType: 2
+  icon: "\U0001F4A7"
+  description: Waters plants within range on an active/cooldown cycle.
+  baseCooldownSeconds: 30
+  baseRepelCapacity: 0
+  baseAoERadius: 1.5
+  countersTheatType: 1
+  visualPrefab: {fileID: 5958846195913573462, guid: e6f4d63f20b3fd44a8628baa122a001d, type: 3}
+  aoeUpgradeID: sprinkler_aoe
+  cooldownUpgradeID: sprinkler_cooldown
+  capacityUpgradeID: sprinkler_power
+  aoeBonusPerLevel: 0.4
+  cooldownReductionPerLevel: 3
+  capacityBonusPerLevel: 0
+  minCooldownSeconds: 5
+  activeDurationSeconds: 10
+  baseMoisturePowerPerSecond: 1.5
+  waterPowerUpgradeID: sprinkler_power
+  waterPowerBonusPerLevel: 0.5

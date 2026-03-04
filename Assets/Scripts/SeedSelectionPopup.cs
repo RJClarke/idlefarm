@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
 /// Seed selection popup shown before starting a run
@@ -33,6 +34,21 @@ public class SeedSelectionPopup : MonoBehaviour
     [Header("Crop Database")]
     [SerializeField] private CropDatabase cropDatabase;
 
+    [Header("Equipment")]
+    [Tooltip("All equipment the player has unlocked. Drag EquipmentData assets here.")]
+    [SerializeField] private EquipmentData[] availableEquipment;
+
+    [Header("Equipment UI Per Zone")]
+    [Tooltip("Optional buttons on each zone slot — click to cycle equipment. Wire in editor.")]
+    [SerializeField] private Button zone1EquipButton;
+    [SerializeField] private Button zone2EquipButton;
+    [SerializeField] private Button zone3EquipButton;
+    [SerializeField] private Button zone4EquipButton;
+    [SerializeField] private TextMeshProUGUI zone1EquipLabel;
+    [SerializeField] private TextMeshProUGUI zone2EquipLabel;
+    [SerializeField] private TextMeshProUGUI zone3EquipLabel;
+    [SerializeField] private TextMeshProUGUI zone4EquipLabel;
+
     [Header("Animation")]
     [SerializeField] private float fadeInDuration = 0.3f;
     [SerializeField] private LeanTweenType easeType = LeanTweenType.easeOutQuad;
@@ -42,6 +58,10 @@ public class SeedSelectionPopup : MonoBehaviour
     private List<SeedPacketButton> seedPacketButtons = new List<SeedPacketButton>();
     private int selectedZoneID = -1; // Which zone is currently highlighted
     private bool isOpen = false;
+
+    // Equipment state — zone ID → index into availableEquipment (-1 = none)
+    private Dictionary<int, int> zoneEquipmentIndex = new Dictionary<int, int>();
+    private const string EQUIP_PREFS_KEY = "EquipmentSelectionData";
 
     // Events
     public event Action<Dictionary<int, CropData>> OnSeedsConfirmed;
@@ -106,6 +126,12 @@ public class SeedSelectionPopup : MonoBehaviour
             zone4Slot.OnZoneClearedRequest += OnZoneClearRequested;
         }
 
+        // Equipment buttons — cycle through available equipment on click
+        if (zone1EquipButton != null) zone1EquipButton.onClick.AddListener(() => CycleEquipment(1));
+        if (zone2EquipButton != null) zone2EquipButton.onClick.AddListener(() => CycleEquipment(2));
+        if (zone3EquipButton != null) zone3EquipButton.onClick.AddListener(() => CycleEquipment(3));
+        if (zone4EquipButton != null) zone4EquipButton.onClick.AddListener(() => CycleEquipment(4));
+
         // Start hidden
         HideImmediate();
     }
@@ -142,6 +168,11 @@ public class SeedSelectionPopup : MonoBehaviour
             zone4Slot.OnZoneClicked -= OnZoneSlotClicked;
             zone4Slot.OnZoneClearedRequest -= OnZoneClearRequested;
         }
+
+        if (zone1EquipButton != null) zone1EquipButton.onClick.RemoveAllListeners();
+        if (zone2EquipButton != null) zone2EquipButton.onClick.RemoveAllListeners();
+        if (zone3EquipButton != null) zone3EquipButton.onClick.RemoveAllListeners();
+        if (zone4EquipButton != null) zone4EquipButton.onClick.RemoveAllListeners();
     }
 
     /// <summary>
@@ -162,6 +193,10 @@ public class SeedSelectionPopup : MonoBehaviour
 
         // Apply saved selections
         ApplySavedSelections();
+
+        // Load equipment assignments
+        LoadEquipmentAssignments();
+        UpdateAllEquipmentLabels();
 
         // Update UI state
         UpdateAllSeedPacketAvailability();
@@ -449,6 +484,10 @@ public class SeedSelectionPopup : MonoBehaviour
 
         // Save selection for next time
         selectionData.Save();
+        SaveEquipmentAssignments();
+
+        // Push equipment assignments to EquipmentManager
+        ApplyEquipmentToManager();
 
         // Convert to Dictionary for HelperManager
         Dictionary<int, CropData> zoneSeeds = selectionData.ToZoneSeedDictionary(cropDatabase);
@@ -459,7 +498,7 @@ public class SeedSelectionPopup : MonoBehaviour
         // Hide popup
         Hide();
 
-        Debug.Log($"✅ Seed selection confirmed: {zoneSeeds.Count} zones");
+        Debug.Log($"Seed selection confirmed: {zoneSeeds.Count} zones");
     }
 
     /// <summary>
@@ -508,5 +547,139 @@ public class SeedSelectionPopup : MonoBehaviour
         canvasGroup.alpha = 0f;
         canvasGroup.blocksRaycasts = false;
         canvasGroup.interactable = false;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // Equipment Selection
+    // ─────────────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Cycle equipment for a zone: None → Equipment[0] → Equipment[1] → ... → None
+    /// </summary>
+    private void CycleEquipment(int zoneId)
+    {
+        if (availableEquipment == null || availableEquipment.Length == 0) return;
+
+        ZoneSlot slot = GetZoneSlot(zoneId);
+        if (slot == null || !slot.IsUnlocked) return;
+
+        int currentIdx;
+        if (!zoneEquipmentIndex.TryGetValue(zoneId, out currentIdx))
+            currentIdx = -1;
+
+        // Advance to next (wraps to -1 = none)
+        currentIdx++;
+        if (currentIdx >= availableEquipment.Length)
+            currentIdx = -1;
+
+        zoneEquipmentIndex[zoneId] = currentIdx;
+        UpdateEquipmentLabel(zoneId);
+    }
+
+    private void UpdateEquipmentLabel(int zoneId)
+    {
+        TextMeshProUGUI label = GetEquipmentLabel(zoneId);
+        if (label == null) return;
+
+        int idx;
+        if (!zoneEquipmentIndex.TryGetValue(zoneId, out idx))
+            idx = -1;
+
+        if (idx < 0 || availableEquipment == null || idx >= availableEquipment.Length)
+        {
+            label.text = "No Equipment";
+        }
+        else
+        {
+            EquipmentData eq = availableEquipment[idx];
+            label.text = eq != null ? eq.displayName : "No Equipment";
+        }
+    }
+
+    private void UpdateAllEquipmentLabels()
+    {
+        for (int z = 1; z <= 4; z++)
+            UpdateEquipmentLabel(z);
+    }
+
+    private TextMeshProUGUI GetEquipmentLabel(int zoneId)
+    {
+        switch (zoneId)
+        {
+            case 1: return zone1EquipLabel;
+            case 2: return zone2EquipLabel;
+            case 3: return zone3EquipLabel;
+            case 4: return zone4EquipLabel;
+            default: return null;
+        }
+    }
+
+    /// <summary>
+    /// Push current equipment selections to EquipmentManager.
+    /// </summary>
+    private void ApplyEquipmentToManager()
+    {
+        if (EquipmentManager.Instance == null) return;
+
+        EquipmentManager.Instance.ClearAllAssignments();
+
+        foreach (var kvp in zoneEquipmentIndex)
+        {
+            int idx = kvp.Value;
+            if (idx >= 0 && availableEquipment != null && idx < availableEquipment.Length)
+            {
+                EquipmentManager.Instance.AssignEquipment(kvp.Key, availableEquipment[idx]);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Save equipment assignments to PlayerPrefs (parallel to SeedSelectionData).
+    /// Format: "zoneId:equipmentID;zoneId:equipmentID;..."
+    /// </summary>
+    private void SaveEquipmentAssignments()
+    {
+        List<string> entries = new List<string>();
+        foreach (var kvp in zoneEquipmentIndex)
+        {
+            int idx = kvp.Value;
+            if (idx >= 0 && availableEquipment != null && idx < availableEquipment.Length)
+            {
+                EquipmentData eq = availableEquipment[idx];
+                if (eq != null)
+                    entries.Add($"{kvp.Key}:{eq.equipmentID}");
+            }
+        }
+        PlayerPrefs.SetString(EQUIP_PREFS_KEY, string.Join(";", entries));
+        PlayerPrefs.Save();
+    }
+
+    /// <summary>
+    /// Load equipment assignments from PlayerPrefs.
+    /// </summary>
+    private void LoadEquipmentAssignments()
+    {
+        zoneEquipmentIndex.Clear();
+
+        if (!PlayerPrefs.HasKey(EQUIP_PREFS_KEY)) return;
+        if (availableEquipment == null || availableEquipment.Length == 0) return;
+
+        string saved = PlayerPrefs.GetString(EQUIP_PREFS_KEY);
+        if (string.IsNullOrEmpty(saved)) return;
+
+        string[] entries = saved.Split(';');
+        foreach (string entry in entries)
+        {
+            string[] parts = entry.Split(':');
+            if (parts.Length != 2) continue;
+
+            int zoneId;
+            if (!int.TryParse(parts[0], out zoneId)) continue;
+
+            string equipId = parts[1];
+            int idx = Array.FindIndex(availableEquipment, e => e != null && e.equipmentID == equipId);
+            if (idx >= 0)
+                zoneEquipmentIndex[zoneId] = idx;
+        }
     }
 }

@@ -105,6 +105,16 @@ public abstract class AnimalThreat : MonoBehaviour
     protected virtual void OnSearchingForPlant() { }
     protected virtual void OnEatingPlant() { }
     protected virtual void OnExitingFarm() { }
+    protected virtual void OnRepelled() { }
+
+    /// <summary>
+    /// Called when the threat is repelled by equipment.
+    /// Default: same as ExitFarm(). Override in subclasses for custom flee animation.
+    /// </summary>
+    protected virtual IEnumerator ExitFarmRepelled()
+    {
+        yield return StartCoroutine(ExitFarm());
+    }
 
     // ─────────────────────────────────────────────────────────────────────
     // Core Lifecycle
@@ -115,6 +125,21 @@ public abstract class AnimalThreat : MonoBehaviour
         // Phase 1 — Approach the farm
         OnEnteringFarm();
         yield return StartCoroutine(EnterFarm());
+
+        // Check if we were already repelled during EnterFarm (subclass may have handled it)
+        if (IsDone) yield break;
+
+        // Phase 1.5 — Equipment repel check at arrival point
+        if (EquipmentManager.Instance != null)
+        {
+            if (EquipmentManager.Instance.TryRepelThreat(assignedZoneId, ThreatType, transform.position))
+            {
+                OnRepelled();
+                yield return StartCoroutine(ExitFarmRepelled());
+                FinishThreat();
+                yield break;
+            }
+        }
 
         // Phase 2 — Eat until full or no valid targets remain
         Plant currentTarget = FindFirstTarget();

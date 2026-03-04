@@ -35,9 +35,9 @@ public class HelperManager : MonoBehaviour
     [SerializeField] private PlantingStrategy plantingStrategy = PlantingStrategy.ClosestTile;
 
     [Header("Priority Tuning")]
-    [Tooltip("How much distance affects priority (0-1, where 1 = distance matters a lot)")]
+    [Tooltip("How much distance affects task scoring (0-1). Higher = helpers stick to nearby work")]
     [Range(0f, 1f)]
-    [SerializeField] private float distanceWeight = 0.25f;
+    [SerializeField] private float distanceWeight = 0.6f;
 
     [Header("Active Helpers")]
     [SerializeField] private List<Helper> activeHelpers = new List<Helper>();
@@ -471,8 +471,9 @@ public class HelperManager : MonoBehaviour
 
     /// <summary>
     /// Calculate water priority
-    /// Dried out (700) > <20% (600) > <50% (400) > <75% (300) > <100% (200)
-    /// Plus modifiers for urgency (driest first) and distance
+    /// Dried out (750) > <20% (650) > <50% (550) > <75% (450) > <100% (300)
+    /// Plus urgency modifier (driest first, up to +30)
+    /// Water tasks should generally beat planting (500) once moisture drops below ~60%
     /// </summary>
     private int CalculateWaterPriority(Plant plant)
     {
@@ -481,31 +482,31 @@ public class HelperManager : MonoBehaviour
 
         if (plant.IsDriedOut)
         {
-            basePriority = 700; // Water dried out crops (taking damage!)
+            basePriority = 750; // Water dried out crops (taking damage!)
         }
         else if (moisture < 20f)
         {
-            basePriority = 600; // Water <20%
+            basePriority = 650; // Water <20% — critical
         }
         else if (moisture < 50f)
         {
-            basePriority = 400; // Water <50%
+            basePriority = 550; // Water <50% — beats planting
         }
         else if (moisture < 75f)
         {
-            basePriority = 300; // Water <75%
+            basePriority = 450; // Water <75% — competes with planting
         }
         else if (moisture < 100f)
         {
-            basePriority = 200; // Water <100% (top-off)
+            basePriority = 300; // Water <100% (top-off — lower than planting)
         }
         else
         {
             return 0; // Already at 100%, no need to water
         }
 
-        // Urgency modifier: Driest plants get priority boost
-        int urgencyBonus = Mathf.RoundToInt((100f - moisture) / 10f); // 0-10 bonus
+        // Urgency modifier: Driest plants get priority boost (0-30)
+        int urgencyBonus = Mathf.RoundToInt((100f - moisture) / 100f * 30f);
         basePriority += urgencyBonus;
 
         return basePriority;
@@ -513,12 +514,12 @@ public class HelperManager : MonoBehaviour
 
     /// <summary>
     /// Calculate plant priority
-    /// Base: 500 (between water tiers)
-    /// Modifiers based on planting strategy
+    /// Base: 400 — lower than all meaningful water tiers, higher than top-off (300)
+    /// Planting should only happen when nothing nearby needs watering/harvesting
     /// </summary>
     private int CalculatePlantPriority(SoilTile tile)
     {
-        int basePriority = 500; // Plant seeds (medium priority)
+        int basePriority = 400; // Plant seeds (low-medium priority)
 
         // Strategy modifier
         switch (plantingStrategy)
@@ -606,15 +607,16 @@ public class HelperManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Find the best task for a helper considering priority and distance
-    /// Priority is the main factor, distance is 25% weight
-    /// Phase 5.5: Added debug logging
+    /// Find the best task for a helper considering priority, distance, and crowding.
+    /// Score = priority - distancePenalty - crowdingPenalty
+    /// Crowding: if another active helper is closer to the task, penalize it so
+    /// helpers spread out instead of all traveling to the same zone.
     /// </summary>
     private HelperTask FindBestTaskForHelper(Helper helper)
     {
         HelperTask bestTask = null;
         float bestScore = float.MinValue;
-        
+
         Vector3 helperPos = helper.transform.position;
 
         int totalTasks = pendingTasks.Count;
@@ -624,31 +626,45 @@ public class HelperManager : MonoBehaviour
 
         foreach (HelperTask task in pendingTasks)
         {
-            // Track why tasks are being skipped
             if (task.IsClaimed)
             {
                 claimedTasks++;
                 continue;
             }
-            
+
             if (!task.IsValid())
             {
                 invalidTasks++;
                 continue;
             }
-            
+
             validTasks++;
 
-            // Calculate score = priority - (distance * weight)
-            float distance = Vector3.Distance(helperPos, task.TargetTile.transform.position);
-            
-            // Normalize distance (assume max distance of 20 units)
+            Vector3 taskPos = task.TargetTile.transform.position;
+            float distance = Vector3.Distance(helperPos, taskPos);
+
+            // Distance penalty: quadratic falloff so far tasks are punished much harder
+            // At 5 units: penalty ~16, at 10 units: ~50, at 20 units: ~150
             float normalizedDistance = Mathf.Clamp01(distance / 20f);
-            
-            // Distance penalty scales with distance weight setting
-            float distancePenalty = normalizedDistance * 100f * distanceWeight;
-            
-            float score = task.Priority - distancePenalty;
+            float distancePenalty = normalizedDistance * normalizedDistance * 150f * distanceWeight;
+
+            // Crowding penalty: if another busy helper is closer to this task, this helper
+            // should prefer local work instead of competing for far-away tasks
+            float crowdingPenalty = 0f;
+            foreach (Helper other in activeHelpers)
+            {
+                if (other == null || other == helper || other.IsIdle) continue;
+
+                float otherDist = Vector3.Distance(other.transform.position, taskPos);
+                if (otherDist < distance)
+                {
+                    // Someone else is closer — heavy penalty to encourage spreading out
+                    crowdingPenalty = 80f;
+                    break;
+                }
+            }
+
+            float score = task.Priority - distancePenalty - crowdingPenalty;
 
             if (score > bestScore)
             {
@@ -657,14 +673,9 @@ public class HelperManager : MonoBehaviour
             }
         }
 
-        // Debug logging when helper can't find work or assigns task
         if (bestTask == null && totalTasks > 0)
         {
             Debug.LogWarning($"⚠️ {helper.name} found NO valid tasks! Total: {totalTasks}, Claimed: {claimedTasks}, Invalid: {invalidTasks}, Valid: {validTasks}");
-        }
-        else if (bestTask != null && showDebugInfo)
-        {
-
         }
 
         return bestTask;

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8283b7a964009149bc1e6b2fd747450, type: 3}
+  m_Name: Scarecrow_Cooldown
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeData
+  upgradeID: scarecrow_cooldown
+  displayName: Scarecrow Recovery
+  description: Reduces time between scarecrow repel cycles.
+  upgradeType: 0
+  allowTemporaryUpgrades: 1
+  maxLevel: 5
+  baseCoinCost: 200
+  coinCostMultiplier: 2.5
+  baseMoneyCost: 10000
+  moneyCostMultiplier: 2.2
+  bonusPerLevel: 5
+  bonusUnit: sec
+  showPlusSign: 0
+  icon: "\u23F1\uFE0F"

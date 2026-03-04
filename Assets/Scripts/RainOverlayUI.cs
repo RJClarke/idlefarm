@@ -91,13 +91,22 @@ public class RainOverlayUI : MonoBehaviour
         {
             Vector3 camPos = Camera.main.transform.position;
 
-            // Keep emitter above screen top and centered on camera
-            rainParticles.transform.position = new Vector3(camPos.x, camPos.y + rainEmitterY, -1f);
+            // Wind pushes rain sideways over its lifetime, so offset the emitter upwind
+            // and widen it so rain covers the full screen at every Y level
+            float avgLifetime = (rainMinLifetime + rainMaxLifetime) * 0.5f;
+            float windDrift = Mathf.Abs(rainWindX) * avgLifetime;
+            float windOffsetX = -Mathf.Sign(rainWindX) * windDrift * 0.5f;
 
-            // Dynamically match emitter width to screen width + padding
-            float screenWidth = Camera.main.orthographicSize * Camera.main.aspect * 2f + 6f;
+            rainParticles.transform.position = new Vector3(
+                camPos.x + windOffsetX,
+                camPos.y + rainEmitterY,
+                -1f);
+
+            // Emitter must be wide enough for screen + full wind drift on both sides
+            float screenWidth = Camera.main.orthographicSize * Camera.main.aspect * 2f;
+            float emitterWidth = screenWidth + windDrift + 4f;
             var shape = rainParticles.shape;
-            shape.scale = new Vector3(screenWidth, 0.1f, 1f);
+            shape.scale = new Vector3(emitterWidth, 0.1f, 1f);
         }
     }
 

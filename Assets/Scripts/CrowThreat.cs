@@ -48,8 +48,34 @@ public class CrowThreat : AnimalThreat
         // Spawn at edge in that direction
         transform.position = GetScreenEdgePoint(entryAngleDeg);
 
-        // Fly directly to zone center
-        yield return StartCoroutine(MoveTo(zoneCenter, data.moveSpeed));
+        // Fly toward zone center, checking for scarecrow interception each frame
+        while (Vector3.Distance(transform.position, zoneCenter) > 0.02f)
+        {
+            // Check ALL zones' scarecrows (cross-zone interception)
+            if (EquipmentManager.Instance != null)
+            {
+                int repelZone = EquipmentManager.Instance.CheckFlightPathInterception(
+                    transform.position, ThreatType);
+                if (repelZone >= 0)
+                {
+                    OnRepelled();
+                    yield return StartCoroutine(ExitFarmRepelled());
+                    FinishThreat();
+                    yield break;
+                }
+            }
+
+            // Normal movement with sprite flip
+            if (spriteRenderer != null)
+            {
+                float dirX = zoneCenter.x - transform.position.x;
+                if (Mathf.Abs(dirX) > 0.01f) spriteRenderer.flipX = dirX < 0f;
+            }
+            transform.position = Vector3.MoveTowards(
+                transform.position, zoneCenter, data.moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+        transform.position = zoneCenter;
     }
 
     protected override IEnumerator ExitFarm()
@@ -58,6 +84,25 @@ public class CrowThreat : AnimalThreat
         float exitAngle = entryAngleDeg + 180f + Random.Range(-30f, 30f);
         Vector3 exitPos = GetScreenEdgePoint(exitAngle);
         yield return StartCoroutine(MoveTo(exitPos, data.moveSpeed * 1.3f));
+    }
+
+    /// <summary>
+    /// Flee animation when repelled by equipment — reverse direction at higher speed.
+    /// </summary>
+    protected override IEnumerator ExitFarmRepelled()
+    {
+        // Reverse: fly back toward where it came from, faster than normal exit
+        float fleeAngle = entryAngleDeg; // back toward entry edge
+        Vector3 fleePos = GetScreenEdgePoint(fleeAngle);
+
+        // Flip sprite to face flee direction
+        if (spriteRenderer != null)
+        {
+            float dirX = fleePos.x - transform.position.x;
+            if (Mathf.Abs(dirX) > 0.01f) spriteRenderer.flipX = dirX < 0f;
+        }
+
+        yield return StartCoroutine(MoveTo(fleePos, data.moveSpeed * 1.8f));
     }
 
     // ─────────────────────────────────────────────────────────────────────

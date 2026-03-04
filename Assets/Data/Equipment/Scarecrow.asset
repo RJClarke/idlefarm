@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2330d73f08d6977429f3bc3523d91bd4, type: 3}
+  m_Name: Scarecrow
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentData
+  equipmentID: scarecrow
+  displayName: Scarecrow
+  equipmentType: 0
+  icon: "\U0001F426\u200D\u2B1B"
+  description: Repels crows within its area of effect. After repelling its capacity,
+    enters cooldown before recharging.
+  baseCooldownSeconds: 60
+  baseRepelCapacity: 1
+  baseAoERadius: 2
+  countersTheatType: 1
+  visualPrefab: {fileID: 6263065184405782043, guid: 84257978d97b3a14dafa7dc0879f248b, type: 3}
+  aoeUpgradeID: scarecrow_aoe
+  cooldownUpgradeID: scarecrow_cooldown
+  capacityUpgradeID: scarecrow_capacity
+  aoeBonusPerLevel: 0.5
+  cooldownReductionPerLevel: 5
+  capacityBonusPerLevel: 1
+  minCooldownSeconds: 10

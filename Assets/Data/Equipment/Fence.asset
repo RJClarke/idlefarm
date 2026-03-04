@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2330d73f08d6977429f3bc3523d91bd4, type: 3}
+  m_Name: Fence
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentData
+  equipmentID: fence
+  displayName: Fence
+  equipmentType: 1
+  icon: "\U0001F9F1"
+  description: L-shaped fence along zone edges. Repels deer that approach.
+  baseCooldownSeconds: 45
+  baseRepelCapacity: 1
+  baseAoERadius: 2.5
+  countersTheatType: 0
+  visualPrefab: {fileID: 7961555057293389497, guid: 4fff881909a2be84ca86116f53427ae4, type: 3}
+  aoeUpgradeID: fence_aoe
+  cooldownUpgradeID: fence_cooldown
+  capacityUpgradeID: fence_capacity
+  aoeBonusPerLevel: 0.5
+  cooldownReductionPerLevel: 4
+  capacityBonusPerLevel: 1
+  minCooldownSeconds: 8
+  activeDurationSeconds: 10
+  baseMoisturePowerPerSecond: 1.5
+  waterPowerUpgradeID: sprinkler_power
+  waterPowerBonusPerLevel: 0.5

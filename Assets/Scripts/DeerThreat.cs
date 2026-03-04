@@ -49,7 +49,32 @@ public class DeerThreat : AnimalThreat
 
         transform.position = entryPos;
 
-        yield return StartCoroutine(MoveTo(zoneCenter, data.moveSpeed));
+        // Run toward zone center, checking for fence interception each frame
+        while (Vector3.Distance(transform.position, zoneCenter) > 0.02f)
+        {
+            if (EquipmentManager.Instance != null)
+            {
+                int repelZone = EquipmentManager.Instance.CheckFlightPathInterception(
+                    transform.position, ThreatType);
+                if (repelZone >= 0)
+                {
+                    OnRepelled();
+                    yield return StartCoroutine(ExitFarmRepelled());
+                    FinishThreat();
+                    yield break;
+                }
+            }
+
+            if (spriteRenderer != null)
+            {
+                float dirX = zoneCenter.x - transform.position.x;
+                if (Mathf.Abs(dirX) > 0.01f) spriteRenderer.flipX = dirX < 0f;
+            }
+            transform.position = Vector3.MoveTowards(
+                transform.position, zoneCenter, data.moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+        transform.position = zoneCenter;
     }
 
     protected override IEnumerator ExitFarm()
@@ -57,6 +82,20 @@ public class DeerThreat : AnimalThreat
         float exitX     = enteredFromLeft ? ScreenRightX() : ScreenLeftX();
         Vector3 exitPos = new Vector3(exitX, transform.position.y, 0f);
         yield return StartCoroutine(MoveTo(exitPos, data.moveSpeed * 1.2f));
+    }
+
+    protected override IEnumerator ExitFarmRepelled()
+    {
+        // Run back the way it came, faster
+        SetAnimation(1); // Run animation
+        float fleeX     = enteredFromLeft ? ScreenLeftX() : ScreenRightX();
+        Vector3 fleePos = new Vector3(fleeX, transform.position.y, 0f);
+        yield return StartCoroutine(MoveTo(fleePos, data.moveSpeed * 1.5f));
+    }
+
+    protected override void OnRepelled()
+    {
+        SetAnimation(3); // Brief idle/startle before fleeing
     }
 
     // ─────────────────────────────────────────────────────────────────────
