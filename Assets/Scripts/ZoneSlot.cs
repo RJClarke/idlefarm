@@ -125,6 +125,7 @@ public class ZoneSlot : MonoBehaviour
             {
                 statusText.gameObject.SetActive(true);
                 statusText.text = "🔒 Locked";
+                statusText.alignment = TMPro.TextAlignmentOptions.Center;
             }
 
             if (slotButton != null)

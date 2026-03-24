@@ -47,33 +47,43 @@ public abstract class Helper : MonoBehaviour
     public bool IsIdle => currentState == HelperState.Idle;
     public bool HasTask => currentTask != null;
 
+    // Upgrade IDs matching UpgradeData assets
+    private const string UPGRADE_MOVE_SPEED = "helper_move_speed";
+    private const string UPGRADE_TASK_SPEED = "helper_task_speed";
+
     /// <summary>
-    /// Get movement speed with upgrades applied
+    /// Get movement speed with upgrades applied.
+    /// Each level of helper_move_speed adds +50% speed.
     /// </summary>
     protected float UpgradedMoveSpeed
     {
         get
         {
-            if (HelperUpgradeManager.Instance != null)
+            float multiplier = 1f;
+            if (UpgradeManager.Instance != null)
             {
-                return moveSpeed * HelperUpgradeManager.Instance.MovementSpeedMultiplier;
+                int level = UpgradeManager.Instance.GetCurrentLevel(UPGRADE_MOVE_SPEED);
+                multiplier += level * 0.5f; // +50% per level
             }
-            return moveSpeed;
+            return moveSpeed * multiplier;
         }
     }
 
     /// <summary>
-    /// Get task duration with upgrades applied (lower = faster)
+    /// Get task duration with upgrades applied (lower = faster).
+    /// Each level of helper_task_speed reduces duration by 20%.
     /// </summary>
     protected float UpgradedTaskDuration
     {
         get
         {
-            if (HelperUpgradeManager.Instance != null)
+            float multiplier = 1f;
+            if (UpgradeManager.Instance != null)
             {
-                return taskDuration * HelperUpgradeManager.Instance.TaskSpeedMultiplier;
+                int level = UpgradeManager.Instance.GetCurrentLevel(UPGRADE_TASK_SPEED);
+                multiplier *= Mathf.Pow(0.8f, level); // 20% faster per level
             }
-            return taskDuration;
+            return taskDuration * multiplier;
         }
     }
 
@@ -152,10 +162,10 @@ public abstract class Helper : MonoBehaviour
         {
             // Instant teleport to target
             transform.position = targetPos;
-            
+
             // Immediately start performing
             SetState(HelperState.PerformingTask);
-            taskTimer = UpgradedTaskDuration;
+            taskTimer = GetTaskDuration();
         }
         else
         {
@@ -171,7 +181,7 @@ public abstract class Helper : MonoBehaviour
                 
                 // Start performing task
                 SetState(HelperState.PerformingTask);
-                taskTimer = UpgradedTaskDuration;
+                taskTimer = GetTaskDuration();
 
 
 
@@ -304,6 +314,14 @@ public abstract class Helper : MonoBehaviour
 
         currentState = newState;
         OnStateChanged(newState);
+    }
+
+    /// <summary>
+    /// Get task duration for the current task. Override in subclass for per-task-type bonuses.
+    /// </summary>
+    protected virtual float GetTaskDuration()
+    {
+        return UpgradedTaskDuration;
     }
 
     /// <summary>

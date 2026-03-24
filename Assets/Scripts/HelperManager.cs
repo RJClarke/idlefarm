@@ -57,6 +57,9 @@ public class HelperManager : MonoBehaviour
     // MODIFIED: Runtime zone seed configuration from popup
     private Dictionary<int, CropData> currentZoneSeeds = new Dictionary<int, CropData>();
 
+    // Home screen cosmetic helpers
+    private List<GameObject> homeScreenHelpers = new List<GameObject>();
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -79,6 +82,12 @@ public class HelperManager : MonoBehaviour
             RunManager.Instance.OnRunStarted += AutoSpawnHelpers;
             RunManager.Instance.OnRunEnded += ClearAllHelpers;
         }
+
+        // Refresh home screen helpers when a new slot is unlocked
+        if (UpgradeManager.Instance != null)
+        {
+            UpgradeManager.Instance.OnUpgradePurchased += OnUpgradePurchased;
+        }
     }
 
     private void OnDestroy()
@@ -89,6 +98,43 @@ public class HelperManager : MonoBehaviour
             RunManager.Instance.OnRunStarted -= AutoSpawnHelpers;
             RunManager.Instance.OnRunEnded -= ClearAllHelpers;
         }
+
+        if (UpgradeManager.Instance != null)
+        {
+            UpgradeManager.Instance.OnUpgradePurchased -= OnUpgradePurchased;
+        }
+    }
+
+    private void OnUpgradePurchased(string upgradeID)
+    {
+        // If a helper slot was unlocked while on home screen, add the new one
+        if (upgradeID == "helper_slot_unlock" &&
+            (RunManager.Instance == null || !RunManager.Instance.IsRunActive))
+        {
+            SpawnOneHomeHelper();
+        }
+    }
+
+    /// <summary>
+    /// Spawn a single cosmetic home screen helper (additive, doesn't disturb existing ones).
+    /// </summary>
+    private void SpawnOneHomeHelper()
+    {
+        if (universalHelperPrefab == null) return;
+
+        Vector3 spawnPos = helperSpawnPoint != null ? helperSpawnPoint.position : defaultSpawnPosition;
+        spawnPos.x += Random.Range(-1f, 1f);
+        spawnPos.y += Random.Range(-0.5f, 0.5f);
+
+        GameObject helperObj = Instantiate(universalHelperPrefab, spawnPos, Quaternion.identity, transform);
+        helperObj.name = $"HomeHelper_{homeScreenHelpers.Count + 1}";
+        helperObj.AddComponent<HomeHelperWander>();
+
+        Helper helper = helperObj.GetComponent<Helper>();
+        if (helper != null)
+            helper.enabled = false;
+
+        homeScreenHelpers.Add(helperObj);
     }
 
     private void Update()
@@ -227,31 +273,39 @@ public class HelperManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Auto-spawn helpers at run start (if upgrade purchased)
-    /// Phase 5.5: Triggered by OnRunStarted event
+    /// Auto-spawn helpers at run start based on unlocked helper slots.
+    /// Level 0 = 1 helper, Level 1 = 2 helpers, etc.
     /// </summary>
     private void AutoSpawnHelpers()
     {
-        if (HelperUpgradeManager.Instance == null) return;
+        // Remove cosmetic home screen helpers
+        HideHomeScreenHelpers();
 
-        int autoSpawnCount = HelperUpgradeManager.Instance.AutoSpawnHelpers;
-        
-        if (autoSpawnCount > 0)
+        // Determine how many helpers to spawn from permanent unlock level
+        int unlockedSlots = 1; // Always at least 1
+        if (UpgradeManager.Instance != null)
+        {
+            int slotLevel = UpgradeManager.Instance.GetPermanentLevel("helper_slot_unlock");
+            unlockedSlots = slotLevel + 1; // Level 0 = 1, Level 1 = 2, etc.
+        }
+
+        // Also add any auto-spawn bonuses from HelperUpgradeManager
+        if (HelperUpgradeManager.Instance != null)
+        {
+            unlockedSlots = Mathf.Max(unlockedSlots, HelperUpgradeManager.Instance.AutoSpawnHelpers);
+        }
+
+        if (unlockedSlots > 0)
         {
             int spawned = 0;
-            for (int i = 0; i < autoSpawnCount; i++)
+            for (int i = 0; i < unlockedSlots; i++)
             {
                 Helper helper = SpawnUniversalHelper();
                 if (helper != null)
-                {
                     spawned++;
-                }
             }
-            
-            if (spawned < autoSpawnCount)
-            {
-                Debug.LogWarning($"Only spawned {spawned}/{autoSpawnCount} helpers (hit max limit)");
-            }
+
+            Debug.Log($"[Helpers] Auto-spawned {spawned}/{unlockedSlots} helpers");
         }
     }
 
@@ -269,13 +323,13 @@ public class HelperManager : MonoBehaviour
 
     /// <summary>
     /// Remove all helpers (called at run end)
-    /// MODIFIED: Also clear zone seeds
+    /// MODIFIED: Also clear zone seeds, restore home screen helpers
     /// </summary>
     private void ClearAllHelpers()
     {
         // Clear zone seed configuration
         currentZoneSeeds.Clear();
-        
+
         for (int i = activeHelpers.Count - 1; i >= 0; i--)
         {
             if (activeHelpers[i] != null)
@@ -283,9 +337,65 @@ public class HelperManager : MonoBehaviour
                 Destroy(activeHelpers[i].gameObject);
             }
         }
-        
+
         activeHelpers.Clear();
         pendingTasks.Clear();
+
+        // Restore cosmetic helpers on home screen
+        ShowHomeScreenHelpers();
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // Home Screen Cosmetic Helpers
+    // ─────────────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Spawn cosmetic helpers on the home screen that wander around.
+    /// Count matches the number of unlocked helper slots.
+    /// </summary>
+    public void ShowHomeScreenHelpers()
+    {
+        HideHomeScreenHelpers();
+
+        if (universalHelperPrefab == null) return;
+        if (RunManager.Instance != null && RunManager.Instance.IsRunActive) return;
+
+        int slots = 1;
+        if (UpgradeManager.Instance != null)
+            slots = UpgradeManager.Instance.GetPermanentLevel("helper_slot_unlock") + 1;
+
+        for (int i = 0; i < slots; i++)
+        {
+            Vector3 spawnPos = helperSpawnPoint != null ? helperSpawnPoint.position : defaultSpawnPosition;
+            // Offset each helper slightly so they don't stack
+            spawnPos.x += Random.Range(-1f, 1f);
+            spawnPos.y += Random.Range(-0.5f, 0.5f);
+
+            GameObject helperObj = Instantiate(universalHelperPrefab, spawnPos, Quaternion.identity, transform);
+            helperObj.name = $"HomeHelper_{i + 1}";
+
+            // Add the wander component for cosmetic movement
+            HomeHelperWander wander = helperObj.AddComponent<HomeHelperWander>();
+
+            // Disable the Helper component so it doesn't try to do tasks
+            Helper helper = helperObj.GetComponent<Helper>();
+            if (helper != null)
+                helper.enabled = false;
+
+            homeScreenHelpers.Add(helperObj);
+        }
+    }
+
+    /// <summary>
+    /// Destroy all cosmetic home screen helpers.
+    /// </summary>
+    public void HideHomeScreenHelpers()
+    {
+        foreach (GameObject go in homeScreenHelpers)
+        {
+            if (go != null) Destroy(go);
+        }
+        homeScreenHelpers.Clear();
     }
 
     /// <summary>
@@ -303,12 +413,33 @@ public class HelperManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Scan for tiles that player has paid to till
+    /// Scan for untilled tiles in unlocked zones.
+    /// Priority 1000 — highest, since nothing else can happen until tiles are tilled.
     /// </summary>
     private void ScanForTillTasks()
     {
-        // TODO: Implement when till payment system is added
-        // For now, tilling is handled manually by player
+        if (FarmGrid.Instance == null) return;
+
+        List<SoilTile> untilledTiles = FarmGrid.Instance.GetUntilledTiles();
+
+        foreach (SoilTile tile in untilledTiles)
+        {
+            if (!IsZoneUnlocked(tile.ZoneID)) continue;
+
+            // Only till tiles in zones that have seeds configured
+            if (GetSeedForZone(tile.ZoneID) == null) continue;
+
+            bool alreadyHasTask = pendingTasks.Exists(task =>
+                task.Type == HelperTask.TaskType.Till &&
+                task.TargetTile == tile
+            );
+
+            if (!alreadyHasTask)
+            {
+                HelperTask task = HelperTask.CreateTillTask(tile, 1000);
+                AddTask(task);
+            }
+        }
     }
 
     /// <summary>

@@ -17,15 +17,16 @@ MonoBehaviour:
   equipmentType: 2
   icon: "\U0001F4A7"
   description: Waters plants within range on an active/cooldown cycle.
+  unlockID: sprinkler_unlock
   baseCooldownSeconds: 30
   baseRepelCapacity: 0
-  baseAoERadius: 1.5
+  baseAoERadius: 2
   countersTheatType: 1
   visualPrefab: {fileID: 5958846195913573462, guid: e6f4d63f20b3fd44a8628baa122a001d, type: 3}
   aoeUpgradeID: sprinkler_aoe
   cooldownUpgradeID: sprinkler_cooldown
   capacityUpgradeID: sprinkler_power
-  aoeBonusPerLevel: 0.4
+  aoeBonusPerLevel: 0.6
   cooldownReductionPerLevel: 3
   capacityBonusPerLevel: 0
   minCooldownSeconds: 5

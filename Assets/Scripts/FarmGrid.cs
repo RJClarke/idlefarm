@@ -66,6 +66,7 @@ public class FarmGrid : MonoBehaviour
         if (RunManager.Instance != null)
         {
             RunManager.Instance.OnRunStarted += OnRunStarted;
+            RunManager.Instance.OnRunEnded += OnRunEnded;
         }
 
         // Subscribe to upgrade events to regenerate grid
@@ -84,6 +85,7 @@ public class FarmGrid : MonoBehaviour
         if (RunManager.Instance != null)
         {
             RunManager.Instance.OnRunStarted -= OnRunStarted;
+            RunManager.Instance.OnRunEnded -= OnRunEnded;
         }
 
         if (UpgradeManager.Instance != null)
@@ -446,6 +448,50 @@ public class FarmGrid : MonoBehaviour
     }
 
     /// <summary>
+    /// Returns the two outer-edge line segments for a zone, trimmed to the given coverage (0..1).
+    /// Coverage grows outward from the corner where the two outer edges meet.
+    /// Zone 1 (top-left): top + left edges, corner = top-left
+    /// Zone 2 (top-right): top + right edges, corner = top-right
+    /// Zone 3 (bottom-left): bottom + left edges, corner = bottom-left
+    /// Zone 4 (bottom-right): bottom + right edges, corner = bottom-right
+    /// </summary>
+    public (Vector2 edgeAStart, Vector2 edgeAEnd, Vector2 edgeBStart, Vector2 edgeBEnd) GetZoneOuterEdges(int zoneId, float coverage)
+    {
+        Vector3 center = GetZoneCenter(zoneId);
+        float zoneWidth = (tilesPerZone * tileSize) + ((tilesPerZone - 1) * gapBetweenTiles);
+        float half = zoneWidth / 2f;
+        float padding = 0.25f;
+
+        // Zone bounding box edges
+        float top    = center.y + half + padding;
+        float bottom = center.y - half - padding;
+        float left   = center.x - half - padding;
+        float right  = center.x + half + padding;
+        float fullLen = zoneWidth + padding * 2f;
+        float len = fullLen * Mathf.Clamp01(coverage);
+
+        // Edge A = horizontal outer edge, Edge B = vertical outer edge
+        // Both start at the shared corner and extend outward by len
+        switch (zoneId)
+        {
+            case 1: // top-left: corner=(left,top), A goes right, B goes down
+                return (new Vector2(left, top), new Vector2(left + len, top),
+                        new Vector2(left, top), new Vector2(left, top - len));
+            case 2: // top-right: corner=(right,top), A goes left, B goes down
+                return (new Vector2(right, top), new Vector2(right - len, top),
+                        new Vector2(right, top), new Vector2(right, top - len));
+            case 3: // bottom-left: corner=(left,bottom), A goes right, B goes up
+                return (new Vector2(left, bottom), new Vector2(left + len, bottom),
+                        new Vector2(left, bottom), new Vector2(left, bottom + len));
+            case 4: // bottom-right: corner=(right,bottom), A goes left, B goes up
+                return (new Vector2(right, bottom), new Vector2(right - len, bottom),
+                        new Vector2(right, bottom), new Vector2(right, bottom + len));
+            default:
+                return (Vector2.zero, Vector2.zero, Vector2.zero, Vector2.zero);
+        }
+    }
+
+    /// <summary>
     /// Returns the world-space center of the given zone by averaging tile positions.
     /// Used by DeerThreat and CrowThreat as the destination point when entering the farm.
     /// Falls back to Vector3.zero if the zone has no tiles.
@@ -530,7 +576,17 @@ public class FarmGrid : MonoBehaviour
         {
             tile.ResetForNewRun();
         }
+    }
 
+    /// <summary>
+    /// Called when a run ends - clear all crops and reset tiles to untilled
+    /// </summary>
+    private void OnRunEnded()
+    {
+        foreach (SoilTile tile in allTiles)
+        {
+            tile.ResetForNewRun();
+        }
     }
 
     /// <summary>

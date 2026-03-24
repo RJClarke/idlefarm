@@ -25,6 +25,21 @@ public class EquipmentData : ScriptableObject
     [TextArea(2, 4)]
     public string description = "Repels crows within its area of effect.";
 
+    [Header("Unlock")]
+    [Tooltip("Must match the unlockID on the corresponding UnlockData asset (e.g. 'scarecrow_unlock')")]
+    public string unlockID = "";
+
+    /// <summary>
+    /// Returns true if this equipment has been unlocked (purchased at the Market).
+    /// If unlockID is empty, the equipment is always considered unlocked.
+    /// </summary>
+    public bool IsUnlocked()
+    {
+        if (string.IsNullOrEmpty(unlockID)) return true;
+        if (UpgradeManager.Instance == null) return false;
+        return UpgradeManager.Instance.GetPermanentLevel(unlockID) > 0;
+    }
+
     [Header("Base Stats")]
     [Tooltip("Seconds before repel charges refill after depletion")]
     [Range(5f, 120f)]
@@ -67,6 +82,25 @@ public class EquipmentData : ScriptableObject
     [Tooltip("Minimum cooldown floor (seconds) — upgrades can't reduce below this")]
     [Range(1f, 20f)]
     public float minCooldownSeconds = 10f;
+
+    // ─────────────────────────────────────────────────────────────────────
+    // Fence-specific fields (only used when equipmentType == Fence)
+    // ─────────────────────────────────────────────────────────────────────
+
+    [Header("Fence Settings")]
+    [Tooltip("Coverage fraction per fence level (1-based). Index 0 = level 1, etc.")]
+    public float[] fenceCoveragePerLevel = new float[] { 0.2f, 0.4f, 0.6f, 0.8f, 1.0f };
+
+    /// <summary>
+    /// Returns the fence coverage fraction for the given level (1-based).
+    /// </summary>
+    public float GetFenceCoverage(int level)
+    {
+        if (fenceCoveragePerLevel == null || fenceCoveragePerLevel.Length == 0)
+            return 1f;
+        int index = Mathf.Clamp(level - 1, 0, fenceCoveragePerLevel.Length - 1);
+        return fenceCoveragePerLevel[index];
+    }
 
     // ─────────────────────────────────────────────────────────────────────
     // Sprinkler-specific fields (only used when equipmentType == Sprinkler)

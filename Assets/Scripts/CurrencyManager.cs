@@ -70,6 +70,7 @@ public class CurrencyManager : MonoBehaviour
         }
 
         currentMoney += amount;
+        if (RunStats.Instance != null) RunStats.Instance.AddMoneyEarned(amount);
         OnMoneyChanged?.Invoke(currentMoney);
     }
 

@@ -285,6 +285,33 @@ public class ThreatWaveManager : MonoBehaviour
     public int CurrentWave     => GetCurrentWave();
     public float CurrentHunger => baseHunger * GetHungerMultiplier(GetCurrentWave());
 
+    /// <summary>
+    /// Find the nearest active threat of a given type to a world position.
+    /// Used by FarmDog to locate deer to chase.
+    /// </summary>
+    public AnimalThreat FindNearestThreatOfType(AnimalThreatType type, Vector3 position)
+    {
+        PruneDeadThreats();
+
+        AnimalThreat nearest = null;
+        float bestDist = float.MaxValue;
+
+        foreach (AnimalThreat t in activeThreats)
+        {
+            if (t == null || t.IsDone) continue;
+            if (t.ThreatType != type) continue;
+
+            float dist = Vector3.Distance(position, t.transform.position);
+            if (dist < bestDist)
+            {
+                bestDist = dist;
+                nearest = t;
+            }
+        }
+
+        return nearest;
+    }
+
     // ─────────────────────────────────────────────────────────────────────
     // Editor Debug
     // ─────────────────────────────────────────────────────────────────────

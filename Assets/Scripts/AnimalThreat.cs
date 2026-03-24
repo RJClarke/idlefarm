@@ -202,6 +202,15 @@ public abstract class AnimalThreat : MonoBehaviour
             float hpBefore        = plant.CurrentHP;
             plant.TakeDamage(damage);
 
+            // Track plant kills by threat type
+            if ((plant == null || !plant.gameObject.activeInHierarchy) && RunStats.Instance != null)
+            {
+                if (data.threatType == AnimalThreatType.Deer)
+                    RunStats.Instance.AddPlantEatenByDeer();
+                else if (data.threatType == AnimalThreatType.Crow)
+                    RunStats.Instance.AddPlantEatenByCrow();
+            }
+
             float hpAfter         = plant != null ? plant.CurrentHP : 0f;
             float hungerSatisfied = hpBefore - hpAfter;
             hungerRemaining       = Mathf.Max(0f, hungerRemaining - hungerSatisfied);
@@ -309,6 +318,27 @@ public abstract class AnimalThreat : MonoBehaviour
         }
 
         return best;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // Public Repel API (used by FarmDog)
+    // ─────────────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Force this threat to flee immediately (e.g., chased by the farm dog).
+    /// </summary>
+    public void ForceRepel()
+    {
+        if (IsDone) return;
+        StopAllCoroutines();
+        StartCoroutine(ForceRepelSequence());
+    }
+
+    private IEnumerator ForceRepelSequence()
+    {
+        OnRepelled();
+        yield return StartCoroutine(ExitFarmRepelled());
+        FinishThreat();
     }
 
     // ─────────────────────────────────────────────────────────────────────

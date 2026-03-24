@@ -64,7 +64,7 @@ public class SeedSelectionPopup : MonoBehaviour
     private const string EQUIP_PREFS_KEY = "EquipmentSelectionData";
 
     // Events
-    public event Action<Dictionary<int, CropData>> OnSeedsConfirmed;
+    public event Action OnSelectionSaved;
     public event Action OnCancelled;
 
     private ZoneSlot[] allZoneSlots;
@@ -194,9 +194,10 @@ public class SeedSelectionPopup : MonoBehaviour
         // Apply saved selections
         ApplySavedSelections();
 
-        // Load equipment assignments
+        // Load equipment assignments and disable buttons for locked zones
         LoadEquipmentAssignments();
         UpdateAllEquipmentLabels();
+        UpdateEquipmentButtonStates();
 
         // Update UI state
         UpdateAllSeedPacketAvailability();
@@ -422,29 +423,26 @@ public class SeedSelectionPopup : MonoBehaviour
     }
 
     /// <summary>
-    /// Check if all unlocked zones are filled and update Begin button
+    /// Update Save button state — always enabled (partial config is fine)
     /// </summary>
     private void ValidateAndUpdateBeginButton()
     {
-        bool allFilled = selectionData.AreAllUnlockedZonesFilled();
-
         if (beginButton != null)
-        {
-            beginButton.interactable = allFilled;
-        }
+            beginButton.interactable = true;
 
         if (errorText != null)
-        {
-            if (allFilled)
-            {
-                errorText.gameObject.SetActive(false);
-            }
-            else
-            {
-                errorText.gameObject.SetActive(true);
-                errorText.text = "⚠️ Please select crops for all unlocked zones";
-            }
-        }
+            errorText.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// Check if saved config is ready to start a run (all unlocked zones filled).
+    /// Called by RunManager before starting.
+    /// </summary>
+    public bool IsReadyToRun()
+    {
+        if (selectionData == null)
+            selectionData = SeedSelectionData.Load();
+        return selectionData.AreAllUnlockedZonesFilled();
     }
 
     /// <summary>
@@ -472,33 +470,37 @@ public class SeedSelectionPopup : MonoBehaviour
     }
 
     /// <summary>
-    /// Begin button clicked - validate and confirm
+    /// Save button clicked - save selections and close
     /// </summary>
     private void OnBeginClicked()
     {
-        if (!selectionData.AreAllUnlockedZonesFilled())
-        {
-            Debug.LogWarning("Cannot begin - not all zones filled!");
-            return;
-        }
-
-        // Save selection for next time
+        // Save selection
         selectionData.Save();
         SaveEquipmentAssignments();
 
-        // Push equipment assignments to EquipmentManager
+        // Push equipment assignments to EquipmentManager (for home screen visuals)
         ApplyEquipmentToManager();
 
-        // Convert to Dictionary for HelperManager
-        Dictionary<int, CropData> zoneSeeds = selectionData.ToZoneSeedDictionary(cropDatabase);
-
         // Notify listeners
-        OnSeedsConfirmed?.Invoke(zoneSeeds);
+        OnSelectionSaved?.Invoke();
 
         // Hide popup
         Hide();
 
-        Debug.Log($"Seed selection confirmed: {zoneSeeds.Count} zones");
+        Debug.Log("Field configuration saved");
+    }
+
+    /// <summary>
+    /// Load saved seed/equipment selections and apply equipment to manager.
+    /// Called by RunManager when starting a run without opening the popup.
+    /// Returns the zone seed dictionary.
+    /// </summary>
+    public Dictionary<int, CropData> LoadAndApplySavedSelections()
+    {
+        selectionData = SeedSelectionData.Load();
+        LoadEquipmentAssignments();
+        ApplyEquipmentToManager();
+        return selectionData.ToZoneSeedDictionary(cropDatabase);
     }
 
     /// <summary>
@@ -554,7 +556,8 @@ public class SeedSelectionPopup : MonoBehaviour
     // ─────────────────────────────────────────────────────────────────────
 
     /// <summary>
-    /// Cycle equipment for a zone: None → Equipment[0] → Equipment[1] → ... → None
+    /// Cycle equipment for a zone: None → next unlocked → ... → None
+    /// Skips equipment that hasn't been purchased at the Market.
     /// </summary>
     private void CycleEquipment(int zoneId)
     {
@@ -567,10 +570,29 @@ public class SeedSelectionPopup : MonoBehaviour
         if (!zoneEquipmentIndex.TryGetValue(zoneId, out currentIdx))
             currentIdx = -1;
 
-        // Advance to next (wraps to -1 = none)
-        currentIdx++;
-        if (currentIdx >= availableEquipment.Length)
-            currentIdx = -1;
+        // Find next unlocked equipment (or wrap to -1 = none)
+        int startIdx = currentIdx;
+        while (true)
+        {
+            currentIdx++;
+            if (currentIdx >= availableEquipment.Length)
+                currentIdx = -1;
+
+            // Wrapped back to none — always valid
+            if (currentIdx == -1)
+                break;
+
+            // Check if this equipment is unlocked
+            if (availableEquipment[currentIdx] != null && availableEquipment[currentIdx].IsUnlocked())
+                break;
+
+            // Safety: if we've looped all the way around, settle on none
+            if (currentIdx == startIdx)
+            {
+                currentIdx = -1;
+                break;
+            }
+        }
 
         zoneEquipmentIndex[zoneId] = currentIdx;
         UpdateEquipmentLabel(zoneId);
@@ -611,6 +633,45 @@ public class SeedSelectionPopup : MonoBehaviour
             case 3: return zone3EquipLabel;
             case 4: return zone4EquipLabel;
             default: return null;
+        }
+    }
+
+    private Button GetEquipmentButton(int zoneId)
+    {
+        switch (zoneId)
+        {
+            case 1: return zone1EquipButton;
+            case 2: return zone2EquipButton;
+            case 3: return zone3EquipButton;
+            case 4: return zone4EquipButton;
+            default: return null;
+        }
+    }
+
+    /// <summary>
+    /// Disable equipment buttons and clear selections for locked zones.
+    /// </summary>
+    private void UpdateEquipmentButtonStates()
+    {
+        for (int z = 1; z <= 4; z++)
+        {
+            ZoneSlot slot = GetZoneSlot(z);
+            bool unlocked = slot != null && slot.IsUnlocked;
+
+            Button btn = GetEquipmentButton(z);
+            if (btn != null)
+            {
+                btn.interactable = unlocked;
+                btn.gameObject.SetActive(unlocked);
+            }
+
+            TextMeshProUGUI label = GetEquipmentLabel(z);
+            if (label != null)
+                label.gameObject.SetActive(unlocked);
+
+            // Clear any saved equipment for locked zones
+            if (!unlocked && zoneEquipmentIndex.ContainsKey(z))
+                zoneEquipmentIndex.Remove(z);
         }
     }
 
@@ -678,7 +739,7 @@ public class SeedSelectionPopup : MonoBehaviour
 
             string equipId = parts[1];
             int idx = Array.FindIndex(availableEquipment, e => e != null && e.equipmentID == equipId);
-            if (idx >= 0)
+            if (idx >= 0 && availableEquipment[idx].IsUnlocked())
                 zoneEquipmentIndex[zoneId] = idx;
         }
     }

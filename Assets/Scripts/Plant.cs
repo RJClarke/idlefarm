@@ -218,6 +218,8 @@ public class Plant : MonoBehaviour
         currentMoisture += waterAmount;
         currentMoisture = Mathf.Clamp(currentMoisture, 0f, 100f);
 
+        if (RunStats.Instance != null) RunStats.Instance.AddPlantWatered();
+
         bool wasDriedOut = isDriedOut;
         isDriedOut = false;
         dryOutTimer = 0f;
@@ -241,6 +243,8 @@ public class Plant : MonoBehaviour
 
         if (CurrencyManager.Instance != null)
             CurrencyManager.Instance.AddMoney(harvestValue);
+
+        if (RunStats.Instance != null) RunStats.Instance.AddCropHarvested();
 
         isInHarvestWindow = false;
         isRotting = false;
@@ -335,6 +339,13 @@ public class Plant : MonoBehaviour
     private void Die(string cause = "unknown")
     {
         Debug.Log($"💀 {cropData.cropName} DIED from {cause}!");
+
+        if (RunStats.Instance != null)
+        {
+            if (cause == "dry-out") RunStats.Instance.AddPlantDehydrated();
+            else if (cause == "rot") RunStats.Instance.AddCropDecayed();
+        }
+
         RemovePlant();
     }
 

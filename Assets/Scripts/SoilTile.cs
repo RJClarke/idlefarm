@@ -198,10 +198,30 @@ public class SoilTile : MonoBehaviour
         {
             currentState = TileState.Tilled;
             UpdateBaseVisuals();
+            if (RunStats.Instance != null) RunStats.Instance.AddTileTilled();
             return true;
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Till this tile for free (used by helpers during a run).
+    /// </summary>
+    public bool TillByHelper()
+    {
+        if (currentState == TileState.Tilled) return false;
+        if (isPermanentlyTilled)
+        {
+            currentState = TileState.Tilled;
+            UpdateBaseVisuals();
+            return true;
+        }
+
+        currentState = TileState.Tilled;
+        UpdateBaseVisuals();
+        if (RunStats.Instance != null) RunStats.Instance.AddTileTilled();
+        return true;
     }
 
     /// <summary>
@@ -274,6 +294,7 @@ public class SoilTile : MonoBehaviour
         if (plantComponent != null)
         {
             plantComponent.Initialize(cropData, this);
+            if (RunStats.Instance != null) RunStats.Instance.AddSeedPlanted();
         }
         else
         {

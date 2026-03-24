@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6068e2ae2ea61644787132c20d749068, type: 3}
+  m_Name: Dog_Unlock
+  m_EditorClassIdentifier: Assembly-CSharp::UnlockData
+  unlockID: dog_unlock
+  displayName: Farm Dog
+  icon: "\U0001F415"
+  category: 3
+  cropData: {fileID: 0}
+  equipmentSprite: {fileID: 0}
+  coinCost: 500
+  lockedDescription: A loyal dog that roams your farm and chases away deer. Scares
+    off 2 deer per minute.
+  unlockedMessage: Your farm dog is ready! It will appear during runs to chase deer
+    away.
+  requiredUnlocks: []

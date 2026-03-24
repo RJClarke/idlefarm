@@ -17,7 +17,7 @@ MonoBehaviour:
   description: Specialized Watering speed
   upgradeType: 0
   allowTemporaryUpgrades: 1
-  maxLevel: 1
+  maxLevel: 5
   baseCoinCost: 100
   coinCostMultiplier: 2.5
   baseMoneyCost: 10000

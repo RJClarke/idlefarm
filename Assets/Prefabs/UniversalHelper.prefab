@@ -53,11 +53,11 @@ MonoBehaviour:
   arrivalThreshold: 0.05
   taskDuration: 2
   spriteRenderer: {fileID: 3719749095174859063}
-  helperColor: {r: 0, g: 1, b: 1, a: 1}
+  helperColor: {r: 1, g: 1, b: 1, a: 1}
   showMovementDebug: 0
   idleColor: {r: 1, g: 1, b: 1, a: 1}
   harvestColor: {r: 0.754717, g: 0.7164223, b: 0.2741189, a: 1}
-  waterColor: {r: 0.45937166, g: 0.45937166, b: 0.8773585, a: 1}
+  waterColor: {r: 0.08664116, g: 0.08664116, b: 0.5566038, a: 0.3764706}
   plantColor: {r: 0.6994037, g: 0.8773585, b: 0.73469913, a: 1}
   tillColor: {r: 0.3773585, g: 0.22419433, b: 0.12993948, a: 1}
 --- !u!212 &3719749095174859063

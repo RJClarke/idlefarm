@@ -49,14 +49,32 @@ public class DeerThreat : AnimalThreat
 
         transform.position = entryPos;
 
-        // Run toward zone center, checking for fence interception each frame
+        // Track previous position for fence line-segment intersection
+        Vector3 prevPos = transform.position;
+
+        // Run toward zone center, checking for fence/equipment interception each frame
         while (Vector3.Distance(transform.position, zoneCenter) > 0.02f)
         {
+            Vector3 newPos = Vector3.MoveTowards(
+                transform.position, zoneCenter, data.moveSpeed * Time.deltaTime);
+
             if (EquipmentManager.Instance != null)
             {
-                int repelZone = EquipmentManager.Instance.CheckFlightPathInterception(
-                    transform.position, ThreatType);
-                if (repelZone >= 0)
+                // Check fence line-segment interception (movement vector vs fence edges)
+                int fenceRepel = EquipmentManager.Instance.TryFenceInterception(
+                    prevPos, newPos, ThreatType);
+                if (fenceRepel >= 0)
+                {
+                    OnRepelled();
+                    yield return StartCoroutine(ExitFarmRepelled());
+                    FinishThreat();
+                    yield break;
+                }
+
+                // Check scarecrow AoE interception
+                int aoeRepel = EquipmentManager.Instance.CheckFlightPathInterception(
+                    newPos, ThreatType);
+                if (aoeRepel >= 0)
                 {
                     OnRepelled();
                     yield return StartCoroutine(ExitFarmRepelled());
@@ -65,13 +83,14 @@ public class DeerThreat : AnimalThreat
                 }
             }
 
+            prevPos = transform.position;
+
             if (spriteRenderer != null)
             {
                 float dirX = zoneCenter.x - transform.position.x;
                 if (Mathf.Abs(dirX) > 0.01f) spriteRenderer.flipX = dirX < 0f;
             }
-            transform.position = Vector3.MoveTowards(
-                transform.position, zoneCenter, data.moveSpeed * Time.deltaTime);
+            transform.position = newPos;
             yield return null;
         }
         transform.position = zoneCenter;

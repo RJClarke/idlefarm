@@ -18,6 +18,7 @@ MonoBehaviour:
   icon: "\U0001F426\u200D\u2B1B"
   description: Repels crows within its area of effect. After repelling its capacity,
     enters cooldown before recharging.
+  unlockID: scarecrow_unlock
   baseCooldownSeconds: 60
   baseRepelCapacity: 1
   baseAoERadius: 2

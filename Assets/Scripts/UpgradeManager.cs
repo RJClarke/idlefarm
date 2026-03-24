@@ -10,9 +10,8 @@ public class UpgradeManager : MonoBehaviour
 {
     public static UpgradeManager Instance { get; private set; }
 
-    [Header("Upgrade Tracking")]
-    [SerializeField] private Dictionary<string, int> permanentLevels = new Dictionary<string, int>();
-    [SerializeField] private Dictionary<string, int> temporaryLevels = new Dictionary<string, int>();
+    private Dictionary<string, int> permanentLevels = new Dictionary<string, int>();
+    private Dictionary<string, int> temporaryLevels = new Dictionary<string, int>();
 
     [Header("Money Scaling Settings")]
     [Tooltip("Money cost multiplier (2.2 = Double + Tax)")]

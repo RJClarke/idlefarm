@@ -15,7 +15,12 @@
       "mcp__UnityMCP__manage_scene",
       "mcp__UnityMCP__manage_texture",
       "mcp__UnityMCP__manage_scriptable_object",
-      "mcp__UnityMCP__validate_script"
+      "mcp__UnityMCP__validate_script",
+      "mcp__figma-desktop__get_design_context",
+      "mcp__UnityMCP__execute_menu_item",
+      "Bash(ls:*)",
+      "mcp__UnityMCP__manage_prefabs",
+      "Bash(claude mcp:*)"
     ]
   }
 }

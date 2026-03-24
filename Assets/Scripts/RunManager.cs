@@ -57,8 +57,8 @@ public class RunManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Start a new farming run
-    /// MODIFIED: Now shows seed selection popup first
+    /// Start a new farming run using saved field configuration.
+    /// Player should configure fields via the "Equip Fields" popup before starting.
     /// </summary>
     public void StartNewRun()
     {
@@ -68,59 +68,26 @@ public class RunManager : MonoBehaviour
             return;
         }
 
-        // Show seed selection popup
-        if (SeedSelectionPopup.Instance != null)
-        {
-            // Subscribe to popup events
-            SeedSelectionPopup.Instance.OnSeedsConfirmed += OnSeedsConfirmed;
-            SeedSelectionPopup.Instance.OnCancelled += OnSeedSelectionCancelled;
-            
-            SeedSelectionPopup.Instance.Show();
-            
-            // Seed selection popup shown
-        }
-        else
-        {
-            Debug.LogWarning("SeedSelectionPopup not found! Starting run without seed selection.");
-            ActuallyStartRun(null);
-        }
-    }
+        Dictionary<int, CropData> zoneSeeds = null;
 
-    /// <summary>
-    /// Called when player confirms seed selection
-    /// </summary>
-    private void OnSeedsConfirmed(Dictionary<int, CropData> zoneSeeds)
-    {
-        // Unsubscribe from popup events
         if (SeedSelectionPopup.Instance != null)
         {
-            SeedSelectionPopup.Instance.OnSeedsConfirmed -= OnSeedsConfirmed;
-            SeedSelectionPopup.Instance.OnCancelled -= OnSeedSelectionCancelled;
+            if (!SeedSelectionPopup.Instance.IsReadyToRun())
+            {
+                Debug.LogWarning("Not all zones configured! Open Equip Fields first.");
+                return;
+            }
+
+            zoneSeeds = SeedSelectionPopup.Instance.LoadAndApplySavedSelections();
         }
 
         // Pass seeds to HelperManager
-        if (HelperManager.Instance != null)
+        if (HelperManager.Instance != null && zoneSeeds != null)
         {
             HelperManager.Instance.SetZoneSeeds(zoneSeeds);
         }
 
-        // Actually start the run
         ActuallyStartRun(zoneSeeds);
-    }
-
-    /// <summary>
-    /// Called when player cancels seed selection
-    /// </summary>
-    private void OnSeedSelectionCancelled()
-    {
-        // Unsubscribe from popup events
-        if (SeedSelectionPopup.Instance != null)
-        {
-            SeedSelectionPopup.Instance.OnSeedsConfirmed -= OnSeedsConfirmed;
-            SeedSelectionPopup.Instance.OnCancelled -= OnSeedSelectionCancelled;
-        }
-
-        // Seed selection cancelled - run not started
     }
 
     /// <summary>
@@ -173,8 +140,16 @@ public class RunManager : MonoBehaviour
             CurrencyManager.Instance.AddCoins(coinsEarned);
         }
 
+        // Record coins saved in stats before resetting
+        if (RunStats.Instance != null)
+            RunStats.Instance.SetCoinsSaved(coinsEarned);
+
         // Notify other systems that run has ended
         OnRunEnded?.Invoke();
+
+        // Show stats popup
+        if (RunStatsPopup.Instance != null)
+            RunStatsPopup.Instance.Show();
 
         // Save the game after run ends
         if (SaveManager.Instance != null)

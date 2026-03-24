@@ -17,6 +17,7 @@ MonoBehaviour:
   equipmentType: 1
   icon: "\U0001F9F1"
   description: L-shaped fence along zone edges. Repels deer that approach.
+  unlockID: fence_unlock
   baseCooldownSeconds: 45
   baseRepelCapacity: 1
   baseAoERadius: 2.5
@@ -29,6 +30,12 @@ MonoBehaviour:
   cooldownReductionPerLevel: 4
   capacityBonusPerLevel: 1
   minCooldownSeconds: 8
+  fenceCoveragePerLevel:
+  - 0.2
+  - 0.4
+  - 0.6
+  - 0.8
+  - 1
   activeDurationSeconds: 10
   baseMoisturePowerPerSecond: 1.5
   waterPowerUpgradeID: sprinkler_power

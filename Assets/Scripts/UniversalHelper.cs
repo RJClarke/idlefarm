@@ -7,17 +7,57 @@ using UnityEngine;
 public class UniversalHelper : Helper
 {
     [Header("Universal Helper Settings")]
-    [SerializeField] private Color idleColor = Color.cyan;
+    [SerializeField] private Color idleColor = Color.white;
     [SerializeField] private Color harvestColor = Color.yellow;
     [SerializeField] private Color waterColor = Color.blue;
     [SerializeField] private Color plantColor = Color.green;
     [SerializeField] private Color tillColor = Color.gray;
+
+    // Per-task upgrade IDs matching UpgradeData assets
+    private const string UPGRADE_PLANTING_SPEED = "helper_planting_speed";
+    private const string UPGRADE_WATERING_SPEED = "helper_watering_speed";
+    private const string UPGRADE_HARVESTING_SPEED = "helper_harvesting_speed";
+    private const string UPGRADE_WATERING_EFFICIENCY = "helper_watering_efficiency";
+
+    /// <summary>
+    /// Get task duration with per-task-type specialization bonus applied.
+    /// Stacks with the base UpgradedTaskDuration from Helper.
+    /// </summary>
+    private float GetSpecializedTaskDuration(HelperTask.TaskType taskType)
+    {
+        float duration = UpgradedTaskDuration;
+
+        if (UpgradeManager.Instance == null) return duration;
+
+        string upgradeID = null;
+        switch (taskType)
+        {
+            case HelperTask.TaskType.Plant: upgradeID = UPGRADE_PLANTING_SPEED; break;
+            case HelperTask.TaskType.Water: upgradeID = UPGRADE_WATERING_SPEED; break;
+            case HelperTask.TaskType.Harvest: upgradeID = UPGRADE_HARVESTING_SPEED; break;
+        }
+
+        if (upgradeID != null)
+        {
+            int level = UpgradeManager.Instance.GetCurrentLevel(upgradeID);
+            duration *= Mathf.Pow(0.8f, level); // 20% faster per level
+        }
+
+        return duration;
+    }
 
     protected override void Awake()
     {
         base.Awake();
         helperName = "Universal Helper";
         helperColor = idleColor;
+    }
+
+    protected override float GetTaskDuration()
+    {
+        if (currentTask != null)
+            return GetSpecializedTaskDuration(currentTask.Type);
+        return base.GetTaskDuration();
     }
 
     protected override void UpdateIdle()
@@ -67,45 +107,45 @@ public class UniversalHelper : Helper
     }
 
     /// <summary>
-    /// Execute till task and chain to plant
-    /// Returns false if chaining (don't complete), true if normal completion
+    /// Execute till task — till the tile, then chain to plant.
+    /// Returns false if chaining (don't complete), true if normal completion.
     /// </summary>
     private bool ExecuteTillTask()
     {
         if (currentTask.TargetTile == null)
+            return true;
+
+        // Actually till the tile (free for helpers)
+        SoilTile tile = currentTask.TargetTile;
+        if (tile.State == TileState.Untilled)
         {
-            return true; // Complete normally
-        }
-        
-        // Tile should already be tilled (player paid for it)
-        // Mark till task as completed
-        if (currentTask != null)
-        {
-            currentTask.IsCompleted = true;
+            tile.TillByHelper();
         }
 
-        // Immediately chain to plant task on same tile
+        // Mark till task as completed
+        currentTask.IsCompleted = true;
+
+        // Chain to plant task on same tile
         if (HelperManager.Instance != null)
         {
-            CropData seedType = HelperManager.Instance.GetSeedForZone(currentTask.TargetTile.ZoneID);
-            
-            if (seedType != null)
+            CropData seedType = HelperManager.Instance.GetSeedForZone(tile.ZoneID);
+
+            if (seedType != null && tile.CanPlant)
             {
-                // Create plant task and switch to it immediately
-                HelperTask plantTask = HelperTask.CreatePlantTask(currentTask.TargetTile, 500);
-                currentTask = plantTask; // Switch to plant task
+                HelperTask plantTask = HelperTask.CreatePlantTask(tile, 500);
+                currentTask = plantTask;
                 currentTask.IsClaimed = true;
-                taskTimer = taskDuration; // Reset timer for planting
-                
-                return false; // DON'T complete - continue with plant task
-            }
-            else
-            {
-                Debug.LogWarning($"{helperName} no seed configured for zone {currentTask.TargetTile.ZoneID} - can't chain to plant");
+                taskTimer = GetSpecializedTaskDuration(HelperTask.TaskType.Plant);
+
+                // Update visual for the new task type
+                if (spriteRenderer != null)
+                    spriteRenderer.color = plantColor;
+
+                return false; // Continue with plant task
             }
         }
-        
-        return true; // Complete normally if no chaining
+
+        return true;
     }
 
     private void ExecuteHarvestTask()
@@ -193,7 +233,7 @@ public class UniversalHelper : Helper
                                 spriteRenderer.color = plantColor;
                                 break;
                             case HelperTask.TaskType.Till:
-                                spriteRenderer.color = tillColor;
+                                spriteRenderer.color = idleColor;
                                 break;
                         }
                     }
