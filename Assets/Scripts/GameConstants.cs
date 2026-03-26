@@ -35,6 +35,10 @@ public class GameConstants : MonoBehaviour
     [Range(10f, 50f)]
     public float manualWaterAmount = 30f; // %
 
+    [Header("Game Speed")]
+    [Tooltip("Base Time.timeScale for the game (2 = everything runs at 2x)")]
+    public float baseGameSpeed = 2f;
+
     [Header("Growth Speed Bonuses")]
     [Tooltip("Moisture threshold where growth speed bonus starts (above this = faster growth)")]
     [Range(0f, 100f)]
@@ -54,6 +58,8 @@ public class GameConstants : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        Time.timeScale = baseGameSpeed;
     }
 
     /// <summary>

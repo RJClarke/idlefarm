@@ -3,160 +3,139 @@ using UnityEngine.UI;
 using TMPro;
 
 /// <summary>
-/// Visual UI for testing plant system with buttons
-/// Phase 3.1: Now includes watering controls
+/// Dev Tools drawer — collapsible panel with debug buttons and info displays.
+/// Toggle button stays visible; panel slides open/closed on click.
 /// </summary>
 public class PlantTestUI : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private PlantTestManager testManager;
 
-    [Header("UI Buttons")]
-    [SerializeField] private Button tillAllButton;
-    [SerializeField] private Button plantOneButton;
-    [SerializeField] private Button fillGridButton;
-    [SerializeField] private Button clearAllButton;
+    [Header("Toggle Button")]
+    [SerializeField] private Button toggleButton;
+    [SerializeField] private TextMeshProUGUI toggleButtonText;
+
+    [Header("Drawer Panel")]
+    [SerializeField] private GameObject drawerPanel;
+
+    [Header("Dev Buttons")]
     [SerializeField] private Button speedUpButton;
-    
-    [Header("Phase 3.1: Water Buttons")]
-    [SerializeField] private Button waterAllButton;
-    [SerializeField] private Button waterLowButton;
+    [SerializeField] private Button spawnCrowButton;
+    [SerializeField] private Button spawnDeerButton;
 
     [Header("Info Display")]
     [SerializeField] private TextMeshProUGUI infoText;
 
+    [Header("Helper Info")]
+    [SerializeField] private TextMeshProUGUI helperInfoText;
+
     [Header("Time Control")]
     [SerializeField] private float normalTimeScale = 1f;
-    [SerializeField] private float fastTimeScale = 10f;
+    [SerializeField] private float fastTimeScale = 20f;
     private bool isSpeedUp = false;
+
+    private bool isOpen = false;
 
     private void Start()
     {
-        // Auto-find test manager if not assigned
         if (testManager == null)
-        {
             testManager = FindFirstObjectByType<PlantTestManager>();
-        }
 
-        // Hook up button events
-        if (tillAllButton != null)
-            tillAllButton.onClick.AddListener(OnTillAllClicked);
-        
-        if (plantOneButton != null)
-            plantOneButton.onClick.AddListener(OnPlantOneClicked);
-        
-        if (fillGridButton != null)
-            fillGridButton.onClick.AddListener(OnFillGridClicked);
-        
-        if (clearAllButton != null)
-            clearAllButton.onClick.AddListener(OnClearAllClicked);
-        
+        // Toggle button
+        if (toggleButton != null)
+            toggleButton.onClick.AddListener(OnToggleClicked);
+
+        // Dev buttons
         if (speedUpButton != null)
             speedUpButton.onClick.AddListener(OnSpeedUpClicked);
+        if (spawnCrowButton != null)
+            spawnCrowButton.onClick.AddListener(OnSpawnCrowClicked);
+        if (spawnDeerButton != null)
+            spawnDeerButton.onClick.AddListener(OnSpawnDeerClicked);
 
-        // Phase 3.1: Water buttons
-        if (waterAllButton != null)
-            waterAllButton.onClick.AddListener(OnWaterAllClicked);
-        
-        if (waterLowButton != null)
-            waterLowButton.onClick.AddListener(OnWaterLowClicked);
-
-        // Update button text
+        // Start closed
+        isOpen = false;
+        if (drawerPanel != null)
+            drawerPanel.SetActive(false);
+        UpdateToggleText();
         UpdateSpeedButtonText();
     }
 
     private void Update()
     {
-        // Update info display
+        if (!isOpen) return;
+
         if (infoText != null)
-        {
             UpdateInfoDisplay();
-        }
+        if (helperInfoText != null)
+            UpdateHelperDisplay();
     }
 
-    private void OnTillAllClicked()
+    // ─────────────────────────────────────────────────────────────────────
+    // Toggle
+    // ─────────────────────────────────────────────────────────────────────
+
+    private void OnToggleClicked()
     {
-        if (testManager != null)
-        {
-            testManager.TillAllTiles();
-        }
+        isOpen = !isOpen;
+        if (drawerPanel != null)
+            drawerPanel.SetActive(isOpen);
+        UpdateToggleText();
     }
 
-    private void OnPlantOneClicked()
+    private void UpdateToggleText()
     {
-        if (testManager != null)
-        {
-            testManager.PlantRandomTestCrop();
-        }
+        if (toggleButtonText != null)
+            toggleButtonText.text = isOpen ? "Close Dev Tools" : "Dev Tools";
     }
 
-    private void OnFillGridClicked()
-    {
-        if (testManager != null)
-        {
-            testManager.FillGridWithTestCrops();
-        }
-    }
-
-    private void OnClearAllClicked()
-    {
-        if (testManager != null)
-        {
-            testManager.ClearAllPlants();
-        }
-    }
+    // ─────────────────────────────────────────────────────────────────────
+    // Button Handlers
+    // ─────────────────────────────────────────────────────────────────────
 
     private void OnSpeedUpClicked()
     {
         isSpeedUp = !isSpeedUp;
         Time.timeScale = isSpeedUp ? fastTimeScale : normalTimeScale;
         UpdateSpeedButtonText();
-        
     }
 
-    // Phase 3.1: Water button handlers
-    private void OnWaterAllClicked()
+    private void OnSpawnCrowClicked()
     {
-        if (testManager != null)
-        {
-            testManager.WaterAllPlants();
-        }
+        if (ThreatWaveManager.Instance != null)
+            ThreatWaveManager.Instance.ForceSpawnCrow();
     }
 
-    private void OnWaterLowClicked()
+    private void OnSpawnDeerClicked()
     {
-        if (testManager != null)
-        {
-            testManager.WaterLowMoisturePlants();
-        }
+        if (ThreatWaveManager.Instance != null)
+            ThreatWaveManager.Instance.ForceSpawnDeer();
     }
 
     private void UpdateSpeedButtonText()
     {
         if (speedUpButton != null)
         {
-            TextMeshProUGUI buttonText = speedUpButton.GetComponentInChildren<TextMeshProUGUI>();
-            if (buttonText != null)
-            {
-                buttonText.text = isSpeedUp ? $"Normal Speed" : $"Speed Up ({fastTimeScale}x)";
-            }
+            var txt = speedUpButton.GetComponentInChildren<TextMeshProUGUI>();
+            if (txt != null)
+                txt.text = isSpeedUp ? "Normal Speed" : $"Speed {fastTimeScale}x";
         }
     }
 
+    // ─────────────────────────────────────────────────────────────────────
+    // Info Displays
+    // ─────────────────────────────────────────────────────────────────────
+
     private void UpdateInfoDisplay()
     {
-        // Count plants by stage
         Plant[] allPlants = FindObjectsByType<Plant>(FindObjectsSortMode.None);
-        
+
         int seeds = 0, sprouts = 0, saplings = 0, harvestable = 0;
         float avgMoisture = 0f;
-        float avgSpeed = 0f; // Phase 3.2
-        int lowMoisture = 0; // Below 30%
-        int stoppedGrowth = 0; // Phase 3.2: At 0% moisture
-        int driedOut = 0; // Phase 3.3: Taking damage
-        int inHarvestWindow = 0; // Phase 4.1: Ready to harvest
-        int rotting = 0; // Phase 4.2: Losing HP from rot
-        
+        int lowMoisture = 0;
+        int driedOut = 0;
+        int rotting = 0;
+
         foreach (Plant plant in allPlants)
         {
             switch (plant.CurrentStage)
@@ -166,150 +145,59 @@ public class PlantTestUI : MonoBehaviour
                 case GrowthStage.Sapling: saplings++; break;
                 case GrowthStage.Harvestable: harvestable++; break;
             }
-
-            // Phase 3.1: Track moisture
             avgMoisture += plant.CurrentMoisture;
-            if (plant.CurrentMoisture < 30f)
-            {
-                lowMoisture++;
-            }
-            
-            // Phase 3.2: Track growth speed
-            if (plant.CurrentStage != GrowthStage.Harvestable)
-            {
-                avgSpeed += plant.CurrentGrowthSpeed;
-                if (plant.CurrentGrowthSpeed == 0f)
-                {
-                    stoppedGrowth++;
-                }
-            }
-            
-            // Phase 3.3: Track dried out plants
-            if (plant.IsDriedOut)
-            {
-                driedOut++;
-            }
-
-            // Phase 4: Track harvest window and rot
-            if (plant.IsInHarvestWindow)
-            {
-                inHarvestWindow++;
-            }
-            if (plant.IsRotting)
-            {
-                rotting++;
-            }
+            if (plant.CurrentMoisture < 30f) lowMoisture++;
+            if (plant.IsDriedOut) driedOut++;
+            if (plant.IsRotting) rotting++;
         }
 
-        int growingPlants = allPlants.Length - harvestable;
-        if (allPlants.Length > 0)
+        if (allPlants.Length > 0) avgMoisture /= allPlants.Length;
+
+        string info = $"<b>FARM</b>  Plants: {allPlants.Length}";
+        info += $"  S:{seeds} Sp:{sprouts} Sa:{saplings} H:{harvestable}";
+        if (rotting > 0) info += $"  <color=orange>Rot:{rotting}</color>";
+        info += $"\nMoisture: {avgMoisture:F0}%";
+        if (driedOut > 0) info += $"  <color=red>Dried:{driedOut}</color>";
+        else if (lowMoisture > 0) info += $"  <color=orange>Low:{lowMoisture}</color>";
+
+        if (ThreatWaveManager.Instance != null)
         {
-            avgMoisture /= allPlants.Length;
-        }
-        if (growingPlants > 0)
-        {
-            avgSpeed /= growingPlants;
+            info += $"\n<b>THREATS</b>  Wave: {ThreatWaveManager.Instance.CurrentWave}";
+            info += $"  Hunger: {ThreatWaveManager.Instance.CurrentHunger:F0}";
         }
 
-        // Count tiles
-        int tilledTiles = 0;
-        if (FarmGrid.Instance != null)
-        {
-            tilledTiles = FarmGrid.Instance.GetPlantableTiles().Count;
-        }
-
-        string info = $"<b>FARM STATUS</b>\n";
-        info += $"Tilled Tiles: {tilledTiles}\n";
-        info += $"Total Plants: {allPlants.Length}\n";
-        info += $"\n<b>GROWTH STAGES</b>\n";
-        info += $"🟤 Seeds: {seeds}\n";
-        info += $"🟢 Sprouts: {sprouts}\n";
-        info += $"🌿 Saplings: {saplings}\n";
-        info += $"⭐ Harvestable: {harvestable}\n";
-        
-        // Phase 4.1: Harvest window info
-        if (inHarvestWindow > 0)
-        {
-            info += $"⏰ <color=yellow>In Window: {inHarvestWindow}</color>\n";
-        }
-        
-        // Phase 4.2: Rot warning
-        if (rotting > 0)
-        {
-            info += $"🍂 <color=orange>ROTTING: {rotting}</color>\n";
-        }
-        
-        // Phase 3.1: Moisture stats
-        info += $"\n<b>MOISTURE</b>\n";
-        info += $"💧 Average: {avgMoisture:F0}%\n";
-        
-        if (driedOut > 0)
-        {
-            info += $"💀 <color=red>DRIED OUT: {driedOut}</color>\n";
-        }
-        else if (lowMoisture > 0)
-        {
-            info += $"⚠️ <color=orange>Low: {lowMoisture} plants</color>\n";
-        }
-        else
-        {
-            info += $"[OK] All plants hydrated\n";
-        }
-        
-        // Phase 3.2: Growth speed stats
-        info += $"\n<b>GROWTH SPEED</b>\n";
-        info += $"⚡ Average: {avgSpeed:F2}x\n";
-        
-        if (stoppedGrowth > 0)
-        {
-            info += $"🛑 <color=red>Stopped: {stoppedGrowth} plants</color>\n";
-        }
-        else if (avgSpeed > 1.2f)
-        {
-            info += $"[OK] <color=green>Fast growth!</color>\n";
-        }
-        else if (avgSpeed < 0.5f && growingPlants > 0)
-        {
-            info += $"⚠️ <color=yellow>Slow growth</color>\n";
-        }
-        else
-        {
-            info += $"[OK] Normal growth\n";
-        }
-        
         if (isSpeedUp)
-        {
-            info += $"\n⚡ <color=yellow>TIME: {fastTimeScale}x SPEED</color>";
-        }
+            info += $"\n<color=yellow>TIME: {fastTimeScale}x</color>";
 
         infoText.text = info;
     }
 
+    private void UpdateHelperDisplay()
+    {
+        if (HelperManager.Instance == null) return;
+
+        int total = HelperManager.Instance.GetHelperCount();
+        int idle = HelperManager.Instance.GetIdleHelperCount();
+        int working = total - idle;
+        int tasks = HelperManager.Instance.GetPendingTaskCount();
+
+        string info = $"<b>HELPERS</b>  Total:{total}  Idle:{idle}  Working:{working}";
+        if (tasks > 0) info += $"  Tasks:{tasks}";
+
+        helperInfoText.text = info;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // Cleanup
+    // ─────────────────────────────────────────────────────────────────────
+
     private void OnDestroy()
     {
-        // Reset time scale when destroyed
-        Time.timeScale = normalTimeScale;
+        Time.timeScale = GameConstants.Instance != null ? GameConstants.Instance.baseGameSpeed : 2f;
 
-        // Unhook button events
-        if (tillAllButton != null)
-            tillAllButton.onClick.RemoveListener(OnTillAllClicked);
-        
-        if (plantOneButton != null)
-            plantOneButton.onClick.RemoveListener(OnPlantOneClicked);
-        
-        if (fillGridButton != null)
-            fillGridButton.onClick.RemoveListener(OnFillGridClicked);
-        
-        if (clearAllButton != null)
-            clearAllButton.onClick.RemoveListener(OnClearAllClicked);
-        
-        if (speedUpButton != null)
-            speedUpButton.onClick.RemoveListener(OnSpeedUpClicked);
-
-        if (waterAllButton != null)
-            waterAllButton.onClick.RemoveListener(OnWaterAllClicked);
-        
-        if (waterLowButton != null)
-            waterLowButton.onClick.RemoveListener(OnWaterLowClicked);
+        if (toggleButton != null) toggleButton.onClick.RemoveListener(OnToggleClicked);
+        if (speedUpButton != null) speedUpButton.onClick.RemoveListener(OnSpeedUpClicked);
+        if (spawnCrowButton != null) spawnCrowButton.onClick.RemoveListener(OnSpawnCrowClicked);
+        if (spawnDeerButton != null) spawnDeerButton.onClick.RemoveListener(OnSpawnDeerClicked);
     }
 }

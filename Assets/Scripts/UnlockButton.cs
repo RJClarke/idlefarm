@@ -10,6 +10,8 @@ using TMPro;
 /// </summary>
 public class UnlockButton : MonoBehaviour
 {
+    private bool hasWarnedNoSprite = false;
+
     [Header("Unlock Data")]
     [Tooltip("Drag the UnlockData asset here (Scarecrow, Corn, Fence, etc.)")]
     [SerializeField] private UnlockData unlockData;
@@ -193,7 +195,11 @@ public class UnlockButton : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning($"Unlock '{unlockData.displayName}' is Equipment but has no sprite assigned!");
+                if (!hasWarnedNoSprite)
+                {
+                    Debug.LogWarning($"Unlock '{unlockData.displayName}' is Equipment but has no sprite assigned!");
+                    hasWarnedNoSprite = true;
+                }
             }
         }
 

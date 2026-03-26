@@ -171,6 +171,25 @@ public class DailyRewardPopup : MonoBehaviour
         bool canClaim = DailyRewardManager.Instance.CanClaimToday;
         claimButton.interactable = canClaim;
 
+        // Style the button so it looks clickable
+        Image btnImage = claimButton.GetComponent<Image>();
+        if (btnImage != null)
+        {
+            btnImage.color = canClaim
+                ? new Color(0.15f, 0.5f, 0.15f, 1f)   // green when claimable
+                : new Color(0.25f, 0.25f, 0.25f, 1f);  // dark gray when disabled
+        }
+
+        // Ensure button color tinting works
+        ColorBlock cb = claimButton.colors;
+        cb.normalColor = Color.white;
+        cb.highlightedColor = new Color(0.85f, 0.85f, 0.85f, 1f);
+        cb.pressedColor = new Color(0.65f, 0.65f, 0.65f, 1f);
+        cb.selectedColor = Color.white;
+        cb.disabledColor = new Color(0.6f, 0.6f, 0.6f, 1f);
+        cb.colorMultiplier = 1f;
+        claimButton.colors = cb;
+
         if (claimButtonText != null)
         {
             if (canClaim)
@@ -257,7 +276,8 @@ public class DailyRewardPopup : MonoBehaviour
         dayNameText.text = DailyRewardManager.Instance.GetDayName(dayIndex);
         dayNameText.fontSize = 18;
         dayNameText.alignment = TextAlignmentOptions.Center;
-        dayNameText.color = Color.white;
+        Color textColor = GetContrastTextColor(bg.color);
+        dayNameText.color = textColor;
         if (isToday) dayNameText.fontStyle = FontStyles.Bold;
 
         // Reward amount (center)
@@ -274,7 +294,7 @@ public class DailyRewardPopup : MonoBehaviour
         rewardText.fontSize = 24;
         rewardText.fontStyle = FontStyles.Bold;
         rewardText.alignment = TextAlignmentOptions.Center;
-        rewardText.color = Color.white;
+        rewardText.color = textColor;
 
         // Status icon (bottom)
         GameObject statusObj = new GameObject("Status");
@@ -289,26 +309,33 @@ public class DailyRewardPopup : MonoBehaviour
         statusText.fontSize = 14;
         statusText.alignment = TextAlignmentOptions.Center;
 
+        statusText.color = textColor;
         switch (status)
         {
             case DayStatus.Claimed:
                 statusText.text = "Claimed";
-                statusText.color = new Color(0.8f, 1f, 0.8f);
                 break;
             case DayStatus.Available:
                 statusText.text = "Today!";
-                statusText.color = new Color(1f, 1f, 0.8f);
                 break;
             case DayStatus.Missed:
                 statusText.text = "Missed";
-                statusText.color = new Color(0.7f, 0.7f, 0.7f);
                 break;
             case DayStatus.Upcoming:
                 statusText.text = "";
-                statusText.color = new Color(0.6f, 0.6f, 0.6f);
                 break;
         }
 
         return cell;
+    }
+
+    /// <summary>
+    /// Returns black or white text color based on background luminance (WCAG contrast).
+    /// </summary>
+    private static Color GetContrastTextColor(Color bg)
+    {
+        // Relative luminance per WCAG 2.0
+        float luminance = 0.2126f * bg.r + 0.7152f * bg.g + 0.0722f * bg.b;
+        return luminance > 0.5f ? new Color(0.1f, 0.1f, 0.1f) : Color.white;
     }
 }

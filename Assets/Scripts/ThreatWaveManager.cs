@@ -51,6 +51,7 @@ public class ThreatWaveManager : MonoBehaviour
 
     [Header("Hunger Scaling")]
     [SerializeField] private float baseHunger = 500f;
+    [SerializeField] private float crowBaseHunger = 80f;
     [SerializeField] private float hungerScalePerWave = 0.01f;
 
     [Header("Master Switch")]
@@ -150,9 +151,10 @@ public class ThreatWaveManager : MonoBehaviour
             for (int i = 0; i < deerToSpawn; i++)
                 SpawnAnimal(deerData, typeof(DeerThreat), hunger);
 
+            float crowHunger = crowBaseHunger * hungerMult;
             int crowsToSpawn = targetCrows - CountActiveOfType(AnimalThreatType.Crow);
             for (int i = 0; i < crowsToSpawn; i++)
-                SpawnAnimal(crowData, typeof(CrowThreat), hunger);
+                SpawnAnimal(crowData, typeof(CrowThreat), crowHunger);
         }
     }
 
@@ -313,23 +315,32 @@ public class ThreatWaveManager : MonoBehaviour
     }
 
     // ─────────────────────────────────────────────────────────────────────
-    // Editor Debug
+    // Public Force Spawn (Dev Tools)
     // ─────────────────────────────────────────────────────────────────────
 
-#if UNITY_EDITOR
-    [ContextMenu("Debug: Force Spawn Deer")]
-    private void DebugSpawnDeer()
+    public void ForceSpawnDeer()
     {
         if (deerData == null) { Debug.LogWarning("No deer AnimalThreatData assigned!"); return; }
         SpawnAnimal(deerData, typeof(DeerThreat), CurrentHunger);
     }
 
-    [ContextMenu("Debug: Force Spawn Crow")]
-    private void DebugSpawnCrow()
+    public void ForceSpawnCrow()
     {
         if (crowData == null) { Debug.LogWarning("No crow AnimalThreatData assigned!"); return; }
-        SpawnAnimal(crowData, typeof(CrowThreat), CurrentHunger);
+        float hunger = crowBaseHunger * GetHungerMultiplier(GetCurrentWave());
+        SpawnAnimal(crowData, typeof(CrowThreat), hunger);
     }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // Editor Debug
+    // ─────────────────────────────────────────────────────────────────────
+
+#if UNITY_EDITOR
+    [ContextMenu("Debug: Force Spawn Deer")]
+    private void DebugSpawnDeer() => ForceSpawnDeer();
+
+    [ContextMenu("Debug: Force Spawn Crow")]
+    private void DebugSpawnCrow() => ForceSpawnCrow();
 
     [ContextMenu("Debug: Log Wave Info")]
     private void DebugLogWaveInfo()
@@ -338,6 +349,7 @@ public class ThreatWaveManager : MonoBehaviour
         Debug.Log($"=== Wave {wave} ===");
         Debug.Log($"  Run time:       {(RunManager.Instance != null ? RunManager.Instance.CurrentRunDuration : 0f):F0}s");
         Debug.Log($"  Hunger:         {CurrentHunger:F0} ({GetHungerMultiplier(wave):F2}x)");
+        Debug.Log($"  Crow hunger:    {crowBaseHunger * GetHungerMultiplier(wave):F0}");
         Debug.Log($"  Deer cap:       {GetDeerCount(wave)}");
         Debug.Log($"  Crow cap:       {GetCrowCount(wave)}");
         Debug.Log($"  Active deer:    {CountActiveOfType(AnimalThreatType.Deer)}");

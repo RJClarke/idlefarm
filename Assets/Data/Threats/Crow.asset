@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalThreatData
   threatName: Animal
   threatType: 1
+  prefabs:
+  - {fileID: 3951548817321679265, guid: d32316275b0a09343ae361ef0ff2b02a, type: 3}
   moveSpeed: 5
   grazingRadius: 8
   minBitesPerPlant: 2

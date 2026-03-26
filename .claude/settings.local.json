@@ -20,7 +20,9 @@
       "mcp__UnityMCP__execute_menu_item",
       "Bash(ls:*)",
       "mcp__UnityMCP__manage_prefabs",
-      "Bash(claude mcp:*)"
+      "Bash(claude mcp:*)",
+      "mcp__UnityMCP__manage_animation",
+      "Bash(grep -E \"\\\\.cs$\")"
     ]
   }
 }

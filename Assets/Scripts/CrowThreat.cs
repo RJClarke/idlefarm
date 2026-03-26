@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 /// <summary>
 /// Crow Threat
@@ -13,28 +14,33 @@ using System.Collections;
 ///   6. If no valid plants remain in zone → flies off immediately (hunger or not)
 ///   7. When hunger = 0 → flies off in a random 360° direction
 ///
-/// Stage multipliers (configure in AnimalThreatData):
-///   Seed        → 2.0  (priority)
-///   Sprout      → 0.0  (ignored)
-///   Sapling     → 0.0  (ignored)
-///   Harvestable → 1.5  (priority)
-///
-/// Recommended AnimalThreatData settings:
-///   moveSpeed      = 5.0   (faster than deer — it hops)
-///   grazingRadius  = 10.0  (whole zone — crow searches entire assigned zone)
-///   minBites       = 2, maxBites = 4
-///   minDamage      = 10, maxDamage = 10  (fixed 10 HP per peck)
-///   biteInterval   = 1.5s
-///   placeholderColor = dark grey / near-black
+/// Crows claim their target so multiple crows never eat the same plant.
 /// </summary>
 public class CrowThreat : AnimalThreat
 {
+    // Shared set of plants currently claimed by any crow
+    private static readonly HashSet<Plant> claimedPlants = new HashSet<Plant>();
+
+    // This crow's currently claimed plant
+    private Plant currentClaim;
+
     // Entry angle — reused for exit (flies back the way it came, roughly)
     private float entryAngleDeg;
 
     // ─────────────────────────────────────────────────────────────────────
     // Entry / Exit
     // ─────────────────────────────────────────────────────────────────────
+
+    // ─────────────────────────────────────────────────────────────────────
+    // Animation Hooks
+    // ─────────────────────────────────────────────────────────────────────
+
+    protected override void OnEnteringFarm()   { SetAnimation(1); } // Fly
+    protected override void OnMovingToPlant()  { SetAnimation(0); } // Walk (hop)
+    protected override void OnEatingPlant()    { SetAnimation(2); } // Attack (peck)
+    protected override void OnSearchingForPlant() { SetAnimation(0); } // Walk (hop)
+    protected override void OnExitingFarm()    { SetAnimation(1); } // Fly
+    protected override void OnRepelled()       { SetAnimation(1); } // Fly (flee)
 
     protected override IEnumerator EnterFarm()
     {
@@ -106,28 +112,59 @@ public class CrowThreat : AnimalThreat
     }
 
     // ─────────────────────────────────────────────────────────────────────
-    // Target Selection — zone-locked, nearest-first
+    // Claim Management — prevent multiple crows eating the same plant
+    // ─────────────────────────────────────────────────────────────────────
+
+    private void ClaimPlant(Plant plant)
+    {
+        ReleaseClaim();
+        if (plant != null)
+        {
+            currentClaim = plant;
+            claimedPlants.Add(plant);
+        }
+    }
+
+    private void ReleaseClaim()
+    {
+        if (currentClaim != null)
+        {
+            claimedPlants.Remove(currentClaim);
+            currentClaim = null;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        ReleaseClaim();
+        // Prune any null entries left by destroyed plants
+        claimedPlants.RemoveWhere(p => p == null);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // Target Selection — zone-locked, nearest-first, no overlap
     // ─────────────────────────────────────────────────────────────────────
 
     protected override Plant FindFirstTarget()
     {
-        // Large radius = whole zone; crow searches everywhere in its assigned zone
-        return FindNearestValidPlantInZone(transform.position);
+        Plant target = FindNearestValidPlantInZone(transform.position);
+        ClaimPlant(target);
+        return target;
     }
 
     protected override Plant FindNextTarget(Vector3 currentPosition)
     {
-        return FindNearestValidPlantInZone(currentPosition);
+        Plant target = FindNearestValidPlantInZone(currentPosition);
+        ClaimPlant(target);
+        return target;
     }
 
-    /// <summary>
-    /// Unlike deer (which uses priority scoring), crows hop to the NEAREST
-    /// valid plant in their locked zone. Uses distance as primary sort,
-    /// with the stage filter still applied (Seeds/Harvestable only via multipliers).
-    /// </summary>
     private Plant FindNearestValidPlantInZone(Vector3 origin)
     {
         if (FarmGrid.Instance == null) return null;
+
+        // Prune stale claims
+        claimedPlants.RemoveWhere(p => p == null);
 
         var tiles = FarmGrid.Instance.GetOccupiedTilesInZone(assignedZoneId);
         Plant nearest = null;
@@ -139,8 +176,11 @@ public class CrowThreat : AnimalThreat
             Plant plant = tile.CurrentPlant.GetComponent<Plant>();
             if (plant == null) continue;
 
-            // Must be a targetable stage (multiplier > 0 = Seeds or Harvestable)
+            // Must be a targetable stage
             if (!data.CanTargetStage(plant.CurrentStage)) continue;
+
+            // Skip plants claimed by other crows (allow re-claiming our own)
+            if (claimedPlants.Contains(plant) && plant != currentClaim) continue;
 
             float dist = Vector3.Distance(origin, tile.transform.position);
             if (dist < nearestDist)

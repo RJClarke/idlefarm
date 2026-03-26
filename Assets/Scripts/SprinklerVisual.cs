@@ -87,7 +87,7 @@ public class SprinklerVisual : MonoBehaviour
     {
         if (isPinging)
         {
-            pingTimer -= Time.deltaTime;
+            pingTimer -= Time.unscaledDeltaTime;
             if (pingTimer <= 0f)
             {
                 SpawnRing();
@@ -99,7 +99,7 @@ public class SprinklerVisual : MonoBehaviour
         {
             if (ringTimers[i] < 0f) continue;
 
-            ringTimers[i] += Time.deltaTime;
+            ringTimers[i] += Time.unscaledDeltaTime;
             float t = ringTimers[i] / pingDuration;
 
             if (t >= 1f)
