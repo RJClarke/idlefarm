@@ -11,6 +11,7 @@ public class CurrencyUI : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private TextMeshProUGUI coinsText;
+    [SerializeField] private TextMeshProUGUI gemsText;
 
     [Header("Display Settings")]
     [SerializeField] private string moneyPrefix = "$";
@@ -35,10 +36,12 @@ public class CurrencyUI : MonoBehaviour
             // Subscribe to events
             CurrencyManager.Instance.OnMoneyChanged += UpdateMoneyDisplay;
             CurrencyManager.Instance.OnCoinsChanged += UpdateCoinsDisplay;
+            CurrencyManager.Instance.OnGemsChanged += UpdateGemsDisplay;
 
             // Initial display
             UpdateMoneyDisplay(CurrencyManager.Instance.Money);
             UpdateCoinsDisplay(CurrencyManager.Instance.Coins);
+            UpdateGemsDisplay(CurrencyManager.Instance.Gems);
             
         }
         else
@@ -54,6 +57,7 @@ public class CurrencyUI : MonoBehaviour
         {
             CurrencyManager.Instance.OnMoneyChanged -= UpdateMoneyDisplay;
             CurrencyManager.Instance.OnCoinsChanged -= UpdateCoinsDisplay;
+            CurrencyManager.Instance.OnGemsChanged -= UpdateGemsDisplay;
         }
     }
 
@@ -81,6 +85,20 @@ public class CurrencyUI : MonoBehaviour
             if (animateOnChange)
             {
                 AnimateText(coinsText);
+            }
+        }
+    }
+
+    private void UpdateGemsDisplay(int newAmount)
+    {
+        if (gemsText != null)
+        {
+            string formattedAmount = FormatCurrency(newAmount);
+            gemsText.text = formattedAmount;
+
+            if (animateOnChange)
+            {
+                AnimateText(gemsText);
             }
         }
     }
