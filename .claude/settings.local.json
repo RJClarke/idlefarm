@@ -22,7 +22,9 @@
       "mcp__UnityMCP__manage_prefabs",
       "Bash(claude mcp:*)",
       "mcp__UnityMCP__manage_animation",
-      "Bash(grep -E \"\\\\.cs$\")"
+      "Bash(grep -E \"\\\\.cs$\")",
+      "Bash(xargs grep:*)",
+      "Bash(bash \"C:\\\\Users\\\\rjcla\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\5.0.6\\\\skills\\\\brainstorming\\\\scripts\\\\start-server.sh\" --project-dir \"/c/Users/rjcla/IdleFarm - Silo\")"
     ]
   }
 }

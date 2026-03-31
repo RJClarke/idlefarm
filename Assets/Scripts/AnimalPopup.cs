@@ -23,6 +23,10 @@ public class AnimalPopup : MonoBehaviour
 
     private List<GameObject> rowInstances = new List<GameObject>();
 
+    private System.Action<AnimalData> onEquipped;
+    private System.Action onUnequipped;
+    private System.Action<string> onUnlocked;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -43,9 +47,12 @@ public class AnimalPopup : MonoBehaviour
 
         if (AnimalManager.Instance != null)
         {
-            AnimalManager.Instance.OnAnimalEquipped += (_) => RefreshList();
-            AnimalManager.Instance.OnAnimalUnequipped += RefreshList;
-            AnimalManager.Instance.OnAnimalUnlocked += (_) => RefreshList();
+            onEquipped = (_) => RefreshList();
+            onUnequipped = RefreshList;
+            onUnlocked = (_) => RefreshList();
+            AnimalManager.Instance.OnAnimalEquipped += onEquipped;
+            AnimalManager.Instance.OnAnimalUnequipped += onUnequipped;
+            AnimalManager.Instance.OnAnimalUnlocked += onUnlocked;
         }
     }
 
@@ -53,6 +60,13 @@ public class AnimalPopup : MonoBehaviour
     {
         if (CurrencyManager.Instance != null)
             CurrencyManager.Instance.OnGemsChanged -= UpdateGemCount;
+
+        if (AnimalManager.Instance != null)
+        {
+            AnimalManager.Instance.OnAnimalEquipped -= onEquipped;
+            AnimalManager.Instance.OnAnimalUnequipped -= onUnequipped;
+            AnimalManager.Instance.OnAnimalUnlocked -= onUnlocked;
+        }
     }
 
     // ── Show / Hide ──────────────────────────────

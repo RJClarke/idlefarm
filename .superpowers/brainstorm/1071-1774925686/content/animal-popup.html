@@ -1,0 +1,182 @@
+<h2>Animal Picker Popup</h2>
+<p class="subtitle">Opens when you tap the animal equip button. How should the animals be presented?</p>
+
+<div class="cards">
+  <!-- Option A: Grid of cards -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="
+        width: 260px; height: 400px; margin: 0 auto;
+        background: rgba(40,30,20,0.95);
+        border-radius: 16px; position: relative; overflow: hidden;
+        font-family: system-ui; font-size: 11px; color: #ddd;
+        border: 2px solid #8B7355;
+      ">
+        <!-- Header -->
+        <div style="padding:14px 16px 8px;display:flex;justify-content:space-between;align-items:center;">
+          <div style="font-size:16px;font-weight:700;color:#F5DEB3;">Farm Animals</div>
+          <div style="font-size:11px;color:#E066FF;">💎 47</div>
+        </div>
+        <div style="padding:0 16px 10px;font-size:9px;color:#999;">Equip one animal to help on your farm</div>
+
+        <!-- Grid: 2 columns -->
+        <div style="padding:0 12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <!-- Chicken - unlocked, equipped -->
+          <div style="background:rgba(74,124,46,0.3);border:2px solid #4A7C2E;border-radius:10px;padding:10px;text-align:center;position:relative;">
+            <div style="position:absolute;top:4px;right:4px;font-size:7px;background:#4A7C2E;color:white;padding:1px 5px;border-radius:4px;">EQUIPPED</div>
+            <div style="font-size:32px;margin:4px 0;">🐔</div>
+            <div style="font-size:11px;font-weight:600;color:#F5DEB3;">Chicken</div>
+            <div style="font-size:8px;color:#aaa;margin-top:2px;">Lays an egg every 20 min<br>Sell for bonus coins</div>
+          </div>
+
+          <!-- Farm Dog - locked -->
+          <div style="background:rgba(100,100,100,0.2);border:2px solid #555;border-radius:10px;padding:10px;text-align:center;position:relative;opacity:0.7;">
+            <div style="font-size:32px;margin:4px 0;filter:brightness(0.4);">🐕</div>
+            <div style="font-size:11px;font-weight:600;color:#999;">Farm Dog</div>
+            <div style="font-size:8px;color:#777;margin-top:2px;">Chases away deer<br>during farm runs</div>
+            <div style="margin-top:6px;background:#555;color:#E066FF;padding:3px 8px;border-radius:6px;font-size:9px;font-weight:600;">💎 500</div>
+          </div>
+
+          <!-- Cow - locked -->
+          <div style="background:rgba(100,100,100,0.2);border:2px solid #555;border-radius:10px;padding:10px;text-align:center;position:relative;opacity:0.7;">
+            <div style="font-size:32px;margin:4px 0;filter:brightness(0.4);">🐄</div>
+            <div style="font-size:11px;font-weight:600;color:#999;">Cow</div>
+            <div style="font-size:8px;color:#777;margin-top:2px;">Coming soon...</div>
+            <div style="margin-top:6px;background:#555;color:#E066FF;padding:3px 8px;border-radius:6px;font-size:9px;font-weight:600;">💎 1,500</div>
+          </div>
+
+          <!-- Pig - locked -->
+          <div style="background:rgba(100,100,100,0.2);border:2px solid #555;border-radius:10px;padding:10px;text-align:center;position:relative;opacity:0.7;">
+            <div style="font-size:32px;margin:4px 0;filter:brightness(0.4);">🐖</div>
+            <div style="font-size:11px;font-weight:600;color:#999;">Pig</div>
+            <div style="font-size:8px;color:#777;margin-top:2px;">Coming soon...</div>
+            <div style="margin-top:6px;background:#555;color:#E066FF;padding:3px 8px;border-radius:6px;font-size:9px;font-weight:600;">💎 3,000</div>
+          </div>
+
+          <!-- Horse - locked -->
+          <div style="background:rgba(100,100,100,0.2);border:2px solid #555;border-radius:10px;padding:10px;text-align:center;position:relative;opacity:0.7;">
+            <div style="font-size:32px;margin:4px 0;filter:brightness(0.4);">🐴</div>
+            <div style="font-size:11px;font-weight:600;color:#999;">Horse</div>
+            <div style="font-size:8px;color:#777;margin-top:2px;">Coming soon...</div>
+            <div style="margin-top:6px;background:#555;color:#E066FF;padding:3px 8px;border-radius:6px;font-size:9px;font-weight:600;">💎 5,000</div>
+          </div>
+
+          <!-- Rooster - locked -->
+          <div style="background:rgba(100,100,100,0.2);border:2px solid #555;border-radius:10px;padding:10px;text-align:center;position:relative;opacity:0.7;">
+            <div style="font-size:32px;margin:4px 0;filter:brightness(0.4);">🐓</div>
+            <div style="font-size:11px;font-weight:600;color:#999;">Rooster</div>
+            <div style="font-size:8px;color:#777;margin-top:2px;">Coming soon...</div>
+            <div style="margin-top:6px;background:#555;color:#E066FF;padding:3px 8px;border-radius:6px;font-size:9px;font-weight:600;">💎 8,000</div>
+          </div>
+        </div>
+
+        <!-- Close button -->
+        <div style="position:absolute;top:12px;right:12px;width:24px;height:24px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:#999;cursor:pointer;">✕</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A: Grid Cards</h3>
+      <p>2-column grid. Each card shows emoji, name, description, and price (or EQUIPPED badge). Locked animals are dimmed. Scrollable if more are added.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Vertical list -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="
+        width: 260px; height: 400px; margin: 0 auto;
+        background: rgba(40,30,20,0.95);
+        border-radius: 16px; position: relative; overflow: hidden;
+        font-family: system-ui; font-size: 11px; color: #ddd;
+        border: 2px solid #8B7355;
+      ">
+        <!-- Header -->
+        <div style="padding:14px 16px 8px;display:flex;justify-content:space-between;align-items:center;">
+          <div style="font-size:16px;font-weight:700;color:#F5DEB3;">Farm Animals</div>
+          <div style="font-size:11px;color:#E066FF;">💎 47</div>
+        </div>
+        <div style="padding:0 16px 10px;font-size:9px;color:#999;">Equip one animal to help on your farm</div>
+
+        <!-- Vertical list -->
+        <div style="padding:0 12px;display:flex;flex-direction:column;gap:6px;">
+          <!-- Chicken - equipped -->
+          <div style="display:flex;align-items:center;gap:10px;background:rgba(74,124,46,0.3);border:2px solid #4A7C2E;border-radius:10px;padding:8px 10px;">
+            <div style="font-size:28px;flex-shrink:0;">🐔</div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:11px;font-weight:600;color:#F5DEB3;">Chicken</div>
+              <div style="font-size:8px;color:#aaa;">Lays an egg every 20 min · Sell for coins</div>
+            </div>
+            <div style="font-size:7px;background:#4A7C2E;color:white;padding:2px 6px;border-radius:4px;flex-shrink:0;">EQUIPPED</div>
+          </div>
+
+          <!-- Farm Dog - locked -->
+          <div style="display:flex;align-items:center;gap:10px;background:rgba(100,100,100,0.15);border:2px solid #555;border-radius:10px;padding:8px 10px;opacity:0.7;">
+            <div style="font-size:28px;flex-shrink:0;filter:brightness(0.4);">🐕</div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:11px;font-weight:600;color:#999;">Farm Dog</div>
+              <div style="font-size:8px;color:#777;">Chases away deer during runs</div>
+            </div>
+            <div style="background:#555;color:#E066FF;padding:2px 6px;border-radius:6px;font-size:9px;flex-shrink:0;">💎 500</div>
+          </div>
+
+          <!-- Cow - locked -->
+          <div style="display:flex;align-items:center;gap:10px;background:rgba(100,100,100,0.15);border:2px solid #555;border-radius:10px;padding:8px 10px;opacity:0.7;">
+            <div style="font-size:28px;flex-shrink:0;filter:brightness(0.4);">🐄</div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:11px;font-weight:600;color:#999;">Cow</div>
+              <div style="font-size:8px;color:#777;">Coming soon...</div>
+            </div>
+            <div style="background:#555;color:#E066FF;padding:2px 6px;border-radius:6px;font-size:9px;flex-shrink:0;">💎 1,500</div>
+          </div>
+
+          <!-- Pig - locked -->
+          <div style="display:flex;align-items:center;gap:10px;background:rgba(100,100,100,0.15);border:2px solid #555;border-radius:10px;padding:8px 10px;opacity:0.7;">
+            <div style="font-size:28px;flex-shrink:0;filter:brightness(0.4);">🐖</div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:11px;font-weight:600;color:#999;">Pig</div>
+              <div style="font-size:8px;color:#777;">Coming soon...</div>
+            </div>
+            <div style="background:#555;color:#E066FF;padding:2px 6px;border-radius:6px;font-size:9px;flex-shrink:0;">💎 3,000</div>
+          </div>
+
+          <!-- Horse - locked -->
+          <div style="display:flex;align-items:center;gap:10px;background:rgba(100,100,100,0.15);border:2px solid #555;border-radius:10px;padding:8px 10px;opacity:0.7;">
+            <div style="font-size:28px;flex-shrink:0;filter:brightness(0.4);">🐴</div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:11px;font-weight:600;color:#999;">Horse</div>
+              <div style="font-size:8px;color:#777;">Coming soon...</div>
+            </div>
+            <div style="background:#555;color:#E066FF;padding:2px 6px;border-radius:6px;font-size:9px;flex-shrink:0;">💎 5,000</div>
+          </div>
+
+          <!-- Rooster - locked -->
+          <div style="display:flex;align-items:center;gap:10px;background:rgba(100,100,100,0.15);border:2px solid #555;border-radius:10px;padding:8px 10px;opacity:0.7;">
+            <div style="font-size:28px;flex-shrink:0;filter:brightness(0.4);">🐓</div>
+            <div style="flex:1;min-width:0;">
+              <div style="font-size:11px;font-weight:600;color:#999;">Rooster</div>
+              <div style="font-size:8px;color:#777;">Coming soon...</div>
+            </div>
+            <div style="background:#555;color:#E066FF;padding:2px 6px;border-radius:6px;font-size:9px;flex-shrink:0;">💎 8,000</div>
+          </div>
+        </div>
+
+        <!-- Close button -->
+        <div style="position:absolute;top:12px;right:12px;width:24px;height:24px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;color:#999;">✕</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B: Vertical List</h3>
+      <p>Full-width rows with emoji, name, description, and price inline. More room for description text. Scrollable list.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px;">
+  <p class="label">Interactions</p>
+  <ul style="font-size: 14px; color: #aaa; line-height: 1.8;">
+    <li><strong>Unlocked animal:</strong> Tap to equip (replaces current). Green border + EQUIPPED badge.</li>
+    <li><strong>Locked + enough gems:</strong> Tap to unlock. Confirmation dialog: "Unlock Chicken for 💎 100?"</li>
+    <li><strong>Locked + not enough gems:</strong> Tap shows "Need 💎 53 more" or similar. Dimmed buy button.</li>
+    <li><strong>Unequip:</strong> Tap the currently equipped animal to unequip (no animal active).</li>
+  </ul>
+</div>

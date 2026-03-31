@@ -1,0 +1,179 @@
+<h2>Home Screen — Button Placement</h2>
+<p class="subtitle">Where should the Animal Equip button and Egg Claim button live?</p>
+
+<div class="cards">
+  <!-- Option A -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="
+        width: 240px; height: 426px; margin: 0 auto;
+        background: linear-gradient(180deg, #87CEEB 0%, #87CEEB 40%, #7CCD7C 40%, #5B8C3E 100%);
+        border-radius: 12px; position: relative; overflow: hidden;
+        font-family: system-ui; font-size: 11px;
+      ">
+        <!-- Currency bar top -->
+        <div style="position:absolute;top:8px;left:8px;right:8px;display:flex;justify-content:space-between;">
+          <div style="background:rgba(0,0,0,0.5);color:#FFD700;padding:3px 8px;border-radius:8px;font-size:10px;">🪙 1,250</div>
+          <div style="background:rgba(0,0,0,0.5);color:#E066FF;padding:3px 8px;border-radius:8px;font-size:10px;">💎 47</div>
+        </div>
+
+        <!-- Daily reward button (existing) - top right area -->
+        <div style="position:absolute;top:36px;right:8px;width:36px;height:36px;background:rgba(139,90,43,0.9);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid #D4A44C;">
+          🧺
+        </div>
+
+        <!-- Farm area -->
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(255,255,255,0.4);font-size:10px;text-align:center;">
+          🌾 Farm View 🌾<br>
+          <span style="font-size:18px;">🐔</span><br>
+          <span style="font-size:8px;">animal roaming</span>
+        </div>
+
+        <!-- Egg claim button - next to daily basket -->
+        <div style="position:absolute;top:36px;right:52px;width:36px;height:36px;background:rgba(139,90,43,0.9);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid #D4A44C;">
+          🥚
+          <div style="position:absolute;top:-4px;right:-4px;width:10px;height:10px;background:#FF3B30;border-radius:50%;"></div>
+        </div>
+
+        <!-- Animal equip button - bottom left above nav -->
+        <div style="position:absolute;bottom:52px;left:8px;width:44px;height:44px;background:rgba(80,60,30,0.9);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;border:2px solid #8B7355;">
+          🐔
+        </div>
+
+        <!-- Start run / equip buttons -->
+        <div style="position:absolute;bottom:52px;left:60px;right:8px;display:flex;gap:4px;">
+          <div style="flex:1;background:#4A7C2E;color:white;padding:6px;border-radius:8px;text-align:center;font-size:9px;">⚙️ Equip Fields</div>
+          <div style="flex:1;background:#2E7C4A;color:white;padding:6px;border-radius:8px;text-align:center;font-size:9px;">🌱 Start Run</div>
+        </div>
+
+        <!-- Bottom nav -->
+        <div style="position:absolute;bottom:0;left:0;right:0;height:44px;background:rgba(40,30,20,0.95);display:flex;justify-content:space-around;align-items:center;font-size:16px;">
+          <span>🏪</span><span>🌾</span><span>🤖</span><span>🪓</span><span>⚙️</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A: Egg beside Basket</h3>
+      <p>Egg claim button sits next to the daily basket (top-right cluster). Animal equip button anchored bottom-left above nav.</p>
+    </div>
+  </div>
+
+  <!-- Option B -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="
+        width: 240px; height: 426px; margin: 0 auto;
+        background: linear-gradient(180deg, #87CEEB 0%, #87CEEB 40%, #7CCD7C 40%, #5B8C3E 100%);
+        border-radius: 12px; position: relative; overflow: hidden;
+        font-family: system-ui; font-size: 11px;
+      ">
+        <!-- Currency bar top -->
+        <div style="position:absolute;top:8px;left:8px;right:8px;display:flex;justify-content:space-between;">
+          <div style="background:rgba(0,0,0,0.5);color:#FFD700;padding:3px 8px;border-radius:8px;font-size:10px;">🪙 1,250</div>
+          <div style="background:rgba(0,0,0,0.5);color:#E066FF;padding:3px 8px;border-radius:8px;font-size:10px;">💎 47</div>
+        </div>
+
+        <!-- Daily reward button (existing) -->
+        <div style="position:absolute;top:36px;right:8px;width:36px;height:36px;background:rgba(139,90,43,0.9);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid #D4A44C;">
+          🧺
+        </div>
+
+        <!-- Farm area -->
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(255,255,255,0.4);font-size:10px;text-align:center;">
+          🌾 Farm View 🌾<br>
+          <span style="font-size:18px;">🐔</span><br>
+          <span style="font-size:8px;">animal roaming</span>
+        </div>
+
+        <!-- Animal equip button - bottom left above nav -->
+        <div style="position:absolute;bottom:52px;left:8px;width:44px;height:44px;background:rgba(80,60,30,0.9);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:22px;border:2px solid #8B7355;gap:0;">
+          🐔
+          <!-- Egg indicator built into button -->
+          <div style="font-size:7px;color:#FFD700;margin-top:-2px;">🥚 Ready!</div>
+          <div style="position:absolute;top:-4px;right:-4px;width:10px;height:10px;background:#FF3B30;border-radius:50%;"></div>
+        </div>
+
+        <!-- Start run / equip buttons -->
+        <div style="position:absolute;bottom:52px;left:60px;right:8px;display:flex;gap:4px;">
+          <div style="flex:1;background:#4A7C2E;color:white;padding:6px;border-radius:8px;text-align:center;font-size:9px;">⚙️ Equip Fields</div>
+          <div style="flex:1;background:#2E7C4A;color:white;padding:6px;border-radius:8px;text-align:center;font-size:9px;">🌱 Start Run</div>
+        </div>
+
+        <!-- Bottom nav -->
+        <div style="position:absolute;bottom:0;left:0;right:0;height:44px;background:rgba(40,30,20,0.95);display:flex;justify-content:space-around;align-items:center;font-size:16px;">
+          <span>🏪</span><span>🌾</span><span>🤖</span><span>🪓</span><span>⚙️</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B: Egg on Animal Button</h3>
+      <p>Egg claim is integrated into the animal equip button itself — shows "🥚 Ready!" text and notification dot when claimable. One less button on screen.</p>
+    </div>
+  </div>
+
+  <!-- Option C -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="
+        width: 240px; height: 426px; margin: 0 auto;
+        background: linear-gradient(180deg, #87CEEB 0%, #87CEEB 40%, #7CCD7C 40%, #5B8C3E 100%);
+        border-radius: 12px; position: relative; overflow: hidden;
+        font-family: system-ui; font-size: 11px;
+      ">
+        <!-- Currency bar top -->
+        <div style="position:absolute;top:8px;left:8px;right:8px;display:flex;justify-content:space-between;">
+          <div style="background:rgba(0,0,0,0.5);color:#FFD700;padding:3px 8px;border-radius:8px;font-size:10px;">🪙 1,250</div>
+          <div style="background:rgba(0,0,0,0.5);color:#E066FF;padding:3px 8px;border-radius:8px;font-size:10px;">💎 47</div>
+        </div>
+
+        <!-- Daily reward button (existing) -->
+        <div style="position:absolute;top:36px;right:8px;width:36px;height:36px;background:rgba(139,90,43,0.9);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid #D4A44C;">
+          🧺
+        </div>
+
+        <!-- Egg claim - left side matching basket height -->
+        <div style="position:absolute;top:36px;left:8px;width:36px;height:36px;background:rgba(139,90,43,0.9);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid #D4A44C;">
+          🥚
+          <div style="position:absolute;top:-4px;right:-4px;width:10px;height:10px;background:#FF3B30;border-radius:50%;"></div>
+        </div>
+
+        <!-- Farm area -->
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(255,255,255,0.4);font-size:10px;text-align:center;">
+          🌾 Farm View 🌾<br>
+          <span style="font-size:18px;">🐔</span><br>
+          <span style="font-size:8px;">animal roaming</span>
+        </div>
+
+        <!-- Animal equip button - bottom left above nav -->
+        <div style="position:absolute;bottom:52px;left:8px;width:44px;height:44px;background:rgba(80,60,30,0.9);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:24px;border:2px solid #8B7355;">
+          🐔
+        </div>
+
+        <!-- Start run / equip buttons -->
+        <div style="position:absolute;bottom:52px;left:60px;right:8px;display:flex;gap:4px;">
+          <div style="flex:1;background:#4A7C2E;color:white;padding:6px;border-radius:8px;text-align:center;font-size:9px;">⚙️ Equip Fields</div>
+          <div style="flex:1;background:#2E7C4A;color:white;padding:6px;border-radius:8px;text-align:center;font-size:9px;">🌱 Start Run</div>
+        </div>
+
+        <!-- Bottom nav -->
+        <div style="position:absolute;bottom:0;left:0;right:0;height:44px;background:rgba(40,30,20,0.95);display:flex;justify-content:space-around;align-items:center;font-size:16px;">
+          <span>🏪</span><span>🌾</span><span>🤖</span><span>🪓</span><span>⚙️</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C: Egg Top-Left, Basket Top-Right</h3>
+      <p>Egg claim button mirrors the basket position on the opposite side. Symmetrical top layout. Animal equip stays bottom-left.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px;">
+  <p class="label">Notes</p>
+  <ul style="font-size: 14px; color: #aaa; line-height: 1.8;">
+    <li>All options keep the <strong>animal equip button</strong> at bottom-left above the nav bar</li>
+    <li>The 🥚 egg button only appears when a Chicken is equipped</li>
+    <li>Notification dot (red) shows when egg is ready to claim</li>
+    <li>💎 Gem counter added to currency bar (top, alongside coins)</li>
+  </ul>
+</div>

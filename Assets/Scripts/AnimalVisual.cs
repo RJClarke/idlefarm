@@ -18,6 +18,8 @@ public class AnimalVisual : MonoBehaviour
     // Egg visual
     private GameObject eggInstance;
 
+    public bool PauseWander { get; set; }
+
     public void Initialize(AnimalData animalData)
     {
         data = animalData;
@@ -34,7 +36,7 @@ public class AnimalVisual : MonoBehaviour
 
     private void Update()
     {
-        if (data == null) return;
+        if (data == null || PauseWander) return;
 
         if (isPaused)
         {

@@ -13,27 +13,38 @@ public class EggClaimButton : MonoBehaviour
     [SerializeField] private Color readyColor = new Color(0.55f, 0.35f, 0.17f, 0.9f);
     [SerializeField] private Color cooldownColor = new Color(0.35f, 0.35f, 0.35f, 0.5f);
 
+    private System.Action<AnimalData> onEquipped;
+    private System.Action onUnequipped;
+    private System.Action onEggReady;
+    private System.Action onEggClaimed;
+
     private void Start()
     {
         button.onClick.AddListener(OnClick);
 
         if (AnimalManager.Instance != null)
         {
-            AnimalManager.Instance.OnAnimalEquipped += (_) => UpdateVisibility();
-            AnimalManager.Instance.OnAnimalUnequipped += UpdateVisibility;
-            AnimalManager.Instance.OnEggReady += OnEggReady;
-            AnimalManager.Instance.OnEggClaimed += UpdateState;
+            onEquipped = (_) => UpdateVisibility();
+            onUnequipped = UpdateVisibility;
+            onEggReady = OnEggReady;
+            onEggClaimed = UpdateState;
+            AnimalManager.Instance.OnAnimalEquipped += onEquipped;
+            AnimalManager.Instance.OnAnimalUnequipped += onUnequipped;
+            AnimalManager.Instance.OnEggReady += onEggReady;
+            AnimalManager.Instance.OnEggClaimed += onEggClaimed;
         }
 
         UpdateVisibility();
     }
 
-    private void Update()
+    private void OnDestroy()
     {
-        // Update state each frame for cooldown progress
-        if (gameObject.activeSelf)
+        if (AnimalManager.Instance != null)
         {
-            UpdateState();
+            AnimalManager.Instance.OnAnimalEquipped -= onEquipped;
+            AnimalManager.Instance.OnAnimalUnequipped -= onUnequipped;
+            AnimalManager.Instance.OnEggReady -= onEggReady;
+            AnimalManager.Instance.OnEggClaimed -= onEggClaimed;
         }
     }
 

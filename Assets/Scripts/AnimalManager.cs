@@ -24,6 +24,9 @@ public class AnimalManager : MonoBehaviour
     private bool eggReady = false;
     private bool eggNotified = false;
 
+    private float eggCheckTimer = 0f;
+    private const float EGG_CHECK_INTERVAL = 1f;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -54,7 +57,12 @@ public class AnimalManager : MonoBehaviour
 
     private void Update()
     {
-        UpdateEggTimer();
+        eggCheckTimer += Time.deltaTime;
+        if (eggCheckTimer >= EGG_CHECK_INTERVAL)
+        {
+            eggCheckTimer = 0f;
+            UpdateEggTimer();
+        }
     }
 
     // ── Data Access ──────────────────────────────
@@ -284,6 +292,9 @@ public class AnimalManager : MonoBehaviour
     {
         if (data.animalID == "farm_dog" && activeVisualInstance != null)
         {
+            AnimalVisual visual = activeVisualInstance.GetComponent<AnimalVisual>();
+            if (visual != null) visual.PauseWander = true;
+
             FarmDog dog = activeVisualInstance.GetComponent<FarmDog>();
             if (dog != null)
             {
@@ -301,6 +312,9 @@ public class AnimalManager : MonoBehaviour
             {
                 dog.DeactivateChaseMode();
             }
+
+            AnimalVisual visual = activeVisualInstance.GetComponent<AnimalVisual>();
+            if (visual != null) visual.PauseWander = false;
         }
     }
 

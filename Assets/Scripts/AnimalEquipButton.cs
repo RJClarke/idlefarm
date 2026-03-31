@@ -9,17 +9,31 @@ public class AnimalEquipButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI emojiText;
     [SerializeField] private Sprite silhouetteSprite;
 
+    private System.Action<AnimalData> onEquipped;
+    private System.Action onUnequipped;
+
     private void Start()
     {
         button.onClick.AddListener(OnClick);
 
         if (AnimalManager.Instance != null)
         {
-            AnimalManager.Instance.OnAnimalEquipped += (_) => UpdateDisplay();
-            AnimalManager.Instance.OnAnimalUnequipped += UpdateDisplay;
+            onEquipped = (_) => UpdateDisplay();
+            onUnequipped = UpdateDisplay;
+            AnimalManager.Instance.OnAnimalEquipped += onEquipped;
+            AnimalManager.Instance.OnAnimalUnequipped += onUnequipped;
         }
 
         UpdateDisplay();
+    }
+
+    private void OnDestroy()
+    {
+        if (AnimalManager.Instance != null)
+        {
+            AnimalManager.Instance.OnAnimalEquipped -= onEquipped;
+            AnimalManager.Instance.OnAnimalUnequipped -= onUnequipped;
+        }
     }
 
     private void OnClick()
