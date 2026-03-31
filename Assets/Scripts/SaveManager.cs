@@ -43,7 +43,24 @@ public class SaveManager : MonoBehaviour
         }
 
         // Create data object from current game state
-        GameData data = new GameData(CurrencyManager.Instance.Coins);
+        string[] animalIDs = new string[0];
+        string equippedID = "";
+        string eggTime = "";
+
+        if (AnimalManager.Instance != null)
+        {
+            animalIDs = AnimalManager.Instance.GetUnlockedAnimalIDs();
+            equippedID = AnimalManager.Instance.GetEquippedAnimalID();
+            eggTime = AnimalManager.Instance.GetLastEggClaimTimeISO();
+        }
+
+        GameData data = new GameData(
+            CurrencyManager.Instance.Coins,
+            CurrencyManager.Instance.Gems,
+            animalIDs,
+            equippedID,
+            eggTime
+        );
 
         // Convert to JSON
         string json = JsonUtility.ToJson(data, true); // true = pretty print for debugging
@@ -85,6 +102,13 @@ public class SaveManager : MonoBehaviour
             if (CurrencyManager.Instance != null)
             {
                 CurrencyManager.Instance.SetCoins(data.coins);
+                CurrencyManager.Instance.SetGems(data.gems);
+
+                if (AnimalManager.Instance != null)
+                {
+                    AnimalManager.Instance.LoadState(data.unlockedAnimalIDs, data.equippedAnimalID, data.lastEggClaimTime);
+                }
+
                 Debug.Log($"Game loaded! Coins: {data.coins}");
             }
             else
