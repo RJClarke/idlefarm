@@ -15,6 +15,10 @@ public class DailyRewardManager : MonoBehaviour
     [SerializeField] private int[] dailyRewards = new int[] { 10, 20, 30, 50, 75, 100, 150 };
     [SerializeField] private int weeklyBonusReward = 500;
 
+    [Header("Daily Gem Rewards (Sun–Sat)")]
+    [SerializeField] private int[] dailyGemRewards = new int[] { 0, 1, 0, 2, 0, 1, 0 };
+    [SerializeField] private int weeklyGemBonus = 10;
+
     // PlayerPrefs keys
     private const string PREF_WEEK_START = "daily_reward_week_start";
     private const string PREF_CLAIMED_DAYS = "daily_reward_claimed_days";
@@ -30,6 +34,13 @@ public class DailyRewardManager : MonoBehaviour
     public bool[] ClaimedDays => claimedDays;
     public int[] DailyRewards => dailyRewards;
     public int WeeklyBonusReward => weeklyBonusReward;
+    public int WeeklyGemBonus => weeklyGemBonus;
+
+    public int GetDailyGemReward(int dayIndex)
+    {
+        if (dayIndex < 0 || dayIndex >= dailyGemRewards.Length) return 0;
+        return dailyGemRewards[dayIndex];
+    }
 
     /// <summary>
     /// True if today's reward hasn't been claimed yet.
@@ -130,15 +141,24 @@ public class DailyRewardManager : MonoBehaviour
         if (CurrencyManager.Instance != null)
             CurrencyManager.Instance.AddCoins(reward);
 
+        // Grant gems
+        int gemReward = dailyGemRewards[todayIndex];
+        if (gemReward > 0 && CurrencyManager.Instance != null)
+            CurrencyManager.Instance.AddGems(gemReward);
+
         claimedDays[todayIndex] = true;
-        Debug.Log($"[Daily] Claimed day {GetDayName(todayIndex)} reward: {reward} coins");
+        Debug.Log($"[Daily] Claimed day {GetDayName(todayIndex)} reward: {reward} coins" + (gemReward > 0 ? $", {gemReward} gems" : ""));
 
         // Check for weekly bonus
         if (EarnedWeeklyBonus)
         {
             if (CurrencyManager.Instance != null)
+            {
                 CurrencyManager.Instance.AddCoins(weeklyBonusReward);
-            Debug.Log($"[Daily] Weekly bonus earned: {weeklyBonusReward} coins!");
+                if (weeklyGemBonus > 0)
+                    CurrencyManager.Instance.AddGems(weeklyGemBonus);
+            }
+            Debug.Log($"[Daily] Weekly bonus earned: {weeklyBonusReward} coins, {weeklyGemBonus} gems!");
         }
 
         SaveState();

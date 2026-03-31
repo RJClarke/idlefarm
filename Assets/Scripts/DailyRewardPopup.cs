@@ -196,7 +196,8 @@ public class DailyRewardPopup : MonoBehaviour
             {
                 int today = DailyRewardManager.Instance.GetTodayIndex();
                 int reward = DailyRewardManager.Instance.DailyRewards[today];
-                claimButtonText.text = $"Claim {reward} Coins";
+                int gems = DailyRewardManager.Instance.GetDailyGemReward(today);
+                claimButtonText.text = gems > 0 ? $"Claim {reward} Coins + {gems} Gems" : $"Claim {reward} Coins";
             }
             else
             {
@@ -242,10 +243,11 @@ public class DailyRewardPopup : MonoBehaviour
         if (weeklyBonusText != null)
         {
             int claimed = DailyRewardManager.Instance.ClaimedCount;
+            int weeklyGemBonus = DailyRewardManager.Instance.WeeklyGemBonus;
             if (DailyRewardManager.Instance.EarnedWeeklyBonus)
-                weeklyBonusText.text = $"<color=#FFD700>Weekly Bonus Earned! +{DailyRewardManager.Instance.WeeklyBonusReward} Coins</color>";
+                weeklyBonusText.text = $"<color=#FFD700>Weekly Bonus Earned! +{DailyRewardManager.Instance.WeeklyBonusReward} Coins" + (weeklyGemBonus > 0 ? $", +{weeklyGemBonus} Gems" : "") + "</color>";
             else
-                weeklyBonusText.text = $"Claim all 7 days for +{DailyRewardManager.Instance.WeeklyBonusReward} bonus coins ({claimed}/7)";
+                weeklyBonusText.text = $"Claim all 7 days for +{DailyRewardManager.Instance.WeeklyBonusReward} bonus coins" + (weeklyGemBonus > 0 ? $" & +{weeklyGemBonus} gems" : "") + $" ({claimed}/7)";
         }
     }
 
@@ -290,7 +292,11 @@ public class DailyRewardPopup : MonoBehaviour
         rrt.offsetMax = Vector2.zero;
         rewardObj.AddComponent<CanvasRenderer>();
         TextMeshProUGUI rewardText = rewardObj.AddComponent<TextMeshProUGUI>();
-        rewardText.text = $"{reward}";
+        int gemReward = DailyRewardManager.Instance.GetDailyGemReward(dayIndex);
+        if (gemReward > 0)
+            rewardText.text = $"{reward} \U0001FA99\n{gemReward} \U0001F48E";
+        else
+            rewardText.text = $"{reward} \U0001FA99";
         rewardText.fontSize = 24;
         rewardText.fontStyle = FontStyles.Bold;
         rewardText.alignment = TextAlignmentOptions.Center;
