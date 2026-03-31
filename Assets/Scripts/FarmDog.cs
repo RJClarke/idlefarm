@@ -3,21 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 
 /// <summary>
-/// Farm Dog — a global farm defender that roams casually and chases deer.
+/// Farm Dog — a farm defender that roams and chases deer during runs.
 ///
 /// Behavior:
-///   - Spawns at run start if unlocked (dog_unlock level > 0)
+///   - AnimalManager activates chase mode when a run starts with the dog equipped
 ///   - Roams randomly around the farm between active zones
 ///   - Every 30 seconds, scans for an active deer and chases it off
 ///   - Can scare 2 deer per minute (30s cooldown between chases)
-///   - Destroyed at run end
+///   - AnimalManager deactivates chase mode when the run ends
 ///
-/// Unlock: Purchased in Market for 500 Coins (UnlockData asset)
+/// Lifecycle is managed by AnimalManager — this component lives on the animal
+/// visual prefab alongside AnimalVisual.
 /// </summary>
 public class FarmDog : MonoBehaviour
 {
-    public static FarmDog Instance { get; private set; }
-
     [Header("Roaming")]
     [SerializeField] private float roamSpeed = 1.5f;
     [SerializeField] private float idleDuration = 2f;
@@ -28,47 +27,20 @@ public class FarmDog : MonoBehaviour
     [SerializeField] private float chaseCooldown = 30f;
     [SerializeField] private float chaseReachDistance = 0.3f;
 
-    [Header("Unlock")]
-    [SerializeField] private string unlockID = "dog_unlock";
-
     private SpriteRenderer spriteRenderer;
-    private GameObject dogInstance;
     private Coroutine roamCoroutine;
     private float chaseCooldownTimer;
     private bool isChasing;
+    private bool isChaseModeActive;
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-    }
-
-    private void Start()
-    {
-        if (RunManager.Instance != null)
-        {
-            RunManager.Instance.OnRunStarted += OnRunStarted;
-            RunManager.Instance.OnRunEnded += OnRunEnded;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (RunManager.Instance != null)
-        {
-            RunManager.Instance.OnRunStarted -= OnRunStarted;
-            RunManager.Instance.OnRunEnded -= OnRunEnded;
-        }
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
-        if (dogInstance == null) return;
-        if (RunManager.Instance == null || !RunManager.Instance.IsRunActive) return;
+        if (!isChaseModeActive) return;
 
         if (!isChasing && chaseCooldownTimer > 0f)
             chaseCooldownTimer -= Time.deltaTime;
@@ -78,53 +50,31 @@ public class FarmDog : MonoBehaviour
     }
 
     // ─────────────────────────────────────────────────────────────────────
-    // Run Lifecycle
+    // Public API (called by AnimalManager)
     // ─────────────────────────────────────────────────────────────────────
 
-    private void OnRunStarted()
+    /// <summary>
+    /// Called by AnimalManager when a run starts with the farm dog equipped.
+    /// Enables roaming and deer-chasing behavior.
+    /// </summary>
+    public void ActivateChaseMode()
     {
-        if (!IsUnlocked()) return;
-
-        SpawnDog();
+        isChaseModeActive = true;
         chaseCooldownTimer = 5f; // small grace period before first chase
         isChasing = false;
         roamCoroutine = StartCoroutine(RoamLoop());
 
-        Debug.Log("[FarmDog] Dog spawned for this run!");
+        Debug.Log("[FarmDog] Chase mode activated.");
     }
 
-    private void OnRunEnded()
+    /// <summary>
+    /// Called by AnimalManager when the run ends.
+    /// Stops all roaming and chasing behavior.
+    /// </summary>
+    public void DeactivateChaseMode()
     {
-        DespawnDog();
-    }
+        isChaseModeActive = false;
 
-    private bool IsUnlocked()
-    {
-        if (UpgradeManager.Instance == null) return false;
-        return UpgradeManager.Instance.GetPermanentLevel(unlockID) > 0;
-    }
-
-    // ─────────────────────────────────────────────────────────────────────
-    // Spawn / Despawn
-    // ─────────────────────────────────────────────────────────────────────
-
-    private void SpawnDog()
-    {
-        if (dogInstance != null) return;
-
-        Vector3 spawnPos = GetRandomFarmPosition();
-
-        dogInstance = new GameObject("[FarmDog]");
-        dogInstance.transform.position = spawnPos;
-
-        spriteRenderer = dogInstance.AddComponent<SpriteRenderer>();
-        spriteRenderer.sortingOrder = 12;
-
-        dogInstance.AddComponent<DogVisual>();
-    }
-
-    private void DespawnDog()
-    {
         if (roamCoroutine != null)
         {
             StopCoroutine(roamCoroutine);
@@ -134,11 +84,7 @@ public class FarmDog : MonoBehaviour
         StopAllCoroutines();
         isChasing = false;
 
-        if (dogInstance != null)
-        {
-            Destroy(dogInstance);
-            dogInstance = null;
-        }
+        Debug.Log("[FarmDog] Chase mode deactivated.");
     }
 
     // ─────────────────────────────────────────────────────────────────────
@@ -173,10 +119,9 @@ public class FarmDog : MonoBehaviour
     private void TryChaseNearestDeer()
     {
         if (ThreatWaveManager.Instance == null) return;
-        if (dogInstance == null) return;
 
         AnimalThreat nearestDeer = ThreatWaveManager.Instance
-            .FindNearestThreatOfType(AnimalThreatType.Deer, dogInstance.transform.position);
+            .FindNearestThreatOfType(AnimalThreatType.Deer, transform.position);
 
         if (nearestDeer == null) return;
 
@@ -189,17 +134,17 @@ public class FarmDog : MonoBehaviour
         // Run toward the deer
         while (deer != null && !deer.IsDone)
         {
-            float dist = Vector3.Distance(dogInstance.transform.position, deer.transform.position);
+            float dist = Vector3.Distance(transform.position, deer.transform.position);
             if (dist <= chaseReachDistance)
                 break;
 
             // Face direction of travel
-            float dirX = deer.transform.position.x - dogInstance.transform.position.x;
+            float dirX = deer.transform.position.x - transform.position.x;
             if (spriteRenderer != null && Mathf.Abs(dirX) > 0.01f)
                 spriteRenderer.flipX = dirX < 0f;
 
-            dogInstance.transform.position = Vector3.MoveTowards(
-                dogInstance.transform.position,
+            transform.position = Vector3.MoveTowards(
+                transform.position,
                 deer.transform.position,
                 chaseSpeed * Time.deltaTime);
 
@@ -224,19 +169,16 @@ public class FarmDog : MonoBehaviour
 
     private IEnumerator MoveTo(Vector3 target, float speed)
     {
-        if (dogInstance == null) yield break;
-
-        while (Vector3.Distance(dogInstance.transform.position, target) > 0.05f)
+        while (Vector3.Distance(transform.position, target) > 0.05f)
         {
-            if (dogInstance == null) yield break;
             if (isChasing) yield break;
 
-            float dirX = target.x - dogInstance.transform.position.x;
+            float dirX = target.x - transform.position.x;
             if (spriteRenderer != null && Mathf.Abs(dirX) > 0.01f)
                 spriteRenderer.flipX = dirX < 0f;
 
-            dogInstance.transform.position = Vector3.MoveTowards(
-                dogInstance.transform.position, target, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(
+                transform.position, target, speed * Time.deltaTime);
 
             yield return null;
         }
