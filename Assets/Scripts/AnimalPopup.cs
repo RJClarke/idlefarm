@@ -19,7 +19,13 @@ public class AnimalPopup : MonoBehaviour
 
     [Header("Animal List")]
     [SerializeField] private Transform animalListContainer;
-    [SerializeField] private GameObject animalRowPrefab;
+    [SerializeField] private GameObject animalRowPrefab; // kept for reference but not used
+    [SerializeField] private Sprite rowBackgroundSprite;
+    [SerializeField] private Sprite actionButtonSprite;
+
+    [Header("Buttons")]
+    [SerializeField] private Button closeButton;
+    [SerializeField] private Button backdropButton;
 
     private List<GameObject> rowInstances = new List<GameObject>();
 
@@ -54,6 +60,9 @@ public class AnimalPopup : MonoBehaviour
             AnimalManager.Instance.OnAnimalUnequipped += onUnequipped;
             AnimalManager.Instance.OnAnimalUnlocked += onUnlocked;
         }
+
+        if (closeButton != null) closeButton.onClick.AddListener(OnCloseClick);
+        if (backdropButton != null) backdropButton.onClick.AddListener(OnBackdropClick);
     }
 
     private void OnDestroy()
@@ -78,7 +87,6 @@ public class AnimalPopup : MonoBehaviour
         UpdateGemCount(CurrencyManager.Instance.Gems);
         RefreshList();
 
-        // Animate in (scale + fade)
         popupPanel.localScale = Vector3.one * 0.8f;
         popupCanvasGroup.alpha = 0f;
 
@@ -95,123 +103,204 @@ public class AnimalPopup : MonoBehaviour
         });
     }
 
-    public void OnBackdropClick()
-    {
-        Hide();
-    }
+    public void OnBackdropClick() => Hide();
+    public void OnCloseClick() => Hide();
 
-    public void OnCloseClick()
-    {
-        Hide();
-    }
-
-    // ── List Population ──────────────────────────────
+    // ── List Population (code-built rows) ──────────────────────────────
 
     private void RefreshList()
     {
-        // Clear existing rows
         foreach (GameObject row in rowInstances)
-        {
             Destroy(row);
-        }
         rowInstances.Clear();
 
         List<AnimalData> animals = AnimalManager.Instance.GetAllAnimals();
 
         foreach (AnimalData animal in animals)
         {
-            GameObject row = Instantiate(animalRowPrefab, animalListContainer);
+            GameObject row = CreateRow(animal);
+            row.transform.SetParent(animalListContainer, false);
             rowInstances.Add(row);
-            SetupRow(row, animal);
         }
     }
 
-    private void SetupRow(GameObject row, AnimalData animal)
+    private GameObject CreateRow(AnimalData animal)
     {
-        // Find row child elements by name
-        TextMeshProUGUI nameText = row.transform.Find("NameText")?.GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI descText = row.transform.Find("DescText")?.GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI emojiText = row.transform.Find("EmojiText")?.GetComponent<TextMeshProUGUI>();
-        Button actionButton = row.transform.Find("ActionButton")?.GetComponent<Button>();
-        TextMeshProUGUI actionText = actionButton?.GetComponentInChildren<TextMeshProUGUI>();
-        Image rowBackground = row.GetComponent<Image>();
-
         bool isUnlocked = AnimalManager.Instance.IsUnlocked(animal.animalID);
         bool isEquipped = AnimalManager.Instance.GetEquippedAnimalID() == animal.animalID;
 
-        // Set text
-        if (nameText != null) nameText.text = animal.displayName;
-        if (descText != null) descText.text = animal.description;
-        if (emojiText != null) emojiText.text = animal.animalEmoji;
+        // Row container
+        GameObject row = new GameObject(animal.displayName + "Row");
+        RectTransform rowRT = row.AddComponent<RectTransform>();
+        rowRT.sizeDelta = new Vector2(0, 130);
 
-        // Set state
+        Image rowBg = row.AddComponent<Image>();
+        if (rowBackgroundSprite != null)
+        {
+            rowBg.sprite = rowBackgroundSprite;
+            rowBg.type = Image.Type.Sliced;
+        }
+        LayoutElement rowLE = row.AddComponent<LayoutElement>();
+        rowLE.minHeight = 130;
+        rowLE.preferredHeight = 130;
+
+        HorizontalLayoutGroup rowHLG = row.AddComponent<HorizontalLayoutGroup>();
+        rowHLG.spacing = 15;
+        rowHLG.padding = new RectOffset(15, 15, 10, 10);
+        rowHLG.childAlignment = TextAnchor.MiddleLeft;
+        rowHLG.childForceExpandWidth = false;
+        rowHLG.childForceExpandHeight = true;
+        rowHLG.childControlWidth = true;
+        rowHLG.childControlHeight = true;
+
+        // Emoji
+        GameObject emojiGO = new GameObject("Emoji");
+        emojiGO.transform.SetParent(row.transform, false);
+        TextMeshProUGUI emojiTMP = emojiGO.AddComponent<TextMeshProUGUI>();
+        emojiTMP.text = animal.animalEmoji;
+        emojiTMP.fontSize = 48;
+        emojiTMP.alignment = TextAlignmentOptions.Center;
+        LayoutElement emojiLE = emojiGO.AddComponent<LayoutElement>();
+        emojiLE.preferredWidth = 80;
+        emojiLE.minWidth = 80;
+
+        // Text group (name + description)
+        GameObject textGroup = new GameObject("TextGroup");
+        textGroup.transform.SetParent(row.transform, false);
+        RectTransform tgRT = textGroup.AddComponent<RectTransform>();
+        VerticalLayoutGroup tgVLG = textGroup.AddComponent<VerticalLayoutGroup>();
+        tgVLG.spacing = 2;
+        tgVLG.childAlignment = TextAnchor.MiddleLeft;
+        tgVLG.childForceExpandWidth = true;
+        tgVLG.childForceExpandHeight = false;
+        tgVLG.childControlWidth = true;
+        tgVLG.childControlHeight = true;
+        LayoutElement tgLE = textGroup.AddComponent<LayoutElement>();
+        tgLE.flexibleWidth = 1;
+
+        // Name text
+        GameObject nameGO = new GameObject("Name");
+        nameGO.transform.SetParent(textGroup.transform, false);
+        TextMeshProUGUI nameTMP = nameGO.AddComponent<TextMeshProUGUI>();
+        nameTMP.text = animal.displayName;
+        nameTMP.fontSize = 28;
+        nameTMP.fontStyle = FontStyles.Bold;
+        nameTMP.color = new Color(0.96f, 0.87f, 0.7f, 1f);
+        LayoutElement nameLE = nameGO.AddComponent<LayoutElement>();
+        nameLE.preferredHeight = 35;
+
+        // Description text
+        GameObject descGO = new GameObject("Desc");
+        descGO.transform.SetParent(textGroup.transform, false);
+        TextMeshProUGUI descTMP = descGO.AddComponent<TextMeshProUGUI>();
+        descTMP.text = animal.description;
+        descTMP.fontSize = 18;
+        descTMP.color = new Color(0.65f, 0.65f, 0.65f, 1f);
+        descTMP.enableWordWrapping = true;
+        LayoutElement descLE = descGO.AddComponent<LayoutElement>();
+        descLE.preferredHeight = 50;
+        descLE.flexibleHeight = 1;
+
+        // Action button
+        GameObject btnGO = new GameObject("ActionBtn");
+        btnGO.transform.SetParent(row.transform, false);
+        RectTransform btnRT = btnGO.AddComponent<RectTransform>();
+        Image btnImg = btnGO.AddComponent<Image>();
+        if (actionButtonSprite != null)
+        {
+            btnImg.sprite = actionButtonSprite;
+            btnImg.type = Image.Type.Sliced;
+        }
+        Button btn = btnGO.AddComponent<Button>();
+        btn.targetGraphic = btnImg;
+        LayoutElement btnLE = btnGO.AddComponent<LayoutElement>();
+        btnLE.preferredWidth = 160;
+        btnLE.minWidth = 160;
+
+        // Action button text
+        GameObject btnTextGO = new GameObject("BtnText");
+        btnTextGO.transform.SetParent(btnGO.transform, false);
+        RectTransform btnTextRT = btnTextGO.AddComponent<RectTransform>();
+        btnTextRT.anchorMin = Vector2.zero;
+        btnTextRT.anchorMax = Vector2.one;
+        btnTextRT.offsetMin = Vector2.zero;
+        btnTextRT.offsetMax = Vector2.zero;
+        TextMeshProUGUI btnTMP = btnTextGO.AddComponent<TextMeshProUGUI>();
+        btnTMP.fontSize = 22;
+        btnTMP.fontStyle = FontStyles.Bold;
+        btnTMP.alignment = TextAlignmentOptions.Center;
+        btnTMP.color = Color.white;
+
+        // Apply state
         if (isEquipped)
         {
-            // Green highlight — equipped
-            if (rowBackground != null) rowBackground.color = new Color(0.29f, 0.49f, 0.18f, 0.3f);
-            if (actionText != null) actionText.text = "EQUIPPED";
-            if (actionButton != null)
-            {
-                actionButton.onClick.RemoveAllListeners();
-                actionButton.onClick.AddListener(() =>
-                {
-                    AnimalManager.Instance.UnequipAnimal();
-                });
-            }
+            // Bright green tint — clearly active
+            rowBg.color = new Color(0.4f, 0.7f, 0.3f, 0.9f);
+            btnImg.color = new Color(0.2f, 0.4f, 0.15f, 0.9f);
+            btnTMP.text = "EQUIPPED";
+            btnTMP.color = new Color(0.8f, 1f, 0.7f, 1f);
+            nameTMP.color = Color.white;
+            descTMP.color = new Color(0.85f, 0.85f, 0.85f, 1f);
+            btn.onClick.AddListener(() => {
+                AnimalManager.Instance.UnequipAnimal();
+                RefreshList();
+            });
         }
         else if (isUnlocked)
         {
-            // Neutral — unlocked, tap to equip
-            if (rowBackground != null) rowBackground.color = new Color(0.3f, 0.3f, 0.3f, 0.2f);
-            if (actionText != null) actionText.text = "EQUIP";
-            if (actionButton != null)
-            {
-                actionButton.onClick.RemoveAllListeners();
-                string id = animal.animalID;
-                actionButton.onClick.AddListener(() =>
-                {
-                    AnimalManager.Instance.EquipAnimal(id);
-                });
-            }
+            // Warm wood tint — available
+            rowBg.color = new Color(0.85f, 0.75f, 0.6f, 0.9f);
+            btnImg.color = new Color(0.3f, 0.55f, 0.25f, 0.9f);
+            btnTMP.text = "EQUIP";
+            btnTMP.color = Color.white;
+            nameTMP.color = new Color(0.25f, 0.2f, 0.12f, 1f);
+            descTMP.color = new Color(0.4f, 0.35f, 0.25f, 1f);
+            string id = animal.animalID;
+            btn.onClick.AddListener(() => {
+                AnimalManager.Instance.EquipAnimal(id);
+                RefreshList();
+            });
         }
         else
         {
             // Locked
             bool canAfford = CurrencyManager.Instance.CanAffordGems(animal.gemCost);
 
-            if (rowBackground != null) rowBackground.color = new Color(0.2f, 0.2f, 0.2f, 0.15f);
-            if (emojiText != null) emojiText.alpha = 0.4f;
-            if (nameText != null) nameText.color = new Color(0.6f, 0.6f, 0.6f);
-            if (descText != null) descText.color = new Color(0.5f, 0.5f, 0.5f);
-
-            string costDisplay = $"💎 {animal.gemCost:N0}";
-            if (actionText != null) actionText.text = costDisplay;
-
-            if (actionButton != null)
+            if (canAfford)
             {
-                actionButton.interactable = canAfford;
-                actionButton.onClick.RemoveAllListeners();
-
-                if (canAfford)
-                {
-                    string id = animal.animalID;
-                    int cost = animal.gemCost;
-                    string name = animal.displayName;
-                    actionButton.onClick.AddListener(() =>
-                    {
-                        if (AnimalManager.Instance.TryUnlockAnimal(id))
-                        {
-                            Debug.Log($"Unlocked {name}!");
-                        }
-                    });
-                }
+                // Can afford — highlighted, inviting
+                rowBg.color = new Color(0.7f, 0.65f, 0.55f, 0.85f);
+                nameTMP.color = new Color(0.3f, 0.25f, 0.15f, 1f);
+                descTMP.color = new Color(0.45f, 0.4f, 0.3f, 1f);
+                btnImg.color = new Color(0.55f, 0.3f, 0.7f, 0.9f);
+                btnTMP.text = $"{animal.gemCost:N0}";
+                btnTMP.color = Color.white;
+                string id = animal.animalID;
+                btn.onClick.AddListener(() => {
+                    if (AnimalManager.Instance.TryUnlockAnimal(id))
+                        RefreshList();
+                });
+            }
+            else
+            {
+                // Can't afford — dimmed, locked feel
+                rowBg.color = new Color(0.45f, 0.4f, 0.35f, 0.5f);
+                emojiTMP.alpha = 0.35f;
+                nameTMP.color = new Color(0.55f, 0.5f, 0.45f, 1f);
+                descTMP.color = new Color(0.45f, 0.4f, 0.35f, 1f);
+                btnImg.color = new Color(0.35f, 0.3f, 0.25f, 0.6f);
+                btnTMP.text = $"{animal.gemCost:N0}";
+                btnTMP.color = new Color(0.55f, 0.5f, 0.45f, 1f);
+                btn.interactable = false;
             }
         }
+
+        return row;
     }
 
     private void UpdateGemCount(int gems)
     {
         if (gemCountText != null)
-            gemCountText.text = $"💎 {gems:N0}";
+            gemCountText.text = $"{gems:N0}";
     }
 }

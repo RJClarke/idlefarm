@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: 3488cd2bed54a8f40bd73601703ba26a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1295253681108104835
+    second: Rabbit_Brown_32x32_0
+  - first:
+      213: -3165699132927077512
+    second: Rabbit_Brown_32x32_1
+  - first:
+      213: 6724157000018322560
+    second: Rabbit_Brown_32x32_2
+  - first:
+      213: -1343327823319864278
+    second: Rabbit_Brown_32x32_3
+  - first:
+      213: 5853464905126796964
+    second: Rabbit_Brown_32x32_4
+  - first:
+      213: -3653198817292445120
+    second: Rabbit_Brown_32x32_5
+  - first:
+      213: -646628063392595931
+    second: Rabbit_Brown_32x32_6
+  - first:
+      213: -5093430576938885371
+    second: Rabbit_Brown_32x32_7
+  - first:
+      213: 3683172736488938185
+    second: Rabbit_Brown_32x32_8
+  - first:
+      213: -5332617192006258236
+    second: Rabbit_Brown_32x32_9
+  - first:
+      213: 4644395125666427085
+    second: Rabbit_Brown_32x32_10
+  - first:
+      213: 8948611284166782749
+    second: Rabbit_Brown_32x32_11
+  - first:
+      213: 3511751631510776953
+    second: Rabbit_Brown_32x32_12
+  - first:
+      213: -9053369446749344992
+    second: Rabbit_Brown_32x32_13
+  - first:
+      213: 6859626890174452623
+    second: Rabbit_Brown_32x32_14
+  - first:
+      213: -4731515830571438382
+    second: Rabbit_Brown_32x32_15
+  - first:
+      213: -1370637312794951638
+    second: Rabbit_Brown_32x32_16
+  - first:
+      213: 2599472286490874038
+    second: Rabbit_Brown_32x32_17
+  - first:
+      213: 35564323527161177
+    second: Rabbit_Brown_32x32_18
+  - first:
+      213: -7377969425069436137
+    second: Rabbit_Brown_32x32_19
+  - first:
+      213: -8126432174267886858
+    second: Rabbit_Brown_32x32_20
+  - first:
+      213: 2556048091955802852
+    second: Rabbit_Brown_32x32_21
+  - first:
+      213: 5316637069819190483
+    second: Rabbit_Brown_32x32_22
+  - first:
+      213: 8805772288110255986
+    second: Rabbit_Brown_32x32_23
+  - first:
+      213: -8774484962101160816
+    second: Rabbit_Brown_32x32_24
+  - first:
+      213: -5823672213549363842
+    second: Rabbit_Brown_32x32_25
+  - first:
+      213: 8963169439716189669
+    second: Rabbit_Brown_32x32_26
+  - first:
+      213: -5467647438075951804
+    second: Rabbit_Brown_32x32_27
+  - first:
+      213: 9051594461834877809
+    second: Rabbit_Brown_32x32_28
+  - first:
+      213: 8252354734926428715
+    second: Rabbit_Brown_32x32_29
+  - first:
+      213: -8924153306622600716
+    second: Rabbit_Brown_32x32_30
+  - first:
+      213: -2717702963051637598
+    second: Rabbit_Brown_32x32_31
+  - first:
+      213: -7695244867893845029
+    second: Rabbit_Brown_32x32_32
+  - first:
+      213: -7044487646863064602
+    second: Rabbit_Brown_32x32_33
+  - first:
+      213: 225576717001472627
+    second: Rabbit_Brown_32x32_34
+  - first:
+      213: 854151505473314900
+    second: Rabbit_Brown_32x32_35
+  - first:
+      213: 270083422252057644
+    second: Rabbit_Brown_32x32_36
+  - first:
+      213: -4904558133221504893
+    second: Rabbit_Brown_32x32_37
+  - first:
+      213: -7743951823498544447
+    second: Rabbit_Brown_32x32_38
+  - first:
+      213: -5780170853124148971
+    second: Rabbit_Brown_32x32_39
+  - first:
+      213: 5406939567170259153
+    second: Rabbit_Brown_32x32_40
+  - first:
+      213: -7201490294489576829
+    second: Rabbit_Brown_32x32_41
+  - first:
+      213: -4866682976076220402
+    second: Rabbit_Brown_32x32_42
+  - first:
+      213: 5680622811894136401
+    second: Rabbit_Brown_32x32_43
+  - first:
+      213: -4005554474207383325
+    second: Rabbit_Brown_32x32_44
+  - first:
+      213: 1464478194113242619
+    second: Rabbit_Brown_32x32_45
+  - first:
+      213: 524754245937847371
+    second: Rabbit_Brown_32x32_46
+  - first:
+      213: -367686053487120520
+    second: Rabbit_Brown_32x32_47
+  - first:
+      213: -1712241710767304798
+    second: Rabbit_Brown_32x32_48
+  - first:
+      213: -3005565797685963374
+    second: Rabbit_Brown_32x32_49
+  - first:
+      213: 5257069305319786000
+    second: Rabbit_Brown_32x32_50
+  - first:
+      213: 6584429960907826049
+    second: Rabbit_Brown_32x32_51
+  - first:
+      213: 5679064335164313126
+    second: Rabbit_Brown_32x32_52
+  - first:
+      213: 6996128618777626241
+    second: Rabbit_Brown_32x32_53
+  - first:
+      213: -7190176404311958860
+    second: Rabbit_Brown_32x32_54
+  - first:
+      213: -892276686103947892
+    second: Rabbit_Brown_32x32_55
+  - first:
+      213: 1820342383035046644
+    second: Rabbit_Brown_32x32_56
+  - first:
+      213: 6143625909484246218
+    second: Rabbit_Brown_32x32_57
+  - first:
+      213: -8379973062418191478
+    second: Rabbit_Brown_32x32_58
+  - first:
+      213: 9204215531829972861
+    second: Rabbit_Brown_32x32_59
+  - first:
+      213: -509978033013722611
+    second: Rabbit_Brown_32x32_60
+  - first:
+      213: 387564774027864358
+    second: Rabbit_Brown_32x32_61
+  - first:
+      213: -5599807489414512952
+    second: Rabbit_Brown_32x32_62
+  - first:
+      213: -2178472052447111914
+    second: Rabbit_Brown_32x32_63
+  - first:
+      213: 1164753540890261076
+    second: Rabbit_Brown_32x32_64
+  - first:
+      213: -3190652413708895609
+    second: Rabbit_Brown_32x32_65
+  - first:
+      213: 1517847593076300611
+    second: Rabbit_Brown_32x32_66
+  - first:
+      213: 1371448352765557148
+    second: Rabbit_Brown_32x32_67
+  - first:
+      213: -7746701481990075004
+    second: Rabbit_Brown_32x32_68
+  - first:
+      213: 7251356815191900277
+    second: Rabbit_Brown_32x32_69
+  - first:
+      213: -4458184649382195202
+    second: Rabbit_Brown_32x32_70
+  - first:
+      213: -8232769243814610304
+    second: Rabbit_Brown_32x32_71
+  - first:
+      213: 4562540104562225783
+    second: Rabbit_Brown_32x32_72
+  - first:
+      213: -2390089049363118984
+    second: Rabbit_Brown_32x32_73
+  - first:
+      213: 9216082935086194707
+    second: Rabbit_Brown_32x32_74
+  - first:
+      213: -7968211554031345860
+    second: Rabbit_Brown_32x32_75
+  - first:
+      213: 8606916243988886464
+    second: Rabbit_Brown_32x32_76
+  - first:
+      213: -7357093685622291294
+    second: Rabbit_Brown_32x32_77
+  - first:
+      213: 7930094580805698375
+    second: Rabbit_Brown_32x32_78
+  - first:
+      213: -3117004531794750228
+    second: Rabbit_Brown_32x32_79
+  - first:
+      213: -2765203474440370821
+    second: Rabbit_Brown_32x32_80
+  - first:
+      213: 6335903358324153542
+    second: Rabbit_Brown_32x32_81
+  - first:
+      213: 5875831434486642617
+    second: Rabbit_Brown_32x32_82
+  - first:
+      213: 854505175945989209
+    second: Rabbit_Brown_32x32_83
+  - first:
+      213: 1744604511534102829
+    second: Rabbit_Brown_32x32_84
+  - first:
+      213: 8187844148479503481
+    second: Rabbit_Brown_32x32_85
+  - first:
+      213: -6313597570165731924
+    second: Rabbit_Brown_32x32_86
+  - first:
+      213: 3197896454027664283
+    second: Rabbit_Brown_32x32_87
+  - first:
+      213: 9138016875669983178
+    second: Rabbit_Brown_32x32_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 209
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d79c88bb3a5560ee0800000000000000
+      internalID: -1295253681108104835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 201
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8739e14496d2114d0800000000000000
+      internalID: -3165699132927077512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 209
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0846c085a21015d50800000000000000
+      internalID: 6724157000018322560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 201
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2cee12467a8b5de0800000000000000
+      internalID: -1343327823319864278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ae5c47715fab3150800000000000000
+      internalID: 5853464905126796964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a1869f70b3d4dc0800000000000000
+      internalID: -3653198817292445120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 191
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5208fabc337b607f0800000000000000
+      internalID: -646628063392595931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50fd17d50ef7059b0800000000000000
+      internalID: -5093430576938885371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca93dce6124d1330800000000000000
+      internalID: 3683172736488938185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c17353daecbef5b0800000000000000
+      internalID: -5332617192006258236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc037ed72c4347040800000000000000
+      internalID: 4644395125666427085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1f20d91d8adf2c70800000000000000
+      internalID: 8948611284166782749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97c2997b08f3cb030800000000000000
+      internalID: 3511751631510776953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b612a7478fb5280800000000000000
+      internalID: -9053369446749344992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f83d090105a423f50800000000000000
+      internalID: 6859626890174452623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dee6a5bb67465eb0800000000000000
+      internalID: -4731515830571438382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2006fe30a48afce0800000000000000
+      internalID: -1370637312794951638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 145
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b0d2cf954e231420800000000000000
+      internalID: 2599472286490874038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 145
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 955738650995e7000800000000000000
+      internalID: 35564323527161177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 145
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7131b07e5ef2c9990800000000000000
+      internalID: -7377969425069436137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 145
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f215714efc193f80800000000000000
+      internalID: -8126432174267886858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 145
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e237d57238e87320800000000000000
+      internalID: 2556048091955802852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 145
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dc1f3a0f3d78c940800000000000000
+      internalID: 5316637069819190483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 137
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27f5ac5bd33643a70800000000000000
+      internalID: 8805772288110255986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 137
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09414fa8a64ca3680800000000000000
+      internalID: -8774484962101160816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 137
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7dc3171af82e2fa0800000000000000
+      internalID: -5823672213549363842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 137
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5abe3dd13936c70800000000000000
+      internalID: 8963169439716189669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 137
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4458868bf930f14b0800000000000000
+      internalID: -5467647438075951804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 137
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17b9f84a439bd9d70800000000000000
+      internalID: 9051594461834877809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 145
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2a7dc798e0468270800000000000000
+      internalID: 8252354734926428715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 145
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f9d1ad89d9072480800000000000000
+      internalID: -8924153306622600716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 145
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a4d74add87c84ad0800000000000000
+      internalID: -2717702963051637598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 145
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd32a85509ff43590800000000000000
+      internalID: -7695244867893845029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 145
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e18918fec3fc3e90800000000000000
+      internalID: -7044487646863064602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 145
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37ab87634d8612300800000000000000
+      internalID: 225576717001472627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 137
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4502a1cc44e8adb00800000000000000
+      internalID: 854151505473314900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 137
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c244e0b01778fb300800000000000000
+      internalID: 270083422252057644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 137
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38844110d528febb0800000000000000
+      internalID: -4904558133221504893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 139
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca71a288d4f78490800000000000000
+      internalID: -7743951823498544447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 139
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 511f776db35b8cfa0800000000000000
+      internalID: -5780170853124148971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 137
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d8003f93ee490b40800000000000000
+      internalID: 5406939567170259153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 81
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a86877bba2f0c90800000000000000
+      internalID: -7201490294489576829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 81
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0839883e91167cb0800000000000000
+      internalID: -4866682976076220402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 81
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e3ee5a950a5de40800000000000000
+      internalID: 5680622811894136401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 81
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e074649d696968c0800000000000000
+      internalID: -4005554474207383325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 83
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf5ec6d882fd25410800000000000000
+      internalID: 1464478194113242619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 81
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4cd087d43d484700800000000000000
+      internalID: 524754245937847371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 73
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87fe8018b77b5eaf0800000000000000
+      internalID: -367686053487120520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 71
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af8b146c35ec38e0800000000000000
+      internalID: -1712241710767304798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 75
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2955dd7c4d51a46d0800000000000000
+      internalID: -3005565797685963374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 79
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01602371eacd4f840800000000000000
+      internalID: 5257069305319786000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 77
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 183a954e928906b50800000000000000
+      internalID: 6584429960907826049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 75
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e0f028ce610de40800000000000000
+      internalID: 5679064335164313126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 81
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1864f2569ed371160800000000000000
+      internalID: 6996128618777626241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 81
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ba179cc7ac573c90800000000000000
+      internalID: -7190176404311958860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 81
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85596bd41ffd93f0800000000000000
+      internalID: -892276686103947892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 81
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa5466b0c7234910800000000000000
+      internalID: 1820342383035046644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 83
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4d1bfd63b824550800000000000000
+      internalID: 6143625909484246218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 81
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8ba83316ea54bb80800000000000000
+      internalID: -8379973062418191478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 75
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7fcbda9241fbbf70800000000000000
+      internalID: 9204215531829972861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 73
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02f6f25ea13ce8f0800000000000000
+      internalID: -509978033013722611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 71
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 629a26bcb18e06500800000000000000
+      internalID: 387564774027864358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 73
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ce30e6e1cc7942b0800000000000000
+      internalID: -5599807489414512952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 75
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61516c8d53384c1e0800000000000000
+      internalID: -2178472052447111914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 75
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45674af9c290a2010800000000000000
+      internalID: 1164753540890261076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 17
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78a7327d88688b3d0800000000000000
+      internalID: -3190652413708895609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 17
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b9e70185a701510800000000000000
+      internalID: 1517847593076300611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 17
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c99b266b20d580310800000000000000
+      internalID: 1371448352765557148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 17
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48d4df0cb003e7490800000000000000
+      internalID: -7746701481990075004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 17
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5700f15aa9ef1a460800000000000000
+      internalID: 7251356815191900277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 17
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eff897e8ea85122c0800000000000000
+      internalID: -4458184649382195202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 9
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a3ba8edf35fbd80800000000000000
+      internalID: -8232769243814610304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 9
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 772b7ed3d06615f30800000000000000
+      internalID: 4562540104562225783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 9
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 874092f3ca2b4ded0800000000000000
+      internalID: -2390089049363118984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 9
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3102a5eb99a16ef70800000000000000
+      internalID: 9216082935086194707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 9
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3f5cca1fc93b6190800000000000000
+      internalID: -7968211554031345860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 9
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c33f76f8b8e17770800000000000000
+      internalID: 8606916243988886464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 17
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a4c631c54a56e990800000000000000
+      internalID: -7357093685622291294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 17
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7438c2c710b5d0e60800000000000000
+      internalID: 7930094580805698375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 17
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce4571794ec2eb4d0800000000000000
+      internalID: -3117004531794750228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 17
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b754e46371600a9d0800000000000000
+      internalID: -2765203474440370821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 17
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc9d1c0986ade750800000000000000
+      internalID: 6335903358324153542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 17
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b776a4ee852b8150800000000000000
+      internalID: 5875831434486642617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 7
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95c4efe1eefcbdb00800000000000000
+      internalID: 854505175945989209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 5
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d29b8875f84163810800000000000000
+      internalID: 1744604511534102829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 5
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ca16a3fd011a170800000000000000
+      internalID: 8187844148479503481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 5
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cad8087f5789168a0800000000000000
+      internalID: -6313597570165731924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 7
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9bdccab1e5316c20800000000000000
+      internalID: 3197896454027664283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Brown_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 7
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acf85d1eee1c0de70800000000000000
+      internalID: 9138016875669983178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Rabbit_Brown_32x32_0: -1295253681108104835
+      Rabbit_Brown_32x32_1: -3165699132927077512
+      Rabbit_Brown_32x32_10: 4644395125666427085
+      Rabbit_Brown_32x32_11: 8948611284166782749
+      Rabbit_Brown_32x32_12: 3511751631510776953
+      Rabbit_Brown_32x32_13: -9053369446749344992
+      Rabbit_Brown_32x32_14: 6859626890174452623
+      Rabbit_Brown_32x32_15: -4731515830571438382
+      Rabbit_Brown_32x32_16: -1370637312794951638
+      Rabbit_Brown_32x32_17: 2599472286490874038
+      Rabbit_Brown_32x32_18: 35564323527161177
+      Rabbit_Brown_32x32_19: -7377969425069436137
+      Rabbit_Brown_32x32_2: 6724157000018322560
+      Rabbit_Brown_32x32_20: -8126432174267886858
+      Rabbit_Brown_32x32_21: 2556048091955802852
+      Rabbit_Brown_32x32_22: 5316637069819190483
+      Rabbit_Brown_32x32_23: 8805772288110255986
+      Rabbit_Brown_32x32_24: -8774484962101160816
+      Rabbit_Brown_32x32_25: -5823672213549363842
+      Rabbit_Brown_32x32_26: 8963169439716189669
+      Rabbit_Brown_32x32_27: -5467647438075951804
+      Rabbit_Brown_32x32_28: 9051594461834877809
+      Rabbit_Brown_32x32_29: 8252354734926428715
+      Rabbit_Brown_32x32_3: -1343327823319864278
+      Rabbit_Brown_32x32_30: -8924153306622600716
+      Rabbit_Brown_32x32_31: -2717702963051637598
+      Rabbit_Brown_32x32_32: -7695244867893845029
+      Rabbit_Brown_32x32_33: -7044487646863064602
+      Rabbit_Brown_32x32_34: 225576717001472627
+      Rabbit_Brown_32x32_35: 854151505473314900
+      Rabbit_Brown_32x32_36: 270083422252057644
+      Rabbit_Brown_32x32_37: -4904558133221504893
+      Rabbit_Brown_32x32_38: -7743951823498544447
+      Rabbit_Brown_32x32_39: -5780170853124148971
+      Rabbit_Brown_32x32_4: 5853464905126796964
+      Rabbit_Brown_32x32_40: 5406939567170259153
+      Rabbit_Brown_32x32_41: -7201490294489576829
+      Rabbit_Brown_32x32_42: -4866682976076220402
+      Rabbit_Brown_32x32_43: 5680622811894136401
+      Rabbit_Brown_32x32_44: -4005554474207383325
+      Rabbit_Brown_32x32_45: 1464478194113242619
+      Rabbit_Brown_32x32_46: 524754245937847371
+      Rabbit_Brown_32x32_47: -367686053487120520
+      Rabbit_Brown_32x32_48: -1712241710767304798
+      Rabbit_Brown_32x32_49: -3005565797685963374
+      Rabbit_Brown_32x32_5: -3653198817292445120
+      Rabbit_Brown_32x32_50: 5257069305319786000
+      Rabbit_Brown_32x32_51: 6584429960907826049
+      Rabbit_Brown_32x32_52: 5679064335164313126
+      Rabbit_Brown_32x32_53: 6996128618777626241
+      Rabbit_Brown_32x32_54: -7190176404311958860
+      Rabbit_Brown_32x32_55: -892276686103947892
+      Rabbit_Brown_32x32_56: 1820342383035046644
+      Rabbit_Brown_32x32_57: 6143625909484246218
+      Rabbit_Brown_32x32_58: -8379973062418191478
+      Rabbit_Brown_32x32_59: 9204215531829972861
+      Rabbit_Brown_32x32_6: -646628063392595931
+      Rabbit_Brown_32x32_60: -509978033013722611
+      Rabbit_Brown_32x32_61: 387564774027864358
+      Rabbit_Brown_32x32_62: -5599807489414512952
+      Rabbit_Brown_32x32_63: -2178472052447111914
+      Rabbit_Brown_32x32_64: 1164753540890261076
+      Rabbit_Brown_32x32_65: -3190652413708895609
+      Rabbit_Brown_32x32_66: 1517847593076300611
+      Rabbit_Brown_32x32_67: 1371448352765557148
+      Rabbit_Brown_32x32_68: -7746701481990075004
+      Rabbit_Brown_32x32_69: 7251356815191900277
+      Rabbit_Brown_32x32_7: -5093430576938885371
+      Rabbit_Brown_32x32_70: -4458184649382195202
+      Rabbit_Brown_32x32_71: -8232769243814610304
+      Rabbit_Brown_32x32_72: 4562540104562225783
+      Rabbit_Brown_32x32_73: -2390089049363118984
+      Rabbit_Brown_32x32_74: 9216082935086194707
+      Rabbit_Brown_32x32_75: -7968211554031345860
+      Rabbit_Brown_32x32_76: 8606916243988886464
+      Rabbit_Brown_32x32_77: -7357093685622291294
+      Rabbit_Brown_32x32_78: 7930094580805698375
+      Rabbit_Brown_32x32_79: -3117004531794750228
+      Rabbit_Brown_32x32_8: 3683172736488938185
+      Rabbit_Brown_32x32_80: -2765203474440370821
+      Rabbit_Brown_32x32_81: 6335903358324153542
+      Rabbit_Brown_32x32_82: 5875831434486642617
+      Rabbit_Brown_32x32_83: 854505175945989209
+      Rabbit_Brown_32x32_84: 1744604511534102829
+      Rabbit_Brown_32x32_85: 8187844148479503481
+      Rabbit_Brown_32x32_86: -6313597570165731924
+      Rabbit_Brown_32x32_87: 3197896454027664283
+      Rabbit_Brown_32x32_88: 9138016875669983178
+      Rabbit_Brown_32x32_9: -5332617192006258236
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: 840cd343d3265104e828c49ec1cd5fc2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3435171008763633585
+    second: Goat_Black_Head_32x32_0
+  - first:
+      213: 5603439250561933942
+    second: Goat_Black_Head_32x32_1
+  - first:
+      213: -365769033723515456
+    second: Goat_Black_Head_32x32_2
+  - first:
+      213: 4684325305803636640
+    second: Goat_Black_Head_32x32_3
+  - first:
+      213: 808941204878637617
+    second: Goat_Black_Head_32x32_4
+  - first:
+      213: -3968908822753351962
+    second: Goat_Black_Head_32x32_5
+  - first:
+      213: 3474386466243798791
+    second: Goat_Black_Head_32x32_6
+  - first:
+      213: 8683719027675862447
+    second: Goat_Black_Head_32x32_7
+  - first:
+      213: 5946404593138649759
+    second: Goat_Black_Head_32x32_8
+  - first:
+      213: -7336248673496974769
+    second: Goat_Black_Head_32x32_9
+  - first:
+      213: 1114732907213098742
+    second: Goat_Black_Head_32x32_10
+  - first:
+      213: -1629453856753731538
+    second: Goat_Black_Head_32x32_11
+  - first:
+      213: -8746127213164959516
+    second: Goat_Black_Head_32x32_12
+  - first:
+      213: -8911445514011959041
+    second: Goat_Black_Head_32x32_13
+  - first:
+      213: 5421492206236574998
+    second: Goat_Black_Head_32x32_14
+  - first:
+      213: 7966728944566821681
+    second: Goat_Black_Head_32x32_15
+  - first:
+      213: 3950873800385814228
+    second: Goat_Black_Head_32x32_16
+  - first:
+      213: -7805610731076609397
+    second: Goat_Black_Head_32x32_17
+  - first:
+      213: 4501810417988930763
+    second: Goat_Black_Head_32x32_18
+  - first:
+      213: 7821541024733047348
+    second: Goat_Black_Head_32x32_19
+  - first:
+      213: 6531392407373452038
+    second: Goat_Black_Head_32x32_20
+  - first:
+      213: -7326384090904537674
+    second: Goat_Black_Head_32x32_21
+  - first:
+      213: 7600372125356396835
+    second: Goat_Black_Head_32x32_22
+  - first:
+      213: 787888225936631689
+    second: Goat_Black_Head_32x32_23
+  - first:
+      213: 2038160408233835847
+    second: Goat_Black_Head_32x32_24
+  - first:
+      213: 8086959467572634710
+    second: Goat_Black_Head_32x32_25
+  - first:
+      213: 4491049619048733941
+    second: Goat_Black_Head_32x32_26
+  - first:
+      213: 9162701912225206883
+    second: Goat_Black_Head_32x32_27
+  - first:
+      213: 4329126490319879933
+    second: Goat_Black_Head_32x32_28
+  - first:
+      213: 1901697266488871418
+    second: Goat_Black_Head_32x32_29
+  - first:
+      213: -5281580066791279609
+    second: Goat_Black_Head_32x32_30
+  - first:
+      213: -4541301991366333122
+    second: Goat_Black_Head_32x32_31
+  - first:
+      213: -3468614736216617327
+    second: Goat_Black_Head_32x32_32
+  - first:
+      213: 8690301384656363365
+    second: Goat_Black_Head_32x32_33
+  - first:
+      213: 7217187896463636507
+    second: Goat_Black_Head_32x32_34
+  - first:
+      213: 8668091891961228811
+    second: Goat_Black_Head_32x32_35
+  - first:
+      213: -7056509049614245102
+    second: Goat_Black_Head_32x32_36
+  - first:
+      213: 1799924710177567206
+    second: Goat_Black_Head_32x32_37
+  - first:
+      213: -980488889773118317
+    second: Goat_Black_Head_32x32_38
+  - first:
+      213: -6513723617964021326
+    second: Goat_Black_Head_32x32_39
+  - first:
+      213: -8084313555330147399
+    second: Goat_Black_Head_32x32_40
+  - first:
+      213: -637807176928019711
+    second: Goat_Black_Head_32x32_41
+  - first:
+      213: 4160632031352365949
+    second: Goat_Black_Head_32x32_42
+  - first:
+      213: 5193132755169529980
+    second: Goat_Black_Head_32x32_43
+  - first:
+      213: 2554802564699122203
+    second: Goat_Black_Head_32x32_44
+  - first:
+      213: -6429062796817739741
+    second: Goat_Black_Head_32x32_45
+  - first:
+      213: 443467659361757514
+    second: Goat_Black_Head_32x32_46
+  - first:
+      213: -6904278868607463353
+    second: Goat_Black_Head_32x32_47
+  - first:
+      213: 5207994726395232387
+    second: Goat_Black_Head_32x32_48
+  - first:
+      213: 3615808676873857548
+    second: Goat_Black_Head_32x32_49
+  - first:
+      213: -7472675318787721495
+    second: Goat_Black_Head_32x32_50
+  - first:
+      213: 6429796661595903605
+    second: Goat_Black_Head_32x32_51
+  - first:
+      213: -7169462971570241615
+    second: Goat_Black_Head_32x32_52
+  - first:
+      213: -7410087579703472595
+    second: Goat_Black_Head_32x32_53
+  - first:
+      213: -4527468788510477801
+    second: Goat_Black_Head_32x32_54
+  - first:
+      213: -815474486392899156
+    second: Goat_Black_Head_32x32_55
+  - first:
+      213: -5059667562004719704
+    second: Goat_Black_Head_32x32_56
+  - first:
+      213: 8840749093091673703
+    second: Goat_Black_Head_32x32_57
+  - first:
+      213: 8725688039662147380
+    second: Goat_Black_Head_32x32_58
+  - first:
+      213: 4706327130269187837
+    second: Goat_Black_Head_32x32_59
+  - first:
+      213: 3157677232194408745
+    second: Goat_Black_Head_32x32_60
+  - first:
+      213: 1586407845968186562
+    second: Goat_Black_Head_32x32_61
+  - first:
+      213: 2540120248640221171
+    second: Goat_Black_Head_32x32_62
+  - first:
+      213: -1284351756873126150
+    second: Goat_Black_Head_32x32_63
+  - first:
+      213: 1624371127428652249
+    second: Goat_Black_Head_32x32_64
+  - first:
+      213: 2507653064282151431
+    second: Goat_Black_Head_32x32_65
+  - first:
+      213: 2036105897928127901
+    second: Goat_Black_Head_32x32_66
+  - first:
+      213: -9210838116193156628
+    second: Goat_Black_Head_32x32_67
+  - first:
+      213: 6567698859423393577
+    second: Goat_Black_Head_32x32_68
+  - first:
+      213: -7603622651360354029
+    second: Goat_Black_Head_32x32_69
+  - first:
+      213: 7904187551186415381
+    second: Goat_Black_Head_32x32_70
+  - first:
+      213: -3443526005943608036
+    second: Goat_Black_Head_32x32_71
+  - first:
+      213: 5758336686339127174
+    second: Goat_Black_Head_32x32_72
+  - first:
+      213: 2544444118530650523
+    second: Goat_Black_Head_32x32_73
+  - first:
+      213: 4969405270869575782
+    second: Goat_Black_Head_32x32_74
+  - first:
+      213: 706508309036526898
+    second: Goat_Black_Head_32x32_75
+  - first:
+      213: 5259485538601060353
+    second: Goat_Black_Head_32x32_76
+  - first:
+      213: 4450934565161994951
+    second: Goat_Black_Head_32x32_77
+  - first:
+      213: 4467668366253531719
+    second: Goat_Black_Head_32x32_78
+  - first:
+      213: -827929868193176062
+    second: Goat_Black_Head_32x32_79
+  - first:
+      213: -8144569081280618953
+    second: Goat_Black_Head_32x32_80
+  - first:
+      213: 4397749477796373235
+    second: Goat_Black_Head_32x32_81
+  - first:
+      213: 7595482961302543321
+    second: Goat_Black_Head_32x32_82
+  - first:
+      213: 8781223627404446841
+    second: Goat_Black_Head_32x32_83
+  - first:
+      213: -8799160106263875775
+    second: Goat_Black_Head_32x32_84
+  - first:
+      213: 798724544228822657
+    second: Goat_Black_Head_32x32_85
+  - first:
+      213: 6852294955899568163
+    second: Goat_Black_Head_32x32_86
+  - first:
+      213: -7490282973746604202
+    second: Goat_Black_Head_32x32_87
+  - first:
+      213: -3698266502862159119
+    second: Goat_Black_Head_32x32_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 303
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf931805dd2caf20800000000000000
+      internalID: 3435171008763633585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 301
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 672a9326f4a63cd40800000000000000
+      internalID: 5603439250561933942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 301
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd621370078ceaf0800000000000000
+      internalID: -365769033723515456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 305
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af7cc80c01120140800000000000000
+      internalID: 4684325305803636640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 287
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ab7f86dbfe93b00800000000000000
+      internalID: 808941204878637617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 287
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e66fd1347a9be8c0800000000000000
+      internalID: -3968908822753351962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 287
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707e2ec3510873030800000000000000
+      internalID: 3474386466243798791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 287
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa59be58274c28870800000000000000
+      internalID: 8683719027675862447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 287
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ac7c8d87fd58250800000000000000
+      internalID: 5946404593138649759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 287
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4a384853b8603a90800000000000000
+      internalID: -7336248673496974769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 287
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe00e94ca3587f00800000000000000
+      internalID: 1114732907213098742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 287
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28bd4ab9540369e0800000000000000
+      internalID: -1629453856753731538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 287
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e8ecea73a38f9680800000000000000
+      internalID: -8746127213164959516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 297
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff0a116158f245480800000000000000
+      internalID: -8911445514011959041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 297
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 615a741ff620d3b40800000000000000
+      internalID: 5421492206236574998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 287
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1336abaf3c18f8e60800000000000000
+      internalID: 7966728944566821681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 287
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ded460f9c254d630800000000000000
+      internalID: 3950873800385814228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 207
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a933f5566eca390800000000000000
+      internalID: -7805610731076609397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 207
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc026a39b4a97e30800000000000000
+      internalID: 4501810417988930763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 207
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43aab572f12bb8c60800000000000000
+      internalID: 7821541024733047348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 207
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6039d2a2aca24aa50800000000000000
+      internalID: 6531392407373452038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 207
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b5df857c74735a90800000000000000
+      internalID: -7326384090904537674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 207
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32116a4fd22f97960800000000000000
+      internalID: 7600372125356396835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 205
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9876aa5ca242fea00800000000000000
+      internalID: 787888225936631689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 205
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74dfa08b710094c10800000000000000
+      internalID: 2038160408233835847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 205
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65426a90ac6aa3070800000000000000
+      internalID: 8086959467572634710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 205
+        width: 36
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc9d0c75d9635e30800000000000000
+      internalID: 4491049619048733941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 205
+        width: 36
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 362d9f4d7d4782f70800000000000000
+      internalID: 9162701912225206883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 205
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfeff333b95241c30800000000000000
+      internalID: 4329126490319879933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 205
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af98667969f246a10800000000000000
+      internalID: 1901697266488871418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 205
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7043f1a89ee04b6b0800000000000000
+      internalID: -5281580066791279609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 205
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3de5d256ed0af0c0800000000000000
+      internalID: -4541301991366333122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 205
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e8f1166410ddfc0800000000000000
+      internalID: -3468614736216617327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 205
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f178fe0172a9870800000000000000
+      internalID: 8690301384656363365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 205
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18b6fd472a982460800000000000000
+      internalID: 7217187896463636507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 209
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0eeac476af3b4870800000000000000
+      internalID: 8668091891961228811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 209
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 213e967086e321e90800000000000000
+      internalID: -7056509049614245102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 209
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1f49cccfd9af810800000000000000
+      internalID: 1799924710177567206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 209
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39c2bd2bc8a9462f0800000000000000
+      internalID: -980488889773118317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 209
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b9ae2271ea9a95a0800000000000000
+      internalID: -6513723617964021326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 209
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bbdba967afbecf80800000000000000
+      internalID: -8084313555330147399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 111
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10bb20870cd0627f0800000000000000
+      internalID: -637807176928019711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 111
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d73aeddd9c88db930800000000000000
+      internalID: 4160632031352365949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 111
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c705357f9b6b11840800000000000000
+      internalID: 5193132755169529980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 111
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1ae52c856b747320800000000000000
+      internalID: 2554802564699122203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 111
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320dffce27167c6a0800000000000000
+      internalID: -6429062796817739741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 111
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a49a1a19c73872600800000000000000
+      internalID: 443467659361757514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 109
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7409a6e03f21f20a0800000000000000
+      internalID: -6904278868607463353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 107
+        width: 36
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38045ea4c93864840800000000000000
+      internalID: 5207994726395232387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 107
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0a67d095deed2230800000000000000
+      internalID: 3615808676873857548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 109
+        width: 36
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e634d5b369bb4890800000000000000
+      internalID: -7472675318787721495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 107
+        width: 36
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5769a684ff93b3950800000000000000
+      internalID: 6429796661595903605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 107
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf3d3da963f08c90800000000000000
+      internalID: -7169462971570241615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 109
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2e8d394b941a2990800000000000000
+      internalID: -7410087579703472595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 109
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7123a29df133b21c0800000000000000
+      internalID: -4527468788510477801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 109
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca93823764adea4f0800000000000000
+      internalID: -815474486392899156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 109
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a7542dd82378c9b0800000000000000
+      internalID: -5059667562004719704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 109
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766061ab576a0ba70800000000000000
+      internalID: 8840749093091673703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 109
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 437dfe89a0fd71970800000000000000
+      internalID: 8725688039662147380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 113
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe7a7cf69b305140800000000000000
+      internalID: 4706327130269187837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 113
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 921594c66b252db20800000000000000
+      internalID: 3157677232194408745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 113
+        width: 36
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc83dfd78d040610800000000000000
+      internalID: 1586407845968186562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 113
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff2af278e1504320800000000000000
+      internalID: 2540120248640221171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 113
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afeade4c1e01d2ee0800000000000000
+      internalID: -1284351756873126150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 113
+        width: 36
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc19c12fecea8610800000000000000
+      internalID: 1624371127428652249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 15
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a15740d29fcc220800000000000000
+      internalID: 2507653064282151431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 15
+        width: 56
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d957513c683b14c10800000000000000
+      internalID: 2036105897928127901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 15
+        width: 56
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce1cda0d8878c2080800000000000000
+      internalID: -9210838116193156628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 15
+        width: 56
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9276ba3c057252b50800000000000000
+      internalID: 6567698859423393577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 15
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3116d8bfb718a7690800000000000000
+      internalID: -7603622651360354029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 15
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51fe78a13b051bd60800000000000000
+      internalID: 7904187551186415381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 13
+        width: 36
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1d59e897532630d0800000000000000
+      internalID: -3443526005943608036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 13
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 687f75e05b8b9ef40800000000000000
+      internalID: 5758336686339127174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 13
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b91f9dbd17eaf4320800000000000000
+      internalID: 2544444118530650523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 13
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 668822bc3cfd6f440800000000000000
+      internalID: 4969405270869575782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 13
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23debf650950ec900800000000000000
+      internalID: 706508309036526898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 13
+        width: 36
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 108ce9d3b327df840800000000000000
+      internalID: 5259485538601060353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 13
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca0dfaa765e4cd30800000000000000
+      internalID: 4450934565161994951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 13
+        width: 56
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 742aac855b8500e30800000000000000
+      internalID: 4467668366253531719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 13
+        width: 56
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 206e863eb2a9284f0800000000000000
+      internalID: -827929868193176062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 13
+        width: 56
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73e93a5829da8fe80800000000000000
+      internalID: -8144569081280618953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 13
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f2663b89d1f70d30800000000000000
+      internalID: 4397749477796373235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 13
+        width: 56
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db58fdb283986960800000000000000
+      internalID: 7595482961302543321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 17
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97c85bc3d5c2dd970800000000000000
+      internalID: 8781223627404446841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 17
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f6a58d08a13e580800000000000000
+      internalID: -8799160106263875775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 17
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e052cbdb3a51b00800000000000000
+      internalID: 798724544228822657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 17
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320489615fd381f50800000000000000
+      internalID: 6852294955899568163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 17
+        width: 36
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6575da2125b2d0890800000000000000
+      internalID: -7490282973746604202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Black_Head_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 17
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f2cc2cb53e1dacc0800000000000000
+      internalID: -3698266502862159119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Goat_Black_Head_32x32_0: 3435171008763633585
+      Goat_Black_Head_32x32_1: 5603439250561933942
+      Goat_Black_Head_32x32_10: 1114732907213098742
+      Goat_Black_Head_32x32_11: -1629453856753731538
+      Goat_Black_Head_32x32_12: -8746127213164959516
+      Goat_Black_Head_32x32_13: -8911445514011959041
+      Goat_Black_Head_32x32_14: 5421492206236574998
+      Goat_Black_Head_32x32_15: 7966728944566821681
+      Goat_Black_Head_32x32_16: 3950873800385814228
+      Goat_Black_Head_32x32_17: -7805610731076609397
+      Goat_Black_Head_32x32_18: 4501810417988930763
+      Goat_Black_Head_32x32_19: 7821541024733047348
+      Goat_Black_Head_32x32_2: -365769033723515456
+      Goat_Black_Head_32x32_20: 6531392407373452038
+      Goat_Black_Head_32x32_21: -7326384090904537674
+      Goat_Black_Head_32x32_22: 7600372125356396835
+      Goat_Black_Head_32x32_23: 787888225936631689
+      Goat_Black_Head_32x32_24: 2038160408233835847
+      Goat_Black_Head_32x32_25: 8086959467572634710
+      Goat_Black_Head_32x32_26: 4491049619048733941
+      Goat_Black_Head_32x32_27: 9162701912225206883
+      Goat_Black_Head_32x32_28: 4329126490319879933
+      Goat_Black_Head_32x32_29: 1901697266488871418
+      Goat_Black_Head_32x32_3: 4684325305803636640
+      Goat_Black_Head_32x32_30: -5281580066791279609
+      Goat_Black_Head_32x32_31: -4541301991366333122
+      Goat_Black_Head_32x32_32: -3468614736216617327
+      Goat_Black_Head_32x32_33: 8690301384656363365
+      Goat_Black_Head_32x32_34: 7217187896463636507
+      Goat_Black_Head_32x32_35: 8668091891961228811
+      Goat_Black_Head_32x32_36: -7056509049614245102
+      Goat_Black_Head_32x32_37: 1799924710177567206
+      Goat_Black_Head_32x32_38: -980488889773118317
+      Goat_Black_Head_32x32_39: -6513723617964021326
+      Goat_Black_Head_32x32_4: 808941204878637617
+      Goat_Black_Head_32x32_40: -8084313555330147399
+      Goat_Black_Head_32x32_41: -637807176928019711
+      Goat_Black_Head_32x32_42: 4160632031352365949
+      Goat_Black_Head_32x32_43: 5193132755169529980
+      Goat_Black_Head_32x32_44: 2554802564699122203
+      Goat_Black_Head_32x32_45: -6429062796817739741
+      Goat_Black_Head_32x32_46: 443467659361757514
+      Goat_Black_Head_32x32_47: -6904278868607463353
+      Goat_Black_Head_32x32_48: 5207994726395232387
+      Goat_Black_Head_32x32_49: 3615808676873857548
+      Goat_Black_Head_32x32_5: -3968908822753351962
+      Goat_Black_Head_32x32_50: -7472675318787721495
+      Goat_Black_Head_32x32_51: 6429796661595903605
+      Goat_Black_Head_32x32_52: -7169462971570241615
+      Goat_Black_Head_32x32_53: -7410087579703472595
+      Goat_Black_Head_32x32_54: -4527468788510477801
+      Goat_Black_Head_32x32_55: -815474486392899156
+      Goat_Black_Head_32x32_56: -5059667562004719704
+      Goat_Black_Head_32x32_57: 8840749093091673703
+      Goat_Black_Head_32x32_58: 8725688039662147380
+      Goat_Black_Head_32x32_59: 4706327130269187837
+      Goat_Black_Head_32x32_6: 3474386466243798791
+      Goat_Black_Head_32x32_60: 3157677232194408745
+      Goat_Black_Head_32x32_61: 1586407845968186562
+      Goat_Black_Head_32x32_62: 2540120248640221171
+      Goat_Black_Head_32x32_63: -1284351756873126150
+      Goat_Black_Head_32x32_64: 1624371127428652249
+      Goat_Black_Head_32x32_65: 2507653064282151431
+      Goat_Black_Head_32x32_66: 2036105897928127901
+      Goat_Black_Head_32x32_67: -9210838116193156628
+      Goat_Black_Head_32x32_68: 6567698859423393577
+      Goat_Black_Head_32x32_69: -7603622651360354029
+      Goat_Black_Head_32x32_7: 8683719027675862447
+      Goat_Black_Head_32x32_70: 7904187551186415381
+      Goat_Black_Head_32x32_71: -3443526005943608036
+      Goat_Black_Head_32x32_72: 5758336686339127174
+      Goat_Black_Head_32x32_73: 2544444118530650523
+      Goat_Black_Head_32x32_74: 4969405270869575782
+      Goat_Black_Head_32x32_75: 706508309036526898
+      Goat_Black_Head_32x32_76: 5259485538601060353
+      Goat_Black_Head_32x32_77: 4450934565161994951
+      Goat_Black_Head_32x32_78: 4467668366253531719
+      Goat_Black_Head_32x32_79: -827929868193176062
+      Goat_Black_Head_32x32_8: 5946404593138649759
+      Goat_Black_Head_32x32_80: -8144569081280618953
+      Goat_Black_Head_32x32_81: 4397749477796373235
+      Goat_Black_Head_32x32_82: 7595482961302543321
+      Goat_Black_Head_32x32_83: 8781223627404446841
+      Goat_Black_Head_32x32_84: -8799160106263875775
+      Goat_Black_Head_32x32_85: 798724544228822657
+      Goat_Black_Head_32x32_86: 6852294955899568163
+      Goat_Black_Head_32x32_87: -7490282973746604202
+      Goat_Black_Head_32x32_88: -3698266502862159119
+      Goat_Black_Head_32x32_9: -7336248673496974769
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

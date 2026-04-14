@@ -1,0 +1,2041 @@
+fileFormatVersion: 2
+guid: 5d11d2e5f69f61d41855bb4df3012f76
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5236089633510048938
+    second: Duck_Red_Eyes_32x32_0
+  - first:
+      213: -1097110873616051925
+    second: Duck_Red_Eyes_32x32_1
+  - first:
+      213: -7437688794768854991
+    second: Duck_Red_Eyes_32x32_2
+  - first:
+      213: 8512689527355206572
+    second: Duck_Red_Eyes_32x32_3
+  - first:
+      213: -2994547695376552576
+    second: Duck_Red_Eyes_32x32_4
+  - first:
+      213: -602084369704107247
+    second: Duck_Red_Eyes_32x32_5
+  - first:
+      213: -8032269122049745704
+    second: Duck_Red_Eyes_32x32_6
+  - first:
+      213: 321287165808565700
+    second: Duck_Red_Eyes_32x32_7
+  - first:
+      213: 7841785008686302532
+    second: Duck_Red_Eyes_32x32_8
+  - first:
+      213: 6199470191690230727
+    second: Duck_Red_Eyes_32x32_9
+  - first:
+      213: -9085555877995305232
+    second: Duck_Red_Eyes_32x32_10
+  - first:
+      213: 4811159732879115227
+    second: Duck_Red_Eyes_32x32_11
+  - first:
+      213: 3040209900253264810
+    second: Duck_Red_Eyes_32x32_12
+  - first:
+      213: 4565331245396936540
+    second: Duck_Red_Eyes_32x32_13
+  - first:
+      213: -6866297698168973793
+    second: Duck_Red_Eyes_32x32_14
+  - first:
+      213: 7998736511265163420
+    second: Duck_Red_Eyes_32x32_15
+  - first:
+      213: 821200169139515373
+    second: Duck_Red_Eyes_32x32_16
+  - first:
+      213: -5779730737813028037
+    second: Duck_Red_Eyes_32x32_17
+  - first:
+      213: -2877180807312469847
+    second: Duck_Red_Eyes_32x32_18
+  - first:
+      213: 8671261931005892093
+    second: Duck_Red_Eyes_32x32_19
+  - first:
+      213: 374819510952945489
+    second: Duck_Red_Eyes_32x32_20
+  - first:
+      213: 1156266157023352507
+    second: Duck_Red_Eyes_32x32_21
+  - first:
+      213: -2686928749242112332
+    second: Duck_Red_Eyes_32x32_22
+  - first:
+      213: 4317570343843577276
+    second: Duck_Red_Eyes_32x32_23
+  - first:
+      213: 7134131971010160355
+    second: Duck_Red_Eyes_32x32_24
+  - first:
+      213: -4405441019608326300
+    second: Duck_Red_Eyes_32x32_25
+  - first:
+      213: -909114227823210236
+    second: Duck_Red_Eyes_32x32_26
+  - first:
+      213: 2786097250810292447
+    second: Duck_Red_Eyes_32x32_27
+  - first:
+      213: 1405301883857629802
+    second: Duck_Red_Eyes_32x32_28
+  - first:
+      213: 8416885978195553357
+    second: Duck_Red_Eyes_32x32_29
+  - first:
+      213: -5991005009662665845
+    second: Duck_Red_Eyes_32x32_30
+  - first:
+      213: -4831104795600410988
+    second: Duck_Red_Eyes_32x32_31
+  - first:
+      213: 3091175314714216073
+    second: Duck_Red_Eyes_32x32_32
+  - first:
+      213: -2167171367637144651
+    second: Duck_Red_Eyes_32x32_33
+  - first:
+      213: -211981394673755511
+    second: Duck_Red_Eyes_32x32_34
+  - first:
+      213: -7835789432698166191
+    second: Duck_Red_Eyes_32x32_35
+  - first:
+      213: 7172768549719046175
+    second: Duck_Red_Eyes_32x32_36
+  - first:
+      213: 3968653670893251405
+    second: Duck_Red_Eyes_32x32_37
+  - first:
+      213: -3254933513608358075
+    second: Duck_Red_Eyes_32x32_38
+  - first:
+      213: 4209741811610743661
+    second: Duck_Red_Eyes_32x32_39
+  - first:
+      213: -6300208648874643505
+    second: Duck_Red_Eyes_32x32_40
+  - first:
+      213: -5571672722431957068
+    second: Duck_Red_Eyes_32x32_41
+  - first:
+      213: -3376635687578896330
+    second: Duck_Red_Eyes_32x32_42
+  - first:
+      213: -3988648080512756422
+    second: Duck_Red_Eyes_32x32_43
+  - first:
+      213: 7762869723932975547
+    second: Duck_Red_Eyes_32x32_44
+  - first:
+      213: -4359437835872569446
+    second: Duck_Red_Eyes_32x32_45
+  - first:
+      213: -6710979508354064656
+    second: Duck_Red_Eyes_32x32_46
+  - first:
+      213: -4699038945571195487
+    second: Duck_Red_Eyes_32x32_47
+  - first:
+      213: -3341890002501579223
+    second: Duck_Red_Eyes_32x32_48
+  - first:
+      213: -2259897073613405395
+    second: Duck_Red_Eyes_32x32_49
+  - first:
+      213: -6583512769322315843
+    second: Duck_Red_Eyes_32x32_50
+  - first:
+      213: -4465436012281439767
+    second: Duck_Red_Eyes_32x32_51
+  - first:
+      213: 341750637866140788
+    second: Duck_Red_Eyes_32x32_52
+  - first:
+      213: -942250315407548510
+    second: Duck_Red_Eyes_32x32_53
+  - first:
+      213: 5093249257816939651
+    second: Duck_Red_Eyes_32x32_54
+  - first:
+      213: -1834046408028773872
+    second: Duck_Red_Eyes_32x32_55
+  - first:
+      213: -7683200983649858386
+    second: Duck_Red_Eyes_32x32_56
+  - first:
+      213: 5406520250000941005
+    second: Duck_Red_Eyes_32x32_57
+  - first:
+      213: -4220217097843214101
+    second: Duck_Red_Eyes_32x32_58
+  - first:
+      213: 4150252044668075719
+    second: Duck_Red_Eyes_32x32_59
+  - first:
+      213: -3169360647759243368
+    second: Duck_Red_Eyes_32x32_60
+  - first:
+      213: 7874155119035238675
+    second: Duck_Red_Eyes_32x32_61
+  - first:
+      213: -3150837390733420352
+    second: Duck_Red_Eyes_32x32_62
+  - first:
+      213: -4670725270140857710
+    second: Duck_Red_Eyes_32x32_63
+  - first:
+      213: 867880546295645574
+    second: Duck_Red_Eyes_32x32_64
+  - first:
+      213: -1936006555020133427
+    second: Duck_Red_Eyes_32x32_65
+  - first:
+      213: 7632159081219085254
+    second: Duck_Red_Eyes_32x32_66
+  - first:
+      213: 3113248910663271159
+    second: Duck_Red_Eyes_32x32_67
+  - first:
+      213: 4938530584299700268
+    second: Duck_Red_Eyes_32x32_68
+  - first:
+      213: 3320118479685013935
+    second: Duck_Red_Eyes_32x32_69
+  - first:
+      213: -4881205819171600122
+    second: Duck_Red_Eyes_32x32_70
+  - first:
+      213: 6269654349085223518
+    second: Duck_Red_Eyes_32x32_71
+  - first:
+      213: 4697824699726009877
+    second: Duck_Red_Eyes_32x32_72
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 191
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b3786683ca557b0800000000000000
+      internalID: -5236089633510048938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 195
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2195e2297746c0f0800000000000000
+      internalID: -1097110873616051925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 191
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13036ed927508c890800000000000000
+      internalID: -7437688794768854991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 197
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cabe131e506232670800000000000000
+      internalID: 8512689527355206572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08dad12acba3176d0800000000000000
+      internalID: -2994547695376552576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113c8faa477f4a7f0800000000000000
+      internalID: -602084369704107247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 191
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dcd2ef4ac5a78090800000000000000
+      internalID: -8032269122049745704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd59ec99f0757400800000000000000
+      internalID: 321287165808565700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4450bb7faed93dc60800000000000000
+      internalID: 7841785008686302532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cba15b0b41f80650800000000000000
+      internalID: 6199470191690230727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f6a029f01f99e180800000000000000
+      internalID: -9085555877995305232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd34ce3594ca4c240800000000000000
+      internalID: 4811159732879115227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aabb83bebcef03a20800000000000000
+      internalID: 3040209900253264810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5740eb54905b5f30800000000000000
+      internalID: 4565331245396936540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f165e8a6f9206b0a0800000000000000
+      internalID: -6866297698168973793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9848e55a78310f60800000000000000
+      internalID: 7998736511265163420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: def2d03f33d756b00800000000000000
+      internalID: 821200169139515373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b338f3b24854acfa0800000000000000
+      internalID: -5779730737813028037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a09199bc433218d0800000000000000
+      internalID: -2877180807312469847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df559ffa8c2865870800000000000000
+      internalID: 8671261931005892093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 127
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1576c3dfb50a33500800000000000000
+      internalID: 374819510952945489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 127
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6de2391f1eb0010800000000000000
+      internalID: 1156266157023352507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6a3acd98c16bad0800000000000000
+      internalID: -2686928749242112332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 131
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbdbe8d2a571beb30800000000000000
+      internalID: 4317570343843577276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 131
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e661d8ba37810360800000000000000
+      internalID: 7134131971010160355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 131
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f9f43dbbabcd2c0800000000000000
+      internalID: -4405441019608326300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 133
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 401185e2d6d2263f0800000000000000
+      internalID: -909114227823210236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 133
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd86d3030b43aa620800000000000000
+      internalID: 2786097250810292447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 131
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6275852e92a08310800000000000000
+      internalID: 1405301883857629802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4cef4dd339cec470800000000000000
+      internalID: 8416885978195553357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8b98777facabdca0800000000000000
+      internalID: -5991005009662665845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4962d81e8c774fcb0800000000000000
+      internalID: -4831104795600410988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 127
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9864ffb229f06ea20800000000000000
+      internalID: 3091175314714216073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 127
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb27909f19ace1e0800000000000000
+      internalID: -2167171367637144651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a9a7f6b04ee0df0800000000000000
+      internalID: -211981394673755511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 133
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1542449d60fa14390800000000000000
+      internalID: -7835789432698166191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 133
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18f8163efaca8360800000000000000
+      internalID: 7172768549719046175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 133
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b6422ac7d731730800000000000000
+      internalID: 3968653670893251405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 133
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5471cd9f63724d2d0800000000000000
+      internalID: -3254933513608358075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 133
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63fa2d9fd10c6a30800000000000000
+      internalID: 4209741811610743661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 133
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcfabf02d992198a0800000000000000
+      internalID: -6300208648874643505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b7a5becd217da2b0800000000000000
+      internalID: -5571672722431957068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 65
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638f3f97bb7c321d0800000000000000
+      internalID: -3376635687578896330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a355efa14b975a8c0800000000000000
+      internalID: -3988648080512756422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb1e8ac62e04bbb60800000000000000
+      internalID: 7762869723932975547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 63
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97fa64b26a2083c0800000000000000
+      internalID: -4359437835872569446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe51a581bfcdd2a0800000000000000
+      internalID: -6710979508354064656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 67
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a5b08fb9f8a9ceb0800000000000000
+      internalID: -4699038945571195487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 67
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ec672bfb83f91d0800000000000000
+      internalID: -3341890002501579223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 69
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d230452c59b33a0e0800000000000000
+      internalID: -2259897073613405395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 67
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf8b4a640aa2a4a0800000000000000
+      internalID: -6583512769322315843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 67
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e95ab01b959702c0800000000000000
+      internalID: -4465436012281439767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 69
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47446cbf4642eb400800000000000000
+      internalID: 341750637866140788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af12a494547ce2f0800000000000000
+      internalID: -942250315407548510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 65
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c53bcf63bdea640800000000000000
+      internalID: 5093249257816939651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0122dd352882c86e0800000000000000
+      internalID: -1834046408028773872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eac4e97a969cf5590800000000000000
+      internalID: -7683200983649858386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 63
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcf134cb581d70b40800000000000000
+      internalID: 5406520250000941005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be87600c8e6ce65c0800000000000000
+      internalID: -4220217097843214101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 67
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ce77c2ee38a89930800000000000000
+      internalID: 4150252044668075719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 67
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8975539684b2404d0800000000000000
+      internalID: -3169360647759243368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 63
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3194b689c5e964d60800000000000000
+      internalID: 7874155119035238675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 67
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8d054461af544d0800000000000000
+      internalID: -3150837390733420352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 67
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29250d50d104e2fb0800000000000000
+      internalID: -4670725270140857710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 63
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6858c6532c45b0c00800000000000000
+      internalID: 867880546295645574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb723dab4ce125e0800000000000000
+      internalID: -1936006555020133427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c3d5595f30eae960800000000000000
+      internalID: 7632159081219085254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 3
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f2c479b36b743b20800000000000000
+      internalID: 3113248910663271159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 5
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c200695a66f298440800000000000000
+      internalID: 4938530584299700268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 0
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa1d5d1aa2e631e20800000000000000
+      internalID: 3320118479685013935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 0
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60905b05b29724cb0800000000000000
+      internalID: -4881205819171600122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 1
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a25b59969420750800000000000000
+      internalID: 6269654349085223518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_Red_Eyes_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 0
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516993c9ca6023140800000000000000
+      internalID: 4697824699726009877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Duck_Red_Eyes_32x32_0: -5236089633510048938
+      Duck_Red_Eyes_32x32_1: -1097110873616051925
+      Duck_Red_Eyes_32x32_10: -9085555877995305232
+      Duck_Red_Eyes_32x32_11: 4811159732879115227
+      Duck_Red_Eyes_32x32_12: 3040209900253264810
+      Duck_Red_Eyes_32x32_13: 4565331245396936540
+      Duck_Red_Eyes_32x32_14: -6866297698168973793
+      Duck_Red_Eyes_32x32_15: 7998736511265163420
+      Duck_Red_Eyes_32x32_16: 821200169139515373
+      Duck_Red_Eyes_32x32_17: -5779730737813028037
+      Duck_Red_Eyes_32x32_18: -2877180807312469847
+      Duck_Red_Eyes_32x32_19: 8671261931005892093
+      Duck_Red_Eyes_32x32_2: -7437688794768854991
+      Duck_Red_Eyes_32x32_20: 374819510952945489
+      Duck_Red_Eyes_32x32_21: 1156266157023352507
+      Duck_Red_Eyes_32x32_22: -2686928749242112332
+      Duck_Red_Eyes_32x32_23: 4317570343843577276
+      Duck_Red_Eyes_32x32_24: 7134131971010160355
+      Duck_Red_Eyes_32x32_25: -4405441019608326300
+      Duck_Red_Eyes_32x32_26: -909114227823210236
+      Duck_Red_Eyes_32x32_27: 2786097250810292447
+      Duck_Red_Eyes_32x32_28: 1405301883857629802
+      Duck_Red_Eyes_32x32_29: 8416885978195553357
+      Duck_Red_Eyes_32x32_3: 8512689527355206572
+      Duck_Red_Eyes_32x32_30: -5991005009662665845
+      Duck_Red_Eyes_32x32_31: -4831104795600410988
+      Duck_Red_Eyes_32x32_32: 3091175314714216073
+      Duck_Red_Eyes_32x32_33: -2167171367637144651
+      Duck_Red_Eyes_32x32_34: -211981394673755511
+      Duck_Red_Eyes_32x32_35: -7835789432698166191
+      Duck_Red_Eyes_32x32_36: 7172768549719046175
+      Duck_Red_Eyes_32x32_37: 3968653670893251405
+      Duck_Red_Eyes_32x32_38: -3254933513608358075
+      Duck_Red_Eyes_32x32_39: 4209741811610743661
+      Duck_Red_Eyes_32x32_4: -2994547695376552576
+      Duck_Red_Eyes_32x32_40: -6300208648874643505
+      Duck_Red_Eyes_32x32_41: -5571672722431957068
+      Duck_Red_Eyes_32x32_42: -3376635687578896330
+      Duck_Red_Eyes_32x32_43: -3988648080512756422
+      Duck_Red_Eyes_32x32_44: 7762869723932975547
+      Duck_Red_Eyes_32x32_45: -4359437835872569446
+      Duck_Red_Eyes_32x32_46: -6710979508354064656
+      Duck_Red_Eyes_32x32_47: -4699038945571195487
+      Duck_Red_Eyes_32x32_48: -3341890002501579223
+      Duck_Red_Eyes_32x32_49: -2259897073613405395
+      Duck_Red_Eyes_32x32_5: -602084369704107247
+      Duck_Red_Eyes_32x32_50: -6583512769322315843
+      Duck_Red_Eyes_32x32_51: -4465436012281439767
+      Duck_Red_Eyes_32x32_52: 341750637866140788
+      Duck_Red_Eyes_32x32_53: -942250315407548510
+      Duck_Red_Eyes_32x32_54: 5093249257816939651
+      Duck_Red_Eyes_32x32_55: -1834046408028773872
+      Duck_Red_Eyes_32x32_56: -7683200983649858386
+      Duck_Red_Eyes_32x32_57: 5406520250000941005
+      Duck_Red_Eyes_32x32_58: -4220217097843214101
+      Duck_Red_Eyes_32x32_59: 4150252044668075719
+      Duck_Red_Eyes_32x32_6: -8032269122049745704
+      Duck_Red_Eyes_32x32_60: -3169360647759243368
+      Duck_Red_Eyes_32x32_61: 7874155119035238675
+      Duck_Red_Eyes_32x32_62: -3150837390733420352
+      Duck_Red_Eyes_32x32_63: -4670725270140857710
+      Duck_Red_Eyes_32x32_64: 867880546295645574
+      Duck_Red_Eyes_32x32_65: -1936006555020133427
+      Duck_Red_Eyes_32x32_66: 7632159081219085254
+      Duck_Red_Eyes_32x32_67: 3113248910663271159
+      Duck_Red_Eyes_32x32_68: 4938530584299700268
+      Duck_Red_Eyes_32x32_69: 3320118479685013935
+      Duck_Red_Eyes_32x32_7: 321287165808565700
+      Duck_Red_Eyes_32x32_70: -4881205819171600122
+      Duck_Red_Eyes_32x32_71: 6269654349085223518
+      Duck_Red_Eyes_32x32_72: 4697824699726009877
+      Duck_Red_Eyes_32x32_8: 7841785008686302532
+      Duck_Red_Eyes_32x32_9: 6199470191690230727
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

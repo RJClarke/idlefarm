@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: c0d9cfb3174d3d444beaa0402b8c9ac8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7220823962299051179
+    second: Rabbit_Spotted_32x32_0
+  - first:
+      213: 2813594196978291655
+    second: Rabbit_Spotted_32x32_1
+  - first:
+      213: 1023046496032301215
+    second: Rabbit_Spotted_32x32_2
+  - first:
+      213: 4804056571838414004
+    second: Rabbit_Spotted_32x32_3
+  - first:
+      213: -2610651777874512033
+    second: Rabbit_Spotted_32x32_4
+  - first:
+      213: 4575236556590691426
+    second: Rabbit_Spotted_32x32_5
+  - first:
+      213: -6126512627503983652
+    second: Rabbit_Spotted_32x32_6
+  - first:
+      213: -4588128368548756999
+    second: Rabbit_Spotted_32x32_7
+  - first:
+      213: -643894266069723533
+    second: Rabbit_Spotted_32x32_8
+  - first:
+      213: -6146089058088403435
+    second: Rabbit_Spotted_32x32_9
+  - first:
+      213: 5916681786152410165
+    second: Rabbit_Spotted_32x32_10
+  - first:
+      213: 3645280729750453485
+    second: Rabbit_Spotted_32x32_11
+  - first:
+      213: -2930018783638376639
+    second: Rabbit_Spotted_32x32_12
+  - first:
+      213: -7481972302615218313
+    second: Rabbit_Spotted_32x32_13
+  - first:
+      213: 4886504074466621884
+    second: Rabbit_Spotted_32x32_14
+  - first:
+      213: 4512949402148303741
+    second: Rabbit_Spotted_32x32_15
+  - first:
+      213: -2640658594479483346
+    second: Rabbit_Spotted_32x32_16
+  - first:
+      213: 1745902075276865733
+    second: Rabbit_Spotted_32x32_17
+  - first:
+      213: 3423686839008290731
+    second: Rabbit_Spotted_32x32_18
+  - first:
+      213: -3838000667520837499
+    second: Rabbit_Spotted_32x32_19
+  - first:
+      213: 2170202114726429856
+    second: Rabbit_Spotted_32x32_20
+  - first:
+      213: 1708589103953622025
+    second: Rabbit_Spotted_32x32_21
+  - first:
+      213: 3287288286342558129
+    second: Rabbit_Spotted_32x32_22
+  - first:
+      213: -6224584028381258700
+    second: Rabbit_Spotted_32x32_23
+  - first:
+      213: -9098847820185487577
+    second: Rabbit_Spotted_32x32_24
+  - first:
+      213: -5723197139419047977
+    second: Rabbit_Spotted_32x32_25
+  - first:
+      213: -2066086995280344239
+    second: Rabbit_Spotted_32x32_26
+  - first:
+      213: -7205964430145727221
+    second: Rabbit_Spotted_32x32_27
+  - first:
+      213: 6762219850015063065
+    second: Rabbit_Spotted_32x32_28
+  - first:
+      213: 264132561980230655
+    second: Rabbit_Spotted_32x32_29
+  - first:
+      213: -1201803905106939023
+    second: Rabbit_Spotted_32x32_30
+  - first:
+      213: -1528357522777436334
+    second: Rabbit_Spotted_32x32_31
+  - first:
+      213: 2950441936807805429
+    second: Rabbit_Spotted_32x32_32
+  - first:
+      213: 4922368472633923662
+    second: Rabbit_Spotted_32x32_33
+  - first:
+      213: 4899020201931481801
+    second: Rabbit_Spotted_32x32_34
+  - first:
+      213: 7128422685115813978
+    second: Rabbit_Spotted_32x32_35
+  - first:
+      213: -905749170476443680
+    second: Rabbit_Spotted_32x32_36
+  - first:
+      213: -1389548113200247611
+    second: Rabbit_Spotted_32x32_37
+  - first:
+      213: -6948226800156523441
+    second: Rabbit_Spotted_32x32_38
+  - first:
+      213: -4304817570104893476
+    second: Rabbit_Spotted_32x32_39
+  - first:
+      213: 3765800661108928660
+    second: Rabbit_Spotted_32x32_40
+  - first:
+      213: 103828036181040823
+    second: Rabbit_Spotted_32x32_41
+  - first:
+      213: -153058494700515574
+    second: Rabbit_Spotted_32x32_42
+  - first:
+      213: 716208341354214387
+    second: Rabbit_Spotted_32x32_43
+  - first:
+      213: -8963189481862726688
+    second: Rabbit_Spotted_32x32_44
+  - first:
+      213: -7672489111052719972
+    second: Rabbit_Spotted_32x32_45
+  - first:
+      213: 1570546914489238865
+    second: Rabbit_Spotted_32x32_46
+  - first:
+      213: -7698897571780311430
+    second: Rabbit_Spotted_32x32_47
+  - first:
+      213: -1496298101141988504
+    second: Rabbit_Spotted_32x32_48
+  - first:
+      213: -7250891339549098052
+    second: Rabbit_Spotted_32x32_49
+  - first:
+      213: -4249637363825732382
+    second: Rabbit_Spotted_32x32_50
+  - first:
+      213: -5126831479705028096
+    second: Rabbit_Spotted_32x32_51
+  - first:
+      213: 3752343507445956139
+    second: Rabbit_Spotted_32x32_52
+  - first:
+      213: -1298461462382668157
+    second: Rabbit_Spotted_32x32_53
+  - first:
+      213: -5923651618477920798
+    second: Rabbit_Spotted_32x32_54
+  - first:
+      213: -1051247674185682173
+    second: Rabbit_Spotted_32x32_55
+  - first:
+      213: -4489039079218862247
+    second: Rabbit_Spotted_32x32_56
+  - first:
+      213: -3046394863112645126
+    second: Rabbit_Spotted_32x32_57
+  - first:
+      213: 239812132506330568
+    second: Rabbit_Spotted_32x32_58
+  - first:
+      213: -4563268715222863301
+    second: Rabbit_Spotted_32x32_59
+  - first:
+      213: -7890833774297632554
+    second: Rabbit_Spotted_32x32_60
+  - first:
+      213: 989042085501383193
+    second: Rabbit_Spotted_32x32_61
+  - first:
+      213: -2812430549427866832
+    second: Rabbit_Spotted_32x32_62
+  - first:
+      213: -8875965841129595061
+    second: Rabbit_Spotted_32x32_63
+  - first:
+      213: 2452200181941453346
+    second: Rabbit_Spotted_32x32_64
+  - first:
+      213: -3038284795209944303
+    second: Rabbit_Spotted_32x32_65
+  - first:
+      213: -7170307683216388109
+    second: Rabbit_Spotted_32x32_66
+  - first:
+      213: -1764633548376166422
+    second: Rabbit_Spotted_32x32_67
+  - first:
+      213: -1194379188991007476
+    second: Rabbit_Spotted_32x32_68
+  - first:
+      213: -2039691840531048897
+    second: Rabbit_Spotted_32x32_69
+  - first:
+      213: -6241018019556731641
+    second: Rabbit_Spotted_32x32_70
+  - first:
+      213: 4159012603022051636
+    second: Rabbit_Spotted_32x32_71
+  - first:
+      213: 8656167096044274312
+    second: Rabbit_Spotted_32x32_72
+  - first:
+      213: -5740089715093759474
+    second: Rabbit_Spotted_32x32_73
+  - first:
+      213: 659247000081948825
+    second: Rabbit_Spotted_32x32_74
+  - first:
+      213: 1840786857320825607
+    second: Rabbit_Spotted_32x32_75
+  - first:
+      213: 7962537585178592790
+    second: Rabbit_Spotted_32x32_76
+  - first:
+      213: 2836331372034858610
+    second: Rabbit_Spotted_32x32_77
+  - first:
+      213: -906274045205020167
+    second: Rabbit_Spotted_32x32_78
+  - first:
+      213: 3544413260990948215
+    second: Rabbit_Spotted_32x32_79
+  - first:
+      213: -7919406675108125447
+    second: Rabbit_Spotted_32x32_80
+  - first:
+      213: 6147209232650296655
+    second: Rabbit_Spotted_32x32_81
+  - first:
+      213: -5010316999942511072
+    second: Rabbit_Spotted_32x32_82
+  - first:
+      213: -535441000655883872
+    second: Rabbit_Spotted_32x32_83
+  - first:
+      213: 2400294483188058478
+    second: Rabbit_Spotted_32x32_84
+  - first:
+      213: -7726655163302319452
+    second: Rabbit_Spotted_32x32_85
+  - first:
+      213: -4796551221618179504
+    second: Rabbit_Spotted_32x32_86
+  - first:
+      213: 8184858736138883394
+    second: Rabbit_Spotted_32x32_87
+  - first:
+      213: 5519299242257428992
+    second: Rabbit_Spotted_32x32_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 191
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baca67ad225853460800000000000000
+      internalID: 7220823962299051179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 193
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c3ddfcd305eb0720800000000000000
+      internalID: 2813594196978291655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 191
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f90a6b82e57923e00800000000000000
+      internalID: 1023046496032301215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 195
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc3f45cfff6ba240800000000000000
+      internalID: 4804056571838414004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f573c833a0a15cbd0800000000000000
+      internalID: -2610651777874512033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26438f658618e7f30800000000000000
+      internalID: 4575236556590691426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 191
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd31ea599314afaa0800000000000000
+      internalID: -6126512627503983652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f142c8ce81b350c0800000000000000
+      internalID: -4588128368548756999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 376d006939d6017f0800000000000000
+      internalID: -643894266069723533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51eb9b6a094b4baa0800000000000000
+      internalID: -6146089058088403435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53c53a09cb64c1250800000000000000
+      internalID: 5916681786152410165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dec3a5b9283a69230800000000000000
+      internalID: 3645280729750453485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f2300b07b7657d0800000000000000
+      internalID: -2930018783638376639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 777fe4bf4d1ba2890800000000000000
+      internalID: -7481972302615218313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb9f410e09950d340800000000000000
+      internalID: 4886504074466621884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d737c54129731ae30800000000000000
+      internalID: 4512949402148303741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26d7f6cffe7a5bd0800000000000000
+      internalID: -2640658594479483346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 127
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c0be71ffa0ba3810800000000000000
+      internalID: 1745902075276865733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 127
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba7e4456a01638f20800000000000000
+      internalID: 3423686839008290731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 127
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58855bc3abeacbac0800000000000000
+      internalID: -3838000667520837499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 127
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a4021b335b1e1e10800000000000000
+      internalID: 2170202114726429856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 127
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9043240dcb026b710800000000000000
+      internalID: 1708589103953622025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 127
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b130c5974bce9d20800000000000000
+      internalID: 3287288286342558129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 129
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43cd3c13ec5dd99a0800000000000000
+      internalID: -6224584028381258700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 129
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727b1848d166ab180800000000000000
+      internalID: -9098847820185487577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 129
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d75565468e1390b0800000000000000
+      internalID: -5723197139419047977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 129
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15bc24b03d8c353e0800000000000000
+      internalID: -2066086995280344239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 129
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b05501597854ffb90800000000000000
+      internalID: -7205964430145727221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 129
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91c3e35302b38dd50800000000000000
+      internalID: 6762219850015063065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 127
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffb027a6a236aa300800000000000000
+      internalID: 264132561980230655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 127
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1737c6a37b5525fe0800000000000000
+      internalID: -1201803905106939023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 127
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f0e0d3eee2acae0800000000000000
+      internalID: -1528357522777436334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 127
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f148d53f4312f820800000000000000
+      internalID: 2950441936807805429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 127
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e485de8cb04cf4440800000000000000
+      internalID: 4922368472633923662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 127
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c2a693eae0dcf340800000000000000
+      internalID: 4899020201931481801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 131
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a501a230aae3de260800000000000000
+      internalID: 7128422685115813978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 131
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e79526ade12e63f0800000000000000
+      internalID: -905749170476443680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 131
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc826a6a5557bce0800000000000000
+      internalID: -1389548113200247611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 133
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4442ddd980f29f90800000000000000
+      internalID: -6948226800156523441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 133
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdf99075a373244c0800000000000000
+      internalID: -4304817570104893476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 131
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 490345ccfbfc24430800000000000000
+      internalID: 3765800661108928660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be1c4e7c0fd07100800000000000000
+      internalID: 103828036181040823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 63
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0f05892c1a30edf0800000000000000
+      internalID: -153058494700515574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 63
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f3f69b11bb70f900800000000000000
+      internalID: 716208341354214387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 63
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ebfd0fb7aa5c9380800000000000000
+      internalID: -8963189481862726688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 65
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9866a8ddc7d58590800000000000000
+      internalID: -7672489111052719972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 63
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 155873df814bbc510800000000000000
+      internalID: 1570546914489238865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 65
+        width: 32
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a76caefe275082590800000000000000
+      internalID: -7698897571780311430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 63
+        width: 32
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b17530ec41c3be0800000000000000
+      internalID: -1496298101141988504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 67
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf38395eb8af5b90800000000000000
+      internalID: -7250891339549098052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 71
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e490f845514605c0800000000000000
+      internalID: -4249637363825732382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 69
+        width: 32
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a34ecaee5d9d8b0800000000000000
+      internalID: -5126831479705028096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 67
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2e3f8c0a80031430800000000000000
+      internalID: 3752343507445956139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3869524fd20fafde0800000000000000
+      internalID: -1298461462382668157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 63
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eda473ec36facda0800000000000000
+      internalID: -5923651618477920798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 63
+        width: 38
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 303f4316fc73961f0800000000000000
+      internalID: -1051247674185682173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 63
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 957205ccdbab3b1c0800000000000000
+      internalID: -4489039079218862247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 65
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af59892330809b5d0800000000000000
+      internalID: -3046394863112645126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 63
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c56eda2ddbf35300800000000000000
+      internalID: 239812132506330568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 69
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32fc7ed7430ca0c0800000000000000
+      internalID: -4563268715222863301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 67
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d0b55d5d702e7290800000000000000
+      internalID: -7890833774297632554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 65
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 912b83e5988c9bd00800000000000000
+      internalID: 989042085501383193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 67
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03335e1f05d38f8d0800000000000000
+      internalID: -2812430549427866832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 69
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f18f8281c32d480800000000000000
+      internalID: -8875965841129595061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 69
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 222c4cab217f70220800000000000000
+      internalID: 2452200181941453346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1137a078318d5d5d0800000000000000
+      internalID: -3038284795209944303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff02abe623fd7c90800000000000000
+      internalID: -7170307683216388109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 0
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aef2d4e1323c287e0800000000000000
+      internalID: -1764633548376166422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 0
+        width: 38
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c056219a476bc6fe0800000000000000
+      internalID: -1194379188991007476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 0
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3652e9e31f81b3e0800000000000000
+      internalID: -2039691840531048897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 0
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70552837d237369a0800000000000000
+      internalID: -6241018019556731641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43980835de7c7b930800000000000000
+      internalID: 4159012603022051636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882c42c8c12e02870800000000000000
+      internalID: 8656167096044274312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a96f001da1750b0800000000000000
+      internalID: -5740089715093759474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 1
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 990602b57ad162900800000000000000
+      internalID: 659247000081948825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 703c0d1d4e9cb8910800000000000000
+      internalID: 1840786857320825607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61644431fbd908e60800000000000000
+      internalID: 7962537585178592790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 0
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27e1f67fa5cac5720800000000000000
+      internalID: 2836331372034858610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 0
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1066abe844c63f0800000000000000
+      internalID: -906274045205020167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 0
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 773ac8ee419403130800000000000000
+      internalID: 3544413260990948215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 0
+        width: 38
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f4a25a769d981290800000000000000
+      internalID: -7919406675108125447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 0
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4d5f105a364f4550800000000000000
+      internalID: 6147209232650296655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 0
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026635efb37c77ab0800000000000000
+      internalID: -5010316999942511072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 1
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a1f9bd2f3bb198f0800000000000000
+      internalID: -535441000655883872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 0
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6901ca7d1f8f4120800000000000000
+      internalID: 2400294483188058478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 0
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa6d69011865c490800000000000000
+      internalID: -7726655163302319452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 0
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0528b70c31a3f6db0800000000000000
+      internalID: -4796551221618179504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 1
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2419f40c7a5769170800000000000000
+      internalID: 8184858736138883394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rabbit_Spotted_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 1
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00236d71b6d789c40800000000000000
+      internalID: 5519299242257428992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Rabbit_Spotted_32x32_0: 7220823962299051179
+      Rabbit_Spotted_32x32_1: 2813594196978291655
+      Rabbit_Spotted_32x32_10: 5916681786152410165
+      Rabbit_Spotted_32x32_11: 3645280729750453485
+      Rabbit_Spotted_32x32_12: -2930018783638376639
+      Rabbit_Spotted_32x32_13: -7481972302615218313
+      Rabbit_Spotted_32x32_14: 4886504074466621884
+      Rabbit_Spotted_32x32_15: 4512949402148303741
+      Rabbit_Spotted_32x32_16: -2640658594479483346
+      Rabbit_Spotted_32x32_17: 1745902075276865733
+      Rabbit_Spotted_32x32_18: 3423686839008290731
+      Rabbit_Spotted_32x32_19: -3838000667520837499
+      Rabbit_Spotted_32x32_2: 1023046496032301215
+      Rabbit_Spotted_32x32_20: 2170202114726429856
+      Rabbit_Spotted_32x32_21: 1708589103953622025
+      Rabbit_Spotted_32x32_22: 3287288286342558129
+      Rabbit_Spotted_32x32_23: -6224584028381258700
+      Rabbit_Spotted_32x32_24: -9098847820185487577
+      Rabbit_Spotted_32x32_25: -5723197139419047977
+      Rabbit_Spotted_32x32_26: -2066086995280344239
+      Rabbit_Spotted_32x32_27: -7205964430145727221
+      Rabbit_Spotted_32x32_28: 6762219850015063065
+      Rabbit_Spotted_32x32_29: 264132561980230655
+      Rabbit_Spotted_32x32_3: 4804056571838414004
+      Rabbit_Spotted_32x32_30: -1201803905106939023
+      Rabbit_Spotted_32x32_31: -1528357522777436334
+      Rabbit_Spotted_32x32_32: 2950441936807805429
+      Rabbit_Spotted_32x32_33: 4922368472633923662
+      Rabbit_Spotted_32x32_34: 4899020201931481801
+      Rabbit_Spotted_32x32_35: 7128422685115813978
+      Rabbit_Spotted_32x32_36: -905749170476443680
+      Rabbit_Spotted_32x32_37: -1389548113200247611
+      Rabbit_Spotted_32x32_38: -6948226800156523441
+      Rabbit_Spotted_32x32_39: -4304817570104893476
+      Rabbit_Spotted_32x32_4: -2610651777874512033
+      Rabbit_Spotted_32x32_40: 3765800661108928660
+      Rabbit_Spotted_32x32_41: 103828036181040823
+      Rabbit_Spotted_32x32_42: -153058494700515574
+      Rabbit_Spotted_32x32_43: 716208341354214387
+      Rabbit_Spotted_32x32_44: -8963189481862726688
+      Rabbit_Spotted_32x32_45: -7672489111052719972
+      Rabbit_Spotted_32x32_46: 1570546914489238865
+      Rabbit_Spotted_32x32_47: -7698897571780311430
+      Rabbit_Spotted_32x32_48: -1496298101141988504
+      Rabbit_Spotted_32x32_49: -7250891339549098052
+      Rabbit_Spotted_32x32_5: 4575236556590691426
+      Rabbit_Spotted_32x32_50: -4249637363825732382
+      Rabbit_Spotted_32x32_51: -5126831479705028096
+      Rabbit_Spotted_32x32_52: 3752343507445956139
+      Rabbit_Spotted_32x32_53: -1298461462382668157
+      Rabbit_Spotted_32x32_54: -5923651618477920798
+      Rabbit_Spotted_32x32_55: -1051247674185682173
+      Rabbit_Spotted_32x32_56: -4489039079218862247
+      Rabbit_Spotted_32x32_57: -3046394863112645126
+      Rabbit_Spotted_32x32_58: 239812132506330568
+      Rabbit_Spotted_32x32_59: -4563268715222863301
+      Rabbit_Spotted_32x32_6: -6126512627503983652
+      Rabbit_Spotted_32x32_60: -7890833774297632554
+      Rabbit_Spotted_32x32_61: 989042085501383193
+      Rabbit_Spotted_32x32_62: -2812430549427866832
+      Rabbit_Spotted_32x32_63: -8875965841129595061
+      Rabbit_Spotted_32x32_64: 2452200181941453346
+      Rabbit_Spotted_32x32_65: -3038284795209944303
+      Rabbit_Spotted_32x32_66: -7170307683216388109
+      Rabbit_Spotted_32x32_67: -1764633548376166422
+      Rabbit_Spotted_32x32_68: -1194379188991007476
+      Rabbit_Spotted_32x32_69: -2039691840531048897
+      Rabbit_Spotted_32x32_7: -4588128368548756999
+      Rabbit_Spotted_32x32_70: -6241018019556731641
+      Rabbit_Spotted_32x32_71: 4159012603022051636
+      Rabbit_Spotted_32x32_72: 8656167096044274312
+      Rabbit_Spotted_32x32_73: -5740089715093759474
+      Rabbit_Spotted_32x32_74: 659247000081948825
+      Rabbit_Spotted_32x32_75: 1840786857320825607
+      Rabbit_Spotted_32x32_76: 7962537585178592790
+      Rabbit_Spotted_32x32_77: 2836331372034858610
+      Rabbit_Spotted_32x32_78: -906274045205020167
+      Rabbit_Spotted_32x32_79: 3544413260990948215
+      Rabbit_Spotted_32x32_8: -643894266069723533
+      Rabbit_Spotted_32x32_80: -7919406675108125447
+      Rabbit_Spotted_32x32_81: 6147209232650296655
+      Rabbit_Spotted_32x32_82: -5010316999942511072
+      Rabbit_Spotted_32x32_83: -535441000655883872
+      Rabbit_Spotted_32x32_84: 2400294483188058478
+      Rabbit_Spotted_32x32_85: -7726655163302319452
+      Rabbit_Spotted_32x32_86: -4796551221618179504
+      Rabbit_Spotted_32x32_87: 8184858736138883394
+      Rabbit_Spotted_32x32_88: 5519299242257428992
+      Rabbit_Spotted_32x32_9: -6146089058088403435
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

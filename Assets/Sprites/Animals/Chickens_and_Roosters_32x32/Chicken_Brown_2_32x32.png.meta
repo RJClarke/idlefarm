@@ -1,0 +1,1973 @@
+fileFormatVersion: 2
+guid: a9a32c9932c7d0f4e8283d1619c6cfde
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7779031079457140381
+    second: Chicken_Brown_2_32x32_0
+  - first:
+      213: -8410756852123854818
+    second: Chicken_Brown_2_32x32_1
+  - first:
+      213: -5801883100935486984
+    second: Chicken_Brown_2_32x32_2
+  - first:
+      213: -354157867930599749
+    second: Chicken_Brown_2_32x32_3
+  - first:
+      213: -1210818831196741105
+    second: Chicken_Brown_2_32x32_4
+  - first:
+      213: 2723645576611515388
+    second: Chicken_Brown_2_32x32_5
+  - first:
+      213: -7349139492972767688
+    second: Chicken_Brown_2_32x32_6
+  - first:
+      213: 4114480026308860818
+    second: Chicken_Brown_2_32x32_7
+  - first:
+      213: -2695207542120457614
+    second: Chicken_Brown_2_32x32_8
+  - first:
+      213: -839312494986595635
+    second: Chicken_Brown_2_32x32_9
+  - first:
+      213: 7196298659122251555
+    second: Chicken_Brown_2_32x32_10
+  - first:
+      213: -3572379538863611953
+    second: Chicken_Brown_2_32x32_11
+  - first:
+      213: -5835877663474686436
+    second: Chicken_Brown_2_32x32_12
+  - first:
+      213: 3349862045176118601
+    second: Chicken_Brown_2_32x32_13
+  - first:
+      213: 7957675656916611424
+    second: Chicken_Brown_2_32x32_14
+  - first:
+      213: -9091068525613876623
+    second: Chicken_Brown_2_32x32_15
+  - first:
+      213: 250298836945401963
+    second: Chicken_Brown_2_32x32_16
+  - first:
+      213: 6382547249407862385
+    second: Chicken_Brown_2_32x32_17
+  - first:
+      213: 3015835661617320699
+    second: Chicken_Brown_2_32x32_18
+  - first:
+      213: -3841400429761319388
+    second: Chicken_Brown_2_32x32_19
+  - first:
+      213: 5279101599425053148
+    second: Chicken_Brown_2_32x32_20
+  - first:
+      213: -8284332974656031805
+    second: Chicken_Brown_2_32x32_21
+  - first:
+      213: 1389779330858118060
+    second: Chicken_Brown_2_32x32_22
+  - first:
+      213: 3822859059248363717
+    second: Chicken_Brown_2_32x32_23
+  - first:
+      213: 7208149419394125023
+    second: Chicken_Brown_2_32x32_24
+  - first:
+      213: 3227120058198794869
+    second: Chicken_Brown_2_32x32_25
+  - first:
+      213: 2946275097014062782
+    second: Chicken_Brown_2_32x32_26
+  - first:
+      213: 7899539825111747965
+    second: Chicken_Brown_2_32x32_27
+  - first:
+      213: -6960626720495566606
+    second: Chicken_Brown_2_32x32_28
+  - first:
+      213: -146542554926714846
+    second: Chicken_Brown_2_32x32_29
+  - first:
+      213: -6803720231229096199
+    second: Chicken_Brown_2_32x32_30
+  - first:
+      213: 1357906839733315220
+    second: Chicken_Brown_2_32x32_31
+  - first:
+      213: -4614235305108064711
+    second: Chicken_Brown_2_32x32_32
+  - first:
+      213: 223909213734627160
+    second: Chicken_Brown_2_32x32_33
+  - first:
+      213: -1933854838421095315
+    second: Chicken_Brown_2_32x32_34
+  - first:
+      213: 2315255263797714709
+    second: Chicken_Brown_2_32x32_35
+  - first:
+      213: -7817736141744713512
+    second: Chicken_Brown_2_32x32_36
+  - first:
+      213: 3716666098102481305
+    second: Chicken_Brown_2_32x32_37
+  - first:
+      213: 7511864769138541478
+    second: Chicken_Brown_2_32x32_38
+  - first:
+      213: 7176227942297427474
+    second: Chicken_Brown_2_32x32_39
+  - first:
+      213: 4016585246029380400
+    second: Chicken_Brown_2_32x32_40
+  - first:
+      213: 3303835986039059393
+    second: Chicken_Brown_2_32x32_41
+  - first:
+      213: -6100375398282923579
+    second: Chicken_Brown_2_32x32_42
+  - first:
+      213: -5400272909421893566
+    second: Chicken_Brown_2_32x32_43
+  - first:
+      213: 5348042105013575247
+    second: Chicken_Brown_2_32x32_44
+  - first:
+      213: 5653671555369037902
+    second: Chicken_Brown_2_32x32_45
+  - first:
+      213: -5385698094775837959
+    second: Chicken_Brown_2_32x32_46
+  - first:
+      213: -7420709211539623887
+    second: Chicken_Brown_2_32x32_47
+  - first:
+      213: -4454224858248846519
+    second: Chicken_Brown_2_32x32_48
+  - first:
+      213: 8567461650016179413
+    second: Chicken_Brown_2_32x32_49
+  - first:
+      213: 183802479903701454
+    second: Chicken_Brown_2_32x32_50
+  - first:
+      213: -1396533587993119378
+    second: Chicken_Brown_2_32x32_51
+  - first:
+      213: 2589972165060056930
+    second: Chicken_Brown_2_32x32_52
+  - first:
+      213: 6403733803621404270
+    second: Chicken_Brown_2_32x32_53
+  - first:
+      213: 137658544321799324
+    second: Chicken_Brown_2_32x32_54
+  - first:
+      213: -3429740640993969640
+    second: Chicken_Brown_2_32x32_55
+  - first:
+      213: -6074216353448206155
+    second: Chicken_Brown_2_32x32_56
+  - first:
+      213: 3809907844955335704
+    second: Chicken_Brown_2_32x32_57
+  - first:
+      213: 4108530255037036581
+    second: Chicken_Brown_2_32x32_58
+  - first:
+      213: -4541026943436832743
+    second: Chicken_Brown_2_32x32_59
+  - first:
+      213: 7555652167312821854
+    second: Chicken_Brown_2_32x32_60
+  - first:
+      213: 5759837239742893022
+    second: Chicken_Brown_2_32x32_61
+  - first:
+      213: -1055920744236118051
+    second: Chicken_Brown_2_32x32_62
+  - first:
+      213: -7485028694625327773
+    second: Chicken_Brown_2_32x32_63
+  - first:
+      213: 485285114109221712
+    second: Chicken_Brown_2_32x32_64
+  - first:
+      213: 3371191362183876262
+    second: Chicken_Brown_2_32x32_65
+  - first:
+      213: 1610448171224607606
+    second: Chicken_Brown_2_32x32_66
+  - first:
+      213: -3653149271608499793
+    second: Chicken_Brown_2_32x32_67
+  - first:
+      213: -7363343170927017184
+    second: Chicken_Brown_2_32x32_68
+  - first:
+      213: -3155370427660915583
+    second: Chicken_Brown_2_32x32_69
+  - first:
+      213: -1080630855424335256
+    second: Chicken_Brown_2_32x32_70
+  - first:
+      213: -877082043599723391
+    second: Chicken_Brown_2_32x32_71
+  - first:
+      213: 697684632479466117
+    second: Chicken_Brown_2_32x32_72
+  - first:
+      213: -7831762060887725850
+    second: Chicken_Brown_2_32x32_IdleR
+  - first:
+      213: -7627285116049665457
+    second: Chicken_Brown_2_32x32_IdleU
+  - first:
+      213: -486046085840102130
+    second: Chicken_Brown_2_32x32_IdleL
+  - first:
+      213: 6259787511518443102
+    second: Chicken_Brown_2_32x32_IdleD
+  - first:
+      213: -4859388706690148869
+    second: Chicken_Brown_2_32x32_IdleR1
+  - first:
+      213: -4076946765138767670
+    second: Chicken_Brown_2_32x32_IdleR2
+  - first:
+      213: -8602547657767365538
+    second: Chicken_Brown_2_32x32_IdleR3
+  - first:
+      213: 8157208214563891718
+    second: Chicken_Brown_2_32x32_IdleR4
+  - first:
+      213: 9155820679205531328
+    second: Chicken_Brown_2_32x32_IdleR5
+  - first:
+      213: 3472685575384561435
+    second: Chicken_Brown_2_32x32_IdleR6
+  - first:
+      213: 5455461508876612755
+    second: Chicken_Brown_2_32x32_IdleU1
+  - first:
+      213: -4697041817920594680
+    second: Chicken_Brown_2_32x32_IdleU2
+  - first:
+      213: 6375746244719896919
+    second: Chicken_Brown_2_32x32_IdleU3
+  - first:
+      213: 6940303155628532741
+    second: Chicken_Brown_2_32x32_IdleU4
+  - first:
+      213: -9219013244422672670
+    second: Chicken_Brown_2_32x32_IdleU5
+  - first:
+      213: -4789547198092839633
+    second: Chicken_Brown_2_32x32_IdleU6
+  - first:
+      213: -5073770233243566187
+    second: Chicken_Brown_2_32x32_IdleL1
+  - first:
+      213: 482419622667225010
+    second: Chicken_Brown_2_32x32_IdleL2
+  - first:
+      213: 1236458955712650589
+    second: Chicken_Brown_2_32x32_IdleL3
+  - first:
+      213: -917179744319052895
+    second: Chicken_Brown_2_32x32_IdleL4
+  - first:
+      213: -6865113119663790584
+    second: Chicken_Brown_2_32x32_IdleL5
+  - first:
+      213: 5511945856518321045
+    second: Chicken_Brown_2_32x32_IdleL6
+  - first:
+      213: -8670192435670328124
+    second: Chicken_Brown_2_32x32_IdleD1
+  - first:
+      213: 660757499333384357
+    second: Chicken_Brown_2_32x32_IdleD2
+  - first:
+      213: 6106749946264695521
+    second: Chicken_Brown_2_32x32_IdleD3
+  - first:
+      213: 1220907260286861
+    second: Chicken_Brown_2_32x32_IdleD4
+  - first:
+      213: -8018304581575119375
+    second: Chicken_Brown_2_32x32_IdleD5
+  - first:
+      213: -1976223634282613652
+    second: Chicken_Brown_2_32x32_IdleD6
+  - first:
+      213: 5352344430925523172
+    second: Chicken_Brown_2_32x32_WalkR1
+  - first:
+      213: 4524611160088625023
+    second: Chicken_Brown_2_32x32_WalkR2
+  - first:
+      213: 3714210094742313786
+    second: Chicken_Brown_2_32x32_WalkR3
+  - first:
+      213: -5918291882107815661
+    second: Chicken_Brown_2_32x32_WalkR4
+  - first:
+      213: -2313716117611628729
+    second: Chicken_Brown_2_32x32_WalkR5
+  - first:
+      213: -244810940946856812
+    second: Chicken_Brown_2_32x32_WalkR6
+  - first:
+      213: 502767049446042496
+    second: Chicken_Brown_2_32x32_WalkU1
+  - first:
+      213: -8039034139682411507
+    second: Chicken_Brown_2_32x32_WalkU2
+  - first:
+      213: 2153565198759335842
+    second: Chicken_Brown_2_32x32_WalkU3
+  - first:
+      213: 5763956776237520994
+    second: Chicken_Brown_2_32x32_WalkU4
+  - first:
+      213: -2017183107661788310
+    second: Chicken_Brown_2_32x32_WalkU5
+  - first:
+      213: 938603091342732333
+    second: Chicken_Brown_2_32x32_WalkU6
+  - first:
+      213: 3629775619867837280
+    second: Chicken_Brown_2_32x32_WalkL1
+  - first:
+      213: -870091818987986755
+    second: Chicken_Brown_2_32x32_WalkL2
+  - first:
+      213: -3906329567052440522
+    second: Chicken_Brown_2_32x32_WalkL3
+  - first:
+      213: 8220353638751452922
+    second: Chicken_Brown_2_32x32_WalkL4
+  - first:
+      213: 8617476891979415735
+    second: Chicken_Brown_2_32x32_WalkL5
+  - first:
+      213: 2962959338731510970
+    second: Chicken_Brown_2_32x32_WalkL6
+  - first:
+      213: -1168180788737006285
+    second: Chicken_Brown_2_32x32_WalkD1
+  - first:
+      213: 4960059976871050360
+    second: Chicken_Brown_2_32x32_WalkD2
+  - first:
+      213: -5977605579327485082
+    second: Chicken_Brown_2_32x32_WalkD3
+  - first:
+      213: 3414050767321284051
+    second: Chicken_Brown_2_32x32_WalkD4
+  - first:
+      213: -3148888323642356739
+    second: Chicken_Brown_2_32x32_WalkD5
+  - first:
+      213: -2327212051736780483
+    second: Chicken_Brown_2_32x32_WalkD6
+  - first:
+      213: -8315822987629675289
+    second: Chicken_Brown_2_32x32_PeckR1
+  - first:
+      213: 3765914044340996144
+    second: Chicken_Brown_2_32x32_PeckR2
+  - first:
+      213: -6919938153240788204
+    second: Chicken_Brown_2_32x32_PeckU1
+  - first:
+      213: 367277131240337206
+    second: Chicken_Brown_2_32x32_PeckU2
+  - first:
+      213: -5350853688652135842
+    second: Chicken_Brown_2_32x32_PeckL1
+  - first:
+      213: 4727450088163521169
+    second: Chicken_Brown_2_32x32_PeckL2
+  - first:
+      213: -8966485792913411445
+    second: Chicken_Brown_2_32x32_PeckD1
+  - first:
+      213: 5375908619467282788
+    second: Chicken_Brown_2_32x32_PeckD2
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 21
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleU
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f425c391990762690800000000000000
+      internalID: -7627285116049665457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleL
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d180df8a73149f0800000000000000
+      internalID: -486046085840102130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleD
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e56bb71739b3fd650800000000000000
+      internalID: 6259787511518443102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleR1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf55038a7bbff8cb0800000000000000
+      internalID: -4859388706690148869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleR2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac0d9b78486cb67c0800000000000000
+      internalID: -4076946765138767670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleR3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e545867cb7c9d9880800000000000000
+      internalID: -8602547657767365538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleR4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60aaaf307a9343170800000000000000
+      internalID: 8157208214563891718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleR5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cea83be562001f70800000000000000
+      internalID: 9155820679205531328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleR6
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b177b69b125713030800000000000000
+      internalID: 3472685575384561435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleU1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 394386a8651b5bb40800000000000000
+      internalID: 5455461508876612755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleU2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d10b34a51c0deb0800000000000000
+      internalID: -4697041817920594680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleU3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7596f8eed633b7850800000000000000
+      internalID: 6375746244719896919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleU4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504e2c0e2f8e05060800000000000000
+      internalID: 6940303155628532741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleU5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eea0927c4c7f0080800000000000000
+      internalID: -9219013244422672670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleU6
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2575be033c188db0800000000000000
+      internalID: -4789547198092839633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleL1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ff097dad85699b0800000000000000
+      internalID: -5073770233243566187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleL2
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b702c14716e1b600800000000000000
+      internalID: 482419622667225010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleL3
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d5a928ed8c82110800000000000000
+      internalID: 1236458955712650589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleL4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3eda8c1e58543f0800000000000000
+      internalID: -917179744319052895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleL5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 806e0979df73ab0a0800000000000000
+      internalID: -6865113119663790584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleL6
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593f5fe8d8d5e7c40800000000000000
+      internalID: 5511945856518321045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleD1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc57999ae94da780800000000000000
+      internalID: -8670192435670328124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleD2
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a8117ed17b7b2900800000000000000
+      internalID: 660757499333384357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleD3
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e23e3f98b88fb450800000000000000
+      internalID: 6106749946264695521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleD4
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d879d8f9866540000800000000000000
+      internalID: 1220907260286861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleD5
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fde352477249b090800000000000000
+      internalID: -8018304581575119375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_IdleD6
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c647ad9331b0394e0800000000000000
+      internalID: -1976223634282613652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkR1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e82bd8e6e8574a40800000000000000
+      internalID: 5352344430925523172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkR2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7fb9dfa0e5aace30800000000000000
+      internalID: 4524611160088625023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkR3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3b194607668b8330800000000000000
+      internalID: 3714210094742313786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkR4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319b2e1c3e00edda0800000000000000
+      internalID: -5918291882107815661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkR5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 747b9aa137704efd0800000000000000
+      internalID: -2313716117611628729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkR6
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 494cbbb0fb14a9cf0800000000000000
+      internalID: -244810940946856812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkU1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08ba00bb7ff2af600800000000000000
+      internalID: 502767049446042496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkU2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0cedf6ea0d9f6090800000000000000
+      internalID: -8039034139682411507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkU3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a791b0632003ed10800000000000000
+      internalID: 2153565198759335842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkU4
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 268d7543620bdff40800000000000000
+      internalID: 5763956776237520994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkU5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6b86eca6a68104e0800000000000000
+      internalID: -2017183107661788310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkU6
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2c2194e986960d00800000000000000
+      internalID: 938603091342732333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkL1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0638894e1bd8f5230800000000000000
+      internalID: 3629775619867837280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkL2
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db06f3fb910dce3f0800000000000000
+      internalID: -870091818987986755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkL3
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63cdb3494fde9c9c0800000000000000
+      internalID: -3906329567052440522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkL4
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afebed5c410941270800000000000000
+      internalID: 8220353638751452922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkL5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b0029e639d679770800000000000000
+      internalID: 8617476891979415735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkL6
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc9405f1db8e1920800000000000000
+      internalID: 2962959338731510970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkD1
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33525ed03c9c9cfe0800000000000000
+      internalID: -1168180788737006285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkD2
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87cf70af44ca5d440800000000000000
+      internalID: 4960059976871050360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkD3
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66bcac475674b0da0800000000000000
+      internalID: -5977605579327485082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkD4
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ddb55f9515216f20800000000000000
+      internalID: 3414050767321284051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkD5
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb0cefc0c6ec44d0800000000000000
+      internalID: -3148888323642356739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_WalkD6
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d31a83318f414bfd0800000000000000
+      internalID: -2327212051736780483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_PeckR1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec3e474d03489c80800000000000000
+      internalID: -8315822987629675289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_PeckR2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0388993eed6334430800000000000000
+      internalID: 3765914044340996144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_PeckU1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413096cb9e077ff90800000000000000
+      internalID: -6919938153240788204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_PeckU2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f64bdda94d81500800000000000000
+      internalID: 367277131240337206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_PeckL1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e520dc29be2fdb5b0800000000000000
+      internalID: -5350853688652135842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_PeckL2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 192306edec64b9140800000000000000
+      internalID: 4727450088163521169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_PeckD1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b823fc58da4a09380800000000000000
+      internalID: -8966485792913411445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chicken_Brown_2_32x32_PeckD2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469de4818601b9a40800000000000000
+      internalID: 5375908619467282788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2c6594c704fe18f4fbddc2318267b5e0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Chicken_Brown_2_32x32_0: 7779031079457140381
+      Chicken_Brown_2_32x32_1: -8410756852123854818
+      Chicken_Brown_2_32x32_10: 7196298659122251555
+      Chicken_Brown_2_32x32_11: -3572379538863611953
+      Chicken_Brown_2_32x32_12: -5835877663474686436
+      Chicken_Brown_2_32x32_13: 3349862045176118601
+      Chicken_Brown_2_32x32_14: 7957675656916611424
+      Chicken_Brown_2_32x32_15: -9091068525613876623
+      Chicken_Brown_2_32x32_16: 250298836945401963
+      Chicken_Brown_2_32x32_17: 6382547249407862385
+      Chicken_Brown_2_32x32_18: 3015835661617320699
+      Chicken_Brown_2_32x32_19: -3841400429761319388
+      Chicken_Brown_2_32x32_2: -5801883100935486984
+      Chicken_Brown_2_32x32_20: 5279101599425053148
+      Chicken_Brown_2_32x32_21: -8284332974656031805
+      Chicken_Brown_2_32x32_22: 1389779330858118060
+      Chicken_Brown_2_32x32_23: 3822859059248363717
+      Chicken_Brown_2_32x32_24: 7208149419394125023
+      Chicken_Brown_2_32x32_25: 3227120058198794869
+      Chicken_Brown_2_32x32_26: 2946275097014062782
+      Chicken_Brown_2_32x32_27: 7899539825111747965
+      Chicken_Brown_2_32x32_28: -6960626720495566606
+      Chicken_Brown_2_32x32_29: -146542554926714846
+      Chicken_Brown_2_32x32_3: -354157867930599749
+      Chicken_Brown_2_32x32_30: -6803720231229096199
+      Chicken_Brown_2_32x32_31: 1357906839733315220
+      Chicken_Brown_2_32x32_32: -4614235305108064711
+      Chicken_Brown_2_32x32_33: 223909213734627160
+      Chicken_Brown_2_32x32_34: -1933854838421095315
+      Chicken_Brown_2_32x32_35: 2315255263797714709
+      Chicken_Brown_2_32x32_36: -7817736141744713512
+      Chicken_Brown_2_32x32_37: 3716666098102481305
+      Chicken_Brown_2_32x32_38: 7511864769138541478
+      Chicken_Brown_2_32x32_39: 7176227942297427474
+      Chicken_Brown_2_32x32_4: -1210818831196741105
+      Chicken_Brown_2_32x32_40: 4016585246029380400
+      Chicken_Brown_2_32x32_41: 3303835986039059393
+      Chicken_Brown_2_32x32_42: -6100375398282923579
+      Chicken_Brown_2_32x32_43: -5400272909421893566
+      Chicken_Brown_2_32x32_44: 5348042105013575247
+      Chicken_Brown_2_32x32_45: 5653671555369037902
+      Chicken_Brown_2_32x32_46: -5385698094775837959
+      Chicken_Brown_2_32x32_47: -7420709211539623887
+      Chicken_Brown_2_32x32_48: -4454224858248846519
+      Chicken_Brown_2_32x32_49: 8567461650016179413
+      Chicken_Brown_2_32x32_5: 2723645576611515388
+      Chicken_Brown_2_32x32_50: 183802479903701454
+      Chicken_Brown_2_32x32_51: -1396533587993119378
+      Chicken_Brown_2_32x32_52: 2589972165060056930
+      Chicken_Brown_2_32x32_53: 6403733803621404270
+      Chicken_Brown_2_32x32_54: 137658544321799324
+      Chicken_Brown_2_32x32_55: -3429740640993969640
+      Chicken_Brown_2_32x32_56: -6074216353448206155
+      Chicken_Brown_2_32x32_57: 3809907844955335704
+      Chicken_Brown_2_32x32_58: 4108530255037036581
+      Chicken_Brown_2_32x32_59: -4541026943436832743
+      Chicken_Brown_2_32x32_6: -7349139492972767688
+      Chicken_Brown_2_32x32_60: 7555652167312821854
+      Chicken_Brown_2_32x32_61: 5759837239742893022
+      Chicken_Brown_2_32x32_62: -1055920744236118051
+      Chicken_Brown_2_32x32_63: -7485028694625327773
+      Chicken_Brown_2_32x32_64: 485285114109221712
+      Chicken_Brown_2_32x32_65: 3371191362183876262
+      Chicken_Brown_2_32x32_66: 1610448171224607606
+      Chicken_Brown_2_32x32_67: -3653149271608499793
+      Chicken_Brown_2_32x32_68: -7363343170927017184
+      Chicken_Brown_2_32x32_69: -3155370427660915583
+      Chicken_Brown_2_32x32_7: 4114480026308860818
+      Chicken_Brown_2_32x32_70: -1080630855424335256
+      Chicken_Brown_2_32x32_71: -877082043599723391
+      Chicken_Brown_2_32x32_72: 697684632479466117
+      Chicken_Brown_2_32x32_8: -2695207542120457614
+      Chicken_Brown_2_32x32_9: -839312494986595635
+      Chicken_Brown_2_32x32_IdleD: 6259787511518443102
+      Chicken_Brown_2_32x32_IdleD1: -8670192435670328124
+      Chicken_Brown_2_32x32_IdleD2: 660757499333384357
+      Chicken_Brown_2_32x32_IdleD3: 6106749946264695521
+      Chicken_Brown_2_32x32_IdleD4: 1220907260286861
+      Chicken_Brown_2_32x32_IdleD5: -8018304581575119375
+      Chicken_Brown_2_32x32_IdleD6: -1976223634282613652
+      Chicken_Brown_2_32x32_IdleL: -486046085840102130
+      Chicken_Brown_2_32x32_IdleL1: -5073770233243566187
+      Chicken_Brown_2_32x32_IdleL2: 482419622667225010
+      Chicken_Brown_2_32x32_IdleL3: 1236458955712650589
+      Chicken_Brown_2_32x32_IdleL4: -917179744319052895
+      Chicken_Brown_2_32x32_IdleL5: -6865113119663790584
+      Chicken_Brown_2_32x32_IdleL6: 5511945856518321045
+      Chicken_Brown_2_32x32_IdleR: -7831762060887725850
+      Chicken_Brown_2_32x32_IdleR1: -4859388706690148869
+      Chicken_Brown_2_32x32_IdleR2: -4076946765138767670
+      Chicken_Brown_2_32x32_IdleR3: -8602547657767365538
+      Chicken_Brown_2_32x32_IdleR4: 8157208214563891718
+      Chicken_Brown_2_32x32_IdleR5: 9155820679205531328
+      Chicken_Brown_2_32x32_IdleR6: 3472685575384561435
+      Chicken_Brown_2_32x32_IdleU: -7627285116049665457
+      Chicken_Brown_2_32x32_IdleU1: 5455461508876612755
+      Chicken_Brown_2_32x32_IdleU2: -4697041817920594680
+      Chicken_Brown_2_32x32_IdleU3: 6375746244719896919
+      Chicken_Brown_2_32x32_IdleU4: 6940303155628532741
+      Chicken_Brown_2_32x32_IdleU5: -9219013244422672670
+      Chicken_Brown_2_32x32_IdleU6: -4789547198092839633
+      Chicken_Brown_2_32x32_PeckD1: -8966485792913411445
+      Chicken_Brown_2_32x32_PeckD2: 5375908619467282788
+      Chicken_Brown_2_32x32_PeckL1: -5350853688652135842
+      Chicken_Brown_2_32x32_PeckL2: 4727450088163521169
+      Chicken_Brown_2_32x32_PeckR1: -8315822987629675289
+      Chicken_Brown_2_32x32_PeckR2: 3765914044340996144
+      Chicken_Brown_2_32x32_PeckU1: -6919938153240788204
+      Chicken_Brown_2_32x32_PeckU2: 367277131240337206
+      Chicken_Brown_2_32x32_WalkD1: -1168180788737006285
+      Chicken_Brown_2_32x32_WalkD2: 4960059976871050360
+      Chicken_Brown_2_32x32_WalkD3: -5977605579327485082
+      Chicken_Brown_2_32x32_WalkD4: 3414050767321284051
+      Chicken_Brown_2_32x32_WalkD5: -3148888323642356739
+      Chicken_Brown_2_32x32_WalkD6: -2327212051736780483
+      Chicken_Brown_2_32x32_WalkL1: 3629775619867837280
+      Chicken_Brown_2_32x32_WalkL2: -870091818987986755
+      Chicken_Brown_2_32x32_WalkL3: -3906329567052440522
+      Chicken_Brown_2_32x32_WalkL4: 8220353638751452922
+      Chicken_Brown_2_32x32_WalkL5: 8617476891979415735
+      Chicken_Brown_2_32x32_WalkL6: 2962959338731510970
+      Chicken_Brown_2_32x32_WalkR1: 5352344430925523172
+      Chicken_Brown_2_32x32_WalkR2: 4524611160088625023
+      Chicken_Brown_2_32x32_WalkR3: 3714210094742313786
+      Chicken_Brown_2_32x32_WalkR4: -5918291882107815661
+      Chicken_Brown_2_32x32_WalkR5: -2313716117611628729
+      Chicken_Brown_2_32x32_WalkR6: -244810940946856812
+      Chicken_Brown_2_32x32_WalkU1: 502767049446042496
+      Chicken_Brown_2_32x32_WalkU2: -8039034139682411507
+      Chicken_Brown_2_32x32_WalkU3: 2153565198759335842
+      Chicken_Brown_2_32x32_WalkU4: 5763956776237520994
+      Chicken_Brown_2_32x32_WalkU5: -2017183107661788310
+      Chicken_Brown_2_32x32_WalkU6: 938603091342732333
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: acb5be24d8e6d0946a2d35a96b13df95
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5919769884259585549
+    second: Pig_Spotted_Gray_32x32_0
+  - first:
+      213: -8935719042622490261
+    second: Pig_Spotted_Gray_32x32_1
+  - first:
+      213: -4939569384100852345
+    second: Pig_Spotted_Gray_32x32_2
+  - first:
+      213: -8281609244632916317
+    second: Pig_Spotted_Gray_32x32_3
+  - first:
+      213: -2285482168543445237
+    second: Pig_Spotted_Gray_32x32_4
+  - first:
+      213: 2829810866501570012
+    second: Pig_Spotted_Gray_32x32_5
+  - first:
+      213: 8375285741854296980
+    second: Pig_Spotted_Gray_32x32_6
+  - first:
+      213: -896504378431025679
+    second: Pig_Spotted_Gray_32x32_7
+  - first:
+      213: -9199292561173278666
+    second: Pig_Spotted_Gray_32x32_8
+  - first:
+      213: -4615490221426015473
+    second: Pig_Spotted_Gray_32x32_9
+  - first:
+      213: 1274386212693519387
+    second: Pig_Spotted_Gray_32x32_10
+  - first:
+      213: -919053856483711585
+    second: Pig_Spotted_Gray_32x32_11
+  - first:
+      213: -8567713098491304005
+    second: Pig_Spotted_Gray_32x32_12
+  - first:
+      213: 572934868353622441
+    second: Pig_Spotted_Gray_32x32_13
+  - first:
+      213: -6095780710551446977
+    second: Pig_Spotted_Gray_32x32_14
+  - first:
+      213: 3696806771690272279
+    second: Pig_Spotted_Gray_32x32_15
+  - first:
+      213: -983587587673517664
+    second: Pig_Spotted_Gray_32x32_16
+  - first:
+      213: -3776146051865108895
+    second: Pig_Spotted_Gray_32x32_17
+  - first:
+      213: 3221778765990605654
+    second: Pig_Spotted_Gray_32x32_18
+  - first:
+      213: -332382961864112997
+    second: Pig_Spotted_Gray_32x32_19
+  - first:
+      213: 6002518725577575855
+    second: Pig_Spotted_Gray_32x32_20
+  - first:
+      213: 7726625823842055941
+    second: Pig_Spotted_Gray_32x32_21
+  - first:
+      213: 2863312614167598627
+    second: Pig_Spotted_Gray_32x32_22
+  - first:
+      213: -3143827778185970089
+    second: Pig_Spotted_Gray_32x32_23
+  - first:
+      213: -399228369954671292
+    second: Pig_Spotted_Gray_32x32_24
+  - first:
+      213: 4969121968832186673
+    second: Pig_Spotted_Gray_32x32_25
+  - first:
+      213: 4116344300360614272
+    second: Pig_Spotted_Gray_32x32_26
+  - first:
+      213: 6962546101624133447
+    second: Pig_Spotted_Gray_32x32_27
+  - first:
+      213: -9169996102343219678
+    second: Pig_Spotted_Gray_32x32_28
+  - first:
+      213: 4719694309215910991
+    second: Pig_Spotted_Gray_32x32_29
+  - first:
+      213: -4524906780156492575
+    second: Pig_Spotted_Gray_32x32_30
+  - first:
+      213: -7387645494021401318
+    second: Pig_Spotted_Gray_32x32_31
+  - first:
+      213: -680514216445546147
+    second: Pig_Spotted_Gray_32x32_32
+  - first:
+      213: 7318273394357340687
+    second: Pig_Spotted_Gray_32x32_33
+  - first:
+      213: 5326956151255068004
+    second: Pig_Spotted_Gray_32x32_34
+  - first:
+      213: 1962082500081398731
+    second: Pig_Spotted_Gray_32x32_35
+  - first:
+      213: 3076130561699843725
+    second: Pig_Spotted_Gray_32x32_36
+  - first:
+      213: 4489598971170024024
+    second: Pig_Spotted_Gray_32x32_37
+  - first:
+      213: 7363674922706528162
+    second: Pig_Spotted_Gray_32x32_38
+  - first:
+      213: 5668654391628791608
+    second: Pig_Spotted_Gray_32x32_39
+  - first:
+      213: -9099457259314091130
+    second: Pig_Spotted_Gray_32x32_40
+  - first:
+      213: -6073992197006288865
+    second: Pig_Spotted_Gray_32x32_41
+  - first:
+      213: 4768630050988253537
+    second: Pig_Spotted_Gray_32x32_42
+  - first:
+      213: -5959227671634083537
+    second: Pig_Spotted_Gray_32x32_43
+  - first:
+      213: -6466177665940767547
+    second: Pig_Spotted_Gray_32x32_44
+  - first:
+      213: 4788814957077355184
+    second: Pig_Spotted_Gray_32x32_45
+  - first:
+      213: 7251022637371060406
+    second: Pig_Spotted_Gray_32x32_46
+  - first:
+      213: 3476897374917391095
+    second: Pig_Spotted_Gray_32x32_47
+  - first:
+      213: 1742864035763143467
+    second: Pig_Spotted_Gray_32x32_48
+  - first:
+      213: -218838395089967306
+    second: Pig_Spotted_Gray_32x32_49
+  - first:
+      213: -8076340680048110956
+    second: Pig_Spotted_Gray_32x32_50
+  - first:
+      213: 7577567514286327654
+    second: Pig_Spotted_Gray_32x32_51
+  - first:
+      213: -758569119375526527
+    second: Pig_Spotted_Gray_32x32_52
+  - first:
+      213: 619991092555550943
+    second: Pig_Spotted_Gray_32x32_53
+  - first:
+      213: 8708980877308776349
+    second: Pig_Spotted_Gray_32x32_54
+  - first:
+      213: 4302019625204192978
+    second: Pig_Spotted_Gray_32x32_55
+  - first:
+      213: 7225882363938065658
+    second: Pig_Spotted_Gray_32x32_56
+  - first:
+      213: 3771917839025869057
+    second: Pig_Spotted_Gray_32x32_57
+  - first:
+      213: -2296503758890631557
+    second: Pig_Spotted_Gray_32x32_58
+  - first:
+      213: 1625729025430550331
+    second: Pig_Spotted_Gray_32x32_59
+  - first:
+      213: 5318907838142461460
+    second: Pig_Spotted_Gray_32x32_60
+  - first:
+      213: 7833628444027792508
+    second: Pig_Spotted_Gray_32x32_61
+  - first:
+      213: 3662091980060165055
+    second: Pig_Spotted_Gray_32x32_62
+  - first:
+      213: -2228016665006343599
+    second: Pig_Spotted_Gray_32x32_63
+  - first:
+      213: 1763680604474753173
+    second: Pig_Spotted_Gray_32x32_64
+  - first:
+      213: 2241234035558349309
+    second: Pig_Spotted_Gray_32x32_65
+  - first:
+      213: -1574155088684748085
+    second: Pig_Spotted_Gray_32x32_66
+  - first:
+      213: -6282913556771903056
+    second: Pig_Spotted_Gray_32x32_67
+  - first:
+      213: 3046558250374724983
+    second: Pig_Spotted_Gray_32x32_68
+  - first:
+      213: -25609702668419754
+    second: Pig_Spotted_Gray_32x32_69
+  - first:
+      213: -2261414694522224850
+    second: Pig_Spotted_Gray_32x32_70
+  - first:
+      213: -5920993106137591993
+    second: Pig_Spotted_Gray_32x32_71
+  - first:
+      213: -4201012472184863723
+    second: Pig_Spotted_Gray_32x32_72
+  - first:
+      213: -1440365950855044279
+    second: Pig_Spotted_Gray_32x32_73
+  - first:
+      213: -2558986926705853485
+    second: Pig_Spotted_Gray_32x32_74
+  - first:
+      213: -4443273283469933501
+    second: Pig_Spotted_Gray_32x32_75
+  - first:
+      213: 5547124956645824040
+    second: Pig_Spotted_Gray_32x32_76
+  - first:
+      213: 6895812606158618918
+    second: Pig_Spotted_Gray_32x32_77
+  - first:
+      213: 2231912209361246269
+    second: Pig_Spotted_Gray_32x32_78
+  - first:
+      213: 4062110252287470708
+    second: Pig_Spotted_Gray_32x32_79
+  - first:
+      213: 2871153881605875593
+    second: Pig_Spotted_Gray_32x32_80
+  - first:
+      213: 2909985746096002726
+    second: Pig_Spotted_Gray_32x32_81
+  - first:
+      213: -7642252086090235632
+    second: Pig_Spotted_Gray_32x32_82
+  - first:
+      213: -1091219158991368326
+    second: Pig_Spotted_Gray_32x32_83
+  - first:
+      213: 4135769762111943394
+    second: Pig_Spotted_Gray_32x32_84
+  - first:
+      213: 8702947074440997644
+    second: Pig_Spotted_Gray_32x32_85
+  - first:
+      213: 4668723167214431289
+    second: Pig_Spotted_Gray_32x32_86
+  - first:
+      213: -398874152344189372
+    second: Pig_Spotted_Gray_32x32_87
+  - first:
+      213: 3752178320947412351
+    second: Pig_Spotted_Gray_32x32_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 201
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e095f685f372250800000000000000
+      internalID: 5919769884259585549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 193
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b69facbcfd2fdf380800000000000000
+      internalID: -8935719042622490261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 201
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d064de0df137bb0800000000000000
+      internalID: -4939569384100852345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 197
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ae50151540d11d80800000000000000
+      internalID: -8281609244632916317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f7a73a3165840e0800000000000000
+      internalID: -2285482168543445237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cddcd577df1854720800000000000000
+      internalID: 2829810866501570012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 191
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b8e9f020efa3470800000000000000
+      internalID: 8375285741854296980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd4908840afe83f0800000000000000
+      internalID: -896504378431025679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6309f52d72c855080800000000000000
+      internalID: -9199292561173278666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f030d97f81c72ffb0800000000000000
+      internalID: -4615490221426015473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1ca04a22878fa110800000000000000
+      internalID: 1274386212693519387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f95e5da036dde33f0800000000000000
+      internalID: -919053856483711585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7e6f2a45e591980800000000000000
+      internalID: -8567713098491304005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a127ab2a3973f700800000000000000
+      internalID: 572934868353622441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a17e69dbf676ba0800000000000000
+      internalID: -6095780710551446977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7167bdd1c22bd4330800000000000000
+      internalID: 3696806771690272279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a19c3fdc489952f0800000000000000
+      internalID: -983587587673517664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e16963c2f689bc0800000000000000
+      internalID: -3776146051865108895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65334cbc7be06bc20800000000000000
+      internalID: 3221778765990605654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9482bc0573236bf0800000000000000
+      internalID: -332382961864112997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fad8eab6afa3d4350800000000000000
+      internalID: 6002518725577575855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5073776df3d7a3b60800000000000000
+      internalID: 7726625823842055941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 326da50f6a78cb720800000000000000
+      internalID: 2863312614167598627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 129
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e383eda41ee54d0800000000000000
+      internalID: -3143827778185970089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 129
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 445f798a9e7a57af0800000000000000
+      internalID: -399228369954671292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 129
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13905d56a1ed5f440800000000000000
+      internalID: 4969121968832186673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 129
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081c234f451302930800000000000000
+      internalID: 4116344300360614272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 129
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 747569f4aceef9060800000000000000
+      internalID: 6962546101624133447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 129
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226ad103121adb080800000000000000
+      internalID: -9169996102343219678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4c3f3dd7f8bf7140800000000000000
+      internalID: 4719694309215910991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e40407e14d4431c0800000000000000
+      internalID: -4524906780156492575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a15d65a809fc97990800000000000000
+      internalID: -7387645494021401318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d51f828fce35e86f0800000000000000
+      internalID: -680514216445546147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a8cd7d0eabf8560800000000000000
+      internalID: 7318273394357340687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46de3a965662de940800000000000000
+      internalID: 5326956151255068004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 133
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc3bc5563a7ba3b10800000000000000
+      internalID: 1962082500081398731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 133
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8e87d4a27c90ba20800000000000000
+      internalID: 3076130561699843725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 133
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85a6c843a724e4e30800000000000000
+      internalID: 4489598971170024024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 135
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a7ef59e357013660800000000000000
+      internalID: 7363674922706528162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 135
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ffd77a22b1bae40800000000000000
+      internalID: 5668654391628791608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 133
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68bebb965db38b180800000000000000
+      internalID: -9099457259314091130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1812f83748d4bba0800000000000000
+      internalID: -6073992197006288865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161686e14c39d2240800000000000000
+      internalID: 4768630050988253537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 73
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f21829881029c4da0800000000000000
+      internalID: -5959227671634083537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc390f0ca58346a0800000000000000
+      internalID: -6466177665940767547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba5cabc4d9457240800000000000000
+      internalID: 4788814957077355184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 73
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b071decbaec0a460800000000000000
+      internalID: 7251022637371060406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 65
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f27078bdbb604030800000000000000
+      internalID: 3476897374917391095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 63
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b23477f3b95ef2810800000000000000
+      internalID: 1742864035763143467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 63
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 637227d93a786fcf0800000000000000
+      internalID: -218838395089967306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 65
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49212b811f21bef80800000000000000
+      internalID: -8076340680048110956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 63
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 667839ea18de82960800000000000000
+      internalID: 7577567514286327654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 63
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1857a0ea7650975f0800000000000000
+      internalID: -758569119375526527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd01ea32d96aa9800800000000000000
+      internalID: 619991092555550943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9fc8ab37f38cd870800000000000000
+      internalID: 8708980877308776349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 73
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d61e095e08d3bb30800000000000000
+      internalID: 4302019625204192978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afcc943c9bd774460800000000000000
+      internalID: 7225882363938065658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10198154a4b885430800000000000000
+      internalID: 3771917839025869057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 73
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e79f9affd2120e0800000000000000
+      internalID: -2296503758890631557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 69
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3774d56fefbf8610800000000000000
+      internalID: 1625729025430550331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 69
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 416b58d7f7e80d940800000000000000
+      internalID: 5318907838142461460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 67
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7c2ca4c093a6bc60800000000000000
+      internalID: 7833628444027792508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 69
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb30b46d04d52d230800000000000000
+      internalID: 3662091980060165055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 69
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a75a0d5ae7411e0800000000000000
+      internalID: -2228016665006343599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 67
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 590c6f65a2ad97810800000000000000
+      internalID: 1763680604474753173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df978f31b767a1f10800000000000000
+      internalID: 2241234035558349309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc2729d794a772ae0800000000000000
+      internalID: -1574155088684748085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b9ef1e886b9ec8a0800000000000000
+      internalID: -6282913556771903056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77dfe1d569c874a20800000000000000
+      internalID: 3046558250374724983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65d35a17c1405aff0800000000000000
+      internalID: -25609702668419754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f772b1157dd90e0800000000000000
+      internalID: -2261414694522224850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74fc127042864dda0800000000000000
+      internalID: -5920993106137591993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5148f6a1a6103b5c0800000000000000
+      internalID: -4201012472184863723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 943a7b09ccac20ce0800000000000000
+      internalID: -1440365950855044279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 1
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db34d0c2f6ac7cd0800000000000000
+      internalID: -2558986926705853485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3448aca7d725652c0800000000000000
+      internalID: -4443273283469933501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826149512c85bfc40800000000000000
+      internalID: 5547124956645824040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 621cebb9709d2bf50800000000000000
+      internalID: 6895812606158618918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3895d8445859fe10800000000000000
+      internalID: 2231912209361246269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c2112a0c38f5830800000000000000
+      internalID: 4062110252287470708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9872a984e3368d720800000000000000
+      internalID: 2871153881605875593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a690894e98526820800000000000000
+      internalID: 2909985746096002726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0118a94d73441f590800000000000000
+      internalID: -7642252086090235632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 1
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f0838d4f53bd0f0800000000000000
+      internalID: -1091219158991368326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 0
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e2fb77bfa4356930800000000000000
+      internalID: 4135769762111943394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 0
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ba417014417c870800000000000000
+      internalID: 8702947074440997644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 0
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93ce3701cf2aac040800000000000000
+      internalID: 4668723167214431289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 1
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 446807f521ae67af0800000000000000
+      internalID: -398874152344189372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Spotted_Gray_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 1
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7dfdf19d4a621430800000000000000
+      internalID: 3752178320947412351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pig_Spotted_Gray_32x32_0: 5919769884259585549
+      Pig_Spotted_Gray_32x32_1: -8935719042622490261
+      Pig_Spotted_Gray_32x32_10: 1274386212693519387
+      Pig_Spotted_Gray_32x32_11: -919053856483711585
+      Pig_Spotted_Gray_32x32_12: -8567713098491304005
+      Pig_Spotted_Gray_32x32_13: 572934868353622441
+      Pig_Spotted_Gray_32x32_14: -6095780710551446977
+      Pig_Spotted_Gray_32x32_15: 3696806771690272279
+      Pig_Spotted_Gray_32x32_16: -983587587673517664
+      Pig_Spotted_Gray_32x32_17: -3776146051865108895
+      Pig_Spotted_Gray_32x32_18: 3221778765990605654
+      Pig_Spotted_Gray_32x32_19: -332382961864112997
+      Pig_Spotted_Gray_32x32_2: -4939569384100852345
+      Pig_Spotted_Gray_32x32_20: 6002518725577575855
+      Pig_Spotted_Gray_32x32_21: 7726625823842055941
+      Pig_Spotted_Gray_32x32_22: 2863312614167598627
+      Pig_Spotted_Gray_32x32_23: -3143827778185970089
+      Pig_Spotted_Gray_32x32_24: -399228369954671292
+      Pig_Spotted_Gray_32x32_25: 4969121968832186673
+      Pig_Spotted_Gray_32x32_26: 4116344300360614272
+      Pig_Spotted_Gray_32x32_27: 6962546101624133447
+      Pig_Spotted_Gray_32x32_28: -9169996102343219678
+      Pig_Spotted_Gray_32x32_29: 4719694309215910991
+      Pig_Spotted_Gray_32x32_3: -8281609244632916317
+      Pig_Spotted_Gray_32x32_30: -4524906780156492575
+      Pig_Spotted_Gray_32x32_31: -7387645494021401318
+      Pig_Spotted_Gray_32x32_32: -680514216445546147
+      Pig_Spotted_Gray_32x32_33: 7318273394357340687
+      Pig_Spotted_Gray_32x32_34: 5326956151255068004
+      Pig_Spotted_Gray_32x32_35: 1962082500081398731
+      Pig_Spotted_Gray_32x32_36: 3076130561699843725
+      Pig_Spotted_Gray_32x32_37: 4489598971170024024
+      Pig_Spotted_Gray_32x32_38: 7363674922706528162
+      Pig_Spotted_Gray_32x32_39: 5668654391628791608
+      Pig_Spotted_Gray_32x32_4: -2285482168543445237
+      Pig_Spotted_Gray_32x32_40: -9099457259314091130
+      Pig_Spotted_Gray_32x32_41: -6073992197006288865
+      Pig_Spotted_Gray_32x32_42: 4768630050988253537
+      Pig_Spotted_Gray_32x32_43: -5959227671634083537
+      Pig_Spotted_Gray_32x32_44: -6466177665940767547
+      Pig_Spotted_Gray_32x32_45: 4788814957077355184
+      Pig_Spotted_Gray_32x32_46: 7251022637371060406
+      Pig_Spotted_Gray_32x32_47: 3476897374917391095
+      Pig_Spotted_Gray_32x32_48: 1742864035763143467
+      Pig_Spotted_Gray_32x32_49: -218838395089967306
+      Pig_Spotted_Gray_32x32_5: 2829810866501570012
+      Pig_Spotted_Gray_32x32_50: -8076340680048110956
+      Pig_Spotted_Gray_32x32_51: 7577567514286327654
+      Pig_Spotted_Gray_32x32_52: -758569119375526527
+      Pig_Spotted_Gray_32x32_53: 619991092555550943
+      Pig_Spotted_Gray_32x32_54: 8708980877308776349
+      Pig_Spotted_Gray_32x32_55: 4302019625204192978
+      Pig_Spotted_Gray_32x32_56: 7225882363938065658
+      Pig_Spotted_Gray_32x32_57: 3771917839025869057
+      Pig_Spotted_Gray_32x32_58: -2296503758890631557
+      Pig_Spotted_Gray_32x32_59: 1625729025430550331
+      Pig_Spotted_Gray_32x32_6: 8375285741854296980
+      Pig_Spotted_Gray_32x32_60: 5318907838142461460
+      Pig_Spotted_Gray_32x32_61: 7833628444027792508
+      Pig_Spotted_Gray_32x32_62: 3662091980060165055
+      Pig_Spotted_Gray_32x32_63: -2228016665006343599
+      Pig_Spotted_Gray_32x32_64: 1763680604474753173
+      Pig_Spotted_Gray_32x32_65: 2241234035558349309
+      Pig_Spotted_Gray_32x32_66: -1574155088684748085
+      Pig_Spotted_Gray_32x32_67: -6282913556771903056
+      Pig_Spotted_Gray_32x32_68: 3046558250374724983
+      Pig_Spotted_Gray_32x32_69: -25609702668419754
+      Pig_Spotted_Gray_32x32_7: -896504378431025679
+      Pig_Spotted_Gray_32x32_70: -2261414694522224850
+      Pig_Spotted_Gray_32x32_71: -5920993106137591993
+      Pig_Spotted_Gray_32x32_72: -4201012472184863723
+      Pig_Spotted_Gray_32x32_73: -1440365950855044279
+      Pig_Spotted_Gray_32x32_74: -2558986926705853485
+      Pig_Spotted_Gray_32x32_75: -4443273283469933501
+      Pig_Spotted_Gray_32x32_76: 5547124956645824040
+      Pig_Spotted_Gray_32x32_77: 6895812606158618918
+      Pig_Spotted_Gray_32x32_78: 2231912209361246269
+      Pig_Spotted_Gray_32x32_79: 4062110252287470708
+      Pig_Spotted_Gray_32x32_8: -9199292561173278666
+      Pig_Spotted_Gray_32x32_80: 2871153881605875593
+      Pig_Spotted_Gray_32x32_81: 2909985746096002726
+      Pig_Spotted_Gray_32x32_82: -7642252086090235632
+      Pig_Spotted_Gray_32x32_83: -1091219158991368326
+      Pig_Spotted_Gray_32x32_84: 4135769762111943394
+      Pig_Spotted_Gray_32x32_85: 8702947074440997644
+      Pig_Spotted_Gray_32x32_86: 4668723167214431289
+      Pig_Spotted_Gray_32x32_87: -398874152344189372
+      Pig_Spotted_Gray_32x32_88: 3752178320947412351
+      Pig_Spotted_Gray_32x32_9: -4615490221426015473
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236a5fbb3bccf23469f66467b41b14f2, type: 3}
+  m_Name: Animal_FarmDog
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalData
+  animalID: farm_dog
+  displayName: Farm Dog
+  description: Chases away deer during farm runs. Good boy!
+  animalEmoji: "\U0001F415"
+  sortOrder: 1
+  gemCost: 500
+  abilityType: 2
+  cooldownMinutes: 0
+  rewardCoins: 0
+  visualPrefab: {fileID: 4947217877649665682, guid: b9c8ec31e7d693c4a85404c62ccb4cdd, type: 3}
+  roamSpeed: 0.6
+  iconSprite: {fileID: 0}

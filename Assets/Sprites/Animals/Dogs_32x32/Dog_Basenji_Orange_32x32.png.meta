@@ -1,0 +1,3653 @@
+fileFormatVersion: 2
+guid: 7dacbe564d5383041b208ac5efef9399
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2844241206383891907
+    second: Dog_Basenji_Orange_32x32_0
+  - first:
+      213: 8756948275657055029
+    second: Dog_Basenji_Orange_32x32_1
+  - first:
+      213: 7417065946432388380
+    second: Dog_Basenji_Orange_32x32_2
+  - first:
+      213: 37957945264826228
+    second: Dog_Basenji_Orange_32x32_3
+  - first:
+      213: -44931389939189109
+    second: Dog_Basenji_Orange_32x32_4
+  - first:
+      213: -8234907040717776377
+    second: Dog_Basenji_Orange_32x32_5
+  - first:
+      213: -2179165998948212805
+    second: Dog_Basenji_Orange_32x32_6
+  - first:
+      213: -6070507527152380303
+    second: Dog_Basenji_Orange_32x32_7
+  - first:
+      213: 8486978291867125204
+    second: Dog_Basenji_Orange_32x32_8
+  - first:
+      213: 8613500220774849197
+    second: Dog_Basenji_Orange_32x32_9
+  - first:
+      213: 1363950508729107001
+    second: Dog_Basenji_Orange_32x32_10
+  - first:
+      213: 8653513068383143065
+    second: Dog_Basenji_Orange_32x32_11
+  - first:
+      213: 4281664947405791201
+    second: Dog_Basenji_Orange_32x32_12
+  - first:
+      213: 5109176232721364886
+    second: Dog_Basenji_Orange_32x32_13
+  - first:
+      213: -762218205754137432
+    second: Dog_Basenji_Orange_32x32_14
+  - first:
+      213: 4776488727512238298
+    second: Dog_Basenji_Orange_32x32_15
+  - first:
+      213: -8166943895143373276
+    second: Dog_Basenji_Orange_32x32_16
+  - first:
+      213: -4146134997346269856
+    second: Dog_Basenji_Orange_32x32_17
+  - first:
+      213: -7843935333047941085
+    second: Dog_Basenji_Orange_32x32_18
+  - first:
+      213: 2305415648249459823
+    second: Dog_Basenji_Orange_32x32_19
+  - first:
+      213: 8386932907645468912
+    second: Dog_Basenji_Orange_32x32_20
+  - first:
+      213: -7619109303626208271
+    second: Dog_Basenji_Orange_32x32_21
+  - first:
+      213: -5952119062417690476
+    second: Dog_Basenji_Orange_32x32_22
+  - first:
+      213: -4880000275857360064
+    second: Dog_Basenji_Orange_32x32_23
+  - first:
+      213: 9118770835270877952
+    second: Dog_Basenji_Orange_32x32_24
+  - first:
+      213: 1092919575628529206
+    second: Dog_Basenji_Orange_32x32_25
+  - first:
+      213: 2850929162734451809
+    second: Dog_Basenji_Orange_32x32_26
+  - first:
+      213: -3732672922725583576
+    second: Dog_Basenji_Orange_32x32_27
+  - first:
+      213: -125828667345694213
+    second: Dog_Basenji_Orange_32x32_28
+  - first:
+      213: -5173229944388907378
+    second: Dog_Basenji_Orange_32x32_29
+  - first:
+      213: -2012872508255254130
+    second: Dog_Basenji_Orange_32x32_30
+  - first:
+      213: -7273654515666121477
+    second: Dog_Basenji_Orange_32x32_31
+  - first:
+      213: -5860674462991539661
+    second: Dog_Basenji_Orange_32x32_32
+  - first:
+      213: -5914567791469255087
+    second: Dog_Basenji_Orange_32x32_33
+  - first:
+      213: 1709964350381039769
+    second: Dog_Basenji_Orange_32x32_34
+  - first:
+      213: -1807652120793045034
+    second: Dog_Basenji_Orange_32x32_35
+  - first:
+      213: -3154686265564437014
+    second: Dog_Basenji_Orange_32x32_36
+  - first:
+      213: -457053731715125269
+    second: Dog_Basenji_Orange_32x32_37
+  - first:
+      213: 786627138570808408
+    second: Dog_Basenji_Orange_32x32_38
+  - first:
+      213: -3296809985735986066
+    second: Dog_Basenji_Orange_32x32_39
+  - first:
+      213: -1918574503954824279
+    second: Dog_Basenji_Orange_32x32_40
+  - first:
+      213: 1513663923463925388
+    second: Dog_Basenji_Orange_32x32_41
+  - first:
+      213: 5398202958443438279
+    second: Dog_Basenji_Orange_32x32_42
+  - first:
+      213: 8793387364531228757
+    second: Dog_Basenji_Orange_32x32_43
+  - first:
+      213: 2176023292366112287
+    second: Dog_Basenji_Orange_32x32_44
+  - first:
+      213: -6024412421298018721
+    second: Dog_Basenji_Orange_32x32_45
+  - first:
+      213: 8515748382745642077
+    second: Dog_Basenji_Orange_32x32_46
+  - first:
+      213: 2848140442675249551
+    second: Dog_Basenji_Orange_32x32_47
+  - first:
+      213: -7887018023824058446
+    second: Dog_Basenji_Orange_32x32_48
+  - first:
+      213: -6107507132023192954
+    second: Dog_Basenji_Orange_32x32_49
+  - first:
+      213: -5726506032587342622
+    second: Dog_Basenji_Orange_32x32_50
+  - first:
+      213: 421516386582278231
+    second: Dog_Basenji_Orange_32x32_51
+  - first:
+      213: -149846790741494321
+    second: Dog_Basenji_Orange_32x32_52
+  - first:
+      213: 1869161088563040692
+    second: Dog_Basenji_Orange_32x32_53
+  - first:
+      213: 3973334003492370319
+    second: Dog_Basenji_Orange_32x32_54
+  - first:
+      213: 5435386467301268349
+    second: Dog_Basenji_Orange_32x32_55
+  - first:
+      213: 6576980179329400402
+    second: Dog_Basenji_Orange_32x32_56
+  - first:
+      213: 8212969738605770652
+    second: Dog_Basenji_Orange_32x32_57
+  - first:
+      213: 7026308946915634570
+    second: Dog_Basenji_Orange_32x32_58
+  - first:
+      213: -6169488151531322173
+    second: Dog_Basenji_Orange_32x32_59
+  - first:
+      213: 571613509868971937
+    second: Dog_Basenji_Orange_32x32_60
+  - first:
+      213: 8737101875871014918
+    second: Dog_Basenji_Orange_32x32_61
+  - first:
+      213: -8987271207874272702
+    second: Dog_Basenji_Orange_32x32_62
+  - first:
+      213: 69811057981864222
+    second: Dog_Basenji_Orange_32x32_63
+  - first:
+      213: -6830821891794587753
+    second: Dog_Basenji_Orange_32x32_64
+  - first:
+      213: -5812816472571846207
+    second: Dog_Basenji_Orange_32x32_65
+  - first:
+      213: -8772081691160266290
+    second: Dog_Basenji_Orange_32x32_66
+  - first:
+      213: 8016042839361491450
+    second: Dog_Basenji_Orange_32x32_67
+  - first:
+      213: -1393411027271097460
+    second: Dog_Basenji_Orange_32x32_68
+  - first:
+      213: 386599945232612233
+    second: Dog_Basenji_Orange_32x32_69
+  - first:
+      213: -1552543053066105744
+    second: Dog_Basenji_Orange_32x32_70
+  - first:
+      213: -791539221970473967
+    second: Dog_Basenji_Orange_32x32_71
+  - first:
+      213: -9103929410472386628
+    second: Dog_Basenji_Orange_32x32_72
+  - first:
+      213: 1311229276566399228
+    second: Dog_Basenji_Orange_32x32_73
+  - first:
+      213: -6064186252187741216
+    second: Dog_Basenji_Orange_32x32_74
+  - first:
+      213: -6229306994083321847
+    second: Dog_Basenji_Orange_32x32_75
+  - first:
+      213: 8420727686135617318
+    second: Dog_Basenji_Orange_32x32_76
+  - first:
+      213: -5066975093501687893
+    second: Dog_Basenji_Orange_32x32_77
+  - first:
+      213: -4102389986576544728
+    second: Dog_Basenji_Orange_32x32_78
+  - first:
+      213: 4076882634012203725
+    second: Dog_Basenji_Orange_32x32_79
+  - first:
+      213: 7949349581759334342
+    second: Dog_Basenji_Orange_32x32_80
+  - first:
+      213: 1652369801583286503
+    second: Dog_Basenji_Orange_32x32_81
+  - first:
+      213: -9160825009991828079
+    second: Dog_Basenji_Orange_32x32_82
+  - first:
+      213: 5275473898298512468
+    second: Dog_Basenji_Orange_32x32_83
+  - first:
+      213: -4097535045680136240
+    second: Dog_Basenji_Orange_32x32_84
+  - first:
+      213: 8218830290007122760
+    second: Dog_Basenji_Orange_32x32_85
+  - first:
+      213: 7108767715410313605
+    second: Dog_Basenji_Orange_32x32_86
+  - first:
+      213: -1426071402036979687
+    second: Dog_Basenji_Orange_32x32_87
+  - first:
+      213: -3636734007469772472
+    second: Dog_Basenji_Orange_32x32_88
+  - first:
+      213: 6740181474410020969
+    second: Dog_Basenji_Orange_32x32_89
+  - first:
+      213: 2425137812421144365
+    second: Dog_Basenji_Orange_32x32_90
+  - first:
+      213: -7068945253295542899
+    second: Dog_Basenji_Orange_32x32_91
+  - first:
+      213: 4617813099296680710
+    second: Dog_Basenji_Orange_32x32_92
+  - first:
+      213: 843086381870859781
+    second: Dog_Basenji_Orange_32x32_93
+  - first:
+      213: 5984582044792368369
+    second: Dog_Basenji_Orange_32x32_94
+  - first:
+      213: 2721837982284367341
+    second: Dog_Basenji_Orange_32x32_95
+  - first:
+      213: -1708544717529098634
+    second: Dog_Basenji_Orange_32x32_96
+  - first:
+      213: 6766250805380248530
+    second: Dog_Basenji_Orange_32x32_97
+  - first:
+      213: -6066518552752784432
+    second: Dog_Basenji_Orange_32x32_98
+  - first:
+      213: 5827680934202947618
+    second: Dog_Basenji_Orange_32x32_99
+  - first:
+      213: 5029193680360371058
+    second: Dog_Basenji_Orange_32x32_100
+  - first:
+      213: -5160101704148189349
+    second: Dog_Basenji_Orange_32x32_101
+  - first:
+      213: -6409987680172461196
+    second: Dog_Basenji_Orange_32x32_102
+  - first:
+      213: -4323002333759147427
+    second: Dog_Basenji_Orange_32x32_103
+  - first:
+      213: -3947458668990959405
+    second: Dog_Basenji_Orange_32x32_104
+  - first:
+      213: 957185061068549036
+    second: Dog_Basenji_Orange_32x32_105
+  - first:
+      213: 8283779103548144651
+    second: Dog_Basenji_Orange_32x32_106
+  - first:
+      213: -2535283172234088683
+    second: Dog_Basenji_Orange_32x32_107
+  - first:
+      213: -715728973263206548
+    second: Dog_Basenji_Orange_32x32_108
+  - first:
+      213: 2430133347330739361
+    second: Dog_Basenji_Orange_32x32_109
+  - first:
+      213: 8207228122458116160
+    second: Dog_Basenji_Orange_32x32_110
+  - first:
+      213: 5515520041292520774
+    second: Dog_Basenji_Orange_32x32_111
+  - first:
+      213: -3312423805287336720
+    second: Dog_Basenji_Orange_32x32_112
+  - first:
+      213: 3171446635625460065
+    second: Dog_Basenji_Orange_32x32_113
+  - first:
+      213: 1550554940232475629
+    second: Dog_Basenji_Orange_32x32_114
+  - first:
+      213: 4221425573918640519
+    second: Dog_Basenji_Orange_32x32_115
+  - first:
+      213: -202148710652461341
+    second: Dog_Basenji_Orange_32x32_116
+  - first:
+      213: 9062358031511029133
+    second: Dog_Basenji_Orange_32x32_117
+  - first:
+      213: -6557717540443073832
+    second: Dog_Basenji_Orange_32x32_118
+  - first:
+      213: -1300553683747436786
+    second: Dog_Basenji_Orange_32x32_119
+  - first:
+      213: -1789389714338386731
+    second: Dog_Basenji_Orange_32x32_120
+  - first:
+      213: -408541062672376245
+    second: Dog_Basenji_Orange_32x32_121
+  - first:
+      213: -3791414124446453972
+    second: Dog_Basenji_Orange_32x32_122
+  - first:
+      213: 7228193171607077968
+    second: Dog_Basenji_Orange_32x32_123
+  - first:
+      213: 4068621032614388048
+    second: Dog_Basenji_Orange_32x32_124
+  - first:
+      213: -8746628033701640372
+    second: Dog_Basenji_Orange_32x32_125
+  - first:
+      213: 8664100635896243251
+    second: Dog_Basenji_Orange_32x32_126
+  - first:
+      213: -3481501682150668546
+    second: Dog_Basenji_Orange_32x32_127
+  - first:
+      213: 558713758485923398
+    second: Dog_Basenji_Orange_32x32_128
+  - first:
+      213: 8584360525766609366
+    second: Dog_Basenji_Orange_32x32_129
+  - first:
+      213: 5036024821641184807
+    second: Dog_Basenji_Orange_32x32_130
+  - first:
+      213: 7259668699041938849
+    second: Dog_Basenji_Orange_32x32_131
+  - first:
+      213: 1624178361287234871
+    second: Dog_Basenji_Orange_32x32_132
+  - first:
+      213: 5613914027453771990
+    second: Dog_Basenji_Orange_32x32_133
+  - first:
+      213: 6333527672694036086
+    second: Dog_Basenji_Orange_32x32_134
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 21
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 897
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c55a0ace46c87720800000000000000
+      internalID: 2844241206383891907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 897
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53b12077f0ee68970800000000000000
+      internalID: 8756948275657055029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 897
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1dbfb45e26bee660800000000000000
+      internalID: 7417065946432388380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 899
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 477e9e3dc8ad68000800000000000000
+      internalID: 37957945264826228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 895
+        width: 194
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8af86f832f506ff0800000000000000
+      internalID: -44931389939189109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 895
+        width: 226
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a57a74dabb7bd80800000000000000
+      internalID: -8234907040717776377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 831
+        width: 385
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf1516d11c02c1e0800000000000000
+      internalID: -2179165998948212805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 769
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1765fb5219931cba0800000000000000
+      internalID: -6070507527152380303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 769
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d5013f5acdc7c570800000000000000
+      internalID: 8486978291867125204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 769
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daa980480dc498770800000000000000
+      internalID: 8613500220774849197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 769
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 932030cd2c9bde210800000000000000
+      internalID: 1363950508729107001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 769
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9948d249944771870800000000000000
+      internalID: 8653513068383143065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 769
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ef1d5d95978b6b30800000000000000
+      internalID: 4281664947405791201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 769
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 697b93ec6b077e640800000000000000
+      internalID: 5109176232721364886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 769
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a460bc849e0c65f0800000000000000
+      internalID: -762218205754137432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 769
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad84605d03f794240800000000000000
+      internalID: 4776488727512238298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 769
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4262f653ccf29ae80800000000000000
+      internalID: -8166943895143373276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 769
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0654c54ef28f576c0800000000000000
+      internalID: -4146134997346269856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 769
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328ca80af5eb42390800000000000000
+      internalID: -7843935333047941085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 769
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f643985415b7eff10800000000000000
+      internalID: 2305415648249459823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 769
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f00e3b2b0f546470800000000000000
+      internalID: 8386932907645468912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 769
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fb6c74c47c734690800000000000000
+      internalID: -7619109303626208271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 769
+        width: 48
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49033c79f33d56da0800000000000000
+      internalID: -5952119062417690476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 769
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04bb6bdba91c64cb0800000000000000
+      internalID: -4880000275857360064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 769
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0034388e2c16c8e70800000000000000
+      internalID: 9118770835270877952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 771
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63eb8614094da2f00800000000000000
+      internalID: 1092919575628529206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 771
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16cb698f7f8809720800000000000000
+      internalID: 2850929162734451809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 771
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825f83ad0c1e23cc0800000000000000
+      internalID: -3732672922725583576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 771
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf19c446e77f04ef0800000000000000
+      internalID: -125828667345694213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 771
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8e094746cef438b0800000000000000
+      internalID: -5173229944388907378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 771
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e89cb4f4e17d014e0800000000000000
+      internalID: -2012872508255254130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 703
+        width: 385
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc0ec661c9ce0b90800000000000000
+      internalID: -7273654515666121477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 641
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 332af2980a3baaea0800000000000000
+      internalID: -5860674462991539661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 641
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156228d2eeb3beda0800000000000000
+      internalID: -5914567791469255087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 641
+        width: 50
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9902b0354830bb710800000000000000
+      internalID: 1709964350381039769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 641
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d726a639fde9e6e0800000000000000
+      internalID: -1807652120793045034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 641
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae56a334e8d4834d0800000000000000
+      internalID: -3154686265564437014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 641
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef6ad57d0838a9f0800000000000000
+      internalID: -457053731715125269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 641
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85ce13df639aaea00800000000000000
+      internalID: 786627138570808408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 641
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e64fe3409c06f32d0800000000000000
+      internalID: -3296809985735986066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 641
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a3c6a857aadf55e0800000000000000
+      internalID: -1918574503954824279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 641
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e2463915d910510800000000000000
+      internalID: 1513663923463925388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 641
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c0eb736df44aea40800000000000000
+      internalID: 5398202958443438279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 641
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550da4bf733680a70800000000000000
+      internalID: 8793387364531228757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 641
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f164574c7a9c23e10800000000000000
+      internalID: 2176023292366112287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 641
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f56a41052dcf46ca0800000000000000
+      internalID: -6024412421298018721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 641
+        width: 50
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d54492629040e2670800000000000000
+      internalID: 8515748382745642077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 641
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f81051c74a0a68720800000000000000
+      internalID: 2848140442675249551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 641
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b71dd005eeab8290800000000000000
+      internalID: -7887018023824058446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 641
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682c7945f96cd3ba0800000000000000
+      internalID: -6107507132023192954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 641
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ecff7b8a1d5780b0800000000000000
+      internalID: -5726506032587342622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 643
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7503e399be689d500800000000000000
+      internalID: 421516386582278231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 639
+        width: 24
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc5fe134323abedf0800000000000000
+      internalID: -149846790741494321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 643
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b158c75b1890f910800000000000000
+      internalID: 1869161088563040692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 643
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f87b42c793e142730800000000000000
+      internalID: 3973334003492370319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 639
+        width: 24
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b1570b13f5e6b40800000000000000
+      internalID: 5435386467301268349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 575
+        width: 385
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25eb6b370a0264b50800000000000000
+      internalID: 6576980179329400402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 513
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9731ac86745af170800000000000000
+      internalID: 8212969738605770652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 515
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d2e0f92c6728160800000000000000
+      internalID: 7026308946915634570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 515
+        width: 46
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c48ef9a633916aa0800000000000000
+      internalID: -6169488151531322173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 513
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7ed8c6577cee700800000000000000
+      internalID: 571613509868971937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 515
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 600e0bd6ddb604970800000000000000
+      internalID: 8737101875871014918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 513
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242ee8af37cc64380800000000000000
+      internalID: -8987271207874272702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 515
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e19376099c408f000800000000000000
+      internalID: 69811057981864222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 517
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79f2f9f3eab0431a0800000000000000
+      internalID: -6830821891794587753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 519
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c1e0df373ab45fa0800000000000000
+      internalID: -5812816472571846207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 515
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec93fa9ad2e434680800000000000000
+      internalID: -8772081691160266290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 513
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af19478dd74be3f60800000000000000
+      internalID: 8016042839361491450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 511
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c83e465ad0c99ace0800000000000000
+      internalID: -1393411027271097460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 513
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98b76c51a9a7d5500800000000000000
+      internalID: 386599945232612233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 515
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c8e77a152447ae0800000000000000
+      internalID: -1552543053066105744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 515
+        width: 46
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11c29a87543e305f0800000000000000
+      internalID: -791539221970473967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 513
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbfdf849f6858a180800000000000000
+      internalID: -9103929410472386628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 515
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf825d0741c623210800000000000000
+      internalID: 1311229276566399228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 513
+        width: 52
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3da8aabbea7dba0800000000000000
+      internalID: -6064186252187741216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 515
+        width: 24
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 908aecc0b4e0d89a0800000000000000
+      internalID: -6229306994083321847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 519
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6271962373f6cd470800000000000000
+      internalID: 8420727686135617318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 523
+        width: 24
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba7841a9ffc7ea9b0800000000000000
+      internalID: -5066975093501687893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 519
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82c4cf7ea026117c0800000000000000
+      internalID: -4102389986576544728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 515
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca9147c72ff39830800000000000000
+      internalID: 4076882634012203725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 511
+        width: 24
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c74a20c353c15e60800000000000000
+      internalID: 7949349581759334342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 447
+        width: 385
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e854f474956ee610800000000000000
+      internalID: 1652369801583286503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 385
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19d3ce580363ed080800000000000000
+      internalID: -9160825009991828079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 385
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4549de15f8f363940800000000000000
+      internalID: 5275473898298512468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 385
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df758be591a227c0800000000000000
+      internalID: -4097535045680136240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 385
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84368118a962f0270800000000000000
+      internalID: 8218830290007122760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 385
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5810cc3c29a67a260800000000000000
+      internalID: 7108767715410313605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 385
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9181e319d93953ce0800000000000000
+      internalID: -1426071402036979687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 385
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8417e2e30b9b78dc0800000000000000
+      internalID: -3636734007469772472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_89
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 385
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 960c0e7075fe98d50800000000000000
+      internalID: 6740181474410020969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_90
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 385
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2feab0ddf1d7a120800000000000000
+      internalID: 2425137812421144365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_91
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 385
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8da2a8bebf06ed90800000000000000
+      internalID: -7068945253295542899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_92
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 385
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60b69be2c84c51040800000000000000
+      internalID: 4617813099296680710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_93
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 385
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 506c162f89e33bb00800000000000000
+      internalID: 843086381870859781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_94
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 385
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fca70d79a18d0350800000000000000
+      internalID: 5984582044792368369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_95
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 385
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de5c9365939e5c520800000000000000
+      internalID: 2721837982284367341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_96
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 385
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676dec4b1a70a48e0800000000000000
+      internalID: -1708544717529098634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_97
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 385
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d3f3e3224d86ed50800000000000000
+      internalID: 6766250805380248530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_98
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 385
+        width: 48
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db7adf94856fcba0800000000000000
+      internalID: -6066518552752784432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_99
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 385
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 228bb7beee410e050800000000000000
+      internalID: 5827680934202947618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_100
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 387
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 273f488a1094bc540800000000000000
+      internalID: 5029193680360371058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_101
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 387
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5ffb57e6d2a368b0800000000000000
+      internalID: -5160101704148189349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_102
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 387
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473b0bc9a262b07a0800000000000000
+      internalID: -6409987680172461196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_103
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 387
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52f91d184c9104c0800000000000000
+      internalID: -4323002333759147427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_104
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 387
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d0f14d414fc739c0800000000000000
+      internalID: -3947458668990959405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_105
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 387
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab2d4dddba984d00800000000000000
+      internalID: 957185061068549036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_106
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 319
+        width: 385
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0c7ac09435e5f270800000000000000
+      internalID: 8283779103548144651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_107
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 257
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f26f9236dd0dcd0800000000000000
+      internalID: -2535283172234088683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_108
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 257
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6701397a483116f0800000000000000
+      internalID: -715728973263206548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_109
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 257
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1acca7c676199b120800000000000000
+      internalID: 2430133347330739361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_110
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 257
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04056bd5e7ee5e170800000000000000
+      internalID: 8207228122458116160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_111
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 257
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64dd9cc41401b8c40800000000000000
+      internalID: 5515520041292520774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_112
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 257
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f4fc4c5918e702d0800000000000000
+      internalID: -3312423805287336720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_113
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 257
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161309c79ed330c20800000000000000
+      internalID: 3171446635625460065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_114
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 257
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3a841c08da48510800000000000000
+      internalID: 1550554940232475629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_115
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 257
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7898b238134859a30800000000000000
+      internalID: 4221425573918640519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_116
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 259
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eeb1c591d2d13df0800000000000000
+      internalID: -202148710652461341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_117
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 259
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d858f9f7d96f3cd70800000000000000
+      internalID: 9062358031511029133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_118
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 259
+        width: 24
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d2da8824ae4ef4a0800000000000000
+      internalID: -6557717540443073832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191
+        width: 257
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0788e4b05183fde0800000000000000
+      internalID: -1300553683747436786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 417
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dc6f10198fca27e0800000000000000
+      internalID: -1789389714338386731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_121
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 129
+        width: 24
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e904b6112945af0800000000000000
+      internalID: -408541062672376245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_122
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 129
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2f68fb01f0326bc0800000000000000
+      internalID: -3791414124446453972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_123
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 129
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0544b899463bf4460800000000000000
+      internalID: 7228193171607077968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_124
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 129
+        width: 24
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 051e9aec545a67830800000000000000
+      internalID: 4068621032614388048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_125
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 129
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c478dbc152cbd9680800000000000000
+      internalID: -8746628033701640372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_126
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 129
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 334e4dcbf911d3870800000000000000
+      internalID: 8664100635896243251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_127
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef60c767aa83fafc0800000000000000
+      internalID: -3481501682150668546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_128
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6464da10433f0c700800000000000000
+      internalID: 558713758485923398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_129
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 1
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d944329a66c12770800000000000000
+      internalID: 8584360525766609366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_130
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72609fda4ed83e540800000000000000
+      internalID: 5036024821641184807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_131
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 1
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1adba69e7368fb460800000000000000
+      internalID: 7259668699041938849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_132
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 1
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 735d6644d9d3a8610800000000000000
+      internalID: 1624178361287234871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_133
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d0f6fd6011a8ed40800000000000000
+      internalID: 5613914027453771990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Basenji_Orange_32x32_134
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 1
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676d802acd535e750800000000000000
+      internalID: 6333527672694036086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dog_Basenji_Orange_32x32_0: 2844241206383891907
+      Dog_Basenji_Orange_32x32_1: 8756948275657055029
+      Dog_Basenji_Orange_32x32_10: 1363950508729107001
+      Dog_Basenji_Orange_32x32_100: 5029193680360371058
+      Dog_Basenji_Orange_32x32_101: -5160101704148189349
+      Dog_Basenji_Orange_32x32_102: -6409987680172461196
+      Dog_Basenji_Orange_32x32_103: -4323002333759147427
+      Dog_Basenji_Orange_32x32_104: -3947458668990959405
+      Dog_Basenji_Orange_32x32_105: 957185061068549036
+      Dog_Basenji_Orange_32x32_106: 8283779103548144651
+      Dog_Basenji_Orange_32x32_107: -2535283172234088683
+      Dog_Basenji_Orange_32x32_108: -715728973263206548
+      Dog_Basenji_Orange_32x32_109: 2430133347330739361
+      Dog_Basenji_Orange_32x32_11: 8653513068383143065
+      Dog_Basenji_Orange_32x32_110: 8207228122458116160
+      Dog_Basenji_Orange_32x32_111: 5515520041292520774
+      Dog_Basenji_Orange_32x32_112: -3312423805287336720
+      Dog_Basenji_Orange_32x32_113: 3171446635625460065
+      Dog_Basenji_Orange_32x32_114: 1550554940232475629
+      Dog_Basenji_Orange_32x32_115: 4221425573918640519
+      Dog_Basenji_Orange_32x32_116: -202148710652461341
+      Dog_Basenji_Orange_32x32_117: 9062358031511029133
+      Dog_Basenji_Orange_32x32_118: -6557717540443073832
+      Dog_Basenji_Orange_32x32_119: -1300553683747436786
+      Dog_Basenji_Orange_32x32_12: 4281664947405791201
+      Dog_Basenji_Orange_32x32_120: -1789389714338386731
+      Dog_Basenji_Orange_32x32_121: -408541062672376245
+      Dog_Basenji_Orange_32x32_122: -3791414124446453972
+      Dog_Basenji_Orange_32x32_123: 7228193171607077968
+      Dog_Basenji_Orange_32x32_124: 4068621032614388048
+      Dog_Basenji_Orange_32x32_125: -8746628033701640372
+      Dog_Basenji_Orange_32x32_126: 8664100635896243251
+      Dog_Basenji_Orange_32x32_127: -3481501682150668546
+      Dog_Basenji_Orange_32x32_128: 558713758485923398
+      Dog_Basenji_Orange_32x32_129: 8584360525766609366
+      Dog_Basenji_Orange_32x32_13: 5109176232721364886
+      Dog_Basenji_Orange_32x32_130: 5036024821641184807
+      Dog_Basenji_Orange_32x32_131: 7259668699041938849
+      Dog_Basenji_Orange_32x32_132: 1624178361287234871
+      Dog_Basenji_Orange_32x32_133: 5613914027453771990
+      Dog_Basenji_Orange_32x32_134: 6333527672694036086
+      Dog_Basenji_Orange_32x32_14: -762218205754137432
+      Dog_Basenji_Orange_32x32_15: 4776488727512238298
+      Dog_Basenji_Orange_32x32_16: -8166943895143373276
+      Dog_Basenji_Orange_32x32_17: -4146134997346269856
+      Dog_Basenji_Orange_32x32_18: -7843935333047941085
+      Dog_Basenji_Orange_32x32_19: 2305415648249459823
+      Dog_Basenji_Orange_32x32_2: 7417065946432388380
+      Dog_Basenji_Orange_32x32_20: 8386932907645468912
+      Dog_Basenji_Orange_32x32_21: -7619109303626208271
+      Dog_Basenji_Orange_32x32_22: -5952119062417690476
+      Dog_Basenji_Orange_32x32_23: -4880000275857360064
+      Dog_Basenji_Orange_32x32_24: 9118770835270877952
+      Dog_Basenji_Orange_32x32_25: 1092919575628529206
+      Dog_Basenji_Orange_32x32_26: 2850929162734451809
+      Dog_Basenji_Orange_32x32_27: -3732672922725583576
+      Dog_Basenji_Orange_32x32_28: -125828667345694213
+      Dog_Basenji_Orange_32x32_29: -5173229944388907378
+      Dog_Basenji_Orange_32x32_3: 37957945264826228
+      Dog_Basenji_Orange_32x32_30: -2012872508255254130
+      Dog_Basenji_Orange_32x32_31: -7273654515666121477
+      Dog_Basenji_Orange_32x32_32: -5860674462991539661
+      Dog_Basenji_Orange_32x32_33: -5914567791469255087
+      Dog_Basenji_Orange_32x32_34: 1709964350381039769
+      Dog_Basenji_Orange_32x32_35: -1807652120793045034
+      Dog_Basenji_Orange_32x32_36: -3154686265564437014
+      Dog_Basenji_Orange_32x32_37: -457053731715125269
+      Dog_Basenji_Orange_32x32_38: 786627138570808408
+      Dog_Basenji_Orange_32x32_39: -3296809985735986066
+      Dog_Basenji_Orange_32x32_4: -44931389939189109
+      Dog_Basenji_Orange_32x32_40: -1918574503954824279
+      Dog_Basenji_Orange_32x32_41: 1513663923463925388
+      Dog_Basenji_Orange_32x32_42: 5398202958443438279
+      Dog_Basenji_Orange_32x32_43: 8793387364531228757
+      Dog_Basenji_Orange_32x32_44: 2176023292366112287
+      Dog_Basenji_Orange_32x32_45: -6024412421298018721
+      Dog_Basenji_Orange_32x32_46: 8515748382745642077
+      Dog_Basenji_Orange_32x32_47: 2848140442675249551
+      Dog_Basenji_Orange_32x32_48: -7887018023824058446
+      Dog_Basenji_Orange_32x32_49: -6107507132023192954
+      Dog_Basenji_Orange_32x32_5: -8234907040717776377
+      Dog_Basenji_Orange_32x32_50: -5726506032587342622
+      Dog_Basenji_Orange_32x32_51: 421516386582278231
+      Dog_Basenji_Orange_32x32_52: -149846790741494321
+      Dog_Basenji_Orange_32x32_53: 1869161088563040692
+      Dog_Basenji_Orange_32x32_54: 3973334003492370319
+      Dog_Basenji_Orange_32x32_55: 5435386467301268349
+      Dog_Basenji_Orange_32x32_56: 6576980179329400402
+      Dog_Basenji_Orange_32x32_57: 8212969738605770652
+      Dog_Basenji_Orange_32x32_58: 7026308946915634570
+      Dog_Basenji_Orange_32x32_59: -6169488151531322173
+      Dog_Basenji_Orange_32x32_6: -2179165998948212805
+      Dog_Basenji_Orange_32x32_60: 571613509868971937
+      Dog_Basenji_Orange_32x32_61: 8737101875871014918
+      Dog_Basenji_Orange_32x32_62: -8987271207874272702
+      Dog_Basenji_Orange_32x32_63: 69811057981864222
+      Dog_Basenji_Orange_32x32_64: -6830821891794587753
+      Dog_Basenji_Orange_32x32_65: -5812816472571846207
+      Dog_Basenji_Orange_32x32_66: -8772081691160266290
+      Dog_Basenji_Orange_32x32_67: 8016042839361491450
+      Dog_Basenji_Orange_32x32_68: -1393411027271097460
+      Dog_Basenji_Orange_32x32_69: 386599945232612233
+      Dog_Basenji_Orange_32x32_7: -6070507527152380303
+      Dog_Basenji_Orange_32x32_70: -1552543053066105744
+      Dog_Basenji_Orange_32x32_71: -791539221970473967
+      Dog_Basenji_Orange_32x32_72: -9103929410472386628
+      Dog_Basenji_Orange_32x32_73: 1311229276566399228
+      Dog_Basenji_Orange_32x32_74: -6064186252187741216
+      Dog_Basenji_Orange_32x32_75: -6229306994083321847
+      Dog_Basenji_Orange_32x32_76: 8420727686135617318
+      Dog_Basenji_Orange_32x32_77: -5066975093501687893
+      Dog_Basenji_Orange_32x32_78: -4102389986576544728
+      Dog_Basenji_Orange_32x32_79: 4076882634012203725
+      Dog_Basenji_Orange_32x32_8: 8486978291867125204
+      Dog_Basenji_Orange_32x32_80: 7949349581759334342
+      Dog_Basenji_Orange_32x32_81: 1652369801583286503
+      Dog_Basenji_Orange_32x32_82: -9160825009991828079
+      Dog_Basenji_Orange_32x32_83: 5275473898298512468
+      Dog_Basenji_Orange_32x32_84: -4097535045680136240
+      Dog_Basenji_Orange_32x32_85: 8218830290007122760
+      Dog_Basenji_Orange_32x32_86: 7108767715410313605
+      Dog_Basenji_Orange_32x32_87: -1426071402036979687
+      Dog_Basenji_Orange_32x32_88: -3636734007469772472
+      Dog_Basenji_Orange_32x32_89: 6740181474410020969
+      Dog_Basenji_Orange_32x32_9: 8613500220774849197
+      Dog_Basenji_Orange_32x32_90: 2425137812421144365
+      Dog_Basenji_Orange_32x32_91: -7068945253295542899
+      Dog_Basenji_Orange_32x32_92: 4617813099296680710
+      Dog_Basenji_Orange_32x32_93: 843086381870859781
+      Dog_Basenji_Orange_32x32_94: 5984582044792368369
+      Dog_Basenji_Orange_32x32_95: 2721837982284367341
+      Dog_Basenji_Orange_32x32_96: -1708544717529098634
+      Dog_Basenji_Orange_32x32_97: 6766250805380248530
+      Dog_Basenji_Orange_32x32_98: -6066518552752784432
+      Dog_Basenji_Orange_32x32_99: 5827680934202947618
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

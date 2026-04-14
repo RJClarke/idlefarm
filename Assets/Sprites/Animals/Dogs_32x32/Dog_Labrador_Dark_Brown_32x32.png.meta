@@ -1,0 +1,3471 @@
+fileFormatVersion: 2
+guid: c53e592d8fb38b944ae021beace3f7e7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2703779127850660327
+    second: Dog_Labrador_Dark_Brown_32x32_0
+  - first:
+      213: 8036345251220346061
+    second: Dog_Labrador_Dark_Brown_32x32_1
+  - first:
+      213: 8096148832305451701
+    second: Dog_Labrador_Dark_Brown_32x32_2
+  - first:
+      213: -1765641387564054609
+    second: Dog_Labrador_Dark_Brown_32x32_3
+  - first:
+      213: 9209433746120532004
+    second: Dog_Labrador_Dark_Brown_32x32_4
+  - first:
+      213: -7175958199628998869
+    second: Dog_Labrador_Dark_Brown_32x32_5
+  - first:
+      213: 4335510630135726460
+    second: Dog_Labrador_Dark_Brown_32x32_6
+  - first:
+      213: 2846648809241097214
+    second: Dog_Labrador_Dark_Brown_32x32_7
+  - first:
+      213: 8337636237938790779
+    second: Dog_Labrador_Dark_Brown_32x32_8
+  - first:
+      213: 3051063402726763880
+    second: Dog_Labrador_Dark_Brown_32x32_9
+  - first:
+      213: 3260022560521115006
+    second: Dog_Labrador_Dark_Brown_32x32_10
+  - first:
+      213: -5913666649383593319
+    second: Dog_Labrador_Dark_Brown_32x32_11
+  - first:
+      213: -7366625652089387129
+    second: Dog_Labrador_Dark_Brown_32x32_12
+  - first:
+      213: -6309752145560418051
+    second: Dog_Labrador_Dark_Brown_32x32_13
+  - first:
+      213: -6964429205722526448
+    second: Dog_Labrador_Dark_Brown_32x32_14
+  - first:
+      213: -3149622411150995301
+    second: Dog_Labrador_Dark_Brown_32x32_15
+  - first:
+      213: 6132680467750143582
+    second: Dog_Labrador_Dark_Brown_32x32_16
+  - first:
+      213: 8838904036233034505
+    second: Dog_Labrador_Dark_Brown_32x32_17
+  - first:
+      213: -3549558916708221514
+    second: Dog_Labrador_Dark_Brown_32x32_18
+  - first:
+      213: -3629289205923214021
+    second: Dog_Labrador_Dark_Brown_32x32_19
+  - first:
+      213: 1996956654865061455
+    second: Dog_Labrador_Dark_Brown_32x32_20
+  - first:
+      213: -4839852139125993873
+    second: Dog_Labrador_Dark_Brown_32x32_21
+  - first:
+      213: -2996833230632000920
+    second: Dog_Labrador_Dark_Brown_32x32_22
+  - first:
+      213: -405390966092310234
+    second: Dog_Labrador_Dark_Brown_32x32_23
+  - first:
+      213: 5178464954111516992
+    second: Dog_Labrador_Dark_Brown_32x32_24
+  - first:
+      213: -7649065717090744265
+    second: Dog_Labrador_Dark_Brown_32x32_25
+  - first:
+      213: 1352124320492604215
+    second: Dog_Labrador_Dark_Brown_32x32_26
+  - first:
+      213: 7986756596316306541
+    second: Dog_Labrador_Dark_Brown_32x32_27
+  - first:
+      213: 8370697818262970824
+    second: Dog_Labrador_Dark_Brown_32x32_28
+  - first:
+      213: -6499426759340227317
+    second: Dog_Labrador_Dark_Brown_32x32_29
+  - first:
+      213: -4201525568426634305
+    second: Dog_Labrador_Dark_Brown_32x32_30
+  - first:
+      213: -1974201727308966303
+    second: Dog_Labrador_Dark_Brown_32x32_31
+  - first:
+      213: 7921786863945389454
+    second: Dog_Labrador_Dark_Brown_32x32_32
+  - first:
+      213: 8413412034777743980
+    second: Dog_Labrador_Dark_Brown_32x32_33
+  - first:
+      213: 7255073872749805606
+    second: Dog_Labrador_Dark_Brown_32x32_34
+  - first:
+      213: -1986004309778299095
+    second: Dog_Labrador_Dark_Brown_32x32_35
+  - first:
+      213: 4263242005878936639
+    second: Dog_Labrador_Dark_Brown_32x32_36
+  - first:
+      213: -7679080534384389598
+    second: Dog_Labrador_Dark_Brown_32x32_37
+  - first:
+      213: -1076269400534687670
+    second: Dog_Labrador_Dark_Brown_32x32_38
+  - first:
+      213: 8688979904246759599
+    second: Dog_Labrador_Dark_Brown_32x32_39
+  - first:
+      213: -4816491479083587429
+    second: Dog_Labrador_Dark_Brown_32x32_40
+  - first:
+      213: 716806701636799083
+    second: Dog_Labrador_Dark_Brown_32x32_41
+  - first:
+      213: -4165999171259196791
+    second: Dog_Labrador_Dark_Brown_32x32_42
+  - first:
+      213: 7875760480162319386
+    second: Dog_Labrador_Dark_Brown_32x32_43
+  - first:
+      213: -8197216612996197796
+    second: Dog_Labrador_Dark_Brown_32x32_44
+  - first:
+      213: 7001464438577192473
+    second: Dog_Labrador_Dark_Brown_32x32_45
+  - first:
+      213: 5136386048808178880
+    second: Dog_Labrador_Dark_Brown_32x32_46
+  - first:
+      213: 960913166766643962
+    second: Dog_Labrador_Dark_Brown_32x32_47
+  - first:
+      213: 5839308481235875486
+    second: Dog_Labrador_Dark_Brown_32x32_48
+  - first:
+      213: 238751605749925064
+    second: Dog_Labrador_Dark_Brown_32x32_49
+  - first:
+      213: 8765822016616962795
+    second: Dog_Labrador_Dark_Brown_32x32_50
+  - first:
+      213: -403428626451850055
+    second: Dog_Labrador_Dark_Brown_32x32_51
+  - first:
+      213: -8807335354262245230
+    second: Dog_Labrador_Dark_Brown_32x32_52
+  - first:
+      213: 2591894135395015275
+    second: Dog_Labrador_Dark_Brown_32x32_53
+  - first:
+      213: -573369577058398324
+    second: Dog_Labrador_Dark_Brown_32x32_54
+  - first:
+      213: -8723776018883635261
+    second: Dog_Labrador_Dark_Brown_32x32_55
+  - first:
+      213: -1375610861950702469
+    second: Dog_Labrador_Dark_Brown_32x32_56
+  - first:
+      213: 6278185446287172014
+    second: Dog_Labrador_Dark_Brown_32x32_57
+  - first:
+      213: -1435422722668063084
+    second: Dog_Labrador_Dark_Brown_32x32_58
+  - first:
+      213: 1489018327926636830
+    second: Dog_Labrador_Dark_Brown_32x32_59
+  - first:
+      213: 6734537089069469987
+    second: Dog_Labrador_Dark_Brown_32x32_60
+  - first:
+      213: -2082420260542383556
+    second: Dog_Labrador_Dark_Brown_32x32_61
+  - first:
+      213: -1579408600511810042
+    second: Dog_Labrador_Dark_Brown_32x32_62
+  - first:
+      213: -6264732309877731489
+    second: Dog_Labrador_Dark_Brown_32x32_63
+  - first:
+      213: 8069771765373288562
+    second: Dog_Labrador_Dark_Brown_32x32_64
+  - first:
+      213: 5022232602590805242
+    second: Dog_Labrador_Dark_Brown_32x32_65
+  - first:
+      213: -3905736745762766275
+    second: Dog_Labrador_Dark_Brown_32x32_66
+  - first:
+      213: -6581492647192232159
+    second: Dog_Labrador_Dark_Brown_32x32_67
+  - first:
+      213: -6487729529748891507
+    second: Dog_Labrador_Dark_Brown_32x32_68
+  - first:
+      213: 403338791577613866
+    second: Dog_Labrador_Dark_Brown_32x32_69
+  - first:
+      213: -4289579170390528790
+    second: Dog_Labrador_Dark_Brown_32x32_70
+  - first:
+      213: 4134698635640740915
+    second: Dog_Labrador_Dark_Brown_32x32_71
+  - first:
+      213: 2425506689233336584
+    second: Dog_Labrador_Dark_Brown_32x32_72
+  - first:
+      213: -7554503837128136394
+    second: Dog_Labrador_Dark_Brown_32x32_73
+  - first:
+      213: 3359183748145837840
+    second: Dog_Labrador_Dark_Brown_32x32_74
+  - first:
+      213: 2590689355016923318
+    second: Dog_Labrador_Dark_Brown_32x32_75
+  - first:
+      213: 1113720241927153734
+    second: Dog_Labrador_Dark_Brown_32x32_76
+  - first:
+      213: 4246611731878413923
+    second: Dog_Labrador_Dark_Brown_32x32_77
+  - first:
+      213: -7474899081951570577
+    second: Dog_Labrador_Dark_Brown_32x32_78
+  - first:
+      213: 6763367252095877889
+    second: Dog_Labrador_Dark_Brown_32x32_79
+  - first:
+      213: 6284798941377751753
+    second: Dog_Labrador_Dark_Brown_32x32_80
+  - first:
+      213: 2442174639468820510
+    second: Dog_Labrador_Dark_Brown_32x32_81
+  - first:
+      213: 2453063496098302685
+    second: Dog_Labrador_Dark_Brown_32x32_82
+  - first:
+      213: -7262028158426870120
+    second: Dog_Labrador_Dark_Brown_32x32_83
+  - first:
+      213: -3257372619861671299
+    second: Dog_Labrador_Dark_Brown_32x32_84
+  - first:
+      213: 180845431334828446
+    second: Dog_Labrador_Dark_Brown_32x32_85
+  - first:
+      213: 4603138156137364096
+    second: Dog_Labrador_Dark_Brown_32x32_86
+  - first:
+      213: -733411307871596063
+    second: Dog_Labrador_Dark_Brown_32x32_87
+  - first:
+      213: 5231541263369665057
+    second: Dog_Labrador_Dark_Brown_32x32_88
+  - first:
+      213: -4388131566841163814
+    second: Dog_Labrador_Dark_Brown_32x32_89
+  - first:
+      213: -5757189201656616202
+    second: Dog_Labrador_Dark_Brown_32x32_90
+  - first:
+      213: 70320779744575546
+    second: Dog_Labrador_Dark_Brown_32x32_91
+  - first:
+      213: 2083536041937878428
+    second: Dog_Labrador_Dark_Brown_32x32_92
+  - first:
+      213: 90788327361410942
+    second: Dog_Labrador_Dark_Brown_32x32_93
+  - first:
+      213: -8096567903367903940
+    second: Dog_Labrador_Dark_Brown_32x32_94
+  - first:
+      213: 2835646888418442260
+    second: Dog_Labrador_Dark_Brown_32x32_95
+  - first:
+      213: -3734886253343977489
+    second: Dog_Labrador_Dark_Brown_32x32_96
+  - first:
+      213: 1307514927019390728
+    second: Dog_Labrador_Dark_Brown_32x32_97
+  - first:
+      213: 1663902121650651625
+    second: Dog_Labrador_Dark_Brown_32x32_98
+  - first:
+      213: 6787180788021784107
+    second: Dog_Labrador_Dark_Brown_32x32_99
+  - first:
+      213: 835091755381063046
+    second: Dog_Labrador_Dark_Brown_32x32_100
+  - first:
+      213: 4835285071221335241
+    second: Dog_Labrador_Dark_Brown_32x32_101
+  - first:
+      213: 3327298683140661381
+    second: Dog_Labrador_Dark_Brown_32x32_102
+  - first:
+      213: 1959336731514804928
+    second: Dog_Labrador_Dark_Brown_32x32_103
+  - first:
+      213: 7673414116404972397
+    second: Dog_Labrador_Dark_Brown_32x32_104
+  - first:
+      213: 5540277044341460992
+    second: Dog_Labrador_Dark_Brown_32x32_105
+  - first:
+      213: 4536497293609610133
+    second: Dog_Labrador_Dark_Brown_32x32_106
+  - first:
+      213: -452250915861107142
+    second: Dog_Labrador_Dark_Brown_32x32_107
+  - first:
+      213: -2894960543981000821
+    second: Dog_Labrador_Dark_Brown_32x32_108
+  - first:
+      213: 4611919900004730331
+    second: Dog_Labrador_Dark_Brown_32x32_109
+  - first:
+      213: -3295840395557875067
+    second: Dog_Labrador_Dark_Brown_32x32_110
+  - first:
+      213: 8194479494607952438
+    second: Dog_Labrador_Dark_Brown_32x32_111
+  - first:
+      213: 2324117210784210766
+    second: Dog_Labrador_Dark_Brown_32x32_112
+  - first:
+      213: -6330467844709811793
+    second: Dog_Labrador_Dark_Brown_32x32_113
+  - first:
+      213: 5365674661695630431
+    second: Dog_Labrador_Dark_Brown_32x32_114
+  - first:
+      213: 4804318197023829791
+    second: Dog_Labrador_Dark_Brown_32x32_115
+  - first:
+      213: -756246542032681355
+    second: Dog_Labrador_Dark_Brown_32x32_116
+  - first:
+      213: 4441621444470896345
+    second: Dog_Labrador_Dark_Brown_32x32_117
+  - first:
+      213: 7389551229955406916
+    second: Dog_Labrador_Dark_Brown_32x32_118
+  - first:
+      213: 2383673210102348620
+    second: Dog_Labrador_Dark_Brown_32x32_119
+  - first:
+      213: 6283372674981920756
+    second: Dog_Labrador_Dark_Brown_32x32_120
+  - first:
+      213: -510574967400936201
+    second: Dog_Labrador_Dark_Brown_32x32_121
+  - first:
+      213: -8529327301309420570
+    second: Dog_Labrador_Dark_Brown_32x32_122
+  - first:
+      213: 6539563674195558380
+    second: Dog_Labrador_Dark_Brown_32x32_123
+  - first:
+      213: 5858146415408214684
+    second: Dog_Labrador_Dark_Brown_32x32_124
+  - first:
+      213: -4941900371427550456
+    second: Dog_Labrador_Dark_Brown_32x32_125
+  - first:
+      213: -2391139503548088095
+    second: Dog_Labrador_Dark_Brown_32x32_126
+  - first:
+      213: -6661082767983118935
+    second: Dog_Labrador_Dark_Brown_32x32_127
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 21
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 769
+        width: 70
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e885d553f3a7ad0800000000000000
+      internalID: -2703779127850660327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 769
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc4d2677d65d68f60800000000000000
+      internalID: 8036345251220346061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 769
+        width: 70
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b2924eb77c4b5070800000000000000
+      internalID: 8096148832305451701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 773
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa74485438e2f77e0800000000000000
+      internalID: -1765641387564054609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 767
+        width: 194
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 420620cc23b7ecf70800000000000000
+      internalID: 9209433746120532004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 767
+        width: 226
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b27df0c8900e96c90800000000000000
+      internalID: -7175958199628998869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 703
+        width: 417
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c718b2592f3da2c30800000000000000
+      internalID: 4335510630135726460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 643
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3ba138204518720800000000000000
+      internalID: 2846648809241097214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 1953
+        y: 643
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7114c4dbfb35b370800000000000000
+      internalID: 8337636237938790779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 641
+        width: 70
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d29b2effd875a20800000000000000
+      internalID: 3051063402726763880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 641
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e75de971f3ded3d20800000000000000
+      internalID: 3260022560521115006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 641
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99a9a6ba38f6eeda0800000000000000
+      internalID: -5913666649383593319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 641
+        width: 70
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7878eeddffc74c990800000000000000
+      internalID: -7366625652089387129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 641
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df8cc17aad14f68a0800000000000000
+      internalID: -6309752145560418051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 641
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01d8d895980695f90800000000000000
+      internalID: -6964429205722526448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 643
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b905cbeba1b4a44d0800000000000000
+      internalID: -3149622411150995301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 643
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e564931a468ab1550800000000000000
+      internalID: 6132680467750143582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 643
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90bbf63f3681aaa70800000000000000
+      internalID: 8838904036233034505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 643
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd394cb8fe6dbec0800000000000000
+      internalID: -3549558916708221514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 643
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3d89cd22bc22adc0800000000000000
+      internalID: -3629289205923214021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 643
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f46951d4f7d96bb10800000000000000
+      internalID: 1996956654865061455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 641
+        width: 70
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e0bf14f1465dcb0800000000000000
+      internalID: -4839852139125993873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 641
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862e71dfd0c1966d0800000000000000
+      internalID: -2996833230632000920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 641
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6295aee6013cf5af0800000000000000
+      internalID: -405390966092310234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 641
+        width: 70
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04160a7607a9dd740800000000000000
+      internalID: 5178464954111516992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 641
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 738003db14f09d590800000000000000
+      internalID: -7649065717090744265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 641
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73bc027d7e5b3c210800000000000000
+      internalID: 1352124320492604215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 1761
+        y: 643
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6cf0f60fc8a6de60800000000000000
+      internalID: 7986756596316306541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 643
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c1a3bbd051ba2470800000000000000
+      internalID: 8370697818262970824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 643
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b058bdd3cc56dc5a0800000000000000
+      internalID: -6499426759340227317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 643
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb3953391ce21b5c0800000000000000
+      internalID: -4201525568426634305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 575
+        width: 417
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16659c02df93a94e0800000000000000
+      internalID: -1974201727308966303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 513
+        width: 70
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8512db6e27dfed60800000000000000
+      internalID: 7921786863945389454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 513
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c628ce16ba172c470800000000000000
+      internalID: 8413412034777743980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 513
+        width: 66
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 620487c8f333fa460800000000000000
+      internalID: 7255073872749805606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 513
+        width: 70
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92705414a9b4074e0800000000000000
+      internalID: -1986004309778299095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 513
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3410f744041a2b30800000000000000
+      internalID: 4263242005878936639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 513
+        width: 66
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 222d66280fc6e6590800000000000000
+      internalID: -7679080534384389598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 515
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a40e18abea25011f0800000000000000
+      internalID: -1076269400534687670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 515
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa0c22dcf25759870800000000000000
+      internalID: 8688979904246759599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 515
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b98e685c482682db0800000000000000
+      internalID: -4816491479083587429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 515
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a4ea7b5eb92f900800000000000000
+      internalID: 716806701636799083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 515
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a168e73d56f26c0800000000000000
+      internalID: -4165999171259196791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 515
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c822cdd625c4d60800000000000000
+      internalID: 7875760480162319386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 513
+        width: 70
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c525e63dbe2ad3e80800000000000000
+      internalID: -8197216612996197796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 513
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91e5ce0cfc23a2160800000000000000
+      internalID: 7001464438577192473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 513
+        width: 66
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c4db7cc5eb184740800000000000000
+      internalID: 5136386048808178880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 513
+        width: 70
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa1f1d1f69d55d00800000000000000
+      internalID: 960913166766643962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 513
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e967dfd2024690150800000000000000
+      internalID: 5839308481235875486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 513
+        width: 66
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c4474a0257305300800000000000000
+      internalID: 238751605749925064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 513
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bea90c84ea476a970800000000000000
+      internalID: 8765822016616962795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 515
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bc1d1c3dcbb66af0800000000000000
+      internalID: -403428626451850055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 511
+        width: 32
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 290b577982f06c580800000000000000
+      internalID: -8807335354262245230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 513
+        width: 32
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a53a3dbf148f320800000000000000
+      internalID: 2591894135395015275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 2145
+        y: 515
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8f0b62586bfa08f0800000000000000
+      internalID: -573369577058398324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 511
+        width: 32
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c79e5e6eebeee680800000000000000
+      internalID: -8723776018883635261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 447
+        width: 417
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c62489539d8ece0800000000000000
+      internalID: -1375610861950702469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1761
+        y: 387
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea169ff6668902750800000000000000
+      internalID: 6278185446287172014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 385
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49698d093aa541ce0800000000000000
+      internalID: -1435422722668063084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 387
+        width: 68
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e110d14b74e0aa410800000000000000
+      internalID: 1489018327926636830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 385
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321dda82dc1e57d50800000000000000
+      internalID: 6734537089069469987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 385
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3a7b416ec1c913e0800000000000000
+      internalID: -2082420260542383556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 387
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 606fb43fe30d41ae0800000000000000
+      internalID: -1579408600511810042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 387
+        width: 68
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f43d8f7233f09a0800000000000000
+      internalID: -6264732309877731489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 387
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2704d854aa69dff60800000000000000
+      internalID: 8069771765373288562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 389
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc7fc071fd82b540800000000000000
+      internalID: 5022232602590805242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 391
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32ce9a8f190cc9c0800000000000000
+      internalID: -3905736745762766275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 389
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ff240ce47d9a4a0800000000000000
+      internalID: -6581492647192232159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 387
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d88518cbd54f6f5a0800000000000000
+      internalID: -6487729529748891507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 385
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a267e147e72f89500800000000000000
+      internalID: 403338791577613866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 385
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aec25f0c87a5874c0800000000000000
+      internalID: -4289579170390528790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 387
+        width: 68
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c98a6a086616930800000000000000
+      internalID: 4134698635640740915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 385
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8093614ab7129a120800000000000000
+      internalID: 2425506689233336584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 385
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 639e6ad19c2092790800000000000000
+      internalID: -7554503837128136394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 387
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0177f7b32d73e9e20800000000000000
+      internalID: 3359183748145837840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 387
+        width: 68
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b86b290e3af3f320800000000000000
+      internalID: 2590689355016923318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 389
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 648ea37c8aab47f00800000000000000
+      internalID: 1113720241927153734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 1953
+        y: 393
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3668e91eedefeea30800000000000000
+      internalID: 4246611731878413923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 389
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f65126083e2d34890800000000000000
+      internalID: -7474899081951570577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 2145
+        y: 389
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1034fa29eae4cdd50800000000000000
+      internalID: 6763367252095877889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 385
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca6291c657183750800000000000000
+      internalID: 6284798941377751753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 319
+        width: 417
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e18b10935e854e120800000000000000
+      internalID: 2442174639468820510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddaca68b0480b0220800000000000000
+      internalID: 2453063496098302685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e0514add7183b90800000000000000
+      internalID: -7262028158426870120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d72cf0c4cdc7bc2d0800000000000000
+      internalID: -3257372619861671299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e99f6fd26fd728200800000000000000
+      internalID: 180845431334828446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a3d98b3c1a1ef30800000000000000
+      internalID: 4603138156137364096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e11f002d4662d5f0800000000000000
+      internalID: -733411307871596063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 259
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12a72f6af0b2a9840800000000000000
+      internalID: 5231541263369665057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_89
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 259
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf01cad6993a13c0800000000000000
+      internalID: -4388131566841163814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_90
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 259
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6faea8a8cea5a10b0800000000000000
+      internalID: -5757189201656616202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_91
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 259
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3001096064d9f000800000000000000
+      internalID: 70320779744575546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_92
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 259
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d3e68bdf43aec10800000000000000
+      internalID: 2083536041937878428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_93
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 259
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77f022b08b824100800000000000000
+      internalID: 90788327361410942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_94
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c354deba36633af80800000000000000
+      internalID: -8096567903367903940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_95
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41c7f9432dd3a5720800000000000000
+      internalID: 2835646888418442260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_96
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef41f8adb40b2cc0800000000000000
+      internalID: -3734886253343977489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_97
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 807f28b06e9352210800000000000000
+      internalID: 1307514927019390728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_98
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e18106f92e571710800000000000000
+      internalID: 1663902121650651625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_99
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2ee46877f8e03e50800000000000000
+      internalID: 6787180788021784107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_100
+      rect:
+        serializedVersion: 2
+        x: 1761
+        y: 259
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d785ae687d69b00800000000000000
+      internalID: 835091755381063046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_101
+      rect:
+        serializedVersion: 2
+        x: 1857
+        y: 259
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c4a5e167226a1340800000000000000
+      internalID: 4835285071221335241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_102
+      rect:
+        serializedVersion: 2
+        x: 1953
+        y: 259
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58069360680fc2e20800000000000000
+      internalID: 3327298683140661381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_103
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 259
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca90555066f03b10800000000000000
+      internalID: 1959336731514804928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_104
+      rect:
+        serializedVersion: 2
+        x: 2145
+        y: 259
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b49cebb717d7a60800000000000000
+      internalID: 7673414116404972397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_105
+      rect:
+        serializedVersion: 2
+        x: 2241
+        y: 259
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00059314e9403ec40800000000000000
+      internalID: 5540277044341460992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_106
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191
+        width: 417
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59b2f1ec040e4fe30800000000000000
+      internalID: 4536497293609610133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_107
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 129
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3ee0ca203849b9f0800000000000000
+      internalID: -452250915861107142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_108
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 129
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b87ad3139b803d7d0800000000000000
+      internalID: -2894960543981000821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_109
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 129
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd5465cc6b4d00040800000000000000
+      internalID: 4611919900004730331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_110
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 129
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 582d3625f92d242d0800000000000000
+      internalID: -3295840395557875067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_111
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 129
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63a54532fa3a8b170800000000000000
+      internalID: 8194479494607952438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_112
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 129
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f1a2d1a4ce04020800000000000000
+      internalID: 2324117210784210766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_113
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 129
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa9f9061909a528a0800000000000000
+      internalID: -6330467844709811793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_114
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 129
+        width: 70
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5caeae1da4b67a40800000000000000
+      internalID: 5365674661695630431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_115
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 129
+        width: 70
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fec8122fd5ca240800000000000000
+      internalID: 4804318197023829791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_116
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 131
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 576468bd6c54185f0800000000000000
+      internalID: -756246542032681355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_117
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 131
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6f178cb2fc3ad30800000000000000
+      internalID: 4441621444470896345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_118
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 131
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44cfa0f21b5fc8660800000000000000
+      internalID: 7389551229955406916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 417
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4bf3c4c722841120800000000000000
+      internalID: 2383673210102348620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_120
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff71bb3826033750800000000000000
+      internalID: 6283372674981920756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_121
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 0
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc4cd4b5c21ae8f0800000000000000
+      internalID: -510574967400936201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_122
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 0
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eb2960820eb1a980800000000000000
+      internalID: -8529327301309420570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_123
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef797a738231ca50800000000000000
+      internalID: 6539563674195558380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_124
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 0
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9272a480215c4150800000000000000
+      internalID: 5858146415408214684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_125
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 0
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b90b5abc7da6bb0800000000000000
+      internalID: -4941900371427550456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_126
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 0
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e0cc925a47f0ded0800000000000000
+      internalID: -2391139503548088095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_Labrador_Dark_Brown_32x32_127
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 0
+        width: 30
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a5f3e2b3841f83a0800000000000000
+      internalID: -6661082767983118935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dog_Labrador_Dark_Brown_32x32_0: -2703779127850660327
+      Dog_Labrador_Dark_Brown_32x32_1: 8036345251220346061
+      Dog_Labrador_Dark_Brown_32x32_10: 3260022560521115006
+      Dog_Labrador_Dark_Brown_32x32_100: 835091755381063046
+      Dog_Labrador_Dark_Brown_32x32_101: 4835285071221335241
+      Dog_Labrador_Dark_Brown_32x32_102: 3327298683140661381
+      Dog_Labrador_Dark_Brown_32x32_103: 1959336731514804928
+      Dog_Labrador_Dark_Brown_32x32_104: 7673414116404972397
+      Dog_Labrador_Dark_Brown_32x32_105: 5540277044341460992
+      Dog_Labrador_Dark_Brown_32x32_106: 4536497293609610133
+      Dog_Labrador_Dark_Brown_32x32_107: -452250915861107142
+      Dog_Labrador_Dark_Brown_32x32_108: -2894960543981000821
+      Dog_Labrador_Dark_Brown_32x32_109: 4611919900004730331
+      Dog_Labrador_Dark_Brown_32x32_11: -5913666649383593319
+      Dog_Labrador_Dark_Brown_32x32_110: -3295840395557875067
+      Dog_Labrador_Dark_Brown_32x32_111: 8194479494607952438
+      Dog_Labrador_Dark_Brown_32x32_112: 2324117210784210766
+      Dog_Labrador_Dark_Brown_32x32_113: -6330467844709811793
+      Dog_Labrador_Dark_Brown_32x32_114: 5365674661695630431
+      Dog_Labrador_Dark_Brown_32x32_115: 4804318197023829791
+      Dog_Labrador_Dark_Brown_32x32_116: -756246542032681355
+      Dog_Labrador_Dark_Brown_32x32_117: 4441621444470896345
+      Dog_Labrador_Dark_Brown_32x32_118: 7389551229955406916
+      Dog_Labrador_Dark_Brown_32x32_119: 2383673210102348620
+      Dog_Labrador_Dark_Brown_32x32_12: -7366625652089387129
+      Dog_Labrador_Dark_Brown_32x32_120: 6283372674981920756
+      Dog_Labrador_Dark_Brown_32x32_121: -510574967400936201
+      Dog_Labrador_Dark_Brown_32x32_122: -8529327301309420570
+      Dog_Labrador_Dark_Brown_32x32_123: 6539563674195558380
+      Dog_Labrador_Dark_Brown_32x32_124: 5858146415408214684
+      Dog_Labrador_Dark_Brown_32x32_125: -4941900371427550456
+      Dog_Labrador_Dark_Brown_32x32_126: -2391139503548088095
+      Dog_Labrador_Dark_Brown_32x32_127: -6661082767983118935
+      Dog_Labrador_Dark_Brown_32x32_13: -6309752145560418051
+      Dog_Labrador_Dark_Brown_32x32_14: -6964429205722526448
+      Dog_Labrador_Dark_Brown_32x32_15: -3149622411150995301
+      Dog_Labrador_Dark_Brown_32x32_16: 6132680467750143582
+      Dog_Labrador_Dark_Brown_32x32_17: 8838904036233034505
+      Dog_Labrador_Dark_Brown_32x32_18: -3549558916708221514
+      Dog_Labrador_Dark_Brown_32x32_19: -3629289205923214021
+      Dog_Labrador_Dark_Brown_32x32_2: 8096148832305451701
+      Dog_Labrador_Dark_Brown_32x32_20: 1996956654865061455
+      Dog_Labrador_Dark_Brown_32x32_21: -4839852139125993873
+      Dog_Labrador_Dark_Brown_32x32_22: -2996833230632000920
+      Dog_Labrador_Dark_Brown_32x32_23: -405390966092310234
+      Dog_Labrador_Dark_Brown_32x32_24: 5178464954111516992
+      Dog_Labrador_Dark_Brown_32x32_25: -7649065717090744265
+      Dog_Labrador_Dark_Brown_32x32_26: 1352124320492604215
+      Dog_Labrador_Dark_Brown_32x32_27: 7986756596316306541
+      Dog_Labrador_Dark_Brown_32x32_28: 8370697818262970824
+      Dog_Labrador_Dark_Brown_32x32_29: -6499426759340227317
+      Dog_Labrador_Dark_Brown_32x32_3: -1765641387564054609
+      Dog_Labrador_Dark_Brown_32x32_30: -4201525568426634305
+      Dog_Labrador_Dark_Brown_32x32_31: -1974201727308966303
+      Dog_Labrador_Dark_Brown_32x32_32: 7921786863945389454
+      Dog_Labrador_Dark_Brown_32x32_33: 8413412034777743980
+      Dog_Labrador_Dark_Brown_32x32_34: 7255073872749805606
+      Dog_Labrador_Dark_Brown_32x32_35: -1986004309778299095
+      Dog_Labrador_Dark_Brown_32x32_36: 4263242005878936639
+      Dog_Labrador_Dark_Brown_32x32_37: -7679080534384389598
+      Dog_Labrador_Dark_Brown_32x32_38: -1076269400534687670
+      Dog_Labrador_Dark_Brown_32x32_39: 8688979904246759599
+      Dog_Labrador_Dark_Brown_32x32_4: 9209433746120532004
+      Dog_Labrador_Dark_Brown_32x32_40: -4816491479083587429
+      Dog_Labrador_Dark_Brown_32x32_41: 716806701636799083
+      Dog_Labrador_Dark_Brown_32x32_42: -4165999171259196791
+      Dog_Labrador_Dark_Brown_32x32_43: 7875760480162319386
+      Dog_Labrador_Dark_Brown_32x32_44: -8197216612996197796
+      Dog_Labrador_Dark_Brown_32x32_45: 7001464438577192473
+      Dog_Labrador_Dark_Brown_32x32_46: 5136386048808178880
+      Dog_Labrador_Dark_Brown_32x32_47: 960913166766643962
+      Dog_Labrador_Dark_Brown_32x32_48: 5839308481235875486
+      Dog_Labrador_Dark_Brown_32x32_49: 238751605749925064
+      Dog_Labrador_Dark_Brown_32x32_5: -7175958199628998869
+      Dog_Labrador_Dark_Brown_32x32_50: 8765822016616962795
+      Dog_Labrador_Dark_Brown_32x32_51: -403428626451850055
+      Dog_Labrador_Dark_Brown_32x32_52: -8807335354262245230
+      Dog_Labrador_Dark_Brown_32x32_53: 2591894135395015275
+      Dog_Labrador_Dark_Brown_32x32_54: -573369577058398324
+      Dog_Labrador_Dark_Brown_32x32_55: -8723776018883635261
+      Dog_Labrador_Dark_Brown_32x32_56: -1375610861950702469
+      Dog_Labrador_Dark_Brown_32x32_57: 6278185446287172014
+      Dog_Labrador_Dark_Brown_32x32_58: -1435422722668063084
+      Dog_Labrador_Dark_Brown_32x32_59: 1489018327926636830
+      Dog_Labrador_Dark_Brown_32x32_6: 4335510630135726460
+      Dog_Labrador_Dark_Brown_32x32_60: 6734537089069469987
+      Dog_Labrador_Dark_Brown_32x32_61: -2082420260542383556
+      Dog_Labrador_Dark_Brown_32x32_62: -1579408600511810042
+      Dog_Labrador_Dark_Brown_32x32_63: -6264732309877731489
+      Dog_Labrador_Dark_Brown_32x32_64: 8069771765373288562
+      Dog_Labrador_Dark_Brown_32x32_65: 5022232602590805242
+      Dog_Labrador_Dark_Brown_32x32_66: -3905736745762766275
+      Dog_Labrador_Dark_Brown_32x32_67: -6581492647192232159
+      Dog_Labrador_Dark_Brown_32x32_68: -6487729529748891507
+      Dog_Labrador_Dark_Brown_32x32_69: 403338791577613866
+      Dog_Labrador_Dark_Brown_32x32_7: 2846648809241097214
+      Dog_Labrador_Dark_Brown_32x32_70: -4289579170390528790
+      Dog_Labrador_Dark_Brown_32x32_71: 4134698635640740915
+      Dog_Labrador_Dark_Brown_32x32_72: 2425506689233336584
+      Dog_Labrador_Dark_Brown_32x32_73: -7554503837128136394
+      Dog_Labrador_Dark_Brown_32x32_74: 3359183748145837840
+      Dog_Labrador_Dark_Brown_32x32_75: 2590689355016923318
+      Dog_Labrador_Dark_Brown_32x32_76: 1113720241927153734
+      Dog_Labrador_Dark_Brown_32x32_77: 4246611731878413923
+      Dog_Labrador_Dark_Brown_32x32_78: -7474899081951570577
+      Dog_Labrador_Dark_Brown_32x32_79: 6763367252095877889
+      Dog_Labrador_Dark_Brown_32x32_8: 8337636237938790779
+      Dog_Labrador_Dark_Brown_32x32_80: 6284798941377751753
+      Dog_Labrador_Dark_Brown_32x32_81: 2442174639468820510
+      Dog_Labrador_Dark_Brown_32x32_82: 2453063496098302685
+      Dog_Labrador_Dark_Brown_32x32_83: -7262028158426870120
+      Dog_Labrador_Dark_Brown_32x32_84: -3257372619861671299
+      Dog_Labrador_Dark_Brown_32x32_85: 180845431334828446
+      Dog_Labrador_Dark_Brown_32x32_86: 4603138156137364096
+      Dog_Labrador_Dark_Brown_32x32_87: -733411307871596063
+      Dog_Labrador_Dark_Brown_32x32_88: 5231541263369665057
+      Dog_Labrador_Dark_Brown_32x32_89: -4388131566841163814
+      Dog_Labrador_Dark_Brown_32x32_9: 3051063402726763880
+      Dog_Labrador_Dark_Brown_32x32_90: -5757189201656616202
+      Dog_Labrador_Dark_Brown_32x32_91: 70320779744575546
+      Dog_Labrador_Dark_Brown_32x32_92: 2083536041937878428
+      Dog_Labrador_Dark_Brown_32x32_93: 90788327361410942
+      Dog_Labrador_Dark_Brown_32x32_94: -8096567903367903940
+      Dog_Labrador_Dark_Brown_32x32_95: 2835646888418442260
+      Dog_Labrador_Dark_Brown_32x32_96: -3734886253343977489
+      Dog_Labrador_Dark_Brown_32x32_97: 1307514927019390728
+      Dog_Labrador_Dark_Brown_32x32_98: 1663902121650651625
+      Dog_Labrador_Dark_Brown_32x32_99: 6787180788021784107
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

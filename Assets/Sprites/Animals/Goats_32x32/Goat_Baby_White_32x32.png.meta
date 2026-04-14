@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: 51dc3edf2213f1840a3ae157b9c73f2b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5878765835580220903
+    second: Goat_Baby_White_32x32_0
+  - first:
+      213: -2175186731271729212
+    second: Goat_Baby_White_32x32_1
+  - first:
+      213: -1191997533996038711
+    second: Goat_Baby_White_32x32_2
+  - first:
+      213: 7237968496339554219
+    second: Goat_Baby_White_32x32_3
+  - first:
+      213: -5020074298549980941
+    second: Goat_Baby_White_32x32_4
+  - first:
+      213: 3703670625657953477
+    second: Goat_Baby_White_32x32_5
+  - first:
+      213: 4508835733136189583
+    second: Goat_Baby_White_32x32_6
+  - first:
+      213: 4884010503518843318
+    second: Goat_Baby_White_32x32_7
+  - first:
+      213: 8685524689272443534
+    second: Goat_Baby_White_32x32_8
+  - first:
+      213: -1711743916615902546
+    second: Goat_Baby_White_32x32_9
+  - first:
+      213: 4589653194818211367
+    second: Goat_Baby_White_32x32_10
+  - first:
+      213: -1007356746352088241
+    second: Goat_Baby_White_32x32_11
+  - first:
+      213: 5781776379707339093
+    second: Goat_Baby_White_32x32_12
+  - first:
+      213: 2192712398663269122
+    second: Goat_Baby_White_32x32_13
+  - first:
+      213: 4280963602512714367
+    second: Goat_Baby_White_32x32_14
+  - first:
+      213: 8216688772939325631
+    second: Goat_Baby_White_32x32_15
+  - first:
+      213: 5948598938976764237
+    second: Goat_Baby_White_32x32_16
+  - first:
+      213: 5477093030435956922
+    second: Goat_Baby_White_32x32_17
+  - first:
+      213: 5663194234738731329
+    second: Goat_Baby_White_32x32_18
+  - first:
+      213: -2182646507046994961
+    second: Goat_Baby_White_32x32_19
+  - first:
+      213: 6069988295175278435
+    second: Goat_Baby_White_32x32_20
+  - first:
+      213: 5095636049411864055
+    second: Goat_Baby_White_32x32_21
+  - first:
+      213: 5653379600282674549
+    second: Goat_Baby_White_32x32_22
+  - first:
+      213: 6701800273601641906
+    second: Goat_Baby_White_32x32_23
+  - first:
+      213: -3395536763772743837
+    second: Goat_Baby_White_32x32_24
+  - first:
+      213: 6595729706388264466
+    second: Goat_Baby_White_32x32_25
+  - first:
+      213: -5085088804365584652
+    second: Goat_Baby_White_32x32_26
+  - first:
+      213: -1561173941487398973
+    second: Goat_Baby_White_32x32_27
+  - first:
+      213: 3049977712013861679
+    second: Goat_Baby_White_32x32_28
+  - first:
+      213: 316375963302759586
+    second: Goat_Baby_White_32x32_29
+  - first:
+      213: 6082541455888097626
+    second: Goat_Baby_White_32x32_30
+  - first:
+      213: 277683848420810796
+    second: Goat_Baby_White_32x32_31
+  - first:
+      213: -3645730601014535729
+    second: Goat_Baby_White_32x32_32
+  - first:
+      213: 2061698522252729694
+    second: Goat_Baby_White_32x32_33
+  - first:
+      213: -7820397515652409357
+    second: Goat_Baby_White_32x32_34
+  - first:
+      213: -7077678528260339719
+    second: Goat_Baby_White_32x32_35
+  - first:
+      213: -2066636271312766560
+    second: Goat_Baby_White_32x32_36
+  - first:
+      213: -945293715767949302
+    second: Goat_Baby_White_32x32_37
+  - first:
+      213: -5038008049211326973
+    second: Goat_Baby_White_32x32_38
+  - first:
+      213: -8002144952832344255
+    second: Goat_Baby_White_32x32_39
+  - first:
+      213: 2151679194289978951
+    second: Goat_Baby_White_32x32_40
+  - first:
+      213: 5446520807276192471
+    second: Goat_Baby_White_32x32_41
+  - first:
+      213: -3065217528479318482
+    second: Goat_Baby_White_32x32_42
+  - first:
+      213: -3595271827661049501
+    second: Goat_Baby_White_32x32_43
+  - first:
+      213: 8779618884622635672
+    second: Goat_Baby_White_32x32_44
+  - first:
+      213: 6457323091725553421
+    second: Goat_Baby_White_32x32_45
+  - first:
+      213: 8148493157463358849
+    second: Goat_Baby_White_32x32_46
+  - first:
+      213: 3358751408365106764
+    second: Goat_Baby_White_32x32_47
+  - first:
+      213: 653472420355174515
+    second: Goat_Baby_White_32x32_48
+  - first:
+      213: -4089952079865073586
+    second: Goat_Baby_White_32x32_49
+  - first:
+      213: -4624205073011383591
+    second: Goat_Baby_White_32x32_50
+  - first:
+      213: 3473446608869766658
+    second: Goat_Baby_White_32x32_51
+  - first:
+      213: -8979974608382972712
+    second: Goat_Baby_White_32x32_52
+  - first:
+      213: -7521716271251673634
+    second: Goat_Baby_White_32x32_53
+  - first:
+      213: 6993735854832175818
+    second: Goat_Baby_White_32x32_54
+  - first:
+      213: 319745153450440975
+    second: Goat_Baby_White_32x32_55
+  - first:
+      213: 5858433752130866488
+    second: Goat_Baby_White_32x32_56
+  - first:
+      213: -7123811983283502697
+    second: Goat_Baby_White_32x32_57
+  - first:
+      213: 6386819771576367429
+    second: Goat_Baby_White_32x32_58
+  - first:
+      213: -4561454323521948307
+    second: Goat_Baby_White_32x32_59
+  - first:
+      213: -5095487576024095500
+    second: Goat_Baby_White_32x32_60
+  - first:
+      213: 5235295195617967417
+    second: Goat_Baby_White_32x32_61
+  - first:
+      213: 7023617255284951716
+    second: Goat_Baby_White_32x32_62
+  - first:
+      213: 5947055084299196681
+    second: Goat_Baby_White_32x32_63
+  - first:
+      213: -7440701307707759946
+    second: Goat_Baby_White_32x32_64
+  - first:
+      213: 6741021580393109246
+    second: Goat_Baby_White_32x32_65
+  - first:
+      213: 1029424889126625061
+    second: Goat_Baby_White_32x32_66
+  - first:
+      213: -6057201124395358154
+    second: Goat_Baby_White_32x32_67
+  - first:
+      213: -4492645594357304150
+    second: Goat_Baby_White_32x32_68
+  - first:
+      213: 8806896704818915516
+    second: Goat_Baby_White_32x32_69
+  - first:
+      213: 6171083007089956576
+    second: Goat_Baby_White_32x32_70
+  - first:
+      213: -1064603264141647219
+    second: Goat_Baby_White_32x32_71
+  - first:
+      213: 8245183952450498418
+    second: Goat_Baby_White_32x32_72
+  - first:
+      213: 894839882297224981
+    second: Goat_Baby_White_32x32_73
+  - first:
+      213: -7348132944408256167
+    second: Goat_Baby_White_32x32_74
+  - first:
+      213: 3465210826447901640
+    second: Goat_Baby_White_32x32_75
+  - first:
+      213: -5877857092170786241
+    second: Goat_Baby_White_32x32_76
+  - first:
+      213: -8326702758417644160
+    second: Goat_Baby_White_32x32_77
+  - first:
+      213: -5002577778166144439
+    second: Goat_Baby_White_32x32_78
+  - first:
+      213: 1988184510163756557
+    second: Goat_Baby_White_32x32_79
+  - first:
+      213: 82562200240672261
+    second: Goat_Baby_White_32x32_80
+  - first:
+      213: 3025586166128139684
+    second: Goat_Baby_White_32x32_81
+  - first:
+      213: -2126003491860356812
+    second: Goat_Baby_White_32x32_82
+  - first:
+      213: 1316519716701875100
+    second: Goat_Baby_White_32x32_83
+  - first:
+      213: 7767902663028331316
+    second: Goat_Baby_White_32x32_84
+  - first:
+      213: -8841732156193613297
+    second: Goat_Baby_White_32x32_85
+  - first:
+      213: 6259571980970295737
+    second: Goat_Baby_White_32x32_86
+  - first:
+      213: -4318833877913403406
+    second: Goat_Baby_White_32x32_87
+  - first:
+      213: 1371982665996946022
+    second: Goat_Baby_White_32x32_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 191
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ad98c9e9d6a6ea0800000000000000
+      internalID: -5878765835580220903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 191
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cfc76a413f20d1e0800000000000000
+      internalID: -2175186731271729212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 191
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c5460dee8c257fe0800000000000000
+      internalID: -1191997533996038711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 193
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baf89cfbffd627460800000000000000
+      internalID: 7237968496339554219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f03cd0e50d155ab0800000000000000
+      internalID: -5020074298549980941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc1467afc4166330800000000000000
+      internalID: 3703670625657953477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 191
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f88ab20e53a929e30800000000000000
+      internalID: 4508835733136189583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b174852dad77c340800000000000000
+      internalID: 4884010503518843318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8218ffdfae298870800000000000000
+      internalID: 8685524689272443534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaa5caf1af9ae38e0800000000000000
+      internalID: -1711743916615902546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72e406f7349b1bf30800000000000000
+      internalID: 4589653194818211367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b279b50662502f0800000000000000
+      internalID: -1007356746352088241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5513333fbfefc3050800000000000000
+      internalID: 5781776379707339093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b3be02f441e6e10800000000000000
+      internalID: 2192712398663269122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a952807b9096b30800000000000000
+      internalID: 4280963602512714367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb02df4b7ea870270800000000000000
+      internalID: 8216688772939325631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d41c9fcc73bad8250800000000000000
+      internalID: 5948598938976764237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab827e0a71b820c40800000000000000
+      internalID: 5477093030435956922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14964afc625b79e40800000000000000
+      internalID: 5663194234738731329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 127
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb7735e09ea5b1e0800000000000000
+      internalID: -2182646507046994961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 127
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f83bcb13eec3450800000000000000
+      internalID: 6069988295175278435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f57ed53df557b640800000000000000
+      internalID: 5095636049411864055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 575e9472bc6d47e40800000000000000
+      internalID: 5653379600282674549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 127
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bd34a757d3910d50800000000000000
+      internalID: 6701800273601641906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 127
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36fcb8dbd41a0e0d0800000000000000
+      internalID: -3395536763772743837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 127
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21693c7e83db88b50800000000000000
+      internalID: 6595729706388264466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 127
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f63974aca22e69b0800000000000000
+      internalID: -5085088804365584652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 127
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cf0c095298955ae0800000000000000
+      internalID: -1561173941487398973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 127
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f23e171d192b35a20800000000000000
+      internalID: 3049977712013861679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac022c234ef36400800000000000000
+      internalID: 316375963302759586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a512cc93a37896450800000000000000
+      internalID: 6082541455888097626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 127
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c206cf82df78ad300800000000000000
+      internalID: 277683848420810796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 127
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc9d1c39553c76dc0800000000000000
+      internalID: -3645730601014535729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d52d4f1ef9c9c10800000000000000
+      internalID: 2061698522252729694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 127
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f7d03dc4ed587390800000000000000
+      internalID: -7820397515652409357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 129
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f702a0b0e807cd90800000000000000
+      internalID: -7077678528260339719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 129
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a9f670c245d153e0800000000000000
+      internalID: -2066636271312766560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 129
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a080e37bf54a1e2f0800000000000000
+      internalID: -945293715767949302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 129
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30e333b2f56651ab0800000000000000
+      internalID: -5038008049211326973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 129
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f3e35009ba2f090800000000000000
+      internalID: -8002144952832344255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 129
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74eb04eb3dc4cdd10800000000000000
+      internalID: 2151679194289978951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 65
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d2a87b31dde59b40800000000000000
+      internalID: 5446520807276192471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 65
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2e70b7e5e82675d0800000000000000
+      internalID: -3065217528479318482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 65
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3613b4142570b1ec0800000000000000
+      internalID: -3595271827661049501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 65
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8925e31fbd877d970800000000000000
+      internalID: 8779618884622635672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 65
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0f8a3ab3250d9950800000000000000
+      internalID: 6457323091725553421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 65
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18dfd49aa53451170800000000000000
+      internalID: 8148493157463358849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 63
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c46f1784c9eac9e20800000000000000
+      internalID: 3358751408365106764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 63
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 370f8cd34b9911900800000000000000
+      internalID: 653472420355174515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 63
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e40b54bb0429d37c0800000000000000
+      internalID: -4089952079865073586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 63
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d2e8967cf583dfb0800000000000000
+      internalID: -4624205073011383591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 63
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 206b7f3a949243030800000000000000
+      internalID: 3473446608869766658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 63
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc2e4feba8b06380800000000000000
+      internalID: -8979974608382972712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 63
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edda4ce27ee7d9790800000000000000
+      internalID: -7521716271251673634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 63
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca4f20a4bdbe0160800000000000000
+      internalID: 6993735854832175818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f09f012e586ff6400800000000000000
+      internalID: 319745153450440975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 63
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d4bef45765d4150800000000000000
+      internalID: 5858433752130866488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 63
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79147b9aeb2232d90800000000000000
+      internalID: -7123811983283502697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 63
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54930415eba82a850800000000000000
+      internalID: 6386819771576367429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 65
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65fd4bd57572b0c0800000000000000
+      internalID: -4561454323521948307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 67
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f4eaa1fb013949b0800000000000000
+      internalID: -5095487576024095500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 63
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d3e1d1e3187a840800000000000000
+      internalID: 5235295195617967417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 65
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa40935ea6e87160800000000000000
+      internalID: 7023617255284951716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 67
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 909955f171f288250800000000000000
+      internalID: 5947055084299196681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 63
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b26b4a45915db890800000000000000
+      internalID: -7440701307707759946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef6d292796bec8d50800000000000000
+      internalID: 6741021580393109246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52f96578b70494e00800000000000000
+      internalID: 1029424889126625061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 0
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63861577baf70fba0800000000000000
+      internalID: -6057201124395358154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 0
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4fb9e82aae6a1c0800000000000000
+      internalID: -4492645594357304150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 0
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb82a4064e1683a70800000000000000
+      internalID: 8806896704818915516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 0
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6db059c4714a550800000000000000
+      internalID: 6171083007089956576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 0
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d82ad16c8f4c931f0800000000000000
+      internalID: -1064603264141647219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 0
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27f2091be17cc6270800000000000000
+      internalID: 8245183952450498418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 0
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51fad23c12c1b6c00800000000000000
+      internalID: 894839882297224981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 0
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9516336e400360a90800000000000000
+      internalID: -7348132944408256167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 0
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c3d34e13e6e61030800000000000000
+      internalID: 3465210826447901640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 0
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a56aced18ad6ea0800000000000000
+      internalID: -5877857092170786241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 0
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 085404e35fb917c80800000000000000
+      internalID: -8326702758417644160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 0
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942e42bf306439ab0800000000000000
+      internalID: -5002577778166144439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 0
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d06ae343743779b10800000000000000
+      internalID: 1988184510163756557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 0
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50e483932e1552100800000000000000
+      internalID: 82562200240672261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 0
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ad576d769a0df920800000000000000
+      internalID: 3025586166128139684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 0
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4316c64961bee72e0800000000000000
+      internalID: -2126003491860356812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 1
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b20d505b7354210800000000000000
+      internalID: 1316519716701875100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 1
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4335d9fd0522dcb60800000000000000
+      internalID: 7767902663028331316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 1
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a5eee037bdb4580800000000000000
+      internalID: -8841732156193613297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 1
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b109b35d877ed650800000000000000
+      internalID: 6259571980970295737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 1
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff7c0f587b6014c0800000000000000
+      internalID: -4318833877913403406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goat_Baby_White_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 1
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66acdb437f24a0310800000000000000
+      internalID: 1371982665996946022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Goat_Baby_White_32x32_0: -5878765835580220903
+      Goat_Baby_White_32x32_1: -2175186731271729212
+      Goat_Baby_White_32x32_10: 4589653194818211367
+      Goat_Baby_White_32x32_11: -1007356746352088241
+      Goat_Baby_White_32x32_12: 5781776379707339093
+      Goat_Baby_White_32x32_13: 2192712398663269122
+      Goat_Baby_White_32x32_14: 4280963602512714367
+      Goat_Baby_White_32x32_15: 8216688772939325631
+      Goat_Baby_White_32x32_16: 5948598938976764237
+      Goat_Baby_White_32x32_17: 5477093030435956922
+      Goat_Baby_White_32x32_18: 5663194234738731329
+      Goat_Baby_White_32x32_19: -2182646507046994961
+      Goat_Baby_White_32x32_2: -1191997533996038711
+      Goat_Baby_White_32x32_20: 6069988295175278435
+      Goat_Baby_White_32x32_21: 5095636049411864055
+      Goat_Baby_White_32x32_22: 5653379600282674549
+      Goat_Baby_White_32x32_23: 6701800273601641906
+      Goat_Baby_White_32x32_24: -3395536763772743837
+      Goat_Baby_White_32x32_25: 6595729706388264466
+      Goat_Baby_White_32x32_26: -5085088804365584652
+      Goat_Baby_White_32x32_27: -1561173941487398973
+      Goat_Baby_White_32x32_28: 3049977712013861679
+      Goat_Baby_White_32x32_29: 316375963302759586
+      Goat_Baby_White_32x32_3: 7237968496339554219
+      Goat_Baby_White_32x32_30: 6082541455888097626
+      Goat_Baby_White_32x32_31: 277683848420810796
+      Goat_Baby_White_32x32_32: -3645730601014535729
+      Goat_Baby_White_32x32_33: 2061698522252729694
+      Goat_Baby_White_32x32_34: -7820397515652409357
+      Goat_Baby_White_32x32_35: -7077678528260339719
+      Goat_Baby_White_32x32_36: -2066636271312766560
+      Goat_Baby_White_32x32_37: -945293715767949302
+      Goat_Baby_White_32x32_38: -5038008049211326973
+      Goat_Baby_White_32x32_39: -8002144952832344255
+      Goat_Baby_White_32x32_4: -5020074298549980941
+      Goat_Baby_White_32x32_40: 2151679194289978951
+      Goat_Baby_White_32x32_41: 5446520807276192471
+      Goat_Baby_White_32x32_42: -3065217528479318482
+      Goat_Baby_White_32x32_43: -3595271827661049501
+      Goat_Baby_White_32x32_44: 8779618884622635672
+      Goat_Baby_White_32x32_45: 6457323091725553421
+      Goat_Baby_White_32x32_46: 8148493157463358849
+      Goat_Baby_White_32x32_47: 3358751408365106764
+      Goat_Baby_White_32x32_48: 653472420355174515
+      Goat_Baby_White_32x32_49: -4089952079865073586
+      Goat_Baby_White_32x32_5: 3703670625657953477
+      Goat_Baby_White_32x32_50: -4624205073011383591
+      Goat_Baby_White_32x32_51: 3473446608869766658
+      Goat_Baby_White_32x32_52: -8979974608382972712
+      Goat_Baby_White_32x32_53: -7521716271251673634
+      Goat_Baby_White_32x32_54: 6993735854832175818
+      Goat_Baby_White_32x32_55: 319745153450440975
+      Goat_Baby_White_32x32_56: 5858433752130866488
+      Goat_Baby_White_32x32_57: -7123811983283502697
+      Goat_Baby_White_32x32_58: 6386819771576367429
+      Goat_Baby_White_32x32_59: -4561454323521948307
+      Goat_Baby_White_32x32_6: 4508835733136189583
+      Goat_Baby_White_32x32_60: -5095487576024095500
+      Goat_Baby_White_32x32_61: 5235295195617967417
+      Goat_Baby_White_32x32_62: 7023617255284951716
+      Goat_Baby_White_32x32_63: 5947055084299196681
+      Goat_Baby_White_32x32_64: -7440701307707759946
+      Goat_Baby_White_32x32_65: 6741021580393109246
+      Goat_Baby_White_32x32_66: 1029424889126625061
+      Goat_Baby_White_32x32_67: -6057201124395358154
+      Goat_Baby_White_32x32_68: -4492645594357304150
+      Goat_Baby_White_32x32_69: 8806896704818915516
+      Goat_Baby_White_32x32_7: 4884010503518843318
+      Goat_Baby_White_32x32_70: 6171083007089956576
+      Goat_Baby_White_32x32_71: -1064603264141647219
+      Goat_Baby_White_32x32_72: 8245183952450498418
+      Goat_Baby_White_32x32_73: 894839882297224981
+      Goat_Baby_White_32x32_74: -7348132944408256167
+      Goat_Baby_White_32x32_75: 3465210826447901640
+      Goat_Baby_White_32x32_76: -5877857092170786241
+      Goat_Baby_White_32x32_77: -8326702758417644160
+      Goat_Baby_White_32x32_78: -5002577778166144439
+      Goat_Baby_White_32x32_79: 1988184510163756557
+      Goat_Baby_White_32x32_8: 8685524689272443534
+      Goat_Baby_White_32x32_80: 82562200240672261
+      Goat_Baby_White_32x32_81: 3025586166128139684
+      Goat_Baby_White_32x32_82: -2126003491860356812
+      Goat_Baby_White_32x32_83: 1316519716701875100
+      Goat_Baby_White_32x32_84: 7767902663028331316
+      Goat_Baby_White_32x32_85: -8841732156193613297
+      Goat_Baby_White_32x32_86: 6259571980970295737
+      Goat_Baby_White_32x32_87: -4318833877913403406
+      Goat_Baby_White_32x32_88: 1371982665996946022
+      Goat_Baby_White_32x32_9: -1711743916615902546
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

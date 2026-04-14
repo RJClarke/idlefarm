@@ -359,4 +359,16 @@ public class AnimalManager : MonoBehaviour
             EquipAnimal(equippedID);
         }
     }
+
+    [ContextMenu("Add 100 Gems (Test)")]
+    private void TestAdd100Gems()
+    {
+        CurrencyManager.Instance.AddGems(100);
+    }
+
+    [ContextMenu("Add 1000 Gems (Test)")]
+    private void TestAdd1000Gems()
+    {
+        CurrencyManager.Instance.AddGems(1000);
+    }
 }

@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: 5b4961d861d852f4a86521e1eb9bac41
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1405368000136181978
+    second: Duck_White_32x32_0
+  - first:
+      213: -4789549873624798454
+    second: Duck_White_32x32_1
+  - first:
+      213: -7584235747874620665
+    second: Duck_White_32x32_2
+  - first:
+      213: -5690655010795166616
+    second: Duck_White_32x32_3
+  - first:
+      213: 1544026346674510488
+    second: Duck_White_32x32_4
+  - first:
+      213: 613830704698679896
+    second: Duck_White_32x32_5
+  - first:
+      213: 3383467185971656932
+    second: Duck_White_32x32_6
+  - first:
+      213: 8396307877056109725
+    second: Duck_White_32x32_7
+  - first:
+      213: 5595445069369965788
+    second: Duck_White_32x32_8
+  - first:
+      213: 3339072030968888640
+    second: Duck_White_32x32_9
+  - first:
+      213: 675605075113696348
+    second: Duck_White_32x32_10
+  - first:
+      213: -2552629197210284984
+    second: Duck_White_32x32_11
+  - first:
+      213: 2892142337124764188
+    second: Duck_White_32x32_12
+  - first:
+      213: -680681739378349914
+    second: Duck_White_32x32_13
+  - first:
+      213: 7389785004883771998
+    second: Duck_White_32x32_14
+  - first:
+      213: -672652382083221439
+    second: Duck_White_32x32_15
+  - first:
+      213: -1660563890098129767
+    second: Duck_White_32x32_16
+  - first:
+      213: -834733255563390470
+    second: Duck_White_32x32_17
+  - first:
+      213: 3515101442930084901
+    second: Duck_White_32x32_18
+  - first:
+      213: -8838243468235100648
+    second: Duck_White_32x32_19
+  - first:
+      213: 6427591062646812237
+    second: Duck_White_32x32_20
+  - first:
+      213: -4295798858564087603
+    second: Duck_White_32x32_21
+  - first:
+      213: 3494549106659869737
+    second: Duck_White_32x32_22
+  - first:
+      213: -4246888061849871085
+    second: Duck_White_32x32_23
+  - first:
+      213: -1858562310453303763
+    second: Duck_White_32x32_24
+  - first:
+      213: -4631872029933370429
+    second: Duck_White_32x32_25
+  - first:
+      213: -4184210797559360707
+    second: Duck_White_32x32_26
+  - first:
+      213: 6241427835192969255
+    second: Duck_White_32x32_27
+  - first:
+      213: 8078703806688013392
+    second: Duck_White_32x32_28
+  - first:
+      213: 6491046276052919378
+    second: Duck_White_32x32_29
+  - first:
+      213: -2671301703122842957
+    second: Duck_White_32x32_30
+  - first:
+      213: 8830479969271099800
+    second: Duck_White_32x32_31
+  - first:
+      213: -8506179207855919755
+    second: Duck_White_32x32_32
+  - first:
+      213: 8746876244206400224
+    second: Duck_White_32x32_33
+  - first:
+      213: 4913451344182848592
+    second: Duck_White_32x32_34
+  - first:
+      213: 7693096431742071870
+    second: Duck_White_32x32_35
+  - first:
+      213: -6248112945803032826
+    second: Duck_White_32x32_36
+  - first:
+      213: 5246381034931868227
+    second: Duck_White_32x32_37
+  - first:
+      213: -9007857053884064806
+    second: Duck_White_32x32_38
+  - first:
+      213: 6541174914830846144
+    second: Duck_White_32x32_39
+  - first:
+      213: -5628966196968589750
+    second: Duck_White_32x32_40
+  - first:
+      213: 8220115636305440849
+    second: Duck_White_32x32_41
+  - first:
+      213: -4600956153148115458
+    second: Duck_White_32x32_42
+  - first:
+      213: -5202672517185060297
+    second: Duck_White_32x32_43
+  - first:
+      213: 2050191757629331550
+    second: Duck_White_32x32_44
+  - first:
+      213: -6048828422447219602
+    second: Duck_White_32x32_45
+  - first:
+      213: -7463791145623102399
+    second: Duck_White_32x32_46
+  - first:
+      213: 7761117232818191281
+    second: Duck_White_32x32_47
+  - first:
+      213: -1972976207330348884
+    second: Duck_White_32x32_48
+  - first:
+      213: -9015606949043915180
+    second: Duck_White_32x32_49
+  - first:
+      213: 8908513280088919905
+    second: Duck_White_32x32_50
+  - first:
+      213: -3899637694565939080
+    second: Duck_White_32x32_51
+  - first:
+      213: -9204144787988884089
+    second: Duck_White_32x32_52
+  - first:
+      213: -7710244095790996769
+    second: Duck_White_32x32_53
+  - first:
+      213: -5412374021948864174
+    second: Duck_White_32x32_54
+  - first:
+      213: -8233056906615231457
+    second: Duck_White_32x32_55
+  - first:
+      213: -3044042958941786036
+    second: Duck_White_32x32_56
+  - first:
+      213: -2790765916170954763
+    second: Duck_White_32x32_57
+  - first:
+      213: 8819507784199680821
+    second: Duck_White_32x32_58
+  - first:
+      213: 8143681723538326441
+    second: Duck_White_32x32_59
+  - first:
+      213: -5409837465972658090
+    second: Duck_White_32x32_60
+  - first:
+      213: 4049586976034383435
+    second: Duck_White_32x32_61
+  - first:
+      213: 4955935728530526977
+    second: Duck_White_32x32_62
+  - first:
+      213: -4419793642233813554
+    second: Duck_White_32x32_63
+  - first:
+      213: 5050777454696736524
+    second: Duck_White_32x32_64
+  - first:
+      213: 5280204490881048568
+    second: Duck_White_32x32_65
+  - first:
+      213: -2101806214243915991
+    second: Duck_White_32x32_66
+  - first:
+      213: -797865610911402343
+    second: Duck_White_32x32_67
+  - first:
+      213: -6192657722280987608
+    second: Duck_White_32x32_68
+  - first:
+      213: -1960500291372852002
+    second: Duck_White_32x32_69
+  - first:
+      213: -2506756538445497369
+    second: Duck_White_32x32_70
+  - first:
+      213: -1721928028101396923
+    second: Duck_White_32x32_71
+  - first:
+      213: 1154806166184144919
+    second: Duck_White_32x32_72
+  - first:
+      213: -5837729217658519881
+    second: Duck_White_32x32_73
+  - first:
+      213: 2545504987355518272
+    second: Duck_White_32x32_74
+  - first:
+      213: -3203719707009128082
+    second: Duck_White_32x32_75
+  - first:
+      213: 2990662101667305991
+    second: Duck_White_32x32_76
+  - first:
+      213: 1394435017003858110
+    second: Duck_White_32x32_77
+  - first:
+      213: -5405122555772162846
+    second: Duck_White_32x32_78
+  - first:
+      213: 2894500226280398272
+    second: Duck_White_32x32_79
+  - first:
+      213: 6972275157782843834
+    second: Duck_White_32x32_80
+  - first:
+      213: -2297653895394873774
+    second: Duck_White_32x32_81
+  - first:
+      213: 773718416425291609
+    second: Duck_White_32x32_82
+  - first:
+      213: -7103596294983419789
+    second: Duck_White_32x32_83
+  - first:
+      213: -5284381150851298567
+    second: Duck_White_32x32_84
+  - first:
+      213: 2692689827167723294
+    second: Duck_White_32x32_85
+  - first:
+      213: 4500554898833278475
+    second: Duck_White_32x32_86
+  - first:
+      213: -4736926013742114143
+    second: Duck_White_32x32_87
+  - first:
+      213: -8242542682662910650
+    second: Duck_White_32x32_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Duck_White_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 199
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad871da00ced08310800000000000000
+      internalID: 1405368000136181978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 195
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0ba39c14c9188db0800000000000000
+      internalID: -4789549873624798454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 199
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b3d1335c16fb690800000000000000
+      internalID: -7584235747874620665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 197
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 864e1460b6bb601b0800000000000000
+      internalID: -5690655010795166616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ad06d18cb7d6510800000000000000
+      internalID: 1544026346674510488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 852eac116c3c48800800000000000000
+      internalID: 613830704698679896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 191
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e8f701ba7d74fe20800000000000000
+      internalID: 3383467185971656932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c5eb4578da58470800000000000000
+      internalID: 8396307877056109725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdcf10805a307ad40800000000000000
+      internalID: 5595445069369965788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04db75d2254c65e20800000000000000
+      internalID: 3339072030968888640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c5a9e7c3b306900800000000000000
+      internalID: 675605075113696348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84c8df0054d339cd0800000000000000
+      internalID: -2552629197210284984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a8034e124f22820800000000000000
+      internalID: 2892142337124764188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8224f709bbd86f0800000000000000
+      internalID: -680681739378349914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e520b962f4acd8660800000000000000
+      internalID: 7389785004883771998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148fb9ce8324aa6f0800000000000000
+      internalID: -672652382083221439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9943cd3a0fd74f8e0800000000000000
+      internalID: -1660563890098129767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 135
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af150f3d68e6a64f0800000000000000
+      internalID: -834733255563390470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 135
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c8f47732628c030800000000000000
+      internalID: 3515101442930084901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 135
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e2e658460485580800000000000000
+      internalID: -8838243468235100648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 135
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ee9824404633950800000000000000
+      internalID: 6427591062646812237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 135
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc052c0c2b14264c0800000000000000
+      internalID: -4295798858564087603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 135
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 924ce98c5e12f7030800000000000000
+      internalID: 3494549106659869737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 131
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31d57980fc50015c0800000000000000
+      internalID: -4246888061849871085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 131
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d26608cfc6f0536e0800000000000000
+      internalID: -1858562310453303763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 131
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c301c2fde848bfb0800000000000000
+      internalID: -4631872029933370429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 133
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33de12d272bee5c0800000000000000
+      internalID: -4184210797559360707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 133
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72889ef2c810e9650800000000000000
+      internalID: 6241427835192969255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 131
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c2c333f425d1070800000000000000
+      internalID: 8078703806688013392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 135
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 254a1c07234d41a50800000000000000
+      internalID: 6491046276052919378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 135
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba87711141adead0800000000000000
+      internalID: -2671301703122842957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 135
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8913b940fba2c8a70800000000000000
+      internalID: 8830479969271099800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 135
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57d2feff31bf3f980800000000000000
+      internalID: -8506179207855919755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 135
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2b936e995236970800000000000000
+      internalID: 8746876244206400224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 135
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c2f2707f5103440800000000000000
+      internalID: 4913451344182848592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 133
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e34bfc4e17e53ca60800000000000000
+      internalID: 7693096431742071870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 133
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60704e4316e3a49a0800000000000000
+      internalID: -6248112945803032826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 133
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 342d57731c3eec840800000000000000
+      internalID: 5246381034931868227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 133
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb5eb33cb9adf280800000000000000
+      internalID: -9007857053884064806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 133
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8403cadebe6ca50800000000000000
+      internalID: 6541174914830846144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 133
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4671014115e1e1b0800000000000000
+      internalID: -5628966196968589750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 71
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150be928e97b31270800000000000000
+      internalID: 8220115636305440849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 73
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5757071ce1620c0800000000000000
+      internalID: -4600956153148115458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 71
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7324f7a19e46cc7b0800000000000000
+      internalID: -5202672517185060297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 71
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e581eea8a8eb37c10800000000000000
+      internalID: 2050191757629331550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 71
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c3fbc099e3e0ca0800000000000000
+      internalID: -6048828422447219602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 71
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14cdd677f794b6890800000000000000
+      internalID: -7463791145623102399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 67
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb7a4ac00705bb60800000000000000
+      internalID: 7761117232818191281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 67
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca0f6cbb7949e94e0800000000000000
+      internalID: -1972976207330348884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 69
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 456b1bf1f3122e280800000000000000
+      internalID: -9015606949043915180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 67
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16fcc8001a561ab70800000000000000
+      internalID: 8908513280088919905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 67
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8788cae8d24b1e9c0800000000000000
+      internalID: -3899637694565939080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 69
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 785d8aab41f444080800000000000000
+      internalID: -9204144787988884089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 71
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd223d278d5bff490800000000000000
+      internalID: -7710244095790996769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 73
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2598f26c08263e4b0800000000000000
+      internalID: -5412374021948864174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 71
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c6f913d5e4ebd80800000000000000
+      internalID: -8233056906615231457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 71
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c40fe3f8e0361c5d0800000000000000
+      internalID: -3044042958941786036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 71
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f7dc537f253549d0800000000000000
+      internalID: -2790765916170954763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 71
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 533b30b1a9f256a70800000000000000
+      internalID: 8819507784199680821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 67
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a3c757616b240170800000000000000
+      internalID: 8143681723538326441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 67
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 650b91cbc756ce4b0800000000000000
+      internalID: -5409837465972658090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 63
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b46e39926e5033830800000000000000
+      internalID: 4049586976034383435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 67
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1039ab4994507c440800000000000000
+      internalID: 4955935728530526977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 67
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec5af16791db9a2c0800000000000000
+      internalID: -4419793642233813554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 63
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0720cab557f71640800000000000000
+      internalID: 5050777454696736524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff136c320e074940800000000000000
+      internalID: 5280204490881048568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 927684d4262e4d2e0800000000000000
+      internalID: -2101806214243915991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 996302344796de4f0800000000000000
+      internalID: -797865610911402343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 824bcd79c924f0aa0800000000000000
+      internalID: -6192657722280987608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edcdba64f57eac4e0800000000000000
+      internalID: -1960500291372852002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eb719ba536363dd0800000000000000
+      internalID: -2506756538445497369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 3
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5463a34e49b7a18e0800000000000000
+      internalID: -1721928028101396923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 5
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71036d7f612b60010800000000000000
+      internalID: 1154806166184144919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 5
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be7b86c4383cfea0800000000000000
+      internalID: -5837729217658519881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 5
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0459f41ac43735320800000000000000
+      internalID: 2545504987355518272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 3
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e696dc786e91a83d0800000000000000
+      internalID: -3203719707009128082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 3
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a5a151657f08920800000000000000
+      internalID: 2990662101667305991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb871ea82470a5310800000000000000
+      internalID: 1394435017003858110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ecafbf4ca52df4b0800000000000000
+      internalID: -5405122555772162846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cd1bbdbe945b2820800000000000000
+      internalID: 2894500226280398272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab15de7b05f72c060800000000000000
+      internalID: 6972275157782843834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e2234a4f71d10e0800000000000000
+      internalID: -2297653895394873774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 7
+        width: 48
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f0537ecccccba00800000000000000
+      internalID: 773718416425291609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 3
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3787bb16ec4fa6d90800000000000000
+      internalID: -7103596294983419789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 1
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa0db5575b1aa6b0800000000000000
+      internalID: -5284381150851298567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 1
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1fd3ae912b5e5520800000000000000
+      internalID: 2692689827167723294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 1361
+        y: 1
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b060a15e5de257e30800000000000000
+      internalID: 4500554898833278475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 3
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aa189743ee034eb0800000000000000
+      internalID: -4736926013742114143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Duck_White_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 3
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645c1e9d91b9c9d80800000000000000
+      internalID: -8242542682662910650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Duck_White_32x32_0: 1405368000136181978
+      Duck_White_32x32_1: -4789549873624798454
+      Duck_White_32x32_10: 675605075113696348
+      Duck_White_32x32_11: -2552629197210284984
+      Duck_White_32x32_12: 2892142337124764188
+      Duck_White_32x32_13: -680681739378349914
+      Duck_White_32x32_14: 7389785004883771998
+      Duck_White_32x32_15: -672652382083221439
+      Duck_White_32x32_16: -1660563890098129767
+      Duck_White_32x32_17: -834733255563390470
+      Duck_White_32x32_18: 3515101442930084901
+      Duck_White_32x32_19: -8838243468235100648
+      Duck_White_32x32_2: -7584235747874620665
+      Duck_White_32x32_20: 6427591062646812237
+      Duck_White_32x32_21: -4295798858564087603
+      Duck_White_32x32_22: 3494549106659869737
+      Duck_White_32x32_23: -4246888061849871085
+      Duck_White_32x32_24: -1858562310453303763
+      Duck_White_32x32_25: -4631872029933370429
+      Duck_White_32x32_26: -4184210797559360707
+      Duck_White_32x32_27: 6241427835192969255
+      Duck_White_32x32_28: 8078703806688013392
+      Duck_White_32x32_29: 6491046276052919378
+      Duck_White_32x32_3: -5690655010795166616
+      Duck_White_32x32_30: -2671301703122842957
+      Duck_White_32x32_31: 8830479969271099800
+      Duck_White_32x32_32: -8506179207855919755
+      Duck_White_32x32_33: 8746876244206400224
+      Duck_White_32x32_34: 4913451344182848592
+      Duck_White_32x32_35: 7693096431742071870
+      Duck_White_32x32_36: -6248112945803032826
+      Duck_White_32x32_37: 5246381034931868227
+      Duck_White_32x32_38: -9007857053884064806
+      Duck_White_32x32_39: 6541174914830846144
+      Duck_White_32x32_4: 1544026346674510488
+      Duck_White_32x32_40: -5628966196968589750
+      Duck_White_32x32_41: 8220115636305440849
+      Duck_White_32x32_42: -4600956153148115458
+      Duck_White_32x32_43: -5202672517185060297
+      Duck_White_32x32_44: 2050191757629331550
+      Duck_White_32x32_45: -6048828422447219602
+      Duck_White_32x32_46: -7463791145623102399
+      Duck_White_32x32_47: 7761117232818191281
+      Duck_White_32x32_48: -1972976207330348884
+      Duck_White_32x32_49: -9015606949043915180
+      Duck_White_32x32_5: 613830704698679896
+      Duck_White_32x32_50: 8908513280088919905
+      Duck_White_32x32_51: -3899637694565939080
+      Duck_White_32x32_52: -9204144787988884089
+      Duck_White_32x32_53: -7710244095790996769
+      Duck_White_32x32_54: -5412374021948864174
+      Duck_White_32x32_55: -8233056906615231457
+      Duck_White_32x32_56: -3044042958941786036
+      Duck_White_32x32_57: -2790765916170954763
+      Duck_White_32x32_58: 8819507784199680821
+      Duck_White_32x32_59: 8143681723538326441
+      Duck_White_32x32_6: 3383467185971656932
+      Duck_White_32x32_60: -5409837465972658090
+      Duck_White_32x32_61: 4049586976034383435
+      Duck_White_32x32_62: 4955935728530526977
+      Duck_White_32x32_63: -4419793642233813554
+      Duck_White_32x32_64: 5050777454696736524
+      Duck_White_32x32_65: 5280204490881048568
+      Duck_White_32x32_66: -2101806214243915991
+      Duck_White_32x32_67: -797865610911402343
+      Duck_White_32x32_68: -6192657722280987608
+      Duck_White_32x32_69: -1960500291372852002
+      Duck_White_32x32_7: 8396307877056109725
+      Duck_White_32x32_70: -2506756538445497369
+      Duck_White_32x32_71: -1721928028101396923
+      Duck_White_32x32_72: 1154806166184144919
+      Duck_White_32x32_73: -5837729217658519881
+      Duck_White_32x32_74: 2545504987355518272
+      Duck_White_32x32_75: -3203719707009128082
+      Duck_White_32x32_76: 2990662101667305991
+      Duck_White_32x32_77: 1394435017003858110
+      Duck_White_32x32_78: -5405122555772162846
+      Duck_White_32x32_79: 2894500226280398272
+      Duck_White_32x32_8: 5595445069369965788
+      Duck_White_32x32_80: 6972275157782843834
+      Duck_White_32x32_81: -2297653895394873774
+      Duck_White_32x32_82: 773718416425291609
+      Duck_White_32x32_83: -7103596294983419789
+      Duck_White_32x32_84: -5284381150851298567
+      Duck_White_32x32_85: 2692689827167723294
+      Duck_White_32x32_86: 4500554898833278475
+      Duck_White_32x32_87: -4736926013742114143
+      Duck_White_32x32_88: -8242542682662910650
+      Duck_White_32x32_9: 3339072030968888640
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

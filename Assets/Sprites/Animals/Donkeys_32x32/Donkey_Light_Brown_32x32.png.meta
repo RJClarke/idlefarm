@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: 3e4324672c1db0f498abbfa8be282c50
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2724844975252534982
+    second: Donkey_Light_Brown_32x32_0
+  - first:
+      213: 7572974822775817054
+    second: Donkey_Light_Brown_32x32_1
+  - first:
+      213: -2409286681598777340
+    second: Donkey_Light_Brown_32x32_2
+  - first:
+      213: -1306349994794140212
+    second: Donkey_Light_Brown_32x32_3
+  - first:
+      213: -2192046868325652926
+    second: Donkey_Light_Brown_32x32_4
+  - first:
+      213: 1130265938268697121
+    second: Donkey_Light_Brown_32x32_5
+  - first:
+      213: 7645939769814063193
+    second: Donkey_Light_Brown_32x32_6
+  - first:
+      213: 226346237912665878
+    second: Donkey_Light_Brown_32x32_7
+  - first:
+      213: -3387668388445043814
+    second: Donkey_Light_Brown_32x32_8
+  - first:
+      213: 257050071104664765
+    second: Donkey_Light_Brown_32x32_9
+  - first:
+      213: 877610609490654403
+    second: Donkey_Light_Brown_32x32_10
+  - first:
+      213: 3415645182884110241
+    second: Donkey_Light_Brown_32x32_11
+  - first:
+      213: 3639776563218585600
+    second: Donkey_Light_Brown_32x32_12
+  - first:
+      213: 2006451016871101076
+    second: Donkey_Light_Brown_32x32_13
+  - first:
+      213: 3714965158436555592
+    second: Donkey_Light_Brown_32x32_14
+  - first:
+      213: 8203892752635821274
+    second: Donkey_Light_Brown_32x32_15
+  - first:
+      213: -7437346428429745916
+    second: Donkey_Light_Brown_32x32_16
+  - first:
+      213: 3887561671048414305
+    second: Donkey_Light_Brown_32x32_17
+  - first:
+      213: 7638401314252914841
+    second: Donkey_Light_Brown_32x32_18
+  - first:
+      213: 8524217716433423500
+    second: Donkey_Light_Brown_32x32_19
+  - first:
+      213: -7976804562044835696
+    second: Donkey_Light_Brown_32x32_20
+  - first:
+      213: -7486284455283766848
+    second: Donkey_Light_Brown_32x32_21
+  - first:
+      213: -4850500433969364236
+    second: Donkey_Light_Brown_32x32_22
+  - first:
+      213: -4209046660329082768
+    second: Donkey_Light_Brown_32x32_23
+  - first:
+      213: -9014059650954509735
+    second: Donkey_Light_Brown_32x32_24
+  - first:
+      213: 5557106601407999448
+    second: Donkey_Light_Brown_32x32_25
+  - first:
+      213: 7977658943500451229
+    second: Donkey_Light_Brown_32x32_26
+  - first:
+      213: -9014505668489521869
+    second: Donkey_Light_Brown_32x32_27
+  - first:
+      213: -1006643951337954852
+    second: Donkey_Light_Brown_32x32_28
+  - first:
+      213: 7705414389735789647
+    second: Donkey_Light_Brown_32x32_29
+  - first:
+      213: -6846214571331561155
+    second: Donkey_Light_Brown_32x32_30
+  - first:
+      213: 2915863161053215744
+    second: Donkey_Light_Brown_32x32_31
+  - first:
+      213: 4167501769206650401
+    second: Donkey_Light_Brown_32x32_32
+  - first:
+      213: 8239841656015437626
+    second: Donkey_Light_Brown_32x32_33
+  - first:
+      213: 3666224988785634033
+    second: Donkey_Light_Brown_32x32_34
+  - first:
+      213: -568410746580786157
+    second: Donkey_Light_Brown_32x32_35
+  - first:
+      213: 9015171225449375033
+    second: Donkey_Light_Brown_32x32_36
+  - first:
+      213: -3625885388825523648
+    second: Donkey_Light_Brown_32x32_37
+  - first:
+      213: 1262826086225987065
+    second: Donkey_Light_Brown_32x32_38
+  - first:
+      213: 1120540607214803246
+    second: Donkey_Light_Brown_32x32_39
+  - first:
+      213: -7379649663500332729
+    second: Donkey_Light_Brown_32x32_40
+  - first:
+      213: -5402616329599769870
+    second: Donkey_Light_Brown_32x32_41
+  - first:
+      213: 7744979009690509204
+    second: Donkey_Light_Brown_32x32_42
+  - first:
+      213: 6621734677538475801
+    second: Donkey_Light_Brown_32x32_43
+  - first:
+      213: 718720614305088710
+    second: Donkey_Light_Brown_32x32_44
+  - first:
+      213: 7138762150183361909
+    second: Donkey_Light_Brown_32x32_45
+  - first:
+      213: -3596266408939289002
+    second: Donkey_Light_Brown_32x32_46
+  - first:
+      213: -8312052136248629349
+    second: Donkey_Light_Brown_32x32_47
+  - first:
+      213: -1133601060489855189
+    second: Donkey_Light_Brown_32x32_48
+  - first:
+      213: 425949105507673747
+    second: Donkey_Light_Brown_32x32_49
+  - first:
+      213: -4126112288347301864
+    second: Donkey_Light_Brown_32x32_50
+  - first:
+      213: 2907775319099120317
+    second: Donkey_Light_Brown_32x32_51
+  - first:
+      213: 8327652788834332463
+    second: Donkey_Light_Brown_32x32_52
+  - first:
+      213: 5822261800360948264
+    second: Donkey_Light_Brown_32x32_53
+  - first:
+      213: -4499731507306815414
+    second: Donkey_Light_Brown_32x32_54
+  - first:
+      213: 6359317501768775454
+    second: Donkey_Light_Brown_32x32_55
+  - first:
+      213: -2462292275719525965
+    second: Donkey_Light_Brown_32x32_56
+  - first:
+      213: 4885119102785951626
+    second: Donkey_Light_Brown_32x32_57
+  - first:
+      213: 3788155547976595913
+    second: Donkey_Light_Brown_32x32_58
+  - first:
+      213: 7512985096206467916
+    second: Donkey_Light_Brown_32x32_59
+  - first:
+      213: -6909085060049026409
+    second: Donkey_Light_Brown_32x32_60
+  - first:
+      213: -6525149385187593672
+    second: Donkey_Light_Brown_32x32_61
+  - first:
+      213: 7229771521491450147
+    second: Donkey_Light_Brown_32x32_62
+  - first:
+      213: -8594358385052393606
+    second: Donkey_Light_Brown_32x32_63
+  - first:
+      213: 7853710147474066563
+    second: Donkey_Light_Brown_32x32_64
+  - first:
+      213: 6411601075335953342
+    second: Donkey_Light_Brown_32x32_65
+  - first:
+      213: 716017218871206441
+    second: Donkey_Light_Brown_32x32_66
+  - first:
+      213: -7993329458409025425
+    second: Donkey_Light_Brown_32x32_67
+  - first:
+      213: -8321557602116296248
+    second: Donkey_Light_Brown_32x32_68
+  - first:
+      213: -646104755402088495
+    second: Donkey_Light_Brown_32x32_69
+  - first:
+      213: 4840170978535751065
+    second: Donkey_Light_Brown_32x32_70
+  - first:
+      213: 8816403114100350281
+    second: Donkey_Light_Brown_32x32_71
+  - first:
+      213: 7320098057324773981
+    second: Donkey_Light_Brown_32x32_72
+  - first:
+      213: 2516541122779234290
+    second: Donkey_Light_Brown_32x32_73
+  - first:
+      213: 3312780592733851154
+    second: Donkey_Light_Brown_32x32_74
+  - first:
+      213: 6081153643849449616
+    second: Donkey_Light_Brown_32x32_75
+  - first:
+      213: -4863185072595098835
+    second: Donkey_Light_Brown_32x32_76
+  - first:
+      213: 8248673411885844112
+    second: Donkey_Light_Brown_32x32_77
+  - first:
+      213: 717672881008765843
+    second: Donkey_Light_Brown_32x32_78
+  - first:
+      213: 3581472241113170494
+    second: Donkey_Light_Brown_32x32_79
+  - first:
+      213: 8963282632925520984
+    second: Donkey_Light_Brown_32x32_80
+  - first:
+      213: 713446633367363967
+    second: Donkey_Light_Brown_32x32_81
+  - first:
+      213: 3704365943090166870
+    second: Donkey_Light_Brown_32x32_82
+  - first:
+      213: 1986146454457991707
+    second: Donkey_Light_Brown_32x32_83
+  - first:
+      213: -7485865428862285921
+    second: Donkey_Light_Brown_32x32_84
+  - first:
+      213: -6554145485634594438
+    second: Donkey_Light_Brown_32x32_85
+  - first:
+      213: -8355433724751421987
+    second: Donkey_Light_Brown_32x32_86
+  - first:
+      213: -3724480411531135234
+    second: Donkey_Light_Brown_32x32_87
+  - first:
+      213: -3433938566620788109
+    second: Donkey_Light_Brown_32x32_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 289
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a39801e8ee76f2ad0800000000000000
+      internalID: -2724844975252534982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 289
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53878c5a7c981960800000000000000
+      internalID: 7572974822775817054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 289
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 408a93d278e709ed0800000000000000
+      internalID: -2409286681598777340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 291
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd36ffd999eedde0800000000000000
+      internalID: -1306349994794140212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 291
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 246217abcf84491e0800000000000000
+      internalID: -2192046868325652926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 291
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 122ba38e1e28faf00800000000000000
+      internalID: 1130265938268697121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 291
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9589cc1f5b5db1a60800000000000000
+      internalID: 7645939769814063193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 301
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61fc70344b4242300800000000000000
+      internalID: 226346237912665878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 291
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a93c9e1ac859cf0d0800000000000000
+      internalID: -3387668388445043814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 291
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db4bea18da9319300800000000000000
+      internalID: 257050071104664765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 291
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c4fdc51336ed2c00800000000000000
+      internalID: 877610609490654403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 291
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1afd49c623fc66f20800000000000000
+      internalID: 3415645182884110241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 301
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0089f68ff75138230800000000000000
+      internalID: 3639776563218585600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 291
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492c2d7b19858db10800000000000000
+      internalID: 2006451016871101076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 291
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84b409df0253e8330800000000000000
+      internalID: 3714965158436555592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 291
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc72401ef41ad170800000000000000
+      internalID: 8203892752635821274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 291
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 401ccedf3dc39c890800000000000000
+      internalID: -7437346428429745916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 193
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 164c34d1eb463f530800000000000000
+      internalID: 3887561671048414305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 193
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9900ceb768d010a60800000000000000
+      internalID: 7638401314252914841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 193
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8c0b1099da1c4670800000000000000
+      internalID: 8524217716433423500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 193
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0982a948382bc4190800000000000000
+      internalID: -7976804562044835696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 193
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c94843b3ff5b1890800000000000000
+      internalID: -7486284455283766848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 193
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2c06aed8f8facb0800000000000000
+      internalID: -4850500433969364236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 193
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0707a08ec567695c0800000000000000
+      internalID: -4209046660329082768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 193
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 952cca88180a7e280800000000000000
+      internalID: -9014059650954509735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 193
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dde6ebd20fce1d40800000000000000
+      internalID: 5557106601407999448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 193
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9dff8aaa8656be60800000000000000
+      internalID: 7977658943500451229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 193
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 335dfebfada06e280800000000000000
+      internalID: -9014505668489521869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 193
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd1a431e8aea702f0800000000000000
+      internalID: -1006643951337954852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 193
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f44926bff812fea60800000000000000
+      internalID: 7705414389735789647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 193
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39dda3ce1c5df0a0800000000000000
+      internalID: -6846214571331561155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 193
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00c7938981a377820800000000000000
+      internalID: 2915863161053215744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 193
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 126df5a57c0f5d930800000000000000
+      internalID: 4167501769206650401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 193
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f3440645cc95270800000000000000
+      internalID: 8239841656015437626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 193
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa6a3be33c01e230800000000000000
+      internalID: 3666224988785634033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 195
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 314a98300799c18f0800000000000000
+      internalID: -568410746580786157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 195
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935ab3217725c1d70800000000000000
+      internalID: 9015171225449375033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 195
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a86ca13744eadc0800000000000000
+      internalID: -3625885388825523648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 195
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5c89a72a5768110800000000000000
+      internalID: 1262826086225987065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 195
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e295071deb5fc8f00800000000000000
+      internalID: 1120540607214803246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 195
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7415b38eab7369990800000000000000
+      internalID: -7379649663500332729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f22b70921d0605b0800000000000000
+      internalID: -5402616329599769870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f9579ef51bb7b60800000000000000
+      internalID: 7744979009690509204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 97
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f01931b9025eb50800000000000000
+      internalID: 6621734677538475801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c4c76c379869f900800000000000000
+      internalID: 718720614305088710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57ddea15a5af11360800000000000000
+      internalID: 7138762150183361909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 97
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656018141ce771ec0800000000000000
+      internalID: -3596266408939289002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 97
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b97af580f98a5ac80800000000000000
+      internalID: -8312052136248629349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 97
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2ffe7077d3a440f0800000000000000
+      internalID: -1133601060489855189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 95
+        width: 34
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3962e26647649e500800000000000000
+      internalID: 425949105507673747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 97
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8185fad1cba1db6c0800000000000000
+      internalID: -4126112288347301864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 95
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba1d852f3e7a5820800000000000000
+      internalID: 2907775319099120317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 95
+        width: 34
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2fe243f614c19370800000000000000
+      internalID: 8327652788834332463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82237df7244dcc050800000000000000
+      internalID: 5822261800360948264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a402852e80ebd81c0800000000000000
+      internalID: -4499731507306815414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 97
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e173ad22395d04850800000000000000
+      internalID: 6359317501768775454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b9ac84983e24ddd0800000000000000
+      internalID: -2462292275719525965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a87180701fd6bc340800000000000000
+      internalID: 4885119102785951626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 97
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c9f11f766b329430800000000000000
+      internalID: 3788155547976595913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 99
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c43c036b32c734860800000000000000
+      internalID: 7512985096206467916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 99
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 792c1d86ebffd10a0800000000000000
+      internalID: -6909085060049026409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 95
+        width: 38
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 832f885b4330275a0800000000000000
+      internalID: -6525149385187593672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 99
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 329bbb1d4ee455460800000000000000
+      internalID: 7229771521491450147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 99
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f5d8a6594bab880800000000000000
+      internalID: -8594358385052393606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 95
+        width: 38
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c8215b4cbfdfc60800000000000000
+      internalID: 7853710147474066563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebb79e835359af850800000000000000
+      internalID: 6411601075335953342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 922a1efedddcfe900800000000000000
+      internalID: 716017218871206441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f605dd2453df11190800000000000000
+      internalID: -7993329458409025425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c128eb4373e38c80800000000000000
+      internalID: -8321557602116296248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1df519ee5239807f0800000000000000
+      internalID: -646104755402088495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d37c35cddbb2340800000000000000
+      internalID: 4840170978535751065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1
+        width: 34
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d5994cbe72a5a70800000000000000
+      internalID: 8816403114100350281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1
+        width: 34
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52cedb4666369560800000000000000
+      internalID: 7320098057324773981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1
+        width: 34
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff3be561dc8ce220800000000000000
+      internalID: 2516541122779234290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1
+        width: 34
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e85b0b56c59fd20800000000000000
+      internalID: 3312780592733851154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 1
+        width: 34
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 090083e0509946450800000000000000
+      internalID: 6081153643849449616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 1
+        width: 34
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23acf651fe728cb0800000000000000
+      internalID: -4863185072595098835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0964aa7c3cc297270800000000000000
+      internalID: 8248673411885844112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b6571deafa5f900800000000000000
+      internalID: 717672881008765843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3209702702f3b130800000000000000
+      internalID: 3581472241113170494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85424fca01af36c70800000000000000
+      internalID: 8963282632925520984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f716f0cdeeba6e900800000000000000
+      internalID: 713446633367363967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65cb1fbd23d886330800000000000000
+      internalID: 3704365943090166870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 3
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b12ced16da5309b10800000000000000
+      internalID: 1986146454457991707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 1
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f974944ed0ddc1890800000000000000
+      internalID: -7485865428862285921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 1
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a79158af76ffa05a0800000000000000
+      internalID: -6554145485634594438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 1
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd5fdbdb498b0c80800000000000000
+      internalID: -8355433724751421987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 3
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef639c18cccff4cc0800000000000000
+      internalID: -3724480411531135234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Light_Brown_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 3
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37acd0441133850d0800000000000000
+      internalID: -3433938566620788109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Donkey_Light_Brown_32x32_0: -2724844975252534982
+      Donkey_Light_Brown_32x32_1: 7572974822775817054
+      Donkey_Light_Brown_32x32_10: 877610609490654403
+      Donkey_Light_Brown_32x32_11: 3415645182884110241
+      Donkey_Light_Brown_32x32_12: 3639776563218585600
+      Donkey_Light_Brown_32x32_13: 2006451016871101076
+      Donkey_Light_Brown_32x32_14: 3714965158436555592
+      Donkey_Light_Brown_32x32_15: 8203892752635821274
+      Donkey_Light_Brown_32x32_16: -7437346428429745916
+      Donkey_Light_Brown_32x32_17: 3887561671048414305
+      Donkey_Light_Brown_32x32_18: 7638401314252914841
+      Donkey_Light_Brown_32x32_19: 8524217716433423500
+      Donkey_Light_Brown_32x32_2: -2409286681598777340
+      Donkey_Light_Brown_32x32_20: -7976804562044835696
+      Donkey_Light_Brown_32x32_21: -7486284455283766848
+      Donkey_Light_Brown_32x32_22: -4850500433969364236
+      Donkey_Light_Brown_32x32_23: -4209046660329082768
+      Donkey_Light_Brown_32x32_24: -9014059650954509735
+      Donkey_Light_Brown_32x32_25: 5557106601407999448
+      Donkey_Light_Brown_32x32_26: 7977658943500451229
+      Donkey_Light_Brown_32x32_27: -9014505668489521869
+      Donkey_Light_Brown_32x32_28: -1006643951337954852
+      Donkey_Light_Brown_32x32_29: 7705414389735789647
+      Donkey_Light_Brown_32x32_3: -1306349994794140212
+      Donkey_Light_Brown_32x32_30: -6846214571331561155
+      Donkey_Light_Brown_32x32_31: 2915863161053215744
+      Donkey_Light_Brown_32x32_32: 4167501769206650401
+      Donkey_Light_Brown_32x32_33: 8239841656015437626
+      Donkey_Light_Brown_32x32_34: 3666224988785634033
+      Donkey_Light_Brown_32x32_35: -568410746580786157
+      Donkey_Light_Brown_32x32_36: 9015171225449375033
+      Donkey_Light_Brown_32x32_37: -3625885388825523648
+      Donkey_Light_Brown_32x32_38: 1262826086225987065
+      Donkey_Light_Brown_32x32_39: 1120540607214803246
+      Donkey_Light_Brown_32x32_4: -2192046868325652926
+      Donkey_Light_Brown_32x32_40: -7379649663500332729
+      Donkey_Light_Brown_32x32_41: -5402616329599769870
+      Donkey_Light_Brown_32x32_42: 7744979009690509204
+      Donkey_Light_Brown_32x32_43: 6621734677538475801
+      Donkey_Light_Brown_32x32_44: 718720614305088710
+      Donkey_Light_Brown_32x32_45: 7138762150183361909
+      Donkey_Light_Brown_32x32_46: -3596266408939289002
+      Donkey_Light_Brown_32x32_47: -8312052136248629349
+      Donkey_Light_Brown_32x32_48: -1133601060489855189
+      Donkey_Light_Brown_32x32_49: 425949105507673747
+      Donkey_Light_Brown_32x32_5: 1130265938268697121
+      Donkey_Light_Brown_32x32_50: -4126112288347301864
+      Donkey_Light_Brown_32x32_51: 2907775319099120317
+      Donkey_Light_Brown_32x32_52: 8327652788834332463
+      Donkey_Light_Brown_32x32_53: 5822261800360948264
+      Donkey_Light_Brown_32x32_54: -4499731507306815414
+      Donkey_Light_Brown_32x32_55: 6359317501768775454
+      Donkey_Light_Brown_32x32_56: -2462292275719525965
+      Donkey_Light_Brown_32x32_57: 4885119102785951626
+      Donkey_Light_Brown_32x32_58: 3788155547976595913
+      Donkey_Light_Brown_32x32_59: 7512985096206467916
+      Donkey_Light_Brown_32x32_6: 7645939769814063193
+      Donkey_Light_Brown_32x32_60: -6909085060049026409
+      Donkey_Light_Brown_32x32_61: -6525149385187593672
+      Donkey_Light_Brown_32x32_62: 7229771521491450147
+      Donkey_Light_Brown_32x32_63: -8594358385052393606
+      Donkey_Light_Brown_32x32_64: 7853710147474066563
+      Donkey_Light_Brown_32x32_65: 6411601075335953342
+      Donkey_Light_Brown_32x32_66: 716017218871206441
+      Donkey_Light_Brown_32x32_67: -7993329458409025425
+      Donkey_Light_Brown_32x32_68: -8321557602116296248
+      Donkey_Light_Brown_32x32_69: -646104755402088495
+      Donkey_Light_Brown_32x32_7: 226346237912665878
+      Donkey_Light_Brown_32x32_70: 4840170978535751065
+      Donkey_Light_Brown_32x32_71: 8816403114100350281
+      Donkey_Light_Brown_32x32_72: 7320098057324773981
+      Donkey_Light_Brown_32x32_73: 2516541122779234290
+      Donkey_Light_Brown_32x32_74: 3312780592733851154
+      Donkey_Light_Brown_32x32_75: 6081153643849449616
+      Donkey_Light_Brown_32x32_76: -4863185072595098835
+      Donkey_Light_Brown_32x32_77: 8248673411885844112
+      Donkey_Light_Brown_32x32_78: 717672881008765843
+      Donkey_Light_Brown_32x32_79: 3581472241113170494
+      Donkey_Light_Brown_32x32_8: -3387668388445043814
+      Donkey_Light_Brown_32x32_80: 8963282632925520984
+      Donkey_Light_Brown_32x32_81: 713446633367363967
+      Donkey_Light_Brown_32x32_82: 3704365943090166870
+      Donkey_Light_Brown_32x32_83: 1986146454457991707
+      Donkey_Light_Brown_32x32_84: -7485865428862285921
+      Donkey_Light_Brown_32x32_85: -6554145485634594438
+      Donkey_Light_Brown_32x32_86: -8355433724751421987
+      Donkey_Light_Brown_32x32_87: -3724480411531135234
+      Donkey_Light_Brown_32x32_88: -3433938566620788109
+      Donkey_Light_Brown_32x32_9: 257050071104664765
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

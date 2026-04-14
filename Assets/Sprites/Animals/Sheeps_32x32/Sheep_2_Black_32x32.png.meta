@@ -1,0 +1,4355 @@
+fileFormatVersion: 2
+guid: 6d6a57989a995b84fb095be139c801ae
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5595593901794660517
+    second: Sheep_2_Black_32x32_0
+  - first:
+      213: 3225068918223809922
+    second: Sheep_2_Black_32x32_1
+  - first:
+      213: -4833916868969249097
+    second: Sheep_2_Black_32x32_2
+  - first:
+      213: 2639017853600155668
+    second: Sheep_2_Black_32x32_3
+  - first:
+      213: -2916457888807590444
+    second: Sheep_2_Black_32x32_4
+  - first:
+      213: -5923577909241415310
+    second: Sheep_2_Black_32x32_5
+  - first:
+      213: 4473284407102090899
+    second: Sheep_2_Black_32x32_6
+  - first:
+      213: 1470487423737049637
+    second: Sheep_2_Black_32x32_7
+  - first:
+      213: 5122514897174846751
+    second: Sheep_2_Black_32x32_8
+  - first:
+      213: 3404967342780481641
+    second: Sheep_2_Black_32x32_9
+  - first:
+      213: 1247741238601119037
+    second: Sheep_2_Black_32x32_10
+  - first:
+      213: 2477238043910494108
+    second: Sheep_2_Black_32x32_11
+  - first:
+      213: 9148543121368515217
+    second: Sheep_2_Black_32x32_12
+  - first:
+      213: 6034320876012290890
+    second: Sheep_2_Black_32x32_13
+  - first:
+      213: -1102406529742815570
+    second: Sheep_2_Black_32x32_14
+  - first:
+      213: -216790186560741580
+    second: Sheep_2_Black_32x32_15
+  - first:
+      213: 2685427229913960594
+    second: Sheep_2_Black_32x32_16
+  - first:
+      213: -826386821728318541
+    second: Sheep_2_Black_32x32_17
+  - first:
+      213: -7278573353091256600
+    second: Sheep_2_Black_32x32_18
+  - first:
+      213: -1711140381645649626
+    second: Sheep_2_Black_32x32_19
+  - first:
+      213: 5338888147069807433
+    second: Sheep_2_Black_32x32_20
+  - first:
+      213: 5603482277099680366
+    second: Sheep_2_Black_32x32_21
+  - first:
+      213: -6463774516860921076
+    second: Sheep_2_Black_32x32_22
+  - first:
+      213: 1721357011876674802
+    second: Sheep_2_Black_32x32_23
+  - first:
+      213: 6645832239907463870
+    second: Sheep_2_Black_32x32_24
+  - first:
+      213: -5045364724425104172
+    second: Sheep_2_Black_32x32_25
+  - first:
+      213: 425018169683084039
+    second: Sheep_2_Black_32x32_26
+  - first:
+      213: 175348917751358316
+    second: Sheep_2_Black_32x32_27
+  - first:
+      213: 3854118232391128245
+    second: Sheep_2_Black_32x32_28
+  - first:
+      213: 8103899582820628556
+    second: Sheep_2_Black_32x32_29
+  - first:
+      213: -484169548018227844
+    second: Sheep_2_Black_32x32_30
+  - first:
+      213: -8566953206780940903
+    second: Sheep_2_Black_32x32_31
+  - first:
+      213: -7608576508565631738
+    second: Sheep_2_Black_32x32_32
+  - first:
+      213: -6537688620672046613
+    second: Sheep_2_Black_32x32_33
+  - first:
+      213: 2659602180831954686
+    second: Sheep_2_Black_32x32_34
+  - first:
+      213: -4522261497478556801
+    second: Sheep_2_Black_32x32_35
+  - first:
+      213: -6050274439337144851
+    second: Sheep_2_Black_32x32_36
+  - first:
+      213: 6634533078925745054
+    second: Sheep_2_Black_32x32_37
+  - first:
+      213: 8771240945473853703
+    second: Sheep_2_Black_32x32_38
+  - first:
+      213: 519001523686437401
+    second: Sheep_2_Black_32x32_39
+  - first:
+      213: 1838873124324430194
+    second: Sheep_2_Black_32x32_40
+  - first:
+      213: -3423196341182474200
+    second: Sheep_2_Black_32x32_41
+  - first:
+      213: -5113270491770262687
+    second: Sheep_2_Black_32x32_42
+  - first:
+      213: -1402950449299576230
+    second: Sheep_2_Black_32x32_43
+  - first:
+      213: -5339900143241833300
+    second: Sheep_2_Black_32x32_44
+  - first:
+      213: 4700603316779244063
+    second: Sheep_2_Black_32x32_45
+  - first:
+      213: -8803534988886612835
+    second: Sheep_2_Black_32x32_46
+  - first:
+      213: -5888229153831584311
+    second: Sheep_2_Black_32x32_47
+  - first:
+      213: 3851876466886012754
+    second: Sheep_2_Black_32x32_48
+  - first:
+      213: 1463185385618221947
+    second: Sheep_2_Black_32x32_49
+  - first:
+      213: 2917591175207172821
+    second: Sheep_2_Black_32x32_50
+  - first:
+      213: 4114365116243108033
+    second: Sheep_2_Black_32x32_51
+  - first:
+      213: -190706263227136722
+    second: Sheep_2_Black_32x32_52
+  - first:
+      213: 597752856418658773
+    second: Sheep_2_Black_32x32_53
+  - first:
+      213: 6535213821013672761
+    second: Sheep_2_Black_32x32_54
+  - first:
+      213: -372666755022317111
+    second: Sheep_2_Black_32x32_55
+  - first:
+      213: -9118573605265349977
+    second: Sheep_2_Black_32x32_56
+  - first:
+      213: -5962488925827697842
+    second: Sheep_2_Black_32x32_57
+  - first:
+      213: -4204968873261565460
+    second: Sheep_2_Black_32x32_58
+  - first:
+      213: 7207863168865957824
+    second: Sheep_2_Black_32x32_59
+  - first:
+      213: -1194813723100092996
+    second: Sheep_2_Black_32x32_60
+  - first:
+      213: -5960194037226277621
+    second: Sheep_2_Black_32x32_61
+  - first:
+      213: -3187604453658950119
+    second: Sheep_2_Black_32x32_62
+  - first:
+      213: 7128778512620036021
+    second: Sheep_2_Black_32x32_63
+  - first:
+      213: 1511214691008506231
+    second: Sheep_2_Black_32x32_64
+  - first:
+      213: 5398311602736606147
+    second: Sheep_2_Black_32x32_65
+  - first:
+      213: 8030716626740083523
+    second: Sheep_2_Black_32x32_66
+  - first:
+      213: 3909518163269147706
+    second: Sheep_2_Black_32x32_67
+  - first:
+      213: 3039608690614349044
+    second: Sheep_2_Black_32x32_68
+  - first:
+      213: -8028096358071730649
+    second: Sheep_2_Black_32x32_69
+  - first:
+      213: -4262776703110227341
+    second: Sheep_2_Black_32x32_70
+  - first:
+      213: 6406845403067243826
+    second: Sheep_2_Black_32x32_71
+  - first:
+      213: 3188418597182566659
+    second: Sheep_2_Black_32x32_72
+  - first:
+      213: 1923406990234145614
+    second: Sheep_2_Black_32x32_73
+  - first:
+      213: 2052688702991712749
+    second: Sheep_2_Black_32x32_74
+  - first:
+      213: -9071780601340004483
+    second: Sheep_2_Black_32x32_75
+  - first:
+      213: -3144419810903579368
+    second: Sheep_2_Black_32x32_76
+  - first:
+      213: -4395676071860682487
+    second: Sheep_2_Black_32x32_77
+  - first:
+      213: -8647038451105601772
+    second: Sheep_2_Black_32x32_78
+  - first:
+      213: 7249065289602303687
+    second: Sheep_2_Black_32x32_79
+  - first:
+      213: 8901079148330557993
+    second: Sheep_2_Black_32x32_80
+  - first:
+      213: -9064864679192438636
+    second: Sheep_2_Black_32x32_81
+  - first:
+      213: 8510487083639518183
+    second: Sheep_2_Black_32x32_82
+  - first:
+      213: -241365313657877937
+    second: Sheep_2_Black_32x32_83
+  - first:
+      213: -1699403587337607032
+    second: Sheep_2_Black_32x32_84
+  - first:
+      213: -310861780109916318
+    second: Sheep_2_Black_32x32_85
+  - first:
+      213: -3113604507378282974
+    second: Sheep_2_Black_32x32_86
+  - first:
+      213: -3286743917899544835
+    second: Sheep_2_Black_32x32_87
+  - first:
+      213: 6775965283249182781
+    second: Sheep_2_Black_32x32_88
+  - first:
+      213: 7437689129370027440
+    second: Sheep_2_Black_32x32_89
+  - first:
+      213: -6121455570192854076
+    second: Sheep_2_Black_32x32_90
+  - first:
+      213: -5905394508053469170
+    second: Sheep_2_Black_32x32_91
+  - first:
+      213: -4587419200236389539
+    second: Sheep_2_Black_32x32_92
+  - first:
+      213: 4737600268565534649
+    second: Sheep_2_Black_32x32_93
+  - first:
+      213: -1001919845491140632
+    second: Sheep_2_Black_32x32_94
+  - first:
+      213: -6898521200276763706
+    second: Sheep_2_Black_32x32_95
+  - first:
+      213: -1940053723082249918
+    second: Sheep_2_Black_32x32_96
+  - first:
+      213: -6937926258289518533
+    second: Sheep_2_Black_32x32_97
+  - first:
+      213: -4018156644213804963
+    second: Sheep_2_Black_32x32_98
+  - first:
+      213: -7174363820795066201
+    second: Sheep_2_Black_32x32_99
+  - first:
+      213: 1467941441263521586
+    second: Sheep_2_Black_32x32_100
+  - first:
+      213: 5763671348522438731
+    second: Sheep_2_Black_32x32_101
+  - first:
+      213: -2304838568793496660
+    second: Sheep_2_Black_32x32_102
+  - first:
+      213: 2145729205496906125
+    second: Sheep_2_Black_32x32_103
+  - first:
+      213: 4136236599068848614
+    second: Sheep_2_Black_32x32_104
+  - first:
+      213: 933791529652348256
+    second: Sheep_2_Black_32x32_105
+  - first:
+      213: 1835137135620818545
+    second: Sheep_2_Black_32x32_106
+  - first:
+      213: 3939856696444986141
+    second: Sheep_2_Black_32x32_107
+  - first:
+      213: -8147224603104706687
+    second: Sheep_2_Black_32x32_108
+  - first:
+      213: -3786255618993241448
+    second: Sheep_2_Black_32x32_109
+  - first:
+      213: -8077796954538461706
+    second: Sheep_2_Black_32x32_110
+  - first:
+      213: 4147448739376622947
+    second: Sheep_2_Black_32x32_111
+  - first:
+      213: 3692068671064596463
+    second: Sheep_2_Black_32x32_112
+  - first:
+      213: 311620232923698573
+    second: Sheep_2_Black_32x32_113
+  - first:
+      213: -3087534449572668712
+    second: Sheep_2_Black_32x32_114
+  - first:
+      213: -8337031269002680702
+    second: Sheep_2_Black_32x32_115
+  - first:
+      213: 5652368355237656713
+    second: Sheep_2_Black_32x32_116
+  - first:
+      213: -7921702698175323321
+    second: Sheep_2_Black_32x32_117
+  - first:
+      213: -1123869229302609667
+    second: Sheep_2_Black_32x32_118
+  - first:
+      213: -4153111751429853586
+    second: Sheep_2_Black_32x32_119
+  - first:
+      213: -2186204518707060802
+    second: Sheep_2_Black_32x32_120
+  - first:
+      213: 6564898233589496638
+    second: Sheep_2_Black_32x32_121
+  - first:
+      213: -7084116182016322349
+    second: Sheep_2_Black_32x32_122
+  - first:
+      213: 7926723224013276881
+    second: Sheep_2_Black_32x32_123
+  - first:
+      213: -669087104888865140
+    second: Sheep_2_Black_32x32_124
+  - first:
+      213: -51704701267164188
+    second: Sheep_2_Black_32x32_125
+  - first:
+      213: -3967034292279866635
+    second: Sheep_2_Black_32x32_126
+  - first:
+      213: 1843680163627493273
+    second: Sheep_2_Black_32x32_127
+  - first:
+      213: -5648194928018538689
+    second: Sheep_2_Black_32x32_128
+  - first:
+      213: -9195542244297174065
+    second: Sheep_2_Black_32x32_129
+  - first:
+      213: 4852843538942888097
+    second: Sheep_2_Black_32x32_130
+  - first:
+      213: -9192668148918936568
+    second: Sheep_2_Black_32x32_131
+  - first:
+      213: -735819247546467373
+    second: Sheep_2_Black_32x32_132
+  - first:
+      213: -3371040007154498955
+    second: Sheep_2_Black_32x32_133
+  - first:
+      213: -3619447016754108564
+    second: Sheep_2_Black_32x32_134
+  - first:
+      213: -8361717175681166497
+    second: Sheep_2_Black_32x32_135
+  - first:
+      213: -6411652341049401135
+    second: Sheep_2_Black_32x32_136
+  - first:
+      213: 1272439552284730439
+    second: Sheep_2_Black_32x32_137
+  - first:
+      213: -2241859462415329264
+    second: Sheep_2_Black_32x32_138
+  - first:
+      213: 1110548292844579645
+    second: Sheep_2_Black_32x32_139
+  - first:
+      213: 6169479913984619521
+    second: Sheep_2_Black_32x32_140
+  - first:
+      213: -5086157315556123488
+    second: Sheep_2_Black_32x32_141
+  - first:
+      213: -191963436371450605
+    second: Sheep_2_Black_32x32_142
+  - first:
+      213: 7739539118025469455
+    second: Sheep_2_Black_32x32_143
+  - first:
+      213: -2470881085527868773
+    second: Sheep_2_Black_32x32_144
+  - first:
+      213: -5823510773599510613
+    second: Sheep_2_Black_32x32_145
+  - first:
+      213: 6844973574269914252
+    second: Sheep_2_Black_32x32_146
+  - first:
+      213: 4348275310444944308
+    second: Sheep_2_Black_32x32_147
+  - first:
+      213: 7525945408689126371
+    second: Sheep_2_Black_32x32_148
+  - first:
+      213: 7226704114190388118
+    second: Sheep_2_Black_32x32_149
+  - first:
+      213: -4931775695552053835
+    second: Sheep_2_Black_32x32_150
+  - first:
+      213: -381666188340882047
+    second: Sheep_2_Black_32x32_151
+  - first:
+      213: 6622231621809677368
+    second: Sheep_2_Black_32x32_152
+  - first:
+      213: 7459955054854860569
+    second: Sheep_2_Black_32x32_153
+  - first:
+      213: -54123007318081292
+    second: Sheep_2_Black_32x32_154
+  - first:
+      213: -4792575859225655698
+    second: Sheep_2_Black_32x32_155
+  - first:
+      213: 3742990351523727989
+    second: Sheep_2_Black_32x32_156
+  - first:
+      213: -4755321627025247306
+    second: Sheep_2_Black_32x32_157
+  - first:
+      213: 5094022514192977376
+    second: Sheep_2_Black_32x32_158
+  - first:
+      213: -636316281313217449
+    second: Sheep_2_Black_32x32_159
+  - first:
+      213: -3187022029058335386
+    second: Sheep_2_Black_32x32_160
+  - first:
+      213: -5441368523362221265
+    second: Sheep_2_Black_32x32_161
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 455
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a010d7c10b87ad40800000000000000
+      internalID: 5595593901794660517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 449
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d22ee081fb1cc20800000000000000
+      internalID: 3225068918223809922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 455
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6c157083a7aecb0800000000000000
+      internalID: -4833916868969249097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 451
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41840c771ccaf9420800000000000000
+      internalID: 2639017853600155668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 449
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d5ec3f8009a687d0800000000000000
+      internalID: -2916457888807590444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 449
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2797058a6493bcda0800000000000000
+      internalID: -5923577909241415310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 449
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39e2d90c77c441e30800000000000000
+      internalID: 4473284407102090899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 459
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 522b68a5588386410800000000000000
+      internalID: 1470487423737049637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 449
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1dd0c2a824d61740800000000000000
+      internalID: 5122514897174846751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 449
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9608c3a02cfd04f20800000000000000
+      internalID: 3404967342780481641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 449
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d35fc62bb0ed05110800000000000000
+      internalID: 1247741238601119037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 449
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c975e5f30eae06220800000000000000
+      internalID: 2477238043910494108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 459
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19283817f7726fe70800000000000000
+      internalID: 9148543121368515217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 449
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43cf639dd63eb350800000000000000
+      internalID: 6034320876012290890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 449
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaebb9c1a1773b0f0800000000000000
+      internalID: -1102406529742815570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 449
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f9143597ecdfcf0800000000000000
+      internalID: -216790186560741580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 449
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 290de2d66dd844520800000000000000
+      internalID: 2685427229913960594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 391
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bbc1d360951884f0800000000000000
+      internalID: -826386821728318541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 391
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee2f5159105dfa90800000000000000
+      internalID: -7278573353091256600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 391
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6294f2f83eec048e0800000000000000
+      internalID: -1711140381645649626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 391
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ba3adab7a871a40800000000000000
+      internalID: 5338888147069807433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 391
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6239b7417193cd40800000000000000
+      internalID: 5603482277099680366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 391
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b584ec25f0c46a0800000000000000
+      internalID: -6463774516860921076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 385
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc7988051d73e710800000000000000
+      internalID: 1721357011876674802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 385
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb2e588063dba3c50800000000000000
+      internalID: 6645832239907463870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 385
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d4ea5eb3834bf9b0800000000000000
+      internalID: -5045364724425104172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 385
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7030c0306c7f5e500800000000000000
+      internalID: 425018169683084039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 385
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c63a15269e6fe6200800000000000000
+      internalID: 175348917751358316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 385
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b49704cc149c7530800000000000000
+      internalID: 3854118232391128245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 391
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48b579fbb5d67070800000000000000
+      internalID: 8103899582820628556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 391
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c75ef4f7c52e749f0800000000000000
+      internalID: -484169548018227844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 391
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99dad66b2711c1980800000000000000
+      internalID: -8566953206780940903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 391
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d40983af7e86690800000000000000
+      internalID: -7608576508565631738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 391
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be9aab076d67545a0800000000000000
+      internalID: -6537688620672046613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 391
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef6c750a71ec8e420800000000000000
+      internalID: 2659602180831954686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 387
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f735d55c023bd31c0800000000000000
+      internalID: -4522261497478556801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 387
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded0fa1047b190ca0800000000000000
+      internalID: -6050274439337144851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 387
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b92fb1fa8921c50800000000000000
+      internalID: 6634533078925745054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 387
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 709945afa25b9b970800000000000000
+      internalID: 8771240945473853703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 387
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9127731d22dd33700800000000000000
+      internalID: 519001523686437401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 387
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 271de522d5df48910800000000000000
+      internalID: 1838873124324430194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 327
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 828d667801d5e70d0800000000000000
+      internalID: -3423196341182474200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 327
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16beb8934930a09b0800000000000000
+      internalID: -5113270491770262687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 327
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a2600eff7b78ce0800000000000000
+      internalID: -1402950449299576230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 327
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca4530a9c1dd4e5b0800000000000000
+      internalID: -5339900143241833300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 327
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1a56aecfc5eb3140800000000000000
+      internalID: 4700603316779244063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 327
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94e0bb129f83d580800000000000000
+      internalID: -8803534988886612835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 319
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cdf4c128cec84ea0800000000000000
+      internalID: -5888229153831584311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 321
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f6d6f0d3d947530800000000000000
+      internalID: 3851876466886012754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 319
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7b215e1b574e4410800000000000000
+      internalID: 1463185385618221947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 319
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dab90e37bd5d7820800000000000000
+      internalID: 2917591175207172821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 321
+        width: 38
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c0eded3649291930800000000000000
+      internalID: 4114365116243108033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 319
+        width: 38
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2587ebf9a97a5df0800000000000000
+      internalID: -190706263227136722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 327
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d92f4e4e05ab4800800000000000000
+      internalID: 597752856418658773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 327
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9334ebc585eb1ba50800000000000000
+      internalID: 6535213821013672761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 327
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c91c4f8f8504daf0800000000000000
+      internalID: -372666755022317111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 327
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a2e7e74e91547180800000000000000
+      internalID: -9118573605265349977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 327
+        width: 54
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43f6de99ebf04da0800000000000000
+      internalID: -5962488925827697842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 327
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce97ba1b613f4a5c0800000000000000
+      internalID: -4204968873261565460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 323
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c770e9fc59770460800000000000000
+      internalID: 7207863168865957824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 323
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb56bddcf3b2b6fe0800000000000000
+      internalID: -1194813723100092996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 319
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b05f9b20a13294da0800000000000000
+      internalID: -5960194037226277621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 323
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 916843753aa53c3d0800000000000000
+      internalID: -3187604453658950119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 323
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf972f89428ee260800000000000000
+      internalID: 7128778512620036021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 319
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 779e9e431c9e8f410800000000000000
+      internalID: 1511214691008506231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 263
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb2cfb1dc7aaea40800000000000000
+      internalID: 5398311602736606147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 263
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b7aa43936d27f60800000000000000
+      internalID: 8030716626740083523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 263
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c58945e06614630800000000000000
+      internalID: 3909518163269147706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 263
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc2244effbde2a20800000000000000
+      internalID: 3039608690614349044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 263
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ef682a5e8769090800000000000000
+      internalID: -8028096358071730649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 263
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37add467c2397d4c0800000000000000
+      internalID: -4262776703110227341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 257
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ddaacf2ffa9e850800000000000000
+      internalID: 6406845403067243826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 257
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301f05832d98f3c20800000000000000
+      internalID: 3188418597182566659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 257
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43d86b877051ba10800000000000000
+      internalID: 1923406990234145614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 257
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de14740ff7d9c7c10800000000000000
+      internalID: 2052688702991712749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 257
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7779d08b9f8a1280800000000000000
+      internalID: -9071780601340004483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 257
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815246287d6cc54d0800000000000000
+      internalID: -3144419810903579368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 263
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9014f05e6eb6ff2c0800000000000000
+      internalID: -4395676071860682487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 263
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 417e4bab75c8ff780800000000000000
+      internalID: -8647038451105601772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 263
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c60c54497ad99460800000000000000
+      internalID: 7249065289602303687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 263
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92221e1535cf68b70800000000000000
+      internalID: 8901079148330557993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 263
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 498dfbb1a91233280800000000000000
+      internalID: -9064864679192438636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 263
+        width: 56
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e332ed79e25b1670800000000000000
+      internalID: 8510487083639518183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 257
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4a425aa68f76acf0800000000000000
+      internalID: -241365313657877937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 255
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888a7bee0718a68e0800000000000000
+      internalID: -1699403587337607032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 255
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2678d46abd89fabf0800000000000000
+      internalID: -310861780109916318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 255
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e89a672314ac4d0800000000000000
+      internalID: -3113604507378282974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 255
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df60ce112d32362d0800000000000000
+      internalID: -3286743917899544835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 257
+        width: 38
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3852764680190e50800000000000000
+      internalID: 6775965283249182781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_89
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191
+        width: 129
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b582e94bdaf73760800000000000000
+      internalID: 7437689129370027440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_90
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 129
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3915e77983c0ba0800000000000000
+      internalID: -6121455570192854076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_91
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 129
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e082ee8abf2db0ea0800000000000000
+      internalID: -5905394508053469170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_92
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 129
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5b7a16ea863650c0800000000000000
+      internalID: -4587419200236389539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_93
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 129
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b7d4a7e7565fb140800000000000000
+      internalID: 4737600268565534649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_94
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 129
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e7161c75377812f0800000000000000
+      internalID: -1001919845491140632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_95
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 129
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb800ea4878340a0800000000000000
+      internalID: -6898521200276763706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_96
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 129
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 249228eea6b8315e0800000000000000
+      internalID: -1940053723082249918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_97
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 129
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b385cc8a3d887bf90800000000000000
+      internalID: -6937926258289518533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_98
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 129
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d50b2c932d3ac38c0800000000000000
+      internalID: -4018156644213804963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_99
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 129
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a8881ccd1a8f6c90800000000000000
+      internalID: -7174363820795066201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_100
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 129
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23f469d96fc2f5410800000000000000
+      internalID: 1467941441263521586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_101
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 129
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40d6c2ed8cacff40800000000000000
+      internalID: 5763671348522438731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_102
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 129
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca3a17288819300e0800000000000000
+      internalID: -2304838568793496660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_103
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 129
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8103d5085927cd10800000000000000
+      internalID: 2145729205496906125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_104
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 129
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1f77aa54dd66930800000000000000
+      internalID: 4136236599068848614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_105
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 129
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0656233e27e75fc00800000000000000
+      internalID: 933791529652348256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_106
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 129
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1768eca7087b77910800000000000000
+      internalID: 1835137135620818545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_107
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 129
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d132c898ace2da630800000000000000
+      internalID: 3939856696444986141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_108
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 131
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ffe9aa36e3fee80800000000000000
+      internalID: -8147224603104706687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_109
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 131
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 892c4113394847bc0800000000000000
+      internalID: -3786255618993241448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_110
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 131
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f5b005c776e5ef80800000000000000
+      internalID: -8077796954538461706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_111
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 131
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d6fa287a2be8930800000000000000
+      internalID: 4147448739376622947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_112
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 131
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fef572915ecdc3330800000000000000
+      internalID: 3692068671064596463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_113
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 131
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d85dd3863f8135400800000000000000
+      internalID: 311620232923698573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_114
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 65
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8da907dc6cfd625d0800000000000000
+      internalID: -3087534449572668712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_115
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 65
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28665c97b3aec4c80800000000000000
+      internalID: -8337031269002680702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_116
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 65
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9887991521f317e40800000000000000
+      internalID: 5652368355237656713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_117
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 65
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 743a103fd55701290800000000000000
+      internalID: -7921702698175323321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_118
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 65
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df80d65f3e63760f0800000000000000
+      internalID: -1123869229302609667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_119
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 65
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6ee58fbdde2d56c0800000000000000
+      internalID: -4153111751429853586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_120
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 63
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebf9c10c29a09a1e0800000000000000
+      internalID: -2186204518707060802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_121
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 65
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3bf0bf39243b1b50800000000000000
+      internalID: 6564898233589496638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_122
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 63
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d4125f9dd920bd90800000000000000
+      internalID: -7084116182016322349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_123
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 63
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d6862056c0610e60800000000000000
+      internalID: 7926723224013276881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_124
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 65
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8efd45b2dce6b6f0800000000000000
+      internalID: -669087104888865140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_125
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 63
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e3c0cf19de484ff0800000000000000
+      internalID: -51704701267164188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_126
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 65
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa8dd4545342f8c0800000000000000
+      internalID: -3967034292279866635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_127
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 65
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99763703751169910800000000000000
+      internalID: 1843680163627493273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_128
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 65
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3fba4d63a49d91b0800000000000000
+      internalID: -5648194928018538689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_129
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 65
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc391938c0fd26080800000000000000
+      internalID: -9195542244297174065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_130
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 65
+        width: 52
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a88d39bc73c85340800000000000000
+      internalID: 4852843538942888097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_131
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 65
+        width: 52
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80c93adf5051d6080800000000000000
+      internalID: -9192668148918936568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_132
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 67
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dbf81bfa48d9c5f0800000000000000
+      internalID: -735819247546467373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_133
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 67
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5720de959f8a731d0800000000000000
+      internalID: -3371040007154498955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_134
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 63
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67260b6d1425cdc0800000000000000
+      internalID: -3619447016754108564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_135
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 67
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f53dd3fe78635fb80800000000000000
+      internalID: -8361717175681166497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_136
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 67
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d0e27c8a2c3507a0800000000000000
+      internalID: -6411652341049401135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_137
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 63
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 744a618f70d98a110800000000000000
+      internalID: 1272439552284730439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_138
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1
+        width: 54
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018d26262b053e0e0800000000000000
+      internalID: -2241859462415329264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_139
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3beae4d9c5796f00800000000000000
+      internalID: 1110548292844579645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_140
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 104f5f16b456e9550800000000000000
+      internalID: 6169479913984619521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_141
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0acd58e7ed65a69b0800000000000000
+      internalID: -5086157315556123488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_142
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 315673d8542065df0800000000000000
+      internalID: -191963436371450605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_143
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 1
+        width: 54
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ee52f62dd586b60800000000000000
+      internalID: 7739539118025469455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_144
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9a31e67ebaa5bdd0800000000000000
+      internalID: -2470881085527868773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_145
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bafd0f14ecbbe2fa0800000000000000
+      internalID: -5823510773599510613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_146
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8c4b47133b3efe50800000000000000
+      internalID: 6844973574269914252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_147
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 1
+        width: 34
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb1ca05b5d285c30800000000000000
+      internalID: 4348275310444944308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_148
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ebb5eb9977817860800000000000000
+      internalID: 7525945408689126371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_149
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b0c276a196a4460800000000000000
+      internalID: 7226704114190388118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_150
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 1
+        width: 54
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bdf6b27220de8bb0800000000000000
+      internalID: -4931775695552053835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_151
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 1
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1851a25bf9c04baf0800000000000000
+      internalID: -381666188340882047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_152
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 1
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834235ee294e6eb50800000000000000
+      internalID: 6622231621809677368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_153
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 1
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91fe00d0995178760800000000000000
+      internalID: 7459955054854860569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_154
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 1
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f041ae5967bf3ff0800000000000000
+      internalID: -54123007318081292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_155
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1
+        width: 54
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e660ebfe5a95d7db0800000000000000
+      internalID: -4792575859225655698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_156
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 1
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57a494cb4e5c1f330800000000000000
+      internalID: 3742990351523727989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_157
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 0
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b37d6ccc24b10eb0800000000000000
+      internalID: -4755321627025247306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_158
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 0
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ed8054cc7a91b640800000000000000
+      internalID: 5094022514192977376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_159
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 0
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7543787a6b95b27f0800000000000000
+      internalID: -636316281313217449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_160
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 0
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d12a2a95c65c3d0800000000000000
+      internalID: -3187022029058335386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheep_2_Black_32x32_161
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 1
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f23c00958206c74b0800000000000000
+      internalID: -5441368523362221265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Sheep_2_Black_32x32_0: 5595593901794660517
+      Sheep_2_Black_32x32_1: 3225068918223809922
+      Sheep_2_Black_32x32_10: 1247741238601119037
+      Sheep_2_Black_32x32_100: 1467941441263521586
+      Sheep_2_Black_32x32_101: 5763671348522438731
+      Sheep_2_Black_32x32_102: -2304838568793496660
+      Sheep_2_Black_32x32_103: 2145729205496906125
+      Sheep_2_Black_32x32_104: 4136236599068848614
+      Sheep_2_Black_32x32_105: 933791529652348256
+      Sheep_2_Black_32x32_106: 1835137135620818545
+      Sheep_2_Black_32x32_107: 3939856696444986141
+      Sheep_2_Black_32x32_108: -8147224603104706687
+      Sheep_2_Black_32x32_109: -3786255618993241448
+      Sheep_2_Black_32x32_11: 2477238043910494108
+      Sheep_2_Black_32x32_110: -8077796954538461706
+      Sheep_2_Black_32x32_111: 4147448739376622947
+      Sheep_2_Black_32x32_112: 3692068671064596463
+      Sheep_2_Black_32x32_113: 311620232923698573
+      Sheep_2_Black_32x32_114: -3087534449572668712
+      Sheep_2_Black_32x32_115: -8337031269002680702
+      Sheep_2_Black_32x32_116: 5652368355237656713
+      Sheep_2_Black_32x32_117: -7921702698175323321
+      Sheep_2_Black_32x32_118: -1123869229302609667
+      Sheep_2_Black_32x32_119: -4153111751429853586
+      Sheep_2_Black_32x32_12: 9148543121368515217
+      Sheep_2_Black_32x32_120: -2186204518707060802
+      Sheep_2_Black_32x32_121: 6564898233589496638
+      Sheep_2_Black_32x32_122: -7084116182016322349
+      Sheep_2_Black_32x32_123: 7926723224013276881
+      Sheep_2_Black_32x32_124: -669087104888865140
+      Sheep_2_Black_32x32_125: -51704701267164188
+      Sheep_2_Black_32x32_126: -3967034292279866635
+      Sheep_2_Black_32x32_127: 1843680163627493273
+      Sheep_2_Black_32x32_128: -5648194928018538689
+      Sheep_2_Black_32x32_129: -9195542244297174065
+      Sheep_2_Black_32x32_13: 6034320876012290890
+      Sheep_2_Black_32x32_130: 4852843538942888097
+      Sheep_2_Black_32x32_131: -9192668148918936568
+      Sheep_2_Black_32x32_132: -735819247546467373
+      Sheep_2_Black_32x32_133: -3371040007154498955
+      Sheep_2_Black_32x32_134: -3619447016754108564
+      Sheep_2_Black_32x32_135: -8361717175681166497
+      Sheep_2_Black_32x32_136: -6411652341049401135
+      Sheep_2_Black_32x32_137: 1272439552284730439
+      Sheep_2_Black_32x32_138: -2241859462415329264
+      Sheep_2_Black_32x32_139: 1110548292844579645
+      Sheep_2_Black_32x32_14: -1102406529742815570
+      Sheep_2_Black_32x32_140: 6169479913984619521
+      Sheep_2_Black_32x32_141: -5086157315556123488
+      Sheep_2_Black_32x32_142: -191963436371450605
+      Sheep_2_Black_32x32_143: 7739539118025469455
+      Sheep_2_Black_32x32_144: -2470881085527868773
+      Sheep_2_Black_32x32_145: -5823510773599510613
+      Sheep_2_Black_32x32_146: 6844973574269914252
+      Sheep_2_Black_32x32_147: 4348275310444944308
+      Sheep_2_Black_32x32_148: 7525945408689126371
+      Sheep_2_Black_32x32_149: 7226704114190388118
+      Sheep_2_Black_32x32_15: -216790186560741580
+      Sheep_2_Black_32x32_150: -4931775695552053835
+      Sheep_2_Black_32x32_151: -381666188340882047
+      Sheep_2_Black_32x32_152: 6622231621809677368
+      Sheep_2_Black_32x32_153: 7459955054854860569
+      Sheep_2_Black_32x32_154: -54123007318081292
+      Sheep_2_Black_32x32_155: -4792575859225655698
+      Sheep_2_Black_32x32_156: 3742990351523727989
+      Sheep_2_Black_32x32_157: -4755321627025247306
+      Sheep_2_Black_32x32_158: 5094022514192977376
+      Sheep_2_Black_32x32_159: -636316281313217449
+      Sheep_2_Black_32x32_16: 2685427229913960594
+      Sheep_2_Black_32x32_160: -3187022029058335386
+      Sheep_2_Black_32x32_161: -5441368523362221265
+      Sheep_2_Black_32x32_17: -826386821728318541
+      Sheep_2_Black_32x32_18: -7278573353091256600
+      Sheep_2_Black_32x32_19: -1711140381645649626
+      Sheep_2_Black_32x32_2: -4833916868969249097
+      Sheep_2_Black_32x32_20: 5338888147069807433
+      Sheep_2_Black_32x32_21: 5603482277099680366
+      Sheep_2_Black_32x32_22: -6463774516860921076
+      Sheep_2_Black_32x32_23: 1721357011876674802
+      Sheep_2_Black_32x32_24: 6645832239907463870
+      Sheep_2_Black_32x32_25: -5045364724425104172
+      Sheep_2_Black_32x32_26: 425018169683084039
+      Sheep_2_Black_32x32_27: 175348917751358316
+      Sheep_2_Black_32x32_28: 3854118232391128245
+      Sheep_2_Black_32x32_29: 8103899582820628556
+      Sheep_2_Black_32x32_3: 2639017853600155668
+      Sheep_2_Black_32x32_30: -484169548018227844
+      Sheep_2_Black_32x32_31: -8566953206780940903
+      Sheep_2_Black_32x32_32: -7608576508565631738
+      Sheep_2_Black_32x32_33: -6537688620672046613
+      Sheep_2_Black_32x32_34: 2659602180831954686
+      Sheep_2_Black_32x32_35: -4522261497478556801
+      Sheep_2_Black_32x32_36: -6050274439337144851
+      Sheep_2_Black_32x32_37: 6634533078925745054
+      Sheep_2_Black_32x32_38: 8771240945473853703
+      Sheep_2_Black_32x32_39: 519001523686437401
+      Sheep_2_Black_32x32_4: -2916457888807590444
+      Sheep_2_Black_32x32_40: 1838873124324430194
+      Sheep_2_Black_32x32_41: -3423196341182474200
+      Sheep_2_Black_32x32_42: -5113270491770262687
+      Sheep_2_Black_32x32_43: -1402950449299576230
+      Sheep_2_Black_32x32_44: -5339900143241833300
+      Sheep_2_Black_32x32_45: 4700603316779244063
+      Sheep_2_Black_32x32_46: -8803534988886612835
+      Sheep_2_Black_32x32_47: -5888229153831584311
+      Sheep_2_Black_32x32_48: 3851876466886012754
+      Sheep_2_Black_32x32_49: 1463185385618221947
+      Sheep_2_Black_32x32_5: -5923577909241415310
+      Sheep_2_Black_32x32_50: 2917591175207172821
+      Sheep_2_Black_32x32_51: 4114365116243108033
+      Sheep_2_Black_32x32_52: -190706263227136722
+      Sheep_2_Black_32x32_53: 597752856418658773
+      Sheep_2_Black_32x32_54: 6535213821013672761
+      Sheep_2_Black_32x32_55: -372666755022317111
+      Sheep_2_Black_32x32_56: -9118573605265349977
+      Sheep_2_Black_32x32_57: -5962488925827697842
+      Sheep_2_Black_32x32_58: -4204968873261565460
+      Sheep_2_Black_32x32_59: 7207863168865957824
+      Sheep_2_Black_32x32_6: 4473284407102090899
+      Sheep_2_Black_32x32_60: -1194813723100092996
+      Sheep_2_Black_32x32_61: -5960194037226277621
+      Sheep_2_Black_32x32_62: -3187604453658950119
+      Sheep_2_Black_32x32_63: 7128778512620036021
+      Sheep_2_Black_32x32_64: 1511214691008506231
+      Sheep_2_Black_32x32_65: 5398311602736606147
+      Sheep_2_Black_32x32_66: 8030716626740083523
+      Sheep_2_Black_32x32_67: 3909518163269147706
+      Sheep_2_Black_32x32_68: 3039608690614349044
+      Sheep_2_Black_32x32_69: -8028096358071730649
+      Sheep_2_Black_32x32_7: 1470487423737049637
+      Sheep_2_Black_32x32_70: -4262776703110227341
+      Sheep_2_Black_32x32_71: 6406845403067243826
+      Sheep_2_Black_32x32_72: 3188418597182566659
+      Sheep_2_Black_32x32_73: 1923406990234145614
+      Sheep_2_Black_32x32_74: 2052688702991712749
+      Sheep_2_Black_32x32_75: -9071780601340004483
+      Sheep_2_Black_32x32_76: -3144419810903579368
+      Sheep_2_Black_32x32_77: -4395676071860682487
+      Sheep_2_Black_32x32_78: -8647038451105601772
+      Sheep_2_Black_32x32_79: 7249065289602303687
+      Sheep_2_Black_32x32_8: 5122514897174846751
+      Sheep_2_Black_32x32_80: 8901079148330557993
+      Sheep_2_Black_32x32_81: -9064864679192438636
+      Sheep_2_Black_32x32_82: 8510487083639518183
+      Sheep_2_Black_32x32_83: -241365313657877937
+      Sheep_2_Black_32x32_84: -1699403587337607032
+      Sheep_2_Black_32x32_85: -310861780109916318
+      Sheep_2_Black_32x32_86: -3113604507378282974
+      Sheep_2_Black_32x32_87: -3286743917899544835
+      Sheep_2_Black_32x32_88: 6775965283249182781
+      Sheep_2_Black_32x32_89: 7437689129370027440
+      Sheep_2_Black_32x32_9: 3404967342780481641
+      Sheep_2_Black_32x32_90: -6121455570192854076
+      Sheep_2_Black_32x32_91: -5905394508053469170
+      Sheep_2_Black_32x32_92: -4587419200236389539
+      Sheep_2_Black_32x32_93: 4737600268565534649
+      Sheep_2_Black_32x32_94: -1001919845491140632
+      Sheep_2_Black_32x32_95: -6898521200276763706
+      Sheep_2_Black_32x32_96: -1940053723082249918
+      Sheep_2_Black_32x32_97: -6937926258289518533
+      Sheep_2_Black_32x32_98: -4018156644213804963
+      Sheep_2_Black_32x32_99: -7174363820795066201
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: a720f7b38552256418483fb0f9dea27f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5372502465283773153
+    second: Donkey_32x32_0
+  - first:
+      213: 4946487383146044078
+    second: Donkey_32x32_1
+  - first:
+      213: 7433495626687259698
+    second: Donkey_32x32_2
+  - first:
+      213: -5640689490102358382
+    second: Donkey_32x32_3
+  - first:
+      213: 4637292058788524580
+    second: Donkey_32x32_4
+  - first:
+      213: -6019785116701796906
+    second: Donkey_32x32_5
+  - first:
+      213: 8200232028907348286
+    second: Donkey_32x32_6
+  - first:
+      213: 7883238040724119376
+    second: Donkey_32x32_7
+  - first:
+      213: 3093632349023919189
+    second: Donkey_32x32_8
+  - first:
+      213: 304202430915065460
+    second: Donkey_32x32_9
+  - first:
+      213: 5604535499740590700
+    second: Donkey_32x32_10
+  - first:
+      213: -6319183830775940170
+    second: Donkey_32x32_11
+  - first:
+      213: 3210527893089549090
+    second: Donkey_32x32_12
+  - first:
+      213: -8082585119035531217
+    second: Donkey_32x32_13
+  - first:
+      213: -2414883502537054370
+    second: Donkey_32x32_14
+  - first:
+      213: -404239314879431132
+    second: Donkey_32x32_15
+  - first:
+      213: 7006772166255523994
+    second: Donkey_32x32_16
+  - first:
+      213: 2269817582344688231
+    second: Donkey_32x32_17
+  - first:
+      213: -8674024811396356758
+    second: Donkey_32x32_18
+  - first:
+      213: -1910424212809363043
+    second: Donkey_32x32_19
+  - first:
+      213: -5468296278222017488
+    second: Donkey_32x32_20
+  - first:
+      213: -4198125061849548058
+    second: Donkey_32x32_21
+  - first:
+      213: -1929383722174680510
+    second: Donkey_32x32_22
+  - first:
+      213: -504373243574788378
+    second: Donkey_32x32_23
+  - first:
+      213: 7952512999071190365
+    second: Donkey_32x32_24
+  - first:
+      213: -4216039474466352004
+    second: Donkey_32x32_25
+  - first:
+      213: 2861564888916085992
+    second: Donkey_32x32_26
+  - first:
+      213: 5510487174024292596
+    second: Donkey_32x32_27
+  - first:
+      213: -3372394256630852335
+    second: Donkey_32x32_28
+  - first:
+      213: 871924615063355923
+    second: Donkey_32x32_29
+  - first:
+      213: 5613587158329104335
+    second: Donkey_32x32_30
+  - first:
+      213: -2755669636714453921
+    second: Donkey_32x32_31
+  - first:
+      213: -1113853835588983095
+    second: Donkey_32x32_32
+  - first:
+      213: -2704780913987922097
+    second: Donkey_32x32_33
+  - first:
+      213: 610525592189738857
+    second: Donkey_32x32_34
+  - first:
+      213: 6893870181473313697
+    second: Donkey_32x32_35
+  - first:
+      213: 195194325733579975
+    second: Donkey_32x32_36
+  - first:
+      213: 583778645358930987
+    second: Donkey_32x32_37
+  - first:
+      213: 4973192366495085189
+    second: Donkey_32x32_38
+  - first:
+      213: -758640404506582091
+    second: Donkey_32x32_39
+  - first:
+      213: -5293191986640090788
+    second: Donkey_32x32_40
+  - first:
+      213: 4848000636215127164
+    second: Donkey_32x32_41
+  - first:
+      213: 591651112118077519
+    second: Donkey_32x32_42
+  - first:
+      213: -1149511835744987902
+    second: Donkey_32x32_43
+  - first:
+      213: -7486041353469319849
+    second: Donkey_32x32_44
+  - first:
+      213: 581456189375150013
+    second: Donkey_32x32_45
+  - first:
+      213: 4460259462762533411
+    second: Donkey_32x32_46
+  - first:
+      213: 3706133614467108504
+    second: Donkey_32x32_47
+  - first:
+      213: 5240404691616072702
+    second: Donkey_32x32_48
+  - first:
+      213: 611920859209476973
+    second: Donkey_32x32_49
+  - first:
+      213: 8244794412847562938
+    second: Donkey_32x32_50
+  - first:
+      213: -3096213960675710647
+    second: Donkey_32x32_51
+  - first:
+      213: -3149849927856497646
+    second: Donkey_32x32_52
+  - first:
+      213: 8811030685094352443
+    second: Donkey_32x32_53
+  - first:
+      213: -3100917260986872019
+    second: Donkey_32x32_54
+  - first:
+      213: -5686964710008964092
+    second: Donkey_32x32_55
+  - first:
+      213: 2747410407864117272
+    second: Donkey_32x32_56
+  - first:
+      213: -4666715464578397016
+    second: Donkey_32x32_57
+  - first:
+      213: 237107216038713099
+    second: Donkey_32x32_58
+  - first:
+      213: -1556675971129419660
+    second: Donkey_32x32_59
+  - first:
+      213: -6799260804717674422
+    second: Donkey_32x32_60
+  - first:
+      213: -5537961629329982514
+    second: Donkey_32x32_61
+  - first:
+      213: 9209431247017213262
+    second: Donkey_32x32_62
+  - first:
+      213: 7038507753175103050
+    second: Donkey_32x32_63
+  - first:
+      213: -5556411119122047480
+    second: Donkey_32x32_64
+  - first:
+      213: 4455028369895196548
+    second: Donkey_32x32_65
+  - first:
+      213: 5405771830221369058
+    second: Donkey_32x32_66
+  - first:
+      213: 6758751908494931761
+    second: Donkey_32x32_67
+  - first:
+      213: -3168326784302426019
+    second: Donkey_32x32_68
+  - first:
+      213: 8890757162385880343
+    second: Donkey_32x32_69
+  - first:
+      213: 2444853081402545655
+    second: Donkey_32x32_70
+  - first:
+      213: 3879648068158309002
+    second: Donkey_32x32_71
+  - first:
+      213: -1266087919891635159
+    second: Donkey_32x32_72
+  - first:
+      213: 5421195736404224090
+    second: Donkey_32x32_73
+  - first:
+      213: -3827774945779654494
+    second: Donkey_32x32_74
+  - first:
+      213: 8403251849783338937
+    second: Donkey_32x32_75
+  - first:
+      213: -1833741951845638490
+    second: Donkey_32x32_76
+  - first:
+      213: 99861560607788115
+    second: Donkey_32x32_77
+  - first:
+      213: -5644460548625756311
+    second: Donkey_32x32_78
+  - first:
+      213: 4413824973981746934
+    second: Donkey_32x32_79
+  - first:
+      213: 6716197055934537434
+    second: Donkey_32x32_80
+  - first:
+      213: -3456451092278953426
+    second: Donkey_32x32_81
+  - first:
+      213: 3305809152115621808
+    second: Donkey_32x32_82
+  - first:
+      213: 5964706482348600221
+    second: Donkey_32x32_83
+  - first:
+      213: 8027783927446606129
+    second: Donkey_32x32_84
+  - first:
+      213: 2347954152809450989
+    second: Donkey_32x32_85
+  - first:
+      213: 7121590897060461473
+    second: Donkey_32x32_86
+  - first:
+      213: 2451731898571036825
+    second: Donkey_32x32_87
+  - first:
+      213: -132800984651967410
+    second: Donkey_32x32_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Donkey_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 307
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e256260786fe8a40800000000000000
+      internalID: 5372502465283773153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 293
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaa1f5e311475a440800000000000000
+      internalID: 4946487383146044078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 307
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2342d1c53e4192760800000000000000
+      internalID: 7433495626687259698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 301
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29e6b2e5bce38b1b0800000000000000
+      internalID: -5640689490102358382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 287
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42274dbde88fa5040800000000000000
+      internalID: 4637292058788524580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 287
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d55ece945d657ca0800000000000000
+      internalID: -6019785116701796906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 287
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e31adc665931dc170800000000000000
+      internalID: 8200232028907348286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 287
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05f15391b33e66d60800000000000000
+      internalID: 7883238040724119376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 287
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55c5a3d0b3aceea20800000000000000
+      internalID: 3093632349023919189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 287
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 476b08acf7eb83400800000000000000
+      internalID: 304202430915065460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 287
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62ba19c75f47cd40800000000000000
+      internalID: 5604535499740590700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 287
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bb353059cfbd48a0800000000000000
+      internalID: -6319183830775940170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 287
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22bf511db161e8c20800000000000000
+      internalID: 3210527893089549090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 297
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f20670958a3e4df80800000000000000
+      internalID: -8082585119035531217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 297
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57e351cf3c9c7ed0800000000000000
+      internalID: -2414883502537054370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 287
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e3d502c7ad36af0800000000000000
+      internalID: -404239314879431132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 287
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9831c7692e0d3160800000000000000
+      internalID: 7006772166255523994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 211
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 762579ca013008f10800000000000000
+      internalID: 2269817582344688231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 211
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a65abc7146caf9780800000000000000
+      internalID: -8674024811396356758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 211
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d915131ec4fcc75e0800000000000000
+      internalID: -1910424212809363043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 211
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03c6cf9d185bc14b0800000000000000
+      internalID: -5468296278222017488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 211
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eafac5bf734db5c0800000000000000
+      internalID: -4198125061849548058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 211
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2427b5c1ab37935e0800000000000000
+      internalID: -1929383722174680510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 197
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ee538e053b1009f0800000000000000
+      internalID: -504373243574788378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 197
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d805d30700d5e60800000000000000
+      internalID: 7952512999071190365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 197
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74986d7f6e9d75c0800000000000000
+      internalID: -4216039474466352004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 197
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ecc291fa1256b720800000000000000
+      internalID: 2861564888916085992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 197
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8601393ee297c40800000000000000
+      internalID: 5510487174024292596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 197
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11553f29a49d231d0800000000000000
+      internalID: -3372394256630852335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 211
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31245c751d2b91c00800000000000000
+      internalID: 871924615063355923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 211
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc796e747c777ed40800000000000000
+      internalID: 5613587158329104335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 211
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f542e49c015e1c9d0800000000000000
+      internalID: -2755669636714453921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 211
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6230686dbca80f0800000000000000
+      internalID: -1113853835588983095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 211
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f475e7ad610b67ad0800000000000000
+      internalID: -2704780913987922097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 211
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f11c89ac5097800800000000000000
+      internalID: 610525592189738857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 205
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3ef5e9762fbaf50800000000000000
+      internalID: 6893870181473313697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 205
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cc958f743875b200800000000000000
+      internalID: 195194325733579975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 205
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2ce310c59ff91800800000000000000
+      internalID: 583778645358930987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 205
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 582bf94bb14540540800000000000000
+      internalID: 4973192366495085189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 205
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b360215294c875f0800000000000000
+      internalID: -758640404506582091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 205
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c598f54ceedca86b0800000000000000
+      internalID: -5293191986640090788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 115
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7c687094ee874340800000000000000
+      internalID: 4848000636215127164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 115
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4843c04d87f53800800000000000000
+      internalID: 591651112118077519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 115
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2051055631d1c00f0800000000000000
+      internalID: -1149511835744987902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 115
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 755a3904d0d3c1890800000000000000
+      internalID: -7486041353469319849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 115
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db77824d25fb11800800000000000000
+      internalID: 581456189375150013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 115
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3221904995606ed30800000000000000
+      internalID: 4460259462762533411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 101
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e427ce2e4de6330800000000000000
+      internalID: 3706133614467108504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 101
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3011b5d48a9b840800000000000000
+      internalID: 5240404691616072702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 99
+        width: 34
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b25d387cafd7800800000000000000
+      internalID: 611920859209476973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 101
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab087efe5d46b6270800000000000000
+      internalID: 8244794412847562938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 99
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 949a155aec90805d0800000000000000
+      internalID: -3096213960675710647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 99
+        width: 34
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21cd252ed2c7944d0800000000000000
+      internalID: -3149849927856497646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 115
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b369d1aa9b1174a70800000000000000
+      internalID: 8811030685094352443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 115
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f00053e2457f4d0800000000000000
+      internalID: -3100917260986872019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 115
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40cbbb12ab7d311b0800000000000000
+      internalID: -5686964710008964092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 115
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818a3f4a533c02620800000000000000
+      internalID: 2747410407864117272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 115
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ac8bf1a20f7c3fb0800000000000000
+      internalID: -4666715464578397016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 115
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b075ba9b1cf5a4300800000000000000
+      internalID: 237107216038713099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 109
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 478d17ea373956ae0800000000000000
+      internalID: -1556675971129419660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 109
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a400197725c24a1a0800000000000000
+      internalID: -6799260804717674422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 105
+        width: 38
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecbfa005d353523b0800000000000000
+      internalID: -5537961629329982514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 109
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4df7ddece87ecf70800000000000000
+      internalID: 9209431247017213262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 109
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a46b5d8828dcda160800000000000000
+      internalID: 7038507753175103050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 105
+        width: 38
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80e13bab689a3e2b0800000000000000
+      internalID: -5556411119122047480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48704ebd2b073dd30800000000000000
+      internalID: 4455028369895196548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ee682da6d8250b40800000000000000
+      internalID: 5405771830221369058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13775d62d09ebcd50800000000000000
+      internalID: 6758751908494931761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d585c418397d704d0800000000000000
+      internalID: -3168326784302426019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7153540b880526b70800000000000000
+      internalID: 8890757162385880343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f594059cecdde120800000000000000
+      internalID: 2444853081402545655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 5
+        width: 34
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a824b1cdc5747d530800000000000000
+      internalID: 3879648068158309002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 5
+        width: 34
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9242270beb3fd6ee0800000000000000
+      internalID: -1266087919891635159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 5
+        width: 34
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a586c3eacc4fb3b40800000000000000
+      internalID: 5421195736404224090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 5
+        width: 34
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a0e9ac97f201eac0800000000000000
+      internalID: -3827774945779654494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 5
+        width: 34
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b7ea78f8095e9470800000000000000
+      internalID: 8403251849783338937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 5
+        width: 34
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae528e096d3d86e0800000000000000
+      internalID: -1833741951845638490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c4ebe6f87c26100800000000000000
+      internalID: 99861560607788115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f84726909daa1b0800000000000000
+      internalID: -5644460548625756311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f60eeaad6e014d30800000000000000
+      internalID: 4413824973981746934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade908073a9b43d50800000000000000
+      internalID: 6716197055934537434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ab33d6b083800d0800000000000000
+      internalID: -3456451092278953426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 19
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf361fa8e790ed20800000000000000
+      internalID: 3305809152115621808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 13
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9babdd71f4e6c250800000000000000
+      internalID: 5964706482348600221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 11
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1319b01f2fa686f60800000000000000
+      internalID: 8027783927446606129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 11
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded4c1bacdb959020800000000000000
+      internalID: 2347954152809450989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 11
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abb1f66039f4d260800000000000000
+      internalID: 7121590897060461473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 13
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99812d20c2d460220800000000000000
+      internalID: 2451731898571036825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 13
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e445ff34532382ef0800000000000000
+      internalID: -132800984651967410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Donkey_32x32_0: 5372502465283773153
+      Donkey_32x32_1: 4946487383146044078
+      Donkey_32x32_10: 5604535499740590700
+      Donkey_32x32_11: -6319183830775940170
+      Donkey_32x32_12: 3210527893089549090
+      Donkey_32x32_13: -8082585119035531217
+      Donkey_32x32_14: -2414883502537054370
+      Donkey_32x32_15: -404239314879431132
+      Donkey_32x32_16: 7006772166255523994
+      Donkey_32x32_17: 2269817582344688231
+      Donkey_32x32_18: -8674024811396356758
+      Donkey_32x32_19: -1910424212809363043
+      Donkey_32x32_2: 7433495626687259698
+      Donkey_32x32_20: -5468296278222017488
+      Donkey_32x32_21: -4198125061849548058
+      Donkey_32x32_22: -1929383722174680510
+      Donkey_32x32_23: -504373243574788378
+      Donkey_32x32_24: 7952512999071190365
+      Donkey_32x32_25: -4216039474466352004
+      Donkey_32x32_26: 2861564888916085992
+      Donkey_32x32_27: 5510487174024292596
+      Donkey_32x32_28: -3372394256630852335
+      Donkey_32x32_29: 871924615063355923
+      Donkey_32x32_3: -5640689490102358382
+      Donkey_32x32_30: 5613587158329104335
+      Donkey_32x32_31: -2755669636714453921
+      Donkey_32x32_32: -1113853835588983095
+      Donkey_32x32_33: -2704780913987922097
+      Donkey_32x32_34: 610525592189738857
+      Donkey_32x32_35: 6893870181473313697
+      Donkey_32x32_36: 195194325733579975
+      Donkey_32x32_37: 583778645358930987
+      Donkey_32x32_38: 4973192366495085189
+      Donkey_32x32_39: -758640404506582091
+      Donkey_32x32_4: 4637292058788524580
+      Donkey_32x32_40: -5293191986640090788
+      Donkey_32x32_41: 4848000636215127164
+      Donkey_32x32_42: 591651112118077519
+      Donkey_32x32_43: -1149511835744987902
+      Donkey_32x32_44: -7486041353469319849
+      Donkey_32x32_45: 581456189375150013
+      Donkey_32x32_46: 4460259462762533411
+      Donkey_32x32_47: 3706133614467108504
+      Donkey_32x32_48: 5240404691616072702
+      Donkey_32x32_49: 611920859209476973
+      Donkey_32x32_5: -6019785116701796906
+      Donkey_32x32_50: 8244794412847562938
+      Donkey_32x32_51: -3096213960675710647
+      Donkey_32x32_52: -3149849927856497646
+      Donkey_32x32_53: 8811030685094352443
+      Donkey_32x32_54: -3100917260986872019
+      Donkey_32x32_55: -5686964710008964092
+      Donkey_32x32_56: 2747410407864117272
+      Donkey_32x32_57: -4666715464578397016
+      Donkey_32x32_58: 237107216038713099
+      Donkey_32x32_59: -1556675971129419660
+      Donkey_32x32_6: 8200232028907348286
+      Donkey_32x32_60: -6799260804717674422
+      Donkey_32x32_61: -5537961629329982514
+      Donkey_32x32_62: 9209431247017213262
+      Donkey_32x32_63: 7038507753175103050
+      Donkey_32x32_64: -5556411119122047480
+      Donkey_32x32_65: 4455028369895196548
+      Donkey_32x32_66: 5405771830221369058
+      Donkey_32x32_67: 6758751908494931761
+      Donkey_32x32_68: -3168326784302426019
+      Donkey_32x32_69: 8890757162385880343
+      Donkey_32x32_7: 7883238040724119376
+      Donkey_32x32_70: 2444853081402545655
+      Donkey_32x32_71: 3879648068158309002
+      Donkey_32x32_72: -1266087919891635159
+      Donkey_32x32_73: 5421195736404224090
+      Donkey_32x32_74: -3827774945779654494
+      Donkey_32x32_75: 8403251849783338937
+      Donkey_32x32_76: -1833741951845638490
+      Donkey_32x32_77: 99861560607788115
+      Donkey_32x32_78: -5644460548625756311
+      Donkey_32x32_79: 4413824973981746934
+      Donkey_32x32_8: 3093632349023919189
+      Donkey_32x32_80: 6716197055934537434
+      Donkey_32x32_81: -3456451092278953426
+      Donkey_32x32_82: 3305809152115621808
+      Donkey_32x32_83: 5964706482348600221
+      Donkey_32x32_84: 8027783927446606129
+      Donkey_32x32_85: 2347954152809450989
+      Donkey_32x32_86: 7121590897060461473
+      Donkey_32x32_87: 2451731898571036825
+      Donkey_32x32_88: -132800984651967410
+      Donkey_32x32_9: 304202430915065460
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

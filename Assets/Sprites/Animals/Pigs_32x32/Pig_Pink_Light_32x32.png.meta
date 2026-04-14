@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: 9b492334cd645684d9adfe1e2024bbd7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6588857330282821471
+    second: Pig_Pink_Light_32x32_0
+  - first:
+      213: 3257957936168394665
+    second: Pig_Pink_Light_32x32_1
+  - first:
+      213: 4437004868724965698
+    second: Pig_Pink_Light_32x32_2
+  - first:
+      213: -551007051663434759
+    second: Pig_Pink_Light_32x32_3
+  - first:
+      213: -2395914569062689547
+    second: Pig_Pink_Light_32x32_4
+  - first:
+      213: -6473832031540661363
+    second: Pig_Pink_Light_32x32_5
+  - first:
+      213: -4938164530616651729
+    second: Pig_Pink_Light_32x32_6
+  - first:
+      213: -6651754319422536670
+    second: Pig_Pink_Light_32x32_7
+  - first:
+      213: 9119183973752092589
+    second: Pig_Pink_Light_32x32_8
+  - first:
+      213: 6144578022457745937
+    second: Pig_Pink_Light_32x32_9
+  - first:
+      213: -8587821561444651880
+    second: Pig_Pink_Light_32x32_10
+  - first:
+      213: -803598357858752170
+    second: Pig_Pink_Light_32x32_11
+  - first:
+      213: 8631313536474133779
+    second: Pig_Pink_Light_32x32_12
+  - first:
+      213: -5420159345356508905
+    second: Pig_Pink_Light_32x32_13
+  - first:
+      213: -8858633552956391340
+    second: Pig_Pink_Light_32x32_14
+  - first:
+      213: -9008146330289992503
+    second: Pig_Pink_Light_32x32_15
+  - first:
+      213: 2504059807449687503
+    second: Pig_Pink_Light_32x32_16
+  - first:
+      213: 1887538325735145712
+    second: Pig_Pink_Light_32x32_17
+  - first:
+      213: -7380007893332150685
+    second: Pig_Pink_Light_32x32_18
+  - first:
+      213: 8678654107286017290
+    second: Pig_Pink_Light_32x32_19
+  - first:
+      213: 7702187474952617085
+    second: Pig_Pink_Light_32x32_20
+  - first:
+      213: 2733263903999950641
+    second: Pig_Pink_Light_32x32_21
+  - first:
+      213: 9089071494034880224
+    second: Pig_Pink_Light_32x32_22
+  - first:
+      213: -3516860942993412611
+    second: Pig_Pink_Light_32x32_23
+  - first:
+      213: 2599805910673685273
+    second: Pig_Pink_Light_32x32_24
+  - first:
+      213: -8576810262214336459
+    second: Pig_Pink_Light_32x32_25
+  - first:
+      213: 1371137956836235730
+    second: Pig_Pink_Light_32x32_26
+  - first:
+      213: -7670173905246447102
+    second: Pig_Pink_Light_32x32_27
+  - first:
+      213: 6863413284541956665
+    second: Pig_Pink_Light_32x32_28
+  - first:
+      213: 2775035897015210335
+    second: Pig_Pink_Light_32x32_29
+  - first:
+      213: -1322968318115992710
+    second: Pig_Pink_Light_32x32_30
+  - first:
+      213: 1086117817371730057
+    second: Pig_Pink_Light_32x32_31
+  - first:
+      213: 7970222478442891984
+    second: Pig_Pink_Light_32x32_32
+  - first:
+      213: 3349746877937348281
+    second: Pig_Pink_Light_32x32_33
+  - first:
+      213: -2984268657709762523
+    second: Pig_Pink_Light_32x32_34
+  - first:
+      213: 8091247098627042178
+    second: Pig_Pink_Light_32x32_35
+  - first:
+      213: 3537420788458857191
+    second: Pig_Pink_Light_32x32_36
+  - first:
+      213: -5885621901992712649
+    second: Pig_Pink_Light_32x32_37
+  - first:
+      213: 945965177958954517
+    second: Pig_Pink_Light_32x32_38
+  - first:
+      213: 7561622399869824390
+    second: Pig_Pink_Light_32x32_39
+  - first:
+      213: -2661519293326329766
+    second: Pig_Pink_Light_32x32_40
+  - first:
+      213: -4840535532868468436
+    second: Pig_Pink_Light_32x32_41
+  - first:
+      213: 4674977630399172316
+    second: Pig_Pink_Light_32x32_42
+  - first:
+      213: -8092881940674457775
+    second: Pig_Pink_Light_32x32_43
+  - first:
+      213: -8162050389691164457
+    second: Pig_Pink_Light_32x32_44
+  - first:
+      213: 2624046511735744105
+    second: Pig_Pink_Light_32x32_45
+  - first:
+      213: 2647105516925690973
+    second: Pig_Pink_Light_32x32_46
+  - first:
+      213: 3291988361936362136
+    second: Pig_Pink_Light_32x32_47
+  - first:
+      213: -2629859271402500816
+    second: Pig_Pink_Light_32x32_48
+  - first:
+      213: 3265825844453368820
+    second: Pig_Pink_Light_32x32_49
+  - first:
+      213: 3001398931894131252
+    second: Pig_Pink_Light_32x32_50
+  - first:
+      213: 8473849243906149468
+    second: Pig_Pink_Light_32x32_51
+  - first:
+      213: -7647965847821621999
+    second: Pig_Pink_Light_32x32_52
+  - first:
+      213: -8216023630575511528
+    second: Pig_Pink_Light_32x32_53
+  - first:
+      213: -5144782276744039254
+    second: Pig_Pink_Light_32x32_54
+  - first:
+      213: 7460222527622169105
+    second: Pig_Pink_Light_32x32_55
+  - first:
+      213: -5897875861129417737
+    second: Pig_Pink_Light_32x32_56
+  - first:
+      213: 5042295030417125945
+    second: Pig_Pink_Light_32x32_57
+  - first:
+      213: 6190681227878512019
+    second: Pig_Pink_Light_32x32_58
+  - first:
+      213: 7497430367054919955
+    second: Pig_Pink_Light_32x32_59
+  - first:
+      213: 8677770622393931061
+    second: Pig_Pink_Light_32x32_60
+  - first:
+      213: 2360807077936691448
+    second: Pig_Pink_Light_32x32_61
+  - first:
+      213: -3742895804675190500
+    second: Pig_Pink_Light_32x32_62
+  - first:
+      213: 4011551782225374522
+    second: Pig_Pink_Light_32x32_63
+  - first:
+      213: -4393913335622007762
+    second: Pig_Pink_Light_32x32_64
+  - first:
+      213: -499311848895189047
+    second: Pig_Pink_Light_32x32_65
+  - first:
+      213: 7838260719777647074
+    second: Pig_Pink_Light_32x32_66
+  - first:
+      213: -8899138517905309961
+    second: Pig_Pink_Light_32x32_67
+  - first:
+      213: -4551325164599069541
+    second: Pig_Pink_Light_32x32_68
+  - first:
+      213: 8474037551765434341
+    second: Pig_Pink_Light_32x32_69
+  - first:
+      213: -460601138587200933
+    second: Pig_Pink_Light_32x32_70
+  - first:
+      213: -3548886846235486263
+    second: Pig_Pink_Light_32x32_71
+  - first:
+      213: -2399160020363300107
+    second: Pig_Pink_Light_32x32_72
+  - first:
+      213: -159342299489470152
+    second: Pig_Pink_Light_32x32_73
+  - first:
+      213: 8105955256243877250
+    second: Pig_Pink_Light_32x32_74
+  - first:
+      213: -3250597664914666927
+    second: Pig_Pink_Light_32x32_75
+  - first:
+      213: -493128746781912678
+    second: Pig_Pink_Light_32x32_76
+  - first:
+      213: 8795183637259428847
+    second: Pig_Pink_Light_32x32_77
+  - first:
+      213: -1661507347207951894
+    second: Pig_Pink_Light_32x32_78
+  - first:
+      213: -8705213063962983848
+    second: Pig_Pink_Light_32x32_79
+  - first:
+      213: -5432897581474485159
+    second: Pig_Pink_Light_32x32_80
+  - first:
+      213: -3366559086118179107
+    second: Pig_Pink_Light_32x32_81
+  - first:
+      213: -8915974720966789495
+    second: Pig_Pink_Light_32x32_82
+  - first:
+      213: 4068593274301469890
+    second: Pig_Pink_Light_32x32_83
+  - first:
+      213: -6991150496060260439
+    second: Pig_Pink_Light_32x32_84
+  - first:
+      213: -8164997227903356702
+    second: Pig_Pink_Light_32x32_85
+  - first:
+      213: -6679509530644876742
+    second: Pig_Pink_Light_32x32_86
+  - first:
+      213: -5023078906820066882
+    second: Pig_Pink_Light_32x32_87
+  - first:
+      213: 6055278056993497702
+    second: Pig_Pink_Light_32x32_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 201
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f577c3725d2507b50800000000000000
+      internalID: 6588857330282821471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 193
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af5b764b77963d20800000000000000
+      internalID: 3257957936168394665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 201
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241c70b7b68639d30800000000000000
+      internalID: 4437004868724965698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 197
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fb9dd0810e6a58f0800000000000000
+      internalID: -551007051663434759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f4d5deb46000ced0800000000000000
+      internalID: -2395914569062689547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83397031145826a0800000000000000
+      internalID: -6473832031540661363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 191
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f20392ed58d187bb0800000000000000
+      internalID: -4938164530616651729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22446a160b830b3a0800000000000000
+      internalID: -6651754319422536670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7bde43289dd8e70800000000000000
+      internalID: 9119183973752092589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1122443f72de54550800000000000000
+      internalID: 6144578022457745937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 191
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ca6a34acde1d880800000000000000
+      internalID: -8587821561444651880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659edb91d8b09d4f0800000000000000
+      internalID: -803598357858752170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 201
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 315bf864ee598c770800000000000000
+      internalID: 8631313536474133779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711f20aeac9b7c4b0800000000000000
+      internalID: -5420159345356508905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 191
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4508da8f7bfcf0580800000000000000
+      internalID: -8858633552956391340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc835ac3a2acf280800000000000000
+      internalID: -9008146330289992503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc52f57b02530c220800000000000000
+      internalID: 2504059807449687503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f0016d4b12e13a10800000000000000
+      internalID: 1887538325735145712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 366bb560ce1f49990800000000000000
+      internalID: -7380007893332150685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a059449dde5c07870800000000000000
+      internalID: 8678654107286017290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c730653baa3ea60800000000000000
+      internalID: 7702187474952617085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f705b0a018ee520800000000000000
+      internalID: 2733263903999950641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6f31c2e5ed22e70800000000000000
+      internalID: 9089071494034880224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 129
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfdae600b99913fc0800000000000000
+      internalID: -3516860942993412611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 129
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b7aae83bd541420800000000000000
+      internalID: 2599805910673685273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 129
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5302ac6228c09f880800000000000000
+      internalID: -8576810262214336459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 129
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9574705b2470310800000000000000
+      internalID: 1371137956836235730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 129
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20a9054b8711e8590800000000000000
+      internalID: -7670173905246447102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 129
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93202d3b40ebf3f50800000000000000
+      internalID: 6863413284541956665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f519c801278e28620800000000000000
+      internalID: 2775035897015210335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7ba995f25fd3ade0800000000000000
+      internalID: -1322968318115992710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9802aa0866aa21f00800000000000000
+      internalID: 1086117817371730057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0da0c68bd1beb9e60800000000000000
+      internalID: 7970222478442891984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 137
+        width: 56
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9beedeaa901bc7e20800000000000000
+      internalID: 3349746877937348281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 137
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528b0e6977fb596d0800000000000000
+      internalID: -2984268657709762523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 133
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b239fed52e94070800000000000000
+      internalID: 8091247098627042178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 133
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e22c2d0771771130800000000000000
+      internalID: 3537420788458857191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 133
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73627714012125ea0800000000000000
+      internalID: -5885621901992712649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 135
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516f122415eb02d00800000000000000
+      internalID: 945965177958954517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 135
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68da0ed628740f860800000000000000
+      internalID: 7561622399869824390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 133
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a587f66dd42601bd0800000000000000
+      internalID: -2661519293326329766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2108b04496f2dcb0800000000000000
+      internalID: -4840535532868468436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde07d0c26bd0e040800000000000000
+      internalID: 4674977630399172316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 73
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15fccecb0ce40bf80800000000000000
+      internalID: -8092881940674457775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d89e9b3a629abe80800000000000000
+      internalID: -8162050389691164457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 966ac1e466c7a6420800000000000000
+      internalID: 2624046511735744105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 73
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d54255351786cb420800000000000000
+      internalID: 2647105516925690973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 65
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89adfe539fd7fad20800000000000000
+      internalID: 3291988361936362136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 63
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d49ce1decd08bd0800000000000000
+      internalID: -2629859271402500816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 63
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f3eeec6d4b825d20800000000000000
+      internalID: 3265825844453368820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 65
+        width: 34
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a59cc2d6c17a920800000000000000
+      internalID: 3001398931894131252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 63
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c0d3fadf8299570800000000000000
+      internalID: 8473849243906149468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 63
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 115e5420597fcd590800000000000000
+      internalID: -7647965847821621999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 818d451d902dafd80800000000000000
+      internalID: -8216023630575511528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa432fb07cf0a98b0800000000000000
+      internalID: -5144782276744039254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 73
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1124948ecd8088760800000000000000
+      internalID: 7460222527622169105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fba7001729862ea0800000000000000
+      internalID: -5897875861129417737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 73
+        width: 56
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 932fabc6d94d9f540800000000000000
+      internalID: 5042295030417125945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 73
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395b061f6c7b9e550800000000000000
+      internalID: 6190681227878512019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 69
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319f88c12393c0860800000000000000
+      internalID: 7497430367054919955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 69
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5355c1e7762ad6870800000000000000
+      internalID: 8677770622393931061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 67
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f8f4af778543c020800000000000000
+      internalID: 2360807077936691448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 69
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c11190ba8109e0cc0800000000000000
+      internalID: -3742895804675190500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 69
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3de0a18715eba730800000000000000
+      internalID: 4011551782225374522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 67
+        width: 34
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e240668e91fa503c0800000000000000
+      internalID: -4393913335622007762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cf6576d4861219f0800000000000000
+      internalID: -499311848895189047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e98e33889817cc60800000000000000
+      internalID: 7838260719777647074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fef149eaa8ef7480800000000000000
+      internalID: -8899138517905309961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b94b6c270e176d0c0800000000000000
+      internalID: -4551325164599069541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5efac468144d99570800000000000000
+      internalID: 8474037551765434341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b529e5f64bd9b99f0800000000000000
+      internalID: -460601138587200933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 1
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c7d3165732dfbec0800000000000000
+      internalID: -3548886846235486263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f23dea3ca874bed0800000000000000
+      internalID: -2399160020363300107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8397c39d507e9cdf0800000000000000
+      internalID: -159342299489470152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 1
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28570adbb532e7070800000000000000
+      internalID: 8105955256243877250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a0c0b65ae83e2d0800000000000000
+      internalID: -3250597664914666927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 1
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91d78b740e0829f0800000000000000
+      internalID: -493128746781912678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe32d215be4ce0a70800000000000000
+      internalID: 8795183637259428847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae9e7f9eed321f8e0800000000000000
+      internalID: -1661507347207951894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 852856c27ded03780800000000000000
+      internalID: -8705213063962983848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95c62233f687a94b0800000000000000
+      internalID: -5432897581474485159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddeef8419549741d0800000000000000
+      internalID: -3366559086118179107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 9
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986796aea38144480800000000000000
+      internalID: -8915974720966789495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 1
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c45842d60c867830800000000000000
+      internalID: 4068593274301469890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 0
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af380f1aa17afe90800000000000000
+      internalID: -6991150496060260439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 0
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e075cef74a10be80800000000000000
+      internalID: -8164997227903356702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 0
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a327310b87d9d43a0800000000000000
+      internalID: -6679509530644876742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 1
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb18b3009507a4ab0800000000000000
+      internalID: -5023078906820066882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pig_Pink_Light_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 1
+        width: 34
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 662a0538f4ba80450800000000000000
+      internalID: 6055278056993497702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pig_Pink_Light_32x32_0: 6588857330282821471
+      Pig_Pink_Light_32x32_1: 3257957936168394665
+      Pig_Pink_Light_32x32_10: -8587821561444651880
+      Pig_Pink_Light_32x32_11: -803598357858752170
+      Pig_Pink_Light_32x32_12: 8631313536474133779
+      Pig_Pink_Light_32x32_13: -5420159345356508905
+      Pig_Pink_Light_32x32_14: -8858633552956391340
+      Pig_Pink_Light_32x32_15: -9008146330289992503
+      Pig_Pink_Light_32x32_16: 2504059807449687503
+      Pig_Pink_Light_32x32_17: 1887538325735145712
+      Pig_Pink_Light_32x32_18: -7380007893332150685
+      Pig_Pink_Light_32x32_19: 8678654107286017290
+      Pig_Pink_Light_32x32_2: 4437004868724965698
+      Pig_Pink_Light_32x32_20: 7702187474952617085
+      Pig_Pink_Light_32x32_21: 2733263903999950641
+      Pig_Pink_Light_32x32_22: 9089071494034880224
+      Pig_Pink_Light_32x32_23: -3516860942993412611
+      Pig_Pink_Light_32x32_24: 2599805910673685273
+      Pig_Pink_Light_32x32_25: -8576810262214336459
+      Pig_Pink_Light_32x32_26: 1371137956836235730
+      Pig_Pink_Light_32x32_27: -7670173905246447102
+      Pig_Pink_Light_32x32_28: 6863413284541956665
+      Pig_Pink_Light_32x32_29: 2775035897015210335
+      Pig_Pink_Light_32x32_3: -551007051663434759
+      Pig_Pink_Light_32x32_30: -1322968318115992710
+      Pig_Pink_Light_32x32_31: 1086117817371730057
+      Pig_Pink_Light_32x32_32: 7970222478442891984
+      Pig_Pink_Light_32x32_33: 3349746877937348281
+      Pig_Pink_Light_32x32_34: -2984268657709762523
+      Pig_Pink_Light_32x32_35: 8091247098627042178
+      Pig_Pink_Light_32x32_36: 3537420788458857191
+      Pig_Pink_Light_32x32_37: -5885621901992712649
+      Pig_Pink_Light_32x32_38: 945965177958954517
+      Pig_Pink_Light_32x32_39: 7561622399869824390
+      Pig_Pink_Light_32x32_4: -2395914569062689547
+      Pig_Pink_Light_32x32_40: -2661519293326329766
+      Pig_Pink_Light_32x32_41: -4840535532868468436
+      Pig_Pink_Light_32x32_42: 4674977630399172316
+      Pig_Pink_Light_32x32_43: -8092881940674457775
+      Pig_Pink_Light_32x32_44: -8162050389691164457
+      Pig_Pink_Light_32x32_45: 2624046511735744105
+      Pig_Pink_Light_32x32_46: 2647105516925690973
+      Pig_Pink_Light_32x32_47: 3291988361936362136
+      Pig_Pink_Light_32x32_48: -2629859271402500816
+      Pig_Pink_Light_32x32_49: 3265825844453368820
+      Pig_Pink_Light_32x32_5: -6473832031540661363
+      Pig_Pink_Light_32x32_50: 3001398931894131252
+      Pig_Pink_Light_32x32_51: 8473849243906149468
+      Pig_Pink_Light_32x32_52: -7647965847821621999
+      Pig_Pink_Light_32x32_53: -8216023630575511528
+      Pig_Pink_Light_32x32_54: -5144782276744039254
+      Pig_Pink_Light_32x32_55: 7460222527622169105
+      Pig_Pink_Light_32x32_56: -5897875861129417737
+      Pig_Pink_Light_32x32_57: 5042295030417125945
+      Pig_Pink_Light_32x32_58: 6190681227878512019
+      Pig_Pink_Light_32x32_59: 7497430367054919955
+      Pig_Pink_Light_32x32_6: -4938164530616651729
+      Pig_Pink_Light_32x32_60: 8677770622393931061
+      Pig_Pink_Light_32x32_61: 2360807077936691448
+      Pig_Pink_Light_32x32_62: -3742895804675190500
+      Pig_Pink_Light_32x32_63: 4011551782225374522
+      Pig_Pink_Light_32x32_64: -4393913335622007762
+      Pig_Pink_Light_32x32_65: -499311848895189047
+      Pig_Pink_Light_32x32_66: 7838260719777647074
+      Pig_Pink_Light_32x32_67: -8899138517905309961
+      Pig_Pink_Light_32x32_68: -4551325164599069541
+      Pig_Pink_Light_32x32_69: 8474037551765434341
+      Pig_Pink_Light_32x32_7: -6651754319422536670
+      Pig_Pink_Light_32x32_70: -460601138587200933
+      Pig_Pink_Light_32x32_71: -3548886846235486263
+      Pig_Pink_Light_32x32_72: -2399160020363300107
+      Pig_Pink_Light_32x32_73: -159342299489470152
+      Pig_Pink_Light_32x32_74: 8105955256243877250
+      Pig_Pink_Light_32x32_75: -3250597664914666927
+      Pig_Pink_Light_32x32_76: -493128746781912678
+      Pig_Pink_Light_32x32_77: 8795183637259428847
+      Pig_Pink_Light_32x32_78: -1661507347207951894
+      Pig_Pink_Light_32x32_79: -8705213063962983848
+      Pig_Pink_Light_32x32_8: 9119183973752092589
+      Pig_Pink_Light_32x32_80: -5432897581474485159
+      Pig_Pink_Light_32x32_81: -3366559086118179107
+      Pig_Pink_Light_32x32_82: -8915974720966789495
+      Pig_Pink_Light_32x32_83: 4068593274301469890
+      Pig_Pink_Light_32x32_84: -6991150496060260439
+      Pig_Pink_Light_32x32_85: -8164997227903356702
+      Pig_Pink_Light_32x32_86: -6679509530644876742
+      Pig_Pink_Light_32x32_87: -5023078906820066882
+      Pig_Pink_Light_32x32_88: 6055278056993497702
+      Pig_Pink_Light_32x32_9: 6144578022457745937
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

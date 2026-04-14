@@ -4,11 +4,20 @@ public class AnimalVisual : MonoBehaviour
 {
     private AnimalData data;
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    private bool animatorHasAnimState;
 
     // Wander state
     private Vector3 wanderTarget;
     private float pauseTimer = 0f;
     private bool isPaused = true;
+
+    // Animator direction (0=R, 1=U, 2=L, 3=D). Kept so idle uses the last facing.
+    private int facingDir = 3;
+    private int lastAnimState = -1;
+
+    private const string ANIM_STATE_PARAM = "AnimState";
+    private const int ANIM_WALK_OFFSET = 4;
 
     // Wander config
     private const float WANDER_RADIUS = 3f;
@@ -24,6 +33,8 @@ public class AnimalVisual : MonoBehaviour
     {
         data = animalData;
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
+        animatorHasAnimState = HasAnimStateParam(animator);
 
         if (spriteRenderer != null)
         {
@@ -34,12 +45,37 @@ public class AnimalVisual : MonoBehaviour
         pauseTimer = Random.Range(MIN_PAUSE, MAX_PAUSE);
     }
 
+    private static bool HasAnimStateParam(Animator a)
+    {
+        if (a == null || a.runtimeAnimatorController == null) return false;
+        foreach (var p in a.parameters)
+        {
+            if (p.name == ANIM_STATE_PARAM && p.type == AnimatorControllerParameterType.Int) return true;
+        }
+        return false;
+    }
+
+    private void ApplyAnimState(bool moving)
+    {
+        if (!animatorHasAnimState) return;
+        int state = (moving ? ANIM_WALK_OFFSET : 0) + facingDir;
+        if (state == lastAnimState) return;
+        animator.SetInteger(ANIM_STATE_PARAM, state);
+        lastAnimState = state;
+    }
+
     private void Update()
     {
-        if (data == null || PauseWander) return;
+        if (data == null || PauseWander)
+        {
+            ApplyAnimState(false);
+            return;
+        }
 
         if (isPaused)
         {
+            ApplyAnimState(false);
+
             pauseTimer -= Time.deltaTime;
             if (pauseTimer <= 0f)
             {
@@ -57,6 +93,7 @@ public class AnimalVisual : MonoBehaviour
                 // Arrived at target
                 isPaused = true;
                 pauseTimer = Random.Range(MIN_PAUSE, MAX_PAUSE);
+                ApplyAnimState(false);
             }
             else
             {
@@ -64,13 +101,30 @@ public class AnimalVisual : MonoBehaviour
                 float speed = data.roamSpeed > 0 ? data.roamSpeed : 0.6f;
                 transform.position = Vector3.MoveTowards(transform.position, wanderTarget, speed * Time.deltaTime);
 
-                // Flip sprite based on direction
-                if (spriteRenderer != null && Mathf.Abs(direction.x) > 0.01f)
+                UpdateFacing(direction);
+
+                if (animatorHasAnimState)
                 {
+                    ApplyAnimState(true);
+                }
+                else if (spriteRenderer != null && Mathf.Abs(direction.x) > 0.01f)
+                {
+                    // Fallback for animals without a directional animator: horizontal flip only.
                     spriteRenderer.flipX = direction.x < 0;
                 }
             }
         }
+    }
+
+    private void UpdateFacing(Vector3 direction)
+    {
+        if (direction.sqrMagnitude < 0.0001f) return;
+
+        // Project onto the dominant axis. 0=R, 1=U, 2=L, 3=D.
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+            facingDir = direction.x >= 0 ? 0 : 2;
+        else
+            facingDir = direction.y >= 0 ? 1 : 3;
     }
 
     private void PickNewTarget()

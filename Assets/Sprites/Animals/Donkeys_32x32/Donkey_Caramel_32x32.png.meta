@@ -1,0 +1,2457 @@
+fileFormatVersion: 2
+guid: 140335360df58aa46a71af739864b820
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8166944720703907546
+    second: Donkey_Caramel_32x32_0
+  - first:
+      213: 3958611972250018656
+    second: Donkey_Caramel_32x32_1
+  - first:
+      213: -2181346964045320885
+    second: Donkey_Caramel_32x32_2
+  - first:
+      213: 7135858450687135940
+    second: Donkey_Caramel_32x32_3
+  - first:
+      213: 4428727053468630388
+    second: Donkey_Caramel_32x32_4
+  - first:
+      213: 2359286249915581815
+    second: Donkey_Caramel_32x32_5
+  - first:
+      213: -8061000615970283262
+    second: Donkey_Caramel_32x32_6
+  - first:
+      213: 4654041237842097161
+    second: Donkey_Caramel_32x32_7
+  - first:
+      213: -2607978887122230054
+    second: Donkey_Caramel_32x32_8
+  - first:
+      213: -3861678800318232082
+    second: Donkey_Caramel_32x32_9
+  - first:
+      213: 3571982579542761357
+    second: Donkey_Caramel_32x32_10
+  - first:
+      213: 5039855323936426641
+    second: Donkey_Caramel_32x32_11
+  - first:
+      213: 7663990173334824436
+    second: Donkey_Caramel_32x32_12
+  - first:
+      213: -5202604743277759254
+    second: Donkey_Caramel_32x32_13
+  - first:
+      213: 4574545925641361332
+    second: Donkey_Caramel_32x32_14
+  - first:
+      213: 1737916772795954222
+    second: Donkey_Caramel_32x32_15
+  - first:
+      213: -1685953370969142263
+    second: Donkey_Caramel_32x32_16
+  - first:
+      213: -2042553842873590376
+    second: Donkey_Caramel_32x32_17
+  - first:
+      213: -4610541006660420164
+    second: Donkey_Caramel_32x32_18
+  - first:
+      213: 8088463429385969870
+    second: Donkey_Caramel_32x32_19
+  - first:
+      213: -7587301760102923031
+    second: Donkey_Caramel_32x32_20
+  - first:
+      213: 8489283297219282716
+    second: Donkey_Caramel_32x32_21
+  - first:
+      213: -4003935968432247086
+    second: Donkey_Caramel_32x32_22
+  - first:
+      213: 5370626670359347859
+    second: Donkey_Caramel_32x32_23
+  - first:
+      213: 2462344926329961816
+    second: Donkey_Caramel_32x32_24
+  - first:
+      213: 3251509019756124109
+    second: Donkey_Caramel_32x32_25
+  - first:
+      213: 4562375222172351597
+    second: Donkey_Caramel_32x32_26
+  - first:
+      213: 2018955163829238074
+    second: Donkey_Caramel_32x32_27
+  - first:
+      213: 3298341491391122010
+    second: Donkey_Caramel_32x32_28
+  - first:
+      213: -8063593159722584366
+    second: Donkey_Caramel_32x32_29
+  - first:
+      213: 4842445627588354938
+    second: Donkey_Caramel_32x32_30
+  - first:
+      213: -291822797539392495
+    second: Donkey_Caramel_32x32_31
+  - first:
+      213: 3410108026705700566
+    second: Donkey_Caramel_32x32_32
+  - first:
+      213: 451687308036849528
+    second: Donkey_Caramel_32x32_33
+  - first:
+      213: 8998751126352913935
+    second: Donkey_Caramel_32x32_34
+  - first:
+      213: -1555321810406365709
+    second: Donkey_Caramel_32x32_35
+  - first:
+      213: -7136244228030491529
+    second: Donkey_Caramel_32x32_36
+  - first:
+      213: -5268898158990643768
+    second: Donkey_Caramel_32x32_37
+  - first:
+      213: 4367356661856774908
+    second: Donkey_Caramel_32x32_38
+  - first:
+      213: -4229559072685627771
+    second: Donkey_Caramel_32x32_39
+  - first:
+      213: 4926205522783651561
+    second: Donkey_Caramel_32x32_40
+  - first:
+      213: 6948252939921878939
+    second: Donkey_Caramel_32x32_41
+  - first:
+      213: 7970528754256027505
+    second: Donkey_Caramel_32x32_42
+  - first:
+      213: 6177965801120606592
+    second: Donkey_Caramel_32x32_43
+  - first:
+      213: -7658331527464306529
+    second: Donkey_Caramel_32x32_44
+  - first:
+      213: -5679009687128269496
+    second: Donkey_Caramel_32x32_45
+  - first:
+      213: 5318956524240368827
+    second: Donkey_Caramel_32x32_46
+  - first:
+      213: -394758955513117138
+    second: Donkey_Caramel_32x32_47
+  - first:
+      213: -369093714774130755
+    second: Donkey_Caramel_32x32_48
+  - first:
+      213: -7477370531244424375
+    second: Donkey_Caramel_32x32_49
+  - first:
+      213: 562339410157492892
+    second: Donkey_Caramel_32x32_50
+  - first:
+      213: 4225037266383080546
+    second: Donkey_Caramel_32x32_51
+  - first:
+      213: -8799361574934307007
+    second: Donkey_Caramel_32x32_52
+  - first:
+      213: -365778975046606386
+    second: Donkey_Caramel_32x32_53
+  - first:
+      213: 1232489184930418434
+    second: Donkey_Caramel_32x32_54
+  - first:
+      213: -6517612491714544482
+    second: Donkey_Caramel_32x32_55
+  - first:
+      213: -7690870739037287138
+    second: Donkey_Caramel_32x32_56
+  - first:
+      213: 6726547795669813760
+    second: Donkey_Caramel_32x32_57
+  - first:
+      213: -8731461599842670246
+    second: Donkey_Caramel_32x32_58
+  - first:
+      213: -1523568399670022472
+    second: Donkey_Caramel_32x32_59
+  - first:
+      213: 7214489668369369150
+    second: Donkey_Caramel_32x32_60
+  - first:
+      213: -2356768877428205237
+    second: Donkey_Caramel_32x32_61
+  - first:
+      213: 2300183928746779733
+    second: Donkey_Caramel_32x32_62
+  - first:
+      213: -8421904494940809451
+    second: Donkey_Caramel_32x32_63
+  - first:
+      213: 1708108812325956612
+    second: Donkey_Caramel_32x32_64
+  - first:
+      213: -948610135994041628
+    second: Donkey_Caramel_32x32_65
+  - first:
+      213: 4776886769412903291
+    second: Donkey_Caramel_32x32_66
+  - first:
+      213: 730522525358782788
+    second: Donkey_Caramel_32x32_67
+  - first:
+      213: 9099518129767999748
+    second: Donkey_Caramel_32x32_68
+  - first:
+      213: -4134972232000206832
+    second: Donkey_Caramel_32x32_69
+  - first:
+      213: 4962577789079675611
+    second: Donkey_Caramel_32x32_70
+  - first:
+      213: -7378530624638161908
+    second: Donkey_Caramel_32x32_71
+  - first:
+      213: 8190645372025265856
+    second: Donkey_Caramel_32x32_72
+  - first:
+      213: 5862125153934813226
+    second: Donkey_Caramel_32x32_73
+  - first:
+      213: 185922124777591715
+    second: Donkey_Caramel_32x32_74
+  - first:
+      213: -6239995363957325532
+    second: Donkey_Caramel_32x32_75
+  - first:
+      213: 6668294656745507470
+    second: Donkey_Caramel_32x32_76
+  - first:
+      213: -8649894143380569668
+    second: Donkey_Caramel_32x32_77
+  - first:
+      213: -6193339861822858953
+    second: Donkey_Caramel_32x32_78
+  - first:
+      213: -399729643602521626
+    second: Donkey_Caramel_32x32_79
+  - first:
+      213: -1741351083362809124
+    second: Donkey_Caramel_32x32_80
+  - first:
+      213: -4636503836546125287
+    second: Donkey_Caramel_32x32_81
+  - first:
+      213: -2649358634796080858
+    second: Donkey_Caramel_32x32_82
+  - first:
+      213: -4645897109467980957
+    second: Donkey_Caramel_32x32_83
+  - first:
+      213: 4099867592901284552
+    second: Donkey_Caramel_32x32_84
+  - first:
+      213: -8286381978574862809
+    second: Donkey_Caramel_32x32_85
+  - first:
+      213: 4227700337623239468
+    second: Donkey_Caramel_32x32_86
+  - first:
+      213: -4430600206734334836
+    second: Donkey_Caramel_32x32_87
+  - first:
+      213: 2382303345483269695
+    second: Donkey_Caramel_32x32_88
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 289
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad6eec104f0d65170800000000000000
+      internalID: 8166944720703907546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 289
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06322997d90dfe630800000000000000
+      internalID: 3958611972250018656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 289
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4da3345e7c4ab1e0800000000000000
+      internalID: -2181346964045320885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 291
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c01da81479a70360800000000000000
+      internalID: 7135858450687135940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 291
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47df82d6acff57d30800000000000000
+      internalID: 4428727053468630388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 291
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7758ea1285eddb020800000000000000
+      internalID: 2359286249915581815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 291
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 201e2e616a2912090800000000000000
+      internalID: -8061000615970283262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 301
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 904f89ff8d9769040800000000000000
+      internalID: 4654041237842097161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 291
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad46c5315099ecbd0800000000000000
+      internalID: -2607978887122230054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 291
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee90066579f886ac0800000000000000
+      internalID: -3861678800318232082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 291
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f978d1b3b329130800000000000000
+      internalID: 3571982579542761357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 291
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a879ef6b921f540800000000000000
+      internalID: 5039855323936426641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 301
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f5e4b30576fb5a60800000000000000
+      internalID: 7663990173334824436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 291
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae4ba22fc82acc7b0800000000000000
+      internalID: -5202604743277759254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 291
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b7509a484d0c7f30800000000000000
+      internalID: 4574545925641361332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 291
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2432b3d8125e1810800000000000000
+      internalID: 1737916772795954222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 291
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c0387775a4a98e0800000000000000
+      internalID: -1685953370969142263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 193
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89d19e01a1467a3e0800000000000000
+      internalID: -2042553842873590376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 193
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbd32a3d1611400c0800000000000000
+      internalID: -4610541006660420164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 193
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec0e94f62aeff3070800000000000000
+      internalID: 8088463429385969870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 193
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e48e599f3d74b690800000000000000
+      internalID: -7587301760102923031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 193
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1789604e2effc570800000000000000
+      internalID: 8489283297219282716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 193
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2deaf2253792f68c0800000000000000
+      internalID: -4003935968432247086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 193
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 392020c708c488a40800000000000000
+      internalID: 5370626670359347859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 193
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85df1681aa10c2220800000000000000
+      internalID: 2462344926329961816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 193
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7da8ae93eaf1d20800000000000000
+      internalID: 3251509019756124109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 193
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6c70a19710d05f30800000000000000
+      internalID: 4562375222172351597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 193
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a397b7d4605c40c10800000000000000
+      internalID: 2018955163829238074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 193
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5acc4e6c1016cd20800000000000000
+      internalID: 3298341491391122010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 193
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d637757ebc581090800000000000000
+      internalID: -8063593159722584366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 193
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a732c8454a2d33340800000000000000
+      internalID: 4842445627588354938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 193
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 114cd4736bc33fbf0800000000000000
+      internalID: -291822797539392495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 193
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d66089ce23235f20800000000000000
+      internalID: 3410108026705700566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 193
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87fb619a637b44600800000000000000
+      internalID: 451687308036849528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 193
+        width: 76
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f066964d87cf1ec70800000000000000
+      internalID: 8998751126352913935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 195
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f5af4bcd036a6ae0800000000000000
+      internalID: -1555321810406365709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 195
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7749fcd1fa7f6fc90800000000000000
+      internalID: -7136244228030491529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 195
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd27ab4a0d11e6b0800000000000000
+      internalID: -5268898158990643768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 195
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfaa865aeb7fb9c30800000000000000
+      internalID: 4367356661856774908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 195
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 586ea0cbe669d45c0800000000000000
+      internalID: -4229559072685627771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 195
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e64614a2d56d5440800000000000000
+      internalID: 4926205522783651561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9f6b954c372d6060800000000000000
+      internalID: 6948252939921878939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17f977d1ca10d9e60800000000000000
+      internalID: 7970528754256027505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 97
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0892e42f92b8cb550800000000000000
+      internalID: 6177965801120606592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f98b0552d0428b590800000000000000
+      internalID: -7658331527464306529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d97ba37ca1031b0800000000000000
+      internalID: -5679009687128269496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 97
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb4f71b17cab0d940800000000000000
+      internalID: 5318956524240368827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 97
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e268cbc42d8858af0800000000000000
+      internalID: -394758955513117138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 97
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbffe02d837b0eaf0800000000000000
+      internalID: -369093714774130755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 95
+        width: 34
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 943c33f5e1b0b3890800000000000000
+      internalID: -7477370531244424375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 97
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9ad3a1d6b4ddc700800000000000000
+      internalID: 562339410157492892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 95
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c0d81320952aa30800000000000000
+      internalID: 4225037266383080546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 95
+        width: 34
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f91d3c44362e580800000000000000
+      internalID: -8799361574934307007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec16a0ec5fd7ceaf0800000000000000
+      internalID: -365778975046606386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20fc949326eaa1110800000000000000
+      internalID: 1232489184930418434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 97
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9cb4b778f9cc85a0800000000000000
+      internalID: -6517612491714544482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1d8c329fc9844590800000000000000
+      internalID: -7690870739037287138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 97
+        width: 74
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a0695d49f795d50800000000000000
+      internalID: 6726547795669813760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 97
+        width: 74
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59e96bafed93d680800000000000000
+      internalID: -8731461599842670246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 99
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be68aadc923bdae0800000000000000
+      internalID: -1523568399670022472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 99
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38c1ee11240f1460800000000000000
+      internalID: 7214489668369369150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 95
+        width: 38
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b49123351331b4fd0800000000000000
+      internalID: -2356768877428205237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 99
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 554a307a815ebef10800000000000000
+      internalID: 2300183928746779733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 99
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51799c6ab726f1b80800000000000000
+      internalID: -8421904494940809451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 95
+        width: 38
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c27643aeb64b710800000000000000
+      internalID: 1708108812325956612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea7db57b1cd5d2f0800000000000000
+      internalID: -948610135994041628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b719e1f2539ea4240800000000000000
+      internalID: 4776886769412903291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4497e68cd56532a00800000000000000
+      internalID: 730522525358782788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4096c08178bf74e70800000000000000
+      internalID: 9099518129767999748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018068bb9a0ad96c0800000000000000
+      internalID: -4134972232000206832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd26650d43e9ed440800000000000000
+      internalID: 4962577789079675611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1
+        width: 34
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ce9127d713a9990800000000000000
+      internalID: -7378530624638161908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1
+        width: 34
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce53c8e1940ba170800000000000000
+      internalID: 8190645372025265856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1
+        width: 34
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28aa25c4c37a5150800000000000000
+      internalID: 5862125153934813226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1
+        width: 34
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a3114bff27849200800000000000000
+      internalID: 185922124777591715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 1
+        width: 34
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4214d3307451769a0800000000000000
+      internalID: -6239995363957325532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 1
+        width: 34
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a83f009aa8a8c50800000000000000
+      internalID: 6668294656745507470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1c11f0b1765f780800000000000000
+      internalID: -8649894143380569668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73918ca9536dc0aa0800000000000000
+      internalID: -6193339861822858953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1d0eac100e37af0800000000000000
+      internalID: -399729643602521626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda0bee6a6a75d7e0800000000000000
+      internalID: -1741351083362809124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 912beee6354d7afb0800000000000000
+      internalID: -4636503836546125287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 1
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 621ad5acb569b3bd0800000000000000
+      internalID: -2649358634796080858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 3
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b9527a135768fb0800000000000000
+      internalID: -4645897109467980957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 1
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c2540d8ad7a5e830800000000000000
+      internalID: 4099867592901284552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 1949
+        y: 1
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 726c8dd5e7bd00d80800000000000000
+      internalID: -8286381978574862809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 2045
+        y: 1
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2b05d8ce0fcbaa30800000000000000
+      internalID: 4227700337623239468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 2141
+        y: 3
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c84e3d716985382c0800000000000000
+      internalID: -4430600206734334836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donkey_Caramel_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 3
+        width: 38
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3641ce4544af0120800000000000000
+      internalID: 2382303345483269695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Donkey_Caramel_32x32_0: 8166944720703907546
+      Donkey_Caramel_32x32_1: 3958611972250018656
+      Donkey_Caramel_32x32_10: 3571982579542761357
+      Donkey_Caramel_32x32_11: 5039855323936426641
+      Donkey_Caramel_32x32_12: 7663990173334824436
+      Donkey_Caramel_32x32_13: -5202604743277759254
+      Donkey_Caramel_32x32_14: 4574545925641361332
+      Donkey_Caramel_32x32_15: 1737916772795954222
+      Donkey_Caramel_32x32_16: -1685953370969142263
+      Donkey_Caramel_32x32_17: -2042553842873590376
+      Donkey_Caramel_32x32_18: -4610541006660420164
+      Donkey_Caramel_32x32_19: 8088463429385969870
+      Donkey_Caramel_32x32_2: -2181346964045320885
+      Donkey_Caramel_32x32_20: -7587301760102923031
+      Donkey_Caramel_32x32_21: 8489283297219282716
+      Donkey_Caramel_32x32_22: -4003935968432247086
+      Donkey_Caramel_32x32_23: 5370626670359347859
+      Donkey_Caramel_32x32_24: 2462344926329961816
+      Donkey_Caramel_32x32_25: 3251509019756124109
+      Donkey_Caramel_32x32_26: 4562375222172351597
+      Donkey_Caramel_32x32_27: 2018955163829238074
+      Donkey_Caramel_32x32_28: 3298341491391122010
+      Donkey_Caramel_32x32_29: -8063593159722584366
+      Donkey_Caramel_32x32_3: 7135858450687135940
+      Donkey_Caramel_32x32_30: 4842445627588354938
+      Donkey_Caramel_32x32_31: -291822797539392495
+      Donkey_Caramel_32x32_32: 3410108026705700566
+      Donkey_Caramel_32x32_33: 451687308036849528
+      Donkey_Caramel_32x32_34: 8998751126352913935
+      Donkey_Caramel_32x32_35: -1555321810406365709
+      Donkey_Caramel_32x32_36: -7136244228030491529
+      Donkey_Caramel_32x32_37: -5268898158990643768
+      Donkey_Caramel_32x32_38: 4367356661856774908
+      Donkey_Caramel_32x32_39: -4229559072685627771
+      Donkey_Caramel_32x32_4: 4428727053468630388
+      Donkey_Caramel_32x32_40: 4926205522783651561
+      Donkey_Caramel_32x32_41: 6948252939921878939
+      Donkey_Caramel_32x32_42: 7970528754256027505
+      Donkey_Caramel_32x32_43: 6177965801120606592
+      Donkey_Caramel_32x32_44: -7658331527464306529
+      Donkey_Caramel_32x32_45: -5679009687128269496
+      Donkey_Caramel_32x32_46: 5318956524240368827
+      Donkey_Caramel_32x32_47: -394758955513117138
+      Donkey_Caramel_32x32_48: -369093714774130755
+      Donkey_Caramel_32x32_49: -7477370531244424375
+      Donkey_Caramel_32x32_5: 2359286249915581815
+      Donkey_Caramel_32x32_50: 562339410157492892
+      Donkey_Caramel_32x32_51: 4225037266383080546
+      Donkey_Caramel_32x32_52: -8799361574934307007
+      Donkey_Caramel_32x32_53: -365778975046606386
+      Donkey_Caramel_32x32_54: 1232489184930418434
+      Donkey_Caramel_32x32_55: -6517612491714544482
+      Donkey_Caramel_32x32_56: -7690870739037287138
+      Donkey_Caramel_32x32_57: 6726547795669813760
+      Donkey_Caramel_32x32_58: -8731461599842670246
+      Donkey_Caramel_32x32_59: -1523568399670022472
+      Donkey_Caramel_32x32_6: -8061000615970283262
+      Donkey_Caramel_32x32_60: 7214489668369369150
+      Donkey_Caramel_32x32_61: -2356768877428205237
+      Donkey_Caramel_32x32_62: 2300183928746779733
+      Donkey_Caramel_32x32_63: -8421904494940809451
+      Donkey_Caramel_32x32_64: 1708108812325956612
+      Donkey_Caramel_32x32_65: -948610135994041628
+      Donkey_Caramel_32x32_66: 4776886769412903291
+      Donkey_Caramel_32x32_67: 730522525358782788
+      Donkey_Caramel_32x32_68: 9099518129767999748
+      Donkey_Caramel_32x32_69: -4134972232000206832
+      Donkey_Caramel_32x32_7: 4654041237842097161
+      Donkey_Caramel_32x32_70: 4962577789079675611
+      Donkey_Caramel_32x32_71: -7378530624638161908
+      Donkey_Caramel_32x32_72: 8190645372025265856
+      Donkey_Caramel_32x32_73: 5862125153934813226
+      Donkey_Caramel_32x32_74: 185922124777591715
+      Donkey_Caramel_32x32_75: -6239995363957325532
+      Donkey_Caramel_32x32_76: 6668294656745507470
+      Donkey_Caramel_32x32_77: -8649894143380569668
+      Donkey_Caramel_32x32_78: -6193339861822858953
+      Donkey_Caramel_32x32_79: -399729643602521626
+      Donkey_Caramel_32x32_8: -2607978887122230054
+      Donkey_Caramel_32x32_80: -1741351083362809124
+      Donkey_Caramel_32x32_81: -4636503836546125287
+      Donkey_Caramel_32x32_82: -2649358634796080858
+      Donkey_Caramel_32x32_83: -4645897109467980957
+      Donkey_Caramel_32x32_84: 4099867592901284552
+      Donkey_Caramel_32x32_85: -8286381978574862809
+      Donkey_Caramel_32x32_86: 4227700337623239468
+      Donkey_Caramel_32x32_87: -4430600206734334836
+      Donkey_Caramel_32x32_88: 2382303345483269695
+      Donkey_Caramel_32x32_9: -3861678800318232082
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

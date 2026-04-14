@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236a5fbb3bccf23469f66467b41b14f2, type: 3}
+  m_Name: Animal_Rooster
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalData
+  animalID: rooster
+  displayName: Rooster
+  description: Coming soon...
+  animalEmoji: "\U0001F413"
+  sortOrder: 2
+  gemCost: 1500
+  abilityType: 0
+  cooldownMinutes: 20
+  rewardCoins: 30
+  visualPrefab: {fileID: 0}
+  roamSpeed: 0.6
+  iconSprite: {fileID: 0}

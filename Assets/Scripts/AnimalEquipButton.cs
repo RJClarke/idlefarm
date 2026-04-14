@@ -68,7 +68,7 @@ public class AnimalEquipButton : MonoBehaviour
             if (emojiText != null)
             {
                 emojiText.gameObject.SetActive(true);
-                emojiText.text = "❓";
+                emojiText.text = "?";
             }
             if (animalIcon != null)
             {

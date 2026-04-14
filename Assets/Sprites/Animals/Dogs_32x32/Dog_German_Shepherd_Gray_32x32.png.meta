@@ -1,0 +1,3471 @@
+fileFormatVersion: 2
+guid: 6d9277cc822a4904db80eec4b216e802
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9162154982486080302
+    second: Dog_German_Shepherd_Gray_32x32_0
+  - first:
+      213: 7974859312019060106
+    second: Dog_German_Shepherd_Gray_32x32_1
+  - first:
+      213: -3268417356204008518
+    second: Dog_German_Shepherd_Gray_32x32_2
+  - first:
+      213: -850177893410263832
+    second: Dog_German_Shepherd_Gray_32x32_3
+  - first:
+      213: -1090953204644076576
+    second: Dog_German_Shepherd_Gray_32x32_4
+  - first:
+      213: 5319767179770063372
+    second: Dog_German_Shepherd_Gray_32x32_5
+  - first:
+      213: -1015597091533725308
+    second: Dog_German_Shepherd_Gray_32x32_6
+  - first:
+      213: -1017269895605004173
+    second: Dog_German_Shepherd_Gray_32x32_7
+  - first:
+      213: -2836045714275462873
+    second: Dog_German_Shepherd_Gray_32x32_8
+  - first:
+      213: -52392993413878495
+    second: Dog_German_Shepherd_Gray_32x32_9
+  - first:
+      213: -2091478923946067723
+    second: Dog_German_Shepherd_Gray_32x32_10
+  - first:
+      213: 2578076990955487794
+    second: Dog_German_Shepherd_Gray_32x32_11
+  - first:
+      213: -3020932507489572662
+    second: Dog_German_Shepherd_Gray_32x32_12
+  - first:
+      213: 229804484319474608
+    second: Dog_German_Shepherd_Gray_32x32_13
+  - first:
+      213: 6295663948423523787
+    second: Dog_German_Shepherd_Gray_32x32_14
+  - first:
+      213: 2823969041688959922
+    second: Dog_German_Shepherd_Gray_32x32_15
+  - first:
+      213: -1526534604738177072
+    second: Dog_German_Shepherd_Gray_32x32_16
+  - first:
+      213: 4125523731123989132
+    second: Dog_German_Shepherd_Gray_32x32_17
+  - first:
+      213: -6321665006034290614
+    second: Dog_German_Shepherd_Gray_32x32_18
+  - first:
+      213: 5861550200740862148
+    second: Dog_German_Shepherd_Gray_32x32_19
+  - first:
+      213: 7639564196950211102
+    second: Dog_German_Shepherd_Gray_32x32_20
+  - first:
+      213: -8673846879061888681
+    second: Dog_German_Shepherd_Gray_32x32_21
+  - first:
+      213: -4328798988999479823
+    second: Dog_German_Shepherd_Gray_32x32_22
+  - first:
+      213: -4027950125947845606
+    second: Dog_German_Shepherd_Gray_32x32_23
+  - first:
+      213: -7467305374213670724
+    second: Dog_German_Shepherd_Gray_32x32_24
+  - first:
+      213: 3908041187970790136
+    second: Dog_German_Shepherd_Gray_32x32_25
+  - first:
+      213: -5633794690469037723
+    second: Dog_German_Shepherd_Gray_32x32_26
+  - first:
+      213: -72037615503881104
+    second: Dog_German_Shepherd_Gray_32x32_27
+  - first:
+      213: -198083674259059257
+    second: Dog_German_Shepherd_Gray_32x32_28
+  - first:
+      213: 9145680634835620106
+    second: Dog_German_Shepherd_Gray_32x32_29
+  - first:
+      213: 1662671445873752380
+    second: Dog_German_Shepherd_Gray_32x32_30
+  - first:
+      213: 4029482533297906268
+    second: Dog_German_Shepherd_Gray_32x32_31
+  - first:
+      213: 2656422853300721174
+    second: Dog_German_Shepherd_Gray_32x32_32
+  - first:
+      213: 8508202771454494113
+    second: Dog_German_Shepherd_Gray_32x32_33
+  - first:
+      213: 1658189868128130296
+    second: Dog_German_Shepherd_Gray_32x32_34
+  - first:
+      213: 5375429545287805657
+    second: Dog_German_Shepherd_Gray_32x32_35
+  - first:
+      213: -2779236449207456704
+    second: Dog_German_Shepherd_Gray_32x32_36
+  - first:
+      213: -4617329235419612022
+    second: Dog_German_Shepherd_Gray_32x32_37
+  - first:
+      213: -4142474958723806740
+    second: Dog_German_Shepherd_Gray_32x32_38
+  - first:
+      213: 9012920834272873731
+    second: Dog_German_Shepherd_Gray_32x32_39
+  - first:
+      213: 77969129153585387
+    second: Dog_German_Shepherd_Gray_32x32_40
+  - first:
+      213: 7008166073525734142
+    second: Dog_German_Shepherd_Gray_32x32_41
+  - first:
+      213: 5906088618114040282
+    second: Dog_German_Shepherd_Gray_32x32_42
+  - first:
+      213: -3134066039357462958
+    second: Dog_German_Shepherd_Gray_32x32_43
+  - first:
+      213: -7852205811333700571
+    second: Dog_German_Shepherd_Gray_32x32_44
+  - first:
+      213: -95119969111420500
+    second: Dog_German_Shepherd_Gray_32x32_45
+  - first:
+      213: -6049782594329095067
+    second: Dog_German_Shepherd_Gray_32x32_46
+  - first:
+      213: 1824686260898788872
+    second: Dog_German_Shepherd_Gray_32x32_47
+  - first:
+      213: -8634133479850873506
+    second: Dog_German_Shepherd_Gray_32x32_48
+  - first:
+      213: -1822399514881515391
+    second: Dog_German_Shepherd_Gray_32x32_49
+  - first:
+      213: -7450509195108917935
+    second: Dog_German_Shepherd_Gray_32x32_50
+  - first:
+      213: 8087206960035887919
+    second: Dog_German_Shepherd_Gray_32x32_51
+  - first:
+      213: 7733876689113886934
+    second: Dog_German_Shepherd_Gray_32x32_52
+  - first:
+      213: 4623443337677535766
+    second: Dog_German_Shepherd_Gray_32x32_53
+  - first:
+      213: -2094895386008782791
+    second: Dog_German_Shepherd_Gray_32x32_54
+  - first:
+      213: -2896104175207359476
+    second: Dog_German_Shepherd_Gray_32x32_55
+  - first:
+      213: 8816583473548745443
+    second: Dog_German_Shepherd_Gray_32x32_56
+  - first:
+      213: -3461287532388123878
+    second: Dog_German_Shepherd_Gray_32x32_57
+  - first:
+      213: 139164863542082733
+    second: Dog_German_Shepherd_Gray_32x32_58
+  - first:
+      213: 7561837249275002717
+    second: Dog_German_Shepherd_Gray_32x32_59
+  - first:
+      213: 3565438666029947473
+    second: Dog_German_Shepherd_Gray_32x32_60
+  - first:
+      213: 6496656920820809382
+    second: Dog_German_Shepherd_Gray_32x32_61
+  - first:
+      213: 6283079834274995959
+    second: Dog_German_Shepherd_Gray_32x32_62
+  - first:
+      213: -8926890761967177041
+    second: Dog_German_Shepherd_Gray_32x32_63
+  - first:
+      213: -360222848425629900
+    second: Dog_German_Shepherd_Gray_32x32_64
+  - first:
+      213: -8280397448788687262
+    second: Dog_German_Shepherd_Gray_32x32_65
+  - first:
+      213: -7684691095199905828
+    second: Dog_German_Shepherd_Gray_32x32_66
+  - first:
+      213: 4586682115423649633
+    second: Dog_German_Shepherd_Gray_32x32_67
+  - first:
+      213: -526729541662579810
+    second: Dog_German_Shepherd_Gray_32x32_68
+  - first:
+      213: 144245843369540711
+    second: Dog_German_Shepherd_Gray_32x32_69
+  - first:
+      213: 7187943366398053301
+    second: Dog_German_Shepherd_Gray_32x32_70
+  - first:
+      213: 7415240146602479490
+    second: Dog_German_Shepherd_Gray_32x32_71
+  - first:
+      213: 4227704983360632775
+    second: Dog_German_Shepherd_Gray_32x32_72
+  - first:
+      213: 6008289236058527005
+    second: Dog_German_Shepherd_Gray_32x32_73
+  - first:
+      213: 8049963072604532749
+    second: Dog_German_Shepherd_Gray_32x32_74
+  - first:
+      213: 1228811313300642361
+    second: Dog_German_Shepherd_Gray_32x32_75
+  - first:
+      213: -4564241942642402922
+    second: Dog_German_Shepherd_Gray_32x32_76
+  - first:
+      213: 5940981389175386632
+    second: Dog_German_Shepherd_Gray_32x32_77
+  - first:
+      213: -4411112252720951146
+    second: Dog_German_Shepherd_Gray_32x32_78
+  - first:
+      213: -672650209931031061
+    second: Dog_German_Shepherd_Gray_32x32_79
+  - first:
+      213: 4867171120670574366
+    second: Dog_German_Shepherd_Gray_32x32_80
+  - first:
+      213: 5769251765384988356
+    second: Dog_German_Shepherd_Gray_32x32_81
+  - first:
+      213: 1567513678492366593
+    second: Dog_German_Shepherd_Gray_32x32_82
+  - first:
+      213: -628597104637566161
+    second: Dog_German_Shepherd_Gray_32x32_83
+  - first:
+      213: 8314074056777415583
+    second: Dog_German_Shepherd_Gray_32x32_84
+  - first:
+      213: 5503903416856696826
+    second: Dog_German_Shepherd_Gray_32x32_85
+  - first:
+      213: -8238479466208546150
+    second: Dog_German_Shepherd_Gray_32x32_86
+  - first:
+      213: 7622178244829151157
+    second: Dog_German_Shepherd_Gray_32x32_87
+  - first:
+      213: 2918206681102870514
+    second: Dog_German_Shepherd_Gray_32x32_88
+  - first:
+      213: -1281378162301924396
+    second: Dog_German_Shepherd_Gray_32x32_89
+  - first:
+      213: 5681758453275657042
+    second: Dog_German_Shepherd_Gray_32x32_90
+  - first:
+      213: -5531364147395408031
+    second: Dog_German_Shepherd_Gray_32x32_91
+  - first:
+      213: 6812774034665168143
+    second: Dog_German_Shepherd_Gray_32x32_92
+  - first:
+      213: -1785979224191374256
+    second: Dog_German_Shepherd_Gray_32x32_93
+  - first:
+      213: -6076522789963575845
+    second: Dog_German_Shepherd_Gray_32x32_94
+  - first:
+      213: 1264209163837881967
+    second: Dog_German_Shepherd_Gray_32x32_95
+  - first:
+      213: -3005860232512556790
+    second: Dog_German_Shepherd_Gray_32x32_96
+  - first:
+      213: -3177177976567795019
+    second: Dog_German_Shepherd_Gray_32x32_97
+  - first:
+      213: -3788064349128749054
+    second: Dog_German_Shepherd_Gray_32x32_98
+  - first:
+      213: -3117425568478260698
+    second: Dog_German_Shepherd_Gray_32x32_99
+  - first:
+      213: -681580717615150197
+    second: Dog_German_Shepherd_Gray_32x32_100
+  - first:
+      213: 4403450050234281380
+    second: Dog_German_Shepherd_Gray_32x32_101
+  - first:
+      213: -6923581827685021524
+    second: Dog_German_Shepherd_Gray_32x32_102
+  - first:
+      213: 8926118492684300528
+    second: Dog_German_Shepherd_Gray_32x32_103
+  - first:
+      213: -4809101408259349132
+    second: Dog_German_Shepherd_Gray_32x32_104
+  - first:
+      213: 6462503543221741884
+    second: Dog_German_Shepherd_Gray_32x32_105
+  - first:
+      213: 3314210869632668007
+    second: Dog_German_Shepherd_Gray_32x32_106
+  - first:
+      213: 4419043441189276026
+    second: Dog_German_Shepherd_Gray_32x32_107
+  - first:
+      213: -4253004641716596445
+    second: Dog_German_Shepherd_Gray_32x32_108
+  - first:
+      213: -2129194814057565508
+    second: Dog_German_Shepherd_Gray_32x32_109
+  - first:
+      213: 8932801386207756917
+    second: Dog_German_Shepherd_Gray_32x32_110
+  - first:
+      213: -1187629327484161422
+    second: Dog_German_Shepherd_Gray_32x32_111
+  - first:
+      213: -8081986647242196734
+    second: Dog_German_Shepherd_Gray_32x32_112
+  - first:
+      213: -7190109988083742617
+    second: Dog_German_Shepherd_Gray_32x32_113
+  - first:
+      213: 5396926093307797255
+    second: Dog_German_Shepherd_Gray_32x32_114
+  - first:
+      213: -8223465510416760100
+    second: Dog_German_Shepherd_Gray_32x32_115
+  - first:
+      213: 5822503080843109578
+    second: Dog_German_Shepherd_Gray_32x32_116
+  - first:
+      213: -2145676202611954492
+    second: Dog_German_Shepherd_Gray_32x32_117
+  - first:
+      213: -2360183455814150538
+    second: Dog_German_Shepherd_Gray_32x32_118
+  - first:
+      213: 1693698641126700680
+    second: Dog_German_Shepherd_Gray_32x32_119
+  - first:
+      213: 5530977155110876794
+    second: Dog_German_Shepherd_Gray_32x32_120
+  - first:
+      213: 7569361446583212818
+    second: Dog_German_Shepherd_Gray_32x32_121
+  - first:
+      213: -9032478247477730333
+    second: Dog_German_Shepherd_Gray_32x32_122
+  - first:
+      213: -8367636781154252412
+    second: Dog_German_Shepherd_Gray_32x32_123
+  - first:
+      213: -9198912117513183252
+    second: Dog_German_Shepherd_Gray_32x32_124
+  - first:
+      213: 8632328904781150229
+    second: Dog_German_Shepherd_Gray_32x32_125
+  - first:
+      213: 6544499008807872549
+    second: Dog_German_Shepherd_Gray_32x32_126
+  - first:
+      213: -4239938179352169925
+    second: Dog_German_Shepherd_Gray_32x32_127
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 21
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 769
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b7824d963862f70800000000000000
+      internalID: 9162154982486080302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 769
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a85bc9aaa446cae60800000000000000
+      internalID: 7974859312019060106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 769
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abb1db93bbf34a2d0800000000000000
+      internalID: -3268417356204008518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_3
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 773
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec246bd5bf8334f0800000000000000
+      internalID: -850177893410263832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_4
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 767
+        width: 194
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3ad9a27d72cd0f0800000000000000
+      internalID: -1090953204644076576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_5
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 767
+        width: 226
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ae9fd801c93d940800000000000000
+      internalID: 5319767179770063372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 703
+        width: 417
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 481663c73dfd7e1f0800000000000000
+      internalID: -1015597091533725308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_7
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 641
+        width: 28
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378d3cf6b6ee1e1f0800000000000000
+      internalID: -1017269895605004173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_8
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 641
+        width: 28
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72197d9e27754a8d0800000000000000
+      internalID: -2836045714275462873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_9
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 643
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12da8de99dcd54ff0800000000000000
+      internalID: -52392993413878495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_10
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 643
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f87af2fff299f2e0800000000000000
+      internalID: -2091478923946067723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_11
+      rect:
+        serializedVersion: 2
+        x: 2051
+        y: 643
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23282813d5b27c320800000000000000
+      internalID: 2578076990955487794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_12
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 643
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac867a8d3ed7316d0800000000000000
+      internalID: -3020932507489572662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_13
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 643
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b377aff5fd603300800000000000000
+      internalID: 229804484319474608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_14
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 641
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd64075101be5750800000000000000
+      internalID: 6295663948423523787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_15
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 641
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb1292a1e0c03720800000000000000
+      internalID: 2823969041688959922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_16
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 641
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d75d3b6dd8a0dae0800000000000000
+      internalID: -1526534604738177072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_17
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 641
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ae61ab9fdc04930800000000000000
+      internalID: 4125523731123989132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_18
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 641
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a48fe4eab2fe448a0800000000000000
+      internalID: -6321665006034290614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_19
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 641
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c8574c0ad8685150800000000000000
+      internalID: 5861550200740862148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_20
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 641
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a7206392f250a60800000000000000
+      internalID: 7639564196950211102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_21
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 641
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 751b261383e40a780800000000000000
+      internalID: -8673846879061888681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_22
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 641
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fdad9421440de3c0800000000000000
+      internalID: -4328798988999479823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_23
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 641
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1483e193b8d918c0800000000000000
+      internalID: -4027950125947845606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_24
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 641
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb8f0ac535dce5890800000000000000
+      internalID: -7467305374213670724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_25
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 641
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f2389831c62c3630800000000000000
+      internalID: 3908041187970790136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_26
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 641
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5697c11049db0d1b0800000000000000
+      internalID: -5633794690469037723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_27
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 641
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07ccc6d9b22100ff0800000000000000
+      internalID: -72037615503881104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_28
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 641
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd0cff92f3404df0800000000000000
+      internalID: -198083674259059257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_29
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 641
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a01db8cd41cfbee70800000000000000
+      internalID: 9145680634835620106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_30
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 643
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c397d7deedef21710800000000000000
+      internalID: 1662671445873752380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 575
+        width: 417
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c52ecd1d3099be730800000000000000
+      internalID: 4029482533297906268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_32
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 513
+        width: 28
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6161830c2828dd420800000000000000
+      internalID: 2656422853300721174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_33
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 513
+        width: 28
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a50a8d9755331670800000000000000
+      internalID: 8508202771454494113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_34
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 513
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f4ddeb46e2130710800000000000000
+      internalID: 1658189868128130296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_35
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 513
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dae402f0bc599a40800000000000000
+      internalID: 5375429545287805657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_36
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 513
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04ceb2aac2b2e69d0800000000000000
+      internalID: -2779236449207456704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_37
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 513
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8cb9c72683fbefb0800000000000000
+      internalID: -4617329235419612022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_38
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 513
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce9015a09f8f286c0800000000000000
+      internalID: -4142474958723806740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_39
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 513
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d4d8b0fb3541d70800000000000000
+      internalID: 9012920834272873731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_40
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 513
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be065a68280051100800000000000000
+      internalID: 77969129153585387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_41
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 513
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efa027bb9e1024160800000000000000
+      internalID: 7008166073525734142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_42
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 513
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad14aae6e44a6f150800000000000000
+      internalID: 5906088618114040282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_43
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 513
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 256ab7dca8f8184d0800000000000000
+      internalID: -3134066039357462958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_44
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 513
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5246238da6c570390800000000000000
+      internalID: -7852205811333700571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_45
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 513
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca1511e54e01eaef0800000000000000
+      internalID: -95119969111420500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_46
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 513
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5645ca898cada0ca0800000000000000
+      internalID: -6049782594329095067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_47
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 513
+        width: 66
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80678679c76925910800000000000000
+      internalID: 1824686260898788872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_48
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 513
+        width: 68
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d6e2e78556d2880800000000000000
+      internalID: -8634133479850873506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_49
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 513
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180a4a4fb4985b6e0800000000000000
+      internalID: -1822399514881515391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_50
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 513
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15d50cd8c597a9890800000000000000
+      internalID: -7450509195108917935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_51
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 515
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b710ed1e78b3070800000000000000
+      internalID: 8087206960035887919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_52
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 511
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d0be477fdf345b60800000000000000
+      internalID: 7733876689113886934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_53
+      rect:
+        serializedVersion: 2
+        x: 2051
+        y: 513
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a7a653835c92040800000000000000
+      internalID: 4623443337677535766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_54
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 515
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9387753eebf6de2e0800000000000000
+      internalID: -2094895386008782791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_55
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 511
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0c5d3cc898fec7d0800000000000000
+      internalID: -2896104175207359476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 447
+        width: 417
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ead379f4fbca5a70800000000000000
+      internalID: 8816583473548745443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_57
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 389
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1b7486f35907ffc0800000000000000
+      internalID: -3461287532388123878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_58
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 391
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac34a0c4b96ee100800000000000000
+      internalID: 139164863542082733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_59
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 397
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f7a54f9ea01f860800000000000000
+      internalID: 7561837249275002717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_60
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 387
+        width: 28
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a5825839bfa7130800000000000000
+      internalID: 3565438666029947473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_61
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 383
+        width: 28
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae7b197c03c82a50800000000000000
+      internalID: 6496656920820809382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_62
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 385
+        width: 68
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fe9161f1dbf13750800000000000000
+      internalID: 6283079834274995959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_63
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 387
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa2fa3016205d1480800000000000000
+      internalID: -8926890761967177041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_64
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 385
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4376c975a3b300bf0800000000000000
+      internalID: -360222848425629900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_65
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 385
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26646e9446e161d80800000000000000
+      internalID: -8280397448788687262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_66
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 387
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd780060a2e7a5590800000000000000
+      internalID: -7684691095199905828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_67
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 387
+        width: 68
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16fb67b251b27af30800000000000000
+      internalID: 4586682115423649633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_68
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 387
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e936f78c54ea0b8f0800000000000000
+      internalID: -526729541662579810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_69
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 389
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c3e5e84d6700200800000000000000
+      internalID: 144245843369540711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_70
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 391
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bb08cb8864b0c360800000000000000
+      internalID: 7187943366398053301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_71
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 389
+        width: 28
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28fc47e20a938e660800000000000000
+      internalID: 7415240146602479490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_72
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 387
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c7fb547843dbaa30800000000000000
+      internalID: 4227704983360632775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_73
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 385
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1552171a3bb16350800000000000000
+      internalID: 6008289236058527005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_74
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 385
+        width: 68
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d00fa9593c637bf60800000000000000
+      internalID: 8049963072604532749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_75
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 387
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a1441016d9d0110800000000000000
+      internalID: 1228811313300642361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_76
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 385
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6995cd3b22e88a0c0800000000000000
+      internalID: -4564241942642402922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_77
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 385
+        width: 64
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8027107c81b927250800000000000000
+      internalID: 5940981389175386632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_78
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 387
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 690d138f6c498c2c0800000000000000
+      internalID: -4411112252720951146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_79
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 387
+        width: 68
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bed08faa2344aa6f0800000000000000
+      internalID: -672650209931031061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_80
+      rect:
+        serializedVersion: 2
+        x: 2051
+        y: 391
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e170c9cc85aab8340800000000000000
+      internalID: 4867171120670574366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 319
+        width: 417
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c6419fe9ef701050800000000000000
+      internalID: 5769251765384988356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_82
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1077a13b26de0c510800000000000000
+      internalID: 1567513678492366593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_83
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f232d378346c647f0800000000000000
+      internalID: -628597104637566161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_84
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b32860e46816370800000000000000
+      internalID: 8314074056777415583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_85
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af75dc72ffac16c40800000000000000
+      internalID: 5503903416856696826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_86
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a923a47239a0bad80800000000000000
+      internalID: -8238479466208546150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_87
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf70c9caba67c960800000000000000
+      internalID: 7622178244829151157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_88
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 257
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f7ee40e38d8f7820800000000000000
+      internalID: 2918206681102870514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_89
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 257
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db0d05b951a73ee0800000000000000
+      internalID: -1281378162301924396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_90
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 257
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2538113c539a9de40800000000000000
+      internalID: 5681758453275657042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_91
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 257
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f4a274d95ac33b0800000000000000
+      internalID: -5531364147395408031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_92
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 257
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0dd83f83e5db8e50800000000000000
+      internalID: 6812774034665168143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_93
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 257
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c68ddab5de637e0800000000000000
+      internalID: -1785979224191374256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_94
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bddc7a2a7badbaba0800000000000000
+      internalID: -6076522789963575845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_95
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6eb954598f5b8110800000000000000
+      internalID: 1264209163837881967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_96
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a01bd945b0a0946d0800000000000000
+      internalID: -3005860232512556790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_97
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 257
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b27b76b67568e3d0800000000000000
+      internalID: -3177177976567795019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_98
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2001cd36b871e6bc0800000000000000
+      internalID: -3788064349128749054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_99
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 257
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 622122956fdacb4d0800000000000000
+      internalID: -3117425568478260698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_100
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 259
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8b0bc0d2f98a86f0800000000000000
+      internalID: -681580717615150197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_101
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 257
+        width: 28
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ade36e7d723c1d30800000000000000
+      internalID: 4403450050234281380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_102
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 257
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca80c7ba20f7aef90800000000000000
+      internalID: -6923581827685021524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_103
+      rect:
+        serializedVersion: 2
+        x: 2051
+        y: 257
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f03e7bf971ffdb70800000000000000
+      internalID: 8926118492684300528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_104
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 259
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 475eed7bfb3a24db0800000000000000
+      internalID: -4809101408259349132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_105
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 259
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c396f659bbc6fa950800000000000000
+      internalID: 6462503543221741884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_106
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191
+        width: 417
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 761913bf9317efd20800000000000000
+      internalID: 3314210869632668007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_107
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 129
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a794b1fb898935d30800000000000000
+      internalID: 4419043441189276026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_108
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 129
+        width: 68
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 321156ecfca4af4c0800000000000000
+      internalID: -4253004641716596445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_109
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 129
+        width: 68
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb2be7af8949372e0800000000000000
+      internalID: -2129194814057565508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_110
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 129
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 572c702688fa7fb70800000000000000
+      internalID: 8932801386207756917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_111
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 129
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27278724b61b48fe0800000000000000
+      internalID: -1187629327484161422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_112
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 129
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 209bdabe6f307df80800000000000000
+      internalID: -8081986647242196734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_113
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 129
+        width: 68
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 768c7488f09973c90800000000000000
+      internalID: -7190109988083742617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_114
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 129
+        width: 68
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70fd5ae00bbb5ea40800000000000000
+      internalID: 5396926093307797255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_115
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 129
+        width: 68
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2cee420b160ed80800000000000000
+      internalID: -8223465510416760100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_116
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 131
+        width: 28
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4654df3bfadc050800000000000000
+      internalID: 5822503080843109578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_117
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 131
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc2e4cacd60932e0800000000000000
+      internalID: -2145676202611954492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_118
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 131
+        width: 28
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6769177d6a1fe3fd0800000000000000
+      internalID: -2360183455814150538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 417
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8863be4c0f9318710800000000000000
+      internalID: 1693698641126700680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_120
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a763f2f0b6af1cc40800000000000000
+      internalID: 5530977155110876794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_121
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21b1128a126cb0960800000000000000
+      internalID: 7569361446583212818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_122
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e3a5a9d3e036a280800000000000000
+      internalID: -9032478247477730333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_123
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 0
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489cec16eae20eb80800000000000000
+      internalID: -8367636781154252412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_124
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 0
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef1793ca26e65080800000000000000
+      internalID: -9198912117513183252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_125
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 0
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51831d127613cc770800000000000000
+      internalID: 8632328904781150229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_126
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 0
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528a3ec9c2bb2da50800000000000000
+      internalID: 6544499008807872549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Gray_32x32_127
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 0
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b32f816a0b6b825c0800000000000000
+      internalID: -4239938179352169925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dog_German_Shepherd_Gray_32x32_0: 9162154982486080302
+      Dog_German_Shepherd_Gray_32x32_1: 7974859312019060106
+      Dog_German_Shepherd_Gray_32x32_10: -2091478923946067723
+      Dog_German_Shepherd_Gray_32x32_100: -681580717615150197
+      Dog_German_Shepherd_Gray_32x32_101: 4403450050234281380
+      Dog_German_Shepherd_Gray_32x32_102: -6923581827685021524
+      Dog_German_Shepherd_Gray_32x32_103: 8926118492684300528
+      Dog_German_Shepherd_Gray_32x32_104: -4809101408259349132
+      Dog_German_Shepherd_Gray_32x32_105: 6462503543221741884
+      Dog_German_Shepherd_Gray_32x32_106: 3314210869632668007
+      Dog_German_Shepherd_Gray_32x32_107: 4419043441189276026
+      Dog_German_Shepherd_Gray_32x32_108: -4253004641716596445
+      Dog_German_Shepherd_Gray_32x32_109: -2129194814057565508
+      Dog_German_Shepherd_Gray_32x32_11: 2578076990955487794
+      Dog_German_Shepherd_Gray_32x32_110: 8932801386207756917
+      Dog_German_Shepherd_Gray_32x32_111: -1187629327484161422
+      Dog_German_Shepherd_Gray_32x32_112: -8081986647242196734
+      Dog_German_Shepherd_Gray_32x32_113: -7190109988083742617
+      Dog_German_Shepherd_Gray_32x32_114: 5396926093307797255
+      Dog_German_Shepherd_Gray_32x32_115: -8223465510416760100
+      Dog_German_Shepherd_Gray_32x32_116: 5822503080843109578
+      Dog_German_Shepherd_Gray_32x32_117: -2145676202611954492
+      Dog_German_Shepherd_Gray_32x32_118: -2360183455814150538
+      Dog_German_Shepherd_Gray_32x32_119: 1693698641126700680
+      Dog_German_Shepherd_Gray_32x32_12: -3020932507489572662
+      Dog_German_Shepherd_Gray_32x32_120: 5530977155110876794
+      Dog_German_Shepherd_Gray_32x32_121: 7569361446583212818
+      Dog_German_Shepherd_Gray_32x32_122: -9032478247477730333
+      Dog_German_Shepherd_Gray_32x32_123: -8367636781154252412
+      Dog_German_Shepherd_Gray_32x32_124: -9198912117513183252
+      Dog_German_Shepherd_Gray_32x32_125: 8632328904781150229
+      Dog_German_Shepherd_Gray_32x32_126: 6544499008807872549
+      Dog_German_Shepherd_Gray_32x32_127: -4239938179352169925
+      Dog_German_Shepherd_Gray_32x32_13: 229804484319474608
+      Dog_German_Shepherd_Gray_32x32_14: 6295663948423523787
+      Dog_German_Shepherd_Gray_32x32_15: 2823969041688959922
+      Dog_German_Shepherd_Gray_32x32_16: -1526534604738177072
+      Dog_German_Shepherd_Gray_32x32_17: 4125523731123989132
+      Dog_German_Shepherd_Gray_32x32_18: -6321665006034290614
+      Dog_German_Shepherd_Gray_32x32_19: 5861550200740862148
+      Dog_German_Shepherd_Gray_32x32_2: -3268417356204008518
+      Dog_German_Shepherd_Gray_32x32_20: 7639564196950211102
+      Dog_German_Shepherd_Gray_32x32_21: -8673846879061888681
+      Dog_German_Shepherd_Gray_32x32_22: -4328798988999479823
+      Dog_German_Shepherd_Gray_32x32_23: -4027950125947845606
+      Dog_German_Shepherd_Gray_32x32_24: -7467305374213670724
+      Dog_German_Shepherd_Gray_32x32_25: 3908041187970790136
+      Dog_German_Shepherd_Gray_32x32_26: -5633794690469037723
+      Dog_German_Shepherd_Gray_32x32_27: -72037615503881104
+      Dog_German_Shepherd_Gray_32x32_28: -198083674259059257
+      Dog_German_Shepherd_Gray_32x32_29: 9145680634835620106
+      Dog_German_Shepherd_Gray_32x32_3: -850177893410263832
+      Dog_German_Shepherd_Gray_32x32_30: 1662671445873752380
+      Dog_German_Shepherd_Gray_32x32_31: 4029482533297906268
+      Dog_German_Shepherd_Gray_32x32_32: 2656422853300721174
+      Dog_German_Shepherd_Gray_32x32_33: 8508202771454494113
+      Dog_German_Shepherd_Gray_32x32_34: 1658189868128130296
+      Dog_German_Shepherd_Gray_32x32_35: 5375429545287805657
+      Dog_German_Shepherd_Gray_32x32_36: -2779236449207456704
+      Dog_German_Shepherd_Gray_32x32_37: -4617329235419612022
+      Dog_German_Shepherd_Gray_32x32_38: -4142474958723806740
+      Dog_German_Shepherd_Gray_32x32_39: 9012920834272873731
+      Dog_German_Shepherd_Gray_32x32_4: -1090953204644076576
+      Dog_German_Shepherd_Gray_32x32_40: 77969129153585387
+      Dog_German_Shepherd_Gray_32x32_41: 7008166073525734142
+      Dog_German_Shepherd_Gray_32x32_42: 5906088618114040282
+      Dog_German_Shepherd_Gray_32x32_43: -3134066039357462958
+      Dog_German_Shepherd_Gray_32x32_44: -7852205811333700571
+      Dog_German_Shepherd_Gray_32x32_45: -95119969111420500
+      Dog_German_Shepherd_Gray_32x32_46: -6049782594329095067
+      Dog_German_Shepherd_Gray_32x32_47: 1824686260898788872
+      Dog_German_Shepherd_Gray_32x32_48: -8634133479850873506
+      Dog_German_Shepherd_Gray_32x32_49: -1822399514881515391
+      Dog_German_Shepherd_Gray_32x32_5: 5319767179770063372
+      Dog_German_Shepherd_Gray_32x32_50: -7450509195108917935
+      Dog_German_Shepherd_Gray_32x32_51: 8087206960035887919
+      Dog_German_Shepherd_Gray_32x32_52: 7733876689113886934
+      Dog_German_Shepherd_Gray_32x32_53: 4623443337677535766
+      Dog_German_Shepherd_Gray_32x32_54: -2094895386008782791
+      Dog_German_Shepherd_Gray_32x32_55: -2896104175207359476
+      Dog_German_Shepherd_Gray_32x32_56: 8816583473548745443
+      Dog_German_Shepherd_Gray_32x32_57: -3461287532388123878
+      Dog_German_Shepherd_Gray_32x32_58: 139164863542082733
+      Dog_German_Shepherd_Gray_32x32_59: 7561837249275002717
+      Dog_German_Shepherd_Gray_32x32_6: -1015597091533725308
+      Dog_German_Shepherd_Gray_32x32_60: 3565438666029947473
+      Dog_German_Shepherd_Gray_32x32_61: 6496656920820809382
+      Dog_German_Shepherd_Gray_32x32_62: 6283079834274995959
+      Dog_German_Shepherd_Gray_32x32_63: -8926890761967177041
+      Dog_German_Shepherd_Gray_32x32_64: -360222848425629900
+      Dog_German_Shepherd_Gray_32x32_65: -8280397448788687262
+      Dog_German_Shepherd_Gray_32x32_66: -7684691095199905828
+      Dog_German_Shepherd_Gray_32x32_67: 4586682115423649633
+      Dog_German_Shepherd_Gray_32x32_68: -526729541662579810
+      Dog_German_Shepherd_Gray_32x32_69: 144245843369540711
+      Dog_German_Shepherd_Gray_32x32_7: -1017269895605004173
+      Dog_German_Shepherd_Gray_32x32_70: 7187943366398053301
+      Dog_German_Shepherd_Gray_32x32_71: 7415240146602479490
+      Dog_German_Shepherd_Gray_32x32_72: 4227704983360632775
+      Dog_German_Shepherd_Gray_32x32_73: 6008289236058527005
+      Dog_German_Shepherd_Gray_32x32_74: 8049963072604532749
+      Dog_German_Shepherd_Gray_32x32_75: 1228811313300642361
+      Dog_German_Shepherd_Gray_32x32_76: -4564241942642402922
+      Dog_German_Shepherd_Gray_32x32_77: 5940981389175386632
+      Dog_German_Shepherd_Gray_32x32_78: -4411112252720951146
+      Dog_German_Shepherd_Gray_32x32_79: -672650209931031061
+      Dog_German_Shepherd_Gray_32x32_8: -2836045714275462873
+      Dog_German_Shepherd_Gray_32x32_80: 4867171120670574366
+      Dog_German_Shepherd_Gray_32x32_81: 5769251765384988356
+      Dog_German_Shepherd_Gray_32x32_82: 1567513678492366593
+      Dog_German_Shepherd_Gray_32x32_83: -628597104637566161
+      Dog_German_Shepherd_Gray_32x32_84: 8314074056777415583
+      Dog_German_Shepherd_Gray_32x32_85: 5503903416856696826
+      Dog_German_Shepherd_Gray_32x32_86: -8238479466208546150
+      Dog_German_Shepherd_Gray_32x32_87: 7622178244829151157
+      Dog_German_Shepherd_Gray_32x32_88: 2918206681102870514
+      Dog_German_Shepherd_Gray_32x32_89: -1281378162301924396
+      Dog_German_Shepherd_Gray_32x32_9: -52392993413878495
+      Dog_German_Shepherd_Gray_32x32_90: 5681758453275657042
+      Dog_German_Shepherd_Gray_32x32_91: -5531364147395408031
+      Dog_German_Shepherd_Gray_32x32_92: 6812774034665168143
+      Dog_German_Shepherd_Gray_32x32_93: -1785979224191374256
+      Dog_German_Shepherd_Gray_32x32_94: -6076522789963575845
+      Dog_German_Shepherd_Gray_32x32_95: 1264209163837881967
+      Dog_German_Shepherd_Gray_32x32_96: -3005860232512556790
+      Dog_German_Shepherd_Gray_32x32_97: -3177177976567795019
+      Dog_German_Shepherd_Gray_32x32_98: -3788064349128749054
+      Dog_German_Shepherd_Gray_32x32_99: -3117425568478260698
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
