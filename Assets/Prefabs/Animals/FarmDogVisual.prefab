@@ -124,6 +124,7 @@ MonoBehaviour:
   chaseSpeed: 4
   chaseCooldown: 30
   chaseReachDistance: 0.3
+  barkDuration: 2.5
 --- !u!95 &8968293219669247676
 Animator:
   serializedVersion: 7

@@ -32,6 +32,8 @@ public class FarmDog : MonoBehaviour
     [SerializeField] private float chaseSpeed = 4f;
     [SerializeField] private float chaseCooldown = 30f;
     [SerializeField] private float chaseReachDistance = 0.3f;
+    [Range(0.5f, 5f)]
+    [SerializeField] private float barkDuration = 1.2f;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -54,6 +56,7 @@ public class FarmDog : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         animalVisual = GetComponent<AnimalVisual>();
+        if (animator != null) animator.updateMode = AnimatorUpdateMode.UnscaledTime;
     }
 
     private void SetAnim(int offset)
@@ -97,9 +100,6 @@ public class FarmDog : MonoBehaviour
         chaseCooldownTimer = 5f; // small grace period before first chase
         isChasing = false;
 
-        // Switch to unscaled time so animations aren't affected by game speed-up during runs
-        if (animator != null) animator.updateMode = AnimatorUpdateMode.UnscaledTime;
-
         // Take over animation control from AnimalVisual (home screen wanderer)
         if (animalVisual != null) animalVisual.PauseWander = true;
 
@@ -124,9 +124,6 @@ public class FarmDog : MonoBehaviour
 
         StopAllCoroutines();
         isChasing = false;
-
-        // Restore normal update mode so home-screen wander animation syncs with timeScale
-        if (animator != null) animator.updateMode = AnimatorUpdateMode.Normal;
 
         // Return animation control to AnimalVisual (home screen wanderer)
         if (animalVisual != null) animalVisual.PauseWander = false;
@@ -205,7 +202,7 @@ public class FarmDog : MonoBehaviour
 
         // Bark victory then return to idle
         SetAnim(BARK_OFFSET);
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(barkDuration);
         SetAnim(IDLE_OFFSET);
 
         chaseCooldownTimer = chaseCooldown;
