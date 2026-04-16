@@ -269,6 +269,102 @@ TextureImporter:
   - first:
       213: 6986692978486691368
     second: Cow_Baby_Caramel_32x32_88
+  - first:
+      213: -4132151678268745565
+    second: Cow_Baby_Caramel_32x32_EatR1
+  - first:
+      213: -310047224609743925
+    second: Cow_Baby_Caramel_32x32_EatR2
+  - first:
+      213: 6476087352263002626
+    second: Cow_Baby_Caramel_32x32_EatR3
+  - first:
+      213: -2702570363724677805
+    second: Cow_Baby_Caramel_32x32_EatR4
+  - first:
+      213: -8566893896205462467
+    second: Cow_Baby_Caramel_32x32_EatR5
+  - first:
+      213: -6478540927701980233
+    second: Cow_Baby_Caramel_32x32_EatR6
+  - first:
+      213: -917206830715941814
+    second: Cow_Baby_Caramel_32x32_EatU1
+  - first:
+      213: -3332765445419187294
+    second: Cow_Baby_Caramel_32x32_EatU2
+  - first:
+      213: -3405028776717134986
+    second: Cow_Baby_Caramel_32x32_EatU3
+  - first:
+      213: 6040209947039402156
+    second: Cow_Baby_Caramel_32x32_EatU4
+  - first:
+      213: -8135503255831949693
+    second: Cow_Baby_Caramel_32x32_EatU5
+  - first:
+      213: 4436360224256162353
+    second: Cow_Baby_Caramel_32x32_EatU6
+  - first:
+      213: 439638494558765761
+    second: Cow_Baby_Caramel_32x32_EatL1
+  - first:
+      213: -414166252920303523
+    second: Cow_Baby_Caramel_32x32_EatL2
+  - first:
+      213: 2261066912111319370
+    second: Cow_Baby_Caramel_32x32_EatL3
+  - first:
+      213: -2039079932147192271
+    second: Cow_Baby_Caramel_32x32_EatL4
+  - first:
+      213: -393839660031039719
+    second: Cow_Baby_Caramel_32x32_WalkR1
+  - first:
+      213: 5536322380586123101
+    second: Cow_Baby_Caramel_32x32_WalkR2
+  - first:
+      213: -7843332404359009022
+    second: Cow_Baby_Caramel_32x32_WalkR3
+  - first:
+      213: 3164620617768674352
+    second: Cow_Baby_Caramel_32x32_WalkR4
+  - first:
+      213: -4768423783383133990
+    second: Cow_Baby_Caramel_32x32_WalkR5
+  - first:
+      213: -4015827624003594822
+    second: Cow_Baby_Caramel_32x32_WalkR6
+  - first:
+      213: 3361922599028401634
+    second: Cow_Baby_Caramel_32x32_WalkU1
+  - first:
+      213: 9057646356298727857
+    second: Cow_Baby_Caramel_32x32_WalkU2
+  - first:
+      213: -2427080323336036980
+    second: Cow_Baby_Caramel_32x32_WalkU3
+  - first:
+      213: 8630753927751962678
+    second: Cow_Baby_Caramel_32x32_WalkU4
+  - first:
+      213: 8700316012620275731
+    second: Cow_Baby_Caramel_32x32_WalkU5
+  - first:
+      213: -4371276797344180348
+    second: Cow_Baby_Caramel_32x32_WalkU6
+  - first:
+      213: 9016392104305605455
+    second: Cow_Baby_Caramel_32x32_WalkL1
+  - first:
+      213: -5463415777041319435
+    second: Cow_Baby_Caramel_32x32_WalkL2
+  - first:
+      213: 3255373250330934927
+    second: Cow_Baby_Caramel_32x32_WalkL3
+  - first:
+      213: 4406367098223120119
+    second: Cow_Baby_Caramel_32x32_WalkL4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -390,1959 +486,1673 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_0
+      name: Cow_Baby_Caramel_32x32_PreviewR
       rect:
         serializedVersion: 2
-        x: 9
-        y: 191
-        width: 54
-        height: 42
+        x: 0
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45a7762d326733940800000000000000
-      internalID: 5274689484806912596
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_1
+      name: Cow_Baby_Caramel_32x32_PreviewU
       rect:
         serializedVersion: 2
-        x: 81
-        y: 191
-        width: 32
-        height: 58
+        x: 96
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c45cd8ec103c1cc10800000000000000
-      internalID: 2072151716094920012
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_2
+      name: Cow_Baby_Caramel_32x32_PreviewL
       rect:
         serializedVersion: 2
-        x: 129
-        y: 191
-        width: 54
-        height: 42
+        x: 192
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79f4ca62451298f00800000000000000
-      internalID: 1119462627688075159
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_3
+      name: Cow_Baby_Caramel_32x32_PreviewD
       rect:
         serializedVersion: 2
-        x: 209
-        y: 193
-        width: 32
-        height: 54
+        x: 288
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf905afb8768cbb90800000000000000
-      internalID: -7224751849039656452
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_4
+      name: Cow_Baby_Caramel_32x32_IdleR1
       rect:
         serializedVersion: 2
-        x: 255
-        y: 191
-        width: 18
-        height: 20
+        x: 0
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dee794ef7f39a7980800000000000000
-      internalID: -8540351050022289683
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_5
+      name: Cow_Baby_Caramel_32x32_IdleR2
       rect:
         serializedVersion: 2
-        x: 271
-        y: 191
-        width: 18
-        height: 20
+        x: 96
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 96d90f32623a55520800000000000000
-      internalID: 2690235736630795625
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_6
+      name: Cow_Baby_Caramel_32x32_IdleR3
       rect:
         serializedVersion: 2
-        x: 289
-        y: 191
-        width: 28
-        height: 20
+        x: 192
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8941a19fe8e4ab210800000000000000
-      internalID: 1349477414322443416
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_7
+      name: Cow_Baby_Caramel_32x32_IdleR4
       rect:
         serializedVersion: 2
-        x: 317
-        y: 201
-        width: 6
-        height: 6
+        x: 288
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd13b8a086d7fb340800000000000000
-      internalID: 4881758406899872220
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_8
+      name: Cow_Baby_Caramel_32x32_IdleR5
       rect:
         serializedVersion: 2
-        x: 327
-        y: 191
-        width: 14
-        height: 20
+        x: 384
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9fdacf62f2b845ea0800000000000000
-      internalID: -5884925778432578055
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_9
+      name: Cow_Baby_Caramel_32x32_IdleR6
       rect:
         serializedVersion: 2
-        x: 351
-        y: 191
-        width: 16
-        height: 20
+        x: 480
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 93b5cc6d4c6813c90800000000000000
-      internalID: -7191818949958542535
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_10
+      name: Cow_Baby_Caramel_32x32_IdleU1
       rect:
         serializedVersion: 2
-        x: 367
-        y: 191
-        width: 18
-        height: 20
+        x: 576
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df3e9e7f2e34918b0800000000000000
-      internalID: -5181035254212074499
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_11
+      name: Cow_Baby_Caramel_32x32_IdleU2
       rect:
         serializedVersion: 2
-        x: 387
-        y: 191
-        width: 14
-        height: 20
+        x: 672
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1dd7363c7e8714a50800000000000000
-      internalID: 6503612273710562769
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_12
+      name: Cow_Baby_Caramel_32x32_IdleU3
       rect:
         serializedVersion: 2
-        x: 401
-        y: 201
-        width: 6
-        height: 6
+        x: 768
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: edee94e39c8e4a170800000000000000
-      internalID: 8188925973497507550
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_13
+      name: Cow_Baby_Caramel_32x32_IdleU4
       rect:
         serializedVersion: 2
-        x: 415
-        y: 191
-        width: 14
-        height: 20
+        x: 864
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e0f223f020e97c610800000000000000
-      internalID: 1641454320881905422
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_14
+      name: Cow_Baby_Caramel_32x32_IdleU5
       rect:
         serializedVersion: 2
-        x: 429
-        y: 191
-        width: 14
-        height: 20
+        x: 960
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 799b10695ec4b8b10800000000000000
-      internalID: 1984764609734752663
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_15
+      name: Cow_Baby_Caramel_32x32_IdleU6
       rect:
         serializedVersion: 2
-        x: 317
-        y: 191
-        width: 6
-        height: 6
+        x: 1056
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0757c2fb8ca08b0e0800000000000000
-      internalID: -2254039756181834384
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_16
+      name: Cow_Baby_Caramel_32x32_IdleL1
       rect:
         serializedVersion: 2
-        x: 401
-        y: 191
-        width: 6
-        height: 6
+        x: 1152
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d4ca56c666d4f0bd0800000000000000
-      internalID: -2661823752452068275
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_17
+      name: Cow_Baby_Caramel_32x32_IdleL2
       rect:
         serializedVersion: 2
-        x: 9
-        y: 127
-        width: 54
-        height: 42
+        x: 1248
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 265fcc43990c23240800000000000000
-      internalID: 4770086719587153250
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_18
+      name: Cow_Baby_Caramel_32x32_IdleL3
       rect:
         serializedVersion: 2
-        x: 73
-        y: 127
-        width: 54
-        height: 42
+        x: 1344
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 373dc0424c11fe800800000000000000
-      internalID: 643752805853352819
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_19
+      name: Cow_Baby_Caramel_32x32_IdleL4
       rect:
         serializedVersion: 2
-        x: 137
-        y: 127
-        width: 54
-        height: 44
+        x: 1440
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd8c910ea11b52cb0800000000000000
-      internalID: -4889307091453753125
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_20
+      name: Cow_Baby_Caramel_32x32_IdleL5
       rect:
         serializedVersion: 2
-        x: 201
-        y: 127
-        width: 54
-        height: 44
+        x: 1536
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5349fcf03aa11640800000000000000
-      internalID: 5049003784638382941
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_21
+      name: Cow_Baby_Caramel_32x32_IdleL6
       rect:
         serializedVersion: 2
-        x: 265
-        y: 127
-        width: 54
-        height: 42
+        x: 1632
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 243637903e09220a0800000000000000
-      internalID: -6907799573642386622
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_22
+      name: Cow_Baby_Caramel_32x32_IdleD1
       rect:
         serializedVersion: 2
-        x: 329
-        y: 127
-        width: 54
-        height: 42
+        x: 1728
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4bc405d65a4f21f00800000000000000
-      internalID: 1086199451490471092
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_23
+      name: Cow_Baby_Caramel_32x32_IdleD2
       rect:
         serializedVersion: 2
-        x: 401
-        y: 127
-        width: 32
-        height: 58
+        x: 1824
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c667e6fa9452c3520800000000000000
-      internalID: 2683060476412065388
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_24
+      name: Cow_Baby_Caramel_32x32_IdleD3
       rect:
         serializedVersion: 2
-        x: 465
-        y: 127
-        width: 32
-        height: 58
+        x: 1920
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: feda28c46459ad2b0800000000000000
-      internalID: -5558966660871574033
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_25
+      name: Cow_Baby_Caramel_32x32_IdleD4
       rect:
         serializedVersion: 2
-        x: 529
-        y: 127
-        width: 32
-        height: 60
+        x: 2016
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae027099485ace9e0800000000000000
-      internalID: -1590714579446980374
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_26
+      name: Cow_Baby_Caramel_32x32_IdleD5
       rect:
         serializedVersion: 2
-        x: 593
-        y: 127
-        width: 32
-        height: 60
+        x: 2112
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b38c2d9c655d546a0800000000000000
-      internalID: -6465527121290540997
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_27
+      name: Cow_Baby_Caramel_32x32_IdleD6
       rect:
         serializedVersion: 2
-        x: 657
-        y: 127
-        width: 32
-        height: 58
+        x: 2208
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 004f6465a5246f770800000000000000
-      internalID: 8644169490546226176
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_28
+      name: Cow_Baby_Caramel_32x32_EatR1
       rect:
         serializedVersion: 2
-        x: 721
-        y: 127
-        width: 32
-        height: 58
+        x: 0
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c960829a19075bc20800000000000000
-      internalID: 3221604879363999388
+      spriteID: 3a8d1c211f5a7a6c0800000000000000
+      internalID: -4132151678268745565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_29
+      name: Cow_Baby_Caramel_32x32_EatR2
       rect:
         serializedVersion: 2
-        x: 769
-        y: 127
-        width: 54
-        height: 42
+        x: 96
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66abbbe5355b7b4f0800000000000000
-      internalID: -812981838040810906
+      spriteID: bcb5a8121bd72bbf0800000000000000
+      internalID: -310047224609743925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_30
+      name: Cow_Baby_Caramel_32x32_EatR3
       rect:
         serializedVersion: 2
-        x: 833
-        y: 127
-        width: 54
-        height: 42
+        x: 192
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 57a430fe7a08a41c0800000000000000
-      internalID: -4518657817355007371
+      spriteID: 20a4906922fafd950800000000000000
+      internalID: 6476087352263002626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_31
+      name: Cow_Baby_Caramel_32x32_EatR4
       rect:
         serializedVersion: 2
-        x: 897
-        y: 127
-        width: 54
-        height: 44
+        x: 288
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efeb5a2c81f884b70800000000000000
-      internalID: 8883507601495932670
+      spriteID: 35d31b1b29a8e7ad0800000000000000
+      internalID: -2702570363724677805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_32
+      name: Cow_Baby_Caramel_32x32_EatR5
       rect:
         serializedVersion: 2
-        x: 961
-        y: 127
-        width: 54
-        height: 44
+        x: 384
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 313ebac6e8ee23dd0800000000000000
-      internalID: -2507679747015974125
+      spriteID: d34163804674c1980800000000000000
+      internalID: -8566893896205462467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_33
+      name: Cow_Baby_Caramel_32x32_EatR6
       rect:
         serializedVersion: 2
-        x: 1025
-        y: 127
-        width: 54
-        height: 42
+        x: 480
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ab8aff9d1994fe320800000000000000
-      internalID: 2589369201537820858
+      spriteID: 7bb6e7dd9599716a0800000000000000
+      internalID: -6478540927701980233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_34
+      name: Cow_Baby_Caramel_32x32_EatU1
       rect:
         serializedVersion: 2
-        x: 1089
-        y: 127
-        width: 54
-        height: 42
+        x: 576
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fabfbf80e10807e80800000000000000
-      internalID: -8182899656444085329
+      spriteID: a4c4d9d3f3d6543f0800000000000000
+      internalID: -917206830715941814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_35
+      name: Cow_Baby_Caramel_32x32_EatU2
       rect:
         serializedVersion: 2
-        x: 1169
-        y: 129
-        width: 32
-        height: 54
+        x: 672
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb751a79063e80540800000000000000
-      internalID: 4974475792431011775
+      spriteID: 2a3c7123c73afb1d0800000000000000
+      internalID: -3332765445419187294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_36
+      name: Cow_Baby_Caramel_32x32_EatU3
       rect:
         serializedVersion: 2
-        x: 1233
-        y: 129
-        width: 32
-        height: 54
+        x: 768
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c43c15ae9ab7026c0800000000000000
-      internalID: -4170197285234162868
+      spriteID: 673dac14e58eeb0d0800000000000000
+      internalID: -3405028776717134986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_37
+      name: Cow_Baby_Caramel_32x32_EatU4
       rect:
         serializedVersion: 2
-        x: 1297
-        y: 129
-        width: 32
-        height: 56
+        x: 864
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8465e6ea34dec9050800000000000000
-      internalID: 5808778494346155592
+      spriteID: ca88016c1f223d350800000000000000
+      internalID: 6040209947039402156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_38
+      name: Cow_Baby_Caramel_32x32_EatU5
       rect:
         serializedVersion: 2
-        x: 1361
-        y: 129
-        width: 32
-        height: 56
+        x: 960
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ef1886bad9489810800000000000000
-      internalID: 1772247657084362725
+      spriteID: 38e4a1f74e2e81f80800000000000000
+      internalID: -8135503255831949693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_39
+      name: Cow_Baby_Caramel_32x32_EatU6
       rect:
         serializedVersion: 2
-        x: 1425
-        y: 129
-        width: 32
-        height: 54
+        x: 1056
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9f3e43221d85c9e0800000000000000
-      internalID: -1601718983419084902
+      spriteID: 13af57e7e1e119d30800000000000000
+      internalID: 4436360224256162353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_40
+      name: Cow_Baby_Caramel_32x32_EatL1
       rect:
         serializedVersion: 2
-        x: 1489
-        y: 129
-        width: 32
-        height: 54
+        x: 1152
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f514dcdc50d843d0800000000000000
-      internalID: -3222096436123134479
+      spriteID: 1c243c9a1e8e91600800000000000000
+      internalID: 439638494558765761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_41
+      name: Cow_Baby_Caramel_32x32_EatL2
       rect:
         serializedVersion: 2
-        x: 11
-        y: 63
-        width: 52
-        height: 42
+        x: 1248
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 435a91e76b3de4c10800000000000000
-      internalID: 2039800461998531892
+      spriteID: d501bb0ccf5904af0800000000000000
+      internalID: -414166252920303523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_42
+      name: Cow_Baby_Caramel_32x32_EatL3
       rect:
         serializedVersion: 2
-        x: 73
-        y: 63
-        width: 54
-        height: 42
+        x: 1344
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a453d80a127f1500800000000000000
-      internalID: 369139150610453664
+      spriteID: a49d8cd706ce06f10800000000000000
+      internalID: 2261066912111319370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_43
+      name: Cow_Baby_Caramel_32x32_EatL4
       rect:
         serializedVersion: 2
-        x: 137
-        y: 63
-        width: 54
-        height: 40
+        x: 1440
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ca31fe6c842619b0800000000000000
-      internalID: -5109856541629924666
+      spriteID: 13e2dbfea9bb3b3e0800000000000000
+      internalID: -2039079932147192271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_44
+      name: Cow_Baby_Caramel_32x32_EatL5
       rect:
         serializedVersion: 2
-        x: 201
-        y: 63
-        width: 54
-        height: 42
+        x: 1536
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d1dbeb120d2d8c40800000000000000
-      internalID: 5516114605680349657
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_45
+      name: Cow_Baby_Caramel_32x32_EatL6
       rect:
         serializedVersion: 2
-        x: 265
-        y: 63
-        width: 54
-        height: 42
+        x: 1632
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88e7b8b136c5b86b0800000000000000
-      internalID: -5293035356310241656
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_46
+      name: Cow_Baby_Caramel_32x32_EatD1
       rect:
         serializedVersion: 2
-        x: 331
-        y: 63
-        width: 52
-        height: 40
+        x: 1728
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 23531da775264a940800000000000000
-      internalID: 5306474388811494706
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_47
+      name: Cow_Baby_Caramel_32x32_EatD2
       rect:
         serializedVersion: 2
-        x: 401
-        y: 63
-        width: 32
-        height: 58
+        x: 1824
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc4d7835aea442c40800000000000000
-      internalID: 5486592616328320204
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_48
+      name: Cow_Baby_Caramel_32x32_EatD3
       rect:
         serializedVersion: 2
-        x: 465
-        y: 63
-        width: 32
-        height: 58
+        x: 1920
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27346528cf1b258f0800000000000000
-      internalID: -553184106136583310
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_49
+      name: Cow_Baby_Caramel_32x32_EatD4
       rect:
         serializedVersion: 2
-        x: 529
-        y: 63
-        width: 32
-        height: 60
+        x: 2016
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fddd59e609c72d650800000000000000
-      internalID: 6256199792143490527
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_50
+      name: Cow_Baby_Caramel_32x32_EatD5
       rect:
         serializedVersion: 2
-        x: 593
-        y: 63
-        width: 32
-        height: 58
+        x: 2112
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb43f384a19998c80800000000000000
-      internalID: -8319950498429979457
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_51
+      name: Cow_Baby_Caramel_32x32_EatD6
       rect:
         serializedVersion: 2
-        x: 657
-        y: 63
-        width: 32
-        height: 58
+        x: 2208
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4ef60e82344273c0800000000000000
-      internalID: -4363350105046712753
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_52
+      name: Cow_Baby_Caramel_32x32_WalkR1
       rect:
         serializedVersion: 2
-        x: 721
-        y: 63
-        width: 32
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3a2dffcb5978b730800000000000000
-      internalID: 4015092503039257150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_53
-      rect:
-        serializedVersion: 2
-        x: 769
-        y: 63
-        width: 52
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a7b8baf3b3ccbac90800000000000000
-      internalID: -7157402627931927686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_54
-      rect:
-        serializedVersion: 2
-        x: 833
-        y: 63
-        width: 54
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a25b6858978e8670800000000000000
-      internalID: 8542914631556616869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_55
-      rect:
-        serializedVersion: 2
-        x: 897
-        y: 63
-        width: 54
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c58abae3172e2ab30800000000000000
-      internalID: 4297245970475493468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_56
-      rect:
-        serializedVersion: 2
-        x: 961
-        y: 63
-        width: 54
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 91c19feb799cfb160800000000000000
-      internalID: 7043569995811986457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_57
-      rect:
-        serializedVersion: 2
-        x: 1025
-        y: 63
-        width: 54
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b10497713ebb57b40800000000000000
-      internalID: 5437458709145534491
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_58
-      rect:
-        serializedVersion: 2
-        x: 1089
-        y: 63
-        width: 52
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7cf1c026964af0f60800000000000000
-      internalID: 8002795835384143815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_59
-      rect:
-        serializedVersion: 2
-        x: 1169
-        y: 65
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 594c175c5dbeb1890800000000000000
-      internalID: -7486130652200188779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_60
-      rect:
-        serializedVersion: 2
-        x: 1233
-        y: 65
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 787885411657f6770800000000000000
-      internalID: 8606226472741930887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_61
-      rect:
-        serializedVersion: 2
-        x: 1297
-        y: 63
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c20b830100144670800000000000000
-      internalID: 8521953991432274632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_62
-      rect:
-        serializedVersion: 2
-        x: 1361
-        y: 65
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4bd3716f6476be9b0800000000000000
-      internalID: -5049829002691789388
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_63
-      rect:
-        serializedVersion: 2
-        x: 1425
-        y: 65
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d49f22de85f973580800000000000000
-      internalID: -8847427738661619379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_64
-      rect:
-        serializedVersion: 2
-        x: 1489
-        y: 63
-        width: 32
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0645af53612855810800000000000000
-      internalID: 1753450661837165664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_65
-      rect:
-        serializedVersion: 2
-        x: 9
+        x: 0
         y: 0
-        width: 56
-        height: 35
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73790e14cf0f50060800000000000000
-      internalID: 6919201368752297783
+      spriteID: 917a3657aecc88af0800000000000000
+      internalID: -393839660031039719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_66
+      name: Cow_Baby_Caramel_32x32_WalkR2
       rect:
         serializedVersion: 2
-        x: 73
+        x: 96
         y: 0
-        width: 56
-        height: 35
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d8ae21d2566b31420800000000000000
-      internalID: 2599621955587074701
+      spriteID: d5f71e85fd7f4dc40800000000000000
+      internalID: 5536322380586123101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_67
+      name: Cow_Baby_Caramel_32x32_WalkR3
       rect:
         serializedVersion: 2
-        x: 137
+        x: 192
         y: 0
-        width: 56
-        height: 33
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd8bb32d35bc803b0800000000000000
-      internalID: -5545959380236912420
+      spriteID: 20deed6ebb2e62390800000000000000
+      internalID: -7843332404359009022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_68
+      name: Cow_Baby_Caramel_32x32_WalkR4
       rect:
         serializedVersion: 2
-        x: 201
+        x: 288
         y: 0
-        width: 56
-        height: 33
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1b9636bec9adc1b0800000000000000
-      internalID: -5634660853485233379
+      spriteID: 034aafa5fadfaeb20800000000000000
+      internalID: 3164620617768674352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_69
+      name: Cow_Baby_Caramel_32x32_WalkR5
       rect:
         serializedVersion: 2
-        x: 265
+        x: 384
         y: 0
-        width: 56
-        height: 35
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e1169eca7c646b580800000000000000
-      internalID: -8811777797490384610
+      spriteID: ad09cec45d723ddb0800000000000000
+      internalID: -4768423783383133990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_70
+      name: Cow_Baby_Caramel_32x32_WalkR6
       rect:
         serializedVersion: 2
-        x: 329
+        x: 480
         y: 0
-        width: 56
-        height: 35
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1aea4531435a1ea10800000000000000
-      internalID: 1937010957827223201
+      spriteID: ab590108d0ae448c0800000000000000
+      internalID: -4015827624003594822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_71
+      name: Cow_Baby_Caramel_32x32_WalkU1
       rect:
         serializedVersion: 2
-        x: 401
+        x: 576
         y: 0
-        width: 32
-        height: 51
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef4084365923b99d0800000000000000
-      internalID: -2766561928891857666
+      spriteID: 2e52275aac2f7ae20800000000000000
+      internalID: 3361922599028401634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_72
+      name: Cow_Baby_Caramel_32x32_WalkU2
       rect:
         serializedVersion: 2
-        x: 465
+        x: 672
         y: 0
-        width: 32
-        height: 49
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 81cf712ccf6247520800000000000000
-      internalID: 2698824943731735576
+      spriteID: 1b10c402f5933bd70800000000000000
+      internalID: 9057646356298727857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_73
+      name: Cow_Baby_Caramel_32x32_WalkU3
       rect:
         serializedVersion: 2
-        x: 529
+        x: 768
         y: 0
-        width: 32
-        height: 47
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ffbbfd9e45ca60610800000000000000
-      internalID: 1587145399395662847
+      spriteID: c8d173e1e47415ed0800000000000000
+      internalID: -2427080323336036980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_74
+      name: Cow_Baby_Caramel_32x32_WalkU4
       rect:
         serializedVersion: 2
-        x: 593
+        x: 864
         y: 0
-        width: 32
-        height: 47
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb28bae830431cfd0800000000000000
-      internalID: -2323518742863314241
+      spriteID: 630967738f896c770800000000000000
+      internalID: 8630753927751962678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_75
+      name: Cow_Baby_Caramel_32x32_WalkU5
       rect:
         serializedVersion: 2
-        x: 657
+        x: 960
         y: 0
-        width: 32
-        height: 49
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 950fa593537566790800000000000000
-      internalID: -7537241040250802087
+      spriteID: 310efd5315bbdb870800000000000000
+      internalID: 8700316012620275731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_76
+      name: Cow_Baby_Caramel_32x32_WalkU6
       rect:
         serializedVersion: 2
-        x: 721
+        x: 1056
         y: 0
-        width: 32
-        height: 51
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a41bf0937eec08b0800000000000000
-      internalID: -5184506890889259872
+      spriteID: 487946fa9ea1653c0800000000000000
+      internalID: -4371276797344180348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_77
+      name: Cow_Baby_Caramel_32x32_WalkL1
       rect:
         serializedVersion: 2
-        x: 767
+        x: 1152
         y: 0
-        width: 56
-        height: 35
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc28fdc23a212ad70800000000000000
-      internalID: 9052818693009933005
+      spriteID: f4bb5c419d8a02d70800000000000000
+      internalID: 9016392104305605455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_78
+      name: Cow_Baby_Caramel_32x32_WalkL2
       rect:
         serializedVersion: 2
-        x: 831
+        x: 1248
         y: 0
-        width: 56
-        height: 35
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d6d47f3736cf7c760800000000000000
-      internalID: 7478223210349546861
+      spriteID: 5f9ff251c4c0e24b0800000000000000
+      internalID: -5463415777041319435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_79
+      name: Cow_Baby_Caramel_32x32_WalkL3
       rect:
         serializedVersion: 2
-        x: 895
+        x: 1344
         y: 0
-        width: 56
-        height: 33
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 81b22115ab9a63810800000000000000
-      internalID: 1744768523341802264
+      spriteID: f8eb84539b86d2d20800000000000000
+      internalID: 3255373250330934927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_80
+      name: Cow_Baby_Caramel_32x32_WalkL4
       rect:
         serializedVersion: 2
-        x: 959
+        x: 1440
         y: 0
-        width: 56
-        height: 33
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20513feab419379e0800000000000000
-      internalID: -1624795286306876158
+      spriteID: 7fece87a78f862d30800000000000000
+      internalID: 4406367098223120119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_81
+      name: Cow_Baby_Caramel_32x32_WalkL5
       rect:
         serializedVersion: 2
-        x: 1023
+        x: 1536
         y: 0
-        width: 56
-        height: 35
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6b8df4089174f210800000000000000
-      internalID: 1365841484732795754
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_82
+      name: Cow_Baby_Caramel_32x32_WalkL6
       rect:
         serializedVersion: 2
-        x: 1087
+        x: 1632
         y: 0
-        width: 56
-        height: 35
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 31d880ddc14cf3280800000000000000
-      internalID: -9061308296999695085
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_83
+      name: Cow_Baby_Caramel_32x32_WalkD1
       rect:
         serializedVersion: 2
-        x: 1169
-        y: 1
-        width: 32
-        height: 54
+        x: 1728
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b41d8ca24490a36f0800000000000000
-      internalID: -704240203349831349
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_84
+      name: Cow_Baby_Caramel_32x32_WalkD2
       rect:
         serializedVersion: 2
-        x: 1233
-        y: 1
-        width: 32
-        height: 54
+        x: 1824
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d94328b2e0b5d380800000000000000
-      internalID: -8947050596903204400
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_85
+      name: Cow_Baby_Caramel_32x32_WalkD3
       rect:
         serializedVersion: 2
-        x: 1297
-        y: 1
-        width: 32
-        height: 52
+        x: 1920
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 675d2c24e2f792290800000000000000
-      internalID: -7914655033461648010
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_86
+      name: Cow_Baby_Caramel_32x32_WalkD4
       rect:
         serializedVersion: 2
-        x: 1361
-        y: 1
-        width: 32
-        height: 52
+        x: 2016
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48b6de8ca37a07690800000000000000
-      internalID: -7606395899707823228
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_87
+      name: Cow_Baby_Caramel_32x32_WalkD5
       rect:
         serializedVersion: 2
-        x: 1425
-        y: 1
-        width: 32
-        height: 52
+        x: 2112
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2707a629a5f4f19f0800000000000000
-      internalID: -495590183565365134
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Baby_Caramel_32x32_88
+      name: Cow_Baby_Caramel_32x32_WalkD6
       rect:
         serializedVersion: 2
-        x: 1489
-        y: 1
-        width: 32
-        height: 54
+        x: 2208
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8264a613f38b5f060800000000000000
-      internalID: 6986692978486691368
+      spriteID: 
+      internalID: 0
       vertices: []
       indices: 
       edges: []
@@ -2450,6 +2260,38 @@ TextureImporter:
       Cow_Baby_Caramel_32x32_87: -495590183565365134
       Cow_Baby_Caramel_32x32_88: 6986692978486691368
       Cow_Baby_Caramel_32x32_9: -7191818949958542535
+      Cow_Baby_Caramel_32x32_EatL1: 439638494558765761
+      Cow_Baby_Caramel_32x32_EatL2: -414166252920303523
+      Cow_Baby_Caramel_32x32_EatL3: 2261066912111319370
+      Cow_Baby_Caramel_32x32_EatL4: -2039079932147192271
+      Cow_Baby_Caramel_32x32_EatR1: -4132151678268745565
+      Cow_Baby_Caramel_32x32_EatR2: -310047224609743925
+      Cow_Baby_Caramel_32x32_EatR3: 6476087352263002626
+      Cow_Baby_Caramel_32x32_EatR4: -2702570363724677805
+      Cow_Baby_Caramel_32x32_EatR5: -8566893896205462467
+      Cow_Baby_Caramel_32x32_EatR6: -6478540927701980233
+      Cow_Baby_Caramel_32x32_EatU1: -917206830715941814
+      Cow_Baby_Caramel_32x32_EatU2: -3332765445419187294
+      Cow_Baby_Caramel_32x32_EatU3: -3405028776717134986
+      Cow_Baby_Caramel_32x32_EatU4: 6040209947039402156
+      Cow_Baby_Caramel_32x32_EatU5: -8135503255831949693
+      Cow_Baby_Caramel_32x32_EatU6: 4436360224256162353
+      Cow_Baby_Caramel_32x32_WalkL1: 9016392104305605455
+      Cow_Baby_Caramel_32x32_WalkL2: -5463415777041319435
+      Cow_Baby_Caramel_32x32_WalkL3: 3255373250330934927
+      Cow_Baby_Caramel_32x32_WalkL4: 4406367098223120119
+      Cow_Baby_Caramel_32x32_WalkR1: -393839660031039719
+      Cow_Baby_Caramel_32x32_WalkR2: 5536322380586123101
+      Cow_Baby_Caramel_32x32_WalkR3: -7843332404359009022
+      Cow_Baby_Caramel_32x32_WalkR4: 3164620617768674352
+      Cow_Baby_Caramel_32x32_WalkR5: -4768423783383133990
+      Cow_Baby_Caramel_32x32_WalkR6: -4015827624003594822
+      Cow_Baby_Caramel_32x32_WalkU1: 3361922599028401634
+      Cow_Baby_Caramel_32x32_WalkU2: 9057646356298727857
+      Cow_Baby_Caramel_32x32_WalkU3: -2427080323336036980
+      Cow_Baby_Caramel_32x32_WalkU4: 8630753927751962678
+      Cow_Baby_Caramel_32x32_WalkU5: 8700316012620275731
+      Cow_Baby_Caramel_32x32_WalkU6: -4371276797344180348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

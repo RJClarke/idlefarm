@@ -18,6 +18,7 @@ public class AnimalVisual : MonoBehaviour
 
     private const string ANIM_STATE_PARAM = "AnimState";
     private const int ANIM_WALK_OFFSET = 4;
+    private const int ANIM_PECK_OFFSET = 8;
 
     // Wander config
     private const float WANDER_RADIUS = 3f;
@@ -27,7 +28,18 @@ public class AnimalVisual : MonoBehaviour
     // Egg visual
     private GameObject eggInstance;
 
-    public bool PauseWander { get; set; }
+    private bool _pauseWander;
+    public bool PauseWander
+    {
+        get => _pauseWander;
+        set
+        {
+            // When releasing control back to AnimalVisual, force a fresh anim sync.
+            // FarmDog may have left the Animator in a state lastAnimState doesn't know about.
+            if (_pauseWander && !value) lastAnimState = -1;
+            _pauseWander = value;
+        }
+    }
 
     public void Initialize(AnimalData animalData)
     {
@@ -66,11 +78,12 @@ public class AnimalVisual : MonoBehaviour
 
     private void Update()
     {
-        if (data == null || PauseWander)
+        if (data == null)
         {
             ApplyAnimState(false);
             return;
         }
+        if (PauseWander) return;
 
         if (isPaused)
         {
@@ -120,11 +133,13 @@ public class AnimalVisual : MonoBehaviour
     {
         if (direction.sqrMagnitude < 0.0001f) return;
 
-        // Project onto the dominant axis. 0=R, 1=U, 2=L, 3=D.
-        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
-            facingDir = direction.x >= 0 ? 0 : 2;
-        else
+        // Use U/D only within ±15° of vertical; everything else gets L/R.
+        // tan(75°) ≈ 3.73 — if |y| exceeds this multiple of |x|, we're nearly straight up/down.
+        const float verticalBias = 3.73f;
+        if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x) * verticalBias)
             facingDir = direction.y >= 0 ? 1 : 3;
+        else
+            facingDir = direction.x >= 0 ? 0 : 2;
     }
 
     private void PickNewTarget()
@@ -151,6 +166,30 @@ public class AnimalVisual : MonoBehaviour
         position.z = 0;
 
         return position;
+    }
+
+    // ── Peck ─────────────────────────────────────
+
+    private Coroutine peckCoroutine;
+
+    /// <summary>
+    /// Plays the Peck animation for the given duration, then returns to idle.
+    /// </summary>
+    public void TriggerPeck(float duration = 1.5f)
+    {
+        if (!animatorHasAnimState) return;
+        if (peckCoroutine != null) StopCoroutine(peckCoroutine);
+        peckCoroutine = StartCoroutine(PeckRoutine(duration));
+    }
+
+    private System.Collections.IEnumerator PeckRoutine(float duration)
+    {
+        PauseWander = true;
+        animator.SetInteger(ANIM_STATE_PARAM, ANIM_PECK_OFFSET + facingDir);
+        yield return new WaitForSeconds(duration);
+        animator.SetInteger(ANIM_STATE_PARAM, facingDir); // back to idle
+        PauseWander = false;
+        peckCoroutine = null;
     }
 
     // ── Egg Visual ──────────────────────────────

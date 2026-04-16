@@ -515,7 +515,7 @@ TextureImporter:
         width: 72
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -524,6 +524,2558 @@ TextureImporter:
       bones: []
       spriteID: 784fab22b9c98b448bf38ee63227cad1
       internalID: -220318405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleR2
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 640
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea8b441e57c57f45ad737d317b0bcdf
+      internalID: -1032221763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleR3
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 640
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487a7248c0656484da8863bb36361e5b
+      internalID: -1936447854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleR4
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 640
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182002d6929152044970c6b2bfdc57e9
+      internalID: -199791173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleR5
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 640
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a67023c23ed33b44a6c9dee99f1cfe2
+      internalID: 757536453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleR6
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 640
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a9c15e931b591469eda8ef6db21bc2
+      internalID: -1011597388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleU1
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde54a77efa647640a746b48386bda5b
+      internalID: 230058346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleU2
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbea4e9ac8a50254f83c1c21a09c2a8e
+      internalID: -84268788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleU3
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f4a3fa3fe079f4db6c64cbbec630b6
+      internalID: -2140680034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleU4
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 052a9b19bc574274abf4b3b11127ebf3
+      internalID: -368420752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleU5
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6818e0a13c30d41a5d83584c9697c0
+      internalID: -370025303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleU6
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6bf96f059a679640bac2ae0de531397
+      internalID: 905736722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleL1
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 640
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d265a80e5cf69fc4e8a18f3d2066ca8f
+      internalID: 367630824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleL2
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 640
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46d8ee502da7744f86cae6a49c1e2d1
+      internalID: -1601301133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleL3
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 640
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae12d8e1e8f0764aa2cb56ed97a6e96
+      internalID: 402135729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleL4
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 640
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c8f0f0a972e524fae4478c2f163dd9
+      internalID: 2036228302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleL5
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 640
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7be024662fcd3e42b9b755a975881d9
+      internalID: -1885479191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleL6
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 640
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2455ed5ed31fac5488e5d7728a0b6a11
+      internalID: -1916168513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleD1
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668b4222992231340af5acca84262568
+      internalID: 955140007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleD2
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2dfba118648d8a4e824efe61008c2f6
+      internalID: -1603306941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleD3
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b050ef7a0bb733541b95523a09fbf026
+      internalID: 15491594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleD4
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50398eb264687c241aedd534ec921444
+      internalID: -603658372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleD5
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37007bb79c80df45a46528630b9202f
+      internalID: -1313354636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_IdleD6
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 640
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f534ea2976053fd439f34f8817783327
+      internalID: -510772934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkR1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 512
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195fcf2704d37f6489d137926a90e91d
+      internalID: -1430474933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkR2
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 512
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d945be0343352bf4fb02cdeb56468624
+      internalID: -577954117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkR3
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 512
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2feaef9f71bc5545a869655a6ec211f
+      internalID: 1391930975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkR4
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 512
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2db0952f3a83a9c4b9f73f150459d129
+      internalID: 1247329750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkR5
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 513
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6317076b5d79b84d8c15683cab6829e
+      internalID: 801591908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkR6
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 512
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c69743efc8ebc041a870e8fd7c0c73e
+      internalID: -856992792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkU1
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33644f301e39e934b83e82693d967d0e
+      internalID: 1250927138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkU2
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c73b765e73d0e548896689fb7719a34
+      internalID: -1699846279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkU
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 891bffbf8bb32444f9648b0250abffa8
+      internalID: -30602858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkU3
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cead8b8cd4fbfbb49b0a7c53dc23b003
+      internalID: -2045916359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkU4
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b0e3f97bb1755f41923f0fc4499652f
+      internalID: 958539735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkU5
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 513
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e9423e7fa32a234aa9d6f49d8205e49
+      internalID: 1179291314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkU6
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee1e92a8345de84893ffcb243977a22
+      internalID: -779698809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkL1
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 512
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be014837826e25144b581162b9a6dcec
+      internalID: -651773192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkL2
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 512
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb3d505414ae914daeada936ab2d14c
+      internalID: -502147645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkL3
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 512
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1338f98b2aab82e4e9d93bb77de59021
+      internalID: -442600130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkL4
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 512
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235bfdd073da5e64682dc71cc2ed25d9
+      internalID: 1329033919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkL5
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 512
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06648603aaac894bb23a18f8d254b44
+      internalID: -105841337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkL6
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 512
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399d83c65fe23d14ba6d1e96039645f0
+      internalID: 1488340045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkD1
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 840526cf98caa484598fef2e8c397651
+      internalID: 810226832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkD2
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52069eb972528945acf7d381da1f3a3
+      internalID: -1880939280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkD3
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5216b164b676d4b489fbfd448734ad9c
+      internalID: -1940493270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkD4
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f2480657d07c84580aebe1372878c8
+      internalID: -251391223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkD5
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b0ad1e797decef418f3eaf2e01f46d5
+      internalID: -963221674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_WalkD6
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 512
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba49c8c06aab9a243af75ce581bdc861
+      internalID: 744157382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunR1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6073d39f4dc08dd43af5a4fb5739403f
+      internalID: 1988527944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatR1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1d6d30c594c7c46854583420ecca35
+      internalID: -1146034461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkR1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 128
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793d20d97e49fc14790fb69909519189
+      internalID: 372909663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunR2
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b6f750a3f6024eab92a46b609611b93
+      internalID: 200000001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunR3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2797c7b8afc91571754de18c2f17be52
+      internalID: 200000002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunR4
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e5d729c3085bb68f723470683fa5df
+      internalID: 200000003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunR5
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a518d7e850400033a43c0de42f48d2
+      internalID: 200000004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunR6
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eff9e29814a13a3ab90cd8116259080
+      internalID: 200000005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunU1
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9720ac151936909b094b7e3fc8db67c8
+      internalID: 200000006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunU2
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d9ef5c6ab36543757ceaf125ff00e2
+      internalID: 200000007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunU3
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564406e4be14153ab31d878a1aab6677
+      internalID: 200000008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunU4
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d03535b06c521cd7531115ccd55276
+      internalID: 200000009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunU5
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9091ea786604889082b39d3079a16b8
+      internalID: 200000010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunU6
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea0d221051e3b8a3f39fd326641c7ac
+      internalID: 200000011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunL1
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce6936977aec823487b42f5a3741160
+      internalID: 200000012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunL2
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a874774d224ad8be9aebfbcdb5390d
+      internalID: 200000013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunL3
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9258a2cc4d5467f8bcef00a81dc87ce
+      internalID: 200000014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunL4
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768a2c1d58a356a729e77b638c0e3899
+      internalID: 200000015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunL5
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75494c0d694149fe19f7eb678d74c7f3
+      internalID: 200000016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunL6
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 384
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c459443e84bcdc2e4d508ded266dce
+      internalID: 200000017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunD1
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fce719aa27407e42a8a2e9bd86179cd
+      internalID: 200000018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunD2
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa66cc061c1a758c3989d21c2ad586d3
+      internalID: 200000019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunD3
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9de7807c7743eac4b0e9478a2ab626
+      internalID: 200000020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunD4
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6519302ec8ccfea9a7b70b032579ff
+      internalID: 200000021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunD5
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 932c847ef8b98d37b50bf6caebc9d13f
+      internalID: 200000022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_RunD6
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 384
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 327631cf45e28443c3a9ec7734b1bcf1
+      internalID: 200000023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatR2
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0875e20f5df8a6e88f975f77c58cad4
+      internalID: 200000024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatR3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9273c3fd02eaaf1859b0d0ed597ae73a
+      internalID: 200000025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatR4
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2c61e8e72f86dce85eef6f0b3d84b9
+      internalID: 200000026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatR5
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79497490288630f9aeab6d50213bc203
+      internalID: 200000027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatR6
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f1d98f4378fd862ac7a70ba26a37ae
+      internalID: 200000028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatU1
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b342e4acd46aa8a2efbbb3074fc1bc3e
+      internalID: 200000029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatU2
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b8f9b576b6bf637427a2e543cc41b3e
+      internalID: 200000030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatU3
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47049907a74f7c5ecbb5f4b8b0a5bced
+      internalID: 200000031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatU4
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced85016b97636403dc362505030fe11
+      internalID: 200000032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatU5
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f00165d9c841c3f8628f7e8b7a955b2c
+      internalID: 200000033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatU6
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f514e65e827a975f60037d6d3174e6
+      internalID: 200000034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatL1
+      rect:
+        serializedVersion: 2
+        x: 1165
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537934f9492c5c3ce19827915d4c80a9
+      internalID: 200000035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatL2
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b4c3bfc4001e75b474787096b50b4b
+      internalID: 200000036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatL3
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9190159159481eeed5e4d5b32c9d6b94
+      internalID: 200000037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatL4
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b4fb4ddf8276073689b87d597b916a
+      internalID: 200000038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatL5
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f9e858e60310caefafe217dec1b27a
+      internalID: 200000039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatL6
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 256
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65087138a0a378c099d56fbbd927ebc1
+      internalID: 200000040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatD1
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec0aea9a2df13dc4f75b54e4f207457
+      internalID: 200000041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatD2
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e34fc27f7ee6d8ebf1586a2af2d348b
+      internalID: 200000042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatD3
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18654331f4fc9c014e8d7a8860a25db8
+      internalID: 200000043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatD4
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6311d9056c3d7a8a71eabc44a611ed3c
+      internalID: 200000044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatD5
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbad35ffaff65bd9171c803926dffd57
+      internalID: 200000045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_EatD6
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 256
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef863d3b784f41bcabfe014f279a39d3
+      internalID: 200000046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkR2
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 128
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ed1a812f56a686dd66a7a1c08208f2
+      internalID: 200000047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkR3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 128
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d228511bba28955241032381a96e2c9
+      internalID: 200000048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkL1
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 128
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999379ee30bfcaf8ae574ae2fc505352
+      internalID: 200000052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkL2
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 128
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55281ec94639607940be47c45a229384
+      internalID: 200000053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkL3
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 128
+        width: 72
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b646cd4118bdcd0efa670a844fdbea07
+      internalID: 200000054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkD1
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 128
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a47631eb1794d9b0cba37e791ccf8f5
+      internalID: 200000055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkD2
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 128
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e878fb150218e62fdbea8fae394e89
+      internalID: 200000056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkD3
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 128
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 076743e82ce2deaf11fa2ca23c2579c0
+      internalID: 200000057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkU1
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 128
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64538999232b36f44a64c1ff35785789
+      internalID: 461371739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkU2
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 128
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2320f38c13fa144a4327abacac627f
+      internalID: -206357669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_BarkU3
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 128
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17fc18fb1f3071842a393df46ac0c466
+      internalID: -44193984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_Sleep1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac14fa455882eb4d9468be5aa3340e6
+      internalID: 142874746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_Sleep2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6a2f59cb0c0d14b8c178be4abdd8dc
+      internalID: -879192935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_Sleep3
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf5ff3abe96d3d14c9717877b31d00f5
+      internalID: 1697269765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_Sleep4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecb3f04a512e5e54a87a94e055a9e525
+      internalID: -1625811844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_Sleep5
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70d30ee429ad874e9e5cfb42b3774c8
+      internalID: -162076375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_Sleep6
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad8dfdd90355094799d2546bdd93c64
+      internalID: 1466190605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_Sleep7
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44580ae3c2912a947aeae29ef20ee56a
+      internalID: -1738459396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog_German_Shepherd_Brown_32x32_Sleep8
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7ca0d3f2cc1914f8ad9707bfeb5977
+      internalID: 1571689238
       vertices: []
       indices: 
       edges: []
@@ -669,7 +3221,131 @@ TextureImporter:
       Dog_German_Shepherd_Brown_32x32_97: -7729797138204509785
       Dog_German_Shepherd_Brown_32x32_98: -7683613682465992928
       Dog_German_Shepherd_Brown_32x32_99: -6644849299255190096
+      Dog_German_Shepherd_Brown_32x32_BarkD1: 200000055
+      Dog_German_Shepherd_Brown_32x32_BarkD2: 200000056
+      Dog_German_Shepherd_Brown_32x32_BarkD3: 200000057
+      Dog_German_Shepherd_Brown_32x32_BarkD5: 200000068
+      Dog_German_Shepherd_Brown_32x32_BarkD6: 200000069
+      Dog_German_Shepherd_Brown_32x32_BarkL1: 200000052
+      Dog_German_Shepherd_Brown_32x32_BarkL2: 200000053
+      Dog_German_Shepherd_Brown_32x32_BarkL3: 200000054
+      Dog_German_Shepherd_Brown_32x32_BarkL4: 200000061
+      Dog_German_Shepherd_Brown_32x32_BarkL5: 200000062
+      Dog_German_Shepherd_Brown_32x32_BarkL6: 200000063
+      Dog_German_Shepherd_Brown_32x32_BarkR1: 372909663
+      Dog_German_Shepherd_Brown_32x32_BarkR2: 200000047
+      Dog_German_Shepherd_Brown_32x32_BarkR3: 200000048
+      Dog_German_Shepherd_Brown_32x32_BarkR4: 200000049
+      Dog_German_Shepherd_Brown_32x32_BarkR5: 200000050
+      Dog_German_Shepherd_Brown_32x32_BarkR6: 200000051
+      Dog_German_Shepherd_Brown_32x32_BarkU1: 461371739
+      Dog_German_Shepherd_Brown_32x32_BarkU2: -206357669
+      Dog_German_Shepherd_Brown_32x32_BarkU3: -44193984
+      Dog_German_Shepherd_Brown_32x32_EatD1: 200000041
+      Dog_German_Shepherd_Brown_32x32_EatD2: 200000042
+      Dog_German_Shepherd_Brown_32x32_EatD3: 200000043
+      Dog_German_Shepherd_Brown_32x32_EatD4: 200000044
+      Dog_German_Shepherd_Brown_32x32_EatD5: 200000045
+      Dog_German_Shepherd_Brown_32x32_EatD6: 200000046
+      Dog_German_Shepherd_Brown_32x32_EatL1: 200000035
+      Dog_German_Shepherd_Brown_32x32_EatL2: 200000036
+      Dog_German_Shepherd_Brown_32x32_EatL3: 200000037
+      Dog_German_Shepherd_Brown_32x32_EatL4: 200000038
+      Dog_German_Shepherd_Brown_32x32_EatL5: 200000039
+      Dog_German_Shepherd_Brown_32x32_EatL6: 200000040
+      Dog_German_Shepherd_Brown_32x32_EatR1: -1146034461
+      Dog_German_Shepherd_Brown_32x32_EatR2: 200000024
+      Dog_German_Shepherd_Brown_32x32_EatR3: 200000025
+      Dog_German_Shepherd_Brown_32x32_EatR4: 200000026
+      Dog_German_Shepherd_Brown_32x32_EatR5: 200000027
+      Dog_German_Shepherd_Brown_32x32_EatR6: 200000028
+      Dog_German_Shepherd_Brown_32x32_EatU1: 200000029
+      Dog_German_Shepherd_Brown_32x32_EatU2: 200000030
+      Dog_German_Shepherd_Brown_32x32_EatU3: 200000031
+      Dog_German_Shepherd_Brown_32x32_EatU4: 200000032
+      Dog_German_Shepherd_Brown_32x32_EatU5: 200000033
+      Dog_German_Shepherd_Brown_32x32_EatU6: 200000034
+      Dog_German_Shepherd_Brown_32x32_IdleD1: 955140007
+      Dog_German_Shepherd_Brown_32x32_IdleD2: -1603306941
+      Dog_German_Shepherd_Brown_32x32_IdleD3: 15491594
+      Dog_German_Shepherd_Brown_32x32_IdleD4: -603658372
+      Dog_German_Shepherd_Brown_32x32_IdleD5: -1313354636
+      Dog_German_Shepherd_Brown_32x32_IdleD6: -510772934
+      Dog_German_Shepherd_Brown_32x32_IdleL1: 367630824
+      Dog_German_Shepherd_Brown_32x32_IdleL2: -1601301133
+      Dog_German_Shepherd_Brown_32x32_IdleL3: 402135729
+      Dog_German_Shepherd_Brown_32x32_IdleL4: 2036228302
+      Dog_German_Shepherd_Brown_32x32_IdleL5: -1885479191
+      Dog_German_Shepherd_Brown_32x32_IdleL6: -1916168513
       Dog_German_Shepherd_Brown_32x32_IdleR1: 8746595481138925004
+      Dog_German_Shepherd_Brown_32x32_IdleR2: -1032221763
+      Dog_German_Shepherd_Brown_32x32_IdleR3: -1936447854
+      Dog_German_Shepherd_Brown_32x32_IdleR4: -199791173
+      Dog_German_Shepherd_Brown_32x32_IdleR5: 757536453
+      Dog_German_Shepherd_Brown_32x32_IdleR6: -1011597388
+      Dog_German_Shepherd_Brown_32x32_IdleU1: 230058346
+      Dog_German_Shepherd_Brown_32x32_IdleU2: -84268788
+      Dog_German_Shepherd_Brown_32x32_IdleU3: -2140680034
+      Dog_German_Shepherd_Brown_32x32_IdleU4: -368420752
+      Dog_German_Shepherd_Brown_32x32_IdleU5: -370025303
+      Dog_German_Shepherd_Brown_32x32_IdleU6: 905736722
+      Dog_German_Shepherd_Brown_32x32_RunD1: 200000018
+      Dog_German_Shepherd_Brown_32x32_RunD2: 200000019
+      Dog_German_Shepherd_Brown_32x32_RunD3: 200000020
+      Dog_German_Shepherd_Brown_32x32_RunD4: 200000021
+      Dog_German_Shepherd_Brown_32x32_RunD5: 200000022
+      Dog_German_Shepherd_Brown_32x32_RunD6: 200000023
+      Dog_German_Shepherd_Brown_32x32_RunL1: 200000012
+      Dog_German_Shepherd_Brown_32x32_RunL2: 200000013
+      Dog_German_Shepherd_Brown_32x32_RunL3: 200000014
+      Dog_German_Shepherd_Brown_32x32_RunL4: 200000015
+      Dog_German_Shepherd_Brown_32x32_RunL5: 200000016
+      Dog_German_Shepherd_Brown_32x32_RunL6: 200000017
+      Dog_German_Shepherd_Brown_32x32_RunR1: 1988527944
+      Dog_German_Shepherd_Brown_32x32_RunR2: 200000001
+      Dog_German_Shepherd_Brown_32x32_RunR3: 200000002
+      Dog_German_Shepherd_Brown_32x32_RunR4: 200000003
+      Dog_German_Shepherd_Brown_32x32_RunR5: 200000004
+      Dog_German_Shepherd_Brown_32x32_RunR6: 200000005
+      Dog_German_Shepherd_Brown_32x32_RunU1: 200000006
+      Dog_German_Shepherd_Brown_32x32_RunU2: 200000007
+      Dog_German_Shepherd_Brown_32x32_RunU3: 200000008
+      Dog_German_Shepherd_Brown_32x32_RunU4: 200000009
+      Dog_German_Shepherd_Brown_32x32_RunU5: 200000010
+      Dog_German_Shepherd_Brown_32x32_RunU6: 200000011
+      Dog_German_Shepherd_Brown_32x32_Sleep1: 142874746
+      Dog_German_Shepherd_Brown_32x32_Sleep2: -879192935
+      Dog_German_Shepherd_Brown_32x32_Sleep3: 1697269765
+      Dog_German_Shepherd_Brown_32x32_Sleep4: -1625811844
+      Dog_German_Shepherd_Brown_32x32_Sleep5: -162076375
+      Dog_German_Shepherd_Brown_32x32_Sleep6: 1466190605
+      Dog_German_Shepherd_Brown_32x32_Sleep7: -1738459396
+      Dog_German_Shepherd_Brown_32x32_Sleep8: 1571689238
+      Dog_German_Shepherd_Brown_32x32_WalkD1: 810226832
+      Dog_German_Shepherd_Brown_32x32_WalkD2: -1880939280
+      Dog_German_Shepherd_Brown_32x32_WalkD3: -1940493270
+      Dog_German_Shepherd_Brown_32x32_WalkD4: -251391223
+      Dog_German_Shepherd_Brown_32x32_WalkD5: -963221674
+      Dog_German_Shepherd_Brown_32x32_WalkD6: 744157382
+      Dog_German_Shepherd_Brown_32x32_WalkL1: -651773192
+      Dog_German_Shepherd_Brown_32x32_WalkL2: -502147645
+      Dog_German_Shepherd_Brown_32x32_WalkL3: -442600130
+      Dog_German_Shepherd_Brown_32x32_WalkL4: 1329033919
+      Dog_German_Shepherd_Brown_32x32_WalkL5: -105841337
+      Dog_German_Shepherd_Brown_32x32_WalkL6: 1488340045
+      Dog_German_Shepherd_Brown_32x32_WalkR1: -1430474933
+      Dog_German_Shepherd_Brown_32x32_WalkR2: -577954117
+      Dog_German_Shepherd_Brown_32x32_WalkR3: 1391930975
+      Dog_German_Shepherd_Brown_32x32_WalkR4: 1247329750
+      Dog_German_Shepherd_Brown_32x32_WalkR5: 801591908
+      Dog_German_Shepherd_Brown_32x32_WalkR6: -856992792
+      Dog_German_Shepherd_Brown_32x32_WalkU: -30602858
+      Dog_German_Shepherd_Brown_32x32_WalkU1: 1250927138
+      Dog_German_Shepherd_Brown_32x32_WalkU2: -1699846279
+      Dog_German_Shepherd_Brown_32x32_WalkU3: -2045916359
+      Dog_German_Shepherd_Brown_32x32_WalkU4: 958539735
+      Dog_German_Shepherd_Brown_32x32_WalkU5: 1179291314
+      Dog_German_Shepherd_Brown_32x32_WalkU6: -779698809
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -239,6 +239,234 @@ TextureImporter:
   - first:
       213: -6556917073890161223
     second: Cow_Big_Black_32x32_78
+  - first:
+      213: 6073097514005080470
+    second: Cow_Big_Black_32x32_PreviewR
+  - first:
+      213: 7889019991782019579
+    second: Cow_Big_Black_32x32_PreviewU
+  - first:
+      213: 6038763682830997483
+    second: Cow_Big_Black_32x32_PreviewL
+  - first:
+      213: -5176095632666193889
+    second: Cow_Big_Black_32x32_PreviewD
+  - first:
+      213: -750372158527194367
+    second: Cow_Big_Black_32x32_IdleR1
+  - first:
+      213: 8969766225202894024
+    second: Cow_Big_Black_32x32_IdleR2
+  - first:
+      213: 7625397200477454356
+    second: Cow_Big_Black_32x32_IdleR3
+  - first:
+      213: 1891721738626233527
+    second: Cow_Big_Black_32x32_IdleR4
+  - first:
+      213: 8879619340290859399
+    second: Cow_Big_Black_32x32_IdleR5
+  - first:
+      213: -4593735937562145112
+    second: Cow_Big_Black_32x32_IdleR6
+  - first:
+      213: 2478737490584501483
+    second: Cow_Big_Black_32x32_IdleU1
+  - first:
+      213: -1346349917910985282
+    second: Cow_Big_Black_32x32_IdleU2
+  - first:
+      213: 8675444728656495237
+    second: Cow_Big_Black_32x32_IdleU3
+  - first:
+      213: 1349017488534224544
+    second: Cow_Big_Black_32x32_IdleU4
+  - first:
+      213: 199455068764517276
+    second: Cow_Big_Black_32x32_IdleU5
+  - first:
+      213: 941735914172857418
+    second: Cow_Big_Black_32x32_IdleU6
+  - first:
+      213: -1528637922142665531
+    second: Cow_Big_Black_32x32_IdleL1
+  - first:
+      213: 160449555717467506
+    second: Cow_Big_Black_32x32_IdleL2
+  - first:
+      213: 937363828888679774
+    second: Cow_Big_Black_32x32_IdleL3
+  - first:
+      213: 285144444564536105
+    second: Cow_Big_Black_32x32_IdleL4
+  - first:
+      213: -8445266689276245977
+    second: Cow_Big_Black_32x32_IdleL5
+  - first:
+      213: -2884266604136291959
+    second: Cow_Big_Black_32x32_IdleL6
+  - first:
+      213: 8031213658989236859
+    second: Cow_Big_Black_32x32_IdleD1
+  - first:
+      213: 1328992985730160080
+    second: Cow_Big_Black_32x32_IdleD2
+  - first:
+      213: -6741896907223087059
+    second: Cow_Big_Black_32x32_IdleD3
+  - first:
+      213: -5009723982993491544
+    second: Cow_Big_Black_32x32_IdleD4
+  - first:
+      213: -7311018103769634946
+    second: Cow_Big_Black_32x32_IdleD5
+  - first:
+      213: 6815805030786927024
+    second: Cow_Big_Black_32x32_IdleD6
+  - first:
+      213: 5130587801238036114
+    second: Cow_Big_Black_32x32_EatR1
+  - first:
+      213: -1582773633028911054
+    second: Cow_Big_Black_32x32_EatR2
+  - first:
+      213: 1920574634161868513
+    second: Cow_Big_Black_32x32_EatR3
+  - first:
+      213: 2481017896988697385
+    second: Cow_Big_Black_32x32_EatR4
+  - first:
+      213: -540638098560999418
+    second: Cow_Big_Black_32x32_EatR5
+  - first:
+      213: 2676718344945968132
+    second: Cow_Big_Black_32x32_EatR6
+  - first:
+      213: 6720745438532637422
+    second: Cow_Big_Black_32x32_EatU1
+  - first:
+      213: 431430145191765515
+    second: Cow_Big_Black_32x32_EatU2
+  - first:
+      213: 6658718283532697376
+    second: Cow_Big_Black_32x32_EatU3
+  - first:
+      213: 847737770899642573
+    second: Cow_Big_Black_32x32_EatU4
+  - first:
+      213: 8488017967045063360
+    second: Cow_Big_Black_32x32_EatU5
+  - first:
+      213: 7648076432881904381
+    second: Cow_Big_Black_32x32_EatU6
+  - first:
+      213: 1976433935203398418
+    second: Cow_Big_Black_32x32_EatL1
+  - first:
+      213: -2463370556699810678
+    second: Cow_Big_Black_32x32_EatL2
+  - first:
+      213: 6311519936820262395
+    second: Cow_Big_Black_32x32_EatL3
+  - first:
+      213: -8685410310795167853
+    second: Cow_Big_Black_32x32_EatL4
+  - first:
+      213: -9079085195830306922
+    second: Cow_Big_Black_32x32_EatL5
+  - first:
+      213: 2060009713597982643
+    second: Cow_Big_Black_32x32_EatL6
+  - first:
+      213: 7344927683748242808
+    second: Cow_Big_Black_32x32_EatD1
+  - first:
+      213: -3362546772885532784
+    second: Cow_Big_Black_32x32_EatD2
+  - first:
+      213: -5283994077879050231
+    second: Cow_Big_Black_32x32_EatD3
+  - first:
+      213: 8870040339012928487
+    second: Cow_Big_Black_32x32_EatD4
+  - first:
+      213: -5335756285663245022
+    second: Cow_Big_Black_32x32_EatD5
+  - first:
+      213: 9183447608171337750
+    second: Cow_Big_Black_32x32_EatD6
+  - first:
+      213: 596336842193039911
+    second: Cow_Big_Black_32x32_WalkR1
+  - first:
+      213: -324492753094280506
+    second: Cow_Big_Black_32x32_WalkR2
+  - first:
+      213: 1404387230200856741
+    second: Cow_Big_Black_32x32_WalkR3
+  - first:
+      213: -5804852321549690769
+    second: Cow_Big_Black_32x32_WalkR4
+  - first:
+      213: -7915442203692811872
+    second: Cow_Big_Black_32x32_WalkR5
+  - first:
+      213: -7149135571598398379
+    second: Cow_Big_Black_32x32_WalkR6
+  - first:
+      213: -3271326808466652690
+    second: Cow_Big_Black_32x32_WalkU1
+  - first:
+      213: -5131334886297637663
+    second: Cow_Big_Black_32x32_WalkU2
+  - first:
+      213: -7859828472338443322
+    second: Cow_Big_Black_32x32_WalkU3
+  - first:
+      213: -4061329481442418610
+    second: Cow_Big_Black_32x32_WalkU4
+  - first:
+      213: -1013666526789793565
+    second: Cow_Big_Black_32x32_WalkU5
+  - first:
+      213: 190613416166013989
+    second: Cow_Big_Black_32x32_WalkU6
+  - first:
+      213: 4518726216001849059
+    second: Cow_Big_Black_32x32_WalkL1
+  - first:
+      213: -769603250253748393
+    second: Cow_Big_Black_32x32_WalkL2
+  - first:
+      213: -205149523592122244
+    second: Cow_Big_Black_32x32_WalkL3
+  - first:
+      213: 853579051307353478
+    second: Cow_Big_Black_32x32_WalkL4
+  - first:
+      213: 2788213146014443168
+    second: Cow_Big_Black_32x32_WalkL5
+  - first:
+      213: -8564084755170895434
+    second: Cow_Big_Black_32x32_WalkL6
+  - first:
+      213: 6378688058767962858
+    second: Cow_Big_Black_32x32_WalkD1
+  - first:
+      213: 9162845440163008131
+    second: Cow_Big_Black_32x32_WalkD2
+  - first:
+      213: -1129825678318837672
+    second: Cow_Big_Black_32x32_WalkD3
+  - first:
+      213: 1837082940082130196
+    second: Cow_Big_Black_32x32_WalkD4
+  - first:
+      213: -4910622878285820235
+    second: Cow_Big_Black_32x32_WalkD5
+  - first:
+      213: 1114533686139493722
+    second: Cow_Big_Black_32x32_WalkD6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -360,1739 +588,1673 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_0
+      name: Cow_Big_Black_32x32_PreviewR
       rect:
         serializedVersion: 2
         x: 0
-        y: 287
-        width: 97
-        height: 60
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fbb4e90b8c3093b20800000000000000
-      internalID: 3114524777794915263
+      spriteID: 699a498230af74450800000000000000
+      internalID: 6073097514005080470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_1
+      name: Cow_Big_Black_32x32_PreviewU
       rect:
         serializedVersion: 2
-        x: 125
-        y: 291
-        width: 40
-        height: 82
+        x: 96
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb598b4bfbb053f60800000000000000
-      internalID: 8013324029974320571
+      spriteID: bf15f1c72ed6b7d60800000000000000
+      internalID: 7889019991782019579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_2
+      name: Cow_Big_Black_32x32_PreviewL
       rect:
         serializedVersion: 2
-        x: 191
-        y: 287
-        width: 98
-        height: 60
+        x: 192
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 80c2ab3b890f77ab0800000000000000
-      internalID: -5010271521785369592
+      spriteID: be7dba5239ffdc350800000000000000
+      internalID: 6038763682830997483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_3
+      name: Cow_Big_Black_32x32_PreviewD
       rect:
         serializedVersion: 2
-        x: 317
-        y: 289
-        width: 40
-        height: 80
+        x: 288
+        y: 288
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea7680f9ec9c49a40800000000000000
-      internalID: 5374142144628418478
+      spriteID: f101b7b3270da28b0800000000000000
+      internalID: -5176095632666193889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_4
-      rect:
-        serializedVersion: 2
-        x: 387
-        y: 291
-        width: 18
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 039c67942bae3a040800000000000000
-      internalID: 4657824491088824624
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_5
-      rect:
-        serializedVersion: 2
-        x: 403
-        y: 291
-        width: 18
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 200a9ab5b4f2f8c60800000000000000
-      internalID: 7822523078472736770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_6
-      rect:
-        serializedVersion: 2
-        x: 421
-        y: 291
-        width: 28
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ed311a6c79042c5b0800000000000000
-      internalID: -5349642386746043426
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_7
-      rect:
-        serializedVersion: 2
-        x: 449
-        y: 301
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b091140aafc8f83f0800000000000000
-      internalID: -896342792765105909
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_8
-      rect:
-        serializedVersion: 2
-        x: 460
-        y: 291
-        width: 14
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a3305d32ae948ae0800000000000000
-      internalID: -1547937952258051163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_9
-      rect:
-        serializedVersion: 2
-        x: 483
-        y: 291
-        width: 16
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e1ecbe8fbe4f0cb0800000000000000
-      internalID: -4895607685287976473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_10
-      rect:
-        serializedVersion: 2
-        x: 499
-        y: 291
-        width: 18
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1df735ea57781ca90800000000000000
-      internalID: -7295400981857861679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_11
-      rect:
-        serializedVersion: 2
-        x: 519
-        y: 291
-        width: 14
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 77cf891b383e952d0800000000000000
-      internalID: -3289347898057622409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_12
-      rect:
-        serializedVersion: 2
-        x: 533
-        y: 301
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c4c4cad735e2d8dc0800000000000000
-      internalID: -3635198388092515252
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_13
-      rect:
-        serializedVersion: 2
-        x: 547
-        y: 291
-        width: 14
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d8f32dbaa2eaa29d0800000000000000
-      internalID: -2798232720162799731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_14
-      rect:
-        serializedVersion: 2
-        x: 561
-        y: 291
-        width: 14
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f9c01ce5d33289760800000000000000
-      internalID: 7464755128856284319
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_15
-      rect:
-        serializedVersion: 2
-        x: 449
-        y: 291
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a96495b461949db40800000000000000
-      internalID: 5465479982893057690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_16
-      rect:
-        serializedVersion: 2
-        x: 533
-        y: 291
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 46dcf8f18d030ba20800000000000000
-      internalID: 3076012250294635876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_17
+      name: Cow_Big_Black_32x32_IdleR1
       rect:
         serializedVersion: 2
         x: 0
-        y: 191
-        width: 97
-        height: 60
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b55500649b7f58210800000000000000
-      internalID: 1334745239700657499
+      spriteID: 10bb4a95f742695f0800000000000000
+      internalID: -750372158527194367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_18
+      name: Cow_Big_Black_32x32_IdleR2
       rect:
         serializedVersion: 2
-        x: 95
-        y: 191
-        width: 98
-        height: 60
+        x: 96
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 25ed1632fb1a3e960800000000000000
-      internalID: 7630120036000194130
+      spriteID: 8c4d383abd20b7c70800000000000000
+      internalID: 8969766225202894024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_19
+      name: Cow_Big_Black_32x32_IdleR3
       rect:
         serializedVersion: 2
-        x: 191
-        y: 191
-        width: 98
-        height: 62
+        x: 192
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 077f6fa6fd7d53540800000000000000
-      internalID: 4987129516954941296
+      spriteID: 41087bd4a5ad2d960800000000000000
+      internalID: 7625397200477454356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_20
+      name: Cow_Big_Black_32x32_IdleR4
       rect:
         serializedVersion: 2
-        x: 287
-        y: 191
-        width: 98
-        height: 62
+        x: 288
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fde5d4dc051030740800000000000000
-      internalID: 5116935048176426719
+      spriteID: 7b473b406eeb04a10800000000000000
+      internalID: 1891721738626233527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_21
+      name: Cow_Big_Black_32x32_IdleR5
       rect:
         serializedVersion: 2
-        x: 383
-        y: 191
-        width: 98
-        height: 60
+        x: 384
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c5f0ef7c348735760800000000000000
-      internalID: 7445426841487019868
+      spriteID: 781a9b66ebeba3b70800000000000000
+      internalID: 8879619340290859399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_22
+      name: Cow_Big_Black_32x32_IdleR6
       rect:
         serializedVersion: 2
-        x: 479
-        y: 191
-        width: 98
-        height: 60
+        x: 480
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c4190e42110c948e0800000000000000
-      internalID: -1708623403744718516
+      spriteID: 8ae89a1e085cf30c0800000000000000
+      internalID: -4593735937562145112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_23
+      name: Cow_Big_Black_32x32_IdleU1
       rect:
         serializedVersion: 2
-        x: 605
-        y: 195
-        width: 40
-        height: 82
+        x: 576
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa664870508938030800000000000000
-      internalID: 3495804883138012847
+      spriteID: bec7bb16d9e366220800000000000000
+      internalID: 2478737490584501483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_24
+      name: Cow_Big_Black_32x32_IdleU2
       rect:
         serializedVersion: 2
-        x: 701
-        y: 195
-        width: 40
-        height: 82
+        x: 672
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5cf8f7edff6e05360800000000000000
-      internalID: 7156473794515668933
+      spriteID: eb51a8702edc05de0800000000000000
+      internalID: -1346349917910985282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_25
+      name: Cow_Big_Black_32x32_IdleU3
       rect:
         serializedVersion: 2
-        x: 797
-        y: 195
-        width: 40
-        height: 84
+        x: 768
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e02862280c97706d0800000000000000
-      internalID: -3024314757031755250
+      spriteID: 5820b18240f556870800000000000000
+      internalID: 8675444728656495237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_26
+      name: Cow_Big_Black_32x32_IdleU4
       rect:
         serializedVersion: 2
-        x: 893
-        y: 195
-        width: 40
-        height: 84
+        x: 864
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa6af29f98154dcc0800000000000000
-      internalID: -3687232541876574545
+      spriteID: 0ae3fd7224ca8b210800000000000000
+      internalID: 1349017488534224544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_27
+      name: Cow_Big_Black_32x32_IdleU5
       rect:
         serializedVersion: 2
-        x: 989
-        y: 195
-        width: 40
-        height: 82
+        x: 960
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a79f9b45189072f50800000000000000
-      internalID: 6856459408771774842
+      spriteID: c933c5a045b94c200800000000000000
+      internalID: 199455068764517276
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_28
+      name: Cow_Big_Black_32x32_IdleU6
       rect:
         serializedVersion: 2
-        x: 1085
-        y: 195
-        width: 40
-        height: 82
+        x: 1056
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca63a42f9d0e73bf0800000000000000
-      internalID: -344559619793078612
+      spriteID: a4c308c03d7b11d00800000000000000
+      internalID: 941735914172857418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_29
+      name: Cow_Big_Black_32x32_IdleL1
       rect:
         serializedVersion: 2
-        x: 1151
-        y: 191
-        width: 98
-        height: 60
+        x: 1152
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c01b9970bd33b9b0800000000000000
-      internalID: -5065637327697932094
+      spriteID: 5c4ce7ca8ef29cae0800000000000000
+      internalID: -1528637922142665531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_30
+      name: Cow_Big_Black_32x32_IdleL2
       rect:
         serializedVersion: 2
-        x: 1247
-        y: 191
-        width: 98
-        height: 60
+        x: 1248
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4f6da05d86dd52230800000000000000
-      internalID: 3613537718355285748
+      spriteID: 27da8e455080a3200800000000000000
+      internalID: 160449555717467506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_31
+      name: Cow_Big_Black_32x32_IdleL3
       rect:
         serializedVersion: 2
-        x: 1343
-        y: 191
-        width: 98
-        height: 62
+        x: 1344
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 449971b0aeca65300800000000000000
-      internalID: 240569751319320900
+      spriteID: e55b53e9f6f220d00800000000000000
+      internalID: 937363828888679774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_32
+      name: Cow_Big_Black_32x32_IdleL4
       rect:
         serializedVersion: 2
-        x: 1439
-        y: 191
-        width: 98
-        height: 62
+        x: 1440
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2fc6131ee119adef0800000000000000
-      internalID: -82594081339773710
+      spriteID: 92bf1ff8c5905f300800000000000000
+      internalID: 285144444564536105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_33
+      name: Cow_Big_Black_32x32_IdleL5
       rect:
         serializedVersion: 2
-        x: 1535
-        y: 191
-        width: 98
-        height: 60
+        x: 1536
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8b56e94780dfcec0800000000000000
-      internalID: -3544385102238295156
+      spriteID: 7280048e0b26cca80800000000000000
+      internalID: -8445266689276245977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_34
+      name: Cow_Big_Black_32x32_IdleL6
       rect:
         serializedVersion: 2
-        x: 1631
-        y: 191
-        width: 98
-        height: 60
+        x: 1632
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b109028468fae05c0800000000000000
-      internalID: -4247264407293226981
+      spriteID: 9812fe61ec609f7d0800000000000000
+      internalID: -2884266604136291959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_35
+      name: Cow_Big_Black_32x32_IdleD1
       rect:
         serializedVersion: 2
-        x: 1757
-        y: 193
-        width: 40
-        height: 80
+        x: 1728
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6636161bcb560c630800000000000000
-      internalID: 3945265134680761190
+      spriteID: b72915b854a947f60800000000000000
+      internalID: 8031213658989236859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_36
+      name: Cow_Big_Black_32x32_IdleD2
       rect:
         serializedVersion: 2
-        x: 1853
-        y: 193
-        width: 40
-        height: 80
+        x: 1824
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 994ea7790af1a5790800000000000000
-      internalID: -7540679851481832295
+      spriteID: 0d59e674418817210800000000000000
+      internalID: 1328992985730160080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_37
+      name: Cow_Big_Black_32x32_IdleD3
       rect:
         serializedVersion: 2
-        x: 1949
-        y: 193
-        width: 40
-        height: 82
+        x: 1920
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b02bfa1e7edbd9c50800000000000000
-      internalID: 6673699026454426123
+      spriteID: d28c9a4ab78ff62a0800000000000000
+      internalID: -6741896907223087059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_38
+      name: Cow_Big_Black_32x32_IdleD4
       rect:
         serializedVersion: 2
-        x: 2045
-        y: 193
-        width: 40
-        height: 82
+        x: 2016
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61368a844c56f1e30800000000000000
-      internalID: 4476408448336552726
+      spriteID: 8a9fae28492e97ab0800000000000000
+      internalID: -5009723982993491544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_39
+      name: Cow_Big_Black_32x32_IdleD5
       rect:
         serializedVersion: 2
-        x: 2141
-        y: 193
-        width: 40
-        height: 80
+        x: 2112
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db40c6b0490bbccb0800000000000000
-      internalID: -4842582824413559619
+      spriteID: e776c5225cb0a8a90800000000000000
+      internalID: -7311018103769634946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_40
+      name: Cow_Big_Black_32x32_IdleD6
       rect:
         serializedVersion: 2
-        x: 2237
-        y: 193
-        width: 40
-        height: 80
+        x: 2208
+        y: 192
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ad45e16663c0a740800000000000000
-      internalID: 5161340017463086496
+      spriteID: 0b90066509a969e50800000000000000
+      internalID: 6815805030786927024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_41
+      name: Cow_Big_Black_32x32_EatR1
       rect:
         serializedVersion: 2
         x: 0
-        y: 95
-        width: 97
-        height: 60
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6339e0256dc527ee0800000000000000
-      internalID: -1264846469768244426
+      spriteID: 29edeb51c62833740800000000000000
+      internalID: 5130587801238036114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_42
+      name: Cow_Big_Black_32x32_EatR2
       rect:
         serializedVersion: 2
-        x: 95
-        y: 95
-        width: 98
-        height: 60
+        x: 96
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa76dcbc2b08d54a0800000000000000
-      internalID: -6602979973243508822
+      spriteID: 230157344cbd80ae0800000000000000
+      internalID: -1582773633028911054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_43
+      name: Cow_Big_Black_32x32_EatR3
       rect:
         serializedVersion: 2
-        x: 191
-        y: 95
-        width: 98
-        height: 58
+        x: 192
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 91dc265e4c6c22060800000000000000
-      internalID: 6927317725813591321
+      spriteID: 1ee08d1447047aa10800000000000000
+      internalID: 1920574634161868513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_44
+      name: Cow_Big_Black_32x32_EatR4
       rect:
         serializedVersion: 2
-        x: 287
-        y: 95
-        width: 98
-        height: 60
+        x: 288
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d89d8ff4766e6aca0800000000000000
-      internalID: -6005859721654249075
+      spriteID: 923e56fd1a85e6220800000000000000
+      internalID: 2481017896988697385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_45
+      name: Cow_Big_Black_32x32_EatR5
       rect:
         serializedVersion: 2
-        x: 383
-        y: 95
-        width: 98
-        height: 60
+        x: 384
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d950baada4c9a4990800000000000000
-      internalID: -7400931192319834723
+      spriteID: 600aa3783844f78f0800000000000000
+      internalID: -540638098560999418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_46
+      name: Cow_Big_Black_32x32_EatR6
       rect:
         serializedVersion: 2
-        x: 479
-        y: 95
-        width: 98
-        height: 58
+        x: 480
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a18391db739f9aec0800000000000000
-      internalID: -3555036413041231846
+      spriteID: 404a642272d952520800000000000000
+      internalID: 2676718344945968132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_47
+      name: Cow_Big_Black_32x32_EatU1
       rect:
         serializedVersion: 2
-        x: 605
-        y: 101
-        width: 40
-        height: 82
+        x: 576
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43d6f350c90255560800000000000000
-      internalID: 7301778225326157108
+      spriteID: ee290994e52e44d50800000000000000
+      internalID: 6720745438532637422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_48
+      name: Cow_Big_Black_32x32_EatU2
       rect:
         serializedVersion: 2
-        x: 701
-        y: 99
-        width: 40
-        height: 84
+        x: 672
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7f1acc93141230550800000000000000
-      internalID: 6125776482180309495
+      spriteID: b06ec856e6fbcf500800000000000000
+      internalID: 431430145191765515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_49
+      name: Cow_Big_Black_32x32_EatU3
       rect:
         serializedVersion: 2
-        x: 797
-        y: 99
-        width: 40
-        height: 86
+        x: 768
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6691bc6aac4d75c60800000000000000
-      internalID: 7806942445916854630
+      spriteID: 02f7d5ddff4886c50800000000000000
+      internalID: 6658718283532697376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_50
+      name: Cow_Big_Black_32x32_EatU4
       rect:
         serializedVersion: 2
-        x: 893
-        y: 101
-        width: 40
-        height: 82
+        x: 864
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6ad67f23b6fc2c00800000000000000
-      internalID: 877347276886301291
+      spriteID: dc89729d205c3cb00800000000000000
+      internalID: 847737770899642573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_51
+      name: Cow_Big_Black_32x32_EatU5
       rect:
         serializedVersion: 2
-        x: 989
-        y: 99
-        width: 40
-        height: 84
+        x: 960
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0183ae4a2aa246f0800000000000000
-      internalID: -701811493231689462
+      spriteID: 0c2badc9e5f7bc570800000000000000
+      internalID: 8488017967045063360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_52
+      name: Cow_Big_Black_32x32_EatU6
       rect:
         serializedVersion: 2
-        x: 1085
-        y: 99
-        width: 40
-        height: 86
+        x: 1056
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d1dc0d907afbace0800000000000000
-      internalID: -1392744298162892336
+      spriteID: dfa66f49efc632a60800000000000000
+      internalID: 7648076432881904381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_53
+      name: Cow_Big_Black_32x32_EatL1
       rect:
         serializedVersion: 2
-        x: 1151
-        y: 95
-        width: 98
-        height: 60
+        x: 1152
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 247357281a6818f90800000000000000
-      internalID: -6953128321446758590
+      spriteID: 21373d54134bd6b10800000000000000
+      internalID: 1976433935203398418
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_54
+      name: Cow_Big_Black_32x32_EatL2
       rect:
         serializedVersion: 2
-        x: 1247
-        y: 95
-        width: 98
-        height: 60
+        x: 1248
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 613c7a1f2e5df2460800000000000000
-      internalID: 7219223898391823126
+      spriteID: a8460c9b78950ddd0800000000000000
+      internalID: -2463370556699810678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_55
+      name: Cow_Big_Black_32x32_EatL3
       rect:
         serializedVersion: 2
-        x: 1343
-        y: 95
-        width: 98
-        height: 58
+        x: 1344
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ae1e7f8b3cceb270800000000000000
-      internalID: 8268270522081353380
+      spriteID: bf5b7f251f5079750800000000000000
+      internalID: 6311519936820262395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_56
+      name: Cow_Big_Black_32x32_EatL4
       rect:
         serializedVersion: 2
-        x: 1439
-        y: 95
-        width: 98
-        height: 60
+        x: 1440
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07dd5e466dce5b810800000000000000
-      internalID: 1780589633254841712
+      spriteID: 397f980f659377780800000000000000
+      internalID: -8685410310795167853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_57
+      name: Cow_Big_Black_32x32_EatL5
       rect:
         serializedVersion: 2
-        x: 1535
-        y: 95
-        width: 98
-        height: 60
+        x: 1536
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c712498bc9aef880800000000000000
-      internalID: -8575229948820580416
+      spriteID: 697d6011e1c900280800000000000000
+      internalID: -9079085195830306922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_58
+      name: Cow_Big_Black_32x32_EatL6
       rect:
         serializedVersion: 2
-        x: 1631
-        y: 95
-        width: 98
-        height: 58
+        x: 1632
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0b7e7b89fc2968b90800000000000000
-      internalID: -7239937930633418832
+      spriteID: 3b7acdc8bef969c10800000000000000
+      internalID: 2060009713597982643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_59
+      name: Cow_Big_Black_32x32_EatD1
       rect:
         serializedVersion: 2
-        x: 1757
-        y: 99
-        width: 40
-        height: 80
+        x: 1728
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: be9a7cec0cf820f70800000000000000
-      internalID: 9152035451035953643
+      spriteID: 8752fb230dc6ee560800000000000000
+      internalID: 7344927683748242808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_60
+      name: Cow_Big_Black_32x32_EatD2
       rect:
         serializedVersion: 2
-        x: 1853
-        y: 97
-        width: 40
-        height: 82
+        x: 1824
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e0640ec18bf856d90800000000000000
-      internalID: -7105114816185874930
+      spriteID: 09f858d8685d551d0800000000000000
+      internalID: -3362546772885532784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_61
+      name: Cow_Big_Black_32x32_EatD3
       rect:
         serializedVersion: 2
-        x: 1949
-        y: 95
-        width: 40
-        height: 82
+        x: 1920
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4d5edf2e57f8552b0800000000000000
-      internalID: -5596409225455737388
+      spriteID: 90060c8c16b7ba6b0800000000000000
+      internalID: -5283994077879050231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_62
+      name: Cow_Big_Black_32x32_EatD4
       rect:
         serializedVersion: 2
-        x: 2045
-        y: 99
-        width: 40
-        height: 80
+        x: 2016
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3177b18b657e972b0800000000000000
-      internalID: -5586179503134378221
+      spriteID: 7e3404e51b6b81b70800000000000000
+      internalID: 8870040339012928487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_63
+      name: Cow_Big_Black_32x32_EatD5
       rect:
         serializedVersion: 2
-        x: 2141
-        y: 97
-        width: 40
-        height: 82
+        x: 2112
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 64c7e018e55c16fe0800000000000000
-      internalID: -1197459016221033402
+      spriteID: 22d0cf0ade593f5b0800000000000000
+      internalID: -5335756285663245022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_64
+      name: Cow_Big_Black_32x32_EatD6
       rect:
         serializedVersion: 2
-        x: 2237
-        y: 95
-        width: 40
-        height: 82
+        x: 2208
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 501ca24552863f9d0800000000000000
-      internalID: -2741733238603333371
+      spriteID: 618967291f8227f70800000000000000
+      internalID: 9183447608171337750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_65
+      name: Cow_Big_Black_32x32_WalkR1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 577
-        height: 49
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47665b68d8e309390800000000000000
-      internalID: -7813676575916464524
+      spriteID: 722f46dc23d964800800000000000000
+      internalID: 596336842193039911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_66
+      name: Cow_Big_Black_32x32_WalkR2
       rect:
         serializedVersion: 2
-        x: 605
-        y: 3
-        width: 40
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c56b6db21be9b0190800000000000000
-      internalID: -7995122229684292004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_67
-      rect:
-        serializedVersion: 2
-        x: 701
-        y: 3
-        width: 40
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4d4d8aaca233c1470800000000000000
-      internalID: 8366618466629244116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_68
-      rect:
-        serializedVersion: 2
-        x: 797
-        y: 3
-        width: 40
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26cb272d3c6a39320800000000000000
-      internalID: 2563575972883512418
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_69
-      rect:
-        serializedVersion: 2
-        x: 893
-        y: 3
-        width: 40
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a3844d9495f1c9b50800000000000000
-      internalID: 6601185622169503802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_70
-      rect:
-        serializedVersion: 2
-        x: 989
-        y: 3
-        width: 40
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9e3d5948185683c30800000000000000
-      internalID: 4339329847921071081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_71
-      rect:
-        serializedVersion: 2
-        x: 1085
-        y: 3
-        width: 40
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b02f422e9b7865570800000000000000
-      internalID: 8455094582867456523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cow_Big_Black_32x32_72
-      rect:
-        serializedVersion: 2
-        x: 1151
+        x: 96
         y: 0
-        width: 578
-        height: 49
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e2d17cfbd5d311900800000000000000
-      internalID: 653370893804182830
+      spriteID: 6ca70af6f8b2f7bf0800000000000000
+      internalID: -324492753094280506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_73
+      name: Cow_Big_Black_32x32_WalkR3
       rect:
         serializedVersion: 2
-        x: 1757
-        y: 1
-        width: 40
-        height: 80
+        x: 192
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1ebe8e93a2053500800000000000000
-      internalID: 375209045718384154
+      spriteID: 5a0873fbeb26d7310800000000000000
+      internalID: 1404387230200856741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_74
+      name: Cow_Big_Black_32x32_WalkR4
       rect:
         serializedVersion: 2
-        x: 1853
-        y: 1
-        width: 40
-        height: 80
+        x: 288
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 016e21648acbd2bd0800000000000000
-      internalID: -2653257174535182832
+      spriteID: f68dd68a195017fa0800000000000000
+      internalID: -5804852321549690769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_75
+      name: Cow_Big_Black_32x32_WalkR5
       rect:
         serializedVersion: 2
-        x: 1949
-        y: 1
-        width: 40
-        height: 78
+        x: 384
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f7a178105e82cd3e0800000000000000
-      internalID: -2027700768185312641
+      spriteID: 0a931c8e043b62290800000000000000
+      internalID: -7915442203692811872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_76
+      name: Cow_Big_Black_32x32_WalkR6
       rect:
         serializedVersion: 2
-        x: 2045
-        y: 1
-        width: 40
-        height: 78
+        x: 480
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20b37628e5fddfff0800000000000000
-      internalID: -598827922408702
+      spriteID: 55ca4cb431b29cc90800000000000000
+      internalID: -7149135571598398379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_77
+      name: Cow_Big_Black_32x32_WalkU1
       rect:
         serializedVersion: 2
-        x: 2141
-        y: 1
-        width: 40
-        height: 80
+        x: 576
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eec43b0628ea911d0800000000000000
-      internalID: -3379478170373501714
+      spriteID: ee102259999e992d0800000000000000
+      internalID: -3271326808466652690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cow_Big_Black_32x32_78
+      name: Cow_Big_Black_32x32_WalkU2
       rect:
         serializedVersion: 2
-        x: 2237
-        y: 1
-        width: 40
-        height: 80
+        x: 672
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9bd451d49a62105a0800000000000000
-      internalID: -6556917073890161223
+      spriteID: 1ece8ae9b16d9c8b0800000000000000
+      internalID: -5131334886297637663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkU3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c314c6c5a74ce290800000000000000
+      internalID: -7859828472338443322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkU4
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e40adceba5243a7c0800000000000000
+      internalID: -4061329481442418610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkU5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e88dfd1aabbee1f0800000000000000
+      internalID: -1013666526789793565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkU6
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52cbfff54e135a200800000000000000
+      internalID: 190613416166013989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkL1
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6090e5d8db5be30800000000000000
+      internalID: 4518726216001849059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkL2
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 757a3a2ebe1d155f0800000000000000
+      internalID: -769603250253748393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkL3
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7073706899272df0800000000000000
+      internalID: -205149523592122244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkL4
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 685c3ecef9588db00800000000000000
+      internalID: 853579051307353478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkL5
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a6e34e6519b1b620800000000000000
+      internalID: 2788213146014443168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkL6
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b953b52a42462980800000000000000
+      internalID: -8564084755170895434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkD1
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2f3e36ef6a58850800000000000000
+      internalID: 6378688058767962858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkD2
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38e49b88167f82f70800000000000000
+      internalID: 9162845440163008131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkD3
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 850e0b9188d0250f0800000000000000
+      internalID: -1129825678318837672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkD4
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d86826331ae7910800000000000000
+      internalID: 1837082940082130196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkD5
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5be0ed18286f9dbb0800000000000000
+      internalID: -4910622878285820235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cow_Big_Black_32x32_WalkD6
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d1d848b7e977f00800000000000000
+      internalID: 1114533686139493722
       vertices: []
       indices: 
       edges: []
@@ -2190,6 +2352,82 @@ TextureImporter:
       Cow_Big_Black_32x32_78: -6556917073890161223
       Cow_Big_Black_32x32_8: -1547937952258051163
       Cow_Big_Black_32x32_9: -4895607685287976473
+      Cow_Big_Black_32x32_EatD1: 7344927683748242808
+      Cow_Big_Black_32x32_EatD2: -3362546772885532784
+      Cow_Big_Black_32x32_EatD3: -5283994077879050231
+      Cow_Big_Black_32x32_EatD4: 8870040339012928487
+      Cow_Big_Black_32x32_EatD5: -5335756285663245022
+      Cow_Big_Black_32x32_EatD6: 9183447608171337750
+      Cow_Big_Black_32x32_EatL1: 1976433935203398418
+      Cow_Big_Black_32x32_EatL2: -2463370556699810678
+      Cow_Big_Black_32x32_EatL3: 6311519936820262395
+      Cow_Big_Black_32x32_EatL4: -8685410310795167853
+      Cow_Big_Black_32x32_EatL5: -9079085195830306922
+      Cow_Big_Black_32x32_EatL6: 2060009713597982643
+      Cow_Big_Black_32x32_EatR1: 5130587801238036114
+      Cow_Big_Black_32x32_EatR2: -1582773633028911054
+      Cow_Big_Black_32x32_EatR3: 1920574634161868513
+      Cow_Big_Black_32x32_EatR4: 2481017896988697385
+      Cow_Big_Black_32x32_EatR5: -540638098560999418
+      Cow_Big_Black_32x32_EatR6: 2676718344945968132
+      Cow_Big_Black_32x32_EatU1: 6720745438532637422
+      Cow_Big_Black_32x32_EatU2: 431430145191765515
+      Cow_Big_Black_32x32_EatU3: 6658718283532697376
+      Cow_Big_Black_32x32_EatU4: 847737770899642573
+      Cow_Big_Black_32x32_EatU5: 8488017967045063360
+      Cow_Big_Black_32x32_EatU6: 7648076432881904381
+      Cow_Big_Black_32x32_IdleD1: 8031213658989236859
+      Cow_Big_Black_32x32_IdleD2: 1328992985730160080
+      Cow_Big_Black_32x32_IdleD3: -6741896907223087059
+      Cow_Big_Black_32x32_IdleD4: -5009723982993491544
+      Cow_Big_Black_32x32_IdleD5: -7311018103769634946
+      Cow_Big_Black_32x32_IdleD6: 6815805030786927024
+      Cow_Big_Black_32x32_IdleL1: -1528637922142665531
+      Cow_Big_Black_32x32_IdleL2: 160449555717467506
+      Cow_Big_Black_32x32_IdleL3: 937363828888679774
+      Cow_Big_Black_32x32_IdleL4: 285144444564536105
+      Cow_Big_Black_32x32_IdleL5: -8445266689276245977
+      Cow_Big_Black_32x32_IdleL6: -2884266604136291959
+      Cow_Big_Black_32x32_IdleR1: -750372158527194367
+      Cow_Big_Black_32x32_IdleR2: 8969766225202894024
+      Cow_Big_Black_32x32_IdleR3: 7625397200477454356
+      Cow_Big_Black_32x32_IdleR4: 1891721738626233527
+      Cow_Big_Black_32x32_IdleR5: 8879619340290859399
+      Cow_Big_Black_32x32_IdleR6: -4593735937562145112
+      Cow_Big_Black_32x32_IdleU1: 2478737490584501483
+      Cow_Big_Black_32x32_IdleU2: -1346349917910985282
+      Cow_Big_Black_32x32_IdleU3: 8675444728656495237
+      Cow_Big_Black_32x32_IdleU4: 1349017488534224544
+      Cow_Big_Black_32x32_IdleU5: 199455068764517276
+      Cow_Big_Black_32x32_IdleU6: 941735914172857418
+      Cow_Big_Black_32x32_PreviewD: -5176095632666193889
+      Cow_Big_Black_32x32_PreviewL: 6038763682830997483
+      Cow_Big_Black_32x32_PreviewR: 6073097514005080470
+      Cow_Big_Black_32x32_PreviewU: 7889019991782019579
+      Cow_Big_Black_32x32_WalkD1: 6378688058767962858
+      Cow_Big_Black_32x32_WalkD2: 9162845440163008131
+      Cow_Big_Black_32x32_WalkD3: -1129825678318837672
+      Cow_Big_Black_32x32_WalkD4: 1837082940082130196
+      Cow_Big_Black_32x32_WalkD5: -4910622878285820235
+      Cow_Big_Black_32x32_WalkD6: 1114533686139493722
+      Cow_Big_Black_32x32_WalkL1: 4518726216001849059
+      Cow_Big_Black_32x32_WalkL2: -769603250253748393
+      Cow_Big_Black_32x32_WalkL3: -205149523592122244
+      Cow_Big_Black_32x32_WalkL4: 853579051307353478
+      Cow_Big_Black_32x32_WalkL5: 2788213146014443168
+      Cow_Big_Black_32x32_WalkL6: -8564084755170895434
+      Cow_Big_Black_32x32_WalkR1: 596336842193039911
+      Cow_Big_Black_32x32_WalkR2: -324492753094280506
+      Cow_Big_Black_32x32_WalkR3: 1404387230200856741
+      Cow_Big_Black_32x32_WalkR4: -5804852321549690769
+      Cow_Big_Black_32x32_WalkR5: -7915442203692811872
+      Cow_Big_Black_32x32_WalkR6: -7149135571598398379
+      Cow_Big_Black_32x32_WalkU1: -3271326808466652690
+      Cow_Big_Black_32x32_WalkU2: -5131334886297637663
+      Cow_Big_Black_32x32_WalkU3: -7859828472338443322
+      Cow_Big_Black_32x32_WalkU4: -4061329481442418610
+      Cow_Big_Black_32x32_WalkU5: -1013666526789793565
+      Cow_Big_Black_32x32_WalkU6: 190613416166013989
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

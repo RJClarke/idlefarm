@@ -27,7 +27,11 @@
       "Bash(bash \"C:\\\\Users\\\\rjcla\\\\.claude\\\\plugins\\\\cache\\\\claude-plugins-official\\\\superpowers\\\\5.0.6\\\\skills\\\\brainstorming\\\\scripts\\\\start-server.sh\" --project-dir \"/c/Users/rjcla/IdleFarm - Silo\")",
       "mcp__UnityMCP__manage_camera",
       "mcp__UnityMCP__create_script",
-      "mcp__UnityMCP__delete_script"
+      "mcp__UnityMCP__delete_script",
+      "Bash(python3:*)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(sort -t: -k3 -n)",
+      "Bash(uniq -f2)"
     ]
   }
 }

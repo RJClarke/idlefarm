@@ -12,6 +12,12 @@ using System.Collections.Generic;
 ///   - Can scare 2 deer per minute (30s cooldown between chases)
 ///   - AnimalManager deactivates chase mode when the run ends
 ///
+/// Animation states (AnimState int on Animator):
+///   0-3  = Idle  R/U/L/D
+///   4-7  = Walk  R/U/L/D
+///   8-11 = Run   R/U/L/D
+///  12-15 = Bark  R/U/L/D
+///
 /// Lifecycle is managed by AnimalManager — this component lives on the animal
 /// visual prefab alongside AnimalVisual.
 /// </summary>
@@ -28,14 +34,42 @@ public class FarmDog : MonoBehaviour
     [SerializeField] private float chaseReachDistance = 0.3f;
 
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    private AnimalVisual animalVisual;
     private Coroutine roamCoroutine;
     private float chaseCooldownTimer;
     private bool isChasing;
     private bool isChaseModeActive;
 
+    // 0=R, 1=U, 2=L, 3=D
+    private int facingDir = 3;
+
+    private const int IDLE_OFFSET = 0;
+    private const int WALK_OFFSET = 4;
+    private const int RUN_OFFSET  = 8;
+    private const int BARK_OFFSET = 12;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        animalVisual = GetComponent<AnimalVisual>();
+    }
+
+    private void SetAnim(int offset)
+    {
+        if (animator != null)
+            animator.SetInteger("AnimState", offset + facingDir);
+    }
+
+    private void UpdateFacing(Vector3 direction)
+    {
+        if (direction.sqrMagnitude < 0.0001f) return;
+        const float verticalBias = 3.73f; // tan(75°) — U/D only within ±15° of vertical
+        if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x) * verticalBias)
+            facingDir = direction.y >= 0f ? 1 : 3;
+        else
+            facingDir = direction.x >= 0f ? 0 : 2;
     }
 
     private void Update()
@@ -62,6 +96,13 @@ public class FarmDog : MonoBehaviour
         isChaseModeActive = true;
         chaseCooldownTimer = 5f; // small grace period before first chase
         isChasing = false;
+
+        // Switch to unscaled time so animations aren't affected by game speed-up during runs
+        if (animator != null) animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+
+        // Take over animation control from AnimalVisual (home screen wanderer)
+        if (animalVisual != null) animalVisual.PauseWander = true;
+
         roamCoroutine = StartCoroutine(RoamLoop());
 
         Debug.Log("[FarmDog] Chase mode activated.");
@@ -84,6 +125,12 @@ public class FarmDog : MonoBehaviour
         StopAllCoroutines();
         isChasing = false;
 
+        // Restore normal update mode so home-screen wander animation syncs with timeScale
+        if (animator != null) animator.updateMode = AnimatorUpdateMode.Normal;
+
+        // Return animation control to AnimalVisual (home screen wanderer)
+        if (animalVisual != null) animalVisual.PauseWander = false;
+
         Debug.Log("[FarmDog] Chase mode deactivated.");
     }
 
@@ -101,13 +148,12 @@ public class FarmDog : MonoBehaviour
                 continue;
             }
 
-            // Pick a random destination near current position or a random farm point
             Vector3 destination = GetRandomFarmPosition();
 
-            // Walk to destination
+            SetAnim(WALK_OFFSET);
             yield return StartCoroutine(MoveTo(destination, roamSpeed));
 
-            // Idle for a bit
+            SetAnim(IDLE_OFFSET);
             yield return new WaitForSeconds(idleDuration + Random.Range(0f, 1.5f));
         }
     }
@@ -131,17 +177,17 @@ public class FarmDog : MonoBehaviour
 
     private IEnumerator ChaseDeer(AnimalThreat deer)
     {
-        // Run toward the deer
+        SetAnim(RUN_OFFSET);
+
         while (deer != null && !deer.IsDone)
         {
             float dist = Vector3.Distance(transform.position, deer.transform.position);
             if (dist <= chaseReachDistance)
                 break;
 
-            // Face direction of travel
-            float dirX = deer.transform.position.x - transform.position.x;
-            if (spriteRenderer != null && Mathf.Abs(dirX) > 0.01f)
-                spriteRenderer.flipX = dirX < 0f;
+            Vector3 dir = deer.transform.position - transform.position;
+            UpdateFacing(dir);
+            SetAnim(RUN_OFFSET);
 
             transform.position = Vector3.MoveTowards(
                 transform.position,
@@ -151,14 +197,17 @@ public class FarmDog : MonoBehaviour
             yield return null;
         }
 
-        // Repel the deer
         if (deer != null && !deer.IsDone)
         {
             deer.ForceRepel();
             Debug.Log("[FarmDog] Chased off a deer!");
         }
 
-        // Reset cooldown
+        // Bark victory then return to idle
+        SetAnim(BARK_OFFSET);
+        yield return new WaitForSeconds(1.2f);
+        SetAnim(IDLE_OFFSET);
+
         chaseCooldownTimer = chaseCooldown;
         isChasing = false;
     }
@@ -173,9 +222,9 @@ public class FarmDog : MonoBehaviour
         {
             if (isChasing) yield break;
 
-            float dirX = target.x - transform.position.x;
-            if (spriteRenderer != null && Mathf.Abs(dirX) > 0.01f)
-                spriteRenderer.flipX = dirX < 0f;
+            Vector3 dir = target - transform.position;
+            UpdateFacing(dir);
+            SetAnim(WALK_OFFSET);
 
             transform.position = Vector3.MoveTowards(
                 transform.position, target, speed * Time.deltaTime);
