@@ -117,6 +117,14 @@ public class DevToolsSetup : MonoBehaviour
             if (ThreatWaveManager.Instance != null) ThreatWaveManager.Instance.ForceSpawnDeer();
         });
 
+        // Force Egg Ready button
+        GameObject eggGO = CreateButton("ForceEggButton", btnRow.GetComponent<RectTransform>());
+        SetButtonColor(eggGO, new Color(0.45f, 0.35f, 0.05f, 1f));
+        SetButtonText(eggGO, "Egg Ready", 16);
+        eggGO.GetComponent<Button>().onClick.AddListener(() => {
+            if (AnimalManager.Instance != null) AnimalManager.Instance.ForceEggReady();
+        });
+
         // ── Info Text ────────────────────────────────────────────────────
         GameObject infoGO = CreateText("InfoText", drawerGO.GetComponent<RectTransform>(), 14);
         infoTMP = infoGO.GetComponent<TextMeshProUGUI>();

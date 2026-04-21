@@ -9,12 +9,22 @@ using UnityEngine;
 public class ScarecrowVisual : MonoBehaviour
 {
     [Header("Visual Settings")]
+    [SerializeField] private Sprite spriteOverride;
     [SerializeField] private int textureSize = 32;
     [SerializeField] private int sortingOrder = 10;
 
     private void Awake()
     {
-        BuildScarecrowSprite();
+        if (spriteOverride != null)
+        {
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            sr.sprite = spriteOverride;
+            sr.sortingOrder = sortingOrder;
+        }
+        else
+        {
+            BuildScarecrowSprite();
+        }
     }
 
     private void BuildScarecrowSprite()

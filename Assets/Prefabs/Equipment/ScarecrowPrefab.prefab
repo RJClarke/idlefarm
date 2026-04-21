@@ -104,5 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9500d692273ea8447978f7a26c8428a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScarecrowVisual
+  spriteOverride: {fileID: -4961344071267711760, guid: eb5a8c0a0b234c142b3904a6924cbfa1, type: 3}
   textureSize: 32
   sortingOrder: 10

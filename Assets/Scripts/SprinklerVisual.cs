@@ -8,6 +8,7 @@ using UnityEngine;
 public class SprinklerVisual : MonoBehaviour
 {
     [Header("Visual Settings")]
+    [SerializeField] private Sprite spriteOverride;
     [SerializeField] private int textureSize = 32;
     [SerializeField] private int sortingOrder = 10;
 
@@ -28,7 +29,16 @@ public class SprinklerVisual : MonoBehaviour
 
     private void Awake()
     {
-        BuildSprinklerSprite();
+        if (spriteOverride != null)
+        {
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            sr.sprite = spriteOverride;
+            sr.sortingOrder = sortingOrder;
+        }
+        else
+        {
+            BuildSprinklerSprite();
+        }
         InitRings();
     }
 

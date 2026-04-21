@@ -104,5 +104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c7e1f07d4cc064f931e0178e36ce3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SprinklerVisual
+  spriteOverride: {fileID: -7581425814263505433, guid: 31cf195acb5c23e4bb958a5954aa50b0, type: 3}
   textureSize: 32
   sortingOrder: 10
+  pingDuration: 1
+  pingInterval: 0.4
+  pingColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  lineWidth: 0.12
+  segments: 48

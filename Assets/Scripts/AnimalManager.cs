@@ -163,6 +163,12 @@ public class AnimalManager : MonoBehaviour
 
     public bool IsEggReady => eggReady;
 
+    public void ForceEggReady()
+    {
+        lastEggClaimTime = DateTime.MinValue;
+        UpdateEggTimer();
+    }
+
     public float GetCooldownProgress()
     {
         AnimalData equipped = GetEquippedAnimal();

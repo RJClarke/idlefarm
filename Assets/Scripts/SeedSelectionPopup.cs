@@ -16,7 +16,6 @@ public class SeedSelectionPopup : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private RectTransform popupContainer;
-    [SerializeField] private Button backdropButton; // Click outside to close
     [SerializeField] private Button cancelButton;
     [SerializeField] private Button beginButton;
     [SerializeField] private TextMeshProUGUI errorText;
@@ -52,8 +51,10 @@ public class SeedSelectionPopup : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private float fadeInDuration = 0.3f;
     [SerializeField] private LeanTweenType easeType = LeanTweenType.easeOutQuad;
+    [SerializeField] private float backdropAlpha = 0.6f;
 
     // State
+    private Image overlayImage;
     private SeedSelectionData selectionData;
     private List<SeedPacketButton> seedPacketButtons = new List<SeedPacketButton>();
     private int selectedZoneID = -1; // Which zone is currently highlighted
@@ -90,6 +91,25 @@ public class SeedSelectionPopup : MonoBehaviour
 
         // Store zone slot references
         allZoneSlots = new ZoneSlot[] { zone1Slot, zone2Slot, zone3Slot, zone4Slot };
+
+        CreateOverlay();
+    }
+
+    private void CreateOverlay()
+    {
+        GameObject overlayGO = new GameObject("DarkOverlay");
+        overlayGO.transform.SetParent(transform, false);
+        overlayGO.transform.SetSiblingIndex(0); // behind PopupContainer
+
+        RectTransform rt = overlayGO.AddComponent<RectTransform>();
+        rt.anchorMin = Vector2.zero;
+        rt.anchorMax = Vector2.one;
+        rt.sizeDelta = Vector2.zero;
+        rt.anchoredPosition = Vector2.zero;
+
+        overlayImage = overlayGO.AddComponent<Image>();
+        overlayImage.color = new Color(0f, 0f, 0f, 0f);
+        overlayImage.raycastTarget = true;
     }
 
     private void Start()
@@ -100,9 +120,6 @@ public class SeedSelectionPopup : MonoBehaviour
 
         if (beginButton != null)
             beginButton.onClick.AddListener(OnBeginClicked);
-
-        if (backdropButton != null)
-            backdropButton.onClick.AddListener(OnCancelClicked);
 
         // Subscribe to zone slot events
         if (zone1Slot != null)
@@ -143,9 +160,6 @@ public class SeedSelectionPopup : MonoBehaviour
 
         if (beginButton != null)
             beginButton.onClick.RemoveListener(OnBeginClicked);
-
-        if (backdropButton != null)
-            backdropButton.onClick.RemoveListener(OnCancelClicked);
 
         // Unsubscribe from zone events
         if (zone1Slot != null)
@@ -512,6 +526,14 @@ public class SeedSelectionPopup : MonoBehaviour
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = true;
 
+        if (overlayImage != null)
+        {
+            overlayImage.color = new Color(0f, 0f, 0f, 0f);
+            LeanTween.value(overlayImage.gameObject, 0f, backdropAlpha, fadeInDuration)
+                .setEase(easeType)
+                .setOnUpdate(a => { if (overlayImage != null) overlayImage.color = new Color(0f, 0f, 0f, a); });
+        }
+
         if (popupContainer != null)
         {
             popupContainer.localScale = Vector3.one * 0.8f;
@@ -531,6 +553,14 @@ public class SeedSelectionPopup : MonoBehaviour
         canvasGroup.blocksRaycasts = false;
         canvasGroup.interactable = false;
 
+        if (overlayImage != null)
+        {
+            float startAlpha = overlayImage.color.a;
+            LeanTween.value(overlayImage.gameObject, startAlpha, 0f, fadeInDuration)
+                .setEase(easeType)
+                .setOnUpdate(a => { if (overlayImage != null) overlayImage.color = new Color(0f, 0f, 0f, a); });
+        }
+
         if (popupContainer != null)
         {
             LeanTween.scale(popupContainer.gameObject, Vector3.one * 0.8f, fadeInDuration)
@@ -549,6 +579,9 @@ public class SeedSelectionPopup : MonoBehaviour
         canvasGroup.alpha = 0f;
         canvasGroup.blocksRaycasts = false;
         canvasGroup.interactable = false;
+
+        if (overlayImage != null)
+            overlayImage.color = new Color(0f, 0f, 0f, 0f);
     }
 
     // ─────────────────────────────────────────────────────────────────────

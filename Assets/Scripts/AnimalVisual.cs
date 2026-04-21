@@ -21,11 +21,12 @@ public class AnimalVisual : MonoBehaviour
     private const int ANIM_PECK_OFFSET = 8;
 
     // Wander config
-    private const float WANDER_RADIUS = 3f;
-    private const float MIN_PAUSE = 1.5f;
-    private const float MAX_PAUSE = 4f;
+    private const float WANDER_RADIUS = 5f;
+    private const float MIN_PAUSE = 1f;
+    private const float MAX_PAUSE = 2.5f;
 
     // Egg visual
+    [SerializeField] private Sprite eggSprite;
     private GameObject eggInstance;
 
     private bool _pauseWander;
@@ -47,6 +48,7 @@ public class AnimalVisual : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
         animatorHasAnimState = HasAnimStateParam(animator);
+        if (animator != null) animator.updateMode = AnimatorUpdateMode.UnscaledTime;
 
         if (spriteRenderer != null)
         {
@@ -204,36 +206,35 @@ public class AnimalVisual : MonoBehaviour
         SpriteRenderer eggRenderer = eggInstance.AddComponent<SpriteRenderer>();
         eggRenderer.sortingOrder = 9;
 
-        // Create a simple egg texture (placeholder — replace with sprite asset later)
-        Texture2D tex = new Texture2D(12, 16, TextureFormat.RGBA32, false);
-        tex.filterMode = FilterMode.Point;
-        Color eggWhite = new Color(1f, 0.98f, 0.9f);
-        Color eggShadow = new Color(0.9f, 0.88f, 0.8f);
-
-        Color[] pixels = new Color[12 * 16];
-        for (int i = 0; i < pixels.Length; i++) pixels[i] = Color.clear;
-
-        // Simple egg shape
-        for (int y = 0; y < 16; y++)
+        if (eggSprite != null)
         {
-            for (int x = 0; x < 12; x++)
+            eggRenderer.sprite = eggSprite;
+        }
+        else
+        {
+            // Fallback procedural egg
+            Texture2D tex = new Texture2D(12, 16, TextureFormat.RGBA32, false);
+            tex.filterMode = FilterMode.Point;
+            Color eggWhite = new Color(1f, 0.98f, 0.9f);
+            Color eggShadow = new Color(0.9f, 0.88f, 0.8f);
+            Color[] pixels = new Color[12 * 16];
+            for (int i = 0; i < pixels.Length; i++) pixels[i] = Color.clear;
+            for (int y = 0; y < 16; y++)
             {
-                float cx = (x - 5.5f) / 5.5f;
-                float cy = (y - 8f) / 8f;
-                // Egg-ish ellipse (narrower at top)
-                float topFactor = 1f - cy * 0.3f;
-                float dist = (cx * cx) / (topFactor * topFactor) + cy * cy;
-                if (dist < 0.85f)
+                for (int x = 0; x < 12; x++)
                 {
-                    pixels[y * 12 + x] = y < 6 ? eggShadow : eggWhite;
+                    float ecx = (x - 5.5f) / 5.5f;
+                    float ecy = (y - 8f) / 8f;
+                    float topFactor = 1f - ecy * 0.3f;
+                    float dist = (ecx * ecx) / (topFactor * topFactor) + ecy * ecy;
+                    if (dist < 0.85f)
+                        pixels[y * 12 + x] = y < 6 ? eggShadow : eggWhite;
                 }
             }
+            tex.SetPixels(pixels);
+            tex.Apply();
+            eggRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, 12, 16), new Vector2(0.5f, 0f), 32f);
         }
-
-        tex.SetPixels(pixels);
-        tex.Apply();
-
-        eggRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, 12, 16), new Vector2(0.5f, 0f), 32f);
 
         // Subtle drop animation
         eggInstance.transform.localScale = Vector3.zero;
