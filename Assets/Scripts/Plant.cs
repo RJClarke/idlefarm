@@ -242,7 +242,10 @@ public class Plant : MonoBehaviour
             harvestValue = GameConstants.Instance.CalculateHarvestValue(cropData.harvestValue, isRotting);
 
         if (CurrencyManager.Instance != null)
+        {
             CurrencyManager.Instance.AddMoney(harvestValue);
+            FloatingTextManager.ShowMoney(harvestValue, transform.position);
+        }
 
         if (RunStats.Instance != null) RunStats.Instance.AddCropHarvested();
 
