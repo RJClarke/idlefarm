@@ -42,10 +42,11 @@ public class FloatingTextManager : MonoBehaviour
         Instance.SpawnLabel(new List<CurrencyReward> { new CurrencyReward(CurrencyType.Money, amount) }, screenPos);
     }
 
-    // Called by EggClaimButton — position is already screen-space
-    public static void ShowCoins(int amount, Vector2 screenPos)
+    // Called by AnimalManager — accepts world position, converts internally
+    public static void ShowCoins(int amount, Vector3 worldPos)
     {
-        if (Instance == null || !SettingsManager.ShowFloatingNumbers) return;
+        if (Instance == null || Camera.main == null || !SettingsManager.ShowFloatingNumbers) return;
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         Instance.SpawnLabel(new List<CurrencyReward> { new CurrencyReward(CurrencyType.Coins, amount) }, screenPos);
     }
 
@@ -127,7 +128,7 @@ public class FloatingTextManager : MonoBehaviour
     {
         return t switch
         {
-            CurrencyType.Money => new Color(0.298f, 0.686f, 0.314f), // #4CAF50
+            CurrencyType.Money => new Color(0.118f, 0.482f, 0.118f), // #1E7B1E
             CurrencyType.Coins => new Color(1f, 0.843f, 0f),         // #FFD700
             CurrencyType.Gems  => new Color(0.659f, 0.333f, 0.969f), // #A855F7
             _ => Color.white

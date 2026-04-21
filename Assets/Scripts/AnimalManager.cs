@@ -192,13 +192,18 @@ public class AnimalManager : MonoBehaviour
         eggReady = false;
         eggNotified = false;
 
-        // Tell visual to remove egg sprite
+        // Tell visual to remove egg sprite; grab egg position before it's destroyed
         AnimalVisual visual = activeVisualInstance?.GetComponent<AnimalVisual>();
+        Vector3 eggWorldPos = activeVisualInstance != null
+            ? activeVisualInstance.transform.position + Vector3.down * 0.2f
+            : Vector3.zero;
+
         if (visual != null)
         {
             visual.RemoveEgg();
         }
 
+        FloatingTextManager.ShowCoins(equipped.rewardCoins, eggWorldPos);
         OnEggClaimed?.Invoke();
     }
 

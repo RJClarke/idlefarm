@@ -41,16 +41,7 @@ public class EggClaimButton : MonoBehaviour
             onEquipped = (_) => UpdateVisibility();
             onUnequipped = UpdateVisibility;
             onEggReady = OnEggReady;
-            onEggClaimed = () =>
-            {
-                UpdateState();
-                AnimalData equipped = AnimalManager.Instance?.GetEquippedAnimal();
-                if (equipped != null)
-                {
-                    Vector2 screenPos = transform.position;
-                    FloatingTextManager.ShowCoins(equipped.rewardCoins, screenPos);
-                }
-            };
+            onEggClaimed = UpdateState;
             AnimalManager.Instance.OnAnimalEquipped += onEquipped;
             AnimalManager.Instance.OnAnimalUnequipped += onUnequipped;
             AnimalManager.Instance.OnEggReady += onEggReady;
