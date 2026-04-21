@@ -18,6 +18,7 @@ public static class SettingsManager
         {
             _showFloatingNumbers = value ? 1 : 0;
             PlayerPrefs.SetInt(KEY_FLOATING_NUMBERS, _showFloatingNumbers.Value);
+            PlayerPrefs.Save();
         }
     }
 }
