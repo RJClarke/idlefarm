@@ -16,6 +16,7 @@ public class FloatingTextManager : MonoBehaviour
     }
 
     private Canvas canvas;
+    [SerializeField] private TMP_FontAsset font;
 
     private void Awake()
     {
@@ -56,6 +57,7 @@ public class FloatingTextManager : MonoBehaviour
 
     private void SpawnLabel(List<CurrencyReward> rewards, Vector2 screenPos)
     {
+        if (rewards.Count == 0) return;
         GameObject go = new GameObject("FloatingReward", typeof(RectTransform));
         go.transform.SetParent(canvas.transform, false);
 
@@ -64,6 +66,7 @@ public class FloatingTextManager : MonoBehaviour
         tmp.fontStyle = FontStyles.Bold;
         tmp.alignment = TextAlignmentOptions.Center;
         tmp.raycastTarget = false;
+        if (font != null) tmp.font = font;
 
         if (rewards.Count == 1)
         {
