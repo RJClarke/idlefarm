@@ -36,7 +36,7 @@ public class FloatingTextManager : MonoBehaviour
     // Called by Plant.Harvest() — accepts world position, converts internally
     public static void ShowMoney(int amount, Vector3 worldPos)
     {
-        if (Instance == null || !SettingsManager.ShowFloatingNumbers) return;
+        if (Instance == null || Camera.main == null || !SettingsManager.ShowFloatingNumbers) return;
         Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         Instance.SpawnLabel(new List<CurrencyReward> { new CurrencyReward(CurrencyType.Money, amount) }, screenPos);
     }
@@ -88,6 +88,7 @@ public class FloatingTextManager : MonoBehaviour
         RectTransform rt = go.GetComponent<RectTransform>();
         rt.sizeDelta = new Vector2(200, 80);
         rt.pivot = new Vector2(0.5f, 0f);
+        // null camera is correct for ScreenSpaceOverlay canvas
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.GetComponent<RectTransform>(), screenPos, null, out Vector2 localPt);
         rt.anchoredPosition = localPt;
@@ -114,7 +115,7 @@ public class FloatingTextManager : MonoBehaviour
         {
             CurrencyType.Money => $"+{r.amount}$",
             CurrencyType.Coins => $"+{r.amount}G",
-            CurrencyType.Gems  => $"+{r.amount}✦",
+            CurrencyType.Gems  => $"+{r.amount}\u2736",
             _ => $"+{r.amount}"
         };
     }
