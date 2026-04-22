@@ -27,8 +27,11 @@ public class AnimalData : ScriptableObject
     [Tooltip("For PassiveTimer: real-time cooldown in minutes")]
     public float cooldownMinutes = 20f;
 
-    [Tooltip("For PassiveTimer: coins rewarded per claim")]
+    [Tooltip("For PassiveTimer (coin animals): coins rewarded per claim")]
     public int rewardCoins = 30;
+
+    [Tooltip("For PassiveTimer (gem animals): gems rewarded per claim. Set > 0 to make this a gem animal instead of a coin animal.")]
+    public int rewardGems = 0;
 
     [Header("Visuals")]
     public GameObject visualPrefab;

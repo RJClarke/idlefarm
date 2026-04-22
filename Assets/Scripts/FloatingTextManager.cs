@@ -50,6 +50,14 @@ public class FloatingTextManager : MonoBehaviour
         Instance.SpawnLabel(new List<CurrencyReward> { new CurrencyReward(CurrencyType.Coins, amount) }, screenPos);
     }
 
+    // Called by AnimalManager — gem reward at world position
+    public static void ShowGems(int amount, Vector3 worldPos)
+    {
+        if (Instance == null || Camera.main == null || !SettingsManager.ShowFloatingNumbers) return;
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        Instance.SpawnLabel(new List<CurrencyReward> { new CurrencyReward(CurrencyType.Gems, amount) }, screenPos);
+    }
+
     public static void Show(List<CurrencyReward> rewards, Vector2 screenPos)
     {
         if (Instance == null || !SettingsManager.ShowFloatingNumbers) return;

@@ -120,9 +120,9 @@ public class DevToolsSetup : MonoBehaviour
         // Force Egg Ready button
         GameObject eggGO = CreateButton("ForceEggButton", btnRow.GetComponent<RectTransform>());
         SetButtonColor(eggGO, new Color(0.45f, 0.35f, 0.05f, 1f));
-        SetButtonText(eggGO, "Egg Ready", 16);
+        SetButtonText(eggGO, "Force Ready", 16);
         eggGO.GetComponent<Button>().onClick.AddListener(() => {
-            if (AnimalManager.Instance != null) AnimalManager.Instance.ForceEggReady();
+            if (AnimalManager.Instance != null) AnimalManager.Instance.ForcePassiveReady();
         });
 
         // ── Info Text ────────────────────────────────────────────────────

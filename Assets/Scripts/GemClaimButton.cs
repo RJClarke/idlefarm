@@ -2,31 +2,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class EggClaimButton : MonoBehaviour
+public class GemClaimButton : MonoBehaviour
 {
     [SerializeField] private Button button;
     [SerializeField] private Image buttonImage;
     [SerializeField] private GameObject notificationDot;
     [SerializeField] private TextMeshProUGUI emojiText;
 
-    [SerializeField] private Sprite eggSprite;
+    [SerializeField] private Sprite gemSprite;
 
     [Header("Colors")]
-    [SerializeField] private Color readyColor = new Color(0.55f, 0.35f, 0.17f, 0.9f);
+    [SerializeField] private Color readyColor = new Color(0.45f, 0.15f, 0.7f, 0.9f);
     [SerializeField] private Color cooldownColor = new Color(0.35f, 0.35f, 0.35f, 0.5f);
 
     private System.Action<AnimalData> onEquipped;
     private System.Action onUnequipped;
-    private System.Action onEggReady;
-    private System.Action onEggClaimed;
+    private System.Action onGemReady;
+    private System.Action onGemClaimed;
 
     private void Start()
     {
         button.onClick.AddListener(OnClick);
 
-        if (eggSprite != null && buttonImage != null)
+        if (gemSprite != null && buttonImage != null)
         {
-            buttonImage.sprite = eggSprite;
+            buttonImage.sprite = gemSprite;
             if (emojiText != null) emojiText.gameObject.SetActive(false);
         }
 
@@ -40,12 +40,12 @@ public class EggClaimButton : MonoBehaviour
         {
             onEquipped = (_) => UpdateVisibility();
             onUnequipped = UpdateVisibility;
-            onEggReady = OnEggReady;
-            onEggClaimed = UpdateState;
+            onGemReady = OnGemReady;
+            onGemClaimed = UpdateState;
             AnimalManager.Instance.OnAnimalEquipped += onEquipped;
             AnimalManager.Instance.OnAnimalUnequipped += onUnequipped;
-            AnimalManager.Instance.OnEggReady += onEggReady;
-            AnimalManager.Instance.OnEggClaimed += onEggClaimed;
+            AnimalManager.Instance.OnGemReady += onGemReady;
+            AnimalManager.Instance.OnGemClaimed += onGemClaimed;
         }
 
         UpdateVisibility();
@@ -57,23 +57,23 @@ public class EggClaimButton : MonoBehaviour
         {
             AnimalManager.Instance.OnAnimalEquipped -= onEquipped;
             AnimalManager.Instance.OnAnimalUnequipped -= onUnequipped;
-            AnimalManager.Instance.OnEggReady -= onEggReady;
-            AnimalManager.Instance.OnEggClaimed -= onEggClaimed;
+            AnimalManager.Instance.OnGemReady -= onGemReady;
+            AnimalManager.Instance.OnGemClaimed -= onGemClaimed;
         }
     }
 
     private void OnClick()
     {
-        if (AnimalManager.Instance != null && AnimalManager.Instance.IsEggReady)
+        if (AnimalManager.Instance != null && AnimalManager.Instance.IsPassiveReady)
         {
-            AnimalManager.Instance.ClaimEgg();
+            AnimalManager.Instance.ClaimPassiveReward();
         }
     }
 
     private void UpdateVisibility()
     {
         AnimalData equipped = AnimalManager.Instance?.GetEquippedAnimal();
-        bool showButton = equipped != null && equipped.abilityType == AnimalAbilityType.PassiveTimer && equipped.rewardCoins > 0;
+        bool showButton = equipped != null && equipped.abilityType == AnimalAbilityType.PassiveTimer && equipped.rewardGems > 0;
         gameObject.SetActive(showButton);
 
         if (showButton)
@@ -84,7 +84,7 @@ public class EggClaimButton : MonoBehaviour
 
     private void UpdateState()
     {
-        bool ready = AnimalManager.Instance != null && AnimalManager.Instance.IsEggReady;
+        bool ready = AnimalManager.Instance != null && AnimalManager.Instance.IsPassiveReady;
 
         if (buttonImage != null)
             buttonImage.color = ready ? readyColor : cooldownColor;
@@ -93,7 +93,7 @@ public class EggClaimButton : MonoBehaviour
             notificationDot.SetActive(ready);
 
         if (emojiText != null)
-            emojiText.text = "🥚";
+            emojiText.text = "\U0001F48E"; // 💎
 
         float targetScale = ready ? 1f : 0.75f;
         LeanTween.cancel(gameObject);
@@ -118,11 +118,10 @@ public class EggClaimButton : MonoBehaviour
         return Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), size);
     }
 
-    private void OnEggReady()
+    private void OnGemReady()
     {
         UpdateState();
 
-        // Pop to full size with a little overshoot
         LeanTween.cancel(gameObject);
         LeanTween.scale(gameObject, Vector3.one * 1.15f, 0.2f)
             .setEaseOutBack()

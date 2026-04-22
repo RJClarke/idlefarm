@@ -29,6 +29,10 @@ public class AnimalVisual : MonoBehaviour
     [SerializeField] private Sprite eggSprite;
     private GameObject eggInstance;
 
+    // Gem visual
+    [SerializeField] private Sprite gemSprite;
+    private GameObject gemInstance;
+
     private bool _pauseWander;
     public bool PauseWander
     {
@@ -248,10 +252,66 @@ public class AnimalVisual : MonoBehaviour
         GameObject egg = eggInstance;
         eggInstance = null;
 
-        // Pop-out animation then destroy
         LeanTween.scale(egg, Vector3.zero, 0.2f).setEaseInBack().setOnComplete(() =>
         {
             Destroy(egg);
+        });
+    }
+
+    // ── Gem Visual ──────────────────────────────
+
+    public void DropGem()
+    {
+        if (gemInstance != null) return;
+
+        gemInstance = new GameObject("GemDrop");
+        gemInstance.transform.position = transform.position + Vector3.down * 0.2f;
+
+        SpriteRenderer gemRenderer = gemInstance.AddComponent<SpriteRenderer>();
+        gemRenderer.sortingOrder = 9;
+
+        if (gemSprite != null)
+        {
+            gemRenderer.sprite = gemSprite;
+        }
+        else
+        {
+            // Procedural purple diamond placeholder
+            Texture2D tex = new Texture2D(12, 16, TextureFormat.RGBA32, false);
+            tex.filterMode = FilterMode.Point;
+            Color gemColor = new Color(0.659f, 0.333f, 0.969f);
+            Color gemHighlight = new Color(0.8f, 0.6f, 1f);
+            Color[] pixels = new Color[12 * 16];
+            for (int i = 0; i < pixels.Length; i++) pixels[i] = Color.clear;
+            for (int y = 0; y < 16; y++)
+            {
+                for (int x = 0; x < 12; x++)
+                {
+                    float cx = Mathf.Abs((x - 5.5f) / 5.5f);
+                    float cy = Mathf.Abs((y - 7.5f) / 7.5f);
+                    if (cx + cy < 0.9f)
+                        pixels[y * 12 + x] = (x < 6 && y > 8) ? gemHighlight : gemColor;
+                }
+            }
+            tex.SetPixels(pixels);
+            tex.Apply();
+            gemRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, 12, 16), new Vector2(0.5f, 0f), 32f);
+        }
+
+        gemInstance.transform.localScale = Vector3.zero;
+        LeanTween.scale(gemInstance, Vector3.one * 0.8f, 0.3f).setEaseOutBack();
+    }
+
+    public void RemoveGem()
+    {
+        if (gemInstance == null) return;
+
+        GameObject gem = gemInstance;
+        gemInstance = null;
+
+        LeanTween.scale(gem, Vector3.zero, 0.2f).setEaseInBack().setOnComplete(() =>
+        {
+            Destroy(gem);
         });
     }
 }

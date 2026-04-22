@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
   animalID: rooster
   displayName: Rooster
-  description: Coming soon...
+  description: A proud rooster that generates gems over time.
   animalEmoji: "\U0001F413"
   sortOrder: 2
-  gemCost: 1500
-  abilityType: 0
+  gemCost: 150
+  abilityType: 1
   cooldownMinutes: 20
-  rewardCoins: 30
-  visualPrefab: {fileID: 0}
+  rewardCoins: 0
+  rewardGems: 2
+  visualPrefab: {fileID: 2277226766109622324, guid: bf739e3e0be4fcf4ea622acb7191745f, type: 3}
   roamSpeed: 0.6
   iconSprite: {fileID: 0}

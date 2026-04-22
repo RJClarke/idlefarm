@@ -17,8 +17,10 @@ public class AnimalManager : MonoBehaviour
     // Events
     public event Action<AnimalData> OnAnimalEquipped;
     public event Action OnAnimalUnequipped;
-    public event Action OnEggReady;
+    public event Action OnEggReady;    // Fired for coin-reward PassiveTimer animals (chicken)
     public event Action OnEggClaimed;
+    public event Action OnGemReady;    // Fired for gem-reward PassiveTimer animals (rooster)
+    public event Action OnGemClaimed;
     public event Action<string> OnAnimalUnlocked;
 
     private bool eggReady = false;
@@ -61,7 +63,7 @@ public class AnimalManager : MonoBehaviour
         if (eggCheckTimer >= EGG_CHECK_INTERVAL)
         {
             eggCheckTimer = 0f;
-            UpdateEggTimer();
+            UpdatePassiveTimer();
         }
     }
 
@@ -159,14 +161,15 @@ public class AnimalManager : MonoBehaviour
         OnAnimalUnequipped?.Invoke();
     }
 
-    // ── Egg Timer (PassiveTimer) ──────────────────────────────
+    // ── Passive Timer (PassiveTimer) ──────────────────────────────
 
-    public bool IsEggReady => eggReady;
+    public bool IsPassiveReady => eggReady;
+    public bool IsEggReady => eggReady; // kept for legacy references
 
-    public void ForceEggReady()
+    public void ForcePassiveReady()
     {
         lastEggClaimTime = DateTime.MinValue;
-        UpdateEggTimer();
+        UpdatePassiveTimer();
     }
 
     public float GetCooldownProgress()
@@ -179,39 +182,50 @@ public class AnimalManager : MonoBehaviour
         return Mathf.Clamp01((float)(elapsedMinutes / equipped.cooldownMinutes));
     }
 
-    public void ClaimEgg()
+    public void ClaimEgg() => ClaimPassiveReward(); // legacy alias
+
+    public void ClaimPassiveReward()
     {
         AnimalData equipped = GetEquippedAnimal();
         if (equipped == null || equipped.abilityType != AnimalAbilityType.PassiveTimer) return;
         if (!eggReady) return;
 
-        CurrencyManager.Instance.AddCoins(equipped.rewardCoins);
-        Debug.Log($"Claimed egg! +{equipped.rewardCoins} coins");
+        bool isGemAnimal = equipped.rewardGems > 0;
+        Vector3 rewardWorldPos = activeVisualInstance != null
+            ? activeVisualInstance.transform.position + Vector3.down * 0.2f
+            : Vector3.zero;
+
+        AnimalVisual visual = activeVisualInstance?.GetComponent<AnimalVisual>();
+
+        if (isGemAnimal)
+        {
+            CurrencyManager.Instance.AddGems(equipped.rewardGems);
+            Debug.Log($"Claimed gems! +{equipped.rewardGems} gems");
+            if (visual != null) visual.RemoveGem();
+            FloatingTextManager.ShowGems(equipped.rewardGems, rewardWorldPos);
+        }
+        else
+        {
+            CurrencyManager.Instance.AddCoins(equipped.rewardCoins);
+            Debug.Log($"Claimed egg! +{equipped.rewardCoins} coins");
+            if (visual != null) visual.RemoveEgg();
+            FloatingTextManager.ShowCoins(equipped.rewardCoins, rewardWorldPos);
+        }
 
         lastEggClaimTime = DateTime.UtcNow;
         eggReady = false;
         eggNotified = false;
 
-        // Tell visual to remove egg sprite; grab egg position before it's destroyed
-        AnimalVisual visual = activeVisualInstance?.GetComponent<AnimalVisual>();
-        Vector3 eggWorldPos = activeVisualInstance != null
-            ? activeVisualInstance.transform.position + Vector3.down * 0.2f
-            : Vector3.zero;
-
-        if (visual != null)
-        {
-            visual.RemoveEgg();
-        }
-
-        FloatingTextManager.ShowCoins(equipped.rewardCoins, eggWorldPos);
-        OnEggClaimed?.Invoke();
+        if (isGemAnimal) OnGemClaimed?.Invoke();
+        else OnEggClaimed?.Invoke();
     }
 
-    private void UpdateEggTimer()
+    private void UpdatePassiveTimer()
     {
         AnimalData equipped = GetEquippedAnimal();
         if (equipped == null || equipped.abilityType != AnimalAbilityType.PassiveTimer) return;
 
+        bool isGemAnimal = equipped.rewardGems > 0;
         double elapsedMinutes = (DateTime.UtcNow - lastEggClaimTime).TotalMinutes;
 
         if (!eggReady && elapsedMinutes >= equipped.cooldownMinutes)
@@ -222,14 +236,15 @@ public class AnimalManager : MonoBehaviour
             {
                 eggNotified = true;
 
-                // Tell visual to drop egg
                 AnimalVisual visual = activeVisualInstance?.GetComponent<AnimalVisual>();
                 if (visual != null)
                 {
-                    visual.DropEgg();
+                    if (isGemAnimal) visual.DropGem();
+                    else visual.DropEgg();
                 }
 
-                OnEggReady?.Invoke();
+                if (isGemAnimal) OnGemReady?.Invoke();
+                else OnEggReady?.Invoke();
             }
         }
     }
