@@ -8,12 +8,12 @@ using UnityEngine;
 // Same AnimState convention as chicken: 0..3 = Idle R/U/L/D, 4..7 = Walk R/U/L/D.
 public static class RoosterAnimGenerator
 {
-    private const string SPRITESHEET_PATH = "Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Rooster_Black_and_Brown_32x32.png";
+    private const string SPRITESHEET_PATH = "Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Rooster_White_32x32.png";
     private const string OUTPUT_DIR = "Assets/Sprites/Animations/Rooster";
     private const string CONTROLLER_PATH = "Assets/Sprites/Animations/Rooster/Rooster.controller";
     private const float FRAME_RATE = 12f;
     private const float STATE_SPEED = 0.5f;
-    private const string BASE = "Rooster_Black_and_Brown_32x32";
+    private const string BASE = "Rooster_White_32x32";
 
     private static readonly (string stateName, string spritePrefix)[] STATES = new (string, string)[]
     {
