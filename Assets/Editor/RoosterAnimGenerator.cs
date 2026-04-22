@@ -59,6 +59,23 @@ public static class RoosterAnimGenerator
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
+
+        // Explicitly re-wire the controller to the prefab so runtime references don't go stale
+        const string PREFAB_PATH = "Assets/Prefabs/Animals/RoosterVisual.prefab";
+        AnimatorController newCtrl = AssetDatabase.LoadAssetAtPath<AnimatorController>(CONTROLLER_PATH);
+        GameObject prefabAsset = AssetDatabase.LoadAssetAtPath<GameObject>(PREFAB_PATH);
+        if (newCtrl != null && prefabAsset != null)
+        {
+            Animator anim = prefabAsset.GetComponent<Animator>();
+            if (anim != null)
+            {
+                anim.runtimeAnimatorController = newCtrl;
+                EditorUtility.SetDirty(prefabAsset);
+                PrefabUtility.SavePrefabAsset(prefabAsset);
+                Debug.Log("RoosterAnimGenerator: prefab controller re-wired.");
+            }
+        }
+
         Debug.Log("RoosterAnimGenerator: clips + controller generated at " + OUTPUT_DIR);
     }
 
