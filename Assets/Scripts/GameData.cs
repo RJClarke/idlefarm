@@ -14,6 +14,13 @@ public class GameData
     public string equippedAnimalID;
     public string lastEggClaimTime;
 
+    // Daily quests
+    public ActiveQuest[] activeQuests;
+    public int questsCompletedThisWeek;
+    public bool[] weeklyMilestonesClaimed;
+    public string questWeekStart;
+    public string lastQuestDropTime;
+
     // Later we'll add:
     // - List of unlocked crops
     // - List of purchased upgrades
@@ -30,17 +37,28 @@ public class GameData
         unlockedAnimalIDs = new string[0];
         equippedAnimalID = "";
         lastEggClaimTime = "";
+        activeQuests = new ActiveQuest[0];
+        questsCompletedThisWeek = 0;
+        weeklyMilestonesClaimed = new bool[8];
+        questWeekStart = "";
+        lastQuestDropTime = "";
     }
 
     /// <summary>
     /// Constructor to create from current game state
     /// </summary>
-    public GameData(int currentCoins, int currentGems, string[] animalIDs, string equippedID, string eggTime)
+    public GameData(int currentCoins, int currentGems, string[] animalIDs, string equippedID, string eggTime,
+        ActiveQuest[] quests, int questsCompleted, bool[] milestones, string weekStart, string lastDrop)
     {
         coins = currentCoins;
         gems = currentGems;
         unlockedAnimalIDs = animalIDs ?? new string[0];
         equippedAnimalID = equippedID ?? "";
         lastEggClaimTime = eggTime ?? "";
+        activeQuests = quests ?? new ActiveQuest[0];
+        questsCompletedThisWeek = questsCompleted;
+        weeklyMilestonesClaimed = milestones ?? new bool[8];
+        questWeekStart = weekStart ?? "";
+        lastQuestDropTime = lastDrop ?? "";
     }
 }
