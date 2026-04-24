@@ -41,7 +41,10 @@
       "Bash(grep -n \"&289223363$\" \"C:/Users/rjcla/IdleFarm - Silo/Assets/Scenes/SampleScene.unity\")",
       "Bash(grep -n \"&891927714$\\\\|&891927711$\\\\|&1755153873$\" \"C:/Users/rjcla/IdleFarm - Silo/Assets/Scenes/SampleScene.unity\")",
       "Bash(grep -n \"&891927713$\\\\|&77260\\\\|&1755153872$\" \"C:/Users/rjcla/IdleFarm - Silo/Assets/Scenes/SampleScene.unity\")",
-      "Bash(grep -n \"&891927711$\" \"C:/Users/rjcla/IdleFarm - Silo/Assets/Scenes/SampleScene.unity\")"
+      "Bash(grep -n \"&891927711$\" \"C:/Users/rjcla/IdleFarm - Silo/Assets/Scenes/SampleScene.unity\")",
+      "Bash(bash *)",
+      "Bash(sort -t/ -k6)",
+      "Bash(xargs cat *)"
     ]
   }
 }

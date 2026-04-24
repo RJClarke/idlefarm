@@ -1,0 +1,85 @@
+<h2>Where does the Quest UI live?</h2>
+<p class="subtitle">Pick the placement that feels most natural for daily quests in your game</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#1a1a2e;border-radius:8px;padding:12px;font-family:monospace;font-size:11px;color:#ccc;line-height:1.6">
+        <div style="background:#2a2a4e;border-radius:6px;padding:8px;margin-bottom:8px;text-align:center;color:#FFD700;font-weight:bold">🏠 Home Screen</div>
+        <div style="display:flex;gap:6px;margin-bottom:6px">
+          <div style="flex:1;background:#333;border-radius:4px;padding:6px;text-align:center;font-size:10px">Daily<br>Rewards<br>🎁</div>
+          <div style="flex:1;background:#4a3a1a;border:2px solid #FFD700;border-radius:4px;padding:6px;text-align:center;font-size:10px;color:#FFD700">Quests<br>📋<br><span style="font-size:9px">NEW</span></div>
+          <div style="flex:1;background:#333;border-radius:4px;padding:6px;text-align:center;font-size:10px">Run<br>Stats<br>📊</div>
+        </div>
+        <div style="background:#333;border-radius:4px;padding:6px;text-align:center;font-size:10px">▶ START RUN</div>
+        <div style="background:#222;border-radius:4px;padding:4px;margin-top:6px;display:flex;gap:4px;justify-content:center">
+          <span style="font-size:9px">🌾 Farm</span>
+          <span style="font-size:9px">🏪 Market</span>
+          <span style="font-size:9px;color:#FFD700">📋 Quests</span>
+          <span style="font-size:9px">⚙️ Settings</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Dedicated Nav Tab</h3>
+      <p>Quests get their own tab in the bottom nav. Always one tap away.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#1a1a2e;border-radius:8px;padding:12px;font-family:monospace;font-size:11px;color:#ccc;line-height:1.6">
+        <div style="background:#2a2a4e;border-radius:6px;padding:8px;margin-bottom:8px;text-align:center;color:#FFD700;font-weight:bold">🏠 Home Screen</div>
+        <div style="display:flex;gap:6px;margin-bottom:6px;align-items:center">
+          <div style="background:#4a3a1a;border:2px solid #FFD700;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:16px;position:relative">
+            📋
+            <div style="position:absolute;top:-4px;right:-4px;background:red;border-radius:50%;width:12px;height:12px;font-size:8px;display:flex;align-items:center;justify-content:center;color:white">2</div>
+          </div>
+          <div style="flex:1;font-size:10px;color:#aaa">← Quest button (near top)<br>notification dot when new quests drop</div>
+        </div>
+        <div style="background:#333;border-radius:4px;padding:6px;text-align:center;font-size:10px;margin-bottom:6px">▶ START RUN</div>
+        <div style="background:#3a2a1a;border-radius:4px;padding:6px;font-size:10px">
+          <div style="color:#FFD700;margin-bottom:4px">📋 Quest Popup (overlay)</div>
+          <div style="background:#444;border-radius:3px;padding:3px;margin-bottom:3px;font-size:9px">✅ Harvest 50 crops — DONE</div>
+          <div style="background:#444;border-radius:3px;padding:3px;margin-bottom:3px;font-size:9px">🔄 Plant 500 seeds — 312/500</div>
+          <div style="background:#444;border-radius:3px;padding:3px;font-size:9px">⏳ Water 500 plants — 0/500</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Floating Button + Popup</h3>
+      <p>A small quest icon button opens a popup overlay. Notification dot when new quests drop or complete.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#1a1a2e;border-radius:8px;padding:12px;font-family:monospace;font-size:11px;color:#ccc;line-height:1.6">
+        <div style="background:#2a2a4e;border-radius:6px;padding:8px;margin-bottom:8px;text-align:center;color:#FFD700;font-weight:bold">🏠 Home Screen</div>
+        <div style="background:#2a2a1a;border:1px solid #554400;border-radius:6px;padding:8px;margin-bottom:6px">
+          <div style="color:#FFD700;font-size:10px;font-weight:bold;margin-bottom:4px">📋 TODAY'S QUESTS <span style="font-size:9px;color:#aaa">resets in 6h 22m</span></div>
+          <div style="background:#333;border-radius:3px;padding:3px;margin-bottom:2px;font-size:9px;display:flex;justify-content:space-between">
+            <span>🌾 Harvest 50 crops</span><span style="color:#8BC34A">32/50</span>
+          </div>
+          <div style="background:#333;border-radius:3px;padding:3px;font-size:9px;display:flex;justify-content:space-between">
+            <span>💧 Water 500 plants</span><span style="color:#aaa">0/500</span>
+          </div>
+          <div style="text-align:right;font-size:9px;color:#aaa;margin-top:4px">+6 more →</div>
+        </div>
+        <div style="background:#333;border-radius:4px;padding:6px;text-align:center;font-size:10px">▶ START RUN</div>
+        <div style="background:#222;border-radius:4px;padding:4px;margin-top:6px;display:flex;gap:4px;justify-content:center">
+          <span style="font-size:9px">🌾 Farm</span>
+          <span style="font-size:9px">🏪 Market</span>
+          <span style="font-size:9px">🐾 Animals</span>
+          <span style="font-size:9px">⚙️ Settings</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Inline Home Screen Widget</h3>
+      <p>A compact quest widget lives directly on the home screen showing 2 active quests. Tap to expand to full list.</p>
+    </div>
+  </div>
+
+</div>
