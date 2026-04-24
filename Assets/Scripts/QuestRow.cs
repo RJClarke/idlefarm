@@ -12,6 +12,7 @@ public class QuestRow : MonoBehaviour
     [SerializeField] private TextMeshProUGUI newBadgeText;
     [SerializeField] private TextMeshProUGUI completeLabel;
     [SerializeField] private Slider progressBar;
+    [SerializeField] private Image progressBarFill; // wire to the fill Image inside ProgressBar
     [SerializeField] private Button claimButton;
     [SerializeField] private TextMeshProUGUI claimButtonText;
     [SerializeField] private Image backgroundImage;
@@ -56,7 +57,7 @@ public class QuestRow : MonoBehaviour
             claimButton.gameObject.SetActive(true);
             claimButtonText.text = "Claim\n🪙" + data.coinReward;
             questNameText.color = new Color(0.545f, 0.765f, 0.290f, 1f);
-            progressBar.fillRect.GetComponent<Image>().color = harvestColor;
+            if (progressBarFill != null) progressBarFill.color = harvestColor;
         }
         // State: new (no progress)
         else if (isNew)
@@ -68,7 +69,7 @@ public class QuestRow : MonoBehaviour
             newBadgeText.gameObject.SetActive(true);
             claimButton.gameObject.SetActive(false);
             questNameText.color = Color.white;
-            progressBar.fillRect.GetComponent<Image>().color = newColor;
+            if (progressBarFill != null) progressBarFill.color = newColor;
         }
         // State: in progress
         else
@@ -81,11 +82,12 @@ public class QuestRow : MonoBehaviour
             claimButton.gameObject.SetActive(false);
             questNameText.color = Color.white;
 
-            progressBar.fillRect.GetComponent<Image>().color = data.objectiveType switch
-            {
-                QuestObjectiveType.WaterPlants => waterColor,
-                _ => defaultColor
-            };
+            if (progressBarFill != null)
+                progressBarFill.color = data.objectiveType switch
+                {
+                    QuestObjectiveType.WaterPlants => waterColor,
+                    _ => defaultColor
+                };
         }
 
         claimButton.onClick.RemoveAllListeners();
