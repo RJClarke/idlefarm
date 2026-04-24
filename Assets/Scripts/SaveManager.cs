@@ -54,17 +54,32 @@ public class SaveManager : MonoBehaviour
             eggTime = AnimalManager.Instance.GetLastEggClaimTimeISO();
         }
 
+        ActiveQuest[] quests = new ActiveQuest[0];
+        int questsCompleted = 0;
+        bool[] milestones = new bool[8];
+        string weekStart = "";
+        string lastDrop = "";
+
+        if (QuestManager.Instance != null)
+        {
+            quests = QuestManager.Instance.GetActiveQuestsForSave();
+            questsCompleted = QuestManager.Instance.QuestsCompletedThisWeek;
+            milestones = QuestManager.Instance.WeeklyMilestonesClaimed;
+            weekStart = QuestManager.Instance.GetQuestWeekStartISO();
+            lastDrop = QuestManager.Instance.GetLastQuestDropTimeISO();
+        }
+
         GameData data = new GameData(
             CurrencyManager.Instance.Coins,
             CurrencyManager.Instance.Gems,
             animalIDs,
             equippedID,
             eggTime,
-            new ActiveQuest[0],
-            0,
-            new bool[8],
-            "",
-            ""
+            quests,
+            questsCompleted,
+            milestones,
+            weekStart,
+            lastDrop
         );
 
         // Convert to JSON
@@ -112,6 +127,17 @@ public class SaveManager : MonoBehaviour
                 if (AnimalManager.Instance != null)
                 {
                     AnimalManager.Instance.LoadState(data.unlockedAnimalIDs, data.equippedAnimalID, data.lastEggClaimTime);
+                }
+
+                if (QuestManager.Instance != null)
+                {
+                    QuestManager.Instance.LoadState(
+                        data.activeQuests,
+                        data.questsCompletedThisWeek,
+                        data.weeklyMilestonesClaimed,
+                        data.questWeekStart,
+                        data.lastQuestDropTime
+                    );
                 }
 
                 Debug.Log($"Game loaded! Coins: {data.coins}");
