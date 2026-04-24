@@ -59,7 +59,12 @@ public class SaveManager : MonoBehaviour
             CurrencyManager.Instance.Gems,
             animalIDs,
             equippedID,
-            eggTime
+            eggTime,
+            new ActiveQuest[0],
+            0,
+            new bool[8],
+            "",
+            ""
         );
 
         // Convert to JSON
