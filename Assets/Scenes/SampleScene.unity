@@ -83702,6 +83702,60 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1980773954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980773956}
+  - component: {fileID: 1980773955}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1980773955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980773954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad2ac80eba400344856c45c67c553ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestManager
+  allQuests:
+  - {fileID: 11400000, guid: a1ebd587bf7d8e7468cb677e7972e299, type: 2}
+  - {fileID: 11400000, guid: f9c1a724002b4ce40a5bc552ccd87ecf, type: 2}
+  - {fileID: 11400000, guid: edca3134520eac144868113583049473, type: 2}
+  - {fileID: 11400000, guid: f5399a159644d654c802cccabd12a0f6, type: 2}
+  - {fileID: 11400000, guid: 50dff306326877244ab1ec8004f305e4, type: 2}
+  - {fileID: 11400000, guid: 44d7f6532ef54704b9b8d45a74afc712, type: 2}
+  - {fileID: 11400000, guid: b27d19c70dc09a54ba4d7cc34e3719aa, type: 2}
+  questsPerDrop: 2
+  maxActiveQuests: 10
+--- !u!4 &1980773956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980773954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983894357
 GameObject:
   m_ObjectHideFlags: 0
@@ -88004,3 +88058,4 @@ SceneRoots:
   - {fileID: 2121509787}
   - {fileID: 172883039}
   - {fileID: 1787508859}
+  - {fileID: 1980773956}
