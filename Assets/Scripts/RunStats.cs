@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections.Generic;
 
 /// <summary>
@@ -8,6 +9,12 @@ using System.Collections.Generic;
 public class RunStats : MonoBehaviour
 {
     public static RunStats Instance { get; private set; }
+
+    public event Action OnCropHarvested;
+    public event Action OnSeedPlanted;
+    public event Action OnPlantWatered;
+    public event Action OnDeerRepelled;
+    public event Action OnCrowRepelled;
 
     // Counters
     public int TilesTilled { get; private set; }
@@ -64,15 +71,15 @@ public class RunStats : MonoBehaviour
 
     // Increment methods
     public void AddTileTilled() => TilesTilled++;
-    public void AddSeedPlanted() => SeedsPlanted++;
-    public void AddPlantWatered() => PlantsWatered++;
-    public void AddCropHarvested() => CropsHarvested++;
+    public void AddSeedPlanted() { SeedsPlanted++; OnSeedPlanted?.Invoke(); }
+    public void AddPlantWatered() { PlantsWatered++; OnPlantWatered?.Invoke(); }
+    public void AddCropHarvested() { CropsHarvested++; OnCropHarvested?.Invoke(); }
     public void AddPlantDehydrated() => PlantsDehydrated++;
     public void AddCropDecayed() => CropsDecayed++;
     public void AddPlantEatenByDeer() => PlantsEatenByDeer++;
     public void AddPlantEatenByCrow() => PlantsEatenByCrows++;
-    public void AddDeerRepelledByFence() => DeerRepelledByFence++;
-    public void AddCrowRepelledByScarecrow() => CrowsRepelledByScarecrow++;
+    public void AddDeerRepelledByFence() { DeerRepelledByFence++; OnDeerRepelled?.Invoke(); }
+    public void AddCrowRepelledByScarecrow() { CrowsRepelledByScarecrow++; OnCrowRepelled?.Invoke(); }
     public void AddMoneyEarned(int amount) => MoneyEarned += amount;
     public void SetCoinsSaved(int amount) => CoinsSaved = amount;
 
