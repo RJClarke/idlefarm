@@ -71,7 +71,7 @@ public class QuestManager : MonoBehaviour
     private void ProcessDrops()
     {
         DateTime nowUtc = DateTime.UtcNow;
-        TimeZoneInfo ct = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+        TimeZoneInfo ct = GetCentralTime();
         DateTime nowCt = TimeZoneInfo.ConvertTimeFromUtc(nowUtc, ct);
 
         // Build list of all drop times (UTC) for today and yesterday
@@ -125,7 +125,7 @@ public class QuestManager : MonoBehaviour
 
     private QuestData PickEligibleQuest()
     {
-        HashSet<string> activeIDs = new HashSet<string>(activeQuests.Select(q => q.questID));
+        HashSet<string> activeIDs = new HashSet<string>(activeQuests.Where(q => !q.isClaimed).Select(q => q.questID));
         List<QuestData> eligible = allQuests.Where(q =>
             !activeIDs.Contains(q.questID) && IsEligible(q)).ToList();
 
@@ -155,7 +155,7 @@ public class QuestManager : MonoBehaviour
     private void CheckWeeklyReset()
     {
         DateTime nowUtc = DateTime.UtcNow;
-        TimeZoneInfo ct = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+        TimeZoneInfo ct = GetCentralTime();
         DateTime nowCt = TimeZoneInfo.ConvertTimeFromUtc(nowUtc, ct);
 
         // Sunday midnight CT = start of this week
@@ -220,7 +220,7 @@ public class QuestManager : MonoBehaviour
 
     public DateTime GetNextDropTimeUtc()
     {
-        TimeZoneInfo ct = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+        TimeZoneInfo ct = GetCentralTime();
         DateTime nowCt = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, ct);
 
         foreach (int hour in DropHoursCT)
@@ -263,25 +263,35 @@ public class QuestManager : MonoBehaviour
 
     private void SubscribeToEvents()
     {
-        if (RunStats.Instance != null)
-        {
-            RunStats.Instance.OnCropHarvested += () => IncrementProgress(QuestObjectiveType.HarvestCrops);
-            RunStats.Instance.OnSeedPlanted   += () => IncrementProgress(QuestObjectiveType.PlantSeeds);
-            RunStats.Instance.OnPlantWatered  += () => IncrementProgress(QuestObjectiveType.WaterPlants);
-            RunStats.Instance.OnDeerRepelled  += () => IncrementProgress(QuestObjectiveType.RepelDeer);
-            RunStats.Instance.OnCrowRepelled  += () => IncrementProgress(QuestObjectiveType.RepelCrows);
-        }
+        if (RunManager.Instance != null)
+            RunManager.Instance.OnRunStarted += OnRunStarted;
         if (AnimalManager.Instance != null)
         {
-            AnimalManager.Instance.OnEggClaimed  += () => IncrementProgress(QuestObjectiveType.GatherEggs);
-            AnimalManager.Instance.OnGemClaimed  += () => IncrementProgress(QuestObjectiveType.GatherGems);
+            AnimalManager.Instance.OnEggClaimed += () => IncrementProgress(QuestObjectiveType.GatherEggs);
+            AnimalManager.Instance.OnGemClaimed += () => IncrementProgress(QuestObjectiveType.GatherGems);
         }
+    }
+
+    private void OnRunStarted()
+    {
+        if (RunStats.Instance == null) return;
+        RunStats.Instance.OnCropHarvested += () => IncrementProgress(QuestObjectiveType.HarvestCrops);
+        RunStats.Instance.OnSeedPlanted   += () => IncrementProgress(QuestObjectiveType.PlantSeeds);
+        RunStats.Instance.OnPlantWatered  += () => IncrementProgress(QuestObjectiveType.WaterPlants);
+        RunStats.Instance.OnDeerRepelled  += () => IncrementProgress(QuestObjectiveType.RepelDeer);
+        RunStats.Instance.OnCrowRepelled  += () => IncrementProgress(QuestObjectiveType.RepelCrows);
     }
 
     private void UnsubscribeFromEvents()
     {
         // Lambda subscriptions can't be unsubscribed by reference — acceptable for a singleton
         // that lives for the full session.
+    }
+
+    private static TimeZoneInfo GetCentralTime()
+    {
+        try { return TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time"); }
+        catch { return TimeZoneInfo.FindSystemTimeZoneById("America/Chicago"); }
     }
 
     private void IncrementProgress(QuestObjectiveType type)
