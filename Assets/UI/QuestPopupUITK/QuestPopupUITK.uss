@@ -335,3 +335,66 @@
     border-top-width: 1px;
     border-top-color: rgb(58, 45, 20);
 }
+
+/* ─────────────────────────────────────────────────────────────
+   Milestone chip — per-state
+   ───────────────────────────────────────────────────────────── */
+
+.chip--claimed {
+    background-color: rgb(30, 54, 20);
+    border-color: rgb(70, 113, 39);
+}
+.chip--claimed .chip__icon { color: rgb(139, 195, 74); }
+.chip--claimed .chip__tier { color: rgb(139, 195, 74); }
+.chip--claimed .chip__gem  { color: rgb(126, 203, 255); }
+
+.chip--next {
+    background-color: rgb(51, 38, 10);
+    border-color: rgb(255, 184, 0);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+}
+.chip--next .chip__icon { color: rgb(255, 184, 0); }
+.chip--next .chip__tier { color: rgb(255, 255, 255); }
+.chip--next .chip__gem  { color: rgb(126, 203, 255); }
+
+.chip--locked {
+    background-color: rgb(26, 20, 8);
+    border-color: rgb(46, 46, 46);
+}
+.chip--locked .chip__icon { color: rgb(85, 85, 85); }
+.chip--locked .chip__tier { color: rgb(85, 85, 85); }
+.chip--locked .chip__gem  { color: rgb(68, 102, 136); }
+
+/* ─────────────────────────────────────────────────────────────
+   Quest row — per-state
+   ───────────────────────────────────────────────────────────── */
+
+.quest-row--in-progress {
+    background-color: rgb(46, 36, 16);
+    border-color: rgb(89, 69, 18);
+}
+
+.quest-row--completed {
+    background-color: rgb(23, 51, 16);
+    border-color: rgb(70, 113, 39);
+}
+.quest-row--completed .quest-name { color: rgb(139, 195, 74); }
+
+.quest-row--new {
+    background-color: rgb(46, 36, 16);
+    border-color: rgb(115, 80, 31);
+}
+
+/* Per-objective progress bar colors */
+.quest-row--obj-harvestcrops .quest-row__progress-fill { background-color: rgb(139, 195, 74); }
+.quest-row--obj-plantseeds   .quest-row__progress-fill { background-color: rgb(139, 195, 74); }
+.quest-row--obj-waterplants  .quest-row__progress-fill { background-color: rgb(74, 159, 223); }
+.quest-row--obj-repeldeer    .quest-row__progress-fill { background-color: rgb(223, 134, 74); }
+.quest-row--obj-repelcrows   .quest-row__progress-fill { background-color: rgb(223, 134, 74); }
+.quest-row--obj-gathereggs   .quest-row__progress-fill { background-color: rgb(223, 200, 74); }
+.quest-row--obj-gathergems   .quest-row__progress-fill { background-color: rgb(126, 203, 255); }
+
+.quest-row--new .quest-row__progress-fill { background-color: rgb(176, 128, 77); }
