@@ -1,0 +1,337 @@
+/* ─────────────────────────────────────────────────────────────
+   Root / backdrop / container
+   ───────────────────────────────────────────────────────────── */
+
+.popup-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    scale: 0.8 0.8;
+    transition: opacity 0.25s ease-out, scale 0.25s ease-out;
+    display: none;
+}
+
+.popup-root.open {
+    opacity: 1;
+    scale: 1 1;
+}
+
+.backdrop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.popup-container {
+    width: 660px;
+    max-height: 80%;
+    background-color: rgb(33, 25, 12);
+    border-color: rgb(115, 89, 41);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Header
+   ───────────────────────────────────────────────────────────── */
+
+.header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(58, 45, 20);
+    background-color: rgb(26, 20, 8);
+}
+
+.title {
+    color: rgb(255, 201, 60);
+    font-size: 22px;
+    -unity-font-style: bold;
+}
+
+.close-button {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    color: rgb(180, 175, 165);
+    font-size: 18px;
+    -unity-font-style: bold;
+}
+
+.close-button:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Weekly track strip
+   ───────────────────────────────────────────────────────────── */
+
+.weekly-strip {
+    padding: 14px 18px 12px 18px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(58, 45, 20);
+}
+
+.weekly-header-row {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.weekly-label {
+    color: rgb(181, 167, 138);
+    font-size: 14px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+}
+
+.weekly-count {
+    color: rgb(181, 167, 138);
+    font-size: 13px;
+}
+
+.weekly-progress-track {
+    height: 6px;
+    background-color: rgb(42, 32, 16);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.weekly-progress-fill {
+    height: 100%;
+    width: 0;
+    background-color: rgb(255, 201, 60);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.milestone-strip {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Milestone chip (base; per-state in Task 7)
+   ───────────────────────────────────────────────────────────── */
+
+.chip {
+    width: 70px;
+    height: 90px;
+    margin: 0 2px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(26, 20, 8);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-color: rgb(46, 46, 46);
+    padding: 4px;
+}
+
+.chip__icon {
+    font-size: 18px;
+    margin-bottom: 2px;
+    -unity-text-align: middle-center;
+}
+
+.chip__tier {
+    font-size: 14px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-bottom: 2px;
+}
+
+.chip__gem {
+    font-size: 11px;
+    -unity-text-align: middle-center;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Quest list
+   ───────────────────────────────────────────────────────────── */
+
+.quest-list {
+    flex-grow: 1;
+    padding: 8px 12px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Quest row (base; per-state in Task 8)
+   ───────────────────────────────────────────────────────────── */
+
+.quest-row {
+    margin: 4px 0;
+    background-color: rgb(46, 36, 16);
+    border-color: rgb(89, 69, 18);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 10px 14px 12px 14px;
+    overflow: hidden;
+    min-height: 84px;
+}
+
+.quest-row__body {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.quest-row__left {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding-right: 12px;
+}
+
+.quest-row__right {
+    align-items: flex-end;
+    justify-content: flex-start;
+    min-width: 110px;
+}
+
+.quest-name {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    -unity-font-style: bold;
+}
+
+.quest-description {
+    color: rgb(180, 180, 180);
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.complete-label {
+    color: rgb(139, 195, 74);
+    font-size: 14px;
+    -unity-font-style: bold;
+    margin-top: 2px;
+}
+
+.progress-text {
+    color: rgb(180, 180, 180);
+    font-size: 14px;
+}
+
+.reward-text {
+    color: rgb(255, 178, 64);
+    font-size: 16px;
+    -unity-font-style: bold;
+    margin-top: 4px;
+}
+
+.new-badge {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+}
+
+.new-badge > Label {
+    color: rgb(185, 92, 224);
+    font-size: 12px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+}
+
+.claim-button {
+    width: 90px;
+    height: 56px;
+    background-color: rgb(35, 139, 35);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.claim-button:hover {
+    background-color: rgb(50, 160, 50);
+}
+
+.claim-button__label {
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    -unity-font-style: bold;
+}
+
+.claim-button__reward {
+    color: rgb(255, 220, 100);
+    font-size: 13px;
+    -unity-font-style: bold;
+}
+
+.quest-row__progress-track {
+    height: 4px;
+    margin-top: 8px;
+    background-color: rgb(20, 16, 8);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    overflow: hidden;
+}
+
+.quest-row__progress-fill {
+    height: 100%;
+    width: 0;
+    background-color: rgb(139, 195, 74);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Footer
+   ───────────────────────────────────────────────────────────── */
+
+.footer {
+    color: rgb(150, 150, 150);
+    font-size: 13px;
+    -unity-text-align: middle-center;
+    padding: 10px 0 14px 0;
+    border-top-width: 1px;
+    border-top-color: rgb(58, 45, 20);
+}
