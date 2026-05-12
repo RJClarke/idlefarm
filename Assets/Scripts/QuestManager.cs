@@ -107,7 +107,7 @@ public class QuestManager : MonoBehaviour
         int added = 0;
         for (int i = 0; i < missedDrops * questsPerDrop; i++)
         {
-            if (activeQuests.Count >= maxActiveQuests) break;
+            if (ActiveQuestCount >= maxActiveQuests) break;
             QuestData picked = PickEligibleQuest();
             if (picked == null) break;
             activeQuests.Add(new ActiveQuest(picked.questID, latestDropUtc.ToString("o")));
@@ -343,7 +343,7 @@ public class QuestManager : MonoBehaviour
         int added = 0;
         for (int i = 0; i < questsPerDrop; i++)
         {
-            if (activeQuests.Count >= maxActiveQuests) break;
+            if (ActiveQuestCount >= maxActiveQuests) break;
             QuestData picked = PickEligibleQuest();
             if (picked == null) break;
             activeQuests.Add(new ActiveQuest(picked.questID, DateTime.UtcNow.ToString("o")));
@@ -359,6 +359,20 @@ public class QuestManager : MonoBehaviour
         for (int i = 0; i < 8; i++)
             weeklyMilestonesClaimed[i] = false;
         OnQuestCompleted?.Invoke();
+    }
+
+    [ContextMenu("Debug: Reset All Quest Progress")]
+    public void DebugResetAllProgress()
+    {
+        activeQuests.Clear();
+        questsCompletedThisWeek = 0;
+        for (int i = 0; i < 8; i++)
+            weeklyMilestonesClaimed[i] = false;
+        lastQuestDropTime = DateTime.MinValue;
+        questWeekStart = DateTime.MinValue;
+        OnQuestsDropped?.Invoke();
+        OnQuestCompleted?.Invoke();
+        Debug.Log("[Quests] All quest progress reset.");
     }
 #endif
 }

@@ -27,6 +27,7 @@ public class QuestPopupUITK : MonoBehaviour
     private bool isOpen;
     private readonly List<VisualElement> spawnedRows = new List<VisualElement>();
     private readonly List<VisualElement> spawnedChips = new List<VisualElement>();
+    private IVisualElementScheduledItem livePollHandle;
 
     private static readonly int[] MilestoneThresholds = { 5, 10, 15, 20, 25, 30, 35, 40 };
     private static readonly int[] MilestoneGems       = { 1, 1, 2, 2, 2, 2, 2, 10 };
@@ -46,15 +47,18 @@ public class QuestPopupUITK : MonoBehaviour
         {
             QuestManager.Instance.OnQuestCompleted += OnQuestStateChanged;
             QuestManager.Instance.OnQuestsDropped  += OnQuestStateChanged;
+            QuestManager.Instance.OnMilestoneClaimed += OnQuestStateChanged;
         }
     }
 
     private void OnDisable()
     {
+        StopLivePolling();
         if (QuestManager.Instance != null)
         {
             QuestManager.Instance.OnQuestCompleted -= OnQuestStateChanged;
             QuestManager.Instance.OnQuestsDropped  -= OnQuestStateChanged;
+            QuestManager.Instance.OnMilestoneClaimed -= OnQuestStateChanged;
         }
     }
 
@@ -109,12 +113,14 @@ public class QuestPopupUITK : MonoBehaviour
             popupRoot.schedule.Execute(() => popupRoot.AddToClassList("open")).StartingIn(0);
         }
         RefreshAll();
+        StartLivePolling();
     }
 
     public void Close()
     {
         if (!isOpen) return;
         isOpen = false;
+        StopLivePolling();
         if (popupRoot != null)
         {
             popupRoot.RemoveFromClassList("open");
@@ -124,6 +130,51 @@ public class QuestPopupUITK : MonoBehaviour
                 popupRoot.style.display = DisplayStyle.None;
                 if (root != null) root.pickingMode = PickingMode.Ignore;
             }).StartingIn(260);
+        }
+    }
+
+    private void StartLivePolling()
+    {
+        if (livePollHandle != null || root == null) return;
+        livePollHandle = root.schedule.Execute(PollLiveProgress).Every(250);
+    }
+
+    private void StopLivePolling()
+    {
+        if (livePollHandle == null) return;
+        livePollHandle.Pause();
+        livePollHandle = null;
+    }
+
+    private void PollLiveProgress()
+    {
+        if (!isOpen || QuestManager.Instance == null) return;
+
+        foreach (VisualElement rowVe in spawnedRows)
+        {
+            ActiveQuest quest = rowVe.userData as ActiveQuest;
+            if (quest == null) continue;
+
+            QuestData data = QuestManager.Instance.GetQuestData(quest.questID);
+            if (data == null) continue;
+
+            // If the quest crossed the completion threshold, do a full rebuild so the
+            // row switches to the "completed" visual state with the claim button.
+            bool shownAsComplete = rowVe.ClassListContains("quest-row--completed");
+            if (quest.isCompleted != shownAsComplete)
+            {
+                RefreshList();
+                return;
+            }
+
+            // Otherwise just update the bar fill and progress text in place.
+            VisualElement fill = rowVe.Q<VisualElement>("quest-progress-fill");
+            float pct = data.targetCount > 0 ? Mathf.Clamp01((float)quest.progress / data.targetCount) : 0f;
+            if (fill != null) fill.style.width = new Length(pct * 100f, LengthUnit.Percent);
+
+            Label progressLabel = rowVe.Q<Label>("progress-text");
+            if (progressLabel != null && progressLabel.style.display.value != DisplayStyle.None)
+                progressLabel.text = quest.progress + " / " + data.targetCount;
         }
     }
 
@@ -152,11 +203,8 @@ public class QuestPopupUITK : MonoBehaviour
         if (weeklyProgressFill != null)
             weeklyProgressFill.style.width = new Length(Mathf.Clamp01(completed / 40f) * 100f, LengthUnit.Percent);
 
-        int nextTier = -1;
-        for (int i = 0; i < 8; i++)
-        {
-            if (!claimed[i]) { nextTier = i; break; }
-        }
+        // Every unclaimed tier whose threshold the user has hit is "next" (claimable).
+        // Tiers below their threshold stay locked; claimed tiers stay claimed.
 
         foreach (VisualElement old in spawnedChips) old.RemoveFromHierarchy();
         spawnedChips.Clear();
@@ -177,7 +225,7 @@ public class QuestPopupUITK : MonoBehaviour
             int threshold = MilestoneThresholds[i];
             int gemReward = MilestoneGems[i];
             bool isClaimed = claimed[i];
-            bool isNext = i == nextTier;
+            bool isNext = !isClaimed && completed >= threshold;
             bool isFinal = i == 7;
 
             Label iconLabel = chip.Q<Label>("state-icon");
@@ -253,6 +301,7 @@ public class QuestPopupUITK : MonoBehaviour
             QuestData data = QuestManager.Instance.GetQuestData(quest.questID);
             if (data == null) continue;
             TemplateContainer row = questRowTemplate.Instantiate();
+            row.userData = quest;
             BindRow(row, quest, data);
             questList.Add(row);
             spawnedRows.Add(row);
@@ -263,15 +312,16 @@ public class QuestPopupUITK : MonoBehaviour
     {
         VisualElement rowRoot = row.Q(className: "quest-row") ?? row.contentContainer;
 
-        Label nameLabel        = row.Q<Label>("quest-name");
-        Label descLabel        = row.Q<Label>("quest-description");
-        Label completeLabel    = row.Q<Label>("complete-label");
-        Label progressLabel    = row.Q<Label>("progress-text");
-        Label rewardLabel      = row.Q<Label>("reward-text");
-        Button claimButton     = row.Q<Button>("claim-button");
-        Label claimRewardLbl   = row.Q<Label>("claim-button-reward");
-        VisualElement newBadge = row.Q<VisualElement>("new-badge");
-        VisualElement progFill = row.Q<VisualElement>("quest-progress-fill");
+        Label nameLabel         = row.Q<Label>("quest-name");
+        Label descLabel         = row.Q<Label>("quest-description");
+        Label completeLabel     = row.Q<Label>("complete-label");
+        Label progressLabel     = row.Q<Label>("progress-text");
+        Label rewardLabel       = row.Q<Label>("reward-text");
+        VisualElement rewardRow = row.Q<VisualElement>("reward-row");
+        Button claimButton      = row.Q<Button>("claim-button");
+        Label claimRewardLbl    = row.Q<Label>("claim-button-reward");
+        VisualElement newBadge  = row.Q<VisualElement>("new-badge");
+        VisualElement progFill  = row.Q<VisualElement>("quest-progress-fill");
 
         if (nameLabel != null)   nameLabel.text   = data.displayName;
         if (descLabel != null)   descLabel.text   = data.description;
@@ -296,14 +346,17 @@ public class QuestPopupUITK : MonoBehaviour
             if (completeLabel != null) completeLabel.style.display = DisplayStyle.Flex;
             if (descLabel != null)     descLabel.style.display     = DisplayStyle.None;
             if (progressLabel != null) progressLabel.style.display = DisplayStyle.None;
-            if (rewardLabel != null)   rewardLabel.style.display   = DisplayStyle.None;
+            if (rewardRow != null)     rewardRow.style.display     = DisplayStyle.None;
             if (newBadge != null)      newBadge.style.display      = DisplayStyle.None;
             if (claimButton != null)
             {
                 claimButton.style.display = DisplayStyle.Flex;
                 if (claimRewardLbl != null) claimRewardLbl.text = data.coinReward.ToString();
                 string capturedID = quest.questID;
-                claimButton.RegisterCallback<ClickEvent>(_ => OnClaimClicked(capturedID));
+                int capturedReward = data.coinReward;
+                VisualElement capturedRow = rowRoot;
+                Button capturedButton = claimButton;
+                claimButton.RegisterCallback<ClickEvent>(_ => OnClaimClicked(capturedID, capturedRow, capturedButton, capturedReward));
             }
         }
         else if (isNew)
@@ -312,7 +365,7 @@ public class QuestPopupUITK : MonoBehaviour
             if (completeLabel != null) completeLabel.style.display = DisplayStyle.None;
             if (descLabel != null)     descLabel.style.display     = DisplayStyle.Flex;
             if (progressLabel != null) { progressLabel.style.display = DisplayStyle.Flex; progressLabel.text = "0 / " + data.targetCount; }
-            if (rewardLabel != null)   rewardLabel.style.display   = DisplayStyle.Flex;
+            if (rewardRow != null)     rewardRow.style.display     = DisplayStyle.Flex;
             if (newBadge != null)      newBadge.style.display      = DisplayStyle.Flex;
             if (claimButton != null)   claimButton.style.display   = DisplayStyle.None;
         }
@@ -322,7 +375,7 @@ public class QuestPopupUITK : MonoBehaviour
             if (completeLabel != null) completeLabel.style.display = DisplayStyle.None;
             if (descLabel != null)     descLabel.style.display     = DisplayStyle.Flex;
             if (progressLabel != null) { progressLabel.style.display = DisplayStyle.Flex; progressLabel.text = quest.progress + " / " + data.targetCount; }
-            if (rewardLabel != null)   rewardLabel.style.display   = DisplayStyle.Flex;
+            if (rewardRow != null)     rewardRow.style.display     = DisplayStyle.Flex;
             if (newBadge != null)      newBadge.style.display      = DisplayStyle.None;
             if (claimButton != null)   claimButton.style.display   = DisplayStyle.None;
         }
@@ -346,10 +399,52 @@ public class QuestPopupUITK : MonoBehaviour
         footerText.text = $"Next drop in {timeStr}  ·  {QuestManager.Instance.ActiveQuestCount}/10 slots";
     }
 
-    private void OnClaimClicked(string questID)
+    private void OnClaimClicked(string questID, VisualElement row, Button claimButton, int coinReward)
     {
-        if (QuestManager.Instance != null && QuestManager.Instance.TryClaimQuest(questID))
-            RefreshList();
+        // Prevent double-claim while the animation runs.
+        if (claimButton != null) claimButton.SetEnabled(false);
+
+        // Spawn the "+coins" floating text near the claim button.
+        SpawnClaimFloat(claimButton ?? row, coinReward);
+
+        // Fade and collapse the row. USS handles the transition.
+        if (row != null) row.AddToClassList("quest-row--claiming");
+
+        // After the visual animation, actually claim. The state-change event will
+        // trigger RefreshList which rebuilds the (now shorter) list.
+        IVisualElementScheduledItem item = (row ?? root)?.schedule.Execute(() =>
+        {
+            if (QuestManager.Instance != null) QuestManager.Instance.TryClaimQuest(questID);
+        });
+        item?.StartingIn(380);
+    }
+
+    private void SpawnClaimFloat(VisualElement source, int coinAmount)
+    {
+        // Parent to popupRoot (no overflow clipping) instead of popupContainer.
+        if (popupRoot == null || source == null) return;
+
+        Label floatLabel = new Label($"+{coinAmount}");
+        floatLabel.AddToClassList("claim-float");
+        floatLabel.pickingMode = PickingMode.Ignore;
+
+        // Position relative to popupRoot using world bounds. Pivot is top-left of the
+        // label, so shift left by half the label's expected width (~25px) to center.
+        Rect srcBound = source.worldBound;
+        Rect rootBound = popupRoot.worldBound;
+        float left = srcBound.center.x - rootBound.x - 25f;
+        float top  = srcBound.center.y - rootBound.y - 20f;
+
+        floatLabel.style.left = left;
+        floatLabel.style.top = top;
+
+        popupRoot.Add(floatLabel);
+
+        // Defer adding the .animating class so the transition plays from the initial state.
+        floatLabel.schedule.Execute(() => floatLabel.AddToClassList("claim-float--animating")).StartingIn(10);
+
+        // Remove the label after the animation completes.
+        floatLabel.schedule.Execute(() => floatLabel.RemoveFromHierarchy()).StartingIn(1300);
     }
 
     private void OnChipClicked(int tier)

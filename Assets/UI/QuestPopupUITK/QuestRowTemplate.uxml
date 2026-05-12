@@ -1,20 +1,26 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements">
     <ui:VisualElement class="quest-row quest-row--in-progress" picking-mode="Position">
-        <ui:VisualElement name="new-badge" class="new-badge" style="display: none;">
-            <ui:Label text="NEW" />
-        </ui:VisualElement>
         <ui:VisualElement class="quest-row__body">
             <ui:VisualElement class="quest-row__left">
-                <ui:Label name="quest-name" class="quest-name" />
+                <ui:VisualElement class="quest-row__title-row">
+                    <ui:Label name="quest-name" class="quest-name" />
+                    <ui:Label name="new-badge" text="NEW" class="new-badge" style="display: none;" />
+                </ui:VisualElement>
                 <ui:Label name="quest-description" class="quest-description" />
-                <ui:Label name="complete-label" text="&#10003; Complete!" class="complete-label" style="display: none;" />
+                <ui:Label name="complete-label" text="Complete!" class="complete-label" style="display: none;" />
             </ui:VisualElement>
             <ui:VisualElement class="quest-row__right">
                 <ui:Label name="progress-text" class="progress-text" />
-                <ui:Label name="reward-text" class="reward-text" />
+                <ui:VisualElement name="reward-row" class="reward-row">
+                    <ui:VisualElement class="coin-icon" />
+                    <ui:Label name="reward-text" class="reward-text" />
+                </ui:VisualElement>
                 <ui:Button name="claim-button" class="claim-button" style="display: none;">
                     <ui:Label name="claim-button-text" text="Claim" class="claim-button__label" />
-                    <ui:Label name="claim-button-reward" class="claim-button__reward" />
+                    <ui:VisualElement class="claim-button__reward-row">
+                        <ui:VisualElement class="coin-icon claim-button__coin-icon" />
+                        <ui:Label name="claim-button-reward" class="claim-button__reward" />
+                    </ui:VisualElement>
                 </ui:Button>
             </ui:VisualElement>
         </ui:VisualElement>

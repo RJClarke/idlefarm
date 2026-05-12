@@ -773,7 +773,7 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Standalone: APP_UI_EDITOR_ONLY
+    Standalone: APP_UI_EDITOR_ONLY;GLADE_INPUT_SYSTEM;GLADE_UGUI
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

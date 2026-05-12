@@ -148,7 +148,7 @@ public class QuestRow : MonoBehaviour
             if (backgroundImage) backgroundImage.color = completedBg;
             if (borderImage)     borderImage.color     = completedBorder;
             if (progressText)    progressText.gameObject.SetActive(false);
-            if (completeLabel)   { completeLabel.gameObject.SetActive(true); completeLabel.text = "\u2713 Complete!"; completeLabel.color = new Color(0.545f, 0.765f, 0.290f, 1f); completeLabel.fontSize = 14; completeLabel.fontWeight = FontWeight.Bold; }
+            if (completeLabel)   { completeLabel.gameObject.SetActive(true); completeLabel.text = "Complete!"; completeLabel.color = new Color(0.545f, 0.765f, 0.290f, 1f); completeLabel.fontSize = 14; completeLabel.fontWeight = FontWeight.Bold; }
             if (newBadgeText)    newBadgeText.gameObject.SetActive(false);
             if (claimButton)     claimButton.gameObject.SetActive(true);
             if (claimButtonText)

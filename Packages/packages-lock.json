@@ -10,6 +10,16 @@
       },
       "hash": "8e3f721f7e2de25144d0c8478e43f08921a20ff8"
     },
+    "com.gladekit.mcp-bridge": {
+      "version": "https://github.com/Glade-tool/glade-mcp-unity.git?path=/unity-bridge",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.inputsystem": "1.0.0",
+        "com.unity.ai.navigation": "1.0.0"
+      },
+      "hash": "09b2a1c58b4ed02becc9010e05a1de25e66954ea"
+    },
     "com.unity.2d.animation": {
       "version": "13.0.4",
       "depth": 0,
@@ -129,6 +139,15 @@
         "com.unity.ai.toolkit": "1.0.0-pre.12",
         "com.unity.mathematics": "1.3.2",
         "com.unity.nuget.newtonsoft-json": "3.2.1"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.ai.navigation": {
+      "version": "2.0.10",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.ai": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -352,6 +371,12 @@
       "dependencies": {
         "com.unity.modules.subsystems": "1.0.0"
       }
+    },
+    "com.unity.modules.ai": {
+      "version": "1.0.0",
+      "depth": 2,
+      "source": "builtin",
+      "dependencies": {}
     },
     "com.unity.modules.androidjni": {
       "version": "1.0.0",

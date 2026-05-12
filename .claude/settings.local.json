@@ -44,7 +44,27 @@
       "Bash(grep -n \"&891927711$\" \"C:/Users/rjcla/IdleFarm - Silo/Assets/Scenes/SampleScene.unity\")",
       "Bash(bash *)",
       "Bash(sort -t/ -k6)",
-      "Bash(xargs cat *)"
+      "Bash(xargs cat *)",
+      "mcp__UnityMCP__script_apply_edits",
+      "Bash(uvx gladekit-mcp *)",
+      "WebFetch(domain:github.com)",
+      "Skill(update-config)",
+      "Read(//c/Users/rjcla/.claude/**)",
+      "Read(//c/Users/rjcla/AppData/Roaming/Claude/**)",
+      "Bash(netstat -ano)",
+      "Bash(findstr \"8765\\\\|8080\\\\|8766\")",
+      "PowerShell(claude mcp *)",
+      "PowerShell(cmd /c uvx gladekit-mcp 2>&1; Write-Host \"Exit: $LASTEXITCODE\")",
+      "Bash(cat \"C:\\\\\\\\Users\\\\\\\\rjcla\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\C--Users-rjcla-IdleFarm---Silo\\\\\\\\96ea0577-5890-458c-83ce-86a1b387c840\\\\\\\\tasks\\\\\\\\bndaapg43.output\")",
+      "Bash(cmd /c uvx gladekit-mcp)",
+      "PowerShell($uvxPath = \"C:\\\\Users\\\\rjcla\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Packages\\\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe\\\\uvx.exe\"; & $uvxPath gladekit-mcp 2>&1 | Select-Object -First 3)",
+      "Bash(cat \"C:\\\\\\\\Users\\\\\\\\rjcla\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\C--Users-rjcla-IdleFarm---Silo\\\\\\\\96ea0577-5890-458c-83ce-86a1b387c840\\\\\\\\tasks\\\\\\\\btuovntsp.output\")",
+      "mcp__gladekit-unity__compile_scripts",
+      "mcp__gladekit-unity__get_play_mode_state",
+      "Bash(not exist *)",
+      "PowerShell(New-Item *)",
+      "PowerShell(Test-Path *)",
+      "mcp__gladekit-unity__check_asset_exists"
     ]
   }
 }

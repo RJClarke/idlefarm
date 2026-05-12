@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "deepseek": {}
+  },
+  "mcp": {
+    "gladekit-unity": {
+      "type": "local",
+      "command": ["uvx", "gladekit-mcp"],
+      "enabled": true
+    }
+  }
+}

@@ -1,6 +1,7 @@
 {
   "dependencies": {
-"com.coplaydev.unity-mcp": "https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#beta",
+    "com.coplaydev.unity-mcp": "https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#beta",
+    "com.gladekit.mcp-bridge": "https://github.com/Glade-tool/glade-mcp-unity.git?path=/unity-bridge",
     "com.unity.2d.animation": "13.0.4",
     "com.unity.2d.aseprite": "3.0.1",
     "com.unity.2d.enhancers": "1.0.0",
