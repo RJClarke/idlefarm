@@ -1,0 +1,28 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="root" class="popup-root" picking-mode="Position">
+        <ui:VisualElement name="backdrop" class="backdrop" picking-mode="Position" />
+        <ui:VisualElement name="popup-container" class="popup-container" picking-mode="Position">
+
+            <ui:VisualElement name="header" class="header">
+                <ui:Label text="Daily Quests" name="title" class="title" />
+                <ui:Button name="close-button" text="&#10005;" class="close-button" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="weekly-strip" class="weekly-strip">
+                <ui:VisualElement name="weekly-header-row" class="weekly-header-row">
+                    <ui:Label text="WEEKLY TRACK" class="weekly-label" />
+                    <ui:Label name="weekly-count" text="0 / 40 quests &#183; resets Sun" class="weekly-count" />
+                </ui:VisualElement>
+                <ui:VisualElement name="weekly-progress-track" class="weekly-progress-track">
+                    <ui:VisualElement name="weekly-progress-fill" class="weekly-progress-fill" />
+                </ui:VisualElement>
+                <ui:VisualElement name="milestone-strip" class="milestone-strip" />
+            </ui:VisualElement>
+
+            <ui:ScrollView name="quest-list" class="quest-list" mode="Vertical" />
+
+            <ui:Label name="footer-text" text="Next drop in 0m &#183; 0/10 slots" class="footer" />
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

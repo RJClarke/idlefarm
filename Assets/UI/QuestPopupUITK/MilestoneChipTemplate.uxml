@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:Button class="chip chip--locked" picking-mode="Position">
+        <ui:Label name="state-icon" class="chip__icon" />
+        <ui:Label name="tier-label" class="chip__tier" />
+        <ui:Label name="gem-label" class="chip__gem" />
+    </ui:Button>
+</ui:UXML>
