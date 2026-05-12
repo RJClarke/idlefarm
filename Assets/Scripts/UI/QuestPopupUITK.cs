@@ -14,6 +14,7 @@ public class QuestPopupUITK : MonoBehaviour
 
     private UIDocument document;
     private VisualElement root;
+    private VisualElement popupRoot;
     private VisualElement popupContainer;
     private VisualElement backdrop;
     private Button closeButton;
@@ -62,6 +63,10 @@ public class QuestPopupUITK : MonoBehaviour
         root = document.rootVisualElement;
         if (root == null) { Debug.LogError("[QuestPopupUITK] rootVisualElement is null"); return; }
 
+        // Pass clicks through to uGUI when the popup is closed.
+        root.pickingMode = PickingMode.Ignore;
+
+        popupRoot          = root.Q<VisualElement>("popup-root");
         popupContainer     = root.Q<VisualElement>("popup-container");
         backdrop           = root.Q<VisualElement>("backdrop");
         closeButton        = root.Q<Button>("close-button");
@@ -71,6 +76,7 @@ public class QuestPopupUITK : MonoBehaviour
         questList          = root.Q<ScrollView>("quest-list");
         footerText         = root.Q<Label>("footer-text");
 
+        WarnIfNull(popupRoot,          "popup-root");
         WarnIfNull(popupContainer,     "popup-container");
         WarnIfNull(backdrop,           "backdrop");
         WarnIfNull(closeButton,        "close-button");
@@ -96,10 +102,11 @@ public class QuestPopupUITK : MonoBehaviour
     {
         if (isOpen) return;
         isOpen = true;
-        if (root != null)
+        if (root != null) root.pickingMode = PickingMode.Position;
+        if (popupRoot != null)
         {
-            root.style.display = DisplayStyle.Flex;
-            root.schedule.Execute(() => root.AddToClassList("open")).StartingIn(0);
+            popupRoot.style.display = DisplayStyle.Flex;
+            popupRoot.schedule.Execute(() => popupRoot.AddToClassList("open")).StartingIn(0);
         }
         RefreshAll();
     }
@@ -108,10 +115,15 @@ public class QuestPopupUITK : MonoBehaviour
     {
         if (!isOpen) return;
         isOpen = false;
-        if (root != null)
+        if (popupRoot != null)
         {
-            root.RemoveFromClassList("open");
-            root.schedule.Execute(() => { if (!isOpen) root.style.display = DisplayStyle.None; }).StartingIn(260);
+            popupRoot.RemoveFromClassList("open");
+            popupRoot.schedule.Execute(() =>
+            {
+                if (isOpen) return;
+                popupRoot.style.display = DisplayStyle.None;
+                if (root != null) root.pickingMode = PickingMode.Ignore;
+            }).StartingIn(260);
         }
     }
 
