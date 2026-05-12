@@ -66,11 +66,11 @@ Assets/
     └── RunewoodPanelSettings.asset     ← shared PanelSettings (sort order, scale mode, theme)
 ```
 
-Existing files (untouched except for one debug-toggle line in `QuestPopup.cs`):
-- `Assets/Scripts/QuestPopup.cs`
-- `Assets/Scripts/QuestRow.cs`
-- `Assets/Scripts/MilestoneChip.cs`
-- `Assets/Prefabs/Quests/QuestRow.prefab`
+Existing files (minor edits only):
+- `Assets/Scripts/QuestPopup.cs` — one-line debug-toggle change in the `questButton` click handler
+- `Assets/Scripts/QuestRow.cs` — strip emoji prefix from quest names (remove `ObjectiveEmoji` table and the `emoji + " " + data.displayName` concatenation in `Bind`)
+- `Assets/Scripts/MilestoneChip.cs` — untouched
+- `Assets/Prefabs/Quests/QuestRow.prefab` — untouched
 
 ## 4. Architecture
 
