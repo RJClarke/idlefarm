@@ -4,6 +4,7 @@ using TMPro;
 using System;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class QuestPopup : MonoBehaviour
 {
@@ -174,7 +175,7 @@ public class QuestPopup : MonoBehaviour
 
     private void OnQuestButtonClicked()
     {
-        bool shift = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+        bool shift = Keyboard.current != null && Keyboard.current.shiftKey.isPressed;
         if (shift && QuestPopupUITK.Instance != null)
             QuestPopupUITK.Instance.Open();
         else
