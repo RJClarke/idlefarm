@@ -215,7 +215,7 @@ public class QuestPopupUITK : MonoBehaviour
                 if (isNext)
                 {
                     chipButton.SetEnabled(true);
-                    chipButton.clicked += () => OnChipClicked(tier);
+                    chipButton.RegisterCallback<ClickEvent>(_ => OnChipClicked(tier));
                 }
                 else
                 {
@@ -303,7 +303,7 @@ public class QuestPopupUITK : MonoBehaviour
                 claimButton.style.display = DisplayStyle.Flex;
                 if (claimRewardLbl != null) claimRewardLbl.text = data.coinReward.ToString();
                 string capturedID = quest.questID;
-                claimButton.clicked += () => OnClaimClicked(capturedID);
+                claimButton.RegisterCallback<ClickEvent>(_ => OnClaimClicked(capturedID));
             }
         }
         else if (isNew)

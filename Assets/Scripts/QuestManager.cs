@@ -186,8 +186,8 @@ public class QuestManager : MonoBehaviour
 
     public bool TryClaimQuest(string questID)
     {
-        ActiveQuest quest = activeQuests.Find(q => q.questID == questID);
-        if (quest == null || !quest.isCompleted || quest.isClaimed) return false;
+        ActiveQuest quest = activeQuests.Find(q => q.questID == questID && !q.isClaimed);
+        if (quest == null || !quest.isCompleted) return false;
 
         QuestData data = allQuests.Find(q => q.questID == questID);
         if (data == null) return false;
@@ -312,4 +312,53 @@ public class QuestManager : MonoBehaviour
         }
         if (anyCompleted) OnQuestCompleted?.Invoke();
     }
+
+    // ── Debug / Test ─────────────────────────────────────────────
+
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+    [ContextMenu("Debug: Complete All Active Quests")]
+    public void DebugCompleteAll()
+    {
+        foreach (ActiveQuest quest in activeQuests)
+        {
+            if (quest.isClaimed || quest.isCompleted) continue;
+            QuestData data = allQuests.Find(d => d.questID == quest.questID);
+            if (data == null) continue;
+            quest.progress = data.targetCount;
+            quest.isCompleted = true;
+        }
+        OnQuestCompleted?.Invoke();
+    }
+
+    [ContextMenu("Debug: Claim All Completed Quests")]
+    public void DebugClaimAll()
+    {
+        foreach (ActiveQuest quest in activeQuests.Where(q => q.isCompleted && !q.isClaimed).ToList())
+            TryClaimQuest(quest.questID);
+    }
+
+    [ContextMenu("Debug: Force Drop Quests")]
+    public void DebugForceDrop()
+    {
+        int added = 0;
+        for (int i = 0; i < questsPerDrop; i++)
+        {
+            if (activeQuests.Count >= maxActiveQuests) break;
+            QuestData picked = PickEligibleQuest();
+            if (picked == null) break;
+            activeQuests.Add(new ActiveQuest(picked.questID, DateTime.UtcNow.ToString("o")));
+            added++;
+        }
+        if (added > 0) OnQuestsDropped?.Invoke();
+    }
+
+    [ContextMenu("Debug: Claim All Milestones")]
+    public void DebugClaimAllMilestones()
+    {
+        questsCompletedThisWeek = 40;
+        for (int i = 0; i < 8; i++)
+            weeklyMilestonesClaimed[i] = false;
+        OnQuestCompleted?.Invoke();
+    }
+#endif
 }
