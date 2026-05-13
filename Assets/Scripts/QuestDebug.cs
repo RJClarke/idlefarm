@@ -7,38 +7,39 @@ public class QuestDebug : MonoBehaviour
     {
         if (QuestManager.Instance == null) return;
 
-        GUILayout.BeginArea(new Rect(10, 180, 230, 250));
-        GUI.Box(new Rect(0, 0, 230, 250), "Quest Debug");
+        GUILayout.BeginArea(new Rect(10, 180, 230, 290));
+        GUI.Box(new Rect(0, 0, 230, 290), "Quest Debug");
         GUILayout.Space(22);
 
         if (GUILayout.Button("Spawn Quest(s)"))
         {
             QuestManager.Instance.DebugForceDrop();
-            QuestPopup.Instance?.RefreshAll();
         }
 
         if (GUILayout.Button("Complete All Quests"))
         {
             QuestManager.Instance.DebugCompleteAll();
-            QuestPopup.Instance?.RefreshAll();
         }
 
         if (GUILayout.Button("Claim All Completed"))
         {
             QuestManager.Instance.DebugClaimAll();
-            QuestPopup.Instance?.RefreshAll();
         }
 
         if (GUILayout.Button("Max Week Progress"))
         {
             QuestManager.Instance.DebugClaimAllMilestones();
-            QuestPopup.Instance?.RefreshAll();
         }
 
         if (GUILayout.Button("Reset All Progress"))
         {
             QuestManager.Instance.DebugResetAllProgress();
-            QuestPopup.Instance?.RefreshAll();
+        }
+
+        if (GUILayout.Button("Reset Daily"))
+        {
+            if (DailyRewardManager.Instance != null)
+                DailyRewardManager.Instance.DebugResetDaily();
         }
 
         int week = QuestManager.Instance.QuestsCompletedThisWeek;

@@ -1182,6 +1182,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2044,7 +2070,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RPepper_seedlin
+      name: RPepper_sapling
       rect:
         serializedVersion: 2
         x: 960
@@ -2286,7 +2312,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pumpkin_sapling1
+      name: Pumpkin_sapling
       rect:
         serializedVersion: 2
         x: 960
@@ -5791,14 +5817,14 @@ TextureImporter:
       Potato_seed: -5166890997122943110
       Potato_seedling: 5177798275492787413
       Potato_seedling2: -3970134405206944544
-      Pumpkin_sapling1: 6449900970205332426
+      Pumpkin_sapling: 6449900970205332426
       Pumpkin_seed: 6400097610941325928
       RPepper_destroyed: 6593910471418514874
       RPepper_harvest: 824772362
       RPepper_harvested: -1688227288
+      RPepper_sapling: 926297158411035097
       RPepper_sapling2: 1663745391
       RPepper_seed: 5453929798641431608
-      RPepper_seedlin: 926297158411035097
       RPepper_seedling: -3750409946025607185
       RPepper_seedling2: -1210511890
       Raddish_destroyed: 1448750351800781423

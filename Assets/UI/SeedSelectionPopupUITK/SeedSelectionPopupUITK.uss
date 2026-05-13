@@ -1,0 +1,430 @@
+/* ─────────────────────────────────────────────────────────────
+   Root / backdrop / wood frame
+   ───────────────────────────────────────────────────────────── */
+
+.popup-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    display: none;
+}
+
+.popup-root.open {
+    opacity: 1;
+}
+
+.backdrop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.popup-frame {
+    width: 86%;
+    max-width: 920px;
+    min-width: 320px;
+    height: 86%;
+    max-height: 1500px;
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Frame_Standard_02.png");
+    -unity-slice-left: 60;
+    -unity-slice-right: 60;
+    -unity-slice-top: 60;
+    -unity-slice-bottom: 60;
+    -unity-slice-scale: 1px;
+    scale: 0.9 0.9;
+    transition: scale 0.22s ease-out;
+}
+
+.popup-root.open .popup-frame {
+    scale: 1 1;
+}
+
+.popup-inner {
+    flex-grow: 1;
+    padding: 78px 64px 88px 64px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Header
+   ───────────────────────────────────────────────────────────── */
+
+.header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.title {
+    color: rgb(54, 32, 14);
+    font-size: 28px;
+    -unity-font-style: bold;
+    flex-grow: 1;
+}
+
+.close-button {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    -unity-background-scale-mode: scale-to-fit;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.close-button:hover {
+    scale: 1.08 1.08;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Field grid (2×2)
+   ───────────────────────────────────────────────────────────── */
+
+.field-grid {
+    margin-bottom: 70px;
+}
+
+.field-row {
+    flex-direction: row;
+    justify-content: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 290px;
+    margin-bottom: 18px;
+}
+
+.field-tile {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    margin: 0 10px;
+    background-color: rgba(126, 86, 44, 0.85);
+    border-color: rgb(82, 55, 26);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.field-tile--selected {
+    border-color: rgb(255, 210, 90);
+    background-color: rgba(150, 110, 60, 0.92);
+}
+
+.field-tile--locked {
+    background-color: rgba(70, 55, 38, 0.85);
+    border-color: rgb(60, 45, 30);
+}
+
+.field-tile-content {
+    flex-grow: 1;
+    padding: 10px 12px 10px 12px;
+}
+
+.field-label {
+    color: rgb(255, 232, 188);
+    font-size: 16px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-left;
+    margin-bottom: 6px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Slot (crop + equip share base styling)
+   ───────────────────────────────────────────────────────────── */
+
+.slot {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(58, 38, 18, 0.55);
+    border-color: rgb(54, 34, 14);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 6px 8px;
+    margin-bottom: 6px;
+    min-height: 64px;
+}
+
+.crop-slot {
+    margin-bottom: 6px;
+}
+
+.equip-slot {
+    margin-bottom: 0;
+}
+
+.slot__image {
+    width: 52px;
+    height: 52px;
+    margin-right: 10px;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.slot__image--equip {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.slot__placeholder {
+    color: rgb(210, 188, 155);
+    font-size: 14px;
+    -unity-font-style: italic;
+    flex-grow: 1;
+}
+
+.slot__name {
+    color: rgb(255, 245, 220);
+    font-size: 16px;
+    -unity-font-style: bold;
+    flex-grow: 1;
+    display: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.slot__clear {
+    width: 26px;
+    height: 26px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Small.png");
+    -unity-background-scale-mode: scale-to-fit;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.slot__clear:hover {
+    scale: 1.12 1.12;
+}
+
+/* Filled state: hide placeholder, show name + clear */
+.slot--filled .slot__placeholder { display: none; }
+.slot--filled .slot__name        { display: flex; }
+.slot--filled .slot__clear       { display: flex; }
+
+/* Locked overlay (full tile cover) */
+.lock-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(20, 14, 6, 0.7);
+    display: none;
+}
+
+.field-tile--locked .lock-overlay { display: flex; }
+
+.lock-icon {
+    color: rgb(255, 230, 180);
+    font-size: 38px;
+    margin-bottom: 4px;
+}
+
+.lock-label {
+    color: rgb(255, 230, 180);
+    font-size: 18px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Rails (horizontal seed + equipment scrollers)
+   ───────────────────────────────────────────────────────────── */
+
+.rail-label {
+    color: rgb(54, 32, 14);
+    font-size: 18px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    margin-top: 4px;
+}
+
+.rail-scroll {
+    height: 160px;
+    background-color: rgba(58, 38, 18, 0.35);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+    margin-bottom: 14px;
+}
+
+/* Horizontal rails never want a vertical scrollbar. */
+.rail-scroll .unity-scroller--vertical {
+    display: none;
+}
+
+.rail-scroll .unity-scroll-view__content-container {
+    flex-direction: row;
+    padding-right: 6px;
+}
+
+.rail-scroll .unity-scroller--horizontal {
+    height: 8px;
+    margin-top: 4px;
+}
+
+.rail-scroll .unity-scroller--horizontal .unity-scroller__low-button,
+.rail-scroll .unity-scroller--horizontal .unity-scroller__high-button {
+    display: none;
+}
+
+.rail-scroll .unity-scroller--horizontal .unity-base-slider__tracker {
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.rail-scroll .unity-scroller--horizontal .unity-base-slider__dragger {
+    background-color: rgb(140, 110, 60);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    height: 6px;
+}
+
+/* Rail tile (seed packet or equipment) */
+.rail-tile {
+    width: 112px;
+    height: 124px;
+    margin: 0 5px;
+    padding: 8px;
+    background-color: rgba(98, 70, 38, 0.85);
+    border-color: rgb(70, 48, 22);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.rail-tile:hover {
+    background-color: rgba(130, 95, 55, 0.95);
+}
+
+.rail-tile--assigned {
+    background-color: rgba(60, 105, 50, 0.85);
+    border-color: rgb(110, 170, 80);
+}
+
+.rail-tile--locked {
+    background-color: rgba(60, 48, 32, 0.55);
+    border-color: rgb(45, 36, 24);
+}
+
+.rail-tile--locked .rail-tile__image { opacity: 0.4; }
+.rail-tile--locked .rail-tile__label { color: rgb(150, 130, 110); }
+
+.rail-tile__image {
+    width: 76px;
+    height: 76px;
+    -unity-background-scale-mode: scale-to-fit;
+    margin-bottom: 6px;
+}
+
+.rail-tile__label {
+    color: rgb(255, 245, 220);
+    font-size: 14px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Footer (Cancel + Save)
+   ───────────────────────────────────────────────────────────── */
+
+.footer {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.footer-button {
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 64px;
+    margin: 0 6px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -unity-font-style: bold;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    -unity-text-align: middle-center;
+    padding: 0;
+}
+
+.footer-button--cancel {
+    background-color: rgb(110, 70, 40);
+}
+.footer-button--cancel:hover {
+    background-color: rgb(135, 88, 50);
+}
+
+.footer-button--save {
+    background-color: rgb(60, 145, 60);
+}
+.footer-button--save:hover {
+    background-color: rgb(80, 165, 80);
+}

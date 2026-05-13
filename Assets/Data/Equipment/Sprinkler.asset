@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Sprinkler
   equipmentType: 2
   icon: "\U0001F4A7"
+  iconSprite: {fileID: -7581425814263505433, guid: 31cf195acb5c23e4bb958a5954aa50b0, type: 3}
   description: Waters plants within range on an active/cooldown cycle.
   unlockID: sprinkler_unlock
   baseCooldownSeconds: 30
@@ -23,6 +24,11 @@ MonoBehaviour:
   baseAoERadius: 2
   countersTheatType: 1
   visualPrefab: {fileID: 5958846195913573462, guid: e6f4d63f20b3fd44a8628baa122a001d, type: 3}
+  uiUpgradeRows:
+  - {fileID: 11400000, guid: 6988b57f024f8d444ba11076fdc7a543, type: 2}
+  - {fileID: 11400000, guid: 451911f8d81316d45bf134ef60d4de0b, type: 2}
+  - {fileID: 11400000, guid: 3c5761b03f566fa4da56f714c1d29dc7, type: 2}
+  - {fileID: 11400000, guid: 23b715f76fd1bc44980a44a8938688a3, type: 2}
   aoeUpgradeID: sprinkler_aoe
   cooldownUpgradeID: sprinkler_cooldown
   capacityUpgradeID: sprinkler_power
@@ -30,7 +36,14 @@ MonoBehaviour:
   cooldownReductionPerLevel: 3
   capacityBonusPerLevel: 0
   minCooldownSeconds: 5
+  fenceCoveragePerLevel:
+  - 0.2
+  - 0.4
+  - 0.6
+  - 0.8
+  - 1
   activeDurationSeconds: 10
   baseMoisturePowerPerSecond: 1.5
   waterPowerUpgradeID: sprinkler_power
   waterPowerBonusPerLevel: 0.5
+  durationUpgradeID: sprinkler_duration

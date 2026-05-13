@@ -28,9 +28,10 @@ MonoBehaviour:
   sproutSprite: {fileID: -3750409946025607185, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   saplingSprite: {fileID: 926297158411035097, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   harvestableSprite: {fileID: 824772362, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  harvestedSprite: {fileID: 0}
   driedOutSprite: {fileID: 6593910471418514874, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   rottingSprite: {fileID: 0}
-  seedPacketSprite: {fileID: -6777633012209802092, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
-  cropSprite: {fileID: 3802846706208534244, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  seedPacketSprite: {fileID: 3802846706208534244, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  cropSprite: {fileID: -6777633012209802092, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   moistureDepletionRate: 1
   threatResistance: 1

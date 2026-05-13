@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/DailyRewardPopupUITK/DailyRewardPopupUITK.uss" />
+    <ui:VisualElement name="popup-root" class="popup-root" picking-mode="Position">
+        <ui:VisualElement name="backdrop" class="backdrop" picking-mode="Position" />
+        <ui:VisualElement name="popup-frame" class="popup-frame" picking-mode="Position">
+            <ui:VisualElement name="popup-inner" class="popup-inner">
+
+                <ui:VisualElement name="header" class="header">
+                    <ui:Label text="Daily Rewards" name="title" class="title" />
+                    <ui:Button name="close-button" class="close-button" />
+                </ui:VisualElement>
+
+                <ui:VisualElement name="calendar-row" class="calendar-row" />
+
+                <ui:Label name="weekly-bonus" class="weekly-bonus" />
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

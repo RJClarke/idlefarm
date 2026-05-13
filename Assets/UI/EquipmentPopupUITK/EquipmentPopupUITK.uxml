@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="EquipmentPopupUITK.uss" />
+    <ui:VisualElement name="popup-root" class="popup-root" style="display: none;">
+        <ui:VisualElement name="backdrop" class="backdrop" picking-mode="Position" />
+        <ui:VisualElement name="drawer-container" class="drawer-container">
+            <ui:VisualElement name="drawer-header" class="drawer-header">
+                <ui:Label name="drawer-title" text="Equipment" class="drawer-title" />
+                <ui:Button name="close-button" class="close-button" text="X" />
+            </ui:VisualElement>
+            <ui:ScrollView name="section-list" class="section-list" mode="Vertical" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

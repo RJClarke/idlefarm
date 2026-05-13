@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement class="row">
+        <ui:Label name="row-title" class="row-title" />
+        <ui:Label name="row-desc" class="row-desc" />
+        <ui:ScrollView name="tiles-scroll" mode="Horizontal" class="tiles-scroll" vertical-scroller-visibility="Hidden">
+            <ui:VisualElement name="tiles-strip" class="tiles-strip" />
+        </ui:ScrollView>
+    </ui:VisualElement>
+</ui:UXML>

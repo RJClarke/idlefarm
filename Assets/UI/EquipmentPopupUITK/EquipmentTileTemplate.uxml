@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement class="tile">
+        <ui:Label name="tile-level" class="tile-level" />
+        <ui:Label name="tile-bonus" class="tile-bonus" />
+        <ui:Label name="tile-footer" class="tile-footer" />
+    </ui:VisualElement>
+</ui:UXML>

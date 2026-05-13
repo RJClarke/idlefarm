@@ -22,6 +22,8 @@ public class EquipmentData : ScriptableObject
     public string displayName = "Scarecrow";
     public EquipmentType equipmentType = EquipmentType.Scarecrow;
     public string icon = "";
+    [Tooltip("Sprite used in UI tiles (equipment rail, slots, etc.)")]
+    public Sprite iconSprite;
     [TextArea(2, 4)]
     public string description = "Repels crows within its area of effect.";
 
@@ -60,6 +62,10 @@ public class EquipmentData : ScriptableObject
     [Header("Visual")]
     [Tooltip("Optional prefab to spawn in the zone (scarecrow sprite, etc.)")]
     public GameObject visualPrefab;
+
+    [Header("UI Display")]
+    [Tooltip("UpgradeData assets to display in the Equipment popup, in row order.")]
+    public UpgradeData[] uiUpgradeRows;
 
     [Header("Upgrade IDs (must match UpgradeData assets)")]
     public string aoeUpgradeID = "scarecrow_aoe";
@@ -121,4 +127,7 @@ public class EquipmentData : ScriptableObject
     [Tooltip("Extra moisture %/sec per upgrade level")]
     [Range(0.1f, 3f)]
     public float waterPowerBonusPerLevel = 0.5f;
+
+    [Tooltip("Upgrade ID for sprinkler active-duration boost. Only used by Sprinkler.")]
+    public string durationUpgradeID = "";
 }

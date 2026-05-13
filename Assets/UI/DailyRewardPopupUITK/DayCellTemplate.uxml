@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="day-cell" picking-mode="Ignore">
+        <ui:Label name="day-name" class="day-cell__name" />
+        <ui:VisualElement name="reward-block" class="day-cell__reward-block">
+            <ui:Label name="coin-amount" class="day-cell__coin" />
+            <ui:Label name="gem-amount" class="day-cell__gem" />
+        </ui:VisualElement>
+        <ui:Label name="status-label" class="day-cell__status" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -166,6 +166,23 @@ public class DailyRewardManager : MonoBehaviour
         return true;
     }
 
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+    /// <summary>
+    /// Debug: wipe the current week's claim state so today becomes claimable again.
+    /// Keeps the week-start date, just clears the claimed-days flags.
+    /// </summary>
+    public void DebugResetDaily()
+    {
+        for (int i = 0; i < claimedDays.Length; i++) claimedDays[i] = false;
+        PlayerPrefs.DeleteKey(PREF_CLAIMED_DAYS);
+        PlayerPrefs.DeleteKey(PREF_WEEK_START);
+        PlayerPrefs.Save();
+        currentWeekStart = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek);
+        Debug.Log("[Daily] Debug: claim state reset.");
+        OnWeekReset?.Invoke();
+    }
+#endif
+
     /// <summary>
     /// Check if the week has rolled over (it's a new week since last save).
     /// If so, reset all claimed days.

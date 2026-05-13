@@ -1,514 +1,148 @@
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using UnityEngine;
+using UnityEngine.UIElements;
 
-/// <summary>
-/// Seed selection popup shown before starting a run
-/// Allows player to choose which crops to grow in each zone
-/// </summary>
+[RequireComponent(typeof(UIDocument))]
 public class SeedSelectionPopup : MonoBehaviour
 {
     public static SeedSelectionPopup Instance { get; private set; }
 
-    [Header("UI References")]
-    [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private RectTransform popupContainer;
-    [SerializeField] private Button cancelButton;
-    [SerializeField] private Button beginButton;
-    [SerializeField] private TextMeshProUGUI errorText;
+    [Header("Templates")]
+    [SerializeField] private VisualTreeAsset fieldTileTemplate;
+    [SerializeField] private VisualTreeAsset seedTileTemplate;
+    [SerializeField] private VisualTreeAsset equipmentTileTemplate;
 
-    [Header("Zone Slots (2×2 Grid)")]
-    [SerializeField] private ZoneSlot zone1Slot;
-    [SerializeField] private ZoneSlot zone2Slot;
-    [SerializeField] private ZoneSlot zone3Slot;
-    [SerializeField] private ZoneSlot zone4Slot;
-
-    [Header("Seed Packet Grid (2×6)")]
-    [SerializeField] private Transform seedPacketContainer;
-    [SerializeField] private GameObject seedPacketButtonPrefab;
-
-    [Header("Crop Database")]
+    [Header("Data")]
     [SerializeField] private CropDatabase cropDatabase;
-
-    [Header("Equipment")]
-    [Tooltip("All equipment the player has unlocked. Drag EquipmentData assets here.")]
+    [Tooltip("All equipment shown in the bottom rail. Locked items render disabled.")]
     [SerializeField] private EquipmentData[] availableEquipment;
 
-    [Header("Equipment UI Per Zone")]
-    [Tooltip("Optional buttons on each zone slot — click to cycle equipment. Wire in editor.")]
-    [SerializeField] private Button zone1EquipButton;
-    [SerializeField] private Button zone2EquipButton;
-    [SerializeField] private Button zone3EquipButton;
-    [SerializeField] private Button zone4EquipButton;
-    [SerializeField] private TextMeshProUGUI zone1EquipLabel;
-    [SerializeField] private TextMeshProUGUI zone2EquipLabel;
-    [SerializeField] private TextMeshProUGUI zone3EquipLabel;
-    [SerializeField] private TextMeshProUGUI zone4EquipLabel;
-
-    [Header("Animation")]
-    [SerializeField] private float fadeInDuration = 0.3f;
-    [SerializeField] private LeanTweenType easeType = LeanTweenType.easeOutQuad;
-    [SerializeField] private float backdropAlpha = 0.6f;
-
-    // State
-    private Image overlayImage;
-    private SeedSelectionData selectionData;
-    private List<SeedPacketButton> seedPacketButtons = new List<SeedPacketButton>();
-    private int selectedZoneID = -1; // Which zone is currently highlighted
-    private bool isOpen = false;
-
-    // Equipment state — zone ID → index into availableEquipment (-1 = none)
-    private Dictionary<int, int> zoneEquipmentIndex = new Dictionary<int, int>();
-    private const string EQUIP_PREFS_KEY = "EquipmentSelectionData";
-
-    // Events
+    // ── Events kept identical to the old API ────────────────────
     public event Action OnSelectionSaved;
     public event Action OnCancelled;
 
-    private ZoneSlot[] allZoneSlots;
+    // ── Persistent state (PlayerPrefs) ──────────────────────────
+    private SeedSelectionData selectionData;
+    private Dictionary<int, int> zoneEquipmentIndex = new Dictionary<int, int>();
+    private const string EQUIP_PREFS_KEY = "EquipmentSelectionData";
+
+    // ── UI Toolkit refs ─────────────────────────────────────────
+    private UIDocument document;
+    private VisualElement root;
+    private VisualElement popupRoot;
+    private VisualElement popupFrame;
+    private VisualElement backdrop;
+    private Button closeButton;
+    private Button cancelButton;
+    private Button saveButton;
+    private ScrollView seedRail;
+    private ScrollView equipmentRail;
+
+    private readonly Dictionary<int, VisualElement> fieldTiles = new Dictionary<int, VisualElement>();
+    private readonly List<VisualElement> seedRailTiles = new List<VisualElement>();
+    private readonly List<VisualElement> equipmentRailTiles = new List<VisualElement>();
+
+    private bool isOpen;
+    private int selectedZoneID = -1;
+
+    // ────────────────────────────────────────────────────────────
+    // Lifecycle
+    // ────────────────────────────────────────────────────────────
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-
-        // Get or add CanvasGroup
-        if (canvasGroup == null)
-        {
-            canvasGroup = GetComponent<CanvasGroup>();
-            if (canvasGroup == null)
-            {
-                canvasGroup = gameObject.AddComponent<CanvasGroup>();
-            }
-        }
-
-        // Store zone slot references
-        allZoneSlots = new ZoneSlot[] { zone1Slot, zone2Slot, zone3Slot, zone4Slot };
-
-        CreateOverlay();
+        document = GetComponent<UIDocument>();
     }
 
-    private void CreateOverlay()
+    private void OnEnable()
     {
-        GameObject overlayGO = new GameObject("DarkOverlay");
-        overlayGO.transform.SetParent(transform, false);
-        overlayGO.transform.SetSiblingIndex(0); // behind PopupContainer
-
-        RectTransform rt = overlayGO.AddComponent<RectTransform>();
-        rt.anchorMin = Vector2.zero;
-        rt.anchorMax = Vector2.one;
-        rt.sizeDelta = Vector2.zero;
-        rt.anchoredPosition = Vector2.zero;
-
-        overlayImage = overlayGO.AddComponent<Image>();
-        overlayImage.color = new Color(0f, 0f, 0f, 0f);
-        overlayImage.raycastTarget = true;
+        CacheElements();
+        if (root != null) WireCallbacks();
     }
 
-    private void Start()
+    private void CacheElements()
     {
-        // Hook up button listeners
-        if (cancelButton != null)
-            cancelButton.onClick.AddListener(OnCancelClicked);
+        if (document == null) return;
+        root = document.rootVisualElement;
+        if (root == null) return;
 
-        if (beginButton != null)
-            beginButton.onClick.AddListener(OnBeginClicked);
+        root.pickingMode = PickingMode.Ignore;
 
-        // Subscribe to zone slot events
-        if (zone1Slot != null)
-        {
-            zone1Slot.OnZoneClicked += OnZoneSlotClicked;
-            zone1Slot.OnZoneClearedRequest += OnZoneClearRequested;
-        }
-        if (zone2Slot != null)
-        {
-            zone2Slot.OnZoneClicked += OnZoneSlotClicked;
-            zone2Slot.OnZoneClearedRequest += OnZoneClearRequested;
-        }
-        if (zone3Slot != null)
-        {
-            zone3Slot.OnZoneClicked += OnZoneSlotClicked;
-            zone3Slot.OnZoneClearedRequest += OnZoneClearRequested;
-        }
-        if (zone4Slot != null)
-        {
-            zone4Slot.OnZoneClicked += OnZoneSlotClicked;
-            zone4Slot.OnZoneClearedRequest += OnZoneClearRequested;
-        }
+        popupRoot     = root.Q<VisualElement>("popup-root");
+        popupFrame    = root.Q<VisualElement>("popup-frame");
+        backdrop      = root.Q<VisualElement>("backdrop");
+        closeButton   = root.Q<Button>("close-button");
+        cancelButton  = root.Q<Button>("cancel-button");
+        saveButton    = root.Q<Button>("save-button");
+        seedRail      = root.Q<ScrollView>("seed-rail");
+        equipmentRail = root.Q<ScrollView>("equipment-rail");
 
-        // Equipment buttons — cycle through available equipment on click
-        if (zone1EquipButton != null) zone1EquipButton.onClick.AddListener(() => CycleEquipment(1));
-        if (zone2EquipButton != null) zone2EquipButton.onClick.AddListener(() => CycleEquipment(2));
-        if (zone3EquipButton != null) zone3EquipButton.onClick.AddListener(() => CycleEquipment(3));
-        if (zone4EquipButton != null) zone4EquipButton.onClick.AddListener(() => CycleEquipment(4));
-
-        // Start hidden
-        HideImmediate();
+        fieldTiles.Clear();
+        fieldTiles[1] = root.Q<VisualElement>("field-1");
+        fieldTiles[2] = root.Q<VisualElement>("field-2");
+        fieldTiles[3] = root.Q<VisualElement>("field-3");
+        fieldTiles[4] = root.Q<VisualElement>("field-4");
     }
 
-    private void OnDestroy()
+    private void WireCallbacks()
     {
-        if (cancelButton != null)
-            cancelButton.onClick.RemoveListener(OnCancelClicked);
-
-        if (beginButton != null)
-            beginButton.onClick.RemoveListener(OnBeginClicked);
-
-        // Unsubscribe from zone events
-        if (zone1Slot != null)
-        {
-            zone1Slot.OnZoneClicked -= OnZoneSlotClicked;
-            zone1Slot.OnZoneClearedRequest -= OnZoneClearRequested;
-        }
-        if (zone2Slot != null)
-        {
-            zone2Slot.OnZoneClicked -= OnZoneSlotClicked;
-            zone2Slot.OnZoneClearedRequest -= OnZoneClearRequested;
-        }
-        if (zone3Slot != null)
-        {
-            zone3Slot.OnZoneClicked -= OnZoneSlotClicked;
-            zone3Slot.OnZoneClearedRequest -= OnZoneClearRequested;
-        }
-        if (zone4Slot != null)
-        {
-            zone4Slot.OnZoneClicked -= OnZoneSlotClicked;
-            zone4Slot.OnZoneClearedRequest -= OnZoneClearRequested;
-        }
-
-        if (zone1EquipButton != null) zone1EquipButton.onClick.RemoveAllListeners();
-        if (zone2EquipButton != null) zone2EquipButton.onClick.RemoveAllListeners();
-        if (zone3EquipButton != null) zone3EquipButton.onClick.RemoveAllListeners();
-        if (zone4EquipButton != null) zone4EquipButton.onClick.RemoveAllListeners();
+        if (closeButton  != null) closeButton.clicked  += OnCancelClicked;
+        if (cancelButton != null) cancelButton.clicked += OnCancelClicked;
+        if (saveButton   != null) saveButton.clicked   += OnSaveClicked;
+        if (backdrop     != null) backdrop.RegisterCallback<ClickEvent>(_ => OnCancelClicked());
     }
 
-    /// <summary>
-    /// Show the popup
-    /// </summary>
+    // ────────────────────────────────────────────────────────────
+    // Public API (kept identical to old script)
+    // ────────────────────────────────────────────────────────────
+
     public void Show()
     {
         if (isOpen) return;
-
-        // Load last selection
-        selectionData = SeedSelectionData.Load();
-
-        // Initialize zone slots
-        InitializeZoneSlots();
-
-        // Create seed packet buttons
-        CreateSeedPacketButtons();
-
-        // Apply saved selections
-        ApplySavedSelections();
-
-        // Load equipment assignments and disable buttons for locked zones
-        LoadEquipmentAssignments();
-        UpdateAllEquipmentLabels();
-        UpdateEquipmentButtonStates();
-
-        // Update UI state
-        UpdateAllSeedPacketAvailability();
-        ValidateAndUpdateBeginButton();
-
-        // Animate in
-        AnimateIn();
-
         isOpen = true;
+        selectedZoneID = -1;
 
+        selectionData = SeedSelectionData.Load();
+        LoadEquipmentAssignments();
+        ScrubLockedZoneAssignments();
 
+        BuildFieldTiles();
+        BuildSeedRail();
+        BuildEquipmentRail();
+
+        if (root != null) root.pickingMode = PickingMode.Position;
+        if (popupRoot != null)
+        {
+            popupRoot.style.display = DisplayStyle.Flex;
+            popupRoot.schedule.Execute(() => popupRoot.AddToClassList("open")).StartingIn(0);
+        }
     }
 
-    /// <summary>
-    /// Hide the popup
-    /// </summary>
     public void Hide()
     {
         if (!isOpen) return;
-
-        AnimateOut();
-
         isOpen = false;
-
-
-    }
-
-    /// <summary>
-    /// Initialize zone slots with unlock status
-    /// </summary>
-    private void InitializeZoneSlots()
-    {
-        if (zone1Slot != null)
-            zone1Slot.Initialize(1, true); // Zone 1 always unlocked
-
-        if (zone2Slot != null)
-            zone2Slot.Initialize(2, selectionData.IsZoneUnlocked(2));
-
-        if (zone3Slot != null)
-            zone3Slot.Initialize(3, selectionData.IsZoneUnlocked(3));
-
-        if (zone4Slot != null)
-            zone4Slot.Initialize(4, selectionData.IsZoneUnlocked(4));
-    }
-
-    /// <summary>
-    /// Create seed packet buttons from crop database
-    /// </summary>
-    private void CreateSeedPacketButtons()
-    {
-        if (cropDatabase == null)
+        if (popupRoot != null)
         {
-            Debug.LogError("CropDatabase not assigned to SeedSelectionPopup!");
-            return;
-        }
-
-        if (seedPacketButtonPrefab == null)
-        {
-            Debug.LogError("SeedPacketButton prefab not assigned!");
-            return;
-        }
-
-        // Clear existing buttons
-        foreach (SeedPacketButton button in seedPacketButtons)
-        {
-            if (button != null)
-                Destroy(button.gameObject);
-        }
-        seedPacketButtons.Clear();
-
-        // Create buttons for all crops in database
-        // NOTE: For MVP, all crops available. Later will filter by unlocks.
-        foreach (CropData crop in cropDatabase.allCrops)
-        {
-            if (crop == null) continue;
-
-            GameObject buttonObj = Instantiate(seedPacketButtonPrefab, seedPacketContainer);
-            SeedPacketButton button = buttonObj.GetComponent<SeedPacketButton>();
-
-            if (button != null)
+            popupRoot.RemoveFromClassList("open");
+            popupRoot.schedule.Execute(() =>
             {
-                button.Initialize(crop);
-                button.OnSeedPacketClicked += OnSeedPacketClicked;
-                seedPacketButtons.Add(button);
-            }
-        }
-
-
-    }
-
-    /// <summary>
-    /// Apply saved selections to zone slots
-    /// </summary>
-    private void ApplySavedSelections()
-    {
-        for (int zoneID = 1; zoneID <= 4; zoneID++)
-        {
-            string cropName = selectionData.GetCropName(zoneID);
-            if (cropName != null && cropDatabase != null)
-            {
-                CropData crop = cropDatabase.GetCropByName(cropName);
-                if (crop != null)
-                {
-                    ZoneSlot slot = GetZoneSlot(zoneID);
-                    if (slot != null && slot.IsUnlocked)
-                    {
-                        slot.AssignCrop(crop);
-                    }
-                }
-            }
+                if (isOpen) return;
+                popupRoot.style.display = DisplayStyle.None;
+                if (root != null) root.pickingMode = PickingMode.Ignore;
+            }).StartingIn(260);
         }
     }
 
-    /// <summary>
-    /// Zone slot clicked - select it
-    /// </summary>
-    private void OnZoneSlotClicked(int zoneID)
-    {
-        // Deselect previously selected zone
-        if (selectedZoneID > 0)
-        {
-            ZoneSlot prevSlot = GetZoneSlot(selectedZoneID);
-            if (prevSlot != null)
-                prevSlot.SetSelected(false);
-        }
-
-        // Select new zone
-        selectedZoneID = zoneID;
-        ZoneSlot newSlot = GetZoneSlot(zoneID);
-        if (newSlot != null)
-            newSlot.SetSelected(true);
-
-
-    }
-
-    /// <summary>
-    /// Clear button clicked on zone slot
-    /// </summary>
-    private void OnZoneClearRequested(int zoneID)
-    {
-        // Clear from data
-        selectionData.ClearZone(zoneID);
-
-        // Clear from UI
-        ZoneSlot slot = GetZoneSlot(zoneID);
-        if (slot != null)
-        {
-            slot.ClearCrop();
-        }
-
-        // Update seed packet availability
-        UpdateAllSeedPacketAvailability();
-        ValidateAndUpdateBeginButton();
-
-
-    }
-
-    /// <summary>
-    /// Seed packet clicked - assign to selected zone or auto-fill
-    /// </summary>
-    private void OnSeedPacketClicked(CropData crop)
-    {
-        if (crop == null) return;
-
-        // Check if already assigned
-        if (selectionData.IsCropAssigned(crop.cropName))
-        {
-            return;
-        }
-
-        int targetZone = selectedZoneID;
-
-        // If no zone selected, auto-fill first empty zone
-        if (targetZone <= 0)
-        {
-            targetZone = selectionData.GetFirstEmptyZone();
-        }
-
-        if (targetZone <= 0)
-        {
-            Debug.LogWarning("No empty zone available!");
-            return;
-        }
-
-        // Assign crop to zone
-        selectionData.AssignCrop(targetZone, crop);
-
-        // Update UI
-        ZoneSlot slot = GetZoneSlot(targetZone);
-        if (slot != null)
-        {
-            slot.AssignCrop(crop);
-        }
-
-        // Deselect zone after assignment
-        if (selectedZoneID > 0)
-        {
-            ZoneSlot prevSlot = GetZoneSlot(selectedZoneID);
-            if (prevSlot != null)
-                prevSlot.SetSelected(false);
-        }
-        selectedZoneID = -1;
-
-        // Update seed packet availability
-        UpdateAllSeedPacketAvailability();
-        ValidateAndUpdateBeginButton();
-
-
-    }
-
-    /// <summary>
-    /// Update all seed packet buttons' availability
-    /// </summary>
-    private void UpdateAllSeedPacketAvailability()
-    {
-        foreach (SeedPacketButton button in seedPacketButtons)
-        {
-            if (button == null || button.CropData == null) continue;
-
-            bool isAvailable = !selectionData.IsCropAssigned(button.CropData.cropName);
-            button.SetAvailable(isAvailable);
-        }
-    }
-
-    /// <summary>
-    /// Update Save button state — always enabled (partial config is fine)
-    /// </summary>
-    private void ValidateAndUpdateBeginButton()
-    {
-        if (beginButton != null)
-            beginButton.interactable = true;
-
-        if (errorText != null)
-            errorText.gameObject.SetActive(false);
-    }
-
-    /// <summary>
-    /// Check if saved config is ready to start a run (all unlocked zones filled).
-    /// Called by RunManager before starting.
-    /// </summary>
     public bool IsReadyToRun()
     {
-        if (selectionData == null)
-            selectionData = SeedSelectionData.Load();
+        if (selectionData == null) selectionData = SeedSelectionData.Load();
         return selectionData.AreAllUnlockedZonesFilled();
     }
 
-    /// <summary>
-    /// Get zone slot by ID
-    /// </summary>
-    private ZoneSlot GetZoneSlot(int zoneID)
-    {
-        switch (zoneID)
-        {
-            case 1: return zone1Slot;
-            case 2: return zone2Slot;
-            case 3: return zone3Slot;
-            case 4: return zone4Slot;
-            default: return null;
-        }
-    }
-
-    /// <summary>
-    /// Cancel button clicked
-    /// </summary>
-    private void OnCancelClicked()
-    {
-        Hide();
-        OnCancelled?.Invoke();
-    }
-
-    /// <summary>
-    /// Save button clicked - save selections and close
-    /// </summary>
-    private void OnBeginClicked()
-    {
-        // Save selection
-        selectionData.Save();
-        SaveEquipmentAssignments();
-
-        // Push equipment assignments to EquipmentManager (for home screen visuals)
-        ApplyEquipmentToManager();
-
-        // Notify listeners
-        OnSelectionSaved?.Invoke();
-
-        // Hide popup
-        Hide();
-
-        Debug.Log("Field configuration saved");
-    }
-
-    /// <summary>
-    /// Load saved seed/equipment selections and apply equipment to manager.
-    /// Called by RunManager when starting a run without opening the popup.
-    /// Returns the zone seed dictionary.
-    /// </summary>
     public Dictionary<int, CropData> LoadAndApplySavedSelections()
     {
         selectionData = SeedSelectionData.Load();
@@ -517,220 +151,339 @@ public class SeedSelectionPopup : MonoBehaviour
         return selectionData.ToZoneSeedDictionary(cropDatabase);
     }
 
-    /// <summary>
-    /// Animate popup in
-    /// </summary>
-    private void AnimateIn()
+    // ────────────────────────────────────────────────────────────
+    // Field tile build / refresh
+    // ────────────────────────────────────────────────────────────
+
+    private void BuildFieldTiles()
     {
-        canvasGroup.alpha = 0f;
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.interactable = true;
+        if (fieldTileTemplate == null) { Debug.LogWarning("[SeedSelectionPopup] fieldTileTemplate not assigned"); return; }
 
-        if (overlayImage != null)
+        for (int zone = 1; zone <= 4; zone++)
         {
-            overlayImage.color = new Color(0f, 0f, 0f, 0f);
-            LeanTween.value(overlayImage.gameObject, 0f, backdropAlpha, fadeInDuration)
-                .setEase(easeType)
-                .setOnUpdate(a => { if (overlayImage != null) overlayImage.color = new Color(0f, 0f, 0f, a); });
-        }
+            VisualElement container = fieldTiles[zone];
+            if (container == null) continue;
 
-        if (popupContainer != null)
-        {
-            popupContainer.localScale = Vector3.one * 0.8f;
-            LeanTween.scale(popupContainer.gameObject, Vector3.one, fadeInDuration)
-                .setEase(easeType);
-        }
+            container.Clear();
+            TemplateContainer instance = fieldTileTemplate.Instantiate();
+            container.Add(instance);
 
-        LeanTween.alphaCanvas(canvasGroup, 1f, fadeInDuration)
-            .setEase(easeType);
+            int capturedZone = zone;
+            container.RegisterCallback<ClickEvent>(_ => OnFieldClicked(capturedZone));
+
+            Button cropClear = instance.Q<Button>("crop-clear");
+            Button equipClear = instance.Q<Button>("equip-clear");
+            if (cropClear != null) cropClear.clicked += () => OnClearCrop(capturedZone);
+            if (equipClear != null) equipClear.clicked += () => OnClearEquipment(capturedZone);
+
+            RefreshFieldTile(zone);
+        }
     }
 
-    /// <summary>
-    /// Animate popup out
-    /// </summary>
-    private void AnimateOut()
+    private void RefreshFieldTile(int zone)
     {
-        canvasGroup.blocksRaycasts = false;
-        canvasGroup.interactable = false;
+        VisualElement container = fieldTiles[zone];
+        if (container == null) return;
 
-        if (overlayImage != null)
+        bool unlocked = selectionData.IsZoneUnlocked(zone);
+        bool selected = (zone == selectedZoneID);
+
+        container.RemoveFromClassList("field-tile--selected");
+        container.RemoveFromClassList("field-tile--locked");
+        if (!unlocked) container.AddToClassList("field-tile--locked");
+        else if (selected) container.AddToClassList("field-tile--selected");
+
+        Label fieldLabel = container.Q<Label>("field-label");
+        if (fieldLabel != null) fieldLabel.text = "Field " + zone;
+
+        // Crop slot
+        VisualElement cropSlot   = container.Q<VisualElement>("crop-slot");
+        VisualElement cropImage  = container.Q<VisualElement>("crop-image");
+        Label         cropName   = container.Q<Label>("crop-name");
+        string assignedCropName = selectionData.GetCropName(zone);
+        CropData assignedCrop = (assignedCropName != null && cropDatabase != null)
+            ? cropDatabase.GetCropByName(assignedCropName) : null;
+
+        if (cropSlot != null)
         {
-            float startAlpha = overlayImage.color.a;
-            LeanTween.value(overlayImage.gameObject, startAlpha, 0f, fadeInDuration)
-                .setEase(easeType)
-                .setOnUpdate(a => { if (overlayImage != null) overlayImage.color = new Color(0f, 0f, 0f, a); });
-        }
-
-        if (popupContainer != null)
-        {
-            LeanTween.scale(popupContainer.gameObject, Vector3.one * 0.8f, fadeInDuration)
-                .setEase(easeType);
-        }
-
-        LeanTween.alphaCanvas(canvasGroup, 0f, fadeInDuration)
-            .setEase(easeType);
-    }
-
-    /// <summary>
-    /// Hide immediately without animation
-    /// </summary>
-    private void HideImmediate()
-    {
-        canvasGroup.alpha = 0f;
-        canvasGroup.blocksRaycasts = false;
-        canvasGroup.interactable = false;
-
-        if (overlayImage != null)
-            overlayImage.color = new Color(0f, 0f, 0f, 0f);
-    }
-
-    // ─────────────────────────────────────────────────────────────────────
-    // Equipment Selection
-    // ─────────────────────────────────────────────────────────────────────
-
-    /// <summary>
-    /// Cycle equipment for a zone: None → next unlocked → ... → None
-    /// Skips equipment that hasn't been purchased at the Market.
-    /// </summary>
-    private void CycleEquipment(int zoneId)
-    {
-        if (availableEquipment == null || availableEquipment.Length == 0) return;
-
-        ZoneSlot slot = GetZoneSlot(zoneId);
-        if (slot == null || !slot.IsUnlocked) return;
-
-        int currentIdx;
-        if (!zoneEquipmentIndex.TryGetValue(zoneId, out currentIdx))
-            currentIdx = -1;
-
-        // Find next unlocked equipment (or wrap to -1 = none)
-        int startIdx = currentIdx;
-        while (true)
-        {
-            currentIdx++;
-            if (currentIdx >= availableEquipment.Length)
-                currentIdx = -1;
-
-            // Wrapped back to none — always valid
-            if (currentIdx == -1)
-                break;
-
-            // Check if this equipment is unlocked
-            if (availableEquipment[currentIdx] != null && availableEquipment[currentIdx].IsUnlocked())
-                break;
-
-            // Safety: if we've looped all the way around, settle on none
-            if (currentIdx == startIdx)
+            cropSlot.RemoveFromClassList("slot--filled");
+            if (assignedCrop != null)
             {
-                currentIdx = -1;
-                break;
+                cropSlot.AddToClassList("slot--filled");
+                if (cropImage != null && assignedCrop.seedPacketSprite != null)
+                    cropImage.style.backgroundImage = new StyleBackground(assignedCrop.seedPacketSprite);
+                else if (cropImage != null && assignedCrop.cropSprite != null)
+                    cropImage.style.backgroundImage = new StyleBackground(assignedCrop.cropSprite);
+                if (cropName != null) cropName.text = assignedCrop.cropName;
+            }
+            else
+            {
+                if (cropImage != null) cropImage.style.backgroundImage = StyleKeyword.None;
             }
         }
 
-        zoneEquipmentIndex[zoneId] = currentIdx;
-        UpdateEquipmentLabel(zoneId);
-    }
+        // Equipment slot
+        VisualElement equipSlot  = container.Q<VisualElement>("equip-slot");
+        VisualElement equipImage = container.Q<VisualElement>("equip-image");
+        Label         equipName  = container.Q<Label>("equip-name");
+        EquipmentData assignedEquip = GetAssignedEquipment(zone);
 
-    private void UpdateEquipmentLabel(int zoneId)
-    {
-        TextMeshProUGUI label = GetEquipmentLabel(zoneId);
-        if (label == null) return;
-
-        int idx;
-        if (!zoneEquipmentIndex.TryGetValue(zoneId, out idx))
-            idx = -1;
-
-        if (idx < 0 || availableEquipment == null || idx >= availableEquipment.Length)
+        if (equipSlot != null)
         {
-            label.text = "No Equipment";
-        }
-        else
-        {
-            EquipmentData eq = availableEquipment[idx];
-            label.text = eq != null ? eq.displayName : "No Equipment";
-        }
-    }
-
-    private void UpdateAllEquipmentLabels()
-    {
-        for (int z = 1; z <= 4; z++)
-            UpdateEquipmentLabel(z);
-    }
-
-    private TextMeshProUGUI GetEquipmentLabel(int zoneId)
-    {
-        switch (zoneId)
-        {
-            case 1: return zone1EquipLabel;
-            case 2: return zone2EquipLabel;
-            case 3: return zone3EquipLabel;
-            case 4: return zone4EquipLabel;
-            default: return null;
-        }
-    }
-
-    private Button GetEquipmentButton(int zoneId)
-    {
-        switch (zoneId)
-        {
-            case 1: return zone1EquipButton;
-            case 2: return zone2EquipButton;
-            case 3: return zone3EquipButton;
-            case 4: return zone4EquipButton;
-            default: return null;
-        }
-    }
-
-    /// <summary>
-    /// Disable equipment buttons and clear selections for locked zones.
-    /// </summary>
-    private void UpdateEquipmentButtonStates()
-    {
-        for (int z = 1; z <= 4; z++)
-        {
-            ZoneSlot slot = GetZoneSlot(z);
-            bool unlocked = slot != null && slot.IsUnlocked;
-
-            Button btn = GetEquipmentButton(z);
-            if (btn != null)
+            equipSlot.RemoveFromClassList("slot--filled");
+            if (assignedEquip != null)
             {
-                btn.interactable = unlocked;
-                btn.gameObject.SetActive(unlocked);
+                equipSlot.AddToClassList("slot--filled");
+                if (equipImage != null)
+                {
+                    if (assignedEquip.iconSprite != null)
+                        equipImage.style.backgroundImage = new StyleBackground(assignedEquip.iconSprite);
+                    else
+                        equipImage.style.backgroundImage = StyleKeyword.None;
+                }
+                if (equipName != null) equipName.text = assignedEquip.displayName;
             }
-
-            TextMeshProUGUI label = GetEquipmentLabel(z);
-            if (label != null)
-                label.gameObject.SetActive(unlocked);
-
-            // Clear any saved equipment for locked zones
-            if (!unlocked && zoneEquipmentIndex.ContainsKey(z))
-                zoneEquipmentIndex.Remove(z);
+            else
+            {
+                if (equipImage != null) equipImage.style.backgroundImage = StyleKeyword.None;
+            }
         }
     }
 
-    /// <summary>
-    /// Push current equipment selections to EquipmentManager.
-    /// </summary>
+    private void RefreshAllFieldTiles()
+    {
+        for (int z = 1; z <= 4; z++) RefreshFieldTile(z);
+    }
+
+    // ────────────────────────────────────────────────────────────
+    // Seed rail
+    // ────────────────────────────────────────────────────────────
+
+    private void BuildSeedRail()
+    {
+        if (seedRail == null || seedTileTemplate == null || cropDatabase == null) return;
+
+        foreach (VisualElement old in seedRailTiles) old.RemoveFromHierarchy();
+        seedRailTiles.Clear();
+
+        foreach (CropData crop in cropDatabase.allCrops)
+        {
+            if (crop == null) continue;
+            TemplateContainer tile = seedTileTemplate.Instantiate();
+            VisualElement tileRoot = tile.Q(className: "rail-tile") ?? tile.contentContainer;
+            VisualElement img = tile.Q<VisualElement>("tile-image");
+            Label label = tile.Q<Label>("tile-label");
+            Button btn = tile.Q<Button>() ?? tileRoot as Button;
+
+            if (img != null && crop.seedPacketSprite != null)
+                img.style.backgroundImage = new StyleBackground(crop.seedPacketSprite);
+            else if (img != null && crop.cropSprite != null)
+                img.style.backgroundImage = new StyleBackground(crop.cropSprite);
+            if (label != null) label.text = crop.cropName;
+
+            CropData captured = crop;
+            if (btn != null) btn.clicked += () => OnSeedTileClicked(captured);
+
+            seedRail.Add(tile);
+            seedRailTiles.Add(tile);
+        }
+
+        RefreshSeedRailStates();
+    }
+
+    private void RefreshSeedRailStates()
+    {
+        if (cropDatabase == null) return;
+        int i = 0;
+        foreach (CropData crop in cropDatabase.allCrops)
+        {
+            if (crop == null) continue;
+            if (i >= seedRailTiles.Count) break;
+            VisualElement tile = seedRailTiles[i++];
+            VisualElement tileRoot = tile.Q(className: "rail-tile") ?? tile;
+            tileRoot.RemoveFromClassList("rail-tile--assigned");
+            tileRoot.RemoveFromClassList("rail-tile--locked");
+            if (selectionData.IsCropAssigned(crop.cropName))
+                tileRoot.AddToClassList("rail-tile--assigned");
+        }
+    }
+
+    // ────────────────────────────────────────────────────────────
+    // Equipment rail
+    // ────────────────────────────────────────────────────────────
+
+    private void BuildEquipmentRail()
+    {
+        if (equipmentRail == null || equipmentTileTemplate == null || availableEquipment == null) return;
+
+        foreach (VisualElement old in equipmentRailTiles) old.RemoveFromHierarchy();
+        equipmentRailTiles.Clear();
+
+        foreach (EquipmentData eq in availableEquipment)
+        {
+            if (eq == null) continue;
+            TemplateContainer tile = equipmentTileTemplate.Instantiate();
+            VisualElement tileRoot = tile.Q(className: "rail-tile") ?? tile.contentContainer;
+            VisualElement img = tile.Q<VisualElement>("tile-image");
+            Label label = tile.Q<Label>("tile-label");
+            Button btn = tile.Q<Button>() ?? tileRoot as Button;
+
+            if (img != null)
+            {
+                if (eq.iconSprite != null)
+                    img.style.backgroundImage = new StyleBackground(eq.iconSprite);
+                else
+                    img.style.backgroundImage = StyleKeyword.None;
+            }
+            if (label != null) label.text = eq.displayName;
+
+            EquipmentData captured = eq;
+            if (btn != null) btn.clicked += () => OnEquipmentTileClicked(captured);
+
+            equipmentRail.Add(tile);
+            equipmentRailTiles.Add(tile);
+        }
+
+        RefreshEquipmentRailStates();
+    }
+
+    private void RefreshEquipmentRailStates()
+    {
+        if (availableEquipment == null) return;
+        for (int i = 0; i < equipmentRailTiles.Count && i < availableEquipment.Length; i++)
+        {
+            EquipmentData eq = availableEquipment[i];
+            if (eq == null) continue;
+
+            VisualElement tile = equipmentRailTiles[i];
+            VisualElement tileRoot = tile.Q(className: "rail-tile") ?? tile;
+            Button btn = tile.Q<Button>() ?? tileRoot as Button;
+
+            tileRoot.RemoveFromClassList("rail-tile--locked");
+            tileRoot.RemoveFromClassList("rail-tile--assigned");
+
+            bool unlocked = eq.IsUnlocked();
+            if (!unlocked) tileRoot.AddToClassList("rail-tile--locked");
+            if (btn != null) btn.SetEnabled(unlocked);
+        }
+    }
+
+    // ────────────────────────────────────────────────────────────
+    // Interaction handlers
+    // ────────────────────────────────────────────────────────────
+
+    private void OnFieldClicked(int zone)
+    {
+        if (!selectionData.IsZoneUnlocked(zone)) return;
+        selectedZoneID = (selectedZoneID == zone) ? -1 : zone;
+        RefreshAllFieldTiles();
+    }
+
+    private void OnSeedTileClicked(CropData crop)
+    {
+        if (crop == null) return;
+        if (selectionData.IsCropAssigned(crop.cropName)) return;
+
+        int targetZone = selectedZoneID > 0 ? selectedZoneID : selectionData.GetFirstEmptyZone();
+        if (targetZone <= 0 || !selectionData.IsZoneUnlocked(targetZone)) return;
+
+        selectionData.AssignCrop(targetZone, crop);
+        selectedZoneID = -1;
+        RefreshAllFieldTiles();
+        RefreshSeedRailStates();
+    }
+
+    private void OnEquipmentTileClicked(EquipmentData eq)
+    {
+        if (eq == null || !eq.IsUnlocked()) return;
+
+        int targetZone = selectedZoneID > 0 ? selectedZoneID : GetFirstZoneWithoutEquipment();
+        if (targetZone <= 0 || !selectionData.IsZoneUnlocked(targetZone)) return;
+
+        int idx = Array.IndexOf(availableEquipment, eq);
+        if (idx < 0) return;
+
+        zoneEquipmentIndex[targetZone] = idx;
+        selectedZoneID = -1;
+        RefreshAllFieldTiles();
+    }
+
+    private void OnClearCrop(int zone)
+    {
+        selectionData.ClearZone(zone);
+        RefreshFieldTile(zone);
+        RefreshSeedRailStates();
+    }
+
+    private void OnClearEquipment(int zone)
+    {
+        zoneEquipmentIndex.Remove(zone);
+        RefreshFieldTile(zone);
+    }
+
+    private void OnCancelClicked()
+    {
+        Hide();
+        OnCancelled?.Invoke();
+    }
+
+    private void OnSaveClicked()
+    {
+        if (selectionData == null) selectionData = SeedSelectionData.Load();
+        selectionData.Save();
+        SaveEquipmentAssignments();
+        ApplyEquipmentToManager();
+        OnSelectionSaved?.Invoke();
+        Hide();
+        Debug.Log("Field configuration saved");
+    }
+
+    // ────────────────────────────────────────────────────────────
+    // Equipment persistence (identical format to old script)
+    // ────────────────────────────────────────────────────────────
+
+    private EquipmentData GetAssignedEquipment(int zone)
+    {
+        if (!zoneEquipmentIndex.TryGetValue(zone, out int idx)) return null;
+        if (availableEquipment == null || idx < 0 || idx >= availableEquipment.Length) return null;
+        return availableEquipment[idx];
+    }
+
+    private int GetFirstZoneWithoutEquipment()
+    {
+        for (int z = 1; z <= 4; z++)
+        {
+            if (selectionData.IsZoneUnlocked(z) && !zoneEquipmentIndex.ContainsKey(z))
+                return z;
+        }
+        return -1;
+    }
+
+    private void ScrubLockedZoneAssignments()
+    {
+        List<int> toRemove = new List<int>();
+        foreach (int z in zoneEquipmentIndex.Keys)
+            if (!selectionData.IsZoneUnlocked(z)) toRemove.Add(z);
+        foreach (int z in toRemove) zoneEquipmentIndex.Remove(z);
+
+        // Locked zones must never carry a crop assignment either.
+        for (int z = 1; z <= 4; z++)
+            if (!selectionData.IsZoneUnlocked(z))
+                selectionData.ClearZone(z);
+    }
+
     private void ApplyEquipmentToManager()
     {
         if (EquipmentManager.Instance == null) return;
-
         EquipmentManager.Instance.ClearAllAssignments();
-
         foreach (var kvp in zoneEquipmentIndex)
         {
             int idx = kvp.Value;
             if (idx >= 0 && availableEquipment != null && idx < availableEquipment.Length)
-            {
                 EquipmentManager.Instance.AssignEquipment(kvp.Key, availableEquipment[idx]);
-            }
         }
     }
 
-    /// <summary>
-    /// Save equipment assignments to PlayerPrefs (parallel to SeedSelectionData).
-    /// Format: "zoneId:equipmentID;zoneId:equipmentID;..."
-    /// </summary>
     private void SaveEquipmentAssignments()
     {
         List<string> entries = new List<string>();
@@ -740,35 +493,27 @@ public class SeedSelectionPopup : MonoBehaviour
             if (idx >= 0 && availableEquipment != null && idx < availableEquipment.Length)
             {
                 EquipmentData eq = availableEquipment[idx];
-                if (eq != null)
-                    entries.Add($"{kvp.Key}:{eq.equipmentID}");
+                if (eq != null) entries.Add($"{kvp.Key}:{eq.equipmentID}");
             }
         }
         PlayerPrefs.SetString(EQUIP_PREFS_KEY, string.Join(";", entries));
         PlayerPrefs.Save();
     }
 
-    /// <summary>
-    /// Load equipment assignments from PlayerPrefs.
-    /// </summary>
     private void LoadEquipmentAssignments()
     {
         zoneEquipmentIndex.Clear();
-
         if (!PlayerPrefs.HasKey(EQUIP_PREFS_KEY)) return;
         if (availableEquipment == null || availableEquipment.Length == 0) return;
 
         string saved = PlayerPrefs.GetString(EQUIP_PREFS_KEY);
         if (string.IsNullOrEmpty(saved)) return;
 
-        string[] entries = saved.Split(';');
-        foreach (string entry in entries)
+        foreach (string entry in saved.Split(';'))
         {
             string[] parts = entry.Split(':');
             if (parts.Length != 2) continue;
-
-            int zoneId;
-            if (!int.TryParse(parts[0], out zoneId)) continue;
+            if (!int.TryParse(parts[0], out int zoneId)) continue;
 
             string equipId = parts[1];
             int idx = Array.FindIndex(availableEquipment, e => e != null && e.equipmentID == equipId);

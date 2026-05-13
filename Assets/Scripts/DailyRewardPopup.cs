@@ -1,87 +1,55 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-using System;
+using UnityEngine.UIElements;
 
-/// <summary>
-/// Modal popup showing a 7-day reward calendar.
-/// Each day shows: day name, coin amount, and status (claimed/available/missed/upcoming).
-/// Dynamically generates day cells from code.
-/// </summary>
+[RequireComponent(typeof(UIDocument))]
 public class DailyRewardPopup : MonoBehaviour
 {
     public static DailyRewardPopup Instance { get; private set; }
 
-    [Header("UI References")]
-    [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private RectTransform popupContainer;
-    [SerializeField] private Button backdropButton;
-    [SerializeField] private Button closeButton;
-    [SerializeField] private Button claimButton;
-    [SerializeField] private TextMeshProUGUI claimButtonText;
-    [SerializeField] private TextMeshProUGUI titleText;
-    [SerializeField] private TextMeshProUGUI weeklyBonusText;
-    [SerializeField] private RectTransform calendarContainer;
+    [Header("Templates")]
+    [SerializeField] private VisualTreeAsset dayCellTemplate;
 
-    [Header("Chest Button (opens this popup)")]
-    [SerializeField] private Button chestButton;
+    [Header("Chest button (opens this popup)")]
+    [SerializeField] private UnityEngine.UI.Button chestButton;
     [SerializeField] private GameObject notificationDot;
 
-    [Header("Day Cell Settings")]
-    [SerializeField] private float cellWidth = 90f;
-    [SerializeField] private float cellHeight = 110f;
-    [SerializeField] private float cellSpacing = 8f;
+    // ── UI Toolkit refs ─────────────────────────────────────────
+    private UIDocument document;
+    private VisualElement root;
+    private VisualElement popupRoot;
+    private VisualElement popupFrame;
+    private VisualElement backdrop;
+    private Button closeButton;
+    private Label weeklyBonusLabel;
+    private VisualElement calendarRow;
 
-    [Header("Colors")]
-    [SerializeField] private Color claimedColor = new Color(0.3f, 0.7f, 0.3f, 1f);
-    [SerializeField] private Color availableColor = new Color(1f, 0.85f, 0.3f, 1f);
-    [SerializeField] private Color missedColor = new Color(0.4f, 0.4f, 0.4f, 0.6f);
-    [SerializeField] private Color upcomingColor = new Color(0.25f, 0.25f, 0.25f, 0.8f);
-    [SerializeField] private Color todayOutlineColor = new Color(1f, 0.9f, 0.3f, 1f);
-
-    [Header("Animation")]
-    [SerializeField] private float fadeInDuration = 0.3f;
-    [SerializeField] private LeanTweenType easeType = LeanTweenType.easeOutQuad;
-
-    private bool isOpen = false;
-    private GameObject[] dayCells = new GameObject[7];
+    private readonly VisualElement[] dayCells = new VisualElement[7];
+    private bool isOpen;
+    private bool hasCheckedDot;
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
+        document = GetComponent<UIDocument>();
+    }
 
-        if (canvasGroup == null)
-        {
-            canvasGroup = GetComponent<CanvasGroup>();
-            if (canvasGroup == null)
-                canvasGroup = gameObject.AddComponent<CanvasGroup>();
-        }
+    private void OnEnable()
+    {
+        CacheElements();
+        if (root != null) WireCallbacks();
     }
 
     private void Start()
     {
-        if (closeButton != null)
-            closeButton.onClick.AddListener(Hide);
-        if (backdropButton != null)
-            backdropButton.onClick.AddListener(Hide);
-        if (claimButton != null)
-            claimButton.onClick.AddListener(OnClaimClicked);
-        if (chestButton != null)
-            chestButton.onClick.AddListener(Show);
-
-        HideImmediate();
-
-        // Hide dot initially, update once manager is ready
-        if (notificationDot != null)
-            notificationDot.SetActive(false);
+        if (chestButton != null) chestButton.onClick.AddListener(Show);
+        if (notificationDot != null) notificationDot.SetActive(false);
     }
 
-    private bool hasCheckedDot = false;
+    private void OnDestroy()
+    {
+        if (chestButton != null) chestButton.onClick.RemoveListener(Show);
+    }
 
     private void Update()
     {
@@ -92,50 +60,71 @@ public class DailyRewardPopup : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    private void CacheElements()
     {
-        if (closeButton != null)
-            closeButton.onClick.RemoveListener(Hide);
-        if (backdropButton != null)
-            backdropButton.onClick.RemoveListener(Hide);
-        if (claimButton != null)
-            claimButton.onClick.RemoveListener(OnClaimClicked);
-        if (chestButton != null)
-            chestButton.onClick.RemoveListener(Show);
+        if (document == null) return;
+        root = document.rootVisualElement;
+        if (root == null) return;
+
+        root.pickingMode = PickingMode.Ignore;
+
+        popupRoot        = root.Q<VisualElement>("popup-root");
+        popupFrame       = root.Q<VisualElement>("popup-frame");
+        backdrop         = root.Q<VisualElement>("backdrop");
+        closeButton      = root.Q<Button>("close-button");
+        weeklyBonusLabel = root.Q<Label>("weekly-bonus");
+        calendarRow      = root.Q<VisualElement>("calendar-row");
     }
+
+    private void WireCallbacks()
+    {
+        if (closeButton != null) closeButton.clicked += Hide;
+        if (backdrop != null) backdrop.RegisterCallback<ClickEvent>(_ => Hide());
+    }
+
+    // ── Public API ─────────────────────────────────────────────
 
     public void Show()
     {
         if (isOpen) return;
-
-        transform.SetAsLastSibling();
-        BuildCalendar();
-        UpdateClaimButton();
-
         isOpen = true;
-        canvasGroup.alpha = 0f;
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.interactable = true;
 
-        if (popupContainer != null)
+        BuildCalendar();
+
+        if (root != null) root.pickingMode = PickingMode.Position;
+        if (popupRoot != null)
         {
-            popupContainer.localScale = Vector3.one * 0.8f;
-            LeanTween.scale(popupContainer.gameObject, Vector3.one, fadeInDuration).setEase(easeType);
+            popupRoot.style.display = DisplayStyle.Flex;
+            popupRoot.schedule.Execute(() => popupRoot.AddToClassList("open")).StartingIn(0);
         }
-        LeanTween.alphaCanvas(canvasGroup, 1f, fadeInDuration).setEase(easeType);
     }
 
     public void Hide()
     {
         if (!isOpen) return;
         isOpen = false;
+        if (popupRoot != null)
+        {
+            popupRoot.RemoveFromClassList("open");
+            popupRoot.schedule.Execute(() =>
+            {
+                if (isOpen) return;
+                popupRoot.style.display = DisplayStyle.None;
+                if (root != null) root.pickingMode = PickingMode.Ignore;
+            }).StartingIn(260);
+        }
+    }
 
-        canvasGroup.blocksRaycasts = false;
-        canvasGroup.interactable = false;
+    // ── Handlers ───────────────────────────────────────────────
 
-        if (popupContainer != null)
-            LeanTween.scale(popupContainer.gameObject, Vector3.one * 0.8f, fadeInDuration).setEase(easeType);
-        LeanTween.alphaCanvas(canvasGroup, 0f, fadeInDuration).setEase(easeType);
+    private void OnClaimClicked()
+    {
+        if (DailyRewardManager.Instance == null) return;
+        if (DailyRewardManager.Instance.ClaimToday())
+        {
+            BuildCalendar();
+            UpdateNotificationDot();
+        }
     }
 
     private void UpdateNotificationDot()
@@ -145,203 +134,96 @@ public class DailyRewardPopup : MonoBehaviour
         notificationDot.SetActive(show);
     }
 
-    private void HideImmediate()
-    {
-        canvasGroup.alpha = 0f;
-        canvasGroup.blocksRaycasts = false;
-        canvasGroup.interactable = false;
-    }
-
-    private void OnClaimClicked()
-    {
-        if (DailyRewardManager.Instance == null) return;
-
-        if (DailyRewardManager.Instance.ClaimToday())
-        {
-            BuildCalendar();
-            UpdateClaimButton();
-            UpdateNotificationDot();
-        }
-    }
-
-    private void UpdateClaimButton()
-    {
-        if (DailyRewardManager.Instance == null || claimButton == null) return;
-
-        bool canClaim = DailyRewardManager.Instance.CanClaimToday;
-        claimButton.interactable = canClaim;
-
-        // Style the button so it looks clickable
-        Image btnImage = claimButton.GetComponent<Image>();
-        if (btnImage != null)
-        {
-            btnImage.color = canClaim
-                ? new Color(0.15f, 0.5f, 0.15f, 1f)   // green when claimable
-                : new Color(0.25f, 0.25f, 0.25f, 1f);  // dark gray when disabled
-        }
-
-        // Ensure button color tinting works
-        ColorBlock cb = claimButton.colors;
-        cb.normalColor = Color.white;
-        cb.highlightedColor = new Color(0.85f, 0.85f, 0.85f, 1f);
-        cb.pressedColor = new Color(0.65f, 0.65f, 0.65f, 1f);
-        cb.selectedColor = Color.white;
-        cb.disabledColor = new Color(0.6f, 0.6f, 0.6f, 1f);
-        cb.colorMultiplier = 1f;
-        claimButton.colors = cb;
-
-        if (claimButtonText != null)
-        {
-            if (canClaim)
-            {
-                int today = DailyRewardManager.Instance.GetTodayIndex();
-                int reward = DailyRewardManager.Instance.DailyRewards[today];
-                int gems = DailyRewardManager.Instance.GetDailyGemReward(today);
-                claimButtonText.text = gems > 0 ? $"Claim {reward} Coins + {gems} Gems" : $"Claim {reward} Coins";
-            }
-            else
-            {
-                claimButtonText.text = "Already Claimed";
-            }
-        }
-    }
+    // ── Render ─────────────────────────────────────────────────
 
     private void BuildCalendar()
     {
-        if (DailyRewardManager.Instance == null || calendarContainer == null) return;
+        if (DailyRewardManager.Instance == null || calendarRow == null || dayCellTemplate == null) return;
 
-        // Clear existing cells
         for (int i = 0; i < 7; i++)
         {
-            if (dayCells[i] != null) Destroy(dayCells[i]);
+            if (dayCells[i] != null) dayCells[i].RemoveFromHierarchy();
+            dayCells[i] = null;
         }
 
         int[] rewards = DailyRewardManager.Instance.DailyRewards;
         int todayIndex = DailyRewardManager.Instance.GetTodayIndex();
 
-        // Layout: 7 cells in a row, centered
-        float totalWidth = 7 * cellWidth + 6 * cellSpacing;
-        float startX = -totalWidth / 2f + cellWidth / 2f;
-
         for (int i = 0; i < 7; i++)
         {
             DayStatus status = DailyRewardManager.Instance.GetDayStatus(i);
             int reward = (i < rewards.Length) ? rewards[i] : 0;
+            int gem = DailyRewardManager.Instance.GetDailyGemReward(i);
 
-            GameObject cell = CreateDayCell(i, reward, status, i == todayIndex);
-            RectTransform rt = cell.GetComponent<RectTransform>();
-            rt.SetParent(calendarContainer, false);
-            rt.anchorMin = new Vector2(0.5f, 0.5f);
-            rt.anchorMax = new Vector2(0.5f, 0.5f);
-            rt.sizeDelta = new Vector2(cellWidth, cellHeight);
-            rt.anchoredPosition = new Vector2(startX + i * (cellWidth + cellSpacing), 0);
+            TemplateContainer cell = dayCellTemplate.Instantiate();
+            VisualElement cellRoot = cell.Q(className: "day-cell") ?? cell.contentContainer;
 
+            Label dayName    = cell.Q<Label>("day-name");
+            Label coinAmount = cell.Q<Label>("coin-amount");
+            Label gemAmount  = cell.Q<Label>("gem-amount");
+            Label statusLbl  = cell.Q<Label>("status-label");
+
+            if (dayName != null) dayName.text = DailyRewardManager.Instance.GetDayName(i);
+            if (coinAmount != null) coinAmount.text = reward.ToString();
+            if (gemAmount != null)
+            {
+                if (gem > 0)
+                {
+                    gemAmount.text = "◆ " + gem;
+                    gemAmount.style.display = DisplayStyle.Flex;
+                }
+                else
+                {
+                    gemAmount.style.display = DisplayStyle.None;
+                }
+            }
+
+            cellRoot.RemoveFromClassList("day-cell--claimed");
+            cellRoot.RemoveFromClassList("day-cell--today");
+            cellRoot.RemoveFromClassList("day-cell--missed");
+            cellRoot.RemoveFromClassList("day-cell--upcoming");
+
+            switch (status)
+            {
+                case DayStatus.Claimed:
+                    cellRoot.AddToClassList("day-cell--claimed");
+                    if (statusLbl != null) statusLbl.text = "✓";
+                    break;
+                case DayStatus.Available:
+                    cellRoot.AddToClassList("day-cell--today");
+                    if (statusLbl != null) statusLbl.text = "Claim!";
+                    // Today cell is the daily claim target.
+                    cellRoot.RegisterCallback<ClickEvent>(_ => OnClaimClicked());
+                    cellRoot.pickingMode = PickingMode.Position;
+                    // Manual pressed-state toggling — :active doesn't fire on plain VisualElements.
+                    VisualElement pressTarget = cellRoot;
+                    pressTarget.RegisterCallback<PointerDownEvent>(_ => pressTarget.AddToClassList("day-cell--pressed"));
+                    pressTarget.RegisterCallback<PointerUpEvent>(_ => pressTarget.RemoveFromClassList("day-cell--pressed"));
+                    pressTarget.RegisterCallback<PointerLeaveEvent>(_ => pressTarget.RemoveFromClassList("day-cell--pressed"));
+                    break;
+                case DayStatus.Missed:
+                    cellRoot.AddToClassList("day-cell--missed");
+                    if (statusLbl != null) statusLbl.text = "Missed";
+                    break;
+                case DayStatus.Upcoming:
+                    cellRoot.AddToClassList("day-cell--upcoming");
+                    if (statusLbl != null) statusLbl.text = "";
+                    break;
+            }
+
+            calendarRow.Add(cell);
             dayCells[i] = cell;
         }
 
-        // Update weekly bonus text
-        if (weeklyBonusText != null)
+        if (weeklyBonusLabel != null)
         {
             int claimed = DailyRewardManager.Instance.ClaimedCount;
             int weeklyGemBonus = DailyRewardManager.Instance.WeeklyGemBonus;
-            if (DailyRewardManager.Instance.EarnedWeeklyBonus)
-                weeklyBonusText.text = $"<color=#FFD700>Weekly Bonus Earned! +{DailyRewardManager.Instance.WeeklyBonusReward} Coins" + (weeklyGemBonus > 0 ? $", +{weeklyGemBonus} Gems" : "") + "</color>";
-            else
-                weeklyBonusText.text = $"Claim all 7 days for +{DailyRewardManager.Instance.WeeklyBonusReward} bonus coins" + (weeklyGemBonus > 0 ? $" & +{weeklyGemBonus} gems" : "") + $" ({claimed}/7)";
+            int bonus = DailyRewardManager.Instance.WeeklyBonusReward;
+            string gemSuffix = weeklyGemBonus > 0 ? $" & +{weeklyGemBonus} gems" : "";
+            weeklyBonusLabel.text = DailyRewardManager.Instance.EarnedWeeklyBonus
+                ? $"<color=#A56A1E>Weekly Bonus Earned! +{bonus} Coins{gemSuffix}</color>"
+                : $"Claim all 7 days for +{bonus} bonus coins{gemSuffix} ({claimed}/7)";
         }
-    }
-
-    private GameObject CreateDayCell(int dayIndex, int reward, DayStatus status, bool isToday)
-    {
-        GameObject cell = new GameObject($"Day_{dayIndex}");
-
-        // Background
-        Image bg = cell.AddComponent<Image>();
-        switch (status)
-        {
-            case DayStatus.Claimed:   bg.color = claimedColor; break;
-            case DayStatus.Available: bg.color = availableColor; break;
-            case DayStatus.Missed:    bg.color = missedColor; break;
-            case DayStatus.Upcoming:  bg.color = upcomingColor; break;
-        }
-
-        // Day name label (top)
-        GameObject dayNameObj = new GameObject("DayName");
-        RectTransform dnrt = dayNameObj.AddComponent<RectTransform>();
-        dnrt.SetParent(cell.transform, false);
-        dnrt.anchorMin = new Vector2(0, 0.7f);
-        dnrt.anchorMax = new Vector2(1, 1);
-        dnrt.offsetMin = Vector2.zero;
-        dnrt.offsetMax = Vector2.zero;
-        dayNameObj.AddComponent<CanvasRenderer>();
-        TextMeshProUGUI dayNameText = dayNameObj.AddComponent<TextMeshProUGUI>();
-        dayNameText.text = DailyRewardManager.Instance.GetDayName(dayIndex);
-        dayNameText.fontSize = 18;
-        dayNameText.alignment = TextAlignmentOptions.Center;
-        Color textColor = GetContrastTextColor(bg.color);
-        dayNameText.color = textColor;
-        if (isToday) dayNameText.fontStyle = FontStyles.Bold;
-
-        // Reward amount (center)
-        GameObject rewardObj = new GameObject("Reward");
-        RectTransform rrt = rewardObj.AddComponent<RectTransform>();
-        rrt.SetParent(cell.transform, false);
-        rrt.anchorMin = new Vector2(0, 0.25f);
-        rrt.anchorMax = new Vector2(1, 0.7f);
-        rrt.offsetMin = Vector2.zero;
-        rrt.offsetMax = Vector2.zero;
-        rewardObj.AddComponent<CanvasRenderer>();
-        TextMeshProUGUI rewardText = rewardObj.AddComponent<TextMeshProUGUI>();
-        int gemReward = DailyRewardManager.Instance.GetDailyGemReward(dayIndex);
-        if (gemReward > 0)
-            rewardText.text = $"{reward} \U0001FA99\n{gemReward} \U0001F48E";
-        else
-            rewardText.text = $"{reward} \U0001FA99";
-        rewardText.fontSize = 24;
-        rewardText.fontStyle = FontStyles.Bold;
-        rewardText.alignment = TextAlignmentOptions.Center;
-        rewardText.color = textColor;
-
-        // Status icon (bottom)
-        GameObject statusObj = new GameObject("Status");
-        RectTransform srt = statusObj.AddComponent<RectTransform>();
-        srt.SetParent(cell.transform, false);
-        srt.anchorMin = new Vector2(0, 0);
-        srt.anchorMax = new Vector2(1, 0.25f);
-        srt.offsetMin = Vector2.zero;
-        srt.offsetMax = Vector2.zero;
-        statusObj.AddComponent<CanvasRenderer>();
-        TextMeshProUGUI statusText = statusObj.AddComponent<TextMeshProUGUI>();
-        statusText.fontSize = 14;
-        statusText.alignment = TextAlignmentOptions.Center;
-
-        statusText.color = textColor;
-        switch (status)
-        {
-            case DayStatus.Claimed:
-                statusText.text = "Claimed";
-                break;
-            case DayStatus.Available:
-                statusText.text = "Today!";
-                break;
-            case DayStatus.Missed:
-                statusText.text = "Missed";
-                break;
-            case DayStatus.Upcoming:
-                statusText.text = "";
-                break;
-        }
-
-        return cell;
-    }
-
-    /// <summary>
-    /// Returns black or white text color based on background luminance (WCAG contrast).
-    /// </summary>
-    private static Color GetContrastTextColor(Color bg)
-    {
-        // Relative luminance per WCAG 2.0
-        float luminance = 0.2126f * bg.r + 0.7152f * bg.g + 0.0722f * bg.b;
-        return luminance > 0.5f ? new Color(0.1f, 0.1f, 0.1f) : Color.white;
     }
 }

@@ -1,0 +1,230 @@
+.popup-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    display: none;
+}
+
+.popup-root.open {
+    opacity: 1;
+}
+
+.backdrop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.popup-frame {
+    width: 92%;
+    max-width: 960px;
+    min-width: 320px;
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Frame_Standard_02.png?fileID=3858287901567477150&guid=bb37785e3a3eccb448d194497b84d6c0&type=3#UI_Wood_Frame_Standard_02_0");
+    -unity-slice-left: 60;
+    -unity-slice-right: 60;
+    -unity-slice-top: 60;
+    -unity-slice-bottom: 60;
+    -unity-slice-scale: 1px;
+    scale: 0.9 0.9;
+    transition: scale 0.22s ease-out;
+}
+
+.popup-root.open .popup-frame {
+    scale: 1 1;
+}
+
+.popup-inner {
+    padding: 60px 50px 60px 50px;
+}
+
+.header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.title {
+    color: rgb(54, 32, 14);
+    font-size: 30px;
+    -unity-font-style: bold;
+    flex-grow: 1;
+}
+
+.close-button {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png?fileID=3567889282709117160&guid=f22de2d072d334144aeca2ca86db4fbc&type=3#UI_Wood_Cross_Medium_0");
+    -unity-background-scale-mode: scale-to-fit;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.close-button:hover {
+    scale: 1.08 1.08;
+}
+
+.calendar-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.day-cell {
+    width: 108px;
+    height: 150px;
+    padding: 12px 6px 12px 6px;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Slot_Available_01.png?fileID=3260068808691272648&guid=d1e7240023b7a2e43a65be11eab24faf&type=3#UI_Wood_Slot_Available_01_0");
+    -unity-slice-left: 18;
+    -unity-slice-right: 18;
+    -unity-slice-top: 18;
+    -unity-slice-bottom: 18;
+    -unity-slice-scale: 1px;
+    transition: scale 0.18s ease-out;
+}
+
+.day-cell__name {
+    color: rgb(255, 240, 210);
+    font-size: 17px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    letter-spacing: 1px;
+}
+
+.day-cell__reward-block {
+    align-items: center;
+    justify-content: center;
+}
+
+.day-cell__coin {
+    color: rgb(255, 232, 188);
+    font-size: 28px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.day-cell__gem {
+    color: rgb(196, 152, 255);
+    font-size: 13px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-top: 2px;
+    display: none;
+}
+
+.day-cell__status {
+    color: rgb(255, 240, 210);
+    font-size: 13px;
+    -unity-text-align: middle-center;
+    letter-spacing: 1px;
+    min-height: 18px;
+}
+
+.day-cell--today {
+    scale: 1.07 1.07;
+    -unity-background-image-tint-color: rgb(255, 248, 230);
+}
+
+.day-cell--today .day-cell__name {
+    color: rgb(255, 255, 255);
+}
+
+.day-cell--today .day-cell__coin {
+    color: rgb(255, 255, 255);
+}
+
+.day-cell--today .day-cell__status {
+    color: rgb(255, 220, 90);
+    -unity-font-style: bold;
+    font-size: 14px;
+}
+
+.day-cell--claimed {
+    -unity-background-image-tint-color: rgb(170, 220, 150);
+    opacity: 0.85;
+}
+
+.day-cell--claimed .day-cell__name {
+    color: rgb(60, 100, 40);
+}
+
+.day-cell--claimed .day-cell__coin {
+    color: rgb(60, 100, 40);
+}
+
+.day-cell--claimed .day-cell__status {
+    color: rgb(60, 130, 40);
+    -unity-font-style: bold;
+    font-size: 18px;
+}
+
+.day-cell--missed {
+    -unity-background-image-tint-color: rgb(170, 150, 130);
+    opacity: 0.65;
+}
+
+.day-cell--missed .day-cell__name {
+    color: rgb(140, 120, 100);
+}
+
+.day-cell--missed .day-cell__coin {
+    color: rgb(160, 140, 120);
+}
+
+.day-cell--missed .day-cell__status {
+    color: rgb(170, 100, 90);
+}
+
+.day-cell--upcoming {
+    opacity: 0.5;
+}
+
+.day-cell--upcoming .day-cell__name {
+    color: rgb(255, 240, 210);
+}
+
+.day-cell--upcoming .day-cell__coin {
+    color: rgb(255, 232, 188);
+}
+
+.day-cell--upcoming .day-cell__status {
+    color: rgb(255, 240, 210);
+}
+
+.weekly-bonus {
+    color: rgb(68, 42, 18);
+    font-size: 19px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+    white-space: normal;
+}
+
+.day-cell--today:hover {
+    scale: 1.1 1.1;
+}
+
+/* Pressed state — toggled via PointerDown/PointerUp in C#.
+   Selector matches specificity of .day-cell--today:hover so the scale override actually wins. */
+.day-cell--today.day-cell--pressed {
+    scale: .97 .97;
+    -unity-background-image-tint-color: rgb(220, 208, 184);
+    transition-duration: 0.05s;
+}

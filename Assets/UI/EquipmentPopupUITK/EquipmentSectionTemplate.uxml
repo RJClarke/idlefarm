@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement class="section">
+        <ui:Label name="equipment-name" class="section-name" />
+        <ui:VisualElement class="section-body">
+            <ui:VisualElement class="icon-col">
+                <ui:VisualElement name="equipment-icon" class="icon-frame" />
+            </ui:VisualElement>
+            <ui:VisualElement name="rows-container" class="rows-col" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

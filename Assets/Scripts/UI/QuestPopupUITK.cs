@@ -25,6 +25,7 @@ public class QuestPopupUITK : MonoBehaviour
     private Label footerText;
 
     private bool isOpen;
+    private bool eventsSubscribed;
     private readonly List<VisualElement> spawnedRows = new List<VisualElement>();
     private readonly List<VisualElement> spawnedChips = new List<VisualElement>();
     private IVisualElementScheduledItem livePollHandle;
@@ -43,23 +44,34 @@ public class QuestPopupUITK : MonoBehaviour
     {
         CacheElements();
         WireCallbacks();
-        if (QuestManager.Instance != null)
-        {
-            QuestManager.Instance.OnQuestCompleted += OnQuestStateChanged;
-            QuestManager.Instance.OnQuestsDropped  += OnQuestStateChanged;
-            QuestManager.Instance.OnMilestoneClaimed += OnQuestStateChanged;
-        }
+        TrySubscribeEvents();
     }
 
     private void OnDisable()
     {
         StopLivePolling();
+        UnsubscribeEvents();
+    }
+
+    private void TrySubscribeEvents()
+    {
+        if (eventsSubscribed || QuestManager.Instance == null) return;
+        QuestManager.Instance.OnQuestCompleted   += OnQuestStateChanged;
+        QuestManager.Instance.OnQuestsDropped    += OnQuestStateChanged;
+        QuestManager.Instance.OnMilestoneClaimed += OnQuestStateChanged;
+        eventsSubscribed = true;
+    }
+
+    private void UnsubscribeEvents()
+    {
+        if (!eventsSubscribed) return;
         if (QuestManager.Instance != null)
         {
-            QuestManager.Instance.OnQuestCompleted -= OnQuestStateChanged;
-            QuestManager.Instance.OnQuestsDropped  -= OnQuestStateChanged;
+            QuestManager.Instance.OnQuestCompleted   -= OnQuestStateChanged;
+            QuestManager.Instance.OnQuestsDropped    -= OnQuestStateChanged;
             QuestManager.Instance.OnMilestoneClaimed -= OnQuestStateChanged;
         }
+        eventsSubscribed = false;
     }
 
     private void CacheElements()
@@ -106,6 +118,9 @@ public class QuestPopupUITK : MonoBehaviour
     {
         if (isOpen) return;
         isOpen = true;
+        // QuestManager may not have been alive when OnEnable ran (script execution order).
+        // Retry here — by the time the user opens the popup, all Awakes have completed.
+        TrySubscribeEvents();
         if (root != null) root.pickingMode = PickingMode.Position;
         if (popupRoot != null)
         {
@@ -150,24 +165,27 @@ public class QuestPopupUITK : MonoBehaviour
     {
         if (!isOpen || QuestManager.Instance == null) return;
 
+        // Updates progress bar fill + text. Also self-heals when a row's bound quest
+        // has flipped to completed but the row still renders as in-progress (which can
+        // happen if the OnQuestCompleted subscription was missed for any reason).
+        bool needsRebuild = false;
+
         foreach (VisualElement rowVe in spawnedRows)
         {
             ActiveQuest quest = rowVe.userData as ActiveQuest;
             if (quest == null) continue;
 
+            VisualElement rowRoot = rowVe.Q(className: "quest-row");
+            bool rowMarkedComplete = rowRoot != null && rowRoot.ClassListContains("quest-row--completed");
+            if (quest.isCompleted && !rowMarkedComplete)
+            {
+                needsRebuild = true;
+                continue;
+            }
+
             QuestData data = QuestManager.Instance.GetQuestData(quest.questID);
             if (data == null) continue;
 
-            // If the quest crossed the completion threshold, do a full rebuild so the
-            // row switches to the "completed" visual state with the claim button.
-            bool shownAsComplete = rowVe.ClassListContains("quest-row--completed");
-            if (quest.isCompleted != shownAsComplete)
-            {
-                RefreshList();
-                return;
-            }
-
-            // Otherwise just update the bar fill and progress text in place.
             VisualElement fill = rowVe.Q<VisualElement>("quest-progress-fill");
             float pct = data.targetCount > 0 ? Mathf.Clamp01((float)quest.progress / data.targetCount) : 0f;
             if (fill != null) fill.style.width = new Length(pct * 100f, LengthUnit.Percent);
@@ -176,6 +194,8 @@ public class QuestPopupUITK : MonoBehaviour
             if (progressLabel != null && progressLabel.style.display.value != DisplayStyle.None)
                 progressLabel.text = quest.progress + " / " + data.targetCount;
         }
+
+        if (needsRebuild) RefreshAll();
     }
 
     private void OnQuestStateChanged()
@@ -302,6 +322,7 @@ public class QuestPopupUITK : MonoBehaviour
             if (data == null) continue;
             TemplateContainer row = questRowTemplate.Instantiate();
             row.userData = quest;
+            row.AddToClassList("quest-row-wrapper");
             BindRow(row, quest, data);
             questList.Add(row);
             spawnedRows.Add(row);
@@ -354,7 +375,9 @@ public class QuestPopupUITK : MonoBehaviour
                 if (claimRewardLbl != null) claimRewardLbl.text = data.coinReward.ToString();
                 string capturedID = quest.questID;
                 int capturedReward = data.coinReward;
-                VisualElement capturedRow = rowRoot;
+                // Capture the TemplateContainer (the flex item we want to collapse),
+                // not the inner .quest-row element.
+                VisualElement capturedRow = row;
                 Button capturedButton = claimButton;
                 claimButton.RegisterCallback<ClickEvent>(_ => OnClaimClicked(capturedID, capturedRow, capturedButton, capturedReward));
             }
@@ -408,7 +431,7 @@ public class QuestPopupUITK : MonoBehaviour
         SpawnClaimFloat(claimButton ?? row, coinReward);
 
         // Fade and collapse the row. USS handles the transition.
-        if (row != null) row.AddToClassList("quest-row--claiming");
+        if (row != null) row.AddToClassList("quest-row-wrapper--claiming");
 
         // After the visual animation, actually claim. The state-change event will
         // trigger RefreshList which rebuilds the (now shorter) list.

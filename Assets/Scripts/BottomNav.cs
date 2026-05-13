@@ -133,10 +133,20 @@ public class BottomNav : MonoBehaviour
     /// </summary>
     private void OnButtonClicked(DrawerUI.MenuType menuType)
     {
-        if (DrawerUI.Instance != null)
+        // Equipment is served by the standalone UI Toolkit popup, not the uGUI drawer.
+        if (menuType == DrawerUI.MenuType.Equipment)
         {
-            DrawerUI.Instance.OpenMenu(menuType);
+            if (DrawerUI.Instance != null && DrawerUI.Instance.IsAnyMenuOpen())
+                DrawerUI.Instance.CloseDrawer();
+
+            if (EquipmentPopupUITK.Instance == null) return;
+            if (EquipmentPopupUITK.Instance.IsOpen) EquipmentPopupUITK.Instance.Close();
+            else EquipmentPopupUITK.Instance.Open();
+            return;
         }
+
+        if (DrawerUI.Instance != null)
+            DrawerUI.Instance.OpenMenu(menuType);
     }
 
     /// <summary>

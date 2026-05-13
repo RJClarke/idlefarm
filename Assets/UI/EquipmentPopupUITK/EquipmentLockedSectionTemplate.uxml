@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement class="locked-section">
+        <ui:VisualElement name="equipment-icon" class="icon-frame locked-icon" />
+        <ui:VisualElement class="locked-meta">
+            <ui:Label name="equipment-name" class="locked-name" />
+            <ui:Label text="Locked — unlock at Market" class="locked-hint" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

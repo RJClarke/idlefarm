@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Scarecrow
   equipmentType: 0
   icon: "\U0001F426\u200D\u2B1B"
+  iconSprite: {fileID: -4961344071267711760, guid: eb5a8c0a0b234c142b3904a6924cbfa1, type: 3}
   description: Repels crows within its area of effect. After repelling its capacity,
     enters cooldown before recharging.
   unlockID: scarecrow_unlock
@@ -24,6 +25,10 @@ MonoBehaviour:
   baseAoERadius: 2
   countersTheatType: 1
   visualPrefab: {fileID: 6263065184405782043, guid: 84257978d97b3a14dafa7dc0879f248b, type: 3}
+  uiUpgradeRows:
+  - {fileID: 11400000, guid: 4b6895c499697af4690b005003f861db, type: 2}
+  - {fileID: 11400000, guid: 1b410e0e445c96a45bf0aa9419a19f21, type: 2}
+  - {fileID: 11400000, guid: 5cc78c8d3a3930a4c8d099124ac5d4d4, type: 2}
   aoeUpgradeID: scarecrow_aoe
   cooldownUpgradeID: scarecrow_cooldown
   capacityUpgradeID: scarecrow_capacity
@@ -31,3 +36,14 @@ MonoBehaviour:
   cooldownReductionPerLevel: 5
   capacityBonusPerLevel: 1
   minCooldownSeconds: 10
+  fenceCoveragePerLevel:
+  - 0.2
+  - 0.4
+  - 0.6
+  - 0.8
+  - 1
+  activeDurationSeconds: 10
+  baseMoisturePowerPerSecond: 1.5
+  waterPowerUpgradeID: sprinkler_power
+  waterPowerBonusPerLevel: 0.5
+  durationUpgradeID: 

@@ -16,6 +16,7 @@ MonoBehaviour:
   displayName: Fence
   equipmentType: 1
   icon: "\U0001F9F1"
+  iconSprite: {fileID: 6066187685456290173, guid: 2b8106ddf5536004b9870c031d063c1c, type: 3}
   description: L-shaped fence along zone edges. Repels deer that approach.
   unlockID: fence_unlock
   baseCooldownSeconds: 45
@@ -23,6 +24,10 @@ MonoBehaviour:
   baseAoERadius: 2.5
   countersTheatType: 0
   visualPrefab: {fileID: 7961555057293389497, guid: 4fff881909a2be84ca86116f53427ae4, type: 3}
+  uiUpgradeRows:
+  - {fileID: 11400000, guid: ed49fd46d69641a4398887ce4a4ed87a, type: 2}
+  - {fileID: 11400000, guid: ce05eefbcc2f7f546a9148df10f3587f, type: 2}
+  - {fileID: 11400000, guid: c4511935d6c12c1488039d31188b73c0, type: 2}
   aoeUpgradeID: fence_aoe
   cooldownUpgradeID: fence_cooldown
   capacityUpgradeID: fence_capacity
@@ -40,3 +45,4 @@ MonoBehaviour:
   baseMoisturePowerPerSecond: 1.5
   waterPowerUpgradeID: sprinkler_power
   waterPowerBonusPerLevel: 0.5
+  durationUpgradeID: 

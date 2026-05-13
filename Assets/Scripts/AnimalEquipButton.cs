@@ -38,8 +38,8 @@ public class AnimalEquipButton : MonoBehaviour
 
     private void OnClick()
     {
-        if (AnimalPopup.Instance != null)
-            AnimalPopup.Instance.Show();
+        if (AnimalPopupUITK.Instance != null)
+            AnimalPopupUITK.Instance.Open();
     }
 
     private void UpdateDisplay()

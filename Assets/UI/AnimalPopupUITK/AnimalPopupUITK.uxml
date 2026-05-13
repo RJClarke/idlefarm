@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/AnimalPopupUITK/AnimalPopupUITK.uss" />
+    <ui:VisualElement name="popup-root" class="popup-root" picking-mode="Position">
+        <ui:VisualElement name="backdrop" class="backdrop" picking-mode="Position" />
+        <ui:VisualElement name="popup-frame" class="popup-frame" picking-mode="Position">
+            <ui:VisualElement name="popup-inner" class="popup-inner">
+
+                <ui:VisualElement name="header" class="header">
+                    <ui:Label text="Farm Animals" name="title" class="title" />
+                    <ui:VisualElement name="gem-pill" class="gem-pill">
+                        <ui:Label text="◆" class="gem-pill__icon" />
+                        <ui:Label name="gem-count" text="0" class="gem-pill__count" />
+                    </ui:VisualElement>
+                    <ui:Button name="close-button" class="close-button" />
+                </ui:VisualElement>
+
+                <ui:Label text="Equip one animal to help on your farm" name="subtitle" class="subtitle" />
+
+                <ui:ScrollView name="animal-list" class="animal-list" mode="Vertical" />
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

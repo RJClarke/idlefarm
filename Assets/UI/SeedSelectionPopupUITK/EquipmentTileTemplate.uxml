@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:Button class="rail-tile rail-tile--equip" picking-mode="Position">
+        <ui:VisualElement name="tile-image" class="rail-tile__image" />
+        <ui:Label name="tile-label" class="rail-tile__label" />
+    </ui:Button>
+</ui:UXML>

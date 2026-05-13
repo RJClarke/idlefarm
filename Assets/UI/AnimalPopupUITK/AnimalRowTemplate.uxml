@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="animal-row animal-row--locked" picking-mode="Position">
+        <ui:VisualElement name="row-icon-frame" class="row-icon-frame">
+            <ui:VisualElement name="row-icon" class="row-icon" />
+            <ui:Label name="row-icon-fallback" class="row-icon-fallback" />
+        </ui:VisualElement>
+        <ui:VisualElement class="row-text">
+            <ui:Label name="row-name" class="row-name" />
+            <ui:Label name="row-description" class="row-description" />
+        </ui:VisualElement>
+        <ui:Button name="action-button" class="action-button">
+            <ui:VisualElement name="action-row" class="action-row">
+                <ui:Label name="action-icon" class="action-icon" />
+                <ui:Label name="action-label" class="action-label" />
+            </ui:VisualElement>
+        </ui:Button>
+    </ui:VisualElement>
+</ui:UXML>

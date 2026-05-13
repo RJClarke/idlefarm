@@ -1,0 +1,38 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/SeedSelectionPopupUITK/SeedSelectionPopupUITK.uss" />
+    <ui:VisualElement name="popup-root" class="popup-root" picking-mode="Position">
+        <ui:VisualElement name="backdrop" class="backdrop" picking-mode="Position" />
+        <ui:VisualElement name="popup-frame" class="popup-frame" picking-mode="Position">
+            <ui:VisualElement name="popup-inner" class="popup-inner">
+
+                <ui:VisualElement name="header" class="header">
+                    <ui:Label text="Select Crops for this Run" name="title" class="title" />
+                    <ui:Button name="close-button" class="close-button" />
+                </ui:VisualElement>
+
+                <ui:VisualElement name="field-grid" class="field-grid">
+                    <ui:VisualElement name="field-row-top" class="field-row">
+                        <ui:VisualElement name="field-1" class="field-tile" />
+                        <ui:VisualElement name="field-2" class="field-tile" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="field-row-bottom" class="field-row">
+                        <ui:VisualElement name="field-3" class="field-tile" />
+                        <ui:VisualElement name="field-4" class="field-tile" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:Label text="Seeds" class="rail-label" />
+                <ui:ScrollView name="seed-rail" class="rail-scroll" mode="Horizontal" vertical-scroller-visibility="Hidden" />
+
+                <ui:Label text="Equipment" class="rail-label" />
+                <ui:ScrollView name="equipment-rail" class="rail-scroll" mode="Horizontal" vertical-scroller-visibility="Hidden" />
+
+                <ui:VisualElement name="footer" class="footer">
+                    <ui:Button name="cancel-button" text="Cancel" class="footer-button footer-button--cancel" />
+                    <ui:Button name="save-button" text="Save" class="footer-button footer-button--save" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
