@@ -12,8 +12,9 @@ public class GemClaimButton : MonoBehaviour
     [SerializeField] private Sprite gemSprite;
 
     [Header("Colors")]
-    [SerializeField] private Color readyColor = new Color(0.45f, 0.15f, 0.7f, 0.9f);
+    [SerializeField] private Color readyColor = new Color(0.659f, 0.333f, 0.969f, 1f); // #A855F7 — matches floating-text gem color
     [SerializeField] private Color cooldownColor = new Color(0.35f, 0.35f, 0.35f, 0.5f);
+    [SerializeField] private Color notificationDotColor = new Color(0.659f, 0.333f, 0.969f, 1f);
 
     private System.Action<AnimalData> onEquipped;
     private System.Action onUnequipped;
@@ -26,14 +27,26 @@ public class GemClaimButton : MonoBehaviour
 
         if (gemSprite != null && buttonImage != null)
         {
+            // Sprite-icon mode (egg-style): show sprite, hide emoji.
             buttonImage.sprite = gemSprite;
             if (emojiText != null) emojiText.gameObject.SetActive(false);
+        }
+        else if (buttonImage != null)
+        {
+            // Emoji-icon mode: no background rectangle, the emoji IS the icon.
+            buttonImage.color = new Color(1f, 1f, 1f, 0f);
+            // Keep raycast working so the button still receives clicks.
+            buttonImage.raycastTarget = true;
         }
 
         if (notificationDot != null)
         {
             Image dotImage = notificationDot.GetComponent<Image>();
-            if (dotImage != null) dotImage.sprite = BuildCircleSprite(64);
+            if (dotImage != null)
+            {
+                dotImage.sprite = BuildCircleSprite(64);
+                dotImage.color = notificationDotColor;
+            }
         }
 
         if (AnimalManager.Instance != null)
@@ -86,13 +99,23 @@ public class GemClaimButton : MonoBehaviour
     {
         bool ready = AnimalManager.Instance != null && AnimalManager.Instance.IsPassiveReady;
 
-        if (buttonImage != null)
+        if (gemSprite != null && buttonImage != null)
+        {
+            // Sprite mode — paint the sprite (egg-style).
             buttonImage.color = ready ? readyColor : cooldownColor;
+        }
+        else if (emojiText != null)
+        {
+            // Emoji mode — tint the glyph itself. Color emoji fonts may ignore tint,
+            // but TMP applies it on grayscale/monochrome glyphs so a purple "💎" or "♦"
+            // shows through.
+            emojiText.color = ready ? readyColor : cooldownColor;
+        }
 
         if (notificationDot != null)
             notificationDot.SetActive(ready);
 
-        if (emojiText != null)
+        if (emojiText != null && emojiText.gameObject.activeSelf)
             emojiText.text = "\U0001F48E"; // 💎
 
         float targetScale = ready ? 1f : 0.75f;

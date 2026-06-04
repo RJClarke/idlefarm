@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="zone-tile">
+        <ui:Label name="zone-name" class="zone-tile-name" />
+        <ui:Label name="zone-status" class="zone-tile-status" />
+        <ui:Label name="zone-cost" class="zone-tile-cost" />
+    </ui:VisualElement>
+</ui:UXML>

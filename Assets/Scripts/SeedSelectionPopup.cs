@@ -61,6 +61,15 @@ public class SeedSelectionPopup : MonoBehaviour
     {
         CacheElements();
         if (root != null) WireCallbacks();
+
+        // Start hidden — Show() must be explicitly invoked by the user.
+        isOpen = false;
+        if (popupRoot != null)
+        {
+            popupRoot.RemoveFromClassList("open");
+            popupRoot.style.display = DisplayStyle.None;
+        }
+        if (root != null) root.pickingMode = PickingMode.Ignore;
     }
 
     private void CacheElements()

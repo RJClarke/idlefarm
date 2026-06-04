@@ -299,7 +299,7 @@ public class AnimalVisual : MonoBehaviour
         }
 
         gemInstance.transform.localScale = Vector3.zero;
-        LeanTween.scale(gemInstance, Vector3.one * 2f, 0.3f).setEaseOutBack();
+        LeanTween.scale(gemInstance, Vector3.one * 4f, 0.3f).setEaseOutBack();
     }
 
     public void RemoveGem()

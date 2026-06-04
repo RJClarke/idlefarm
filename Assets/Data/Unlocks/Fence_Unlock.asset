@@ -19,5 +19,5 @@ MonoBehaviour:
   coinCost: 1000
   lockedDescription: Blocks deer from entering protected zones
   unlockedMessage: Fence Unlocked!
-  iconSprite: {fileID: 0}
+  equipmentSprite: {fileID: 6066187685456290173, guid: 2b8106ddf5536004b9870c031d063c1c, type: 3}
   requiredUnlocks: []

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="settings-row">
+        <ui:VisualElement class="settings-row-text">
+            <ui:Label name="row-title" class="settings-row-title" />
+            <ui:Label name="row-desc" class="settings-row-desc" />
+        </ui:VisualElement>
+        <ui:Button name="row-button" class="settings-row-button" text="Action" />
+    </ui:VisualElement>
+</ui:UXML>

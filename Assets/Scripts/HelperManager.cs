@@ -107,12 +107,35 @@ public class HelperManager : MonoBehaviour
 
     private void OnUpgradePurchased(string upgradeID)
     {
-        // If a helper slot was unlocked while on home screen, add the new one
-        if (upgradeID == "helper_slot_unlock" &&
-            (RunManager.Instance == null || !RunManager.Instance.IsRunActive))
+        if (upgradeID != "helper_slot_unlock") return;
+
+        bool inRun = RunManager.Instance != null && RunManager.Instance.IsRunActive;
+        if (inRun)
         {
+            // Rent purchased mid-run — spawn the extra working helper immediately.
+            SpawnUniversalHelper();
+        }
+        else
+        {
+            // Permanent slot unlocked on home screen — add a cosmetic helper.
             SpawnOneHomeHelper();
         }
+    }
+
+    /// <summary>
+    /// Hard cap for helper slots is 4. During a run, rent stacks on permanent (capped at 4).
+    /// Outside a run, only the permanent level counts (stale temp from prior run is ignored).
+    /// </summary>
+    public const int MAX_HELPER_SLOTS = 4;
+
+    public int GetMaxHelperSlots()
+    {
+        if (UpgradeManager.Instance == null) return 1;
+        bool inRun = RunManager.Instance != null && RunManager.Instance.IsRunActive;
+        int level = inRun
+            ? UpgradeManager.Instance.GetCurrentLevel("helper_slot_unlock")
+            : UpgradeManager.Instance.GetPermanentLevel("helper_slot_unlock");
+        return Mathf.Min(MAX_HELPER_SLOTS, level + 1);
     }
 
     /// <summary>
@@ -238,12 +261,11 @@ public class HelperManager : MonoBehaviour
             return null;
         }
 
-        // Phase 5.5: Check max helpers limit from upgrades
-        if (HelperUpgradeManager.Instance != null)
+        // Cap from the single source of truth (UpgradeManager). Hard ceiling = 4.
         {
-            int maxHelpers = HelperUpgradeManager.Instance.MaxHelpers;
+            int maxHelpers = GetMaxHelperSlots();
             int currentCount = GetHelperCount();
-            
+
             if (currentCount >= maxHelpers)
             {
                 Debug.LogWarning($"❌ Cannot spawn helper - at max limit ({currentCount}/{maxHelpers})");
@@ -281,18 +303,13 @@ public class HelperManager : MonoBehaviour
         // Remove cosmetic home screen helpers
         HideHomeScreenHelpers();
 
-        // Determine how many helpers to spawn from permanent unlock level
-        int unlockedSlots = 1; // Always at least 1
+        // Run starts at the PERMANENT slot level (capped at 4). Any temp rent from a prior
+        // run is ignored, so the next run starts with the unlocked count, not the rented one.
+        int unlockedSlots = 1;
         if (UpgradeManager.Instance != null)
         {
             int slotLevel = UpgradeManager.Instance.GetPermanentLevel("helper_slot_unlock");
-            unlockedSlots = slotLevel + 1; // Level 0 = 1, Level 1 = 2, etc.
-        }
-
-        // Also add any auto-spawn bonuses from HelperUpgradeManager
-        if (HelperUpgradeManager.Instance != null)
-        {
-            unlockedSlots = Mathf.Max(unlockedSlots, HelperUpgradeManager.Instance.AutoSpawnHelpers);
+            unlockedSlots = Mathf.Min(MAX_HELPER_SLOTS, slotLevel + 1);
         }
 
         if (unlockedSlots > 0)
@@ -362,7 +379,7 @@ public class HelperManager : MonoBehaviour
 
         int slots = 1;
         if (UpgradeManager.Instance != null)
-            slots = UpgradeManager.Instance.GetPermanentLevel("helper_slot_unlock") + 1;
+            slots = Mathf.Min(MAX_HELPER_SLOTS, UpgradeManager.Instance.GetPermanentLevel("helper_slot_unlock") + 1);
 
         for (int i = 0; i < slots; i++)
         {

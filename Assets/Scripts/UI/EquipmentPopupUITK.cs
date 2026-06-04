@@ -92,6 +92,8 @@ public class EquipmentPopupUITK : MonoBehaviour
         root = document.rootVisualElement;
         if (root == null) { Debug.LogError("[EquipmentPopupUITK] rootVisualElement is null"); return; }
 
+        // Root must stay Ignore so the bottom-nav area (below popup-root) passes clicks
+        // through to the uGUI BottomNav canvas underneath.
         root.pickingMode = PickingMode.Ignore;
 
         popupRoot   = root.Q<VisualElement>("popup-root");
@@ -115,7 +117,6 @@ public class EquipmentPopupUITK : MonoBehaviour
         if (isOpen) return;
         isOpen = true;
         TrySubscribeEvents();
-        if (root != null) root.pickingMode = PickingMode.Position;
         if (popupRoot != null)
         {
             popupRoot.style.display = DisplayStyle.Flex;
@@ -134,7 +135,6 @@ public class EquipmentPopupUITK : MonoBehaviour
         {
             if (isOpen) return;
             popupRoot.style.display = DisplayStyle.None;
-            if (root != null) root.pickingMode = PickingMode.Ignore;
         }).StartingIn(260);
     }
 

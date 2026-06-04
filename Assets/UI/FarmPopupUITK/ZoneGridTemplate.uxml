@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="zone-section">
+        <ui:Label text="Zones" class="zone-section-title" />
+        <ui:VisualElement class="zone-grid">
+            <ui:VisualElement class="zone-row">
+                <ui:VisualElement name="zone-1" class="zone-cell" />
+                <ui:VisualElement name="zone-2" class="zone-cell" />
+            </ui:VisualElement>
+            <ui:VisualElement class="zone-row">
+                <ui:VisualElement name="zone-3" class="zone-cell" />
+                <ui:VisualElement name="zone-4" class="zone-cell" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

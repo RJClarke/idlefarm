@@ -133,6 +133,9 @@ public class BottomNav : MonoBehaviour
     /// </summary>
     private void OnButtonClicked(DrawerUI.MenuType menuType)
     {
+        // Close any standalone popup that isn't the one we're toggling.
+        CloseOtherPopups(menuType);
+
         // Equipment is served by the standalone UI Toolkit popup, not the uGUI drawer.
         if (menuType == DrawerUI.MenuType.Equipment)
         {
@@ -145,8 +148,78 @@ public class BottomNav : MonoBehaviour
             return;
         }
 
+        // Helpers is also a standalone UI Toolkit popup.
+        if (menuType == DrawerUI.MenuType.Helpers)
+        {
+            if (DrawerUI.Instance != null && DrawerUI.Instance.IsAnyMenuOpen())
+                DrawerUI.Instance.CloseDrawer();
+
+            if (HelpersPopupUITK.Instance == null) return;
+            if (HelpersPopupUITK.Instance.IsOpen) HelpersPopupUITK.Instance.Close();
+            else HelpersPopupUITK.Instance.Open();
+            return;
+        }
+
+        // Farm is also a standalone UI Toolkit popup.
+        if (menuType == DrawerUI.MenuType.Farm)
+        {
+            if (DrawerUI.Instance != null && DrawerUI.Instance.IsAnyMenuOpen())
+                DrawerUI.Instance.CloseDrawer();
+
+            if (FarmPopupUITK.Instance == null) return;
+            if (FarmPopupUITK.Instance.IsOpen) FarmPopupUITK.Instance.Close();
+            else FarmPopupUITK.Instance.Open();
+            return;
+        }
+
+        // Market — prefer the standalone UI Toolkit popup if it exists in the scene,
+        // otherwise fall through to the legacy uGUI drawer so nothing breaks during migration.
+        if (menuType == DrawerUI.MenuType.Market && MarketPopupUITK.Instance != null)
+        {
+            if (DrawerUI.Instance != null && DrawerUI.Instance.IsAnyMenuOpen())
+                DrawerUI.Instance.CloseDrawer();
+
+            if (MarketPopupUITK.Instance.IsOpen) MarketPopupUITK.Instance.Close();
+            else MarketPopupUITK.Instance.Open();
+            return;
+        }
+
+        // Settings — same fallback pattern.
+        if (menuType == DrawerUI.MenuType.Settings && SettingsPopupUITK.Instance != null)
+        {
+            if (DrawerUI.Instance != null && DrawerUI.Instance.IsAnyMenuOpen())
+                DrawerUI.Instance.CloseDrawer();
+
+            if (SettingsPopupUITK.Instance.IsOpen) SettingsPopupUITK.Instance.Close();
+            else SettingsPopupUITK.Instance.Open();
+            return;
+        }
+
         if (DrawerUI.Instance != null)
             DrawerUI.Instance.OpenMenu(menuType);
+    }
+
+    private void CloseOtherPopups(DrawerUI.MenuType current)
+    {
+        if (current != DrawerUI.MenuType.Equipment &&
+            EquipmentPopupUITK.Instance != null && EquipmentPopupUITK.Instance.IsOpen)
+            EquipmentPopupUITK.Instance.Close();
+
+        if (current != DrawerUI.MenuType.Helpers &&
+            HelpersPopupUITK.Instance != null && HelpersPopupUITK.Instance.IsOpen)
+            HelpersPopupUITK.Instance.Close();
+
+        if (current != DrawerUI.MenuType.Farm &&
+            FarmPopupUITK.Instance != null && FarmPopupUITK.Instance.IsOpen)
+            FarmPopupUITK.Instance.Close();
+
+        if (current != DrawerUI.MenuType.Market &&
+            MarketPopupUITK.Instance != null && MarketPopupUITK.Instance.IsOpen)
+            MarketPopupUITK.Instance.Close();
+
+        if (current != DrawerUI.MenuType.Settings &&
+            SettingsPopupUITK.Instance != null && SettingsPopupUITK.Instance.IsOpen)
+            SettingsPopupUITK.Instance.Close();
     }
 
     /// <summary>

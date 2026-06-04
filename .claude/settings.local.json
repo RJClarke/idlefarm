@@ -67,7 +67,10 @@
       "mcp__gladekit-unity__check_asset_exists",
       "mcp__UnityMCP__unity_reflect",
       "Bash(grep -E \"\\\\.\\(png|asset|prefab\\)$\")",
-      "Bash(C:/Users/rjcla/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/brainstorming/scripts/start-server.sh *)"
+      "Bash(C:/Users/rjcla/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/brainstorming/scripts/start-server.sh *)",
+      "WebFetch(domain:unity.com)",
+      "Bash(xargs -I {} basename {})",
+      "Bash(xargs -I {} sh -c 'basename \"{}\" | grep -iE \"rooster|amethyst|sapphire|emerald|topaz|opal|stone\"')"
     ]
   }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="market-row">
+        <ui:VisualElement name="row-icon" class="market-row-icon" />
+        <ui:Label name="row-icon-fallback" class="market-row-icon-fallback" />
+        <ui:VisualElement class="market-row-text">
+            <ui:Label name="row-title" class="market-row-title" />
+            <ui:Label name="row-desc" class="market-row-desc" />
+        </ui:VisualElement>
+        <ui:VisualElement class="market-row-right">
+            <ui:Label name="row-status" class="market-row-status" />
+            <ui:Label name="row-cost" class="market-row-cost" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

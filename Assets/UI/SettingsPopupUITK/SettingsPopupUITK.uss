@@ -1,0 +1,323 @@
+/* Settings popup — mirrors Farm/Helpers/Market shell. Section cards hold mixed
+   row types: toggle / slider / button. Each row is a cream pill with a left
+   label/desc and a right control. */
+
+.popup-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 100px;
+    overflow: hidden;
+}
+
+.backdrop {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.25s;
+}
+.popup-root.open > .backdrop { opacity: 1; }
+
+.drawer-container {
+    position: absolute;
+    left: 5%; right: 5%; bottom: 0;
+    height: 75%;
+    flex-direction: column;
+    background-color: rgb(179, 154, 110);
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    translate: 0 100%;
+    transition-property: translate;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+}
+.popup-root.open > .drawer-container { translate: 0 0; }
+
+.drawer-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 16px;
+}
+
+.drawer-title {
+    -unity-font-style: bold;
+    font-size: 38px;
+    color: rgb(54, 32, 14);
+}
+
+.close-button {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    -unity-background-scale-mode: scale-to-fit;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+}
+.close-button:hover { opacity: 0.85; }
+
+.section-list {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 0;
+    padding-left: 18px;
+    padding-right: 6px;
+    padding-bottom: 28px;
+}
+
+/* ─── Section card ─── */
+
+.settings-section {
+    margin-top: 8px;
+    margin-right: 18px;
+    margin-bottom: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 18px;
+    padding-right: 18px;
+    background-color: rgb(248, 242, 228);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-color: rgba(54, 32, 14, 0.45);
+}
+
+.settings-section-title {
+    -unity-font-style: bold;
+    font-size: 26px;
+    color: rgb(54, 32, 14);
+    margin-bottom: 10px;
+}
+
+.settings-section-rows {
+    flex-direction: column;
+}
+
+/* ─── Row (shared by toggle/button rows; slider row overrides below) ─── */
+
+.settings-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
+    background-color: rgb(255, 250, 235);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: rgba(54, 32, 14, 0.25);
+}
+.settings-row:last-child { margin-bottom: 0; }
+
+.settings-row-text {
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-right: 12px;
+}
+
+.settings-row-title {
+    -unity-font-style: bold;
+    font-size: 20px;
+    color: rgb(54, 32, 14);
+    margin-bottom: 2px;
+}
+
+.settings-row-desc {
+    font-size: 14px;
+    color: rgba(54, 32, 14, 0.7);
+    white-space: normal;
+}
+
+/* ─── Toggle ─── */
+
+/* Toggle styled like an on/off switch.
+   Strategy: the Toggle root itself becomes the pill (always visible), and the
+   inner checkmark becomes the knob that flips white→green when checked. */
+.settings-row-toggle {
+    flex-shrink: 0;
+    margin: 0;
+    width: 72px;
+    height: 36px;
+    background-color: rgb(180, 165, 140);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-color: rgb(90, 55, 20);
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    justify-content: center;
+    align-items: stretch;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.settings-row-toggle:checked {
+    background-color: rgb(80, 170, 95);
+    border-color: rgb(40, 100, 50);
+}
+.settings-row-toggle > VisualElement {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+.settings-row-toggle .unity-toggle__checkmark {
+    width: 26px;
+    height: 26px;
+    background-color: rgb(255, 252, 245);
+    background-image: none;
+    -unity-background-image-tint-color: rgba(0, 0, 0, 0);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-color: rgb(90, 55, 20);
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
+
+/* ─── Button (right-aligned action button) ─── */
+
+.settings-row-button {
+    flex-shrink: 0;
+    min-width: 120px;
+    height: 48px;
+    -unity-font-style: bold;
+    font-size: 18px;
+    color: rgb(255, 240, 210);
+    background-color: rgb(120, 75, 30);
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-color: rgb(54, 32, 14);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+.settings-row-button:hover {
+    background-color: rgb(150, 95, 40);
+}
+.settings-row-button:active {
+    background-color: rgb(95, 55, 20);
+}
+
+/* Armed (tap-to-confirm) state — red, signals the next tap is destructive. */
+.settings-row-button--confirm {
+    background-color: rgb(175, 50, 45);
+    border-color: rgb(100, 25, 20);
+}
+.settings-row-button--confirm:hover {
+    background-color: rgb(200, 65, 60);
+}
+.settings-row-button--confirm:active {
+    background-color: rgb(150, 40, 35);
+}
+
+/* ─── Slider row (vertical layout: title+value on top, desc, then slider) ─── */
+
+.settings-slider-row {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.settings-slider-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.settings-row-value {
+    -unity-font-style: bold;
+    font-size: 18px;
+    color: rgb(54, 32, 14);
+}
+
+.settings-row-slider {
+    margin-top: 8px;
+    height: 24px;
+}
+.settings-row-slider .unity-base-slider__tracker {
+    background-color: rgba(90, 55, 20, 0.35);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    height: 8px;
+    top: 8px;
+}
+.settings-row-slider .unity-base-slider__dragger {
+    background-color: rgb(120, 75, 30);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-color: rgb(54, 32, 14);
+    width: 24px;
+    height: 24px;
+}
+.settings-row-slider .unity-base-slider__dragger:hover {
+    background-color: rgb(150, 95, 40);
+}
+
+/* ─── Scrollbar ─── */
+
+.section-list .unity-scroller--vertical { width: 12px; background-color: rgba(0,0,0,0); }
+.section-list .unity-scroller--vertical .unity-scroller__low-button,
+.section-list .unity-scroller--vertical .unity-scroller__high-button { display: none; }
+.section-list .unity-scroller--vertical .unity-base-slider__tracker {
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;
+}
+.section-list .unity-scroller--vertical .unity-base-slider__dragger {
+    background-color: rgb(90, 55, 20);
+    border-top-left-radius: 5px; border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;
+    border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;
+    width: 8px; left: 2px;
+}
+.section-list .unity-scroller--vertical .unity-base-slider__dragger:hover {
+    background-color: rgb(115, 72, 28);
+}

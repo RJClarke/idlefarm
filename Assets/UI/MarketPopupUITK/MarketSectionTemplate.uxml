@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="market-section">
+        <ui:Label name="section-title" class="market-section-title" />
+        <ui:VisualElement name="section-rows" class="market-section-rows" />
+    </ui:VisualElement>
+</ui:UXML>

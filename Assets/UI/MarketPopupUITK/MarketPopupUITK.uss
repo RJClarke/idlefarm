@@ -1,0 +1,277 @@
+/* Market popup — mirrors Farm/Helpers drawer styling. Two sections (Crops, Equipment)
+   of cream cards, each card holds rows. Whole row is tinted by purchase state. */
+
+.popup-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 100px;
+    overflow: hidden;
+}
+
+.backdrop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.25s;
+}
+
+.popup-root.open > .backdrop { opacity: 1; }
+
+.drawer-container {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 0;
+    height: 65%;
+    flex-direction: column;
+    background-color: rgb(179, 154, 110);
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    translate: 0 100%;
+    transition-property: translate;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+}
+
+.popup-root.open > .drawer-container { translate: 0 0; }
+
+.drawer-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 16px;
+}
+
+.drawer-title {
+    -unity-font-style: bold;
+    font-size: 38px;
+    color: rgb(54, 32, 14);
+}
+
+.close-button {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    -unity-background-scale-mode: scale-to-fit;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+}
+
+.close-button:hover { opacity: 0.85; }
+
+.section-list {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 0;
+    padding-left: 18px;
+    padding-right: 6px;
+    padding-bottom: 28px;
+}
+
+/* ─── Section card (cream background, title on top, rows below) ─── */
+
+/* Section card is just a header + a column of rows — no card chrome so the
+   white rows don't sit on a white background. */
+.market-section {
+    margin-top: 4px;
+    margin-right: 18px;
+    margin-bottom: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+.market-section-title {
+    -unity-font-style: bold;
+    font-size: 26px;
+    color: rgb(54, 32, 14);
+    margin-bottom: 12px;
+}
+
+.market-section-rows {
+    flex-direction: column;
+}
+
+/* ─── Row (left icon + text, right status + cost) ─── */
+
+.market-row {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 14px;
+    padding-right: 18px;
+    min-height: 96px;
+    background-color: rgb(255, 252, 245);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-color: rgba(54, 32, 14, 0.35);
+}
+
+.market-row:last-child { margin-bottom: 0; }
+
+.market-row-icon {
+    width: 72px;
+    height: 72px;
+    margin-right: 14px;
+    -unity-background-scale-mode: scale-to-fit;
+    flex-shrink: 0;
+}
+
+.market-row-icon-fallback {
+    width: 72px;
+    height: 72px;
+    margin-right: 14px;
+    font-size: 48px;
+    -unity-text-align: middle-center;
+    color: rgb(255, 240, 210);
+    flex-shrink: 0;
+    display: none;
+}
+
+.market-row-text {
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.market-row-title {
+    -unity-font-style: bold;
+    font-size: 24px;
+    color: rgb(255, 240, 210);
+    margin-bottom: 4px;
+}
+
+.market-row-desc {
+    font-size: 16px;
+    color: rgb(255, 232, 188);
+    white-space: normal;
+}
+
+.market-row-right {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 120px;
+}
+
+.market-row-status {
+    -unity-font-style: bold;
+    font-size: 18px;
+    color: rgb(255, 240, 210);
+    -unity-text-align: middle-right;
+    margin-bottom: 4px;
+}
+
+.market-row-cost {
+    -unity-font-style: bold;
+    font-size: 26px;
+    color: rgb(255, 240, 210);
+    -unity-text-align: middle-right;
+}
+
+/* ── State: Owned — soft green wash, dark green accents ── */
+.market-row--owned {
+    background-color: rgb(220, 240, 222);
+    border-color: rgb(40, 100, 50);
+}
+.market-row--owned .market-row-title,
+.market-row--owned .market-row-desc,
+.market-row--owned .market-row-status,
+.market-row--owned .market-row-cost {
+    color: rgb(28, 60, 30);
+}
+
+/* ── State: Affordable — clean white, warm brown border ── */
+.market-row--buy {
+    background-color: rgb(255, 252, 245);
+    border-color: rgb(90, 55, 20);
+}
+.market-row--buy .market-row-title,
+.market-row--buy .market-row-desc,
+.market-row--buy .market-row-status,
+.market-row--buy .market-row-cost {
+    color: rgb(54, 32, 14);
+}
+
+/* ── State: Unaffordable / locked — pale gray, faded ── */
+.market-row--cant-afford {
+    background-color: rgb(238, 232, 222);
+    border-color: rgba(54, 32, 14, 0.25);
+    opacity: 0.7;
+}
+.market-row--cant-afford .market-row-title,
+.market-row--cant-afford .market-row-desc,
+.market-row--cant-afford .market-row-status,
+.market-row--cant-afford .market-row-cost {
+    color: rgba(54, 32, 14, 0.85);
+}
+
+/* ─── Scrollbar (mirrors Farm/Helpers styling) ─── */
+
+.section-list .unity-scroller--vertical {
+    width: 12px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.section-list .unity-scroller--vertical .unity-scroller__low-button,
+.section-list .unity-scroller--vertical .unity-scroller__high-button {
+    display: none;
+}
+
+.section-list .unity-scroller--vertical .unity-base-slider__tracker {
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.section-list .unity-scroller--vertical .unity-base-slider__dragger {
+    background-color: rgb(90, 55, 20);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    width: 8px;
+    left: 2px;
+}
+
+.section-list .unity-scroller--vertical .unity-base-slider__dragger:hover {
+    background-color: rgb(115, 72, 28);
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="slot-section">
+        <ui:Label name="slot-header" class="slot-header" text="Helpers: 0 / 4" />
+        <ui:VisualElement name="slot-icon-row" class="slot-icon-row" />
+        <ui:VisualElement name="slot-buy-tile" class="slot-buy-tile" />
+    </ui:VisualElement>
+</ui:UXML>

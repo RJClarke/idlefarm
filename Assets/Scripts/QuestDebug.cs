@@ -3,48 +3,96 @@ using UnityEngine;
 
 public class QuestDebug : MonoBehaviour
 {
+    // Start collapsed so the game view isn't blocked.
+    private bool isExpanded = false;
+
+    private GUIStyle headerStyle;
+    private GUIStyle buttonStyle;
+    private GUIStyle labelStyle;
+    private bool stylesInitialized = false;
+
+    private const float WIDTH = 280f;
+    private const float HEADER_HEIGHT = 44f;
+    private const float BUTTON_HEIGHT = 42f;
+    private const float SPACING = 4f;
+    private const float LABEL_HEIGHT = 28f;
+    private const float PADDING = 6f;
+
+    private void EnsureStyles()
+    {
+        if (stylesInitialized) return;
+
+        headerStyle = new GUIStyle(GUI.skin.button)
+        {
+            fontSize = 20,
+            fontStyle = FontStyle.Bold,
+            alignment = TextAnchor.MiddleCenter,
+        };
+        buttonStyle = new GUIStyle(GUI.skin.button)
+        {
+            fontSize = 16,
+            alignment = TextAnchor.MiddleCenter,
+        };
+        labelStyle = new GUIStyle(GUI.skin.label)
+        {
+            fontSize = 15,
+            alignment = TextAnchor.MiddleCenter,
+            fontStyle = FontStyle.Bold,
+        };
+
+        stylesInitialized = true;
+    }
+
     private void OnGUI()
     {
         if (QuestManager.Instance == null) return;
+        EnsureStyles();
 
-        GUILayout.BeginArea(new Rect(10, 180, 230, 290));
-        GUI.Box(new Rect(0, 0, 230, 290), "Quest Debug");
-        GUILayout.Space(22);
+        const int BUTTON_COUNT = 6;
+        float expandedHeight = HEADER_HEIGHT
+            + SPACING
+            + BUTTON_COUNT * (BUTTON_HEIGHT + SPACING)
+            + LABEL_HEIGHT
+            + PADDING * 2;
+        float height = isExpanded ? expandedHeight : HEADER_HEIGHT;
 
-        if (GUILayout.Button("Spawn Quest(s)"))
+        GUILayout.BeginArea(new Rect(10, 180, WIDTH, height));
+
+        string toggleLabel = isExpanded ? "▲ Quest Debug" : "▼ Quest Debug";
+        if (GUILayout.Button(toggleLabel, headerStyle, GUILayout.Height(HEADER_HEIGHT)))
         {
-            QuestManager.Instance.DebugForceDrop();
+            isExpanded = !isExpanded;
         }
 
-        if (GUILayout.Button("Complete All Quests"))
+        if (isExpanded)
         {
-            QuestManager.Instance.DebugCompleteAll();
-        }
+            GUILayout.Space(SPACING);
 
-        if (GUILayout.Button("Claim All Completed"))
-        {
-            QuestManager.Instance.DebugClaimAll();
-        }
+            if (GUILayout.Button("Spawn Quest(s)", buttonStyle, GUILayout.Height(BUTTON_HEIGHT)))
+                QuestManager.Instance.DebugForceDrop();
 
-        if (GUILayout.Button("Max Week Progress"))
-        {
-            QuestManager.Instance.DebugClaimAllMilestones();
-        }
+            if (GUILayout.Button("Complete All Quests", buttonStyle, GUILayout.Height(BUTTON_HEIGHT)))
+                QuestManager.Instance.DebugCompleteAll();
 
-        if (GUILayout.Button("Reset All Progress"))
-        {
-            QuestManager.Instance.DebugResetAllProgress();
-        }
+            if (GUILayout.Button("Claim All Completed", buttonStyle, GUILayout.Height(BUTTON_HEIGHT)))
+                QuestManager.Instance.DebugClaimAll();
 
-        if (GUILayout.Button("Reset Daily"))
-        {
-            if (DailyRewardManager.Instance != null)
-                DailyRewardManager.Instance.DebugResetDaily();
-        }
+            if (GUILayout.Button("Max Week Progress", buttonStyle, GUILayout.Height(BUTTON_HEIGHT)))
+                QuestManager.Instance.DebugClaimAllMilestones();
 
-        int week = QuestManager.Instance.QuestsCompletedThisWeek;
-        int active = QuestManager.Instance.ActiveQuestCount;
-        GUILayout.Label($"Week: {week}/40   Active: {active}/10");
+            if (GUILayout.Button("Reset All Progress", buttonStyle, GUILayout.Height(BUTTON_HEIGHT)))
+                QuestManager.Instance.DebugResetAllProgress();
+
+            if (GUILayout.Button("Reset Daily", buttonStyle, GUILayout.Height(BUTTON_HEIGHT)))
+            {
+                if (DailyRewardManager.Instance != null)
+                    DailyRewardManager.Instance.DebugResetDaily();
+            }
+
+            int week = QuestManager.Instance.QuestsCompletedThisWeek;
+            int active = QuestManager.Instance.ActiveQuestCount;
+            GUILayout.Label($"Week: {week}/40    Active: {active}/10", labelStyle, GUILayout.Height(LABEL_HEIGHT));
+        }
 
         GUILayout.EndArea();
     }

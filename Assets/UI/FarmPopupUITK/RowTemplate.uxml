@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="row">
+        <ui:VisualElement class="row-left">
+            <ui:Label name="row-title" class="row-title" />
+            <ui:Label name="row-desc" class="row-desc" />
+            <ui:VisualElement class="row-progress">
+                <ui:VisualElement name="row-pip-row" class="row-pip-row" />
+                <ui:Label name="row-level-label" class="row-level-label" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="row-buy-tile" class="row-buy-tile" />
+    </ui:VisualElement>
+</ui:UXML>

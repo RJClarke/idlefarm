@@ -19,5 +19,5 @@ MonoBehaviour:
   coinCost: 500
   lockedDescription: Protects crops from bird threats in a radius
   unlockedMessage: Scarecrow Unlocked!
-  iconSprite: {fileID: 0}
+  equipmentSprite: {fileID: -4961344071267711760, guid: eb5a8c0a0b234c142b3904a6924cbfa1, type: 3}
   requiredUnlocks: []

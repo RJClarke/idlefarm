@@ -17,7 +17,7 @@ MonoBehaviour:
   icon: "\U0001F4A7"
   category: 1
   cropData: {fileID: 0}
-  equipmentSprite: {fileID: 0}
+  equipmentSprite: {fileID: -7581425814263505433, guid: 31cf195acb5c23e4bb958a5954aa50b0, type: 3}
   coinCost: 1500
   lockedDescription: Waters plants within range on an active/cooldown cycle
   unlockedMessage: Sprinkler Unlocked!

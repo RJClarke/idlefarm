@@ -16,9 +16,12 @@ public class DevToolsSetup : MonoBehaviour
     private TextMeshProUGUI infoTMP;
     private TextMeshProUGUI helperInfoTMP;
     private bool isOpen = false;
+
+    private static Sprite cachedPillSprite;
     private int speedIndex = 0; // 0=base, 1=10x, 2=20x, 3=30x
     private static readonly float[] speedOptions = { 0f, 10f, 20f, 30f }; // 0 = use base game speed
-    private static readonly string[] speedLabels = { "Speed 10x", "Speed 20x", "Speed 30x", "Normal" };
+    // Labels describe the CURRENT active speed at each index.
+    private static readonly string[] speedLabels = { "Speed: Normal", "Speed: 10x", "Speed: 20x", "Speed: 30x" };
     private TextMeshProUGUI speedBtnText;
 
     private void Start()
@@ -44,101 +47,167 @@ public class DevToolsSetup : MonoBehaviour
         Transform oldHelper = transform.Find("HelperPanel");
         if (oldHelper != null) Destroy(oldHelper.gameObject);
 
-        // ── Toggle Button (top-right, 20px from edges) ───────────────────
+        // Shared sizing — vertical drawer along the right edge.
+        const float DRAWER_WIDTH = 240f;
+        const float BTN_HEIGHT = 36f;
+        const float TOGGLE_HEIGHT = 40f;
+        const float MARGIN = 20f;
+        const int BTN_FONT = 20;
+        Color btnBg = new Color(0.96f, 0.96f, 0.96f, 1f);
+        Color btnText = Color.black;
+
+        // ── Toggle Button (top-right) ─────────────────────────────────────
         GameObject toggleGO = CreateButton("DevToolsToggleBtn", canvas);
         RectTransform toggleRT = toggleGO.GetComponent<RectTransform>();
         toggleRT.anchorMin = new Vector2(1, 1);
         toggleRT.anchorMax = new Vector2(1, 1);
         toggleRT.pivot = new Vector2(1, 1);
-        toggleRT.anchoredPosition = new Vector2(-20, -20);
-        toggleRT.sizeDelta = new Vector2(200, 50);
-        SetButtonColor(toggleGO, new Color(0.15f, 0.15f, 0.15f, 0.85f));
-        SetButtonText(toggleGO, "Dev Tools", 18);
+        toggleRT.anchoredPosition = new Vector2(-MARGIN, -MARGIN);
+        toggleRT.sizeDelta = new Vector2(DRAWER_WIDTH, TOGGLE_HEIGHT);
+        ApplyPillStyle(toggleGO, btnBg, btnText);
+        SetButtonText(toggleGO, "▼ Dev Tools", 17);
         toggleText = toggleGO.GetComponentInChildren<TextMeshProUGUI>();
+        if (toggleText != null) toggleText.fontStyle = FontStyles.Bold;
         toggleGO.GetComponent<Button>().onClick.AddListener(OnToggle);
 
-        // ── Drawer Panel ─────────────────────────────────────────────────
+        // ── Drawer Panel (drops down below the toggle, right-aligned) ────
         drawerGO = new GameObject("DevToolsDrawer", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
         drawerGO.transform.SetParent(canvas, false);
         drawerGO.layer = 5;
 
         RectTransform drawerRT = drawerGO.GetComponent<RectTransform>();
-        drawerRT.anchorMin = new Vector2(0, 1);
+        drawerRT.anchorMin = new Vector2(1, 1);
         drawerRT.anchorMax = new Vector2(1, 1);
-        drawerRT.pivot = new Vector2(0.5f, 1);
-        drawerRT.anchoredPosition = new Vector2(0, -75);
-        drawerRT.sizeDelta = new Vector2(-20, 280);
+        drawerRT.pivot = new Vector2(1, 1);
+        drawerRT.anchoredPosition = new Vector2(-MARGIN, -(MARGIN + TOGGLE_HEIGHT + 6f));
+        drawerRT.sizeDelta = new Vector2(DRAWER_WIDTH, 320f);
 
-        drawerGO.GetComponent<Image>().color = new Color(0.1f, 0.1f, 0.1f, 0.9f);
+        drawerGO.GetComponent<Image>().color = new Color(0.08f, 0.08f, 0.08f, 0.72f);
 
-        // Vertical layout
+        // Vertical layout — each button is one row, full width.
         VerticalLayoutGroup vlg = drawerGO.AddComponent<VerticalLayoutGroup>();
-        vlg.padding = new RectOffset(10, 10, 10, 10);
+        vlg.padding = new RectOffset(12, 12, 12, 12);
         vlg.spacing = 6;
         vlg.childAlignment = TextAnchor.UpperLeft;
         vlg.childControlWidth = true;
-        vlg.childControlHeight = false;
+        vlg.childControlHeight = true;   // respect LayoutElement.preferredHeight on each button
         vlg.childForceExpandWidth = true;
         vlg.childForceExpandHeight = false;
 
-        // ── Button Row ───────────────────────────────────────────────────
-        GameObject btnRow = new GameObject("ButtonRow", typeof(RectTransform));
-        btnRow.transform.SetParent(drawerGO.transform, false);
-        btnRow.layer = 5;
-        HorizontalLayoutGroup hlg = btnRow.AddComponent<HorizontalLayoutGroup>();
-        hlg.spacing = 8;
-        hlg.childControlWidth = true;
-        hlg.childControlHeight = true;
-        hlg.childForceExpandWidth = true;
-        hlg.childForceExpandHeight = true;
-        LayoutElement rowLE = btnRow.AddComponent<LayoutElement>();
-        rowLE.preferredHeight = 45;
-
-        // Speed button — cycles through 1x → 10x → 20x → 30x
-        GameObject speedGO = CreateButton("SpeedUpButton", btnRow.GetComponent<RectTransform>());
-        SetButtonColor(speedGO, new Color(0.3f, 0.2f, 0.05f, 1f));
-        SetButtonText(speedGO, speedLabels[0], 16);
-        speedBtnText = speedGO.GetComponentInChildren<TextMeshProUGUI>();
-        speedGO.GetComponent<Button>().onClick.AddListener(OnSpeedCycle);
-
-        // Spawn Crow button
-        GameObject crowGO = CreateButton("SpawnCrowButton", btnRow.GetComponent<RectTransform>());
-        SetButtonColor(crowGO, new Color(0.15f, 0.15f, 0.35f, 1f));
-        SetButtonText(crowGO, "Spawn Crow", 16);
+        GameObject crowGO = CreatePillButton("SpawnCrowButton", "Spawn Crow", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         crowGO.GetComponent<Button>().onClick.AddListener(() => {
             if (ThreatWaveManager.Instance != null) ThreatWaveManager.Instance.ForceSpawnCrow();
         });
 
-        // Spawn Deer button
-        GameObject deerGO = CreateButton("SpawnDeerButton", btnRow.GetComponent<RectTransform>());
-        SetButtonColor(deerGO, new Color(0.2f, 0.1f, 0.05f, 1f));
-        SetButtonText(deerGO, "Spawn Deer", 16);
+        GameObject deerGO = CreatePillButton("SpawnDeerButton", "Spawn Deer", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         deerGO.GetComponent<Button>().onClick.AddListener(() => {
             if (ThreatWaveManager.Instance != null) ThreatWaveManager.Instance.ForceSpawnDeer();
         });
 
-        // Force Egg Ready button
-        GameObject eggGO = CreateButton("ForceEggButton", btnRow.GetComponent<RectTransform>());
-        SetButtonColor(eggGO, new Color(0.45f, 0.35f, 0.05f, 1f));
-        SetButtonText(eggGO, "Force Ready", 16);
+        GameObject eggGO = CreatePillButton("ForceEggButton", "Force Egg/Gem Ready", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         eggGO.GetComponent<Button>().onClick.AddListener(() => {
             if (AnimalManager.Instance != null) AnimalManager.Instance.ForcePassiveReady();
         });
 
+        // Speed button at the BOTTOM — shows the currently-active speed in its label.
+        GameObject speedGO = CreatePillButton("SpeedUpButton", speedLabels[speedIndex], btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        speedBtnText = speedGO.GetComponentInChildren<TextMeshProUGUI>();
+        speedGO.GetComponent<Button>().onClick.AddListener(OnSpeedCycle);
+
         // ── Info Text ────────────────────────────────────────────────────
-        GameObject infoGO = CreateText("InfoText", drawerGO.GetComponent<RectTransform>(), 14);
+        GameObject infoGO = CreateText("InfoText", drawerGO.GetComponent<RectTransform>(), 15);
         infoTMP = infoGO.GetComponent<TextMeshProUGUI>();
-        LayoutElement infoLE = infoGO.AddComponent<LayoutElement>();
-        infoLE.preferredHeight = 80;
+        AddPreferredHeight(infoGO, 90f);
 
         // ── Helper Info Text ─────────────────────────────────────────────
-        GameObject helperGO = CreateText("HelperInfoText", drawerGO.GetComponent<RectTransform>(), 14);
+        GameObject helperGO = CreateText("HelperInfoText", drawerGO.GetComponent<RectTransform>(), 15);
         helperInfoTMP = helperGO.GetComponent<TextMeshProUGUI>();
-        LayoutElement helperLE = helperGO.AddComponent<LayoutElement>();
-        helperLE.preferredHeight = 25;
+        AddPreferredHeight(helperGO, 30f);
 
-        // Start closed
+        // Start closed so the game view isn't blocked.
         drawerGO.SetActive(false);
+    }
+
+    private static void AddPreferredHeight(GameObject go, float height)
+    {
+        LayoutElement le = go.GetComponent<LayoutElement>();
+        if (le == null) le = go.AddComponent<LayoutElement>();
+        le.preferredHeight = height;
+        le.minHeight = height;
+    }
+
+    /// <summary>
+    /// Build a simple light pill button (rounded-rect sprite + dark text).
+    /// </summary>
+    private GameObject CreatePillButton(string name, string label, Color bg, Color text, int font, float height)
+    {
+        GameObject go = CreateButton(name, drawerGO.GetComponent<RectTransform>());
+        ApplyPillStyle(go, bg, text);
+        SetButtonText(go, label, font);
+        AddPreferredHeight(go, height);
+        return go;
+    }
+
+    private static void ApplyPillStyle(GameObject btn, Color bg, Color text)
+    {
+        Image img = btn.GetComponent<Image>();
+        if (img != null)
+        {
+            img.sprite = GetPillSprite();
+            img.type = Image.Type.Sliced;
+            img.color = bg;
+            img.pixelsPerUnitMultiplier = 1f;
+        }
+        TextMeshProUGUI tmp = btn.GetComponentInChildren<TextMeshProUGUI>();
+        if (tmp != null)
+        {
+            tmp.color = text;
+            tmp.alignment = TextAlignmentOptions.Center;
+        }
+    }
+
+    /// <summary>
+    /// Procedural rounded-rect (pill) sprite with built-in 9-slice borders.
+    /// One static instance is shared by every dev-tools button.
+    /// </summary>
+    private static Sprite GetPillSprite()
+    {
+        if (cachedPillSprite != null) return cachedPillSprite;
+
+        const int W = 32, H = 32, R = 5;
+        Texture2D tex = new Texture2D(W, H, TextureFormat.RGBA32, false);
+        tex.filterMode = FilterMode.Bilinear;
+        tex.wrapMode = TextureWrapMode.Clamp;
+
+        Color[] px = new Color[W * H];
+        for (int y = 0; y < H; y++)
+        {
+            for (int x = 0; x < W; x++)
+            {
+                float dx = 0f, dy = 0f;
+                if (x < R) dx = R - 0.5f - x;
+                else if (x >= W - R) dx = x - (W - R) + 0.5f;
+                if (y < R) dy = R - 0.5f - y;
+                else if (y >= H - R) dy = y - (H - R) + 0.5f;
+
+                float dist = Mathf.Sqrt(dx * dx + dy * dy);
+                float alpha = Mathf.Clamp01(R - dist + 0.5f);
+                px[y * W + x] = new Color(1f, 1f, 1f, alpha);
+            }
+        }
+        tex.SetPixels(px);
+        tex.Apply();
+
+        cachedPillSprite = Sprite.Create(
+            tex,
+            new Rect(0, 0, W, H),
+            new Vector2(0.5f, 0.5f),
+            W,
+            0,
+            SpriteMeshType.FullRect,
+            new Vector4(R, R, R, R));
+        cachedPillSprite.name = "DevToolsPill";
+        return cachedPillSprite;
     }
 
     // ─────────────────────────────────────────────────────────────────────
@@ -149,7 +218,7 @@ public class DevToolsSetup : MonoBehaviour
     {
         isOpen = !isOpen;
         if (drawerGO != null) drawerGO.SetActive(isOpen);
-        if (toggleText != null) toggleText.text = isOpen ? "Close Dev Tools" : "Dev Tools";
+        if (toggleText != null) toggleText.text = isOpen ? "▲ Dev Tools" : "▼ Dev Tools";
     }
 
     private float BaseSpeed => GameConstants.Instance != null ? GameConstants.Instance.baseGameSpeed : 2f;

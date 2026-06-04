@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <ui:VisualElement class="settings-section">
+        <ui:Label name="section-title" class="settings-section-title" />
+        <ui:VisualElement name="section-rows" class="settings-section-rows" />
+    </ui:VisualElement>
+</ui:UXML>
