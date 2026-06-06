@@ -8,13 +8,17 @@ using UnityEngine;
 /// </summary>
 public class CameraPanController : MonoBehaviour
 {
-    public enum Location { Farm, Greenhouse }
+    public enum Location { Farm, Greenhouse, Market }
 
     [Serializable]
     public class LocationOffset
     {
         public Location location;
         public Vector2 offset; // world units, relative to Farm home position
+        [Tooltip("Override the shared panDuration for this location. 0 = use default.")]
+        public float durationOverride;
+        [Tooltip("Override the shared easeType for this location. notUsed = use default.")]
+        public LeanTweenType easeOverride;
     }
 
     [Header("Locations")]
@@ -23,6 +27,7 @@ public class CameraPanController : MonoBehaviour
     {
         new LocationOffset { location = Location.Farm,       offset = Vector2.zero },
         new LocationOffset { location = Location.Greenhouse, offset = new Vector2(5f, 8f) },
+        new LocationOffset { location = Location.Market,     offset = new Vector2(15f, 0f), durationOverride = 0.8f, easeOverride = LeanTweenType.easeInOutCubic },
     };
 
     [Header("Tween")]
@@ -56,7 +61,11 @@ public class CameraPanController : MonoBehaviour
             return;
         }
 
-        Vector2 offset = GetOffset(target);
+        LocationOffset entry = GetEntry(target);
+        Vector2 offset = entry != null ? entry.offset : Vector2.zero;
+        float duration = (entry != null && entry.durationOverride > 0f) ? entry.durationOverride : panDuration;
+        LeanTweenType ease = (entry != null && entry.easeOverride != LeanTweenType.notUsed) ? entry.easeOverride : easeType;
+
         Vector3 destination = new Vector3(homePosition.x + offset.x, homePosition.y + offset.y, transform.position.z);
 
         if (activeTweenId != -1) LeanTween.cancel(activeTweenId);
@@ -64,8 +73,8 @@ public class CameraPanController : MonoBehaviour
         IsPanning = true;
         OnPanStarted?.Invoke(target);
 
-        activeTweenId = LeanTween.move(gameObject, destination, panDuration)
-            .setEase(easeType)
+        activeTweenId = LeanTween.move(gameObject, destination, duration)
+            .setEase(ease)
             .setOnComplete(() =>
             {
                 IsPanning = false;
@@ -79,16 +88,17 @@ public class CameraPanController : MonoBehaviour
     // Convenience for UnityEvent button hookups (UI Buttons can't pass enums directly).
     public void PanToFarm()       => PanTo(Location.Farm);
     public void PanToGreenhouse() => PanTo(Location.Greenhouse);
+    public void PanToMarket()     => PanTo(Location.Market);
 
     public void ToggleFarmGreenhouse()
     {
         PanTo(CurrentLocation == Location.Farm ? Location.Greenhouse : Location.Farm);
     }
 
-    private Vector2 GetOffset(Location target)
+    private LocationOffset GetEntry(Location target)
     {
         for (int i = 0; i < locations.Length; i++)
-            if (locations[i].location == target) return locations[i].offset;
-        return Vector2.zero;
+            if (locations[i].location == target) return locations[i];
+        return null;
     }
 }

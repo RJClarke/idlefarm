@@ -27,14 +27,23 @@ public class GreenhouseNavButton : MonoBehaviour
         }
 
         if (button != null) button.onClick.AddListener(OnClick);
+        panController.OnPanStarted   += OnPanStarted;
         panController.OnPanCompleted += OnPanCompleted;
+        BuildingState.OnBuildingBuilt += OnBuildingBuilt;
+
         UpdateLabel(panController.CurrentLocation);
+        UpdateVisibility(panController.CurrentLocation);
     }
 
     private void OnDestroy()
     {
         if (button != null) button.onClick.RemoveListener(OnClick);
-        if (panController != null) panController.OnPanCompleted -= OnPanCompleted;
+        if (panController != null)
+        {
+            panController.OnPanStarted   -= OnPanStarted;
+            panController.OnPanCompleted -= OnPanCompleted;
+        }
+        BuildingState.OnBuildingBuilt -= OnBuildingBuilt;
     }
 
     private void OnClick()
@@ -43,11 +52,20 @@ public class GreenhouseNavButton : MonoBehaviour
         panController.ToggleFarmGreenhouse();
     }
 
+    private void OnPanStarted(CameraPanController.Location target) => UpdateVisibility(target);
     private void OnPanCompleted(CameraPanController.Location loc) => UpdateLabel(loc);
+    private void OnBuildingBuilt(string _) => UpdateVisibility(panController != null ? panController.CurrentLocation : CameraPanController.Location.Farm);
 
     private void UpdateLabel(CameraPanController.Location loc)
     {
         if (label == null) return;
         label.text = loc == CameraPanController.Location.Greenhouse ? greenhouseLabel : farmLabel;
+    }
+
+    private void UpdateVisibility(CameraPanController.Location loc)
+    {
+        bool built  = BuildingState.IsBuilt(BuildingState.GreenhouseKey);
+        bool hidden = loc == CameraPanController.Location.Market;
+        gameObject.SetActive(built && !hidden);
     }
 }

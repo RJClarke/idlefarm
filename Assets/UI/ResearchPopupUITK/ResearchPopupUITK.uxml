@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="ResearchPopupUITK.uss" />
+    <ui:VisualElement name="popup-root" class="popup-root" style="display: none;">
+        <ui:VisualElement name="header" class="header">
+            <ui:Label name="header-title" text="Greenhouse — Research" class="header-title" />
+            <ui:Button name="close-button" class="close-button" text="X" />
+        </ui:VisualElement>
+        <ui:VisualElement name="slots-list" class="slots-list">
+            <ui:VisualElement name="slot-0" class="slot-card" />
+            <ui:VisualElement name="slot-1" class="slot-card" />
+            <ui:VisualElement name="slot-2" class="slot-card" />
+            <ui:VisualElement name="slot-3" class="slot-card" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

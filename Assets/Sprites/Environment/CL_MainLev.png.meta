@@ -207,6 +207,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -32067,7 +32093,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1448
+      name: StairsSM_1448
       rect:
         serializedVersion: 2
         x: 704
@@ -32089,7 +32115,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1449
+      name: StairsSM_1449
       rect:
         serializedVersion: 2
         x: 736
@@ -33189,7 +33215,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1499
+      name: StairsMD_1499
       rect:
         serializedVersion: 2
         x: 704
@@ -33211,7 +33237,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1500
+      name: StairsMD_1500
       rect:
         serializedVersion: 2
         x: 736
@@ -34509,7 +34535,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1559
+      name: StairsMD_1559
       rect:
         serializedVersion: 2
         x: 704
@@ -34531,7 +34557,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1560
+      name: StairsMD_1560
       rect:
         serializedVersion: 2
         x: 736
@@ -35829,7 +35855,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1619
+      name: StairsMD2_1619
       rect:
         serializedVersion: 2
         x: 704
@@ -35851,7 +35877,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1620
+      name: StairsMD2_1620
       rect:
         serializedVersion: 2
         x: 736
@@ -37083,7 +37109,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1676
+      name: StairsMD2_1676
       rect:
         serializedVersion: 2
         x: 704
@@ -37105,7 +37131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1677
+      name: StairsMD2_1677
       rect:
         serializedVersion: 2
         x: 736
@@ -38249,7 +38275,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1729
+      name: StairsLG_1729
       rect:
         serializedVersion: 2
         x: 640
@@ -38271,7 +38297,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1730
+      name: StairsLG_1730
       rect:
         serializedVersion: 2
         x: 672
@@ -38293,7 +38319,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1731
+      name: StairsLG_1731
       rect:
         serializedVersion: 2
         x: 704
@@ -38315,7 +38341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1732
+      name: StairsLG_1732
       rect:
         serializedVersion: 2
         x: 736
@@ -39613,7 +39639,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1791
+      name: StairsLG_1791
       rect:
         serializedVersion: 2
         x: 640
@@ -39635,7 +39661,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1792
+      name: StairsLG_1792
       rect:
         serializedVersion: 2
         x: 672
@@ -39657,7 +39683,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1793
+      name: StairsLG_1793
       rect:
         serializedVersion: 2
         x: 704
@@ -39679,7 +39705,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1794
+      name: StairsLG_1794
       rect:
         serializedVersion: 2
         x: 736
@@ -40933,7 +40959,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1851
+      name: StairsLG_1851
       rect:
         serializedVersion: 2
         x: 640
@@ -40955,7 +40981,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1852
+      name: StairsLG_1852
       rect:
         serializedVersion: 2
         x: 672
@@ -40977,7 +41003,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1853
+      name: StairsLG_1853
       rect:
         serializedVersion: 2
         x: 704
@@ -40999,7 +41025,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1854
+      name: StairsLG_1854
       rect:
         serializedVersion: 2
         x: 736
@@ -42209,7 +42235,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1909
+      name: StairsLG_1909
       rect:
         serializedVersion: 2
         x: 640
@@ -42231,7 +42257,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1910
+      name: StairsLG_1910
       rect:
         serializedVersion: 2
         x: 672
@@ -42253,7 +42279,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1911
+      name: StairsLG_1911
       rect:
         serializedVersion: 2
         x: 704
@@ -42275,7 +42301,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_1912
+      name: StairsLG_1912
       rect:
         serializedVersion: 2
         x: 736
@@ -49777,7 +49803,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2256
+      name: DockH_2256
       rect:
         serializedVersion: 2
         x: 1024
@@ -49799,7 +49825,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2257
+      name: DockH_2257
       rect:
         serializedVersion: 2
         x: 1056
@@ -49821,7 +49847,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2258
+      name: DockH_2258
       rect:
         serializedVersion: 2
         x: 1088
@@ -49843,7 +49869,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2259
+      name: DockH_2259
       rect:
         serializedVersion: 2
         x: 1120
@@ -50855,7 +50881,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2313
+      name: DockH_2313
       rect:
         serializedVersion: 2
         x: 1024
@@ -50877,7 +50903,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2314
+      name: DockH_2314
       rect:
         serializedVersion: 2
         x: 1056
@@ -50899,7 +50925,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2315
+      name: DockH_2315
       rect:
         serializedVersion: 2
         x: 1088
@@ -50921,7 +50947,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2316
+      name: DockH_2316
       rect:
         serializedVersion: 2
         x: 1120
@@ -51933,7 +51959,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2374
+      name: DockH_2374
       rect:
         serializedVersion: 2
         x: 1024
@@ -51955,7 +51981,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2375
+      name: DockH_2375
       rect:
         serializedVersion: 2
         x: 1056
@@ -51977,7 +52003,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2376
+      name: DockH_2376
       rect:
         serializedVersion: 2
         x: 1088
@@ -51999,7 +52025,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2377
+      name: DockH_2377
       rect:
         serializedVersion: 2
         x: 1120
@@ -53033,7 +53059,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2436
+      name: DockV_2436
       rect:
         serializedVersion: 2
         x: 1024
@@ -53055,7 +53081,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2437
+      name: DockV_2437
       rect:
         serializedVersion: 2
         x: 1056
@@ -53077,7 +53103,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2438
+      name: DockV_2438
       rect:
         serializedVersion: 2
         x: 1088
@@ -54089,7 +54115,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2496
+      name: DockV_2496
       rect:
         serializedVersion: 2
         x: 1024
@@ -54111,7 +54137,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2497
+      name: DockV_2497
       rect:
         serializedVersion: 2
         x: 1056
@@ -54133,7 +54159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2498
+      name: DockV_2498
       rect:
         serializedVersion: 2
         x: 1088
@@ -54485,7 +54511,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2526
+      name: DockV_2526
       rect:
         serializedVersion: 2
         x: 1024
@@ -54507,7 +54533,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2527
+      name: DockV_2527
       rect:
         serializedVersion: 2
         x: 1056
@@ -54529,7 +54555,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2528
+      name: DockV_2528
       rect:
         serializedVersion: 2
         x: 1088
@@ -54859,7 +54885,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2553
+      name: DockV_2553
       rect:
         serializedVersion: 2
         x: 1024
@@ -54881,7 +54907,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2554
+      name: DockV_2554
       rect:
         serializedVersion: 2
         x: 1056
@@ -54903,7 +54929,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CL_MainLev_2555
+      name: DockV_2555
       rect:
         serializedVersion: 2
         x: 1088
@@ -70158,8 +70184,6 @@ TextureImporter:
       CL_MainLev_1445: -1957328920
       CL_MainLev_1446: -336838782
       CL_MainLev_1447: -1832602046
-      CL_MainLev_1448: -1612139231
-      CL_MainLev_1449: -1641925558
       CL_MainLev_145: -487748832
       CL_MainLev_1450: 104839400
       CL_MainLev_1451: 1468596159
@@ -70214,10 +70238,8 @@ TextureImporter:
       CL_MainLev_1496: 1077124335
       CL_MainLev_1497: 2117257995
       CL_MainLev_1498: 876374409
-      CL_MainLev_1499: 96283850
       CL_MainLev_15: -1049774006695053232
       CL_MainLev_150: -974606044
-      CL_MainLev_1500: 217939354
       CL_MainLev_1501: 1411374192
       CL_MainLev_1502: 545828355
       CL_MainLev_1503: 1546360025
@@ -70281,9 +70303,7 @@ TextureImporter:
       CL_MainLev_1556: -1321210349
       CL_MainLev_1557: 922849089
       CL_MainLev_1558: -667738171
-      CL_MainLev_1559: -1949538606
       CL_MainLev_156: 235519483
-      CL_MainLev_1560: 1233195594
       CL_MainLev_1561: -934118145
       CL_MainLev_1562: -2051626901
       CL_MainLev_1563: 1926760664
@@ -70348,9 +70368,7 @@ TextureImporter:
       CL_MainLev_1616: -1079547989
       CL_MainLev_1617: -1757592979
       CL_MainLev_1618: -2125394583
-      CL_MainLev_1619: -1319459790
       CL_MainLev_162: 485366078
-      CL_MainLev_1620: 461514816
       CL_MainLev_1621: -1311373654
       CL_MainLev_1622: 1066691355
       CL_MainLev_1623: -2145030473
@@ -70411,8 +70429,6 @@ TextureImporter:
       CL_MainLev_1673: 714106867
       CL_MainLev_1674: -1919970613
       CL_MainLev_1675: -2116740793
-      CL_MainLev_1676: -1632878313
-      CL_MainLev_1677: 197689461
       CL_MainLev_1678: -78584047
       CL_MainLev_1679: 20693363
       CL_MainLev_168: 1654374796
@@ -70470,11 +70486,7 @@ TextureImporter:
       CL_MainLev_1726: -1860311299
       CL_MainLev_1727: 1859648687
       CL_MainLev_1728: -350609190
-      CL_MainLev_1729: -2093344305
       CL_MainLev_173: -1924289895
-      CL_MainLev_1730: -578568222
-      CL_MainLev_1731: -312653006
-      CL_MainLev_1732: -1042769150
       CL_MainLev_1733: 544695730
       CL_MainLev_1734: 1740914438
       CL_MainLev_1735: -1407389388
@@ -70539,10 +70551,6 @@ TextureImporter:
       CL_MainLev_1789: 61795619
       CL_MainLev_179: -1694844101
       CL_MainLev_1790: -1462035120
-      CL_MainLev_1791: 186487182
-      CL_MainLev_1792: 1008888290
-      CL_MainLev_1793: -876715213
-      CL_MainLev_1794: -99432783
       CL_MainLev_1795: -1587998675
       CL_MainLev_1796: 1727350305
       CL_MainLev_1797: 1883694424
@@ -70606,10 +70614,6 @@ TextureImporter:
       CL_MainLev_1849: -658932702
       CL_MainLev_185: 969169803
       CL_MainLev_1850: -1623610118
-      CL_MainLev_1851: -1989285789
-      CL_MainLev_1852: -932729525
-      CL_MainLev_1853: 801558753
-      CL_MainLev_1854: -2129644351
       CL_MainLev_1855: -1039749162
       CL_MainLev_1856: -2135959182
       CL_MainLev_1857: 575106310
@@ -70670,11 +70674,7 @@ TextureImporter:
       CL_MainLev_1906: 1014906917
       CL_MainLev_1907: 1428630868
       CL_MainLev_1908: 243947541
-      CL_MainLev_1909: 1898773092
       CL_MainLev_191: -1413347354
-      CL_MainLev_1910: -1072842897
-      CL_MainLev_1911: -1935294998
-      CL_MainLev_1912: 1758360916
       CL_MainLev_1913: 74023631
       CL_MainLev_1914: -41965179
       CL_MainLev_1915: -110369414
@@ -71056,10 +71056,6 @@ TextureImporter:
       CL_MainLev_2253: 1662538269
       CL_MainLev_2254: -650928593
       CL_MainLev_2255: -2023890857
-      CL_MainLev_2256: -1404972
-      CL_MainLev_2257: 1193178335
-      CL_MainLev_2258: -2024683704
-      CL_MainLev_2259: -1185822682
       CL_MainLev_226: -2057825286
       CL_MainLev_2260: -801003001
       CL_MainLev_2261: 904666456
@@ -71120,10 +71116,6 @@ TextureImporter:
       CL_MainLev_2310: -1017311993
       CL_MainLev_2311: 1106335572
       CL_MainLev_2312: 1776957799
-      CL_MainLev_2313: 579295994
-      CL_MainLev_2314: -2144120589
-      CL_MainLev_2315: 2147343840
-      CL_MainLev_2316: -893654861
       CL_MainLev_2317: -644552688
       CL_MainLev_2318: 1695072274
       CL_MainLev_2319: 877791346
@@ -71187,10 +71179,6 @@ TextureImporter:
       CL_MainLev_2371: -2065248991
       CL_MainLev_2372: -76056700
       CL_MainLev_2373: 571214382
-      CL_MainLev_2374: 2093125279
-      CL_MainLev_2375: 1415153521
-      CL_MainLev_2376: 1138811495
-      CL_MainLev_2377: -223232602
       CL_MainLev_2378: 1791017439
       CL_MainLev_2379: -1562301351
       CL_MainLev_238: 41448029
@@ -71256,9 +71244,6 @@ TextureImporter:
       CL_MainLev_2433: 1102543507
       CL_MainLev_2434: 249866675
       CL_MainLev_2435: 1845780370
-      CL_MainLev_2436: -1420644797
-      CL_MainLev_2437: -118332842
-      CL_MainLev_2438: -1629416895
       CL_MainLev_2439: -199866522
       CL_MainLev_244: -1728913210
       CL_MainLev_2440: -294492900
@@ -71322,9 +71307,6 @@ TextureImporter:
       CL_MainLev_2493: -1220174029
       CL_MainLev_2494: -1012125172
       CL_MainLev_2495: -2009753262
-      CL_MainLev_2496: 901274503
-      CL_MainLev_2497: -1022376427
-      CL_MainLev_2498: -732296466
       CL_MainLev_2499: 1876027933
       CL_MainLev_25: -3676237417107408323
       CL_MainLev_250: 747564653
@@ -71356,9 +71338,6 @@ TextureImporter:
       CL_MainLev_2523: -1873974175
       CL_MainLev_2524: 17343466
       CL_MainLev_2525: 599900233
-      CL_MainLev_2526: 2030732108
-      CL_MainLev_2527: -120499764
-      CL_MainLev_2528: 1855191228
       CL_MainLev_2529: -1290849704
       CL_MainLev_253: 923856762
       CL_MainLev_2530: 1448968265
@@ -71386,9 +71365,6 @@ TextureImporter:
       CL_MainLev_2550: -814694257
       CL_MainLev_2551: -348735158
       CL_MainLev_2552: 159165778
-      CL_MainLev_2553: -633277247
-      CL_MainLev_2554: 672977437
-      CL_MainLev_2555: -1638547030
       CL_MainLev_2556: -1542804018
       CL_MainLev_2557: 2144109136
       CL_MainLev_2558: -727716389
@@ -72884,6 +72860,30 @@ TextureImporter:
       Dirt7: 1006770691
       Dirt8: 812642723
       Dirt9: -308434306
+      DockH_2256: -1404972
+      DockH_2257: 1193178335
+      DockH_2258: -2024683704
+      DockH_2259: -1185822682
+      DockH_2313: 579295994
+      DockH_2314: -2144120589
+      DockH_2315: 2147343840
+      DockH_2316: -893654861
+      DockH_2374: 2093125279
+      DockH_2375: 1415153521
+      DockH_2376: 1138811495
+      DockH_2377: -223232602
+      DockV_2436: -1420644797
+      DockV_2437: -118332842
+      DockV_2438: -1629416895
+      DockV_2496: 901274503
+      DockV_2497: -1022376427
+      DockV_2498: -732296466
+      DockV_2526: 2030732108
+      DockV_2527: -120499764
+      DockV_2528: 1855191228
+      DockV_2553: -633277247
+      DockV_2554: 672977437
+      DockV_2555: -1638547030
       Grass1: 893228112
       Grass2: 743956743
       Grass3: 2105334558
@@ -72893,6 +72893,33 @@ TextureImporter:
       Grass7: 164336297
       Grass8: -685297691
       Grass9: -925812776
+      Q_2958: 337557963
+      StairsLG_1729: -2093344305
+      StairsLG_1730: -578568222
+      StairsLG_1731: -312653006
+      StairsLG_1732: -1042769150
+      StairsLG_1791: 186487182
+      StairsLG_1792: 1008888290
+      StairsLG_1793: -876715213
+      StairsLG_1794: -99432783
+      StairsLG_1851: -1989285789
+      StairsLG_1852: -932729525
+      StairsLG_1853: 801558753
+      StairsLG_1854: -2129644351
+      StairsLG_1909: 1898773092
+      StairsLG_1910: -1072842897
+      StairsLG_1911: -1935294998
+      StairsLG_1912: 1758360916
+      StairsMD2_1619: -1319459790
+      StairsMD2_1620: 461514816
+      StairsMD2_1676: -1632878313
+      StairsMD2_1677: 197689461
+      StairsMD_1499: 96283850
+      StairsMD_1500: 217939354
+      StairsMD_1559: -1949538606
+      StairsMD_1560: 1233195594
+      StairsSM_1448: -1612139231
+      StairsSM_1449: -1641925558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

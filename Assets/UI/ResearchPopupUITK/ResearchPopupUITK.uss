@@ -1,0 +1,138 @@
+/* Research popup — full-screen overlay (no center card). 2x2 slot grid. */
+
+.popup-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(48, 36, 22);
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.22s ease-out;
+    display: none;
+}
+
+.popup-root.open {
+    opacity: 1;
+}
+
+.header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 38px;
+    padding-bottom: 18px;
+    padding-left: 32px;
+    padding-right: 24px;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(90, 55, 20);
+    background-color: rgb(38, 28, 16);
+}
+
+.header-title {
+    -unity-font-style: bold;
+    font-size: 44px;
+    color: rgb(255, 240, 210);
+}
+
+.close-button {
+    width: 72px;
+    height: 72px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    -unity-background-scale-mode: scale-to-fit;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+}
+
+.close-button:hover { opacity: 0.85; }
+
+/* ─── Vertical list of 4 slots ─── */
+
+.slots-list {
+    flex-grow: 1;
+    flex-direction: column;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.slot-card {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(72, 56, 36);
+    border-color: rgb(110, 86, 50);
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* ─── Slot states ─── */
+
+.slot-card--unlocked-empty {
+    background-color: rgb(86, 68, 42);
+    border-color: rgb(170, 138, 80);
+}
+
+.slot-card--locked {
+    background-color: rgb(50, 40, 26);
+    border-color: rgba(110, 86, 50, 0.45);
+    opacity: 0.85;
+}
+
+.slot-card--affordable {
+    background-color: rgb(96, 76, 48);
+    border-color: rgb(220, 180, 100);
+}
+
+.slot-card--pressed {
+    background-color: rgb(56, 44, 28);
+    border-color: rgb(170, 138, 80);
+}
+
+/* ─── Slot labels (built in code, styled here) ─── */
+
+.slot-status {
+    -unity-font-style: bold;
+    font-size: 38px;
+    color: rgb(220, 195, 150);
+    -unity-text-align: middle-center;
+    margin-bottom: 14px;
+    white-space: normal;
+}
+
+.slot-action {
+    font-size: 28px;
+    color: rgb(255, 240, 210);
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.slot-card--locked .slot-status {
+    color: rgba(220, 195, 150, 0.75);
+}
+
+.slot-card--locked .slot-action {
+    color: rgba(255, 240, 210, 0.65);
+}
+
+.slot-card--affordable .slot-status {
+    color: rgb(255, 240, 210);
+}

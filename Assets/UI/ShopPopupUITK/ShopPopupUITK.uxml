@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="ShopPopupUITK.uss" />
+    <ui:VisualElement name="popup-root" class="popup-root" style="display: none;">
+        <ui:VisualElement name="backdrop" class="backdrop" picking-mode="Position" />
+        <ui:VisualElement name="popup-container" class="popup-container">
+            <ui:VisualElement name="header" class="header">
+                <ui:Label name="header-title" text="Shop" class="header-title" />
+                <ui:Button name="close-button" class="close-button" text="X" />
+            </ui:VisualElement>
+            <ui:ScrollView name="rows-list" class="rows-list" mode="Vertical" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

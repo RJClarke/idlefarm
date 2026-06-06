@@ -1,0 +1,250 @@
+/* Shop popup — center-card style (Quest/Daily pattern), reuses Market row chrome. */
+
+.popup-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    display: none;
+}
+
+.popup-root.open {
+    opacity: 1;
+}
+
+.backdrop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.popup-container {
+    width: 88%;
+    max-width: 980px;
+    min-width: 320px;
+    height: 50%;
+    min-height: 480px;
+    max-height: 1000px;
+    background-color: rgb(179, 154, 110);
+    border-color: rgb(90, 55, 20);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    overflow: hidden;
+    scale: 0.92 0.92;
+    transition: scale 0.22s ease-out;
+    flex-direction: column;
+}
+
+.popup-root.open .popup-container {
+    scale: 1 1;
+}
+
+.header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 14px;
+    padding-left: 24px;
+    padding-right: 16px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(90, 55, 20, 0.4);
+}
+
+.header-title {
+    -unity-font-style: bold;
+    font-size: 36px;
+    color: rgb(54, 32, 14);
+}
+
+.close-button {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    -unity-background-scale-mode: scale-to-fit;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+}
+
+.close-button:hover { opacity: 0.85; }
+
+.rows-list {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 0;
+    padding-left: 18px;
+    padding-right: 6px;
+    padding-top: 14px;
+    padding-bottom: 18px;
+}
+
+/* ─── Row (left icon + text, right status + cost) ─── */
+
+.market-row {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 14px;
+    padding-right: 18px;
+    min-height: 96px;
+    background-color: rgb(255, 252, 245);
+    border-top-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    border-left-width: 3px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-color: rgba(54, 32, 14, 0.35);
+    margin-right: 12px;
+}
+
+.market-row-icon {
+    width: 72px;
+    height: 72px;
+    margin-right: 14px;
+    -unity-background-scale-mode: scale-to-fit;
+    flex-shrink: 0;
+}
+
+.market-row-icon-fallback {
+    width: 72px;
+    height: 72px;
+    margin-right: 14px;
+    font-size: 48px;
+    -unity-text-align: middle-center;
+    color: rgb(255, 240, 210);
+    flex-shrink: 0;
+    display: none;
+}
+
+.market-row-text {
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.market-row-title {
+    -unity-font-style: bold;
+    font-size: 24px;
+    color: rgb(54, 32, 14);
+    margin-bottom: 4px;
+}
+
+.market-row-desc {
+    font-size: 16px;
+    color: rgba(54, 32, 14, 0.85);
+    white-space: normal;
+}
+
+.market-row-right {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 120px;
+}
+
+.market-row-status {
+    -unity-font-style: bold;
+    font-size: 18px;
+    color: rgb(54, 32, 14);
+    -unity-text-align: middle-right;
+    margin-bottom: 4px;
+}
+
+.market-row-cost {
+    -unity-font-style: bold;
+    font-size: 26px;
+    color: rgb(54, 32, 14);
+    -unity-text-align: middle-right;
+}
+
+/* ── State: Owned ── */
+.market-row--owned {
+    background-color: rgb(220, 240, 222);
+    border-color: rgb(40, 100, 50);
+}
+.market-row--owned .market-row-title,
+.market-row--owned .market-row-desc,
+.market-row--owned .market-row-status,
+.market-row--owned .market-row-cost {
+    color: rgb(28, 60, 30);
+}
+
+/* ── State: Affordable ── */
+.market-row--buy {
+    background-color: rgb(255, 252, 245);
+    border-color: rgb(90, 55, 20);
+}
+
+/* ── Pressed (affordable rows only) ── */
+.market-row--buy.market-row--pressed {
+    background-color: rgb(228, 220, 200);
+    border-color: rgb(60, 38, 14);
+}
+
+/* ── State: Locked / unaffordable ── */
+.market-row--cant-afford {
+    background-color: rgb(238, 232, 222);
+    border-color: rgba(54, 32, 14, 0.25);
+    opacity: 0.55;
+}
+
+/* ─── Scrollbar ─── */
+
+.rows-list .unity-scroller--vertical {
+    width: 12px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.rows-list .unity-scroller--vertical .unity-scroller__low-button,
+.rows-list .unity-scroller--vertical .unity-scroller__high-button {
+    display: none;
+}
+
+.rows-list .unity-scroller--vertical .unity-base-slider__tracker {
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+.rows-list .unity-scroller--vertical .unity-base-slider__dragger {
+    background-color: rgb(90, 55, 20);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    width: 8px;
+    left: 2px;
+}
