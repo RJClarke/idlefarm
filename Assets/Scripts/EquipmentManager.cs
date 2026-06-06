@@ -539,26 +539,36 @@ public class EquipmentManager : MonoBehaviour
     public float GetEffectiveAoE(EquipmentData data)
     {
         int level = GetUpgradeLevel(data.aoeUpgradeID);
-        return data.baseAoERadius + (level * data.aoeBonusPerLevel);
+        float val = data.baseAoERadius + (level * data.aoeBonusPerLevel);
+        return val * (1f + ResearchBonus(data.aoeUpgradeID));
     }
 
     public float GetEffectiveCooldown(EquipmentData data)
     {
         int level = GetUpgradeLevel(data.cooldownUpgradeID);
         float cd = data.baseCooldownSeconds - (level * data.cooldownReductionPerLevel);
+        cd /= Mathf.Max(0.01f, 1f + ResearchBonus(data.cooldownUpgradeID));
         return Mathf.Max(cd, data.minCooldownSeconds);
     }
 
     public int GetEffectiveCapacity(EquipmentData data)
     {
         int level = GetUpgradeLevel(data.capacityUpgradeID);
-        return data.baseRepelCapacity + (level * data.capacityBonusPerLevel);
+        int val = data.baseRepelCapacity + (level * data.capacityBonusPerLevel);
+        return Mathf.RoundToInt(val * (1f + ResearchBonus(data.capacityUpgradeID)));
     }
 
     public float GetEffectiveWaterPower(EquipmentData data)
     {
         int level = GetUpgradeLevel(data.waterPowerUpgradeID);
-        return data.baseMoisturePowerPerSecond + (level * data.waterPowerBonusPerLevel);
+        float val = data.baseMoisturePowerPerSecond + (level * data.waterPowerBonusPerLevel);
+        return val * (1f + ResearchBonus(data.waterPowerUpgradeID));
+    }
+
+    private static float ResearchBonus(string statKey)
+    {
+        if (string.IsNullOrEmpty(statKey) || ResearchManager.Instance == null) return 0f;
+        return ResearchManager.Instance.GetBonus(statKey);
     }
 
     /// <summary>

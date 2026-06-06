@@ -31,15 +31,17 @@ namespace Research
         public const string RoosterCooldown = "rooster_cooldown";
         public const string RoosterEfficiency = "rooster_efficiency";
 
-        // Equipment (Compost Bay deferred to Plan 2)
+        // Equipment — values intentionally match EquipmentData.*UpgradeID so a single
+        // GetBonus(upgradeID) call in EquipmentManager picks them up.
+        // (Compost Bay deferred to Plan 2.)
         public const string ScarecrowAoe = "scarecrow_aoe";
-        public const string ScarecrowEffectiveness = "scarecrow_effectiveness";
+        public const string ScarecrowEffectiveness = "scarecrow_capacity";
         public const string ScarecrowCooldown = "scarecrow_cooldown";
         public const string SprinklerAoe = "sprinkler_aoe";
-        public const string SprinklerEffectiveness = "sprinkler_effectiveness";
+        public const string SprinklerEffectiveness = "sprinkler_power";
         public const string SprinklerCooldown = "sprinkler_cooldown";
         public const string FenceAoe = "fence_aoe";
-        public const string FenceEffectiveness = "fence_effectiveness";
+        public const string FenceEffectiveness = "fence_capacity";
         public const string FenceCooldown = "fence_cooldown";
 
         // Weather
