@@ -6,12 +6,37 @@ using UnityEngine;
 
 public static class ResearchCatalogGenerator
 {
-    private const string OutDir = "Assets/Data/Research/Catalog";
+    private const string OutDir   = "Assets/Resources/Research";
+    private const string TuneDir  = "Assets/Data/Research";
+
+    [MenuItem("Farm Game/Research/Generate Tuning Asset")]
+    public static void GenerateTuning()
+    {
+        if (!Directory.Exists(TuneDir)) Directory.CreateDirectory(TuneDir);
+        string path = $"{TuneDir}/ResearchTuning.asset";
+        if (AssetDatabase.LoadAssetAtPath<ResearchTuning>(path) != null)
+        {
+            Debug.Log($"[ResearchCatalogGenerator] ResearchTuning already exists at {path}");
+            return;
+        }
+        var tuning = ScriptableObject.CreateInstance<ResearchTuning>();
+        AssetDatabase.CreateAsset(tuning, path);
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+        Debug.Log($"[ResearchCatalogGenerator] ResearchTuning created at {path}");
+    }
 
     [MenuItem("Farm Game/Research/Generate Catalog")]
     public static void Generate()
     {
         if (!Directory.Exists(OutDir)) Directory.CreateDirectory(OutDir);
+
+        // Clear any pre-existing catalog so re-running gives a clean slate.
+        foreach (string guid in AssetDatabase.FindAssets("t:ResearchData", new[] { OutDir }))
+        {
+            string p = AssetDatabase.GUIDToAssetPath(guid);
+            AssetDatabase.DeleteAsset(p);
+        }
 
         // Soil (2)
         CreateStd("soil_water_efficiency",    "Soil: Water Efficiency",        StatKey.SoilWaterEfficiency,   ResearchTier.Tier25,           "soil",   0.010f, t:1.5f, c:2.0f);
