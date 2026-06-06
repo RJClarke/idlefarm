@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Research;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -12,9 +16,18 @@ public class ResearchPopupUITK : MonoBehaviour
     private VisualElement popupRoot;
     private Button closeButton;
 
+    // Picker
+    private VisualElement picker;
+    private VisualElement pickerTabs;
+    private ScrollView pickerList;
+    private Button pickerClose;
+    private string activeBranchTab;
+    private int pickerSlotIndex = -1;
+
     private bool isOpen;
     private bool eventsSubscribed;
     private bool refreshPending;
+    private IVisualElementScheduledItem refreshTicker;
     public bool IsOpen => isOpen;
 
     private void Awake()
@@ -45,12 +58,14 @@ public class ResearchPopupUITK : MonoBehaviour
         if (CurrencyManager.Instance != null)
         {
             CurrencyManager.Instance.OnCoinsChanged += OnCurrencyChanged;
-            CurrencyManager.Instance.OnGemsChanged += OnCurrencyChanged;
+            CurrencyManager.Instance.OnGemsChanged  += OnCurrencyChanged;
             any = true;
         }
         if (ResearchManager.Instance != null)
         {
-            ResearchManager.Instance.OnSlotUnlocked += OnSlotUnlocked;
+            ResearchManager.Instance.OnSlotUnlocked     += OnSlotUnlocked;
+            ResearchManager.Instance.OnSlotStateChanged += OnSlotStateChanged;
+            ResearchManager.Instance.OnResearchLeveledUp += OnLeveledUp;
             any = true;
         }
         eventsSubscribed = any;
@@ -62,15 +77,21 @@ public class ResearchPopupUITK : MonoBehaviour
         if (CurrencyManager.Instance != null)
         {
             CurrencyManager.Instance.OnCoinsChanged -= OnCurrencyChanged;
-            CurrencyManager.Instance.OnGemsChanged -= OnCurrencyChanged;
+            CurrencyManager.Instance.OnGemsChanged  -= OnCurrencyChanged;
         }
         if (ResearchManager.Instance != null)
-            ResearchManager.Instance.OnSlotUnlocked -= OnSlotUnlocked;
+        {
+            ResearchManager.Instance.OnSlotUnlocked     -= OnSlotUnlocked;
+            ResearchManager.Instance.OnSlotStateChanged -= OnSlotStateChanged;
+            ResearchManager.Instance.OnResearchLeveledUp -= OnLeveledUp;
+        }
         eventsSubscribed = false;
     }
 
     private void OnCurrencyChanged(int _) => MarkDirty();
     private void OnSlotUnlocked(int _) => MarkDirty();
+    private void OnSlotStateChanged(int _) => MarkDirty();
+    private void OnLeveledUp(string _, int __) => MarkDirty();
 
     private void MarkDirty()
     {
@@ -87,16 +108,21 @@ public class ResearchPopupUITK : MonoBehaviour
     {
         root = document.rootVisualElement;
         if (root == null) { Debug.LogError("[ResearchPopupUITK] rootVisualElement is null"); return; }
-
         root.pickingMode = PickingMode.Ignore;
 
         popupRoot   = root.Q<VisualElement>("popup-root");
         closeButton = root.Q<Button>("close-button");
+
+        picker      = root.Q<VisualElement>("picker");
+        pickerTabs  = root.Q<VisualElement>("picker-tabs");
+        pickerList  = root.Q<ScrollView>("picker-list");
+        pickerClose = root.Q<Button>("picker-close");
     }
 
     private void WireCallbacks()
     {
         if (closeButton != null) closeButton.RegisterCallback<ClickEvent>(_ => Close());
+        if (pickerClose != null) pickerClose.RegisterCallback<ClickEvent>(_ => ClosePicker());
     }
 
     public void Open()
@@ -111,12 +137,18 @@ public class ResearchPopupUITK : MonoBehaviour
             popupRoot.schedule.Execute(() => popupRoot.AddToClassList("open")).StartingIn(0);
         }
         Refresh();
+        // Tick the popup once a second so countdowns update without waiting on events.
+        refreshTicker?.Pause();
+        refreshTicker = root.schedule.Execute(TickRefresh).Every(1000);
     }
 
     public void Close()
     {
         if (!isOpen) return;
         isOpen = false;
+        ClosePicker();
+        refreshTicker?.Pause();
+        refreshTicker = null;
         if (popupRoot == null) return;
         popupRoot.RemoveFromClassList("open");
         popupRoot.schedule.Execute(() =>
@@ -127,11 +159,16 @@ public class ResearchPopupUITK : MonoBehaviour
         }).StartingIn(260);
     }
 
+    private void TickRefresh()
+    {
+        if (!isOpen) return;
+        Refresh();
+    }
+
     private void Refresh()
     {
         if (root == null) return;
-        for (int i = 0; i < ResearchManager.SlotCount; i++)
-            RenderSlot(i);
+        for (int i = 0; i < ResearchManager.SlotCount; i++) RenderSlot(i);
     }
 
     private void RenderSlot(int slotIndex)
@@ -148,52 +185,197 @@ public class ResearchPopupUITK : MonoBehaviour
         if (mgr == null) return;
 
         bool unlocked = mgr.IsSlotUnlocked(slotIndex);
-        ResearchManager.SlotDefinition def = mgr.GetSlotDef(slotIndex);
+        if (!unlocked) { RenderLockedSlot(card, slotIndex, mgr); return; }
 
-        Label statusLabel = new Label();
-        statusLabel.AddToClassList("slot-status");
+        var state = mgr.GetSlot(slotIndex);
+        if (state == null || state.IsIdle) { RenderEmptySlot(card, slotIndex); return; }
 
-        Label actionLabel = new Label();
-        actionLabel.AddToClassList("slot-action");
+        RenderActiveSlot(card, slotIndex, mgr, state);
+    }
 
-        if (unlocked)
+    private void RenderLockedSlot(VisualElement card, int slotIndex, ResearchManager mgr)
+    {
+        var def = mgr.GetSlotDef(slotIndex);
+        Label statusLabel = new Label("Locked"); statusLabel.AddToClassList("slot-status");
+        Label actionLabel = new Label(); actionLabel.AddToClassList("slot-action");
+        switch (def.unlockType)
         {
-            card.AddToClassList("slot-card--unlocked-empty");
-            statusLabel.text = "No Active Research";
-            actionLabel.text = "Tap to assign";
+            case ResearchManager.SlotUnlockType.Coins: actionLabel.text = $"{def.costAmount} coins to unlock"; break;
+            case ResearchManager.SlotUnlockType.Gems:  actionLabel.text = $"{def.costAmount} gems to unlock"; break;
+            case ResearchManager.SlotUnlockType.Research: actionLabel.text = "Research to unlock"; break;
         }
-        else if (def != null)
+        bool canAfford = mgr.CanUnlockSlot(slotIndex);
+        card.AddToClassList(canAfford ? "slot-card--affordable" : "slot-card--locked");
+        if (canAfford)
         {
-            statusLabel.text = "Locked";
-            switch (def.unlockType)
+            int captured = slotIndex;
+            card.RegisterCallback<ClickEvent>(_ => ResearchManager.Instance?.TryUnlockSlot(captured));
+            WirePressedFeedback(card, "slot-card--pressed");
+        }
+        card.Add(statusLabel); card.Add(actionLabel);
+    }
+
+    private void RenderEmptySlot(VisualElement card, int slotIndex)
+    {
+        card.AddToClassList("slot-card--unlocked-empty");
+        Label statusLabel = new Label("No Active Research"); statusLabel.AddToClassList("slot-status");
+        Label actionLabel = new Label("Tap to assign");      actionLabel.AddToClassList("slot-action");
+        int captured = slotIndex;
+        card.RegisterCallback<ClickEvent>(_ => OpenPicker(captured));
+        WirePressedFeedback(card, "slot-card--pressed");
+        card.Add(statusLabel); card.Add(actionLabel);
+    }
+
+    private void RenderActiveSlot(VisualElement card, int slotIndex, ResearchManager mgr, ResearchSlotState state)
+    {
+        var rd = mgr.GetResearch(state.activeResearchID);
+        if (rd == null) { CancelSlotAndRefresh(slotIndex); return; }
+
+        Label nameLabel = new Label($"{rd.displayName} — L{state.currentLevel + 1}/{rd.MaxLevel}");
+        nameLabel.AddToClassList("slot-card__active-name");
+
+        int nextLevel = state.currentLevel + 1;
+        float secsForLevel = mgr.GetSecondsForLevel(rd, nextLevel);
+        double elapsed = (DateTime.UtcNow.Ticks - state.startUtcTicks) / (double)TimeSpan.TicksPerSecond;
+        float progress = secsForLevel <= 0 ? 0f : Mathf.Clamp01((float)(elapsed / secsForLevel));
+        double remaining = Math.Max(0, secsForLevel - elapsed);
+
+        VisualElement bar = new VisualElement(); bar.AddToClassList("slot-card__active-progress");
+        VisualElement fill = new VisualElement(); fill.AddToClassList("slot-card__active-progress-fill");
+        fill.style.width = new StyleLength(new Length(progress * 100f, LengthUnit.Percent));
+        bar.Add(fill);
+
+        Label timer = new Label(FormatRemaining(remaining));
+        timer.AddToClassList("slot-card__active-timer");
+
+        // Boost indicator (Plan 2 — element exists so Plan 2 can flip it on without re-touching this code)
+        Label boost = new Label();
+        boost.AddToClassList("slot-card__boost");
+        if (state.boostMultiplier > 1.0f && state.boostExpiresUtcTicks > DateTime.UtcNow.Ticks)
+        {
+            double boostLeft = (state.boostExpiresUtcTicks - DateTime.UtcNow.Ticks) / (double)TimeSpan.TicksPerSecond;
+            boost.text = $"{state.boostMultiplier:F0}x — {FormatRemaining(boostLeft)} left";
+            boost.AddToClassList("slot-card__boost--active");
+        }
+
+        Label cancel = new Label("Cancel ↩"); cancel.AddToClassList("slot-card__cancel");
+        int captured = slotIndex;
+        cancel.RegisterCallback<ClickEvent>(_ => CancelSlotAndRefresh(captured));
+
+        card.Add(nameLabel); card.Add(bar); card.Add(timer); card.Add(boost); card.Add(cancel);
+    }
+
+    private void CancelSlotAndRefresh(int slotIndex)
+    {
+        ResearchManager.Instance?.CancelResearch(slotIndex);
+        Refresh();
+    }
+
+    private static string FormatRemaining(double secs)
+    {
+        if (secs >= 86400) return $"{secs/86400:F1} days";
+        if (secs >= 3600)  return $"{secs/3600:F1} hr";
+        if (secs >= 60)    return $"{secs/60:F0} min";
+        return $"{secs:F0} sec";
+    }
+
+    // ───────── Picker ─────────
+
+    private void OpenPicker(int slotIndex)
+    {
+        pickerSlotIndex = slotIndex;
+        if (picker != null) picker.style.display = DisplayStyle.Flex;
+        RebuildPickerTabs();
+        RebuildPickerList();
+    }
+
+    private void ClosePicker()
+    {
+        pickerSlotIndex = -1;
+        if (picker != null) picker.style.display = DisplayStyle.None;
+    }
+
+    private void RebuildPickerTabs()
+    {
+        if (pickerTabs == null) return;
+        pickerTabs.Clear();
+        var mgr = ResearchManager.Instance;
+        if (mgr == null) return;
+        var branches = mgr.AllResearches()
+            .Where(rd => mgr.IsResearchVisible(rd.researchID))
+            .Select(rd => rd.branchID).Distinct().OrderBy(b => b).ToList();
+        if (string.IsNullOrEmpty(activeBranchTab) || !branches.Contains(activeBranchTab))
+            activeBranchTab = branches.FirstOrDefault() ?? "";
+        foreach (var b in branches)
+        {
+            var tab = new Label(b);
+            tab.AddToClassList("picker-tab");
+            if (b == activeBranchTab) tab.AddToClassList("picker-tab--active");
+            string captured = b;
+            tab.RegisterCallback<ClickEvent>(_ => { activeBranchTab = captured; RebuildPickerTabs(); RebuildPickerList(); });
+            pickerTabs.Add(tab);
+        }
+    }
+
+    private void RebuildPickerList()
+    {
+        if (pickerList == null) return;
+        pickerList.Clear();
+        var mgr = ResearchManager.Instance;
+        if (mgr == null) return;
+        var rows = mgr.AllResearches()
+            .Where(rd => mgr.IsResearchVisible(rd.researchID) && rd.branchID == activeBranchTab)
+            .OrderBy(rd => rd.displayName).ToList();
+        foreach (var rd in rows)
+        {
+            int curLevel = mgr.GetCurrentLevel(rd.researchID);
+            bool isMaxed = curLevel >= rd.MaxLevel;
+            int nextLevel = isMaxed ? rd.MaxLevel : curLevel + 1;
+            int cost = isMaxed ? 0 : mgr.GetCostForLevel(rd, nextLevel);
+            float secs = isMaxed ? 0f : mgr.GetSecondsForLevel(rd, nextLevel);
+            bool canAfford = !isMaxed && CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(cost);
+
+            var row = new VisualElement(); row.AddToClassList("picker-row");
+
+            var textCol = new VisualElement(); textCol.AddToClassList("picker-row__text-col");
+            var name = new Label($"{rd.displayName} — L{curLevel}/{rd.MaxLevel}");
+            name.AddToClassList("picker-row__name");
+            var desc = new Label(string.IsNullOrEmpty(rd.description) ? "" : rd.description);
+            desc.AddToClassList("picker-row__desc");
+            textCol.Add(name); textCol.Add(desc);
+
+            var metaCol = new VisualElement(); metaCol.AddToClassList("picker-row__meta-col");
+            var costLbl = new Label(isMaxed ? "Complete" : $"{cost} coins");
+            costLbl.AddToClassList("picker-row__cost");
+            var timeLbl = new Label(isMaxed ? "Maxed" : FormatRemaining(secs));
+            timeLbl.AddToClassList("picker-row__time");
+            metaCol.Add(costLbl); metaCol.Add(timeLbl);
+
+            row.Add(textCol); row.Add(metaCol);
+
+            if (isMaxed)
             {
-                case ResearchManager.SlotUnlockType.Coins:
-                    actionLabel.text = $"{def.costAmount} coins to unlock";
-                    break;
-                case ResearchManager.SlotUnlockType.Gems:
-                    actionLabel.text = $"{def.costAmount} gems to unlock";
-                    break;
-                case ResearchManager.SlotUnlockType.Research:
-                    actionLabel.text = "Research to unlock";
-                    break;
+                row.AddToClassList("picker-row--complete");
             }
-
-            bool canAfford = mgr.CanUnlockSlot(slotIndex);
-            card.AddToClassList(canAfford ? "slot-card--affordable" : "slot-card--locked");
-
-            if (canAfford)
+            else if (!canAfford)
             {
-                int capturedIndex = slotIndex;
-                card.RegisterCallback<ClickEvent>(_ =>
+                row.AddToClassList("picker-row--disabled");
+                costLbl.AddToClassList("picker-row__cost--unaffordable");
+            }
+            else
+            {
+                string capturedID = rd.researchID;
+                int capturedSlot = pickerSlotIndex;
+                row.RegisterCallback<ClickEvent>(_ =>
                 {
-                    ResearchManager.Instance?.TryUnlockSlot(capturedIndex);
+                    if (ResearchManager.Instance != null && ResearchManager.Instance.TryAssignResearch(capturedSlot, capturedID))
+                        ClosePicker();
                 });
-                WirePressedFeedback(card, "slot-card--pressed");
+                WirePressedFeedback(row, "slot-card--pressed");
             }
-        }
 
-        card.Add(statusLabel);
-        card.Add(actionLabel);
+            pickerList.Add(row);
+        }
     }
 
     private static void WirePressedFeedback(VisualElement ve, string pressedClass)
