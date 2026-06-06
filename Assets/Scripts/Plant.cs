@@ -57,7 +57,8 @@ public class Plant : MonoBehaviour
         parentTile = tile;
         
         currentStage = GrowthStage.Seed;
-        currentHP = crop.maxHP;
+        float hpBonus = ResearchManager.Instance != null ? ResearchManager.Instance.GetBonus(Research.StatKey.CropHp) : 0f;
+        currentHP = crop.maxHP * (1f + hpBonus);
         stageTimer = crop.GetStageTime(currentStage);
         isGrowing = true;
 
@@ -109,10 +110,19 @@ public class Plant : MonoBehaviour
     private float CalculateGrowthSpeed()
     {
         if (currentMoisture <= 0f)   return 0f;
-        if (currentMoisture <= 50f)  return 1.0f;
 
-        float bonus = (currentMoisture - 50f) / 100f;
-        return 1.0f + bonus;
+        float baseSpeed;
+        if (currentMoisture <= 50f) baseSpeed = 1.0f;
+        else
+        {
+            float bonus = (currentMoisture - 50f) / 100f;
+            baseSpeed = 1.0f + bonus;
+        }
+
+        float researchBonus = ResearchManager.Instance != null
+            ? ResearchManager.Instance.GetBonus(Research.StatKey.CropGrowthSpeed)
+            : 0f;
+        return baseSpeed * (1f + researchBonus);
     }
 
     private void UpdateMoisture(float deltaTime)
@@ -121,6 +131,13 @@ public class Plant : MonoBehaviour
 
         float depletionRate = GameConstants.Instance.baseMoistureDepletionRate;
         depletionRate *= cropData.moistureDepletionRate;
+
+        // SoilWaterEfficiency: each level reduces depletion (water lasts longer).
+        if (ResearchManager.Instance != null)
+        {
+            float soilBonus = ResearchManager.Instance.GetBonus(Research.StatKey.SoilWaterEfficiency);
+            depletionRate /= Mathf.Max(0.01f, 1f + soilBonus);
+        }
 
         currentMoisture -= depletionRate * deltaTime;
         currentMoisture = Mathf.Clamp(currentMoisture, 0f, 100f);
@@ -215,8 +232,22 @@ public class Plant : MonoBehaviour
         if (GameConstants.Instance == null) return;
 
         float waterAmount = GameConstants.Instance.manualWaterAmount;
+        if (ResearchManager.Instance != null)
+            waterAmount *= 1f + ResearchManager.Instance.GetBonus(Research.StatKey.HelperWaterEfficiency);
+
+        bool wasAtMax = currentMoisture >= 100f;
         currentMoisture += waterAmount;
         currentMoisture = Mathf.Clamp(currentMoisture, 0f, 100f);
+
+        // Max Water Heals Plant HP (binary research)
+        if (wasAtMax
+            && ResearchManager.Instance != null
+            && ResearchManager.Instance.IsFeatureUnlocked(Research.FeatureFlag.MaxWaterHealsPlant)
+            && cropData != null)
+        {
+            float maxHpWithBonus = cropData.maxHP * (1f + ResearchManager.Instance.GetBonus(Research.StatKey.CropHp));
+            currentHP = Mathf.Min(maxHpWithBonus, currentHP + maxHpWithBonus * 0.1f);
+        }
 
         if (RunStats.Instance != null) RunStats.Instance.AddPlantWatered();
 
@@ -240,6 +271,15 @@ public class Plant : MonoBehaviour
         int harvestValue = cropData.harvestValue;
         if (GameConstants.Instance != null)
             harvestValue = GameConstants.Instance.CalculateHarvestValue(cropData.harvestValue, isRotting);
+
+        if (ResearchManager.Instance != null)
+        {
+            float sellBonus =
+                ResearchManager.Instance.GetBonus(Research.StatKey.CropBonusSellAmount)
+                + ResearchManager.Instance.GetBonus(Research.StatKey.SoilQuality)
+                + ResearchManager.Instance.GetBonus(Research.StatKey.HelperHarvestEfficiency);
+            harvestValue = Mathf.RoundToInt(harvestValue * (1f + sellBonus));
+        }
 
         if (CurrencyManager.Instance != null)
         {
