@@ -30,7 +30,7 @@ public class ResearchMathTests
     [Test]
     public void AbsurdTier_L100_Is_Roughly_90_Days()
     {
-        float secs = 540f * Mathf.Pow(100f, 2.16f); // base 9 min × L100
+        float secs = 360f * Mathf.Pow(100f, 2.16f); // base 6 min × L100
         // 90 days = 7,776,000 sec. Allow ±10%.
         Assert.That(secs, Is.InRange(7_000_000f, 8_550_000f));
     }

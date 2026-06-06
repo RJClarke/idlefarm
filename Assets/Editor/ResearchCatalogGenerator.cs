@@ -40,7 +40,7 @@ public static class ResearchCatalogGenerator
 
         // Soil (2)
         CreateStd("soil_water_efficiency",    "Soil: Water Efficiency",        StatKey.SoilWaterEfficiency,   ResearchTier.Tier25,           "soil",   0.010f, t:1.5f, c:2.0f);
-        CreateStd("soil_quality",             "Soil: Quality",                 StatKey.SoilQuality,           ResearchTier.Tier100Absurd,    "soil",   0.005f, t:1.2f, c:3.0f, baseSecs:540f, baseCoins:150f);
+        CreateStd("soil_quality",             "Soil: Quality",                 StatKey.SoilQuality,           ResearchTier.Tier100Absurd,    "soil",   0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
 
         // Helper (7)
         CreateStd("helper_till_speed",        "Helper: Till Speed",            StatKey.HelperTillSpeed,       ResearchTier.Tier100Standard,  "helper", 0.005f);
@@ -48,13 +48,13 @@ public static class ResearchCatalogGenerator
         CreateStd("helper_water_efficiency",  "Helper: Water Efficiency",      StatKey.HelperWaterEfficiency, ResearchTier.Tier25,           "helper", 0.010f);
         CreateStd("helper_plant_speed",       "Helper: Plant Seeding Speed",   StatKey.HelperPlantSpeed,      ResearchTier.Tier100Standard,  "helper", 0.005f);
         CreateStd("helper_harvest_speed",     "Helper: Harvest Speed",         StatKey.HelperHarvestSpeed,    ResearchTier.Tier100Standard,  "helper", 0.005f);
-        CreateStd("helper_harvest_efficiency","Helper: Harvest Efficiency",    StatKey.HelperHarvestEfficiency,ResearchTier.Tier100Absurd,   "helper", 0.005f, t:1.2f, c:3.0f, baseSecs:540f, baseCoins:150f);
+        CreateStd("helper_harvest_efficiency","Helper: Harvest Efficiency",    StatKey.HelperHarvestEfficiency,ResearchTier.Tier100Absurd,   "helper", 0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
         CreateBinary("max_water_heals",       "Max Water Heals Plant HP",      "helper", featureID:FeatureFlag.MaxWaterHealsPlant, cost:5000, days:3);
 
         // Plant (3)
         CreateStd("crop_hp",                  "Plant: Hit Points",             StatKey.CropHp,                ResearchTier.Tier25,           "plant",  0.010f);
         CreateStd("crop_growth_speed",        "Plant: Growth Speed",           StatKey.CropGrowthSpeed,       ResearchTier.Tier100Standard,  "plant",  0.005f, t:1.5f, c:2.0f);
-        CreateStd("crop_bonus_sell_amount",   "Plant: Bonus Sell Amount",      StatKey.CropBonusSellAmount,   ResearchTier.Tier100Absurd,    "plant",  0.005f, t:1.2f, c:3.0f, baseSecs:540f, baseCoins:150f);
+        CreateStd("crop_bonus_sell_amount",   "Plant: Bonus Sell Amount",      StatKey.CropBonusSellAmount,   ResearchTier.Tier100Absurd,    "plant",  0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
 
         // Animals (6 — gated by ownership; Cow ships in Plan 2)
         CreateStd("chicken_cooldown",   "Chicken: Cooldown",   StatKey.ChickenCooldown,   ResearchTier.Tier25, "animals", 0.010f, animalID:"chicken");
