@@ -43,7 +43,26 @@ public class UniversalHelper : Helper
             duration *= Mathf.Pow(0.8f, level); // 20% faster per level
         }
 
+        // Research speed bonuses stack multiplicatively on top of upgrades.
+        // duration is divided by (1 + bonus) so more bonus = less duration = faster.
+        float researchBonus = GetResearchSpeedBonus(taskType);
+        if (researchBonus > 0f)
+            duration /= (1f + researchBonus);
+
         return duration;
+    }
+
+    private static float GetResearchSpeedBonus(HelperTask.TaskType taskType)
+    {
+        if (ResearchManager.Instance == null) return 0f;
+        switch (taskType)
+        {
+            case HelperTask.TaskType.Till:    return ResearchManager.Instance.GetBonus(Research.StatKey.HelperTillSpeed);
+            case HelperTask.TaskType.Water:   return ResearchManager.Instance.GetBonus(Research.StatKey.HelperWaterSpeed);
+            case HelperTask.TaskType.Plant:   return ResearchManager.Instance.GetBonus(Research.StatKey.HelperPlantSpeed);
+            case HelperTask.TaskType.Harvest: return ResearchManager.Instance.GetBonus(Research.StatKey.HelperHarvestSpeed);
+            default: return 0f;
+        }
     }
 
     protected override void Awake()
