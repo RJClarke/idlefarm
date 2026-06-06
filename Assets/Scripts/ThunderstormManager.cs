@@ -213,13 +213,21 @@ public class ThunderstormManager : MonoBehaviour
     {
         if (FarmGrid.Instance == null) return;
 
+        float effective = damage * (1f - ResearchReduction());
+
         foreach (SoilTile tile in FarmGrid.Instance.GetOccupiedTiles())
         {
             if (tile.CurrentPlant == null) continue;
             Plant plant = tile.CurrentPlant.GetComponent<Plant>();
             if (plant != null)
-                plant.TakeDamage(damage);
+                plant.TakeDamage(effective);
         }
+    }
+
+    private static float ResearchReduction()
+    {
+        if (ResearchManager.Instance == null) return 0f;
+        return Mathf.Clamp01(ResearchManager.Instance.GetBonus(Research.StatKey.StormDamageReduction));
     }
 
     // ─────────────────────────────────────────────────────────────────────
@@ -267,11 +275,15 @@ public class ThunderstormManager : MonoBehaviour
     {
         if (FarmGrid.Instance == null) return;
 
+        float effective = amount;
+        if (ResearchManager.Instance != null)
+            effective *= 1f + ResearchManager.Instance.GetBonus(Research.StatKey.RainWatering);
+
         foreach (SoilTile tile in FarmGrid.Instance.GetOccupiedTiles())
         {
             if (tile.CurrentPlant == null) continue;
             Plant plant = tile.CurrentPlant.GetComponent<Plant>();
-            plant?.ApplyRain(amount);
+            plant?.ApplyRain(effective);
         }
     }
 
@@ -319,6 +331,7 @@ public class ThunderstormManager : MonoBehaviour
         {
             Plant plant  = target.CurrentPlant.GetComponent<Plant>();
             float damage = weatherData.GetLightningDamage(stormNumber);
+            damage *= 1f - ResearchReduction();
 
             if (plant != null)
             {
