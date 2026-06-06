@@ -69,6 +69,18 @@ public class SaveManager : MonoBehaviour
             lastDrop = QuestManager.Instance.GetLastQuestDropTimeISO();
         }
 
+        bool[] researchUnlocked = new bool[ResearchManager.SlotCount];
+        Research.ResearchSlotState[] researchSlots = null;
+        string[] featureFlags = new string[0];
+        ResearchLevelEntry[] researchLevels = new ResearchLevelEntry[0];
+        if (ResearchManager.Instance != null)
+        {
+            researchUnlocked = ResearchManager.Instance.GetSlotsUnlockedForSave();
+            researchSlots    = ResearchManager.Instance.GetSlotsForSave();
+            featureFlags     = ResearchManager.Instance.GetFeatureFlagsForSave();
+            researchLevels   = ResearchManager.Instance.GetLevelsForSave();
+        }
+
         GameData data = new GameData(
             CurrencyManager.Instance.Coins,
             CurrencyManager.Instance.Gems,
@@ -79,7 +91,11 @@ public class SaveManager : MonoBehaviour
             questsCompleted,
             milestones,
             weekStart,
-            lastDrop
+            lastDrop,
+            researchUnlocked,
+            researchSlots,
+            featureFlags,
+            researchLevels
         );
 
         // Convert to JSON
@@ -137,6 +153,16 @@ public class SaveManager : MonoBehaviour
                         data.weeklyMilestonesClaimed,
                         data.questWeekStart,
                         data.lastQuestDropTime
+                    );
+                }
+
+                if (ResearchManager.Instance != null)
+                {
+                    ResearchManager.Instance.LoadState(
+                        data.researchSlotsUnlocked,
+                        data.researchSlots,
+                        data.binaryFeatureFlagsSet,
+                        data.researchLevels
                     );
                 }
 
