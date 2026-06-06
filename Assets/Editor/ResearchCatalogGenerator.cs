@@ -40,15 +40,15 @@ public static class ResearchCatalogGenerator
         CreateStd("rooster_efficiency", "Rooster: Efficiency", StatKey.RoosterEfficiency, ResearchTier.Tier25, "animals", 0.010f, animalID:"rooster");
 
         // Equipment (9 — Compost Bay deferred to Plan 2)
-        CreateStd("scarecrow_aoe",          "Scarecrow: AoE",           StatKey.ScarecrowAoe,           ResearchTier.Tier100Standard, "equipment", 0.005f, t:0.8f, c:0.8f, unlockID:"scarecrow");
-        CreateStd("scarecrow_effectiveness","Scarecrow: Effectiveness", StatKey.ScarecrowEffectiveness, ResearchTier.Tier100Standard, "equipment", 0.005f, t:0.8f, c:0.8f, unlockID:"scarecrow");
-        CreateStd("scarecrow_cooldown",     "Scarecrow: Cooldown",      StatKey.ScarecrowCooldown,      ResearchTier.Tier25,          "equipment", 0.010f, t:0.8f, c:0.8f, unlockID:"scarecrow");
-        CreateStd("sprinkler_aoe",          "Sprinkler: AoE",           StatKey.SprinklerAoe,           ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"sprinkler");
-        CreateStd("sprinkler_effectiveness","Sprinkler: Effectiveness", StatKey.SprinklerEffectiveness, ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"sprinkler");
-        CreateStd("sprinkler_cooldown",     "Sprinkler: Cooldown",      StatKey.SprinklerCooldown,      ResearchTier.Tier25,          "equipment", 0.010f, unlockID:"sprinkler");
-        CreateStd("fence_aoe",              "Fence: AoE",               StatKey.FenceAoe,               ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"fence");
-        CreateStd("fence_effectiveness",    "Fence: Effectiveness",     StatKey.FenceEffectiveness,     ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"fence");
-        CreateStd("fence_cooldown",         "Fence: Cooldown",          StatKey.FenceCooldown,          ResearchTier.Tier25,          "equipment", 0.010f, unlockID:"fence");
+        CreateStd("scarecrow_aoe",          "Scarecrow: AoE",           StatKey.ScarecrowAoe,           ResearchTier.Tier100Standard, "equipment", 0.005f, t:0.8f, c:0.8f, unlockID:"scarecrow_unlock");
+        CreateStd("scarecrow_effectiveness","Scarecrow: Effectiveness", StatKey.ScarecrowEffectiveness, ResearchTier.Tier100Standard, "equipment", 0.005f, t:0.8f, c:0.8f, unlockID:"scarecrow_unlock");
+        CreateStd("scarecrow_cooldown",     "Scarecrow: Cooldown",      StatKey.ScarecrowCooldown,      ResearchTier.Tier25,          "equipment", 0.010f, t:0.8f, c:0.8f, unlockID:"scarecrow_unlock");
+        CreateStd("sprinkler_aoe",          "Sprinkler: AoE",           StatKey.SprinklerAoe,           ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"sprinkler_unlock");
+        CreateStd("sprinkler_effectiveness","Sprinkler: Effectiveness", StatKey.SprinklerEffectiveness, ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"sprinkler_unlock");
+        CreateStd("sprinkler_cooldown",     "Sprinkler: Cooldown",      StatKey.SprinklerCooldown,      ResearchTier.Tier25,          "equipment", 0.010f, unlockID:"sprinkler_unlock");
+        CreateStd("fence_aoe",              "Fence: AoE",               StatKey.FenceAoe,               ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"fence_unlock");
+        CreateStd("fence_effectiveness",    "Fence: Effectiveness",     StatKey.FenceEffectiveness,     ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"fence_unlock");
+        CreateStd("fence_cooldown",         "Fence: Cooldown",          StatKey.FenceCooldown,          ResearchTier.Tier25,          "equipment", 0.010f, unlockID:"fence_unlock");
 
         // Weather (2)
         CreateStd("storm_damage_reduction", "Storm Damage Reduction", StatKey.StormDamageReduction, ResearchTier.Tier25, "weather", 0.010f);
