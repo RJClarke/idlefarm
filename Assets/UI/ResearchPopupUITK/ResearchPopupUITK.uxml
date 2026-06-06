@@ -12,5 +12,15 @@
             <ui:VisualElement name="slot-2" class="slot-card" />
             <ui:VisualElement name="slot-3" class="slot-card" />
         </ui:VisualElement>
+
+        <!-- Picker overlay -->
+        <ui:VisualElement name="picker" class="picker" style="display: none;">
+            <ui:VisualElement name="picker-header" class="picker-header">
+                <ui:Label name="picker-title" text="Select Research" class="picker-title" />
+                <ui:Button name="picker-close" class="picker-close" text="X" />
+            </ui:VisualElement>
+            <ui:VisualElement name="picker-tabs" class="picker-tabs" />
+            <ui:ScrollView name="picker-list" class="picker-list" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
