@@ -137,65 +137,75 @@
     color: rgb(255, 240, 210);
 }
 
-/* ─── Picker overlay ─── */
+/* ─── Picker overlay (top-level — sibling of popup-root, NOT child of it) ─── */
 
 .picker {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(20, 14, 8, 0.96);
+    background-color: rgb(28, 20, 12);
     flex-direction: column;
-    padding: 24px;
+    padding-top: 38px;
+    padding-bottom: 18px;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 .picker-header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(90, 55, 20);
 }
 
 .picker-title {
-    font-size: 36px;
+    font-size: 40px;
     color: rgb(255, 240, 210);
     -unity-font-style: bold;
 }
 
 .picker-close {
-    width: 60px;
-    height: 60px;
+    width: 72px;
+    height: 72px;
     background-color: rgba(0, 0, 0, 0);
     color: rgb(220, 195, 150);
-    font-size: 28px;
-    border-width: 0;
-}
-
-.picker-tabs {
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-bottom: 14px;
-}
-
-.picker-tab {
-    padding: 10px 16px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    background-color: rgba(255, 240, 210, 0.08);
-    color: rgb(200, 180, 140);
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
-    border-bottom-left-radius: 14px;
-    border-bottom-right-radius: 14px;
-    font-size: 22px;
+    font-size: 32px;
     -unity-font-style: bold;
-}
-
-.picker-tab--active {
-    background-color: rgb(110, 86, 50);
-    color: rgb(255, 240, 210);
+    border-width: 0;
 }
 
 .picker-list {
     flex-grow: 1;
+}
+
+/* Branch section header inside the scrolling list */
+.picker-section {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(110, 86, 50);
+}
+
+.picker-section--first {
+    margin-top: 0;
+}
+
+.picker-section__title {
+    font-size: 28px;
+    -unity-font-style: bold;
+    color: rgb(255, 220, 140);
+    -unity-text-align: middle-left;
+    flex-grow: 1;
+}
+
+.picker-section__count {
+    font-size: 18px;
+    color: rgb(160, 145, 110);
 }
 
 /* Picker rows */

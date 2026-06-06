@@ -16,13 +16,26 @@ public class ResearchPopupUITK : MonoBehaviour
     private VisualElement popupRoot;
     private Button closeButton;
 
-    // Picker
+    // Picker (now a sibling of popup-root, not a child)
     private VisualElement picker;
-    private VisualElement pickerTabs;
     private ScrollView pickerList;
     private Button pickerClose;
-    private string activeBranchTab;
     private int pickerSlotIndex = -1;
+
+    // Section order used in the single-scroll picker (top→bottom). Branches not in this list
+    // still render, appended after these in alphabetical order.
+    private static readonly string[] BranchOrder = { "helper", "plant", "soil", "animals", "equipment", "weather", "meta" };
+    private static readonly System.Collections.Generic.Dictionary<string, string> BranchDisplay =
+        new System.Collections.Generic.Dictionary<string, string>
+        {
+            { "soil",      "Soil" },
+            { "helper",    "Helpers" },
+            { "plant",     "Crops" },
+            { "animals",   "Animals" },
+            { "equipment", "Equipment" },
+            { "weather",   "Weather" },
+            { "meta",      "Meta" },
+        };
 
     private bool isOpen;
     private bool eventsSubscribed;
@@ -114,7 +127,6 @@ public class ResearchPopupUITK : MonoBehaviour
         closeButton = root.Q<Button>("close-button");
 
         picker      = root.Q<VisualElement>("picker");
-        pickerTabs  = root.Q<VisualElement>("picker-tabs");
         pickerList  = root.Q<ScrollView>("picker-list");
         pickerClose = root.Q<Button>("picker-close");
     }
@@ -245,7 +257,7 @@ public class ResearchPopupUITK : MonoBehaviour
         fill.style.width = new StyleLength(new Length(progress * 100f, LengthUnit.Percent));
         bar.Add(fill);
 
-        Label timer = new Label(FormatRemaining(remaining));
+        Label timer = new Label(FormatActiveTimer(remaining));
         timer.AddToClassList("slot-card__active-timer");
 
         // Boost indicator (Plan 2 — element exists so Plan 2 can flip it on without re-touching this code)
@@ -271,6 +283,7 @@ public class ResearchPopupUITK : MonoBehaviour
         Refresh();
     }
 
+    /// <summary>Compact "1.5 days" style — used in picker rows (limited space).</summary>
     private static string FormatRemaining(double secs)
     {
         if (secs >= 86400) return $"{secs/86400:F1} days";
@@ -279,13 +292,24 @@ public class ResearchPopupUITK : MonoBehaviour
         return $"{secs:F0} sec";
     }
 
+    /// <summary>Detailed "2d 14h 32m 15s" — used in active slot countdown. Always shows all four units.</summary>
+    private static string FormatActiveTimer(double secs)
+    {
+        if (secs < 0) secs = 0;
+        long total = (long)secs;
+        long days = total / 86400; total -= days * 86400;
+        long hrs  = total / 3600;  total -= hrs  * 3600;
+        long mins = total / 60;    total -= mins * 60;
+        long s    = total;
+        return $"{days}d {hrs}h {mins}m {s}s";
+    }
+
     // ───────── Picker ─────────
 
     private void OpenPicker(int slotIndex)
     {
         pickerSlotIndex = slotIndex;
         if (picker != null) picker.style.display = DisplayStyle.Flex;
-        RebuildPickerTabs();
         RebuildPickerList();
     }
 
@@ -295,87 +319,93 @@ public class ResearchPopupUITK : MonoBehaviour
         if (picker != null) picker.style.display = DisplayStyle.None;
     }
 
-    private void RebuildPickerTabs()
-    {
-        if (pickerTabs == null) return;
-        pickerTabs.Clear();
-        var mgr = ResearchManager.Instance;
-        if (mgr == null) return;
-        var branches = mgr.AllResearches()
-            .Where(rd => mgr.IsResearchVisible(rd.researchID))
-            .Select(rd => rd.branchID).Distinct().OrderBy(b => b).ToList();
-        if (string.IsNullOrEmpty(activeBranchTab) || !branches.Contains(activeBranchTab))
-            activeBranchTab = branches.FirstOrDefault() ?? "";
-        foreach (var b in branches)
-        {
-            var tab = new Label(b);
-            tab.AddToClassList("picker-tab");
-            if (b == activeBranchTab) tab.AddToClassList("picker-tab--active");
-            string captured = b;
-            tab.RegisterCallback<ClickEvent>(_ => { activeBranchTab = captured; RebuildPickerTabs(); RebuildPickerList(); });
-            pickerTabs.Add(tab);
-        }
-    }
-
     private void RebuildPickerList()
     {
         if (pickerList == null) return;
         pickerList.Clear();
         var mgr = ResearchManager.Instance;
         if (mgr == null) return;
-        var rows = mgr.AllResearches()
-            .Where(rd => mgr.IsResearchVisible(rd.researchID) && rd.branchID == activeBranchTab)
-            .OrderBy(rd => rd.displayName).ToList();
-        foreach (var rd in rows)
+
+        // Group visible researches by branch
+        var byBranch = mgr.AllResearches()
+            .Where(rd => mgr.IsResearchVisible(rd.researchID))
+            .GroupBy(rd => rd.branchID)
+            .ToDictionary(g => g.Key, g => g.OrderBy(rd => rd.displayName).ToList());
+
+        // Render branches in defined order, then any extras alphabetically
+        var orderedBranches = new System.Collections.Generic.List<string>();
+        foreach (var b in BranchOrder) if (byBranch.ContainsKey(b)) orderedBranches.Add(b);
+        foreach (var b in byBranch.Keys.OrderBy(s => s))
+            if (!orderedBranches.Contains(b)) orderedBranches.Add(b);
+
+        bool first = true;
+        foreach (var branch in orderedBranches)
         {
-            int curLevel = mgr.GetCurrentLevel(rd.researchID);
-            bool isMaxed = curLevel >= rd.MaxLevel;
-            int nextLevel = isMaxed ? rd.MaxLevel : curLevel + 1;
-            int cost = isMaxed ? 0 : mgr.GetCostForLevel(rd, nextLevel);
-            float secs = isMaxed ? 0f : mgr.GetSecondsForLevel(rd, nextLevel);
-            bool canAfford = !isMaxed && CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(cost);
+            var section = new VisualElement(); section.AddToClassList("picker-section");
+            if (first) section.AddToClassList("picker-section--first");
+            first = false;
 
-            var row = new VisualElement(); row.AddToClassList("picker-row");
+            string displayName = BranchDisplay.TryGetValue(branch, out var d) ? d : branch;
+            var title = new Label(displayName); title.AddToClassList("picker-section__title");
+            var count = new Label($"{byBranch[branch].Count} research"); count.AddToClassList("picker-section__count");
+            section.Add(title); section.Add(count);
+            pickerList.Add(section);
 
-            var textCol = new VisualElement(); textCol.AddToClassList("picker-row__text-col");
-            var name = new Label($"{rd.displayName} — L{curLevel}/{rd.MaxLevel}");
-            name.AddToClassList("picker-row__name");
-            var desc = new Label(string.IsNullOrEmpty(rd.description) ? "" : rd.description);
-            desc.AddToClassList("picker-row__desc");
-            textCol.Add(name); textCol.Add(desc);
-
-            var metaCol = new VisualElement(); metaCol.AddToClassList("picker-row__meta-col");
-            var costLbl = new Label(isMaxed ? "Complete" : $"{cost} coins");
-            costLbl.AddToClassList("picker-row__cost");
-            var timeLbl = new Label(isMaxed ? "Maxed" : FormatRemaining(secs));
-            timeLbl.AddToClassList("picker-row__time");
-            metaCol.Add(costLbl); metaCol.Add(timeLbl);
-
-            row.Add(textCol); row.Add(metaCol);
-
-            if (isMaxed)
-            {
-                row.AddToClassList("picker-row--complete");
-            }
-            else if (!canAfford)
-            {
-                row.AddToClassList("picker-row--disabled");
-                costLbl.AddToClassList("picker-row__cost--unaffordable");
-            }
-            else
-            {
-                string capturedID = rd.researchID;
-                int capturedSlot = pickerSlotIndex;
-                row.RegisterCallback<ClickEvent>(_ =>
-                {
-                    if (ResearchManager.Instance != null && ResearchManager.Instance.TryAssignResearch(capturedSlot, capturedID))
-                        ClosePicker();
-                });
-                WirePressedFeedback(row, "slot-card--pressed");
-            }
-
-            pickerList.Add(row);
+            foreach (var rd in byBranch[branch])
+                pickerList.Add(BuildPickerRow(rd));
         }
+    }
+
+    private VisualElement BuildPickerRow(ResearchData rd)
+    {
+        var mgr = ResearchManager.Instance;
+        int curLevel = mgr.GetCurrentLevel(rd.researchID);
+        bool isMaxed = curLevel >= rd.MaxLevel;
+        int nextLevel = isMaxed ? rd.MaxLevel : curLevel + 1;
+        int cost = isMaxed ? 0 : mgr.GetCostForLevel(rd, nextLevel);
+        float secs = isMaxed ? 0f : mgr.GetSecondsForLevel(rd, nextLevel);
+        bool canAfford = !isMaxed && CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(cost);
+
+        var row = new VisualElement(); row.AddToClassList("picker-row");
+
+        var textCol = new VisualElement(); textCol.AddToClassList("picker-row__text-col");
+        var name = new Label($"{rd.displayName} — L{curLevel}/{rd.MaxLevel}");
+        name.AddToClassList("picker-row__name");
+        var desc = new Label(string.IsNullOrEmpty(rd.description) ? "" : rd.description);
+        desc.AddToClassList("picker-row__desc");
+        textCol.Add(name); textCol.Add(desc);
+
+        var metaCol = new VisualElement(); metaCol.AddToClassList("picker-row__meta-col");
+        var costLbl = new Label(isMaxed ? "Complete" : $"{cost} coins");
+        costLbl.AddToClassList("picker-row__cost");
+        var timeLbl = new Label(isMaxed ? "Maxed" : FormatRemaining(secs));
+        timeLbl.AddToClassList("picker-row__time");
+        metaCol.Add(costLbl); metaCol.Add(timeLbl);
+
+        row.Add(textCol); row.Add(metaCol);
+
+        if (isMaxed)
+        {
+            row.AddToClassList("picker-row--complete");
+        }
+        else if (!canAfford)
+        {
+            row.AddToClassList("picker-row--disabled");
+            costLbl.AddToClassList("picker-row__cost--unaffordable");
+        }
+        else
+        {
+            string capturedID = rd.researchID;
+            int capturedSlot = pickerSlotIndex;
+            row.RegisterCallback<ClickEvent>(_ =>
+            {
+                if (ResearchManager.Instance != null && ResearchManager.Instance.TryAssignResearch(capturedSlot, capturedID))
+                    ClosePicker();
+            });
+            WirePressedFeedback(row, "slot-card--pressed");
+        }
+
+        return row;
     }
 
     private static void WirePressedFeedback(VisualElement ve, string pressedClass)
