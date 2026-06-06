@@ -186,10 +186,14 @@ public class FarmDog : MonoBehaviour
             UpdateFacing(dir);
             SetAnim(RUN_OFFSET);
 
+            float effectiveSpeed = chaseSpeed;
+            if (ResearchManager.Instance != null)
+                effectiveSpeed *= 1f + ResearchManager.Instance.GetBonus(Research.StatKey.DogEfficiency);
+
             transform.position = Vector3.MoveTowards(
                 transform.position,
                 deer.transform.position,
-                chaseSpeed * Time.deltaTime);
+                effectiveSpeed * Time.deltaTime);
 
             yield return null;
         }
@@ -205,7 +209,10 @@ public class FarmDog : MonoBehaviour
         yield return new WaitForSeconds(barkDuration);
         SetAnim(IDLE_OFFSET);
 
-        chaseCooldownTimer = chaseCooldown;
+        float effectiveCooldown = chaseCooldown;
+        if (ResearchManager.Instance != null)
+            effectiveCooldown /= Mathf.Max(0.01f, 1f + ResearchManager.Instance.GetBonus(Research.StatKey.DogCooldown));
+        chaseCooldownTimer = effectiveCooldown;
         isChasing = false;
     }
 

@@ -179,7 +179,37 @@ public class AnimalManager : MonoBehaviour
             return 0f;
 
         double elapsedMinutes = (DateTime.UtcNow - lastEggClaimTime).TotalMinutes;
-        return Mathf.Clamp01((float)(elapsedMinutes / equipped.cooldownMinutes));
+        float effectiveCooldown = EffectiveCooldownMinutes(equipped);
+        return Mathf.Clamp01((float)(elapsedMinutes / effectiveCooldown));
+    }
+
+    private static float EffectiveCooldownMinutes(AnimalData a)
+    {
+        if (a == null) return 1f;
+        if (ResearchManager.Instance == null) return a.cooldownMinutes;
+        string key = a.animalID switch
+        {
+            "chicken" => Research.StatKey.ChickenCooldown,
+            "rooster" => Research.StatKey.RoosterCooldown,
+            _ => null
+        };
+        if (string.IsNullOrEmpty(key)) return a.cooldownMinutes;
+        float bonus = ResearchManager.Instance.GetBonus(key);
+        return a.cooldownMinutes / Mathf.Max(0.01f, 1f + bonus);
+    }
+
+    private static int EffectiveReward(AnimalData a, int baseReward)
+    {
+        if (a == null || ResearchManager.Instance == null) return baseReward;
+        string key = a.animalID switch
+        {
+            "chicken" => Research.StatKey.ChickenEfficiency,
+            "rooster" => Research.StatKey.RoosterEfficiency,
+            _ => null
+        };
+        if (string.IsNullOrEmpty(key)) return baseReward;
+        float bonus = ResearchManager.Instance.GetBonus(key);
+        return Mathf.RoundToInt(baseReward * (1f + bonus));
     }
 
     public void ClaimEgg() => ClaimPassiveReward(); // legacy alias
@@ -199,17 +229,19 @@ public class AnimalManager : MonoBehaviour
 
         if (isGemAnimal)
         {
-            CurrencyManager.Instance.AddGems(equipped.rewardGems);
-            Debug.Log($"Claimed gems! +{equipped.rewardGems} gems");
+            int reward = EffectiveReward(equipped, equipped.rewardGems);
+            CurrencyManager.Instance.AddGems(reward);
+            Debug.Log($"Claimed gems! +{reward} gems");
             if (visual != null) visual.RemoveGem();
-            FloatingTextManager.ShowGems(equipped.rewardGems, rewardWorldPos);
+            FloatingTextManager.ShowGems(reward, rewardWorldPos);
         }
         else
         {
-            CurrencyManager.Instance.AddCoins(equipped.rewardCoins);
-            Debug.Log($"Claimed egg! +{equipped.rewardCoins} coins");
+            int reward = EffectiveReward(equipped, equipped.rewardCoins);
+            CurrencyManager.Instance.AddCoins(reward);
+            Debug.Log($"Claimed egg! +{reward} coins");
             if (visual != null) visual.RemoveEgg();
-            FloatingTextManager.ShowCoins(equipped.rewardCoins, rewardWorldPos);
+            FloatingTextManager.ShowCoins(reward, rewardWorldPos);
         }
 
         lastEggClaimTime = DateTime.UtcNow;
@@ -227,8 +259,9 @@ public class AnimalManager : MonoBehaviour
 
         bool isGemAnimal = equipped.rewardGems > 0;
         double elapsedMinutes = (DateTime.UtcNow - lastEggClaimTime).TotalMinutes;
+        float effectiveCooldown = EffectiveCooldownMinutes(equipped);
 
-        if (!eggReady && elapsedMinutes >= equipped.cooldownMinutes)
+        if (!eggReady && elapsedMinutes >= effectiveCooldown)
         {
             eggReady = true;
 
