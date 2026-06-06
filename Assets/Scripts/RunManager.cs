@@ -105,6 +105,14 @@ public class RunManager : MonoBehaviour
             CurrencyManager.Instance.ResetMoneyForNewRun();
         }
 
+        // Apply Game Speed Multiplier research bonus to Time.timeScale.
+        // ResearchManager.Tick uses unscaledDeltaTime so research timers are unaffected.
+        // Animal passives use UtcNow so they're also unaffected. Game Speed only touches in-run mechanics.
+        float gameSpeedBonus = ResearchManager.Instance != null
+            ? ResearchManager.Instance.GetBonus(Research.StatKey.GameSpeed)
+            : 0f;
+        Time.timeScale = 1f + gameSpeedBonus;
+
         // Notify other systems that run has started
         OnRunStarted?.Invoke();
 
@@ -130,6 +138,9 @@ public class RunManager : MonoBehaviour
         }
 
         isRunActive = false;
+
+        // Reset Time.timeScale (Game Speed Multiplier only applies during runs)
+        Time.timeScale = 1f;
 
         // Calculate rewards
         int coinsEarned = CalculateRunRewards();
