@@ -270,11 +270,21 @@ public class ResearchPopupUITK : MonoBehaviour
             boost.AddToClassList("slot-card__boost--active");
         }
 
+        Label boostBtn = new Label("⚡ Boost (Compost)");
+        boostBtn.AddToClassList("slot-card__cancel");
+        boostBtn.style.color = new StyleColor(new Color(0.55f, 0.78f, 0.39f));
+        int capturedSlotBoost = slotIndex;
+        boostBtn.RegisterCallback<ClickEvent>(_ =>
+        {
+            if (CompostBoostModalUITK.Instance != null)
+                CompostBoostModalUITK.Instance.Open(capturedSlotBoost);
+        });
+
         Label cancel = new Label("Cancel ↩"); cancel.AddToClassList("slot-card__cancel");
         int captured = slotIndex;
         cancel.RegisterCallback<ClickEvent>(_ => CancelSlotAndRefresh(captured));
 
-        card.Add(nameLabel); card.Add(bar); card.Add(timer); card.Add(boost); card.Add(cancel);
+        card.Add(nameLabel); card.Add(bar); card.Add(timer); card.Add(boost); card.Add(boostBtn); card.Add(cancel);
     }
 
     private void CancelSlotAndRefresh(int slotIndex)
