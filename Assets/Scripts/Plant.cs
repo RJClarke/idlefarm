@@ -29,7 +29,6 @@ public class Plant : MonoBehaviour
     // Components
     private PlantVisuals visuals;
     private SoilTile parentTile;
-    public SoilTile ParentTile => parentTile;
 
     // Properties
     public GrowthStage CurrentStage => currentStage;
