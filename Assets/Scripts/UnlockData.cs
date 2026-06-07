@@ -45,6 +45,9 @@ public class UnlockData : ScriptableObject
     [Tooltip("Other unlocks required before this is available")]
     public UnlockData[] requiredUnlocks;
 
+    [Tooltip("Optional. If set, this unlock is hidden in shops until ResearchManager.IsFeatureUnlocked(flag) is true.")]
+    public string requiredFeatureFlag = "";
+
     /// <summary>
     /// Check if prerequisites are met
     /// </summary>
