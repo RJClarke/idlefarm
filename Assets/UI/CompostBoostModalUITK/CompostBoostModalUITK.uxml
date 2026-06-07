@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="CompostBoostModalUITK.uss" />
+    <ui:VisualElement name="modal-root" class="modal-root" style="display: none;">
+        <ui:VisualElement name="modal-backdrop" class="modal-backdrop" />
+        <ui:VisualElement name="modal-card" class="modal-card">
+            <ui:VisualElement name="modal-header" class="modal-header">
+                <ui:Label name="modal-title" text="Boost Research" class="modal-title" />
+                <ui:Button name="modal-close" class="modal-close" text="X" />
+            </ui:VisualElement>
+            <ui:Label name="modal-subtitle" text="Spend Compost to multiply this slot's research speed for a fixed window." class="modal-subtitle" />
+            <ui:ScrollView name="boost-list" class="boost-list" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

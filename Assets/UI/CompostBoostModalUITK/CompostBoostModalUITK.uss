@@ -1,0 +1,85 @@
+.modal-root {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.78);
+}
+
+.modal-card {
+    width: 92%;
+    max-height: 80%;
+    background-color: rgb(38, 28, 16);
+    border-color: rgb(110, 86, 50);
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-left: 22px;
+    padding-right: 22px;
+    flex-direction: column;
+}
+
+.modal-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 12px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(110, 86, 50);
+}
+
+.modal-title { font-size: 32px; -unity-font-style: bold; color: rgb(255, 240, 210); }
+.modal-close {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(220, 195, 150);
+    font-size: 28px;
+    -unity-font-style: bold;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+.modal-subtitle { font-size: 18px; color: rgb(200, 180, 140); white-space: normal; margin-bottom: 16px; }
+
+.boost-list { flex-grow: 1; }
+
+.boost-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 18px;
+    padding-right: 18px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 240, 210, 0.06);
+    border-color: rgba(255, 240, 210, 0.08);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+.boost-row__label { color: rgb(255, 240, 210); font-size: 22px; -unity-font-style: bold; flex-grow: 1; }
+.boost-row__cost  { color: rgb(140, 200, 100); font-size: 22px; -unity-font-style: bold; }
+.boost-row--disabled { opacity: 0.55; }
+.boost-row--disabled .boost-row__cost { color: rgb(220, 90, 90); }
