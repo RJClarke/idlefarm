@@ -175,6 +175,25 @@ public class ResearchManager : MonoBehaviour
         OnSlotStateChanged?.Invoke(slotIndex);
     }
 
+    /// <summary>
+    /// Buy a Compost boost token for an active research slot. Multiplier replaces any
+    /// active boost (tokens are not stackable). durationSecs is the boost window starting NOW.
+    /// </summary>
+    public bool TryApplyBoost(int slotIndex, float multiplier, float durationSecs, int compostCost)
+    {
+        if (!IsValidSlot(slotIndex)) return false;
+        var s = slots[slotIndex];
+        if (s.IsIdle) return false;
+        if (multiplier <= 1.0f || durationSecs <= 0f) return false;
+        if (CurrencyManager.Instance == null) return false;
+        if (!CurrencyManager.Instance.SpendCompost(compostCost)) return false;
+
+        s.boostMultiplier = multiplier;
+        s.boostExpiresUtcTicks = DateTime.UtcNow.Ticks + (long)(durationSecs * TimeSpan.TicksPerSecond);
+        OnSlotStateChanged?.Invoke(slotIndex);
+        return true;
+    }
+
     public int GetCurrentLevel(string researchID)
     {
         if (string.IsNullOrEmpty(researchID)) return 0;
