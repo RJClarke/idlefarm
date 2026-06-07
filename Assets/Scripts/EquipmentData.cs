@@ -30,6 +30,8 @@ public class EquipmentData : ScriptableObject
     [Header("Unlock")]
     [Tooltip("Must match the unlockID on the corresponding UnlockData asset (e.g. 'scarecrow_unlock')")]
     public string unlockID = "";
+    [Tooltip("Optional. If set, this equipment is hidden entirely (not shown as locked) until ResearchManager.IsFeatureUnlocked(flag) is true.")]
+    public string requiredFeatureFlag = "";
 
     /// <summary>
     /// Returns true if this equipment has been unlocked (purchased at the Market).

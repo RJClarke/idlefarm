@@ -397,8 +397,10 @@ public class ResearchManager : MonoBehaviour
     }
 
     /// <summary>
-    /// DevTools-only: instantly finish whatever research is active in each slot. Skips real-time cost/timer.
+    /// DevTools-only: finish ONE level of whatever research is active in each slot. Skips real-time wait.
     /// Binary completions still fire OnFeatureFlagUnlocked / OnSlotUnlocked so downstream UI refreshes.
+    /// After leveling up, the slot becomes idle (matches the natural "you paid for L+1, level done" flow);
+    /// the player chooses what to research next.
     /// </summary>
     public void DebugFinishCurrentResearches()
     {
@@ -409,13 +411,16 @@ public class ResearchManager : MonoBehaviour
             var rd = GetResearch(s.activeResearchID);
             if (rd == null) { CancelResearch(i); continue; }
 
-            // Jump to max level, fire one summary OnResearchLeveledUp at max.
-            int target = rd.MaxLevel;
-            s.currentLevel = target;
-            levelsByResearchID[rd.researchID] = target;
+            int newLevel = Math.Min(rd.MaxLevel, s.currentLevel + 1);
+            s.currentLevel = newLevel;
+            levelsByResearchID[rd.researchID] = newLevel;
             partialSecsByResearchID.Remove(rd.researchID);
-            OnResearchLeveledUp?.Invoke(rd.researchID, target);
-            OnResearchCompleted(rd, i);
+            OnResearchLeveledUp?.Invoke(rd.researchID, newLevel);
+
+            if (newLevel >= rd.MaxLevel)
+                OnResearchCompleted(rd, i); // handles binary unlocks + cancels slot
+            else
+                CancelResearch(i); // slot becomes idle; player chooses next research/level
         }
     }
 

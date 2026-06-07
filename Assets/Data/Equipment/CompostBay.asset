@@ -12,19 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2330d73f08d6977429f3bc3523d91bd4, type: 3}
   m_Name: CompostBay
   m_EditorClassIdentifier: Assembly-CSharp::EquipmentData
-  equipmentID: scarecrow
-  displayName: Scarecrow
+  equipmentID: compostbay
+  displayName: Compost Bay
   equipmentType: 0
-  icon: 
+  icon: "\U0001F331"
   iconSprite: {fileID: 0}
-  description: Repels crows within its area of effect.
+  description: Converts dead crops in its zone into Compost.
   unlockID: compostbay_unlock
+  requiredFeatureFlag: composting_basics
   baseCooldownSeconds: 0
   baseRepelCapacity: 0
   baseAoERadius: 0
   countersTheatType: 1
   visualPrefab: {fileID: 0}
-  uiUpgradeRows: []
+  uiUpgradeRows:
+  - {fileID: 11400000, guid: b97b7a019a55f6642b3586d377a771b4, type: 2}
   aoeUpgradeID: 
   cooldownUpgradeID: 
   capacityUpgradeID: 

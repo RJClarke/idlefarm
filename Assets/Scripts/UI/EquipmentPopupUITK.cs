@@ -60,8 +60,15 @@ public class EquipmentPopupUITK : MonoBehaviour
             CurrencyManager.Instance.OnCoinsChanged += OnCoinsChanged;
             any = true;
         }
+        if (ResearchManager.Instance != null)
+        {
+            ResearchManager.Instance.OnFeatureFlagUnlocked += OnFeatureFlagUnlocked;
+            any = true;
+        }
         eventsSubscribed = any;
     }
+
+    private void OnFeatureFlagUnlocked(string _) => MarkDirty();
 
     private void UnsubscribeEvents()
     {
@@ -70,6 +77,8 @@ public class EquipmentPopupUITK : MonoBehaviour
             UpgradeManager.Instance.OnUpgradePurchased -= OnUpgradeChanged;
         if (CurrencyManager.Instance != null)
             CurrencyManager.Instance.OnCoinsChanged -= OnCoinsChanged;
+        if (ResearchManager.Instance != null)
+            ResearchManager.Instance.OnFeatureFlagUnlocked -= OnFeatureFlagUnlocked;
         eventsSubscribed = false;
     }
 
@@ -152,6 +161,12 @@ public class EquipmentPopupUITK : MonoBehaviour
         foreach (EquipmentData eq in registry.equipment)
         {
             if (eq == null) continue;
+            // Hide equipment entirely if its required research feature flag isn't unlocked
+            if (!string.IsNullOrEmpty(eq.requiredFeatureFlag))
+            {
+                if (ResearchManager.Instance == null) continue;
+                if (!ResearchManager.Instance.IsFeatureUnlocked(eq.requiredFeatureFlag)) continue;
+            }
             if (eq.IsUnlocked()) SpawnUnlockedSection(eq);
             else SpawnLockedSection(eq);
         }

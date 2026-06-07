@@ -243,7 +243,7 @@ public class ResearchPopupUITK : MonoBehaviour
         var rd = mgr.GetResearch(state.activeResearchID);
         if (rd == null) { CancelSlotAndRefresh(slotIndex); return; }
 
-        Label nameLabel = new Label($"{rd.displayName} — L{state.currentLevel + 1}/{rd.MaxLevel}");
+        Label nameLabel = new Label($"{rd.displayName} — {state.currentLevel + 1}/{rd.MaxLevel}");
         nameLabel.AddToClassList("slot-card__active-name");
 
         int nextLevel = state.currentLevel + 1;
@@ -383,7 +383,7 @@ public class ResearchPopupUITK : MonoBehaviour
         var row = new VisualElement(); row.AddToClassList("picker-row");
 
         var textCol = new VisualElement(); textCol.AddToClassList("picker-row__text-col");
-        var name = new Label($"{rd.displayName} — L{curLevel}/{rd.MaxLevel}");
+        var name = new Label($"{rd.displayName} — {curLevel}/{rd.MaxLevel}");
         name.AddToClassList("picker-row__name");
         var desc = new Label(string.IsNullOrEmpty(rd.description) ? "" : rd.description);
         desc.AddToClassList("picker-row__desc");
