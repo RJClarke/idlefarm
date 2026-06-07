@@ -33,6 +33,10 @@ public class AnimalData : ScriptableObject
     [Tooltip("For PassiveTimer (gem animals): gems rewarded per claim. Set > 0 to make this a gem animal instead of a coin animal.")]
     public int rewardGems = 0;
 
+    [Header("Compost (Cow only)")]
+    [Tooltip("Base compost generated per real-world minute while equipped. Other animals leave at 0.")]
+    public float compostPerMinute = 0f;
+
     [Header("Visuals")]
     public GameObject visualPrefab;
     public float roamSpeed = 0.6f;
