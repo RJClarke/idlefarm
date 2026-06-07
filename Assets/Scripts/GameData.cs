@@ -11,6 +11,7 @@ public class GameData
     // Permanent currency (persists between runs)
     public int coins;
     public int gems;
+    public int compost;
     public string[] unlockedAnimalIDs;
     public string equippedAnimalID;
     public string lastEggClaimTime;
@@ -41,6 +42,7 @@ public class GameData
     {
         coins = 0;
         gems = 0;
+        compost = 0;
         unlockedAnimalIDs = new string[0];
         equippedAnimalID = "";
         lastEggClaimTime = "";
@@ -61,13 +63,14 @@ public class GameData
     /// Constructor to create from current game state
     /// </summary>
     public GameData(
-        int currentCoins, int currentGems,
+        int currentCoins, int currentGems, int currentCompost,
         string[] animalIDs, string equippedID, string eggTime,
         ActiveQuest[] quests, int questsCompleted, bool[] milestones, string weekStart, string lastDrop,
         bool[] researchUnlocked, ResearchSlotState[] researchSlotsIn, string[] featureFlags, ResearchLevelEntry[] levels)
     {
         coins = currentCoins;
         gems = currentGems;
+        compost = currentCompost;
         unlockedAnimalIDs = animalIDs ?? new string[0];
         equippedAnimalID = equippedID ?? "";
         lastEggClaimTime = eggTime ?? "";

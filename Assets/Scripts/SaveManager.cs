@@ -84,6 +84,7 @@ public class SaveManager : MonoBehaviour
         GameData data = new GameData(
             CurrencyManager.Instance.Coins,
             CurrencyManager.Instance.Gems,
+            CurrencyManager.Instance.Compost,
             animalIDs,
             equippedID,
             eggTime,
@@ -139,6 +140,7 @@ public class SaveManager : MonoBehaviour
             {
                 CurrencyManager.Instance.SetCoins(data.coins);
                 CurrencyManager.Instance.SetGems(data.gems);
+                CurrencyManager.Instance.SetCompost(data.compost);
 
                 if (AnimalManager.Instance != null)
                 {
