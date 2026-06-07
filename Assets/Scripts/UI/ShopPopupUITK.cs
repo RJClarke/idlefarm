@@ -97,6 +97,11 @@ public class ShopPopupUITK : MonoBehaviour
             RunManager.Instance.OnRunEnded += OnRunStateChanged;
             any = true;
         }
+        if (ResearchManager.Instance != null)
+        {
+            ResearchManager.Instance.OnFeatureFlagUnlocked += OnFeatureFlagUnlocked;
+            any = true;
+        }
         eventsSubscribed = any;
     }
 
@@ -112,8 +117,12 @@ public class ShopPopupUITK : MonoBehaviour
             RunManager.Instance.OnRunStarted -= OnRunStarted;
             RunManager.Instance.OnRunEnded -= OnRunStateChanged;
         }
+        if (ResearchManager.Instance != null)
+            ResearchManager.Instance.OnFeatureFlagUnlocked -= OnFeatureFlagUnlocked;
         eventsSubscribed = false;
     }
+
+    private void OnFeatureFlagUnlocked(string _) => MarkDirty();
 
     private void OnUpgradeChanged(string _) => MarkDirty();
     private void OnCurrencyChanged(int _) => MarkDirty();
@@ -189,8 +198,15 @@ public class ShopPopupUITK : MonoBehaviour
         if (unlocks == null) return;
         for (int i = 0; i < unlocks.Length; i++)
         {
-            if (unlocks[i] == null) continue;
-            SpawnRow(rowsList, unlocks[i]);
+            UnlockData u = unlocks[i];
+            if (u == null) continue;
+            // Gate by required research feature flag (e.g. Compost Bay needs "composting_basics")
+            if (!string.IsNullOrEmpty(u.requiredFeatureFlag))
+            {
+                if (ResearchManager.Instance == null) continue;
+                if (!ResearchManager.Instance.IsFeatureUnlocked(u.requiredFeatureFlag)) continue;
+            }
+            SpawnRow(rowsList, u);
         }
     }
 
