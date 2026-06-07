@@ -67888,8 +67888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocationModeController
   hideAtMarket:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1697813152}
   hideEntitiesAtMarket:
   - {fileID: 0}
   - {fileID: 0}
