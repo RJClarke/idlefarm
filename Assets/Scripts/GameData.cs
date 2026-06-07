@@ -15,6 +15,7 @@ public class GameData
     public string[] unlockedAnimalIDs;
     public string equippedAnimalID;
     public string lastEggClaimTime;
+    public string lastCompostClaimTime;
 
     // Daily quests
     public ActiveQuest[] activeQuests;
@@ -46,6 +47,7 @@ public class GameData
         unlockedAnimalIDs = new string[0];
         equippedAnimalID = "";
         lastEggClaimTime = "";
+        lastCompostClaimTime = "";
         activeQuests = new ActiveQuest[0];
         questsCompletedThisWeek = 0;
         weeklyMilestonesClaimed = new bool[8];
@@ -64,7 +66,7 @@ public class GameData
     /// </summary>
     public GameData(
         int currentCoins, int currentGems, int currentCompost,
-        string[] animalIDs, string equippedID, string eggTime,
+        string[] animalIDs, string equippedID, string eggTime, string compostTime,
         ActiveQuest[] quests, int questsCompleted, bool[] milestones, string weekStart, string lastDrop,
         bool[] researchUnlocked, ResearchSlotState[] researchSlotsIn, string[] featureFlags, ResearchLevelEntry[] levels)
     {
@@ -74,6 +76,7 @@ public class GameData
         unlockedAnimalIDs = animalIDs ?? new string[0];
         equippedAnimalID = equippedID ?? "";
         lastEggClaimTime = eggTime ?? "";
+        lastCompostClaimTime = compostTime ?? "";
         activeQuests = quests ?? new ActiveQuest[0];
         questsCompletedThisWeek = questsCompleted;
         weeklyMilestonesClaimed = milestones ?? new bool[8];

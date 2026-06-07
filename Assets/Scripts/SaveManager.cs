@@ -46,12 +46,14 @@ public class SaveManager : MonoBehaviour
         string[] animalIDs = new string[0];
         string equippedID = "";
         string eggTime = "";
+        string compostTime = "";
 
         if (AnimalManager.Instance != null)
         {
             animalIDs = AnimalManager.Instance.GetUnlockedAnimalIDs();
             equippedID = AnimalManager.Instance.GetEquippedAnimalID();
             eggTime = AnimalManager.Instance.GetLastEggClaimTimeISO();
+            compostTime = AnimalManager.Instance.GetLastCompostTimeISO();
         }
 
         ActiveQuest[] quests = new ActiveQuest[0];
@@ -88,6 +90,7 @@ public class SaveManager : MonoBehaviour
             animalIDs,
             equippedID,
             eggTime,
+            compostTime,
             quests,
             questsCompleted,
             milestones,
@@ -145,6 +148,7 @@ public class SaveManager : MonoBehaviour
                 if (AnimalManager.Instance != null)
                 {
                     AnimalManager.Instance.LoadState(data.unlockedAnimalIDs, data.equippedAnimalID, data.lastEggClaimTime);
+                    AnimalManager.Instance.LoadCompostTime(data.lastCompostClaimTime);
                 }
 
                 if (QuestManager.Instance != null)

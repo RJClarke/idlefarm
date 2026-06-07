@@ -29,6 +29,11 @@ public class AnimalManager : MonoBehaviour
     private float eggCheckTimer = 0f;
     private const float EGG_CHECK_INTERVAL = 1f;
 
+    // Cow passive compost accumulator (UtcNow-based so it works while app is closed)
+    private DateTime lastCompostTickUtc = DateTime.MinValue;
+    private float compostTickAccumulator;
+    private const float COMPOST_TICK_INTERVAL_SECS = 5f;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -65,6 +70,46 @@ public class AnimalManager : MonoBehaviour
             eggCheckTimer = 0f;
             UpdatePassiveTimer();
         }
+
+        compostTickAccumulator += Time.unscaledDeltaTime;
+        if (compostTickAccumulator >= COMPOST_TICK_INTERVAL_SECS)
+        {
+            compostTickAccumulator = 0f;
+            TickCompost();
+        }
+    }
+
+    private void TickCompost()
+    {
+        AnimalData equipped = GetEquippedAnimal();
+        if (equipped == null || equipped.compostPerMinute <= 0f) return;
+        if (CurrencyManager.Instance == null) return;
+        if (lastCompostTickUtc == DateTime.MinValue) lastCompostTickUtc = DateTime.UtcNow;
+
+        double elapsedMin = (DateTime.UtcNow - lastCompostTickUtc).TotalMinutes;
+        if (elapsedMin <= 0) return;
+
+        float ratePerMin = equipped.compostPerMinute;
+        if (ResearchManager.Instance != null)
+            ratePerMin *= 1f + ResearchManager.Instance.GetBonus(Research.StatKey.CowPassiveCompost);
+
+        int amount = Mathf.FloorToInt((float)(elapsedMin * ratePerMin));
+        if (amount <= 0) return;
+
+        CurrencyManager.Instance.AddCompost(amount);
+        // Advance the timestamp by the minutes we just credited (avoids drift).
+        double minutesAwarded = amount / ratePerMin;
+        lastCompostTickUtc = lastCompostTickUtc.AddMinutes(minutesAwarded);
+    }
+
+    public string GetLastCompostTimeISO() =>
+        lastCompostTickUtc == DateTime.MinValue ? "" : lastCompostTickUtc.ToString("o");
+
+    public void LoadCompostTime(string iso)
+    {
+        if (string.IsNullOrEmpty(iso)) { lastCompostTickUtc = DateTime.MinValue; return; }
+        if (DateTime.TryParse(iso, null, System.Globalization.DateTimeStyles.RoundtripKind, out var t))
+            lastCompostTickUtc = t.ToUniversalTime();
     }
 
     // ── Data Access ──────────────────────────────
