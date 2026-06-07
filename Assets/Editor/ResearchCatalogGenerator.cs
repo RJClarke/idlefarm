@@ -56,13 +56,15 @@ public static class ResearchCatalogGenerator
         CreateStd("crop_growth_speed",        "Plant: Growth Speed",           StatKey.CropGrowthSpeed,       ResearchTier.Tier100Standard,  "plant",  0.005f, t:1.5f, c:2.0f);
         CreateStd("crop_bonus_sell_amount",   "Plant: Bonus Sell Amount",      StatKey.CropBonusSellAmount,   ResearchTier.Tier100Absurd,    "plant",  0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
 
-        // Animals (6 — gated by ownership; Cow ships in Plan 2)
+        // Animals (8 — gated by ownership)
         CreateStd("chicken_cooldown",   "Chicken: Cooldown",   StatKey.ChickenCooldown,   ResearchTier.Tier25, "animals", 0.010f, animalID:"chicken");
         CreateStd("chicken_efficiency", "Chicken: Efficiency", StatKey.ChickenEfficiency, ResearchTier.Tier25, "animals", 0.010f, animalID:"chicken");
         CreateStd("dog_cooldown",       "Dog: Cooldown",       StatKey.DogCooldown,       ResearchTier.Tier25, "animals", 0.010f, animalID:"dog");
         CreateStd("dog_efficiency",     "Dog: Efficiency",     StatKey.DogEfficiency,     ResearchTier.Tier25, "animals", 0.010f, animalID:"dog");
         CreateStd("rooster_cooldown",   "Rooster: Cooldown",   StatKey.RoosterCooldown,   ResearchTier.Tier25, "animals", 0.010f, animalID:"rooster");
         CreateStd("rooster_efficiency", "Rooster: Efficiency", StatKey.RoosterEfficiency, ResearchTier.Tier25, "animals", 0.010f, animalID:"rooster");
+        CreateStd("cow_passive_compost","Cow: Passive Compost Rate", StatKey.CowPassiveCompost, ResearchTier.Tier100Standard, "animals", 0.005f, animalID:"cow");
+        CreateStd("cow_run_yield",      "Cow: Run Yield",            StatKey.CowRunYield,       ResearchTier.Tier25,          "animals", 0.010f, animalID:"cow");
 
         // Equipment (9 — Compost Bay deferred to Plan 2)
         CreateStd("scarecrow_aoe",          "Scarecrow: AoE",           StatKey.ScarecrowAoe,           ResearchTier.Tier100Standard, "equipment", 0.005f, t:0.8f, c:0.8f, unlockID:"scarecrow_unlock");
@@ -74,6 +76,7 @@ public static class ResearchCatalogGenerator
         CreateStd("fence_aoe",              "Fence: AoE",               StatKey.FenceAoe,               ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"fence_unlock");
         CreateStd("fence_effectiveness",    "Fence: Effectiveness",     StatKey.FenceEffectiveness,     ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"fence_unlock");
         CreateStd("fence_cooldown",         "Fence: Cooldown",          StatKey.FenceCooldown,          ResearchTier.Tier25,          "equipment", 0.010f, unlockID:"fence_unlock");
+        CreateStd("compost_bay_conversion", "Compost Bay: Conversion Efficiency", StatKey.CompostBayConversion, ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"compostbay_unlock");
 
         // Weather (2)
         CreateStd("storm_damage_reduction", "Storm Damage Reduction", StatKey.StormDamageReduction, ResearchTier.Tier25, "weather", 0.010f);
