@@ -6,7 +6,7 @@ public class FloatingTextManager : MonoBehaviour
 {
     public static FloatingTextManager Instance { get; private set; }
 
-    public enum CurrencyType { Money, Coins, Gems }
+    public enum CurrencyType { Money, Coins, Gems, Compost }
 
     public struct CurrencyReward
     {
@@ -56,6 +56,13 @@ public class FloatingTextManager : MonoBehaviour
         if (Instance == null || Camera.main == null || !SettingsManager.ShowFloatingNumbers) return;
         Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
         Instance.SpawnLabel(new List<CurrencyReward> { new CurrencyReward(CurrencyType.Gems, amount) }, screenPos);
+    }
+
+    public static void ShowCompost(int amount, Vector3 worldPos)
+    {
+        if (Instance == null || Camera.main == null || !SettingsManager.ShowFloatingNumbers) return;
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        Instance.SpawnLabel(new List<CurrencyReward> { new CurrencyReward(CurrencyType.Compost, amount) }, screenPos);
     }
 
     public static void Show(List<CurrencyReward> rewards, Vector2 screenPos)
@@ -128,6 +135,7 @@ public class FloatingTextManager : MonoBehaviour
             CurrencyType.Money => $"+{r.amount}$",
             CurrencyType.Coins => $"+{r.amount}G",
             CurrencyType.Gems  => $"+{r.amount}\u2736",
+            CurrencyType.Compost => $"+{r.amount}\U0001F331",
             _ => $"+{r.amount}"
         };
     }
@@ -139,6 +147,7 @@ public class FloatingTextManager : MonoBehaviour
             CurrencyType.Money => new Color(0.118f, 0.482f, 0.118f), // #1E7B1E
             CurrencyType.Coins => new Color(1f, 0.843f, 0f),         // #FFD700
             CurrencyType.Gems  => new Color(0.659f, 0.333f, 0.969f), // #A855F7
+            CurrencyType.Compost => new Color(0.439f, 0.788f, 0.392f), // #70C964 (compost green)
             _ => Color.white
         };
     }
