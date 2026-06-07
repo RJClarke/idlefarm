@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6c0a690d9a3a3449c4ea9f6b1a322c, type: 3}
+  m_Name: Research_scarecrow_cooldown
+  m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
+  researchID: scarecrow_cooldown
+  displayName: 'Scarecrow: Cooldown'
+  description: +1.0% per level. Maxes at +25%.
+  branchID: equipment
+  tier: 2
+  targetStatKey: scarecrow_cooldown
+  bonusPerLevel: 0.01
+  baseCostCoins: 50
+  baseDurationSecs: 120
+  timeDifficulty: 0.8
+  costDifficulty: 0.8
+  prerequisiteResearchID: 
+  requiredUnlockID: scarecrow_unlock
+  requiredAnimalID: 
+  binaryFixedCost: 0
+  binaryFixedDurationSecs: 0
+  unlocksSlotIndex: -1
+  unlocksFeatureID: 

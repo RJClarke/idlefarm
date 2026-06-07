@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6c0a690d9a3a3449c4ea9f6b1a322c, type: 3}
+  m_Name: Research_crop_growth_speed
+  m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
+  researchID: crop_growth_speed
+  displayName: 'Plant: Growth Speed'
+  description: +0.5% per level. Maxes at +50%.
+  branchID: plant
+  tier: 3
+  targetStatKey: crop_growth_speed
+  bonusPerLevel: 0.005
+  baseCostCoins: 50
+  baseDurationSecs: 120
+  timeDifficulty: 1.5
+  costDifficulty: 2
+  prerequisiteResearchID: 
+  requiredUnlockID: 
+  requiredAnimalID: 
+  binaryFixedCost: 0
+  binaryFixedDurationSecs: 0
+  unlocksSlotIndex: -1
+  unlocksFeatureID: 

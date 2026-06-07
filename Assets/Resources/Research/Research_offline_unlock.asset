@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6c0a690d9a3a3449c4ea9f6b1a322c, type: 3}
+  m_Name: Research_offline_unlock
+  m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
+  researchID: offline_unlock
+  displayName: Offline Progress
+  description: "Offline Progress \u2014 one-time unlock."
+  branchID: meta
+  tier: 0
+  targetStatKey: 
+  bonusPerLevel: 0
+  baseCostCoins: 50
+  baseDurationSecs: 120
+  timeDifficulty: 1
+  costDifficulty: 1
+  prerequisiteResearchID: 
+  requiredUnlockID: 
+  requiredAnimalID: 
+  binaryFixedCost: 2500
+  binaryFixedDurationSecs: 86400
+  unlocksSlotIndex: -1
+  unlocksFeatureID: offline_progress
