@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7339442875830955058}
   - component: {fileID: 1755385643989819528}
   - component: {fileID: 7727757403932044867}
+  - component: {fileID: 7727757403932044999}
   m_Layer: 0
   m_Name: CowVisual
   m_TagString: Untagged
@@ -129,3 +130,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalVisual
   eggSprite: {fileID: 0}
   gemSprite: {fileID: 0}
+--- !u!114 &7727757403932044999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4596623498287381685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef811a118e011948904abb4070d05e8, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::Cow
+  walkSpeed: 1.2
+  minIntervalSecs: 30
+  maxIntervalSecs: 60
+  baseLumpPerEat: 15
