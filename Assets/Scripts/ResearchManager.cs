@@ -44,6 +44,8 @@ public class ResearchManager : MonoBehaviour
     private readonly Dictionary<string, ResearchData> catalog = new Dictionary<string, ResearchData>();
     // researchID -> highest level reached
     private readonly Dictionary<string, int> levelsByResearchID = new Dictionary<string, int>();
+    // researchID -> seconds accumulated toward the next level (cost already paid). 0 = fresh.
+    private readonly Dictionary<string, float> partialSecsByResearchID = new Dictionary<string, float>();
 
     public event Action<int> OnSlotUnlocked;              // slotIndex
     public event Action<int> OnSlotStateChanged;          // slotIndex — assigned/cancelled
@@ -152,26 +154,55 @@ public class ResearchManager : MonoBehaviour
         int curLevel = GetCurrentLevel(researchID);
         if (curLevel >= rd.MaxLevel) return false;
 
-        // Pay L+1 cost (level we're about to start)
-        int nextLevel = curLevel + 1;
-        int cost = GetCostForLevel(rd, nextLevel);
-        if (CurrencyManager.Instance == null || !CurrencyManager.Instance.SpendCoins(cost)) return false;
+        float partial = GetPartialSecs(researchID);
+
+        if (partial <= 0f)
+        {
+            // Fresh start — pay L+1 cost
+            int nextLevel = curLevel + 1;
+            int cost = GetCostForLevel(rd, nextLevel);
+            if (CurrencyManager.Instance == null || !CurrencyManager.Instance.SpendCoins(cost)) return false;
+        }
+        // else: resume paid-but-paused — no charge. partial seconds count as elapsed.
 
         slots[slotIndex].activeResearchID = researchID;
         slots[slotIndex].currentLevel     = curLevel;
-        slots[slotIndex].startUtcTicks    = DateTime.UtcNow.Ticks;
+        // Backdate startUtc so elapsed = partial immediately
+        slots[slotIndex].startUtcTicks    = DateTime.UtcNow.Ticks - (long)(partial * TimeSpan.TicksPerSecond);
         OnSlotStateChanged?.Invoke(slotIndex);
         return true;
+    }
+
+    public float GetPartialSecs(string researchID)
+    {
+        if (string.IsNullOrEmpty(researchID)) return 0f;
+        return partialSecsByResearchID.TryGetValue(researchID, out var s) ? s : 0f;
     }
 
     public void CancelResearch(int slotIndex)
     {
         if (!IsValidSlot(slotIndex)) return;
-        slots[slotIndex].activeResearchID = "";
-        slots[slotIndex].currentLevel = 0;
-        slots[slotIndex].startUtcTicks = 0;
-        slots[slotIndex].boostExpiresUtcTicks = 0;
-        slots[slotIndex].boostMultiplier = 1.0f;
+        var s = slots[slotIndex];
+
+        // Preserve progress toward the in-progress level so re-assigning later doesn't charge again.
+        if (!s.IsIdle)
+        {
+            var rd = GetResearch(s.activeResearchID);
+            if (rd != null && !rd.IsBinary && s.currentLevel < rd.MaxLevel)
+            {
+                int nextLevel = s.currentLevel + 1;
+                float secsForLevel = GetSecondsForLevel(rd, nextLevel);
+                double elapsed = ComputeElapsedSeconds(s, DateTime.UtcNow.Ticks);
+                float partial = (float)Math.Min(Math.Max(0d, elapsed), secsForLevel);
+                if (partial > 0f) partialSecsByResearchID[s.activeResearchID] = partial;
+            }
+        }
+
+        s.activeResearchID = "";
+        s.currentLevel = 0;
+        s.startUtcTicks = 0;
+        s.boostExpiresUtcTicks = 0;
+        s.boostMultiplier = 1.0f;
         OnSlotStateChanged?.Invoke(slotIndex);
     }
 
@@ -257,6 +288,7 @@ public class ResearchManager : MonoBehaviour
                 // Level up
                 s.currentLevel = nextLevel;
                 levelsByResearchID[rd.researchID] = nextLevel;
+                partialSecsByResearchID.Remove(rd.researchID); // partial only applies to the level we just finished
                 long consumedTicks = (long)(secs * TimeSpan.TicksPerSecond);
                 s.startUtcTicks += consumedTicks;
                 OnResearchLeveledUp?.Invoke(rd.researchID, nextLevel);
@@ -347,13 +379,44 @@ public class ResearchManager : MonoBehaviour
     public string[] GetFeatureFlagsForSave() => featureFlags.ToArray();
     public ResearchLevelEntry[] GetLevelsForSave()
     {
-        var result = new ResearchLevelEntry[levelsByResearchID.Count];
+        // Union of researchIDs across levels + partials so partial-only entries persist too.
+        var ids = new HashSet<string>(levelsByResearchID.Keys);
+        foreach (var k in partialSecsByResearchID.Keys) ids.Add(k);
+        var result = new ResearchLevelEntry[ids.Count];
         int i = 0;
-        foreach (var kv in levelsByResearchID)
+        foreach (var id in ids)
         {
-            result[i++] = new ResearchLevelEntry { researchID = kv.Key, level = kv.Value };
+            result[i++] = new ResearchLevelEntry
+            {
+                researchID = id,
+                level = levelsByResearchID.TryGetValue(id, out var lvl) ? lvl : 0,
+                partialSecs = partialSecsByResearchID.TryGetValue(id, out var p) ? p : 0f,
+            };
         }
         return result;
+    }
+
+    /// <summary>
+    /// DevTools-only: instantly finish whatever research is active in each slot. Skips real-time cost/timer.
+    /// Binary completions still fire OnFeatureFlagUnlocked / OnSlotUnlocked so downstream UI refreshes.
+    /// </summary>
+    public void DebugFinishCurrentResearches()
+    {
+        for (int i = 0; i < SlotCount; i++)
+        {
+            var s = slots[i];
+            if (s.IsIdle) continue;
+            var rd = GetResearch(s.activeResearchID);
+            if (rd == null) { CancelResearch(i); continue; }
+
+            // Jump to max level, fire one summary OnResearchLeveledUp at max.
+            int target = rd.MaxLevel;
+            s.currentLevel = target;
+            levelsByResearchID[rd.researchID] = target;
+            partialSecsByResearchID.Remove(rd.researchID);
+            OnResearchLeveledUp?.Invoke(rd.researchID, target);
+            OnResearchCompleted(rd, i);
+        }
     }
 
     public void LoadState(bool[] unlocked, ResearchSlotState[] savedSlots, string[] flags, ResearchLevelEntry[] levels)
@@ -380,9 +443,14 @@ public class ResearchManager : MonoBehaviour
         if (flags != null) foreach (var f in flags) if (!string.IsNullOrEmpty(f)) featureFlags.Add(f);
 
         levelsByResearchID.Clear();
+        partialSecsByResearchID.Clear();
         if (levels != null)
             foreach (var e in levels)
-                if (!string.IsNullOrEmpty(e.researchID)) levelsByResearchID[e.researchID] = e.level;
+            {
+                if (string.IsNullOrEmpty(e.researchID)) continue;
+                if (e.level > 0) levelsByResearchID[e.researchID] = e.level;
+                if (e.partialSecs > 0f) partialSecsByResearchID[e.researchID] = e.partialSecs;
+            }
     }
 
     private static ResearchSlotState DeepCopy(ResearchSlotState src)

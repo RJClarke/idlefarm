@@ -286,6 +286,14 @@
 .picker-row--complete .picker-row__cost { color: rgb(240, 200, 120); }
 .picker-row--complete .picker-row__time { color: rgb(240, 200, 120); }
 
+/* Resume (paid-but-paused): green tint to signal "no charge, time-remaining only" */
+.picker-row--resume {
+    background-color: rgba(140, 200, 100, 0.10);
+    border-color: rgb(140, 200, 100);
+}
+.picker-row__cost--resume { color: rgb(140, 200, 100); }
+.picker-row__time--resume { color: rgb(140, 200, 100); }
+
 /* ─── Active slot timer view ─── */
 
 .slot-card__active-name {

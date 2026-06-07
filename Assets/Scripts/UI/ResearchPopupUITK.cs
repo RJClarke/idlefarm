@@ -372,9 +372,13 @@ public class ResearchPopupUITK : MonoBehaviour
         int curLevel = mgr.GetCurrentLevel(rd.researchID);
         bool isMaxed = curLevel >= rd.MaxLevel;
         int nextLevel = isMaxed ? rd.MaxLevel : curLevel + 1;
-        int cost = isMaxed ? 0 : mgr.GetCostForLevel(rd, nextLevel);
-        float secs = isMaxed ? 0f : mgr.GetSecondsForLevel(rd, nextLevel);
-        bool canAfford = !isMaxed && CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(cost);
+        int fullCost = isMaxed ? 0 : mgr.GetCostForLevel(rd, nextLevel);
+        float fullSecs = isMaxed ? 0f : mgr.GetSecondsForLevel(rd, nextLevel);
+        float partial = isMaxed ? 0f : mgr.GetPartialSecs(rd.researchID);
+        bool isPaidPaused = partial > 0f;
+        int cost = isPaidPaused ? 0 : fullCost; // already paid — resume free
+        float secs = Mathf.Max(0f, fullSecs - partial);
+        bool canAfford = !isMaxed && (isPaidPaused || (CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(cost)));
 
         var row = new VisualElement(); row.AddToClassList("picker-row");
 
@@ -386,7 +390,7 @@ public class ResearchPopupUITK : MonoBehaviour
         textCol.Add(name); textCol.Add(desc);
 
         var metaCol = new VisualElement(); metaCol.AddToClassList("picker-row__meta-col");
-        var costLbl = new Label(isMaxed ? "Complete" : $"{cost} coins");
+        var costLbl = new Label(isMaxed ? "Complete" : (isPaidPaused ? "Paid" : $"{cost} coins"));
         costLbl.AddToClassList("picker-row__cost");
         var timeLbl = new Label(isMaxed ? "Maxed" : FormatRemaining(secs));
         timeLbl.AddToClassList("picker-row__time");
@@ -398,12 +402,19 @@ public class ResearchPopupUITK : MonoBehaviour
         {
             row.AddToClassList("picker-row--complete");
         }
+        else if (isPaidPaused)
+        {
+            row.AddToClassList("picker-row--resume");
+            costLbl.AddToClassList("picker-row__cost--resume");
+            timeLbl.AddToClassList("picker-row__time--resume");
+        }
         else if (!canAfford)
         {
             row.AddToClassList("picker-row--disabled");
             costLbl.AddToClassList("picker-row__cost--unaffordable");
         }
-        else
+
+        if (!isMaxed && canAfford)
         {
             string capturedID = rd.researchID;
             int capturedSlot = pickerSlotIndex;

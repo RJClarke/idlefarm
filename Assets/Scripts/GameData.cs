@@ -98,4 +98,5 @@ public class ResearchLevelEntry
 {
     public string researchID;
     public int level;
+    public float partialSecs; // seconds already accumulated toward the next level (cost already paid)
 }

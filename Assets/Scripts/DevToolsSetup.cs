@@ -109,6 +109,11 @@ public class DevToolsSetup : MonoBehaviour
             if (AnimalManager.Instance != null) AnimalManager.Instance.ForcePassiveReady();
         });
 
+        GameObject finishResearchGO = CreatePillButton("FinishResearchButton", "Finish Research", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        finishResearchGO.GetComponent<Button>().onClick.AddListener(() => {
+            if (ResearchManager.Instance != null) ResearchManager.Instance.DebugFinishCurrentResearches();
+        });
+
         // Speed button at the BOTTOM — shows the currently-active speed in its label.
         GameObject speedGO = CreatePillButton("SpeedUpButton", speedLabels[speedIndex], btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         speedBtnText = speedGO.GetComponentInChildren<TextMeshProUGUI>();
