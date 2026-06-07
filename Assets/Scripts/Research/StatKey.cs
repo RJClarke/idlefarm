@@ -30,6 +30,8 @@ namespace Research
         public const string DogEfficiency = "dog_efficiency";
         public const string RoosterCooldown = "rooster_cooldown";
         public const string RoosterEfficiency = "rooster_efficiency";
+        public const string CowPassiveCompost = "cow_passive_compost";
+        public const string CowRunYield = "cow_run_yield";
 
         // Equipment — values intentionally match EquipmentData.*UpgradeID so a single
         // GetBonus(upgradeID) call in EquipmentManager picks them up.
@@ -43,6 +45,7 @@ namespace Research
         public const string FenceAoe = "fence_aoe";
         public const string FenceEffectiveness = "fence_capacity";
         public const string FenceCooldown = "fence_cooldown";
+        public const string CompostBayConversion = "compost_bay_conversion";
 
         // Weather
         public const string StormDamageReduction = "storm_damage_reduction";
