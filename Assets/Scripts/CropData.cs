@@ -41,6 +41,9 @@ public class CropData : ScriptableObject
     [Tooltip("Money reward when harvested during harvest window (100% value)")]
     public int harvestValue = 10;
 
+    [Tooltip("Crop tier for compost yield (default 1). Higher tier = more compost when this crop dies.")]
+    public int tier = 1;
+
     [Header("Regrowth")]
     [Tooltip("Does this crop regrow after harvest, or is it removed?")]
     public bool canRegrow = false;

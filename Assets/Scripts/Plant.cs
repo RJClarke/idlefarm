@@ -29,6 +29,7 @@ public class Plant : MonoBehaviour
     // Components
     private PlantVisuals visuals;
     private SoilTile parentTile;
+    public SoilTile ParentTile => parentTile;
 
     // Properties
     public GrowthStage CurrentStage => currentStage;
@@ -376,6 +377,13 @@ public class Plant : MonoBehaviour
     // ─────────────────────────────────────────────────────────────────────
 
     /// <summary>
+    /// Fired exactly when a plant's lifecycle ends WITHOUT being harvested
+    /// (dry-out, rot, lightning/wind/threat damage). Compost Bay listens to this
+    /// to credit compost for the dying crop. zoneID = plant's zone; cropTier = crop.tier.
+    /// </summary>
+    public static event System.Action<int, int> OnPlantDied;
+
+    /// <summary>
     /// Plant dies. Cause string is used for debug logging only.
     /// Default "unknown" keeps all internal call sites valid without changes.
     /// </summary>
@@ -388,6 +396,9 @@ public class Plant : MonoBehaviour
             if (cause == "dry-out") RunStats.Instance.AddPlantDehydrated();
             else if (cause == "rot") RunStats.Instance.AddCropDecayed();
         }
+
+        if (parentTile != null && cropData != null)
+            OnPlantDied?.Invoke(parentTile.ZoneID, cropData.tier);
 
         RemovePlant();
     }
