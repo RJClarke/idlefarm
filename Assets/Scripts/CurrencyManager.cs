@@ -16,6 +16,7 @@ public class CurrencyManager : MonoBehaviour
     [SerializeField] private int currentMoney = 0;  // Run-based currency
     [SerializeField] private int currentCoins = 0;  // Permanent currency
     [SerializeField] private int currentGems = 0;   // Premium currency
+    [SerializeField] private int currentCompost = 0; // Research-boost currency (Plan 2)
 
     [Header("Starting Values")]
     [SerializeField] private int startingMoney = 100; // Money at start of each run
@@ -25,11 +26,13 @@ public class CurrencyManager : MonoBehaviour
     public event Action<int> OnMoneyChanged;
     public event Action<int> OnCoinsChanged;
     public event Action<int> OnGemsChanged;
+    public event Action<int> OnCompostChanged;
 
     // Properties for read-only access
     public int Money => currentMoney;
     public int Coins => currentCoins;
     public int Gems => currentGems;
+    public int Compost => currentCompost;
 
     private void Awake()
     {
@@ -232,6 +235,34 @@ public class CurrencyManager : MonoBehaviour
     {
         currentGems = Mathf.Max(0, amount);
         OnGemsChanged?.Invoke(currentGems);
+    }
+
+    #endregion
+
+    #region Compost (Research-boost currency, Plan 2)
+
+    public void AddCompost(int amount)
+    {
+        if (amount <= 0) return;
+        currentCompost += amount;
+        OnCompostChanged?.Invoke(currentCompost);
+    }
+
+    public bool SpendCompost(int amount)
+    {
+        if (amount <= 0) return true;
+        if (currentCompost < amount) return false;
+        currentCompost -= amount;
+        OnCompostChanged?.Invoke(currentCompost);
+        return true;
+    }
+
+    public bool CanAffordCompost(int amount) => currentCompost >= amount;
+
+    public void SetCompost(int amount)
+    {
+        currentCompost = Mathf.Max(0, amount);
+        OnCompostChanged?.Invoke(currentCompost);
     }
 
     #endregion
