@@ -12,6 +12,7 @@ public class CurrencyUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private TextMeshProUGUI coinsText;
     [SerializeField] private TextMeshProUGUI gemsText;
+    [SerializeField] private TextMeshProUGUI compostText;
 
     [Header("Display Settings")]
     [SerializeField] private string moneyPrefix = "$";
@@ -37,12 +38,14 @@ public class CurrencyUI : MonoBehaviour
             CurrencyManager.Instance.OnMoneyChanged += UpdateMoneyDisplay;
             CurrencyManager.Instance.OnCoinsChanged += UpdateCoinsDisplay;
             CurrencyManager.Instance.OnGemsChanged += UpdateGemsDisplay;
+            CurrencyManager.Instance.OnCompostChanged += UpdateCompostDisplay;
 
             // Initial display
             UpdateMoneyDisplay(CurrencyManager.Instance.Money);
             UpdateCoinsDisplay(CurrencyManager.Instance.Coins);
             UpdateGemsDisplay(CurrencyManager.Instance.Gems);
-            
+            UpdateCompostDisplay(CurrencyManager.Instance.Compost);
+
         }
         else
         {
@@ -58,6 +61,7 @@ public class CurrencyUI : MonoBehaviour
             CurrencyManager.Instance.OnMoneyChanged -= UpdateMoneyDisplay;
             CurrencyManager.Instance.OnCoinsChanged -= UpdateCoinsDisplay;
             CurrencyManager.Instance.OnGemsChanged -= UpdateGemsDisplay;
+            CurrencyManager.Instance.OnCompostChanged -= UpdateCompostDisplay;
         }
     }
 
@@ -99,6 +103,20 @@ public class CurrencyUI : MonoBehaviour
             if (animateOnChange)
             {
                 AnimateText(gemsText);
+            }
+        }
+    }
+
+    private void UpdateCompostDisplay(int newAmount)
+    {
+        if (compostText != null)
+        {
+            string formattedAmount = FormatCurrency(newAmount);
+            compostText.text = formattedAmount;
+
+            if (animateOnChange)
+            {
+                AnimateText(compostText);
             }
         }
     }
