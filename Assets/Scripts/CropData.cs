@@ -41,6 +41,18 @@ public class CropData : ScriptableObject
     [Tooltip("Money reward when harvested during harvest window (100% value)")]
     public int harvestValue = 10;
 
+    [Tooltip("Permanent COINS banked when this crop is harvested (separate from cash). The 'keep' currency.")]
+    public int coinValue = 1;
+
+    [Header("Seed Economy")]
+    [Tooltip("Seeds provided by one purchased bag of this crop.")]
+    [Min(1)]
+    public int seedBagSize = 20;
+
+    [Tooltip("Base MONEY cost of one seed bag at run start (before time-escalation and discounts).")]
+    [Min(1)]
+    public int seedBagBaseCost = 50;
+
     [Tooltip("Crop tier for compost yield (default 1). Higher tier = more compost when this crop dies.")]
     public int tier = 1;
 
