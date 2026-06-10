@@ -42,6 +42,14 @@ public class FloatingTextManager : MonoBehaviour
         Instance.SpawnLabel(new List<CurrencyReward> { new CurrencyReward(CurrencyType.Money, amount) }, screenPos);
     }
 
+    // Called when money LEAVES the player (e.g. buying a seed bag). Shows "-N$" in red.
+    public static void ShowMoneySpent(int amount, Vector3 worldPos)
+    {
+        if (Instance == null || Camera.main == null || !SettingsManager.ShowFloatingNumbers) return;
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        Instance.SpawnSpendLabel(amount, screenPos);
+    }
+
     // Called by AnimalManager — accepts world position, converts internally
     public static void ShowCoins(int amount, Vector3 worldPos)
     {
@@ -124,6 +132,38 @@ public class FloatingTextManager : MonoBehaviour
         LeanTween.value(go, 1f, 0f, 0.4f)
             .setDelay(0.8f)
             .setIgnoreTimeScale(true)
+            .setOnUpdate((float a) => { if (tmp != null) tmp.alpha = a; })
+            .setOnComplete(() => { if (go != null) Destroy(go); });
+    }
+
+    private void SpawnSpendLabel(int amount, Vector2 screenPos)
+    {
+        GameObject go = new GameObject("FloatingSpend", typeof(RectTransform));
+        go.transform.SetParent(canvas.transform, false);
+
+        TextMeshProUGUI tmp = go.AddComponent<TextMeshProUGUI>();
+        tmp.fontSize = 32;
+        tmp.fontStyle = FontStyles.Bold;
+        tmp.alignment = TextAlignmentOptions.Center;
+        tmp.raycastTarget = false;
+        if (font != null) tmp.font = font;
+        tmp.text = $"-{amount}$";
+        tmp.color = new Color(0.85f, 0.15f, 0.15f); // red
+
+        RectTransform rt = go.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(200, 80);
+        rt.pivot = new Vector2(0.5f, 0f);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.GetComponent<RectTransform>(), screenPos, null, out Vector2 localPt);
+        rt.anchoredPosition = localPt;
+
+        // Drift DOWN (opposite of rewards) so spend reads differently from income.
+        Vector2 endPos = localPt + new Vector2(0, -70f);
+        LeanTween.value(go, localPt, endPos, 1.0f)
+            .setEaseOutQuad().setIgnoreTimeScale(true)
+            .setOnUpdate((Vector2 p) => { if (rt != null) rt.anchoredPosition = p; });
+        LeanTween.value(go, 1f, 0f, 0.4f)
+            .setDelay(0.6f).setIgnoreTimeScale(true)
             .setOnUpdate((float a) => { if (tmp != null) tmp.alpha = a; })
             .setOnComplete(() => { if (go != null) Destroy(go); });
     }
