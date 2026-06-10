@@ -205,6 +205,7 @@ public class AnimalVisual : MonoBehaviour
         if (eggInstance != null) return; // Already has an egg
 
         eggInstance = new GameObject("EggDrop");
+        eggInstance.transform.SetParent(transform, false);
         eggInstance.transform.position = transform.position + Vector3.down * 0.2f;
 
         SpriteRenderer eggRenderer = eggInstance.AddComponent<SpriteRenderer>();
@@ -265,6 +266,7 @@ public class AnimalVisual : MonoBehaviour
         if (gemInstance != null) return;
 
         gemInstance = new GameObject("GemDrop");
+        gemInstance.transform.SetParent(transform, false);
         gemInstance.transform.position = transform.position + Vector3.down * 0.2f;
 
         SpriteRenderer gemRenderer = gemInstance.AddComponent<SpriteRenderer>();
@@ -299,7 +301,7 @@ public class AnimalVisual : MonoBehaviour
         }
 
         gemInstance.transform.localScale = Vector3.zero;
-        LeanTween.scale(gemInstance, Vector3.one * 4f, 0.3f).setEaseOutBack();
+        LeanTween.scale(gemInstance, Vector3.one * 0.8f, 0.3f).setEaseOutBack(); // was 4f — engulfed the rooster
     }
 
     public void RemoveGem()
@@ -313,5 +315,23 @@ public class AnimalVisual : MonoBehaviour
         {
             Destroy(gem);
         });
+    }
+
+    /// <summary>
+    /// Scene-wide sweep for orphan egg/gem GameObjects. Called by AnimalManager on claim
+    /// to guarantee no stale visuals linger if a previous DropEgg/DropGem orphaned its
+    /// spawn (e.g. animal swap between drop and claim, or a hot scene reload).
+    /// </summary>
+    public static void CleanupAllOrphanDrops()
+    {
+        DestroyAllByName("EggDrop");
+        DestroyAllByName("GemDrop");
+    }
+
+    private static void DestroyAllByName(string name)
+    {
+        var all = GameObject.FindObjectsByType<GameObject>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        for (int i = 0; i < all.Length; i++)
+            if (all[i] != null && all[i].name == name) Destroy(all[i]);
     }
 }
