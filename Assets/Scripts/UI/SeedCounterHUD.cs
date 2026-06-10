@@ -43,22 +43,27 @@ public class SeedCounterHUD : MonoBehaviour
         gameObject.AddComponent<GraphicRaycaster>();
     }
 
-    private void OnEnable()
+    private bool _subscribed;
+
+    // Subscribe in BOTH OnEnable and Start: OnEnable can run before SeedInventory.Awake sets
+    // its Instance (scene-load race), but Start always runs after every Awake, so it catches it.
+    private void OnEnable() => Subscribe();
+    private void Start() => Subscribe();
+    private void OnDisable() => Unsubscribe();
+
+    private void Subscribe()
     {
-        if (SeedInventory.Instance != null)
-        {
-            SeedInventory.Instance.OnSeedCountChanged += HandleCountChanged;
-            SeedInventory.Instance.OnBagPurchased += HandleBagPurchased;
-        }
-        if (RunManager.Instance != null)
-        {
-            RunManager.Instance.OnRunStarted += Clear;
-            RunManager.Instance.OnRunEnded += Clear;
-        }
+        if (_subscribed || SeedInventory.Instance == null || RunManager.Instance == null) return;
+        SeedInventory.Instance.OnSeedCountChanged += HandleCountChanged;
+        SeedInventory.Instance.OnBagPurchased += HandleBagPurchased;
+        RunManager.Instance.OnRunStarted += Clear;
+        RunManager.Instance.OnRunEnded += Clear;
+        _subscribed = true;
     }
 
-    private void OnDisable()
+    private void Unsubscribe()
     {
+        if (!_subscribed) return;
         if (SeedInventory.Instance != null)
         {
             SeedInventory.Instance.OnSeedCountChanged -= HandleCountChanged;
@@ -69,6 +74,7 @@ public class SeedCounterHUD : MonoBehaviour
             RunManager.Instance.OnRunStarted -= Clear;
             RunManager.Instance.OnRunEnded -= Clear;
         }
+        _subscribed = false;
     }
 
     private void Clear()
@@ -144,7 +150,7 @@ public class SeedCounterHUD : MonoBehaviour
         var bgGo = new GameObject("bg", typeof(RectTransform));
         bgGo.transform.SetParent(root, false);
         var bgImg = bgGo.AddComponent<Image>();
-        bgImg.color = new Color(0f, 0f, 0f, 0.35f);
+        bgImg.color = new Color(0f, 0f, 0f, 0.55f);
         bgImg.raycastTarget = false;
         Stretch(bgGo.GetComponent<RectTransform>());
 
