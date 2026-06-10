@@ -149,7 +149,8 @@ public class UniversalHelper : Helper
         {
             CropData seedType = HelperManager.Instance.GetSeedForZone(tile.ZoneID);
 
-            if (seedType != null && tile.CanPlant)
+            bool canAffordSeed = SeedInventory.Instance == null || SeedInventory.Instance.CanPlant(seedType);
+            if (seedType != null && tile.CanPlant && canAffordSeed)
             {
                 HelperTask plantTask = HelperTask.CreatePlantTask(tile, 500);
                 currentTask = plantTask;
@@ -214,6 +215,14 @@ public class UniversalHelper : Helper
             return;
         }
         
+        // Seed economy: must consume a seed (buying a bag if needed) before planting.
+        if (SeedInventory.Instance != null &&
+            !SeedInventory.Instance.TryConsumeSeed(seedType, currentTask.TargetTile.transform.position))
+        {
+            // Out of seeds and can't afford a bag — leave the tile empty. BankruptcyWatcher handles end.
+            return;
+        }
+
         bool success = currentTask.TargetTile.PlantCrop(seedType.plantPrefab, seedType);
         
         if (!success)
