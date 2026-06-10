@@ -267,10 +267,10 @@ public class AnimalVisual : MonoBehaviour
 
         gemInstance = new GameObject("GemDrop");
         gemInstance.transform.SetParent(transform, false);
-        gemInstance.transform.position = transform.position + Vector3.down * 0.2f;
+        gemInstance.transform.position = transform.position + Vector3.down * 0.3f;
 
         SpriteRenderer gemRenderer = gemInstance.AddComponent<SpriteRenderer>();
-        gemRenderer.sortingOrder = 9;
+        gemRenderer.sortingOrder = 11; // ABOVE the rooster body (sortingOrder 10) — was 9, hidden behind
 
         if (gemSprite != null)
         {
@@ -301,7 +301,7 @@ public class AnimalVisual : MonoBehaviour
         }
 
         gemInstance.transform.localScale = Vector3.zero;
-        LeanTween.scale(gemInstance, Vector3.one * 0.8f, 0.3f).setEaseOutBack(); // was 4f — engulfed the rooster
+        LeanTween.scale(gemInstance, Vector3.one * 1.3f, 0.3f).setEaseOutBack(); // procedural gem sprite is tiny; 1.3x reads as a dropped gem
     }
 
     public void RemoveGem()
