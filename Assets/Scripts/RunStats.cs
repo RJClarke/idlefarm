@@ -29,6 +29,7 @@ public class RunStats : MonoBehaviour
     public int CrowsRepelledByScarecrow { get; private set; }
     public int MoneyEarned { get; private set; }
     public int CoinsSaved { get; private set; }
+    public int CoinsBanked { get; private set; }
 
     private void Awake()
     {
@@ -67,6 +68,7 @@ public class RunStats : MonoBehaviour
         CrowsRepelledByScarecrow = 0;
         MoneyEarned = 0;
         CoinsSaved = 0;
+        CoinsBanked = 0;
     }
 
     // Increment methods
@@ -82,6 +84,7 @@ public class RunStats : MonoBehaviour
     public void AddCrowRepelledByScarecrow() { CrowsRepelledByScarecrow++; OnCrowRepelled?.Invoke(); }
     public void AddMoneyEarned(int amount) => MoneyEarned += amount;
     public void SetCoinsSaved(int amount) => CoinsSaved = amount;
+    public void AddCoinsBanked(int amount) => CoinsBanked += amount;
 
     /// <summary>
     /// Returns all stats as label/value pairs for display.
@@ -98,7 +101,7 @@ public class RunStats : MonoBehaviour
             ("<color=#FFD700>OVERVIEW</color>", null),
             ("Run Time", runTime),
             ("Money Earned", "$" + MoneyEarned.ToString("N0")),
-            ("Coins Saved", CoinsSaved.ToString("N0")),
+            ("Coins Banked", CoinsBanked.ToString("N0")),
 
             ("", ""),
             ("<color=#8BC34A>FARMING</color>", null),
