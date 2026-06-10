@@ -22,6 +22,7 @@ namespace Research
         public const string CropHp = "crop_hp";
         public const string CropGrowthSpeed = "crop_growth_speed";
         public const string CropBonusSellAmount = "crop_bonus_sell_amount";
+        public const string CropBonusCoinAmount = "crop_bonus_coin_amount"; // +% coins banked per harvest
 
         // Animals
         public const string ChickenCooldown = "chicken_cooldown";
@@ -50,6 +51,10 @@ namespace Research
         // Weather
         public const string StormDamageReduction = "storm_damage_reduction";
         public const string RainWatering = "rain_watering";
+
+        // Economy
+        public const string SeedBagSize = "seed_bag_size";        // +% seeds per bag
+        public const string SeedBagDiscount = "seed_bag_discount"; // +% reduction to bag cost
 
         // Meta
         public const string GameSpeed = "game_speed";
