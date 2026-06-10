@@ -17,6 +17,9 @@ public class SeedInventory : MonoBehaviour
     /// <summary>Fires (crop, seedsRemaining) whenever a crop's seed count changes.</summary>
     public event Action<CropData, int> OnSeedCountChanged;
 
+    /// <summary>Fires (crop, costPaid) when a bag is auto-bought. The HUD animates the spend from that bag.</summary>
+    public event Action<CropData, int> OnBagPurchased;
+
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -96,8 +99,10 @@ public class SeedInventory : MonoBehaviour
         int bagSize = SeedEconomy.BagSize(crop.seedBagSize, sizeBonus);
 
         _seeds[crop] = SeedsRemaining(crop) + bagSize;
-        FloatingTextManager.ShowMoneySpent(cost, worldPos);
+        // The HUD owns the spend visual so it animates from the bag widget (anchors "had to buy this").
+        // Fire count change first so the widget exists/updates before the purchase animation.
         OnSeedCountChanged?.Invoke(crop, _seeds[crop]);
+        OnBagPurchased?.Invoke(crop, cost);
         return true;
     }
 }
