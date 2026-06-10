@@ -51,10 +51,13 @@ public static class ResearchCatalogGenerator
         CreateStd("helper_harvest_efficiency","Helper: Harvest Efficiency",    StatKey.HelperHarvestEfficiency,ResearchTier.Tier100Absurd,   "helper", 0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
         CreateBinary("max_water_heals",       "Max Water Heals Plant HP",      "helper", featureID:FeatureFlag.MaxWaterHealsPlant, cost:5000, days:3);
 
-        // Plant (3)
+        // Plant (6)
         CreateStd("crop_hp",                  "Plant: Hit Points",             StatKey.CropHp,                ResearchTier.Tier25,           "plant",  0.010f);
         CreateStd("crop_growth_speed",        "Plant: Growth Speed",           StatKey.CropGrowthSpeed,       ResearchTier.Tier100Standard,  "plant",  0.005f, t:1.5f, c:2.0f);
         CreateStd("crop_bonus_sell_amount",   "Plant: Bonus Sell Amount",      StatKey.CropBonusSellAmount,   ResearchTier.Tier100Absurd,    "plant",  0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
+        CreateStd("crop_bonus_coin_amount",   "Plant: Bonus Coin Yield",       StatKey.CropBonusCoinAmount,   ResearchTier.Tier100Absurd,    "plant",  0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
+        CreateStd("seed_bag_size",            "Plant: Bigger Seed Bags",       StatKey.SeedBagSize,           ResearchTier.Tier25,           "plant",  0.010f);
+        CreateStd("seed_bag_discount",        "Plant: Bulk Seed Discount",     StatKey.SeedBagDiscount,       ResearchTier.Tier25,           "plant",  0.010f);
 
         // Animals (8 — gated by ownership)
         CreateStd("chicken_cooldown",   "Chicken: Cooldown",   StatKey.ChickenCooldown,   ResearchTier.Tier25, "animals", 0.010f, animalID:"chicken");

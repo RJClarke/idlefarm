@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6c0a690d9a3a3449c4ea9f6b1a322c, type: 3}
+  m_Name: Research_crop_bonus_coin_amount
+  m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
+  researchID: crop_bonus_coin_amount
+  displayName: 'Plant: Bonus Coin Yield'
+  description: +0.5% per level. Maxes at +50%.
+  branchID: plant
+  tier: 4
+  targetStatKey: crop_bonus_coin_amount
+  bonusPerLevel: 0.005
+  baseCostCoins: 150
+  baseDurationSecs: 360
+  timeDifficulty: 1.2
+  costDifficulty: 3
+  prerequisiteResearchID: 
+  requiredUnlockID: 
+  requiredAnimalID: 
+  binaryFixedCost: 0
+  binaryFixedDurationSecs: 0
+  unlocksSlotIndex: -1
+  unlocksFeatureID: 
