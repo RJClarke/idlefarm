@@ -287,6 +287,21 @@ public class Plant : MonoBehaviour
             FloatingTextManager.ShowMoney(harvestValue, transform.position);
         }
 
+        // Bank permanent coins for this harvest (the "keep" currency). Scaled by coin research.
+        if (CurrencyManager.Instance != null && cropData.coinValue > 0)
+        {
+            int coinGain = cropData.coinValue;
+            if (ResearchManager.Instance != null)
+            {
+                float coinBonus = ResearchManager.Instance.GetBonus(Research.StatKey.CropBonusCoinAmount);
+                coinGain = Mathf.RoundToInt(coinGain * (1f + coinBonus));
+            }
+            coinGain = Mathf.Max(1, coinGain);
+            CurrencyManager.Instance.AddCoins(coinGain);
+            FloatingTextManager.ShowCoins(coinGain, transform.position + Vector3.up * 0.3f);
+            if (RunStats.Instance != null) RunStats.Instance.AddCoinsBanked(coinGain);
+        }
+
         if (RunStats.Instance != null) RunStats.Instance.AddCropHarvested();
 
         isInHarvestWindow = false;
@@ -378,9 +393,10 @@ public class Plant : MonoBehaviour
     /// <summary>
     /// Fired exactly when a plant's lifecycle ends WITHOUT being harvested
     /// (dry-out, rot, lightning/wind/threat damage). Compost Bay listens to this
-    /// to credit compost for the dying crop. zoneID = plant's zone; cropTier = crop.tier.
+    /// to credit compost for the dying crop. zoneID = plant's zone; cropTier = crop.tier;
+    /// worldPos = position of the dying plant (for VFX).
     /// </summary>
-    public static event System.Action<int, int> OnPlantDied;
+    public static event System.Action<int, int, Vector3> OnPlantDied;
 
     /// <summary>
     /// Plant dies. Cause string is used for debug logging only.
@@ -397,7 +413,7 @@ public class Plant : MonoBehaviour
         }
 
         if (parentTile != null && cropData != null)
-            OnPlantDied?.Invoke(parentTile.ZoneID, cropData.tier);
+            OnPlantDied?.Invoke(parentTile.ZoneID, cropData.tier, transform.position);
 
         RemovePlant();
     }
