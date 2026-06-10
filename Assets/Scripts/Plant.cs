@@ -298,7 +298,8 @@ public class Plant : MonoBehaviour
             }
             coinGain = Mathf.Max(1, coinGain);
             CurrencyManager.Instance.AddCoins(coinGain);
-            FloatingTextManager.ShowCoins(coinGain, transform.position + Vector3.up * 0.3f);
+            // Stagger 0.35s after the cash pop and nudge up so both numbers stay readable.
+            FloatingTextManager.ShowCoins(coinGain, transform.position + Vector3.up * 0.4f, 0.35f);
             if (RunStats.Instance != null) RunStats.Instance.AddCoinsBanked(coinGain);
         }
 

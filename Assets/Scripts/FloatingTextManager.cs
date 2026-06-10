@@ -50,12 +50,32 @@ public class FloatingTextManager : MonoBehaviour
         Instance.SpawnSpendLabel(amount, screenPos);
     }
 
-    // Called by AnimalManager — accepts world position, converts internally
-    public static void ShowCoins(int amount, Vector3 worldPos)
+    // Called by AnimalManager / Plant.Harvest — accepts world position, converts internally.
+    // Optional delay staggers the coin pop after the cash pop so both are readable.
+    public static void ShowCoins(int amount, Vector3 worldPos, float delay = 0f)
     {
         if (Instance == null || Camera.main == null || !SettingsManager.ShowFloatingNumbers) return;
         Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-        Instance.SpawnLabel(new List<CurrencyReward> { new CurrencyReward(CurrencyType.Coins, amount) }, screenPos);
+        var rewards = new List<CurrencyReward> { new CurrencyReward(CurrencyType.Coins, amount) };
+        if (delay <= 0f)
+        {
+            Instance.SpawnLabel(rewards, screenPos);
+        }
+        else
+        {
+            // Scheduled on the persistent manager so it survives the source object's destruction.
+            LeanTween.delayedCall(Instance.gameObject, delay,
+                () => { if (Instance != null) Instance.SpawnLabel(rewards, screenPos); })
+                .setIgnoreTimeScale(true);
+        }
+    }
+
+    // Spend popup anchored to an explicit screen position (used by seed-bag widgets so the
+    // -$ animates from the bag that was just bought).
+    public static void ShowMoneySpentAtScreen(int amount, Vector2 screenPos)
+    {
+        if (Instance == null || !SettingsManager.ShowFloatingNumbers) return;
+        Instance.SpawnSpendLabel(amount, screenPos);
     }
 
     // Called by AnimalManager — gem reward at world position
@@ -184,7 +204,7 @@ public class FloatingTextManager : MonoBehaviour
     {
         return t switch
         {
-            CurrencyType.Money => new Color(0.118f, 0.482f, 0.118f), // #1E7B1E
+            CurrencyType.Money => new Color(0.039f, 0.220f, 0.051f), // #0A380D very dark green
             CurrencyType.Coins => new Color(1f, 0.843f, 0f),         // #FFD700
             CurrencyType.Gems  => new Color(0.659f, 0.333f, 0.969f), // #A855F7
             CurrencyType.Compost => new Color(0.439f, 0.788f, 0.392f), // #70C964 (compost green)
