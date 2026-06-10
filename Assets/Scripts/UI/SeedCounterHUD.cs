@@ -16,7 +16,7 @@ public class SeedCounterHUD : MonoBehaviour
 
     // Layout (screen pixels; canvas is ConstantPixelSize like FloatingTextManager).
     private const float WidgetW = 110f;
-    private const float WidgetH = 120f;
+    private const float WidgetH = 134f;
     private const float Spacing = 14f;
     private const float RightMargin = 16f;
     private const float BottomStart = 300f; // clear of the bottom nav
@@ -27,7 +27,10 @@ public class SeedCounterHUD : MonoBehaviour
     {
         public RectTransform root;
         public TextMeshProUGUI count;
+        public TextMeshProUGUI price;
     }
+
+    private float _priceTimer;
 
     private readonly Dictionary<CropData, Bag> _bags = new Dictionary<CropData, Bag>();
 
@@ -72,6 +75,23 @@ public class SeedCounterHUD : MonoBehaviour
     {
         foreach (var b in _bags.Values) if (b.root != null) Destroy(b.root.gameObject);
         _bags.Clear();
+    }
+
+    // Bag price escalates with run time, so refresh the price labels on a throttle.
+    private void Update()
+    {
+        if (SeedInventory.Instance == null || _bags.Count == 0) return;
+        if (RunManager.Instance == null || !RunManager.Instance.IsRunActive) return;
+
+        _priceTimer += Time.unscaledDeltaTime;
+        if (_priceTimer < 0.75f) return;
+        _priceTimer = 0f;
+
+        foreach (var kv in _bags)
+        {
+            if (kv.Value.price != null)
+                kv.Value.price.text = "$" + SeedInventory.Instance.BagCost(kv.Key);
+        }
     }
 
     private void HandleCountChanged(CropData crop, int remaining)
@@ -146,7 +166,7 @@ public class SeedCounterHUD : MonoBehaviour
             irt.anchoredPosition = new Vector2(0f, -8f);
         }
 
-        // Seed count label across the bottom.
+        // Seed count label (seeds remaining).
         var countGo = new GameObject("count", typeof(RectTransform));
         countGo.transform.SetParent(root, false);
         var count = countGo.AddComponent<TextMeshProUGUI>();
@@ -160,9 +180,26 @@ public class SeedCounterHUD : MonoBehaviour
         crt.anchorMax = new Vector2(1f, 0f);
         crt.pivot = new Vector2(0.5f, 0f);
         crt.sizeDelta = new Vector2(0f, 34f);
-        crt.anchoredPosition = new Vector2(0f, 4f);
+        crt.anchoredPosition = new Vector2(0f, 30f);
 
-        var bag = new Bag { root = root, count = count };
+        // Live (escalating) bag price across the very bottom.
+        var priceGo = new GameObject("price", typeof(RectTransform));
+        priceGo.transform.SetParent(root, false);
+        var price = priceGo.AddComponent<TextMeshProUGUI>();
+        price.fontSize = 18;
+        price.fontStyle = FontStyles.Bold;
+        price.alignment = TextAlignmentOptions.Center;
+        price.raycastTarget = false;
+        price.color = new Color(1f, 0.85f, 0.4f);
+        if (font != null) price.font = font;
+        var prt = priceGo.GetComponent<RectTransform>();
+        prt.anchorMin = new Vector2(0f, 0f);
+        prt.anchorMax = new Vector2(1f, 0f);
+        prt.pivot = new Vector2(0.5f, 0f);
+        prt.sizeDelta = new Vector2(0f, 24f);
+        prt.anchoredPosition = new Vector2(0f, 6f);
+
+        var bag = new Bag { root = root, count = count, price = price };
         _bags[crop] = bag;
         return bag;
     }
