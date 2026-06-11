@@ -55,9 +55,12 @@ public class CameraPanController : MonoBehaviour
     public void PanTo(Location target)
     {
         if (target == CurrentLocation && !IsPanning) return;
-        if (blockDuringRun && RunManager.Instance != null && RunManager.Instance.IsRunActive)
+        // During a run, keep Farm/Greenhouse reachable (so research can be changed mid-run) but
+        // block Market — only the Market trip is disruptive to an in-progress run.
+        if (blockDuringRun && target == Location.Market
+            && RunManager.Instance != null && RunManager.Instance.IsRunActive)
         {
-            Debug.LogWarning("[CameraPanController] Pan blocked: run is active.");
+            Debug.LogWarning("[CameraPanController] Pan to Market blocked: run is active.");
             return;
         }
 
