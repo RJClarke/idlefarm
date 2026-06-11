@@ -101,6 +101,23 @@ public class SaveManager : MonoBehaviour
             featureFlags,
             researchLevels
         );
+        data.lastSeenUtcTicks = System.DateTime.UtcNow.Ticks;
+        data.permanentUpgradeLevels = UpgradeManager.Instance != null
+            ? UpgradeManager.Instance.GetPermanentLevelsForSave()
+            : new UpgradeLevelEntry[0];
+        data.purchasedHelperUpgradeIDs = HelperUpgradeManager.Instance != null
+            ? HelperUpgradeManager.Instance.GetPurchasedIDsForSave()
+            : new string[0];
+
+        // Active-run snapshot — Money, temp upgrades, and the wall-clock start time so the
+        // run can resume at the same point on the difficulty curve.
+        bool runActive = RunManager.Instance != null && RunManager.Instance.IsRunActive;
+        data.runActive = runActive;
+        data.runStartUtcTicks = runActive ? RunManager.Instance.RunStartUtcTicks : 0L;
+        data.money = runActive && CurrencyManager.Instance != null ? CurrencyManager.Instance.Money : 0;
+        data.temporaryUpgradeLevels = runActive && UpgradeManager.Instance != null
+            ? UpgradeManager.Instance.GetTemporaryLevelsForSave()
+            : new UpgradeLevelEntry[0];
 
         // Convert to JSON
         string json = JsonUtility.ToJson(data, true); // true = pretty print for debugging
@@ -172,6 +189,34 @@ public class SaveManager : MonoBehaviour
                     );
                 }
 
+                if (UpgradeManager.Instance != null)
+                    UpgradeManager.Instance.LoadPermanentLevels(data.permanentUpgradeLevels);
+
+                if (HelperUpgradeManager.Instance != null)
+                    HelperUpgradeManager.Instance.LoadState(data.purchasedHelperUpgradeIDs);
+
+                // Active-run resume. Order matters:
+                //   1. Set Money first so listeners (UI) see the real value, not the post-reset default.
+                //   2. RunManager.ResumeRun fires OnRunStarted; UpgradeManager's handler clears temp levels.
+                //   3. Then restore temp upgrade levels on top of the cleared state.
+                if (data.runActive && data.runStartUtcTicks > 0)
+                {
+                    if (CurrencyManager.Instance != null)
+                        CurrencyManager.Instance.SetMoney(data.money);
+
+                    // Pass lastSeenUtcTicks so ResumeRun credits the offline window at max
+                    // game speed for difficulty advance (per offline-runs design 2026-06-10).
+                    if (RunManager.Instance != null)
+                        RunManager.Instance.ResumeRun(data.runStartUtcTicks, data.lastSeenUtcTicks);
+
+                    if (UpgradeManager.Instance != null)
+                        UpgradeManager.Instance.LoadTemporaryLevels(data.temporaryUpgradeLevels);
+                }
+
+                // Hand the offline anchor to the welcome-back system. Catch-ups inside the
+                // managers above have already run; OfflineProgressManager reads their reports.
+                OfflineProgressManager.SeedLastSeen(data.lastSeenUtcTicks);
+
                 Debug.Log($"Game loaded! Coins: {data.coins}");
             }
             else
@@ -229,8 +274,9 @@ public class SaveManager : MonoBehaviour
     {
         if (!enableAutoSave) return;
 
-        // Auto-save when app is paused (important for mobile!)
-        if (pause)
+        // Auto-save when app is paused (important for mobile!). Skip during editor play-stop
+        // teardown when the singleton is already gone (avoids a spurious "not found" error).
+        if (pause && CurrencyManager.Instance != null)
         {
             SaveGame();
         }
