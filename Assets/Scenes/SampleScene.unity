@@ -68443,11 +68443,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e87ed02f0464b46b9f38cfc759789b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
-  currentMoney: 100
+  currentMoney: 500
   currentCoins: 100000
   currentGems: 99999
   currentCompost: 0
-  startingMoney: 100
+  startingMoney: 500
   startingCoins: 0
 --- !u!4 &1654622457
 Transform:
