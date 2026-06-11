@@ -317,6 +317,14 @@ public class AnimalVisual : MonoBehaviour
         });
     }
 
+    private void OnDestroy()
+    {
+        // Drops are unparented (so they stay on the ground as the animal wanders), so they no
+        // longer die with the visual automatically — clean them up here on unequip/swap/destroy.
+        if (eggInstance != null) Destroy(eggInstance);
+        if (gemInstance != null) Destroy(gemInstance);
+    }
+
     /// <summary>
     /// Scene-wide sweep for orphan egg/gem GameObjects. Called by AnimalManager on claim
     /// to guarantee no stale visuals linger if a previous DropEgg/DropGem orphaned its
