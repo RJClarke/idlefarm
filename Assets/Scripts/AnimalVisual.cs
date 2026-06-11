@@ -266,7 +266,7 @@ public class AnimalVisual : MonoBehaviour
         if (gemInstance != null) return;
 
         gemInstance = new GameObject("GemDrop");
-        gemInstance.transform.SetParent(transform, false);
+        // NOT parented to the rooster — drops onto the ground where he was and stays put as he wanders.
         gemInstance.transform.position = transform.position + Vector3.down * 0.3f;
 
         SpriteRenderer gemRenderer = gemInstance.AddComponent<SpriteRenderer>();
