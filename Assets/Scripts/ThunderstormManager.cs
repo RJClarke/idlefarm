@@ -43,7 +43,7 @@ public class ThunderstormManager : MonoBehaviour
     [SerializeField] private float lightningHeightUnits = 10f;
 
     [Tooltip("Sorting order for the lightning overlay. Should be above everything else.")]
-    [SerializeField] private int lightningSortingOrder = 50;
+    [SerializeField] private int lightningSortingOrder = 6000; // above the Y-sort entity band (~1000–3000)
 
     [Header("Master Switch")]
     [SerializeField] private bool weatherEnabled = true;

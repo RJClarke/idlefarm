@@ -61,6 +61,9 @@ public class AnimalVisual : MonoBehaviour
 
         wanderTarget = transform.position;
         pauseTimer = Random.Range(MIN_PAUSE, MAX_PAUSE);
+
+        // Depth-sort the animal by its Y (wanders, so it updates every frame).
+        YSort.Ensure(gameObject);
     }
 
     private static bool HasAnimStateParam(Animator a)
@@ -244,6 +247,9 @@ public class AnimalVisual : MonoBehaviour
         // Subtle drop animation
         eggInstance.transform.localScale = Vector3.zero;
         LeanTween.scale(eggInstance, Vector3.one * 0.8f, 0.3f).setEaseOutBack();
+
+        // Egg is a child; fold it into the animal's YSort so it keeps its relative order.
+        GetComponent<YSort>()?.RefreshRenderers();
     }
 
     public void RemoveEgg()
@@ -302,6 +308,9 @@ public class AnimalVisual : MonoBehaviour
 
         gemInstance.transform.localScale = Vector3.zero;
         LeanTween.scale(gemInstance, Vector3.one * 1.3f, 0.3f).setEaseOutBack(); // procedural gem sprite is tiny; 1.3x reads as a dropped gem
+
+        // Gem is unparented (stays on the ground), so it depth-sorts on its own.
+        YSort.Ensure(gemInstance, isStatic: true);
     }
 
     public void RemoveGem()

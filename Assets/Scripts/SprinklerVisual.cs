@@ -40,6 +40,8 @@ public class SprinklerVisual : MonoBehaviour
             BuildSprinklerSprite();
         }
         InitRings();
+
+        YSort.Ensure(gameObject, isStatic: true);
     }
 
     private void InitRings()

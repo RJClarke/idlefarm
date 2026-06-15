@@ -103,6 +103,9 @@ public abstract class Helper : MonoBehaviour
         animator = GetComponent<Animator>();
         if (animator != null)
             animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+
+        // Depth-sort the helper by Y so it passes behind/in front of entities naturally.
+        YSort.Ensure(gameObject);
     }
 
     protected virtual void Start()

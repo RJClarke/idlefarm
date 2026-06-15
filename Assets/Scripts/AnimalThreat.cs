@@ -51,6 +51,9 @@ public abstract class AnimalThreat : MonoBehaviour
         // Always use unscaled time so animations don't speed up during game speed-up mode
         if (animator != null)
             animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+
+        // Depth-sort deer/crows by Y like every other entity (crows included, per design).
+        YSort.Ensure(gameObject);
     }
 
     // ─────────────────────────────────────────────────────────────────────

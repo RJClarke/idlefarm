@@ -25,6 +25,8 @@ public class ScarecrowVisual : MonoBehaviour
         {
             BuildScarecrowSprite();
         }
+
+        YSort.Ensure(gameObject, isStatic: true);
     }
 
     private void BuildScarecrowSprite()

@@ -57,6 +57,7 @@ public class FarmDog : MonoBehaviour
         animator = GetComponent<Animator>();
         animalVisual = GetComponent<AnimalVisual>();
         if (animator != null) animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        YSort.Ensure(gameObject);
     }
 
     private void SetAnim(int offset)

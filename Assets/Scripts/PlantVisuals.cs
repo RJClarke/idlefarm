@@ -20,6 +20,9 @@ public class PlantVisuals : MonoBehaviour
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
+
+        // Depth-sort crops by their tile Y so the helper/animals pass in front/behind correctly.
+        YSort.Ensure(gameObject, isStatic: true);
     }
 
     /// <summary>
