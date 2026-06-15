@@ -30,6 +30,29 @@ public class GameData
     public string[] binaryFeatureFlagsSet;        // ids that have been unlocked, e.g. "offline_progress"
     public ResearchLevelEntry[] researchLevels;   // serializable view of researchID -> currentLevel
 
+    // Wall-clock anchor for offline-progress catch-up. Set on every save; read on load
+    // to compute "time away" for the welcome-back modal.
+    public long lastSeenUtcTicks;
+
+    // Permanent upgrade levels (UpgradeManager). Flat array because JsonUtility can't
+    // serialize Dictionary directly. Defaults to empty for new saves.
+    public UpgradeLevelEntry[] permanentUpgradeLevels;
+
+    // Purchased helper upgrades (HelperUpgradeManager). One entry per purchased ID.
+    public string[] purchasedHelperUpgradeIDs;
+
+    // Content IDs the player has already seen (NewContentTracker), e.g. "research:scarecrow_aoe",
+    // "equip:scarecrow". Used to drive NEW badges. Empty on a new/legacy save → tracker seeds a baseline.
+    public string[] seenContentIds;
+
+    // Active-run snapshot. If runActive=true on load, SaveManager calls RunManager.ResumeRun
+    // with runStartUtcTicks and restores money + temporaryUpgradeLevels. Tactical state
+    // (tiles, plants, helpers, threats) is not saved — those reset on resume.
+    public bool runActive;
+    public long runStartUtcTicks;
+    public int money;
+    public UpgradeLevelEntry[] temporaryUpgradeLevels;
+
     // Later we'll add:
     // - List of unlocked crops
     // - List of purchased upgrades
@@ -59,6 +82,7 @@ public class GameData
         for (int i = 0; i < 4; i++) researchSlots[i] = new ResearchSlotState { slotIndex = i };
         binaryFeatureFlagsSet = new string[0];
         researchLevels = new ResearchLevelEntry[0];
+        seenContentIds = new string[0];
     }
 
     /// <summary>
@@ -99,4 +123,14 @@ public class ResearchLevelEntry
     public string researchID;
     public int level;
     public float partialSecs; // seconds already accumulated toward the next level (cost already paid)
+}
+
+/// <summary>
+/// Serializable key/value entry for the upgradeID -> level map used by UpgradeManager.
+/// </summary>
+[Serializable]
+public class UpgradeLevelEntry
+{
+    public string upgradeID;
+    public int level;
 }

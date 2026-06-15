@@ -312,9 +312,9 @@ RectTransform:
   - {fileID: 52874816}
   m_Father: {fileID: 1697813153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 142.5, y: -52}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2196811
@@ -2493,9 +2493,9 @@ RectTransform:
   - {fileID: 1066401764}
   m_Father: {fileID: 1697813153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 937.5, y: -52}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &72107186
@@ -22336,6 +22336,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728839167}
   m_CullTransparentMesh: 1
+--- !u!1 &742585184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 742585186}
+  - component: {fileID: 742585185}
+  m_Layer: 0
+  m_Name: NewContentTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &742585185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742585184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65dde348248c9e745ac01778889a38fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewContentTracker
+  equipmentRegistry: {fileID: 11400000, guid: d5579f6ef8d54834c8cc2848195a3f68, type: 2}
+--- !u!4 &742585186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742585184}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &745502251
 GameObject:
   m_ObjectHideFlags: 0
@@ -59277,10 +59322,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1889512462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 266.39, y: -257.885}
-  m_SizeDelta: {x: 492.78, y: 495.77002}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1381208949
 MonoBehaviour:
@@ -59889,9 +59934,9 @@ RectTransform:
   - {fileID: 839826975}
   m_Father: {fileID: 1697813153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 407.5, y: -52}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1417745709
@@ -64374,10 +64419,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1889512462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 616.39, y: -257.885}
-  m_SizeDelta: {x: 167.22, y: 495.77002}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1584517131
 MonoBehaviour:
@@ -68092,6 +68137,7 @@ GameObject:
   - component: {fileID: 1650037629}
   - component: {fileID: 1650037628}
   - component: {fileID: 1650037627}
+  - component: {fileID: 1650037631}
   m_Layer: 5
   m_Name: GreenhouseButton
   m_TagString: Untagged
@@ -68217,6 +68263,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650037625}
   m_CullTransparentMesh: 1
+--- !u!114 &1650037631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650037625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae34acb16db5a746afb23249fcb17e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewContentNavBadge
+  source: 1
+  size: 18
+  inset: {x: 6, y: 6}
 --- !u!1 &1653216052
 GameObject:
   m_ObjectHideFlags: 0
@@ -78943,7 +79004,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 515.77}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1889512463
 MonoBehaviour:
@@ -80401,6 +80462,7 @@ GameObject:
   - component: {fileID: 1925068624}
   - component: {fileID: 1925068623}
   - component: {fileID: 1925068626}
+  - component: {fileID: 1925068627}
   m_Layer: 5
   m_Name: EquipmentButton
   m_TagString: Untagged
@@ -80423,9 +80485,9 @@ RectTransform:
   - {fileID: 993892790}
   m_Father: {fileID: 1697813153}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 672.5, y: -52}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1925068623
@@ -80530,6 +80592,21 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1925068627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925068621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae34acb16db5a746afb23249fcb17e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NewContentNavBadge
+  source: 0
+  size: 18
+  inset: {x: 6, y: 6}
 --- !u!1 &1926223441
 GameObject:
   m_ObjectHideFlags: 0
@@ -86050,3 +86127,4 @@ SceneRoots:
   - {fileID: 796196181}
   - {fileID: 45519141}
   - {fileID: 1998574165}
+  - {fileID: 742585186}

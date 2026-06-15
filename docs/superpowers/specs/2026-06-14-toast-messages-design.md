@@ -35,9 +35,11 @@ Not in scope: error/blocked-action nags, info/status notices, tap-to-dismiss, so
 - **Placement:** top of screen, just below the top bar.
 - **Animation:** slides down into view (~0.25s) → holds (~2.2s) → slides back up while
   fading (~0.3s) → removed.
-- **Look:** rounded dark translucent pill, light text, optional leading emoji/icon,
-  soft drop shadow. Matches the project's UI Toolkit aesthetic (reuses theme via the
-  shared PanelSettings).
+- **Look:** wide (~95% screen width) rounded dark translucent banner with a colored
+  accent border, a colored bold **headline** (e.g. "✨ Research Complete") and a dimmer
+  **secondary line** (e.g. "Chicken: Efficiency Level 17"). Gold accent for research,
+  green for unlocks. Matches the project's UI Toolkit aesthetic.
+  (Upgraded from a single-line pill to two-line full-width banner on 2026-06-14.)
 - **Stacking:** up to 3 visible at once, newest at top, older ones pushed down. Beyond
   3, extras queue and appear as visible slots free up.
 

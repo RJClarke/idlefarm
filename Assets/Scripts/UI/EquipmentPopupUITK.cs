@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -25,7 +26,12 @@ public class EquipmentPopupUITK : MonoBehaviour
     private bool isOpen;
     private bool eventsSubscribed;
     private bool refreshPending;
+    private bool scrollHooked;
     public bool IsOpen => isOpen;
+
+    // Sections currently showing a NEW dot; cleared when scrolled into view.
+    private readonly List<(VisualElement section, VisualElement dot, string id)> pendingNew
+        = new List<(VisualElement, VisualElement, string)>();
 
     private void Awake()
     {
@@ -65,10 +71,16 @@ public class EquipmentPopupUITK : MonoBehaviour
             ResearchManager.Instance.OnFeatureFlagUnlocked += OnFeatureFlagUnlocked;
             any = true;
         }
+        if (NewContentTracker.Instance != null)
+        {
+            NewContentTracker.Instance.OnChanged += OnNewContentChanged;
+            any = true;
+        }
         eventsSubscribed = any;
     }
 
     private void OnFeatureFlagUnlocked(string _) => MarkDirty();
+    private void OnNewContentChanged() => MarkDirty();
 
     private void UnsubscribeEvents()
     {
@@ -79,6 +91,8 @@ public class EquipmentPopupUITK : MonoBehaviour
             CurrencyManager.Instance.OnCoinsChanged -= OnCoinsChanged;
         if (ResearchManager.Instance != null)
             ResearchManager.Instance.OnFeatureFlagUnlocked -= OnFeatureFlagUnlocked;
+        if (NewContentTracker.Instance != null)
+            NewContentTracker.Instance.OnChanged -= OnNewContentChanged;
         eventsSubscribed = false;
     }
 
@@ -151,6 +165,7 @@ public class EquipmentPopupUITK : MonoBehaviour
     {
         if (sectionList == null) return;
         sectionList.Clear();
+        pendingNew.Clear();
 
         if (registry == null)
         {
@@ -170,6 +185,41 @@ public class EquipmentPopupUITK : MonoBehaviour
             if (eq.IsUnlocked()) SpawnUnlockedSection(eq);
             else SpawnLockedSection(eq);
         }
+
+        HookScroll();
+        // After layout, clear NEW dots for any section already visible without scrolling.
+        sectionList.schedule.Execute(CheckNewVisibility).StartingIn(60);
+    }
+
+    private void HookScroll()
+    {
+        if (scrollHooked || sectionList == null) return;
+        sectionList.verticalScroller.valueChanged += _ => CheckNewVisibility();
+        scrollHooked = true;
+    }
+
+    /// <summary>Mark any NEW equipment section as seen once it overlaps the scroll viewport.</summary>
+    private void CheckNewVisibility()
+    {
+        if (pendingNew.Count == 0 || sectionList == null) return;
+        Rect view = sectionList.worldBound;
+        if (view.height <= 0f || float.IsNaN(view.height)) return;
+
+        for (int i = pendingNew.Count - 1; i >= 0; i--)
+        {
+            var p = pendingNew[i];
+            if (p.section == null || p.section.panel == null) { pendingNew.RemoveAt(i); continue; }
+            Rect r = p.section.worldBound;
+            if (r.height <= 0f || float.IsNaN(r.height)) continue;
+
+            bool visible = r.yMax > view.yMin && r.yMin < view.yMax;
+            if (visible)
+            {
+                NewContentTracker.Instance?.MarkSeen(p.id);
+                if (p.dot != null && p.dot.parent != null) p.dot.RemoveFromHierarchy();
+                pendingNew.RemoveAt(i);
+            }
+        }
     }
 
     private void SpawnUnlockedSection(EquipmentData eq)
@@ -182,6 +232,15 @@ public class EquipmentPopupUITK : MonoBehaviour
 
         TemplateContainer section = sectionTemplate.Instantiate();
         sectionList.Add(section);
+
+        // NEW badge on a freshly-unlocked equipment section; clears when scrolled into view.
+        if (NewContentTracker.Instance != null &&
+            NewContentTracker.Instance.IsNew(NewContentTracker.EquipId(eq.equipmentID)))
+        {
+            VisualElement dot = NewContentTracker.CreateBadgeDot();
+            section.Add(dot);
+            pendingNew.Add((section, dot, NewContentTracker.EquipId(eq.equipmentID)));
+        }
 
         Label nameLabel = section.Q<Label>("equipment-name");
         VisualElement iconImage = section.Q<VisualElement>("equipment-icon");

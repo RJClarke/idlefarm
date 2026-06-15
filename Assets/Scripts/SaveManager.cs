@@ -108,6 +108,9 @@ public class SaveManager : MonoBehaviour
         data.purchasedHelperUpgradeIDs = HelperUpgradeManager.Instance != null
             ? HelperUpgradeManager.Instance.GetPurchasedIDsForSave()
             : new string[0];
+        data.seenContentIds = NewContentTracker.Instance != null
+            ? NewContentTracker.Instance.GetSeenForSave()
+            : new string[0];
 
         // Active-run snapshot — Money, temp upgrades, and the wall-clock start time so the
         // run can resume at the same point on the difficulty curve.
@@ -216,6 +219,10 @@ public class SaveManager : MonoBehaviour
                 // Hand the offline anchor to the welcome-back system. Catch-ups inside the
                 // managers above have already run; OfflineProgressManager reads their reports.
                 OfflineProgressManager.SeedLastSeen(data.lastSeenUtcTicks);
+
+                // After research/upgrade/animal state is restored so availability is accurate.
+                if (NewContentTracker.Instance != null)
+                    NewContentTracker.Instance.LoadState(data.seenContentIds);
 
                 Debug.Log($"Game loaded! Coins: {data.coins}");
             }

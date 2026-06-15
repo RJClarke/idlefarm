@@ -22,6 +22,9 @@ public class ResearchPopupUITK : MonoBehaviour
     private Button pickerClose;
     private int pickerSlotIndex = -1;
 
+    // Research detail modal (built in code, layered above the picker).
+    private VisualElement detailPanel;
+
     // Section order used in the single-scroll picker (top→bottom). Branches not in this list
     // still render, appended after these in alphabetical order.
     private static readonly string[] BranchOrder = { "helper", "plant", "soil", "animals", "equipment", "weather", "meta" };
@@ -325,8 +328,173 @@ public class ResearchPopupUITK : MonoBehaviour
 
     private void ClosePicker()
     {
+        CloseDetail();
         pickerSlotIndex = -1;
         if (picker != null) picker.style.display = DisplayStyle.None;
+    }
+
+    // ── Research detail modal ────────────────────────
+
+    private void OpenResearchDetail(string researchID, int slotIndex, VisualElement rowDot)
+    {
+        var mgr = ResearchManager.Instance;
+        if (mgr == null || root == null) return;
+        var rd = mgr.GetResearch(researchID);
+        if (rd == null) return;
+
+        // Opening details counts as viewing → clear the NEW badge.
+        if (NewContentTracker.Instance != null)
+            NewContentTracker.Instance.MarkSeen(NewContentTracker.ResearchId(researchID));
+        if (rowDot != null && rowDot.parent != null) rowDot.RemoveFromHierarchy();
+
+        int curLevel = mgr.GetCurrentLevel(researchID);
+        bool isMaxed = curLevel >= rd.MaxLevel;
+        int nextLevel = isMaxed ? rd.MaxLevel : curLevel + 1;
+        int fullCost = isMaxed ? 0 : mgr.GetCostForLevel(rd, nextLevel);
+        float fullSecs = isMaxed ? 0f : mgr.GetSecondsForLevel(rd, nextLevel);
+        float partial = isMaxed ? 0f : mgr.GetPartialSecs(researchID);
+        bool isPaidPaused = partial > 0f;
+        int cost = isPaidPaused ? 0 : fullCost;
+        float secs = Mathf.Max(0f, fullSecs - partial);
+        bool canAfford = isPaidPaused || (CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(cost));
+        bool isActive = FindActiveSlotFor(researchID) != null;
+        bool canStart = !isActive && !isMaxed && canAfford && slotIndex >= 0;
+
+        CloseDetail();
+
+        detailPanel = new VisualElement { name = "research-detail" };
+        detailPanel.style.position = Position.Absolute;
+        detailPanel.style.top = 0; detailPanel.style.bottom = 0;
+        detailPanel.style.left = 0; detailPanel.style.right = 0;
+        detailPanel.style.alignItems = Align.Center;
+        detailPanel.style.justifyContent = Justify.Center;
+        detailPanel.style.backgroundColor = new Color(0f, 0f, 0f, 0.6f);
+        detailPanel.RegisterCallback<ClickEvent>(_ => CloseDetail()); // backdrop tap closes
+        root.Add(detailPanel);
+
+        var card = new VisualElement();
+        card.RegisterCallback<ClickEvent>(e => e.StopPropagation()); // don't close when tapping the card
+        card.style.width = Length.Percent(82);
+        card.style.maxWidth = 720;
+        card.style.paddingLeft = 26; card.style.paddingRight = 26;
+        card.style.paddingTop = 22; card.style.paddingBottom = 22;
+        card.style.backgroundColor = new Color(0.16f, 0.14f, 0.11f, 1f);
+        SetAllRadius(card, 18);
+        SetAllBorder(card, 2, new Color(1f, 0.84f, 0f, 0.85f));
+        detailPanel.Add(card);
+
+        // Top-right X close button — reuses the shared wood-cross asset via the .close-button class.
+        var xBtn = new Button(() => CloseDetail());
+        xBtn.AddToClassList("close-button");
+        xBtn.style.position = Position.Absolute;
+        xBtn.style.top = 8;
+        xBtn.style.right = 8;
+        xBtn.style.width = 56;
+        xBtn.style.height = 56;
+        card.Add(xBtn);
+
+        var title = new Label(rd.displayName);
+        title.style.color = new Color(1f, 0.9f, 0.65f);
+        title.style.fontSize = 34;
+        title.style.unityFontStyleAndWeight = FontStyle.Bold;
+        title.style.whiteSpace = WhiteSpace.Normal;
+        title.style.marginRight = 68; // keep long titles clear of the X
+        card.Add(title);
+
+        var level = new Label(isMaxed ? $"Level {curLevel} / {rd.MaxLevel} — Maxed" : $"Level {curLevel} / {rd.MaxLevel}");
+        level.style.color = new Color(1f, 1f, 1f, 0.6f);
+        level.style.fontSize = 20;
+        level.style.marginTop = 2;
+        card.Add(level);
+
+        string boost = BuildPickerRowSubtext(rd, curLevel, nextLevel, isMaxed);
+        if (!string.IsNullOrEmpty(boost))
+        {
+            var boostLbl = new Label(boost);
+            boostLbl.style.color = new Color(0.7f, 0.95f, 0.7f);
+            boostLbl.style.fontSize = 24;
+            boostLbl.style.marginTop = 12;
+            boostLbl.style.whiteSpace = WhiteSpace.Normal;
+            card.Add(boostLbl);
+        }
+
+        var info = new Label(isMaxed
+            ? "Fully researched"
+            : (isActive ? "Currently researching…"
+                        : $"Cost: {(isPaidPaused ? "Paid" : cost + " coins")}     Time: {FormatRemaining(secs)}"));
+        info.style.color = new Color(1f, 1f, 1f, 0.92f);
+        info.style.fontSize = 24;
+        info.style.marginTop = 16;
+        card.Add(info);
+
+        var buttons = new VisualElement();
+        buttons.style.flexDirection = FlexDirection.Row;
+        buttons.style.justifyContent = Justify.FlexEnd;
+        buttons.style.marginTop = 22;
+        card.Add(buttons);
+
+        var closeBtn = new Button(() => CloseDetail()) { text = "Close" };
+        StyleDetailButton(closeBtn, new Color(0.3f, 0.28f, 0.24f), Color.white);
+        buttons.Add(closeBtn);
+
+        if (canStart)
+        {
+            string capturedID = researchID;
+            int capturedSlot = slotIndex;
+            var researchBtn = new Button(() =>
+            {
+                if (ResearchManager.Instance != null && ResearchManager.Instance.TryAssignResearch(capturedSlot, capturedID))
+                {
+                    CloseDetail();
+                    ClosePicker();
+                }
+            }) { text = isPaidPaused ? "Resume" : "Research" };
+            StyleDetailButton(researchBtn, new Color(0.2f, 0.55f, 0.25f), Color.white);
+            buttons.Add(researchBtn);
+        }
+        else if (!isMaxed && !isActive && !canAfford)
+        {
+            var cant = new Label("Not enough coins");
+            cant.style.color = new Color(0.95f, 0.5f, 0.4f);
+            cant.style.fontSize = 22;
+            cant.style.unityTextAlign = TextAnchor.MiddleCenter;
+            cant.style.marginRight = 12;
+            buttons.Insert(0, cant);
+        }
+    }
+
+    private void CloseDetail()
+    {
+        if (detailPanel != null && detailPanel.parent != null) detailPanel.RemoveFromHierarchy();
+        detailPanel = null;
+    }
+
+    private static void StyleDetailButton(Button b, Color bg, Color fg)
+    {
+        b.style.backgroundColor = bg;
+        b.style.color = fg;
+        b.style.fontSize = 24;
+        b.style.unityFontStyleAndWeight = FontStyle.Bold;
+        b.style.paddingLeft = 24; b.style.paddingRight = 24;
+        b.style.paddingTop = 12; b.style.paddingBottom = 12;
+        b.style.marginLeft = 10;
+        SetAllRadius(b, 12);
+        b.style.borderTopWidth = 0; b.style.borderBottomWidth = 0;
+        b.style.borderLeftWidth = 0; b.style.borderRightWidth = 0;
+    }
+
+    private static void SetAllRadius(VisualElement el, float r)
+    {
+        el.style.borderTopLeftRadius = r; el.style.borderTopRightRadius = r;
+        el.style.borderBottomLeftRadius = r; el.style.borderBottomRightRadius = r;
+    }
+
+    private static void SetAllBorder(VisualElement el, float w, Color c)
+    {
+        el.style.borderTopWidth = w; el.style.borderBottomWidth = w;
+        el.style.borderLeftWidth = w; el.style.borderRightWidth = w;
+        el.style.borderTopColor = c; el.style.borderBottomColor = c;
+        el.style.borderLeftColor = c; el.style.borderRightColor = c;
     }
 
     private void RebuildPickerList()
@@ -380,32 +548,59 @@ public class ResearchPopupUITK : MonoBehaviour
         float secs = Mathf.Max(0f, fullSecs - partial);
         bool canAfford = !isMaxed && (isPaidPaused || (CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(cost)));
 
+        ResearchSlotState activeSlot = FindActiveSlotFor(rd.researchID);
+        bool isActive = activeSlot != null;
+
         var row = new VisualElement(); row.AddToClassList("picker-row");
 
         var textCol = new VisualElement(); textCol.AddToClassList("picker-row__text-col");
+
+        var nameRow = new VisualElement();
+        nameRow.style.flexDirection = FlexDirection.Row;
+        nameRow.style.alignItems = Align.Center;
+
+        bool isNewResearch = NewContentTracker.Instance != null &&
+                             NewContentTracker.Instance.IsNew(NewContentTracker.ResearchId(rd.researchID));
+        VisualElement inlineDot = null;
+        if (isNewResearch)
+        {
+            inlineDot = MakeInlineNewDot();
+            nameRow.Add(inlineDot); // sits just left of the name; spacing flows with text length
+        }
+
         var name = new Label($"{rd.displayName} — {curLevel}/{rd.MaxLevel}");
         name.AddToClassList("picker-row__name");
-        var desc = new Label(string.IsNullOrEmpty(rd.description) ? "" : rd.description);
+        nameRow.Add(name);
+
+        var desc = new Label(BuildPickerRowSubtext(rd, curLevel, nextLevel, isMaxed));
         desc.AddToClassList("picker-row__desc");
-        textCol.Add(name); textCol.Add(desc);
+        textCol.Add(nameRow); textCol.Add(desc);
 
         var metaCol = new VisualElement(); metaCol.AddToClassList("picker-row__meta-col");
         var costLbl = new Label(isMaxed ? "Complete" : (isPaidPaused ? "Paid" : $"{cost} coins"));
         costLbl.AddToClassList("picker-row__cost");
-        var timeLbl = new Label(isMaxed ? "Maxed" : FormatRemaining(secs));
+        string timeText = isMaxed ? "Maxed" : (isPaidPaused ? FormatActiveTimer(secs) : FormatRemaining(secs));
+        var timeLbl = new Label(timeText);
         timeLbl.AddToClassList("picker-row__time");
         metaCol.Add(costLbl); metaCol.Add(timeLbl);
 
         row.Add(textCol); row.Add(metaCol);
 
-        if (isMaxed)
+        if (isActive)
+        {
+            row.AddToClassList("picker-row--active");
+            costLbl.AddToClassList("picker-row__cost--active");
+            timeLbl.AddToClassList("picker-row__time--active");
+            costLbl.text = "ACTIVE";
+            UpdateActiveRowTime(timeLbl, rd, activeSlot);
+            timeLbl.schedule.Execute(() => UpdateActiveRowTime(timeLbl, rd, activeSlot)).Every(1000);
+        }
+        else if (isMaxed)
         {
             row.AddToClassList("picker-row--complete");
         }
         else if (isPaidPaused)
         {
-            row.AddToClassList("picker-row--resume");
-            costLbl.AddToClassList("picker-row__cost--resume");
             timeLbl.AddToClassList("picker-row__time--resume");
         }
         else if (!canAfford)
@@ -414,19 +609,79 @@ public class ResearchPopupUITK : MonoBehaviour
             costLbl.AddToClassList("picker-row__cost--unaffordable");
         }
 
-        if (!isMaxed && canAfford)
+        // Tap any row to open its detail popup — that's where research is actually started.
+        // Opening details also clears the NEW badge.
         {
             string capturedID = rd.researchID;
             int capturedSlot = pickerSlotIndex;
-            row.RegisterCallback<ClickEvent>(_ =>
-            {
-                if (ResearchManager.Instance != null && ResearchManager.Instance.TryAssignResearch(capturedSlot, capturedID))
-                    ClosePicker();
-            });
+            VisualElement capturedDot = inlineDot;
+            row.RegisterCallback<ClickEvent>(_ => OpenResearchDetail(capturedID, capturedSlot, capturedDot));
             WirePressedFeedback(row, "slot-card--pressed");
         }
 
         return row;
+    }
+
+    /// <summary>Larger inline NEW dot that sits just left of the research name.</summary>
+    private static VisualElement MakeInlineNewDot()
+    {
+        var dot = new VisualElement { name = "new-dot-inline" };
+        dot.pickingMode = PickingMode.Ignore;
+        dot.style.flexShrink = 0;
+        dot.style.width = 20;
+        dot.style.height = 20;
+        dot.style.marginRight = 10;
+        dot.style.backgroundColor = new Color(0.92f, 0.22f, 0.22f);
+        dot.style.borderTopLeftRadius = 10;
+        dot.style.borderTopRightRadius = 10;
+        dot.style.borderBottomLeftRadius = 10;
+        dot.style.borderBottomRightRadius = 10;
+        dot.style.borderTopWidth = 2;
+        dot.style.borderBottomWidth = 2;
+        dot.style.borderLeftWidth = 2;
+        dot.style.borderRightWidth = 2;
+        var b = new Color(1f, 1f, 1f, 0.92f);
+        dot.style.borderTopColor = b;
+        dot.style.borderBottomColor = b;
+        dot.style.borderLeftColor = b;
+        dot.style.borderRightColor = b;
+        return dot;
+    }
+
+    private static string BuildPickerRowSubtext(ResearchData rd, int curLevel, int nextLevel, bool isMaxed)
+    {
+        if (isMaxed) return "";
+        if (rd.IsBinary || rd.bonusPerLevel <= 0f)
+            return string.IsNullOrEmpty(rd.description) ? "" : rd.description;
+        float pct = rd.bonusPerLevel * 100f;
+        return $"Upgrade to Level {nextLevel}: +{pct.ToString("0.##")}%";
+    }
+
+    private ResearchSlotState FindActiveSlotFor(string researchID)
+    {
+        var mgr = ResearchManager.Instance;
+        if (mgr == null || string.IsNullOrEmpty(researchID)) return null;
+        for (int i = 0; i < ResearchManager.SlotCount; i++)
+        {
+            var s = mgr.GetSlot(i);
+            if (s != null && !s.IsIdle && s.activeResearchID == researchID) return s;
+        }
+        return null;
+    }
+
+    private void UpdateActiveRowTime(Label timeLbl, ResearchData rd, ResearchSlotState state)
+    {
+        if (timeLbl == null || state == null || rd == null) return;
+        var mgr = ResearchManager.Instance;
+        if (mgr == null) return;
+        int nextLevel = state.currentLevel + 1;
+        float secsForLevel = mgr.GetSecondsForLevel(rd, nextLevel);
+        double elapsed = (DateTime.UtcNow.Ticks - state.startUtcTicks) / (double)TimeSpan.TicksPerSecond;
+        double remaining = Math.Max(0, secsForLevel - elapsed);
+        bool boosted = state.boostMultiplier > 1.0f && state.boostExpiresUtcTicks > DateTime.UtcNow.Ticks;
+        timeLbl.text = boosted
+            ? $"{FormatActiveTimer(remaining)} ⚡ {state.boostMultiplier:F0}x"
+            : FormatActiveTimer(remaining);
     }
 
     private static void WirePressedFeedback(VisualElement ve, string pressedClass)

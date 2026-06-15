@@ -42,7 +42,8 @@ public class ToastManager : MonoBehaviour
 
     private struct PendingToast
     {
-        public string message;
+        public string title;
+        public string subtitle;
         public ToastKind kind;
     }
 
@@ -92,15 +93,17 @@ public class ToastManager : MonoBehaviour
 
     // ── Public API ───────────────────────────────
 
-    public static void Show(string message, ToastKind kind = ToastKind.Success)
+    public static void Show(string message, ToastKind kind = ToastKind.Success) => Show(message, null, kind);
+
+    public static void Show(string title, string subtitle, ToastKind kind = ToastKind.Success)
     {
-        if (Instance == null || string.IsNullOrEmpty(message)) return;
-        Instance.Enqueue(message, kind);
+        if (Instance == null || string.IsNullOrEmpty(title)) return;
+        Instance.Enqueue(title, subtitle, kind);
     }
 
-    private void Enqueue(string message, ToastKind kind)
+    private void Enqueue(string title, string subtitle, ToastKind kind)
     {
-        pending.Enqueue(new PendingToast { message = message, kind = kind });
+        pending.Enqueue(new PendingToast { title = title, subtitle = subtitle, kind = kind });
         Pump();
     }
 
@@ -112,7 +115,7 @@ public class ToastManager : MonoBehaviour
         while (visibleCount < MAX_VISIBLE && pending.Count > 0)
         {
             PendingToast p = pending.Dequeue();
-            SpawnToast(p.message, p.kind);
+            SpawnToast(p.title, p.subtitle, p.kind);
         }
     }
 
@@ -135,10 +138,10 @@ public class ToastManager : MonoBehaviour
         Pump(); // flush anything queued before the stack was ready
     }
 
-    private void SpawnToast(string message, ToastKind kind)
+    private void SpawnToast(string title, string subtitle, ToastKind kind)
     {
         visibleCount++;
-        VisualElement toast = BuildToastElement(message, kind);
+        VisualElement toast = BuildToastElement(title, subtitle, kind);
         stack.Insert(0, toast); // newest on top, older ones flow below
         StartCoroutine(ToastLifecycle(toast));
     }
@@ -171,33 +174,45 @@ public class ToastManager : MonoBehaviour
         el.style.translate = new Translate(0, Length.Percent(toY));
     }
 
-    private VisualElement BuildToastElement(string message, ToastKind kind)
+    private VisualElement BuildToastElement(string title, string subtitle, ToastKind kind)
     {
         VisualElement toast = new VisualElement { name = "toast" };
         toast.pickingMode = PickingMode.Ignore;
-        toast.style.flexDirection = FlexDirection.Row;
-        toast.style.alignItems = Align.Center;
-        toast.style.marginBottom = 8;
-        toast.style.paddingLeft = 18;
-        toast.style.paddingRight = 18;
-        toast.style.paddingTop = 10;
-        toast.style.paddingBottom = 10;
-        toast.style.maxWidth = 640;
-        SetBorderRadius(toast, 22);
-        toast.style.backgroundColor = new Color(0.11f, 0.12f, 0.13f, 0.94f);
+        toast.style.flexDirection = FlexDirection.Column;
+        toast.style.alignItems = Align.FlexStart;
+        toast.style.width = Length.Percent(95);
+        toast.style.marginBottom = 10;
+        toast.style.paddingLeft = 24;
+        toast.style.paddingRight = 24;
+        toast.style.paddingTop = 16;
+        toast.style.paddingBottom = 16;
+        SetBorderRadius(toast, 24);
+        toast.style.backgroundColor = new Color(0.11f, 0.12f, 0.13f, 0.95f);
 
         Color accent = AccentFor(kind);
         SetBorderWidth(toast, 2);
         SetBorderColor(toast, accent);
 
-        Label label = new Label(message);
-        label.pickingMode = PickingMode.Ignore;
-        label.style.color = Color.white;
-        label.style.fontSize = 30;
-        label.style.unityFontStyleAndWeight = FontStyle.Bold;
-        label.style.whiteSpace = WhiteSpace.Normal;
-        label.style.unityTextAlign = TextAnchor.MiddleCenter;
-        toast.Add(label);
+        Label titleLabel = new Label(title);
+        titleLabel.pickingMode = PickingMode.Ignore;
+        titleLabel.style.color = accent;
+        titleLabel.style.fontSize = 36;
+        titleLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
+        titleLabel.style.whiteSpace = WhiteSpace.Normal;
+        titleLabel.style.unityTextAlign = TextAnchor.MiddleLeft;
+        toast.Add(titleLabel);
+
+        if (!string.IsNullOrEmpty(subtitle))
+        {
+            Label subLabel = new Label(subtitle);
+            subLabel.pickingMode = PickingMode.Ignore;
+            subLabel.style.color = new Color(1f, 1f, 1f, 0.82f);
+            subLabel.style.fontSize = 27;
+            subLabel.style.whiteSpace = WhiteSpace.Normal;
+            subLabel.style.unityTextAlign = TextAnchor.MiddleLeft;
+            subLabel.style.marginTop = 3;
+            toast.Add(subLabel);
+        }
 
         // Start hidden + nudged up; the lifecycle coroutine animates it into place.
         toast.style.opacity = 0f;
@@ -257,13 +272,13 @@ public class ToastManager : MonoBehaviour
     {
         var rd = ResearchManager.Instance != null ? ResearchManager.Instance.GetResearch(researchID) : null;
         string name = rd != null && !string.IsNullOrEmpty(rd.displayName) ? rd.displayName : researchID;
-        Show($"✨ {name} researched!", ToastKind.Success);
+        Show("✨ Research Complete", $"{name} Level {newLevel}", ToastKind.Success);
     }
 
     private void OnAnimalUnlocked(string animalID)
     {
         var data = AnimalManager.Instance != null ? AnimalManager.Instance.GetAnimalData(animalID) : null;
         string name = data != null && !string.IsNullOrEmpty(data.displayName) ? data.displayName : animalID;
-        Show($"\U0001F513 {name} unlocked!", ToastKind.Unlock);
+        Show("\U0001F513 New Unlock!", name, ToastKind.Unlock);
     }
 }
