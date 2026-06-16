@@ -48,6 +48,55 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    // ───────── Save / Load ─────────
+
+    /// <summary>Serializable snapshot of permanent upgrade levels for SaveManager.</summary>
+    public UpgradeLevelEntry[] GetPermanentLevelsForSave()
+    {
+        var arr = new UpgradeLevelEntry[permanentLevels.Count];
+        int i = 0;
+        foreach (var kvp in permanentLevels)
+            arr[i++] = new UpgradeLevelEntry { upgradeID = kvp.Key, level = kvp.Value };
+        return arr;
+    }
+
+    /// <summary>Replace in-memory permanent levels with the saved snapshot. Null-safe.</summary>
+    public void LoadPermanentLevels(UpgradeLevelEntry[] entries)
+    {
+        permanentLevels.Clear();
+        if (entries == null) return;
+        foreach (var e in entries)
+        {
+            if (e == null || string.IsNullOrEmpty(e.upgradeID) || e.level <= 0) continue;
+            permanentLevels[e.upgradeID] = e.level;
+        }
+    }
+
+    /// <summary>Snapshot of temporary (in-run) upgrade levels — used when saving an active run.</summary>
+    public UpgradeLevelEntry[] GetTemporaryLevelsForSave()
+    {
+        var arr = new UpgradeLevelEntry[temporaryLevels.Count];
+        int i = 0;
+        foreach (var kvp in temporaryLevels)
+            arr[i++] = new UpgradeLevelEntry { upgradeID = kvp.Key, level = kvp.Value };
+        return arr;
+    }
+
+    /// <summary>
+    /// Restore temporary (in-run) upgrade levels. Must be called AFTER RunManager.ResumeRun,
+    /// because OnRunStarted clears temporaryLevels in OnRunStarted handler.
+    /// </summary>
+    public void LoadTemporaryLevels(UpgradeLevelEntry[] entries)
+    {
+        temporaryLevels.Clear();
+        if (entries == null) return;
+        foreach (var e in entries)
+        {
+            if (e == null || string.IsNullOrEmpty(e.upgradeID) || e.level <= 0) continue;
+            temporaryLevels[e.upgradeID] = e.level;
+        }
+    }
+
     /// <summary>
     /// Reset temporary levels at run start
     /// </summary>
@@ -94,11 +143,19 @@ public class UpgradeManager : MonoBehaviour
     /// <summary>
     /// Purchase permanent upgrade with Coins (between runs)
     /// </summary>
-    public bool PurchasePermanentUpgrade(string upgradeID, int coinCost)
+    public bool PurchasePermanentUpgrade(string upgradeID, int coinCost, int maxLevel = int.MaxValue)
     {
         if (RunManager.Instance != null && RunManager.Instance.IsRunActive)
         {
             Debug.LogWarning("Cannot purchase permanent upgrades during a run!");
+            return false;
+        }
+
+        // Never exceed the upgrade's max level (callers pass data.maxLevel). Guards against any
+        // over-purchase path leaving a level above the cap (e.g. the old grid_size 4/3 bug).
+        if (GetPermanentLevel(upgradeID) >= maxLevel)
+        {
+            Debug.LogWarning($"Upgrade '{upgradeID}' already at max level ({maxLevel}); purchase rejected.");
             return false;
         }
 

@@ -231,10 +231,11 @@ public class FarmPopupUITK : MonoBehaviour
         {
             string id = data.upgradeID;
             int capturedCost = coinCost;
+            int capturedMax = data.maxLevel;
             tileRoot.RegisterCallback<ClickEvent>(_ =>
             {
                 if (UpgradeManager.Instance != null)
-                    UpgradeManager.Instance.PurchasePermanentUpgrade(id, capturedCost);
+                    UpgradeManager.Instance.PurchasePermanentUpgrade(id, capturedCost, capturedMax);
             });
             WirePressedFeedback(tileRoot, "zone-tile--pressed");
         }
@@ -320,10 +321,11 @@ public class FarmPopupUITK : MonoBehaviour
         {
             string id = data.upgradeID;
             int capturedCost = cost;
+            int capturedMax = data.maxLevel;
             tileRoot.RegisterCallback<ClickEvent>(_ =>
             {
                 if (UpgradeManager.Instance != null)
-                    UpgradeManager.Instance.PurchasePermanentUpgrade(id, capturedCost);
+                    UpgradeManager.Instance.PurchasePermanentUpgrade(id, capturedCost, capturedMax);
             });
             WirePressedFeedback(tileRoot, "tile--pressed");
         }

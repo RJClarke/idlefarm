@@ -20,6 +20,15 @@ public class GemClaimButton : MonoBehaviour
     private System.Action onUnequipped;
     private System.Action onGemReady;
     private System.Action onGemClaimed;
+    private bool started;
+
+    // LocationModeController force-activates this button (it's in hideAtMarketByName) on every
+    // camera pan, bypassing UpdateVisibility. Re-validate on enable so it can't linger visible
+    // for a non-gem animal. Guarded by `started` so we never deactivate before Start subscribes.
+    private void OnEnable()
+    {
+        if (started) UpdateVisibility();
+    }
 
     private void Start()
     {
@@ -62,6 +71,7 @@ public class GemClaimButton : MonoBehaviour
         }
 
         UpdateVisibility();
+        started = true;
     }
 
     private void OnDestroy()

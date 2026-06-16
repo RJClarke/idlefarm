@@ -338,7 +338,7 @@ public class EquipmentPopupUITK : MonoBehaviour
         if (level != currentLevel + 1) return;
         if (CurrencyManager.Instance == null || !CurrencyManager.Instance.CanAffordCoins(cost)) return;
 
-        if (UpgradeManager.Instance.PurchasePermanentUpgrade(data.upgradeID, cost))
+        if (UpgradeManager.Instance.PurchasePermanentUpgrade(data.upgradeID, cost, data.maxLevel))
             RefreshAll();
     }
 
