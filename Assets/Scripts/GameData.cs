@@ -50,6 +50,7 @@ public class GameData
     // (tiles, plants, helpers, threats) is not saved — those reset on resume.
     public bool runActive;
     public long runStartUtcTicks;
+    public float runTotalSeconds; // Total (speed-scaled) run time at save; restored as the resume baseline
     public int money;
     public UpgradeLevelEntry[] temporaryUpgradeLevels;
 

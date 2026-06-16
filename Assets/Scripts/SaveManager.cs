@@ -117,6 +117,7 @@ public class SaveManager : MonoBehaviour
         bool runActive = RunManager.Instance != null && RunManager.Instance.IsRunActive;
         data.runActive = runActive;
         data.runStartUtcTicks = runActive ? RunManager.Instance.RunStartUtcTicks : 0L;
+        data.runTotalSeconds = runActive ? RunManager.Instance.CurrentRunDuration : 0f;
         data.money = runActive && CurrencyManager.Instance != null ? CurrencyManager.Instance.Money : 0;
         data.temporaryUpgradeLevels = runActive && UpgradeManager.Instance != null
             ? UpgradeManager.Instance.GetTemporaryLevelsForSave()
@@ -210,7 +211,7 @@ public class SaveManager : MonoBehaviour
                     // Pass lastSeenUtcTicks so ResumeRun credits the offline window at max
                     // game speed for difficulty advance (per offline-runs design 2026-06-10).
                     if (RunManager.Instance != null)
-                        RunManager.Instance.ResumeRun(data.runStartUtcTicks, data.lastSeenUtcTicks);
+                        RunManager.Instance.ResumeRun(data.runStartUtcTicks, data.runTotalSeconds, data.lastSeenUtcTicks);
 
                     if (UpgradeManager.Instance != null)
                         UpgradeManager.Instance.LoadTemporaryLevels(data.temporaryUpgradeLevels);

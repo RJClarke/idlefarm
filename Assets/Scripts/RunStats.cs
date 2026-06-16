@@ -91,15 +91,20 @@ public class RunStats : MonoBehaviour
     /// </summary>
     public List<(string label, string value)> GetDisplayStats()
     {
-        string runTime = "0:00";
+        string totalTime = "0:00";
+        string realTime = "0:00";
         if (RunManager.Instance != null)
-            runTime = RunManager.Instance.GetFormattedRunDuration();
+        {
+            totalTime = RunManager.Instance.GetFormattedRunDuration();   // speed-scaled
+            realTime = RunManager.Instance.GetFormattedRealDuration();   // wall-clock
+        }
 
         // null value = section header, empty string = blank spacer line
         return new List<(string, string)>
         {
             ("<color=#FFD700>OVERVIEW</color>", null),
-            ("Run Time", runTime),
+            ("Total Run Time", totalTime),
+            ("Real Time", realTime),
             ("Money Earned", "$" + MoneyEarned.ToString("N0")),
             ("Coins Banked", CoinsBanked.ToString("N0")),
 

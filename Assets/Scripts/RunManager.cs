@@ -28,13 +28,20 @@ public class RunManager : MonoBehaviour
 
     // Properties
     public bool IsRunActive => isRunActive;
+    // Total (speed-scaled) run time — drives the top timer, threat difficulty, and score.
     public float CurrentRunDuration => currentRunDuration;
+    // Real wall-clock time since the run started (ignores game speed) — for stats display only.
+    public float RealRunDuration =>
+        isRunActive && runStartUtcTicks > 0
+            ? (float)((DateTime.UtcNow.Ticks - runStartUtcTicks) / (double)TimeSpan.TicksPerSecond)
+            : LastRunRealSeconds;
     public long RunStartUtcTicks => runStartUtcTicks;
 
     // Set on EndRun for the end-of-run screen.
     public bool LastRunEndedBankrupt { get; private set; }
     public bool LastRunWasRecord { get; private set; }
-    public int LastRunSurvivedSeconds { get; private set; }
+    public int LastRunSurvivedSeconds { get; private set; }   // total (speed-scaled)
+    public int LastRunRealSeconds { get; private set; }       // real wall-clock
     public int BestRunSeconds => PlayerPrefs.GetInt("best_run_seconds", 0);
 
     private void Awake()
@@ -58,12 +65,12 @@ public class RunManager : MonoBehaviour
 
     private void Update()
     {
-        // Wall-clock anchored — works through close/reopen and ignores Time.timeScale, so
-        // a run resumed after 8h offline reports 8h of difficulty.
-        if (isRunActive && runStartUtcTicks > 0)
+        // Total run time advances WITH game speed: Time.deltaTime = unscaledDeltaTime × timeScale,
+        // so speeding up genuinely advances the run (timer + difficulty + score). Real/wall-clock
+        // time is derived separately from runStartUtcTicks (see RealRunDuration) for stats only.
+        if (isRunActive)
         {
-            long deltaTicks = DateTime.UtcNow.Ticks - runStartUtcTicks;
-            currentRunDuration = (float)(deltaTicks / (double)TimeSpan.TicksPerSecond);
+            currentRunDuration += Time.deltaTime;
         }
     }
 
@@ -138,12 +145,13 @@ public class RunManager : MonoBehaviour
     /// Tactical state — tiles, planted crops, helper task queues, threats in flight — is
     /// NOT restored; it resets to a fresh start of a long-running run.
     ///
-    /// `lastOnlineUtcTicks`: if &gt; 0, the offline window from then → now is credited at
-    /// max game speed for the purpose of difficulty advance. (Game speed = "play faster";
-    /// while away we assume the player would have had max speed on the whole time.)
-    /// Pass 0 to skip the offline boost (fresh new run, no save anchor available, etc.).
+    /// `savedTotalSeconds`: the Total (speed-scaled) run time at save time, restored as the
+    /// baseline. `lastOnlineUtcTicks`: if &gt; 0, the offline window from then → now is credited
+    /// to Total at max game speed (while away we assume the player would have had max speed on
+    /// the whole time). `runStartUtcTicks` stays the true real start so RealRunDuration (wall-clock)
+    /// stays accurate. Pass 0 for lastOnline to skip the offline credit.
     /// </summary>
-    public void ResumeRun(long startUtcTicks, long lastOnlineUtcTicks = 0L)
+    public void ResumeRun(long startUtcTicks, float savedTotalSeconds, long lastOnlineUtcTicks = 0L)
     {
         if (isRunActive)
         {
@@ -157,12 +165,11 @@ public class RunManager : MonoBehaviour
         }
 
         isRunActive = true;
-        runStartUtcTicks = startUtcTicks;
+        runStartUtcTicks = startUtcTicks;             // true real start (wall-clock anchor for RealRunDuration)
+        currentRunDuration = Mathf.Max(0f, savedTotalSeconds); // restore Total baseline
 
-        // Offline difficulty boost: credit the offline window at max game speed.
-        // We move runStartUtcTicks BACKWARD by the bonus seconds so CurrentRunDuration
-        // (= now - runStartUtcTicks) reports the inflated value. ThreatWaveManager and
-        // any other CurrentRunDuration consumer pick this up automatically.
+        // Offline credit to Total: while away, assume max game speed, so in-game time advanced by
+        // offlineSecs × maxSpeed. (Real time naturally includes the gap via runStartUtcTicks.)
         long nowTicks = DateTime.UtcNow.Ticks;
         if (lastOnlineUtcTicks > 0 && lastOnlineUtcTicks < nowTicks)
         {
@@ -170,15 +177,10 @@ public class RunManager : MonoBehaviour
             float maxSpeed = 1f + (ResearchManager.Instance != null
                 ? ResearchManager.Instance.GetBonus(Research.StatKey.GameSpeed)
                 : 0f);
-            double bonusSecs = offlineSecs * Mathf.Max(0f, maxSpeed - 1f);
-            if (bonusSecs > 0)
-            {
-                runStartUtcTicks -= (long)(bonusSecs * TimeSpan.TicksPerSecond);
-                Debug.Log($"=== Offline difficulty boost: +{bonusSecs:F0}s (offline={offlineSecs:F0}s × {maxSpeed:F2}× max speed) ===");
-            }
+            double offlineTotal = offlineSecs * Mathf.Max(1f, maxSpeed);
+            currentRunDuration += (float)offlineTotal;
+            Debug.Log($"=== Offline credit: +{offlineTotal:F0}s total (offline={offlineSecs:F0}s × {maxSpeed:F2}× max speed) ===");
         }
-
-        currentRunDuration = (float)((nowTicks - runStartUtcTicks) / (double)TimeSpan.TicksPerSecond);
 
         // Pull the saved seed selection so HelperManager has zones to work.
         Dictionary<int, CropData> zoneSeeds = null;
@@ -216,8 +218,10 @@ public class RunManager : MonoBehaviour
             return;
         }
 
+        int realSecs = Mathf.FloorToInt(RealRunDuration); // capture before clearing the real anchor
         isRunActive = false;
         runStartUtcTicks = 0;
+        LastRunRealSeconds = realSecs;
 
         // Best-survived-time record (PlayerPrefs, matching the project's split-persistence pattern).
         int survivedSecs = Mathf.FloorToInt(currentRunDuration);
@@ -292,7 +296,14 @@ public class RunManager : MonoBehaviour
     /// </summary>
     public string GetFormattedRunDuration()
     {
-        return FormatTime(currentRunDuration);
+        // During a run: live total. After a run (currentRunDuration is reset): the last run's total.
+        return FormatTime(isRunActive ? currentRunDuration : LastRunSurvivedSeconds);
+    }
+
+    /// <summary>Formatted real (wall-clock) run duration — for the stats screen.</summary>
+    public string GetFormattedRealDuration()
+    {
+        return FormatTime(RealRunDuration);
     }
 
     #region Testing/Debug Methods
