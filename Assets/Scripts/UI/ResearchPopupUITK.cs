@@ -211,23 +211,44 @@ public class ResearchPopupUITK : MonoBehaviour
     private void RenderLockedSlot(VisualElement card, int slotIndex, ResearchManager mgr)
     {
         var def = mgr.GetSlotDef(slotIndex);
+
+        // Lock icon above the "Locked" label.
+        var lockIcon = new VisualElement(); lockIcon.AddToClassList("slot-lock-icon");
+        lockIcon.pickingMode = PickingMode.Ignore;
+        card.Add(lockIcon);
+
         Label statusLabel = new Label("Locked"); statusLabel.AddToClassList("slot-status");
-        Label actionLabel = new Label(); actionLabel.AddToClassList("slot-action");
-        switch (def.unlockType)
+        card.Add(statusLabel);
+
+        if (def.unlockType == ResearchManager.SlotUnlockType.Research)
         {
-            case ResearchManager.SlotUnlockType.Coins: actionLabel.text = $"{def.costAmount} coins to unlock"; break;
-            case ResearchManager.SlotUnlockType.Gems:  actionLabel.text = $"{def.costAmount} gems to unlock"; break;
-            case ResearchManager.SlotUnlockType.Research: actionLabel.text = "Research to unlock"; break;
+            Label actionLabel = new Label("Research to unlock"); actionLabel.AddToClassList("slot-action");
+            card.Add(actionLabel);
         }
-        bool canAfford = mgr.CanUnlockSlot(slotIndex);
-        card.AddToClassList(canAfford ? "slot-card--affordable" : "slot-card--locked");
-        if (canAfford)
+        else
+        {
+            // Currency cost: amount + currency icon + "to unlock".
+            var row = new VisualElement(); row.AddToClassList("slot-action-row");
+            row.pickingMode = PickingMode.Ignore;
+            Label amount = new Label(def.costAmount.ToString()); amount.AddToClassList("slot-action");
+            var costIcon = new VisualElement();
+            costIcon.AddToClassList(def.unlockType == ResearchManager.SlotUnlockType.Gems
+                ? "slot-cost-icon--gem" : "slot-cost-icon--coin");
+            costIcon.pickingMode = PickingMode.Ignore;
+            Label suffix = new Label("to unlock"); suffix.AddToClassList("slot-action");
+            row.Add(amount); row.Add(costIcon); row.Add(suffix);
+            card.Add(row);
+        }
+
+        // Per design: all locked slots share the same locked look (the gems/coins slot no longer
+        // gets the bright "affordable" highlight); affordable slots stay clickable.
+        card.AddToClassList("slot-card--locked");
+        if (mgr.CanUnlockSlot(slotIndex))
         {
             int captured = slotIndex;
             card.RegisterCallback<ClickEvent>(_ => ResearchManager.Instance?.TryUnlockSlot(captured));
             WirePressedFeedback(card, "slot-card--pressed");
         }
-        card.Add(statusLabel); card.Add(actionLabel);
     }
 
     private void RenderEmptySlot(VisualElement card, int slotIndex)

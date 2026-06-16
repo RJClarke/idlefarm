@@ -137,6 +137,40 @@
     color: rgb(255, 240, 210);
 }
 
+/* ─── Locked-slot lock icon + currency cost row ─── */
+
+.slot-lock-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 12px;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Locked.png");
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-background-image-tint-color: rgba(220, 195, 150, 0.8);
+}
+
+.slot-action-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.slot-cost-icon--gem,
+.slot-cost-icon--coin {
+    width: 32px;
+    height: 32px;
+    margin-left: 6px;
+    margin-right: 8px;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.slot-cost-icon--gem {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Gem.png");
+}
+
+.slot-cost-icon--coin {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Coin.png");
+}
+
 /* ─── Picker overlay (top-level — sibling of popup-root, NOT child of it) ─── */
 
 .picker {
@@ -293,6 +327,21 @@
 }
 .picker-row__cost--resume { color: rgb(140, 200, 100); }
 .picker-row__time--resume { color: rgb(140, 200, 100); }
+
+/* Active (this research is currently running in one of the slots) — bright green tint + border */
+.picker-row--active {
+    background-color: rgba(140, 200, 100, 0.16);
+    border-color: rgb(140, 200, 100);
+}
+.picker-row--active .picker-row__name { color: rgb(255, 240, 210); }
+.picker-row__cost--active {
+    color: rgb(140, 200, 100);
+    -unity-font-style: bold;
+}
+.picker-row__time--active {
+    color: rgb(140, 200, 100);
+    -unity-font-style: bold;
+}
 
 /* ─── Active slot timer view ─── */
 
