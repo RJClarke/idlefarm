@@ -90,6 +90,26 @@ public class Cow : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Estimate the compost the cow would have produced by eating crops over an offline
+    /// stretch of in-game time (real offline × game speed). Fudged: assumes crops were always
+    /// available to eat. Returns the lump total; does NOT award it (caller does).
+    /// </summary>
+    public int EstimateOfflineEatingCompost(double inGameSeconds)
+    {
+        if (inGameSeconds <= 0) return 0;
+        float avgInterval = (minIntervalSecs + maxIntervalSecs) * 0.5f;
+        if (avgInterval <= 0f) return 0;
+
+        int eats = Mathf.FloorToInt((float)(inGameSeconds / avgInterval));
+        if (eats <= 0) return 0;
+
+        int lump = baseLumpPerEat;
+        if (ResearchManager.Instance != null)
+            lump = Mathf.RoundToInt(lump * (1f + ResearchManager.Instance.GetBonus(Research.StatKey.CowRunYield)));
+        return eats * lump;
+    }
+
     private void EatPlant(Plant plant)
     {
         if (plant == null || CurrencyManager.Instance == null) return;

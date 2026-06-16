@@ -79,6 +79,9 @@ public class AnimalManager : MonoBehaviour
         }
     }
 
+    /// <summary>Amount of compost granted by the most recent "long gap" cow tick (offline catch-up). 0 if the most recent tick was a normal short interval.</summary>
+    public int LastOfflineCompostGain { get; private set; }
+
     private void TickCompost()
     {
         AnimalData equipped = GetEquippedAnimal();
@@ -100,6 +103,50 @@ public class AnimalManager : MonoBehaviour
         // Advance the timestamp by the minutes we just credited (avoids drift).
         double minutesAwarded = amount / ratePerMin;
         lastCompostTickUtc = lastCompostTickUtc.AddMinutes(minutesAwarded);
+
+        // Flag any tick that delivered "a meaningful chunk" so the welcome-back modal can show it.
+        // Normal in-app ticks are bounded by COMPOST_TICK_INTERVAL_SECS; anything past ~5 min was offline.
+        if (elapsedMin >= 5.0) LastOfflineCompostGain = amount;
+        else if (activeVisualInstance != null)
+            // Online trickle: float the gain off the cow so the player can see it accruing.
+            FloatingTextManager.ShowCompost(amount, activeVisualInstance.transform.position);
+    }
+
+    /// <summary>Force an immediate compost catch-up. Called by OfflineProgressManager so the welcome-back modal has fresh numbers without waiting for the periodic Update tick.</summary>
+    public int RunOfflineCompostCatchUp()
+    {
+        LastOfflineCompostGain = 0;
+        TickCompost();
+        return LastOfflineCompostGain;
+    }
+
+    /// <summary>
+    /// If a run was active (continued offline), estimate + award the compost the equipped cow
+    /// would have earned by eating crops over the offline window, credited at max game speed
+    /// (matching the run timer's offline model). Returns the awarded amount for the welcome-back modal.
+    /// </summary>
+    public int RunOfflineCowEatingCatchUp(double offlineSeconds)
+    {
+        if (offlineSeconds <= 0) return 0;
+        if (RunManager.Instance == null || !RunManager.Instance.IsRunActive) return 0; // only a continued offline run
+        AnimalData equipped = GetEquippedAnimal();
+        if (equipped == null || equipped.animalID != "cow") return 0;
+
+        Cow cow = activeVisualInstance != null ? activeVisualInstance.GetComponent<Cow>() : null;
+        if (cow == null) return 0;
+
+        float maxSpeed = 1f + (ResearchManager.Instance != null
+            ? ResearchManager.Instance.GetBonus(Research.StatKey.GameSpeed)
+            : 0f);
+        double inGameSeconds = offlineSeconds * Mathf.Max(1f, maxSpeed);
+
+        int amount = cow.EstimateOfflineEatingCompost(inGameSeconds);
+        if (amount > 0 && CurrencyManager.Instance != null)
+        {
+            CurrencyManager.Instance.AddCompost(amount);
+            Debug.Log($"Offline cow grazing: +{amount} compost (~{inGameSeconds:F0}s in-game)");
+        }
+        return amount;
     }
 
     public string GetLastCompostTimeISO() =>
@@ -288,6 +335,11 @@ public class AnimalManager : MonoBehaviour
             if (visual != null) visual.RemoveEgg();
             FloatingTextManager.ShowCoins(reward, rewardWorldPos);
         }
+
+        // Defensive: zap any leftover egg/gem GameObjects in the scene. The active visual's
+        // RemoveEgg/RemoveGem call above only cleans up its own tracked instance; this catches
+        // orphans from earlier animal swaps or scene reloads.
+        AnimalVisual.CleanupAllOrphanDrops();
 
         lastEggClaimTime = DateTime.UtcNow;
         eggReady = false;
