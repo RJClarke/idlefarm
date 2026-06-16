@@ -670,7 +670,10 @@ git commit -m "feat(economy): offline run simulator loop with cause-attributed l
 
 ## Task 6: `OfflineTax` payout helper
 
-30% haircut on coins + resume-money; compost untaxed; sim result untouched.
+Base 30% haircut on coins + resume-money; compost untaxed; sim result untouched. The
+`offline_efficiency` research stat **reduces** the effective tax (research literally buys back offline
+efficiency), so progression gives an offline benefit. The reduction is clamped so the tax never goes
+below 0 and negative inputs never inflate payout above gross.
 
 **Files:**
 - Create: `Assets/Scripts/EconomyCore/OfflineTax.cs`
@@ -689,7 +692,12 @@ public class OfflineTaxTests
     [Test] public void Floors_NotRounds()       => Assert.AreEqual(7,   OfflineTax.Payout(10)); // 10*0.7=7.0
     [Test] public void FloorsFraction()          => Assert.AreEqual(3,   OfflineTax.Payout(5));  // 5*0.7=3.5 -> 3
     [Test] public void Zero_StaysZero()          => Assert.AreEqual(0,   OfflineTax.Payout(0));
-    [Test] public void RateIsThirtyPercent()     => Assert.AreEqual(0.30f, OfflineTax.Rate, 0.0001f);
+    [Test] public void BaseRateIsThirtyPercent() => Assert.AreEqual(0.30f, OfflineTax.BaseRate, 0.0001f);
+
+    // offline_efficiency research reduces the tax
+    [Test] public void Efficiency_ReducesTax()   => Assert.AreEqual(80,  OfflineTax.Payout(100, 0.10f)); // rate 0.20
+    [Test] public void Efficiency_CanClearTax()  => Assert.AreEqual(100, OfflineTax.Payout(100, 0.50f)); // rate clamps to 0
+    [Test] public void Efficiency_NegativeClamped() => Assert.AreEqual(70, OfflineTax.Payout(100, -1f)); // never exceeds base
 }
 ```
 
@@ -706,19 +714,27 @@ using UnityEngine;
 /// <summary>
 /// Offline-inefficiency tax. Applied to PAYOUT ONLY (final coins + resume-money), never inside the
 /// simulator, so survival/bankruptcy timing matches the live game. Compost is never taxed.
+///
+/// The base rate (30%) is reduced by the caller's `offline_efficiency` research bonus, so upgrading
+/// that research gives a direct offline benefit. The effective rate is clamped to [0, BaseRate].
 /// </summary>
 public static class OfflineTax
 {
-    public const float Rate = 0.30f;
+    public const float BaseRate = 0.30f;
+
+    /// <summary>Effective tax rate after applying the offline-efficiency research bonus (clamped 0..BaseRate).</summary>
+    public static float EffectiveRate(float offlineEfficiencyBonus)
+        => Mathf.Clamp(BaseRate - Mathf.Max(0f, offlineEfficiencyBonus), 0f, BaseRate);
 
     /// <summary>Returns the kept amount after the offline tax (floored).</summary>
-    public static int Payout(int gross) => Mathf.FloorToInt(Mathf.Max(0, gross) * (1f - Rate));
+    public static int Payout(int gross, float offlineEfficiencyBonus = 0f)
+        => Mathf.FloorToInt(Mathf.Max(0, gross) * (1f - EffectiveRate(offlineEfficiencyBonus)));
 }
 ```
 
 - [ ] **Step 4: Run tests to verify they pass**
 
-Run EditMode (`OfflineTaxTests`). Expected: PASS (all 6).
+Run EditMode (`OfflineTaxTests`). Expected: PASS (all 9).
 
 - [ ] **Step 5: Commit**
 
@@ -734,7 +750,7 @@ git commit -m "feat(economy): 30% offline tax payout helper"
 - [ ] All EditMode tests pass: `TimeFormatTests`, `OfflineRunSimulatorTests`, `OfflineTaxTests`.
 - [ ] No Unity console compile errors/warnings introduced by the new files.
 - [ ] `OfflineRunSimulator.Simulate` is pure (no singletons/scene/RNG) and deterministic.
-- [ ] Hands Plan 2 a stable API: `OfflineRunSimulator.Simulate(OfflineSimContext) -> OfflineRunResult`, `OfflineTax.Payout(int)`, `TimeFormat.Hms(float)`, and the `SimCrop`/`SimZone` mapping contract.
+- [ ] Hands Plan 2 a stable API: `OfflineRunSimulator.Simulate(OfflineSimContext) -> OfflineRunResult`, `OfflineTax.Payout(int gross, float offlineEfficiencyBonus = 0)`, `TimeFormat.Hms(float)`, and the `SimCrop`/`SimZone` mapping contract.
 
 ## Notes for Plan 2 (not implemented here)
 
@@ -757,5 +773,36 @@ git commit -m "feat(economy): 30% offline tax payout helper"
   `FarmGrid` tile counts.
 - Resolve mitigation fractions from `EquipmentManager` (fence/scarecrow/sprinkler/dog ownership) +
   `ResearchManager` bonuses.
-- Apply `OfflineTax.Payout` to `result.coinsBanked` and `result.finalMoney`; grant `compostGained` untaxed.
+- Apply `OfflineTax.Payout(gross, offlineEfficiencyBonus)` to `result.coinsBanked` and `result.finalMoney`,
+  passing `ResearchManager.GetBonus(StatKey.OfflineEfficiency)`; grant `compostGained` untaxed.
 - Map `harvestedByCropId` back to `CropData` for display via the crop's `cropName`.
+
+### Upgrade → offline-channel mapping (Plan 2 context-builder)
+
+Every progression source must feed a channel so offline reflects the player's build. The builder reads
+live state each time it simulates (no baked copies). Source of each bonus: `ResearchManager.GetBonus(key)`
+unless noted.
+
+| Upgrade / stat | Offline channel |
+|---|---|
+| `crop_bonus_sell_amount` | bake into `SimCrop.harvestValue` (×(1+bonus)) |
+| `crop_bonus_coin_amount` | bake into `SimCrop.coinValue` (×(1+bonus)) |
+| `crop_growth_speed` | bake into `SimCrop.growSeconds` (÷(1+bonus)) |
+| `crop_hp` | bake into `SimCrop` survival → reduce dry/rot pressure (v1: small `dryLossReduction` contribution; may refine) |
+| `helper_till/plant/harvest_speed`, helper count, permanent `helper_move_speed`/`helper_task_speed` (UpgradeManager) | raise `tuning.plantsPerSecond` (live-derived throughput; NOT a static default) |
+| `helper_water_speed`, `helper_water_efficiency`, `soil_water_efficiency`, `rain_watering`, sprinkler owned + `sprinkler_power` | `ctx.dryLossReduction` |
+| fence owned + `fence_capacity`, dog owned + `dog_efficiency` | `ctx.deerLossReduction` |
+| scarecrow owned + `scarecrow_capacity` | `ctx.crowLossReduction` |
+| `storm_damage_reduction` | `ctx.lightningLossReduction` |
+| `seed_bag_discount` | `ctx.seedBagDiscount` |
+| `seed_bag_size` | `ctx.seedBagSizeBonus` |
+| `game_speed` | `ctx.maxGameSpeed` = 1 + bonus (advances farm time offline) |
+| `offline_efficiency` | passed to `OfflineTax.Payout` (reduces the 30% tax) |
+| `offline_cap` | **clamp** `ctx.awaySeconds` to the cap (max away-time that counts) before simulating |
+| `offline_progress` (FeatureFlag) | **gate**: if not unlocked, skip the simulator entirely (no offline run progress) |
+| `cow_passive_compost`, `cow_run_yield` | already handled by `AnimalManager` offline catch-up — keep separate, fold its compost into the welcome-back total |
+
+> Avoid double-counting: helper move-speed contributes only to `plantsPerSecond` (throughput), not a
+> separate output term. Threat *count/hunger* changes come from the live-mirrored tuning, while
+> *mitigation* (fence/scarecrow/etc.) comes from the `ctx.*LossReduction` fields — they multiply, they
+> don't overlap.
