@@ -287,6 +287,24 @@ public class ThreatWaveManager : MonoBehaviour
     public int CurrentWave     => GetCurrentWave();
     public float CurrentHunger => baseHunger * GetHungerMultiplier(GetCurrentWave());
 
+    /// <summary>Snapshot of the serialized wave-formula fields, for the offline simulator.</summary>
+    public struct OfflineWaveConfig
+    {
+        public float waveIntervalSeconds;
+        public int deerStartWave, deerCountInterval, maxDeer;
+        public int crowStartWave, crowCountInterval, maxCrows;
+        public float baseHunger, crowBaseHunger, hungerScalePerWave;
+    }
+
+    /// <summary>Live wave config so the offline sim mirrors inspector tuning (single source of truth).</summary>
+    public OfflineWaveConfig GetOfflineWaveConfig() => new OfflineWaveConfig
+    {
+        waveIntervalSeconds = waveIntervalSeconds,
+        deerStartWave = deerStartWave, deerCountInterval = deerCountInterval, maxDeer = maxDeer,
+        crowStartWave = crowStartWave, crowCountInterval = crowCountInterval, maxCrows = maxCrows,
+        baseHunger = baseHunger, crowBaseHunger = crowBaseHunger, hungerScalePerWave = hungerScalePerWave
+    };
+
     /// <summary>
     /// Find the nearest active threat of a given type to a world position.
     /// Used by FarmDog to locate deer to chase.
