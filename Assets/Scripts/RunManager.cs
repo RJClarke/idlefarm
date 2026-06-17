@@ -272,6 +272,35 @@ public class RunManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Finalize a run that went bankrupt while the player was away. The run was never resumed
+    /// (isRunActive stays false); we just record the survived/real time for the stats screen, update
+    /// the best-run record, fire OnRunEnded, and show the stats popup. Coins/compost are granted by the
+    /// caller (OfflineProgressManager) from the taxed simulator result; RunStats is pre-populated there.
+    /// </summary>
+    public void FinalizeOfflineBankruptcy(int survivedSeconds, int realSeconds)
+    {
+        isRunActive = false;
+        runStartUtcTicks = 0;
+        currentRunDuration = 0f;
+        Time.timeScale = 1f;
+
+        int prevBest = PlayerPrefs.GetInt("best_run_seconds", 0);
+        LastRunWasRecord = survivedSeconds > prevBest;
+        if (survivedSeconds > prevBest)
+        {
+            PlayerPrefs.SetInt("best_run_seconds", survivedSeconds);
+            PlayerPrefs.Save();
+        }
+        LastRunSurvivedSeconds = survivedSeconds;
+        LastRunRealSeconds = realSeconds;
+        LastRunEndedBankrupt = true;
+
+        OnRunEnded?.Invoke();
+
+        Debug.Log($"=== OFFLINE RUN ENDED (bankrupt) — survived {FormatTime(survivedSeconds)} ===");
+    }
+
+    /// <summary>
     /// Calculate how many coins the player earned this run
     /// </summary>
     private int CalculateRunRewards()
