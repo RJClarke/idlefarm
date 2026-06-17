@@ -132,7 +132,10 @@ public class OfflineProgressManager : MonoBehaviour
             if (RunManager.Instance != null) RunManager.Instance.FinalizeOfflineBankruptcy(survived, real);
 
             Debug.Log($"[Offline] Run ENDED bankrupt at {survived}s; +{outcome.taxedCoins} coins, +{outcome.compostGranted} compost.");
-            if (RunStatsPopup.Instance != null) RunStatsPopup.Instance.Show();
+            var ledger = RunLedgerData.FromOffline(outcome, gap);
+            if (OfflineProgressModalUITK.Instance != null)
+                OfflineProgressModalUITK.Instance.OpenEnded(gap, ledger,
+                    onNewRun: () => { if (SeedSelectionPopup.Instance != null) SeedSelectionPopup.Instance.Show(); });
         }
         else
         {
@@ -146,8 +149,11 @@ public class OfflineProgressManager : MonoBehaviour
             if (RunManager.Instance != null) RunManager.Instance.OverrideRunProgress(outcome.result.finalFarmSeconds);
 
             Debug.Log($"[Offline] Run CONTINUES at {outcome.result.finalFarmSeconds:F0}s; +{outcome.taxedCoins} coins, resume $ {outcome.taxedResumeMoney}, +{outcome.compostGranted} compost.");
+            var ledger = RunLedgerData.FromOffline(outcome, gap);
+            string farmAdvanced = TimeFormat.Hms(outcome.result.finalFarmSeconds - pendingRunFarmSeconds);
+            string nowHms = TimeFormat.Hms(outcome.result.finalFarmSeconds);
             if (OfflineProgressModalUITK.Instance != null)
-                OfflineProgressModalUITK.Instance.Open(gap, cowCompost + outcome.compostGranted, researchReport);
+                OfflineProgressModalUITK.Instance.OpenContinue(gap, ledger, farmAdvanced, nowHms, onContinue: null);
         }
     }
 }
