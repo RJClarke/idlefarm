@@ -356,7 +356,7 @@ public class Plant : MonoBehaviour
     /// Apply damage from an animal threat (crow, deer) or weather effect (lightning, wind).
     /// Stage multipliers are applied by the caller before this is invoked.
     /// </summary>
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, string cause = "threat/weather damage")
     {
         if (damage <= 0f) return;
 
@@ -364,7 +364,7 @@ public class Plant : MonoBehaviour
         currentHP  = Mathf.Max(currentHP, 0f);
 
         if (currentHP <= 0f)
-            Die("threat/weather damage");
+            Die(cause);
     }
 
     /// <summary>
@@ -411,6 +411,9 @@ public class Plant : MonoBehaviour
         {
             if (cause == "dry-out") RunStats.Instance.AddPlantDehydrated();
             else if (cause == "rot") RunStats.Instance.AddCropDecayed();
+            else if (cause == "deer") RunStats.Instance.AddPlantEatenByDeer();
+            else if (cause == "crow") RunStats.Instance.AddPlantEatenByCrow();
+            else if (cause == "lightning") RunStats.Instance.AddPlantStruckByLightning();
         }
 
         if (parentTile != null && cropData != null)

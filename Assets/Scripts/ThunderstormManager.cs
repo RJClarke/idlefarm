@@ -341,7 +341,7 @@ public class ThunderstormManager : MonoBehaviour
 
             if (plant != null)
             {
-                plant.TakeDamage(damage);
+                plant.TakeDamage(damage, "lightning");
                 Debug.Log($"[Lightning] ⚡ Strike on {plant.CropData?.cropName} ({plant.CurrentStage}) — {damage:F0} HP!");
             }
         }

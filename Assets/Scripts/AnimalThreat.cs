@@ -203,16 +203,9 @@ public abstract class AnimalThreat : MonoBehaviour
             if (damage <= 0f) yield break;
 
             float hpBefore        = plant.CurrentHP;
-            plant.TakeDamage(damage);
-
-            // Track plant kills by threat type
-            if ((plant == null || !plant.gameObject.activeInHierarchy) && RunStats.Instance != null)
-            {
-                if (data.threatType == AnimalThreatType.Deer)
-                    RunStats.Instance.AddPlantEatenByDeer();
-                else if (data.threatType == AnimalThreatType.Crow)
-                    RunStats.Instance.AddPlantEatenByCrow();
-            }
+            // Pass the cause so Plant.Die attributes the kill robustly (the old post-bite
+            // activeInHierarchy check missed kills because Destroy() is deferred to end-of-frame).
+            plant.TakeDamage(damage, data.threatType == AnimalThreatType.Deer ? "deer" : "crow");
 
             float hpAfter         = plant != null ? plant.CurrentHP : 0f;
             float hungerSatisfied = hpBefore - hpAfter;
