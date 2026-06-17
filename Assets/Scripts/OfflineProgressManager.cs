@@ -12,7 +12,7 @@ public class OfflineProgressManager : MonoBehaviour
     public static OfflineProgressManager Instance { get; private set; }
 
     /// <summary>Skip the modal for gaps shorter than this (quick app-switch / lockscreen).</summary>
-    public const double MinGapMinutes = 5.0;
+    public const double MinGapMinutes = 1.0;
 
     private static long pendingLastSeenUtcTicks;
     private static bool pendingFlag;

@@ -38,7 +38,10 @@ public class ResearchManager : MonoBehaviour
 
     private readonly bool[] slotUnlocked = new bool[SlotCount];
     private readonly ResearchSlotState[] slots = new ResearchSlotState[SlotCount];
-    private readonly HashSet<string> featureFlags = new HashSet<string>();
+    // offline_progress is unlocked by default (the 30% offline tax already makes being away
+    // suboptimal, so we don't also gate the feature behind research). The flag is kept so it
+    // can still be designed around later. Seeded here for new games; re-added after load-clear.
+    private readonly HashSet<string> featureFlags = new HashSet<string> { Research.FeatureFlag.OfflineProgress };
 
     // researchID -> ResearchData
     private readonly Dictionary<string, ResearchData> catalog = new Dictionary<string, ResearchData>();
@@ -207,8 +210,9 @@ public class ResearchManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Buy a Compost boost token for an active research slot. Multiplier replaces any
-    /// active boost (tokens are not stackable). durationSecs is the boost window starting NOW.
+    /// Buy a Compost boost token for an active research slot. Refuses to purchase
+    /// while a boost is still active — buying again would discard the unspent time
+    /// and waste compost. durationSecs is the boost window starting NOW.
     /// </summary>
     public bool TryApplyBoost(int slotIndex, float multiplier, float durationSecs, int compostCost)
     {
@@ -216,6 +220,7 @@ public class ResearchManager : MonoBehaviour
         var s = slots[slotIndex];
         if (s.IsIdle) return false;
         if (multiplier <= 1.0f || durationSecs <= 0f) return false;
+        if (s.HasActiveBoost(DateTime.UtcNow)) return false; // already boosted — don't stack/overwrite
         if (CurrencyManager.Instance == null) return false;
         if (!CurrencyManager.Instance.SpendCompost(compostCost)) return false;
 
@@ -223,6 +228,39 @@ public class ResearchManager : MonoBehaviour
         s.boostExpiresUtcTicks = DateTime.UtcNow.Ticks + (long)(durationSecs * TimeSpan.TicksPerSecond);
         OnSlotStateChanged?.Invoke(slotIndex);
         return true;
+    }
+
+    /// <summary>
+    /// Configure a slot to automatically re-purchase the given boost token whenever the
+    /// current boost expires (provided the player has enough compost at that moment).
+    /// Pass multiplier=0 / cost=0 to clear.
+    /// </summary>
+    public void SetAutoBuyBoost(int slotIndex, float multiplier, float durationSecs, int compostCost)
+    {
+        if (!IsValidSlot(slotIndex)) return;
+        var s = slots[slotIndex];
+        s.autoBuyMultiplier   = multiplier;
+        s.autoBuyDurationSecs = durationSecs;
+        s.autoBuyCost         = compostCost;
+        OnSlotStateChanged?.Invoke(slotIndex);
+    }
+
+    /// <summary>
+    /// Best-effort auto-buy. Called by Tick when an active boost expires and the slot
+    /// has an auto-buy token configured. Silently no-ops if compost is insufficient.
+    /// </summary>
+    private void TryAutoBuyOnExpiry(int slotIndex)
+    {
+        var s = slots[slotIndex];
+        if (s == null || s.IsIdle || !s.HasAutoBuy) return;
+        if (s.HasActiveBoost(DateTime.UtcNow)) return; // shouldn't happen — caller guards
+        if (CurrencyManager.Instance == null) return;
+        if (CurrencyManager.Instance.Compost < s.autoBuyCost) return;
+        if (!CurrencyManager.Instance.SpendCompost(s.autoBuyCost)) return;
+
+        s.boostMultiplier = s.autoBuyMultiplier;
+        s.boostExpiresUtcTicks = DateTime.UtcNow.Ticks + (long)(s.autoBuyDurationSecs * TimeSpan.TicksPerSecond);
+        OnSlotStateChanged?.Invoke(slotIndex);
     }
 
     public int GetCurrentLevel(string researchID)
@@ -267,12 +305,17 @@ public class ResearchManager : MonoBehaviour
     public void Tick()
     {
         long nowTicks = DateTime.UtcNow.Ticks;
+        DateTime nowUtc = DateTime.UtcNow;
         for (int i = 0; i < SlotCount; i++)
         {
             var s = slots[i];
             if (s.IsIdle) continue;
             var rd = GetResearch(s.activeResearchID);
             if (rd == null) { CancelResearch(i); continue; }
+
+            // Auto-buy boost when expired (retries each tick until compost is available)
+            if (s.HasAutoBuy && !s.HasActiveBoost(nowUtc))
+                TryAutoBuyOnExpiry(i);
 
             int safety = 0;
             while (safety++ < 100)
@@ -446,6 +489,7 @@ public class ResearchManager : MonoBehaviour
         if (savedSlots != null) for (int i = 0; i < Math.Min(savedSlots.Length, SlotCount); i++) slots[i] = DeepCopy(savedSlots[i]);
         featureFlags.Clear();
         if (flags != null) foreach (var f in flags) if (!string.IsNullOrEmpty(f)) featureFlags.Add(f);
+        featureFlags.Add(Research.FeatureFlag.OfflineProgress); // unlocked by default (see field init)
 
         levelsByResearchID.Clear();
         partialSecsByResearchID.Clear();
@@ -456,6 +500,97 @@ public class ResearchManager : MonoBehaviour
                 if (e.level > 0) levelsByResearchID[e.researchID] = e.level;
                 if (e.partialSecs > 0f) partialSecsByResearchID[e.researchID] = e.partialSecs;
             }
+
+        // Snapshot levels before catch-up so the welcome-back modal can show deltas.
+        int[] levelsBefore = new int[SlotCount];
+        string[] researchBefore = new string[SlotCount];
+        for (int i = 0; i < SlotCount; i++)
+        {
+            researchBefore[i] = slots[i] != null ? slots[i].activeResearchID : "";
+            levelsBefore[i]   = (slots[i] != null && !string.IsNullOrEmpty(slots[i].activeResearchID))
+                ? GetCurrentLevel(slots[i].activeResearchID)
+                : 0;
+        }
+
+        // Offline auto-buy catch-up: simulate the boost renewals that would have fired during
+        // the offline window. Pretty close, not exact — we assume Cow ran the whole time so the
+        // current compost balance (already topped up elsewhere) is the budget, and credit each
+        // affordable renewal as a single boosted window.
+        ApplyOfflineAutoBuyRenewals(levelsBefore, researchBefore);
+    }
+
+    /// <summary>Result of the most recent offline catch-up. Populated by LoadState.</summary>
+    public OfflineCatchUpReport LastOfflineReport { get; private set; }
+
+    public class OfflineCatchUpReport
+    {
+        public int compostSpentOnAutoBuy;
+        public int totalAutoBuyRenewals;
+        public SlotProgress[] slots = new SlotProgress[SlotCount];
+    }
+
+    public class SlotProgress
+    {
+        public int slotIndex;
+        public string researchID = "";
+        public string displayName = "";
+        public int levelBefore;
+        public int levelAfter;
+        public int autoBuyRenewals;
+    }
+
+    private void ApplyOfflineAutoBuyRenewals(int[] levelsBefore, string[] researchBefore)
+    {
+        var report = new OfflineCatchUpReport();
+        long nowTicks = DateTime.UtcNow.Ticks;
+        DateTime nowUtc = DateTime.UtcNow;
+
+        for (int i = 0; i < SlotCount; i++)
+        {
+            var slotReport = new SlotProgress { slotIndex = i };
+            report.slots[i] = slotReport;
+
+            var s = slots[i];
+            if (s == null || s.IsIdle || !s.HasAutoBuy) continue;
+            if (s.HasActiveBoost(nowUtc)) continue;
+
+            long gapTicks = nowTicks - s.boostExpiresUtcTicks;
+            if (gapTicks <= 0) continue;
+
+            double gapSecs = gapTicks / (double)TimeSpan.TicksPerSecond;
+            int maxByTime    = (int)(gapSecs / s.autoBuyDurationSecs); // floor — partial last window not credited
+            int maxByCompost = (CurrencyManager.Instance != null && s.autoBuyCost > 0)
+                ? CurrencyManager.Instance.Compost / s.autoBuyCost
+                : 0;
+            int renewals = Mathf.Min(maxByTime, maxByCompost);
+            if (renewals <= 0) continue;
+
+            int totalCost = renewals * s.autoBuyCost;
+            if (CurrencyManager.Instance == null || !CurrencyManager.Instance.SpendCompost(totalCost)) continue;
+
+            s.boostMultiplier = s.autoBuyMultiplier;
+            s.boostExpiresUtcTicks += (long)(renewals * s.autoBuyDurationSecs * TimeSpan.TicksPerSecond);
+            slotReport.autoBuyRenewals = renewals;
+            report.compostSpentOnAutoBuy += totalCost;
+            report.totalAutoBuyRenewals  += renewals;
+            OnSlotStateChanged?.Invoke(i);
+        }
+
+        Tick(); // apply the extended boost windows to research progress
+
+        // Fill per-slot level deltas (after Tick, so level-ups are reflected)
+        for (int i = 0; i < SlotCount; i++)
+        {
+            var slotReport = report.slots[i];
+            string rid = researchBefore[i];
+            slotReport.researchID = rid;
+            slotReport.levelBefore = levelsBefore[i];
+            slotReport.levelAfter  = string.IsNullOrEmpty(rid) ? 0 : GetCurrentLevel(rid);
+            var rd = string.IsNullOrEmpty(rid) ? null : GetResearch(rid);
+            slotReport.displayName = rd != null ? rd.displayName : "";
+        }
+
+        LastOfflineReport = report;
     }
 
     private static ResearchSlotState DeepCopy(ResearchSlotState src)
@@ -468,7 +603,10 @@ public class ResearchManager : MonoBehaviour
             currentLevel = src.currentLevel,
             startUtcTicks = src.startUtcTicks,
             boostExpiresUtcTicks = src.boostExpiresUtcTicks,
-            boostMultiplier = src.boostMultiplier <= 0 ? 1f : src.boostMultiplier
+            boostMultiplier = src.boostMultiplier <= 0 ? 1f : src.boostMultiplier,
+            autoBuyMultiplier = src.autoBuyMultiplier,
+            autoBuyDurationSecs = src.autoBuyDurationSecs,
+            autoBuyCost = src.autoBuyCost
         };
     }
 
