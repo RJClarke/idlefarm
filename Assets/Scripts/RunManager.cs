@@ -254,9 +254,9 @@ public class RunManager : MonoBehaviour
         // Notify other systems that run has ended
         OnRunEnded?.Invoke();
 
-        // Show stats popup
-        if (RunStatsPopup.Instance != null)
-            RunStatsPopup.Instance.Show();
+        // Show stats popup (UITK ledger)
+        if (RunStatsPopupUITK.Instance != null)
+            RunStatsPopupUITK.Instance.Show();
 
         // Save the game after run ends
         if (SaveManager.Instance != null)
