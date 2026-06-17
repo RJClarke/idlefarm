@@ -272,8 +272,19 @@ public class RunManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Finalize a run that went bankrupt while the player was away. The run was never resumed
-    /// (isRunActive stays false); we just record the survived/real time for the stats screen, update
+    /// Override the active run's Total (Farm) time. Used by the offline gate to apply the simulated
+    /// away-period result on top of the plain resume SaveManager already did at load. No-op if no run.
+    /// </summary>
+    public void OverrideRunProgress(float farmSeconds)
+    {
+        if (!isRunActive) return;
+        currentRunDuration = Mathf.Max(0f, farmSeconds);
+    }
+
+    /// <summary>
+    /// Finalize a run that went bankrupt while the player was away. May be called on an already-resumed
+    /// run (SaveManager resumes at load, then the gate decides) — it force-ends regardless. We record the
+    /// survived/real time for the stats screen, update
     /// the best-run record, fire OnRunEnded, and show the stats popup. Coins/compost are granted by the
     /// caller (OfflineProgressManager) from the taxed simulator result; RunStats is pre-populated there.
     /// </summary>

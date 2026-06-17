@@ -217,8 +217,10 @@ public class SaveManager : MonoBehaviour
                         UpgradeManager.Instance.LoadTemporaryLevels(data.temporaryUpgradeLevels);
                 }
 
-                // Hand the offline anchor to the welcome-back system. Catch-ups inside the
-                // managers above have already run; OfflineProgressManager reads their reports.
+                // Hand the offline anchor + active-run snapshot to the welcome-back system. The run was
+                // already resumed above (so temp-upgrade-level ordering is preserved); the gate simulates
+                // the away-period and ADJUSTS the resumed run (override farm time / force-end on bankruptcy).
+                OfflineProgressManager.SeedRunSnapshot(data.runActive, data.runTotalSeconds, data.money);
                 OfflineProgressManager.SeedLastSeen(data.lastSeenUtcTicks);
 
                 // After research/upgrade/animal state is restored so availability is accurate.

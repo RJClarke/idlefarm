@@ -36,8 +36,6 @@ public class OfflineProgressManager : MonoBehaviour
         pendingRunMoney = runMoney;
     }
 
-    private static long pendingRunStartTicksOrNow(System.DateTime lastSeen)
-        => System.DateTime.UtcNow.Ticks; // sub-threshold: negligible offline credit, anchor real start to now
 
     private void Awake()
     {
@@ -103,13 +101,10 @@ public class OfflineProgressManager : MonoBehaviour
         var outcome = OfflineRunContextBuilder.BuildAndSimulate(
             (float)gap.TotalSeconds, pendingRunFarmSeconds, pendingRunMoney);
 
-        // Sim unavailable (offline_progress locked / no zones) -> plain resume, existing modal.
+        // Sim unavailable (offline_progress locked / no zones): SaveManager already resumed the run the
+        // old way — just show the existing welcome-back modal.
         if (outcome == null)
         {
-            if (RunManager.Instance != null && !RunManager.Instance.IsRunActive)
-                RunManager.Instance.ResumeRun(
-                    DateTime.UtcNow.Ticks - (long)(gap.TotalSeconds * TimeSpan.TicksPerSecond),
-                    pendingRunFarmSeconds, 0L);
             if (OfflineProgressModalUITK.Instance != null)
                 OfflineProgressModalUITK.Instance.Open(gap, cowCompost, researchReport);
             return;
@@ -141,14 +136,14 @@ public class OfflineProgressManager : MonoBehaviour
         }
         else
         {
-            // Survived: grant taxed coins, resume at the simulated farm time with taxed money.
+            // Survived: the run is already resumed (SaveManager). Apply the simulated farm time + taxed
+            // money on top, and grant taxed coins.
             if (CurrencyManager.Instance != null)
             {
                 if (outcome.taxedCoins > 0) CurrencyManager.Instance.AddCoins(outcome.taxedCoins);
                 CurrencyManager.Instance.SetMoney(outcome.taxedResumeMoney);
             }
-            long startTicks = DateTime.UtcNow.Ticks - (long)(gap.TotalSeconds * TimeSpan.TicksPerSecond);
-            if (RunManager.Instance != null) RunManager.Instance.ResumeRun(startTicks, outcome.result.finalFarmSeconds, 0L);
+            if (RunManager.Instance != null) RunManager.Instance.OverrideRunProgress(outcome.result.finalFarmSeconds);
 
             Debug.Log($"[Offline] Run CONTINUES at {outcome.result.finalFarmSeconds:F0}s; +{outcome.taxedCoins} coins, resume $ {outcome.taxedResumeMoney}, +{outcome.compostGranted} compost.");
             if (OfflineProgressModalUITK.Instance != null)
