@@ -114,6 +114,12 @@ public class DevToolsSetup : MonoBehaviour
             if (ResearchManager.Instance != null) ResearchManager.Instance.DebugFinishCurrentResearches();
         });
 
+        GameObject welcomeBackGO = CreatePillButton("TestWelcomeBackButton", "Test Welcome Back (8h)", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        welcomeBackGO.GetComponent<Button>().onClick.AddListener(OnTestWelcomeBack);
+
+        GameObject offlineSimGO = CreatePillButton("ForceOfflineSimButton", "Force Offline Sim (2h)", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        offlineSimGO.GetComponent<Button>().onClick.AddListener(OnForceOfflineSim);
+
         // Speed button at the BOTTOM — shows the currently-active speed in its label.
         GameObject speedGO = CreatePillButton("SpeedUpButton", speedLabels[speedIndex], btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         speedBtnText = speedGO.GetComponentInChildren<TextMeshProUGUI>();
@@ -233,6 +239,87 @@ public class DevToolsSetup : MonoBehaviour
         speedIndex = (speedIndex + 1) % speedOptions.Length;
         Time.timeScale = speedOptions[speedIndex] > 0f ? speedOptions[speedIndex] : BaseSpeed;
         if (speedBtnText != null) speedBtnText.text = speedLabels[speedIndex];
+    }
+
+    /// <summary>
+    /// Mimic being away for 8 hours: save now, then backdate EVERY wall-clock anchor in the
+    /// save file by 8h before reloading. The welcome-back modal needs cow + research + auto-buy
+    /// timestamps to all look stale — backdating only `lastSeenUtcTicks` made all the catch-up
+    /// math compute "0 seconds elapsed" against unchanged timestamps and report zeros.
+    /// </summary>
+    private void OnTestWelcomeBack()
+    {
+        if (SaveManager.Instance == null) { Debug.LogError("[DevTools] No SaveManager."); return; }
+
+        SaveManager.Instance.SaveGame();
+
+        string path = System.IO.Path.Combine(Application.persistentDataPath, "gamedata.json");
+        if (!System.IO.File.Exists(path)) { Debug.LogError($"[DevTools] Save file missing: {path}"); return; }
+
+        const double offsetHours = 8.0;
+        long offsetTicks = (long)(offsetHours * System.TimeSpan.TicksPerHour);
+
+        try
+        {
+            string json = System.IO.File.ReadAllText(path);
+            var data = JsonUtility.FromJson<GameData>(json);
+
+            // 1) The welcome-back gating timestamp.
+            data.lastSeenUtcTicks -= offsetTicks;
+
+            // 2) Cow's last compost tick (ISO-formatted string).
+            data.lastCompostClaimTime = ShiftIso(data.lastCompostClaimTime, -offsetHours);
+
+            // 3) Egg ready timer (also ISO).
+            data.lastEggClaimTime = ShiftIso(data.lastEggClaimTime, -offsetHours);
+
+            // 4) Research slots: shift the run anchor and any boost expiry so progress + auto-buys see real elapsed time.
+            if (data.researchSlots != null)
+            {
+                for (int i = 0; i < data.researchSlots.Length; i++)
+                {
+                    var s = data.researchSlots[i];
+                    if (s == null) continue;
+                    if (s.startUtcTicks > 0)        s.startUtcTicks        -= offsetTicks;
+                    if (s.boostExpiresUtcTicks > 0) s.boostExpiresUtcTicks -= offsetTicks;
+                }
+            }
+
+            // 5) Active run anchor: 8h of difficulty elapsed.
+            if (data.runActive && data.runStartUtcTicks > 0) data.runStartUtcTicks -= offsetTicks;
+
+            System.IO.File.WriteAllText(path, JsonUtility.ToJson(data, true));
+        }
+        catch (System.Exception e) { Debug.LogError($"[DevTools] Backdate failed: {e.Message}"); return; }
+
+        // Re-load triggers the catch-ups + seeds OfflineProgressManager.
+        SaveManager.Instance.LoadGame();
+        if (OfflineProgressManager.Instance != null) OfflineProgressManager.Instance.ForceShow();
+        Debug.Log("[DevTools] Backdated save by 8h (all anchors) and reloaded. Welcome-back modal should appear with real numbers.");
+    }
+
+    /// <summary>
+    /// Force the offline gate against the CURRENT in-memory run (no disk reload). Backdates the
+    /// last-seen by 2h and runs the simulator → resume-vs-end branch. Use mid-run to smoke-test the
+    /// offline simulation + welcome-back outcomes without saving/quitting.
+    /// </summary>
+    private void OnForceOfflineSim()
+    {
+        long twoHoursAgo = System.DateTime.UtcNow.Ticks - 2L * 3600L * System.TimeSpan.TicksPerSecond;
+        OfflineProgressManager.SeedRunSnapshot(
+            RunManager.Instance != null && RunManager.Instance.IsRunActive,
+            RunManager.Instance != null ? RunManager.Instance.CurrentRunDuration : 0f,
+            CurrencyManager.Instance != null ? CurrencyManager.Instance.Money : 0);
+        OfflineProgressManager.SeedLastSeen(twoHoursAgo);
+        if (OfflineProgressManager.Instance != null) OfflineProgressManager.Instance.ForceShow();
+        Debug.Log("[DevTools] Forced offline sim (2h) against the current in-memory run.");
+    }
+
+    private static string ShiftIso(string iso, double hours)
+    {
+        if (string.IsNullOrEmpty(iso)) return iso;
+        if (!System.DateTime.TryParse(iso, null, System.Globalization.DateTimeStyles.RoundtripKind, out var dt)) return iso;
+        return dt.AddHours(hours).ToString("o");
     }
 
     // ─────────────────────────────────────────────────────────────────────
