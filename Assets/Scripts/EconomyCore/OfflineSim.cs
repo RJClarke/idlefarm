@@ -108,4 +108,10 @@ public class OfflineSimTuning
     public float dryFractionPerSecond = 0.0008f;    // fraction of growing tiles dried per second
     public float rotFractionPerSecond = 0.02f;      // applies only to over-window tiles
     public float plantsPerSecond = 0.5f;            // farm-wide (re)planting throughput
+
+    // base loss reductions when the matching equipment is equipped (scaled by effectiveness research)
+    public float fenceDeerReduction = 0.5f;
+    public float dogDeerReduction = 0.3f;
+    public float scarecrowCrowReduction = 0.5f;
+    public float sprinklerDryReduction = 0.5f;
 }
