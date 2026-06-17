@@ -303,7 +303,7 @@ public class Plant : MonoBehaviour
             if (RunStats.Instance != null) RunStats.Instance.AddCoinsBanked(coinGain);
         }
 
-        if (RunStats.Instance != null) RunStats.Instance.AddCropHarvested();
+        if (RunStats.Instance != null) RunStats.Instance.AddCropHarvested(cropData);
 
         isInHarvestWindow = false;
         isRotting = false;

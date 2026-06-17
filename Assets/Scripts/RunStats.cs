@@ -21,6 +21,9 @@ public class RunStats : MonoBehaviour
     public int SeedsPlanted { get; private set; }
     public int PlantsWatered { get; private set; }
     public int CropsHarvested { get; private set; }
+    public int PlantsStruckByLightning { get; private set; }
+    /// <summary>Per-crop harvested counts (live + offline). Key is CropData.</summary>
+    public readonly Dictionary<CropData, int> HarvestedByCrop = new Dictionary<CropData, int>();
     public int PlantsDehydrated { get; private set; }
     public int CropsDecayed { get; private set; }
     public int PlantsEatenByDeer { get; private set; }
@@ -60,6 +63,8 @@ public class RunStats : MonoBehaviour
         SeedsPlanted = 0;
         PlantsWatered = 0;
         CropsHarvested = 0;
+        PlantsStruckByLightning = 0;
+        HarvestedByCrop.Clear();
         PlantsDehydrated = 0;
         CropsDecayed = 0;
         PlantsEatenByDeer = 0;
@@ -76,6 +81,43 @@ public class RunStats : MonoBehaviour
     public void AddSeedPlanted() { SeedsPlanted++; OnSeedPlanted?.Invoke(); }
     public void AddPlantWatered() { PlantsWatered++; OnPlantWatered?.Invoke(); }
     public void AddCropHarvested() { CropsHarvested++; OnCropHarvested?.Invoke(); }
+    public void AddCropHarvested(CropData crop)
+    {
+        CropsHarvested++;
+        if (crop != null)
+        {
+            HarvestedByCrop.TryGetValue(crop, out int n);
+            HarvestedByCrop[crop] = n + 1;
+        }
+        OnCropHarvested?.Invoke();
+    }
+    public void AddPlantStruckByLightning() => PlantsStruckByLightning++;
+
+    /// <summary>
+    /// Overwrite this run's stats from a simulated offline result (used when a run ended while away).
+    /// `harvestedByCrop` maps the simulator's crop ids back to CropData. Coins/compost are the
+    /// already-taxed grant amounts; losses/harvests are the raw simulated counts.
+    /// </summary>
+    public void IngestOfflineResult(
+        Dictionary<CropData, int> harvestedByCrop,
+        int eatenByDeer, int eatenByCrows, int struckByLightning, int driedUp, int rotted,
+        int seedsPlanted, int moneyEarned, int coinsBanked)
+    {
+        ResetStats();
+        HarvestedByCrop.Clear();
+        int totalHarvested = 0;
+        if (harvestedByCrop != null)
+            foreach (var kv in harvestedByCrop) { HarvestedByCrop[kv.Key] = kv.Value; totalHarvested += kv.Value; }
+        CropsHarvested = totalHarvested;
+        PlantsEatenByDeer = eatenByDeer;
+        PlantsEatenByCrows = eatenByCrows;
+        PlantsStruckByLightning = struckByLightning;
+        PlantsDehydrated = driedUp;
+        CropsDecayed = rotted;
+        SeedsPlanted = seedsPlanted;
+        MoneyEarned = moneyEarned;
+        CoinsBanked = coinsBanked;
+    }
     public void AddPlantDehydrated() => PlantsDehydrated++;
     public void AddCropDecayed() => CropsDecayed++;
     public void AddPlantEatenByDeer() => PlantsEatenByDeer++;
