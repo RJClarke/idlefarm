@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="RunStatsPopupUITK.uss" />
+    <ui:VisualElement name="popup-root" class="popup-root" style="display: none;">
+        <ui:VisualElement name="backdrop" class="modal-backdrop" />
+        <ui:VisualElement name="card" class="modal-card">
+            <ui:Label name="title" text="Run Over" class="modal-title" />
+            <ui:VisualElement class="hero">
+                <ui:Label text="FARM TIME · SCORE" class="hero__label" />
+                <ui:Label name="hero-score" text="0s" class="hero__score" />
+                <ui:Label name="hero-real" text="Real time played · 0s" class="hero__real" />
+            </ui:VisualElement>
+            <ui:Label name="bankrupt-banner" text="💸 Bankrupt — ran out of seed money" class="bankrupt-banner" style="display:none;" />
+            <ui:ScrollView name="ledger-scroll" class="ledger-scroll">
+                <ui:VisualElement name="ledger" class="ledger" />
+            </ui:ScrollView>
+            <ui:Button name="close-button" text="Close" class="cta cta--primary" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
