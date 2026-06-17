@@ -31,6 +31,12 @@ public class ThunderstormManager : MonoBehaviour
     [Header("Weather Configuration")]
     [SerializeField] private WeatherData weatherData;
 
+    /// <summary>Waves between storms (from WeatherData); 25 fallback if unassigned. For the offline sim.</summary>
+    public int StormWaveInterval => weatherData != null ? weatherData.stormWaveInterval : 25;
+
+    /// <summary>Seconds between lightning strikes during a storm (from WeatherData); 8 fallback. For the offline sim.</summary>
+    public float LightningStrikeInterval => weatherData != null ? weatherData.lightningStrikeInterval : 8f;
+
     [Header("Lightning Visual")]
     [Tooltip("Drag all sliced ThunderEffects sprite frames here in order.")]
     [SerializeField] private Sprite[] lightningFrames;
