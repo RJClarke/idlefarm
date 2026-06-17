@@ -17,12 +17,27 @@ public class OfflineProgressManager : MonoBehaviour
     private static long pendingLastSeenUtcTicks;
     private static bool pendingFlag;
 
+    private static bool pendingRunActive;
+    private static float pendingRunFarmSeconds;
+    private static int pendingRunMoney;
+
     /// <summary>Called by SaveManager.LoadGame with the timestamp from the save file.</summary>
     public static void SeedLastSeen(long lastSeenUtcTicks)
     {
         pendingLastSeenUtcTicks = lastSeenUtcTicks;
         pendingFlag = true;
     }
+
+    /// <summary>Called by SaveManager.LoadGame with the saved active-run snapshot (if any).</summary>
+    public static void SeedRunSnapshot(bool runActive, float runFarmSeconds, int runMoney)
+    {
+        pendingRunActive = runActive;
+        pendingRunFarmSeconds = runFarmSeconds;
+        pendingRunMoney = runMoney;
+    }
+
+    private static long pendingRunStartTicksOrNow(System.DateTime lastSeen)
+        => System.DateTime.UtcNow.Ticks; // sub-threshold: negligible offline credit, anchor real start to now
 
     private void Awake()
     {
@@ -67,16 +82,77 @@ public class OfflineProgressManager : MonoBehaviour
 
     private void ShowWithGap(TimeSpan gap)
     {
+        // Cow + research catch-up happen regardless (existing behavior).
         int cowCompost = 0;
         if (AnimalManager.Instance != null)
         {
-            cowCompost = AnimalManager.Instance.RunOfflineCompostCatchUp();              // passive trickle
-            cowCompost += AnimalManager.Instance.RunOfflineCowEatingCatchUp(gap.TotalSeconds); // grazing (continued offline run)
+            cowCompost = AnimalManager.Instance.RunOfflineCompostCatchUp();
+            cowCompost += AnimalManager.Instance.RunOfflineCowEatingCatchUp(gap.TotalSeconds);
         }
-        var researchReport = ResearchManager.Instance != null
-            ? ResearchManager.Instance.LastOfflineReport
-            : null;
-        if (OfflineProgressModalUITK.Instance != null)
-            OfflineProgressModalUITK.Instance.Open(gap, cowCompost, researchReport);
+        var researchReport = ResearchManager.Instance != null ? ResearchManager.Instance.LastOfflineReport : null;
+
+        // No active run -> existing welcome-back (cow/research only).
+        if (!pendingRunActive)
+        {
+            if (OfflineProgressModalUITK.Instance != null)
+                OfflineProgressModalUITK.Instance.Open(gap, cowCompost, researchReport);
+            return;
+        }
+
+        // Active run -> simulate the away-period.
+        var outcome = OfflineRunContextBuilder.BuildAndSimulate(
+            (float)gap.TotalSeconds, pendingRunFarmSeconds, pendingRunMoney);
+
+        // Sim unavailable (offline_progress locked / no zones) -> plain resume, existing modal.
+        if (outcome == null)
+        {
+            if (RunManager.Instance != null && !RunManager.Instance.IsRunActive)
+                RunManager.Instance.ResumeRun(
+                    DateTime.UtcNow.Ticks - (long)(gap.TotalSeconds * TimeSpan.TicksPerSecond),
+                    pendingRunFarmSeconds, 0L);
+            if (OfflineProgressModalUITK.Instance != null)
+                OfflineProgressModalUITK.Instance.Open(gap, cowCompost, researchReport);
+            return;
+        }
+
+        // Grant compost (untaxed) now, for both branches.
+        if (CurrencyManager.Instance != null && outcome.compostGranted > 0)
+            CurrencyManager.Instance.AddCompost(outcome.compostGranted);
+
+        if (outcome.result.bankrupt)
+        {
+            // Ended while away: grant taxed coins, record the run, show the existing stats popup.
+            if (CurrencyManager.Instance != null && outcome.taxedCoins > 0)
+                CurrencyManager.Instance.AddCoins(outcome.taxedCoins);
+
+            if (RunStats.Instance != null)
+                RunStats.Instance.IngestOfflineResult(
+                    outcome.harvestedByCrop,
+                    outcome.result.eatenByDeer, outcome.result.eatenByCrows, outcome.result.struckByLightning,
+                    outcome.result.driedUp, outcome.result.rotted,
+                    outcome.result.seedsPlanted, outcome.result.moneyEarned, outcome.taxedCoins);
+
+            int survived = Mathf.FloorToInt(outcome.result.finalFarmSeconds);
+            int real = Mathf.FloorToInt((float)gap.TotalSeconds);
+            if (RunManager.Instance != null) RunManager.Instance.FinalizeOfflineBankruptcy(survived, real);
+
+            Debug.Log($"[Offline] Run ENDED bankrupt at {survived}s; +{outcome.taxedCoins} coins, +{outcome.compostGranted} compost.");
+            if (RunStatsPopup.Instance != null) RunStatsPopup.Instance.Show();
+        }
+        else
+        {
+            // Survived: grant taxed coins, resume at the simulated farm time with taxed money.
+            if (CurrencyManager.Instance != null)
+            {
+                if (outcome.taxedCoins > 0) CurrencyManager.Instance.AddCoins(outcome.taxedCoins);
+                CurrencyManager.Instance.SetMoney(outcome.taxedResumeMoney);
+            }
+            long startTicks = DateTime.UtcNow.Ticks - (long)(gap.TotalSeconds * TimeSpan.TicksPerSecond);
+            if (RunManager.Instance != null) RunManager.Instance.ResumeRun(startTicks, outcome.result.finalFarmSeconds, 0L);
+
+            Debug.Log($"[Offline] Run CONTINUES at {outcome.result.finalFarmSeconds:F0}s; +{outcome.taxedCoins} coins, resume $ {outcome.taxedResumeMoney}, +{outcome.compostGranted} compost.");
+            if (OfflineProgressModalUITK.Instance != null)
+                OfflineProgressModalUITK.Instance.Open(gap, cowCompost + outcome.compostGranted, researchReport);
+        }
     }
 }
