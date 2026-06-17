@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="OfflineProgressModalUITK.uss" />
+    <ui:VisualElement name="modal-root" class="modal-root" style="display: none;">
+        <ui:VisualElement name="modal-backdrop" class="modal-backdrop" />
+        <ui:VisualElement name="modal-card" class="modal-card">
+
+            <ui:Label name="modal-title" text="Welcome Back!" class="modal-title" />
+            <ui:Label name="time-away" text="You were away for 0m" class="time-away" />
+
+            <ui:VisualElement name="outcome-hero" class="hero" style="display:none;">
+                <ui:Label name="hero-label" text="" class="hero__label" />
+                <ui:Label name="hero-headline" text="" class="hero__score" />
+                <ui:Label name="hero-sub" text="" class="hero__real" />
+            </ui:VisualElement>
+            <ui:ScrollView name="breakdown-scroll" class="ledger-scroll" style="display:none;">
+                <ui:VisualElement name="breakdown" class="ledger" />
+            </ui:ScrollView>
+
+            <ui:VisualElement name="legacy-sections">
+                <ui:VisualElement name="loading-row" class="loading-row">
+                    <ui:Label name="loading-label" text="Loading offline progress…" class="loading-label" />
+                    <ui:VisualElement class="loading-bar">
+                        <ui:VisualElement name="loading-bar-fill" class="loading-bar-fill" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:Label text="Currency" class="section-title" />
+                <ui:VisualElement class="section">
+                    <ui:VisualElement class="stat-row">
+                        <ui:Label text="🌱 Compost from cow" class="stat-row__label" />
+                        <ui:Label name="cow-compost" text="+0" class="stat-row__value stat-row__value--positive" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="stat-row">
+                        <ui:Label text="🌱 Spent on auto-buy" class="stat-row__label" />
+                        <ui:Label name="boost-spend" text="−0" class="stat-row__value stat-row__value--negative" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="stat-row stat-row--total">
+                        <ui:Label text="Net compost" class="stat-row__label" />
+                        <ui:Label name="net-compost" text="+0" class="stat-row__value" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:Label text="Research" class="section-title" />
+                <ui:VisualElement name="research-section" class="section">
+                    <!-- rows added at runtime -->
+                </ui:VisualElement>
+
+                <ui:Label name="boost-summary" text="" class="boost-summary" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="cta-stack" class="cta-stack">
+                <ui:Button name="secondary-button" text="" class="cta cta--ghost" style="display:none;" />
+                <ui:Button name="continue-button" text="Continue" class="cta cta--primary continue-button" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
