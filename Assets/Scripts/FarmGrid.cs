@@ -513,6 +513,12 @@ public class FarmGrid : MonoBehaviour
         return count > 0 ? sum / count : Vector3.zero;
     }
 
+    /// <summary>Tiles along one edge of a zone (grid is square).</summary>
+    public int TilesPerZoneEdge => tilesPerZone;
+
+    /// <summary>Total tiles in a single zone (tilesPerZone squared).</summary>
+    public int TileCountPerZone => tilesPerZone * tilesPerZone;
+
     /// <summary>
     /// Returns all zone IDs that currently have tiles (active/unlocked zones).
     /// Used by ThreatWaveManager to pick a valid zone to target each wave.
