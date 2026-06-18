@@ -5,6 +5,10 @@
         <ui:VisualElement name="backdrop" class="modal-backdrop" />
         <ui:VisualElement name="card" class="modal-card">
             <ui:Label name="title" text="Run Over" class="modal-title" />
+            <ui:VisualElement name="welcome-row" class="welcome-row" style="display:none;">
+                <ui:Label name="welcome-title" text="Welcome back 👋" class="welcome-row__title" />
+                <ui:Label name="welcome-away" text="" class="welcome-row__away" />
+            </ui:VisualElement>
             <ui:VisualElement class="hero">
                 <ui:Label text="FARM TIME · SCORE" class="hero__label" />
                 <ui:Label name="hero-score" text="0s" class="hero__score" />

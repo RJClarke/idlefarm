@@ -10,8 +10,8 @@ public class RunStatsPopupUITK : MonoBehaviour
     private TMPro.TextMeshProUGUI prevRunStatsButtonText;
 
     private UIDocument document;
-    private VisualElement root, popupRoot, ledger;
-    private Label title, heroScore, heroReal, bankruptBanner;
+    private VisualElement root, popupRoot, ledger, welcomeRow;
+    private Label title, heroScore, heroReal, bankruptBanner, welcomeAway;
     private Button closeButton;
     private bool hasStatsToShow;
 
@@ -36,6 +36,8 @@ public class RunStatsPopupUITK : MonoBehaviour
         heroScore = root.Q<Label>("hero-score");
         heroReal = root.Q<Label>("hero-real");
         bankruptBanner = root.Q<Label>("bankrupt-banner");
+        welcomeRow = root.Q<VisualElement>("welcome-row");
+        welcomeAway = root.Q<Label>("welcome-away");
         closeButton = root.Q<Button>("close-button");
         closeButton?.RegisterCallback<ClickEvent>(_ => Hide());
         root.Q<VisualElement>("backdrop")?.RegisterCallback<ClickEvent>(_ => Hide());
@@ -80,17 +82,34 @@ public class RunStatsPopupUITK : MonoBehaviour
     }
 
     /// <summary>Show the last run's stats (live or ingested-offline).</summary>
-    public void Show() => Show(RunLedgerData.FromCurrentRun());
+    public void Show() => Show(RunLedgerData.FromCurrentRun(), null);
 
-    public void Show(RunLedgerData d)
+    public void Show(RunLedgerData d) => Show(d, null);
+
+    /// <summary>
+    /// Show the run stats. When `welcomeAwayText` is non-null, this is the merged "came back AND lost the
+    /// run" view: a "Welcome back" header + away-time appears above the score, and the bankruptcy banner
+    /// is reworded to "Your run ended while away".
+    /// </summary>
+    public void Show(RunLedgerData d, string welcomeAwayText)
     {
         if (root == null) Cache();
         if (popupRoot == null) return;
 
+        bool welcome = !string.IsNullOrEmpty(welcomeAwayText);
+        if (welcomeRow != null) welcomeRow.style.display = welcome ? DisplayStyle.Flex : DisplayStyle.None;
+        if (welcome && welcomeAway != null) welcomeAway.text = welcomeAwayText;
+
         title.text = d.bankrupt ? "Run Over" : "Run Stats";
         heroScore.text = d.farmTimeHms;
         heroReal.text = "Real time played · " + d.realTimeHms;
-        bankruptBanner.style.display = d.bankrupt ? DisplayStyle.Flex : DisplayStyle.None;
+        if (bankruptBanner != null)
+        {
+            bankruptBanner.style.display = d.bankrupt ? DisplayStyle.Flex : DisplayStyle.None;
+            bankruptBanner.text = welcome
+                ? "💸 Your run ended while away — ran out of seed money"
+                : "💸 Bankrupt — ran out of seed money";
+        }
         RunStatsLedgerView.Build(ledger, d, compact: false);
 
         root.pickingMode = PickingMode.Position;

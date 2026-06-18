@@ -78,6 +78,13 @@ public class OfflineProgressManager : MonoBehaviour
         ShowWithGap(gap);
     }
 
+    private static string FormatAway(TimeSpan ts)
+    {
+        if (ts.TotalDays >= 1) return $"{(int)ts.TotalDays}d {ts.Hours}h {ts.Minutes}m";
+        if (ts.TotalHours >= 1) return $"{(int)ts.TotalHours}h {ts.Minutes}m";
+        return $"{(int)ts.TotalMinutes}m {ts.Seconds}s";
+    }
+
     private void ShowWithGap(TimeSpan gap)
     {
         // Cow + research catch-up happen regardless (existing behavior).
@@ -132,10 +139,11 @@ public class OfflineProgressManager : MonoBehaviour
             if (RunManager.Instance != null) RunManager.Instance.FinalizeOfflineBankruptcy(survived, real);
 
             Debug.Log($"[Offline] Run ENDED bankrupt at {survived}s; +{outcome.taxedCoins} coins, +{outcome.compostGranted} compost.");
+            // Came back AND lost: show ONE merged modal — the full Run Stats ledger with a "Welcome back"
+            // header — rather than stacking a separate welcome-back modal on top of the stats popup.
             var ledger = RunLedgerData.FromOffline(outcome, gap);
-            if (OfflineProgressModalUITK.Instance != null)
-                OfflineProgressModalUITK.Instance.OpenEnded(gap, ledger,
-                    onNewRun: () => { if (SeedSelectionPopup.Instance != null) SeedSelectionPopup.Instance.Show(); });
+            if (RunStatsPopupUITK.Instance != null)
+                RunStatsPopupUITK.Instance.Show(ledger, "You were away for " + FormatAway(gap));
         }
         else
         {

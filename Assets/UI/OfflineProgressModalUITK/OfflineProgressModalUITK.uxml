@@ -32,7 +32,7 @@
                         <ui:Label name="cow-compost" text="+0" class="stat-row__value stat-row__value--positive" />
                     </ui:VisualElement>
                     <ui:VisualElement class="stat-row">
-                        <ui:Label text="🌱 Spent on auto-buy" class="stat-row__label" />
+                        <ui:Label text="🌱 Auto-spent on Research" class="stat-row__label" />
                         <ui:Label name="boost-spend" text="−0" class="stat-row__value stat-row__value--negative" />
                     </ui:VisualElement>
                     <ui:VisualElement class="stat-row stat-row--total">
