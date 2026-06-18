@@ -309,6 +309,7 @@ public class ResearchManager : MonoBehaviour
         for (int i = 0; i < SlotCount; i++)
         {
             var s = slots[i];
+            if (s == null) continue; // defensive: a domain reload during play can null non-serialized slots
             if (s.IsIdle) continue;
             var rd = GetResearch(s.activeResearchID);
             if (rd == null) { CancelResearch(i); continue; }

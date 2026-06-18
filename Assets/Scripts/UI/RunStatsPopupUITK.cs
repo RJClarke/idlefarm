@@ -96,6 +96,9 @@ public class RunStatsPopupUITK : MonoBehaviour
         if (root == null) Cache();
         if (popupRoot == null) return;
 
+        // Mutual exclusion: never stack with the welcome-back modal.
+        OfflineProgressModalUITK.Instance?.HideImmediate();
+
         bool welcome = !string.IsNullOrEmpty(welcomeAwayText);
         if (welcomeRow != null) welcomeRow.style.display = welcome ? DisplayStyle.Flex : DisplayStyle.None;
         if (welcome && welcomeAway != null) welcomeAway.text = welcomeAwayText;
@@ -126,5 +129,15 @@ public class RunStatsPopupUITK : MonoBehaviour
             popupRoot.style.display = DisplayStyle.None;
             if (root != null) root.pickingMode = PickingMode.Ignore;
         }).StartingIn(260);
+    }
+
+    /// <summary>Hide instantly (no fade) — used for mutual exclusion when the other reopen modal opens.</summary>
+    public void HideImmediate()
+    {
+        if (root == null) Cache();
+        if (popupRoot == null) return;
+        popupRoot.RemoveFromClassList("open");
+        popupRoot.style.display = DisplayStyle.None;
+        if (root != null) root.pickingMode = PickingMode.Ignore;
     }
 }

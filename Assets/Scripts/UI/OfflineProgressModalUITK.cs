@@ -18,6 +18,7 @@ public class OfflineProgressModalUITK : MonoBehaviour
     private Label boostSpendLabel;
     private Label netCompostLabel;
     private VisualElement researchSection;
+    private VisualElement currencyTitle, currencySection, boostSpendRow, netCompostRow, researchTitle;
     private Label boostSummaryLabel;
     private Button continueButton;
     private VisualElement loadingBarFill;
@@ -65,6 +66,11 @@ public class OfflineProgressModalUITK : MonoBehaviour
         boostSpendLabel   = root.Q<Label>("boost-spend");
         netCompostLabel   = root.Q<Label>("net-compost");
         researchSection   = root.Q<VisualElement>("research-section");
+        currencyTitle     = root.Q<VisualElement>("currency-title");
+        currencySection   = root.Q<VisualElement>("currency-section");
+        boostSpendRow     = root.Q<VisualElement>("boost-spend-row");
+        netCompostRow     = root.Q<VisualElement>("net-compost-row");
+        researchTitle     = root.Q<VisualElement>("research-title");
         boostSummaryLabel = root.Q<Label>("boost-summary");
         continueButton    = root.Q<Button>("continue-button");
         loadingBarFill    = root.Q<VisualElement>("loading-bar-fill");
@@ -88,6 +94,11 @@ public class OfflineProgressModalUITK : MonoBehaviour
             });
         if (secondaryButton != null)
             secondaryButton.RegisterCallback<ClickEvent>(_ => onSecondary?.Invoke());
+    }
+
+    private static void SetDisplay(VisualElement el, bool visible)
+    {
+        if (el != null) el.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
     private void SetLegacySectionsVisible(bool visible)
@@ -170,14 +181,26 @@ public class OfflineProgressModalUITK : MonoBehaviour
 
     private void Reveal()
     {
+        RunStatsPopupUITK.Instance?.HideImmediate(); // mutual exclusion: never stack with the stats popup
         if (root != null) root.pickingMode = PickingMode.Position;
         if (modalRoot != null) modalRoot.style.display = DisplayStyle.Flex;
+    }
+
+    /// <summary>Hide instantly (no transition) — used for mutual exclusion when the stats popup opens.</summary>
+    public void HideImmediate()
+    {
+        if (root == null) Cache();
+        if (modalRoot == null) return;
+        modalRoot.style.display = DisplayStyle.None;
+        if (root != null) root.pickingMode = PickingMode.Ignore;
     }
 
     public void Open(TimeSpan gap, int cowCompostGain, ResearchManager.OfflineCatchUpReport report)
     {
         if (root == null) Cache();
         if (modalRoot == null) return;
+
+        RunStatsPopupUITK.Instance?.HideImmediate(); // mutual exclusion: never stack with the stats popup
 
         // Legacy (no active run) layout: cow/research sections + load animation, no outcome hero/breakdown.
         if (modalTitle != null) modalTitle.text = "Welcome Back!";
@@ -207,6 +230,18 @@ public class OfflineProgressModalUITK : MonoBehaviour
 
         BuildResearchRows(report);
         BuildBoostSummary(report);
+
+        // Section/row visibility — only surface what's relevant to this player.
+        bool hasCow = AnimalManager.Instance != null && AnimalManager.Instance.IsUnlocked("cow");
+        bool researchUnlocked = BuildingState.IsBuilt(BuildingState.GreenhouseKey);
+        bool showAutoSpend = targetBoostSpend > 0; // hide auto-spend + (now-redundant) net rows when nothing was spent
+
+        SetDisplay(currencyTitle, hasCow);
+        SetDisplay(currencySection, hasCow);
+        SetDisplay(boostSpendRow, hasCow && showAutoSpend);
+        SetDisplay(netCompostRow, hasCow && showAutoSpend);
+        SetDisplay(researchTitle, researchUnlocked);
+        SetDisplay(researchSection, researchUnlocked);
 
         if (root != null) root.pickingMode = PickingMode.Position;
         modalRoot.style.display = DisplayStyle.Flex;
