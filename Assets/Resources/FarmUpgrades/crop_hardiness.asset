@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe86e4a4a1429b7458444ea8c6074b78, type: 3}
+  m_Name: crop_hardiness
+  m_EditorClassIdentifier: IdleFarm.EconomyCore::FarmUpgradeData
+  upgradeID: crop_hardiness
+  displayName: Crop Hardiness
+  subtext: Crops take less damage from threats and weather.
+  icon: "\U0001F6E1\uFE0F"
+  section: 2
+  effectKey: crop_hardiness
+  zoneTarget: 0
+  maxLevel: 30
+  isHighCap: 0
+  baseCoinCost: 90
+  coinGrowthPerLevel: 1.12
+  coinBreakpointEvery: 25
+  coinBreakpointMultiplier: 2
+  baseMoneyCost: 5000
+  moneyGrowthPerLevel: 1.12
+  moneyBreakpointEvery: 25
+  moneyBreakpointMultiplier: 2
+  bonusPerLevel: 0.03
+  bonusUnit: '%'
