@@ -119,7 +119,7 @@
     flex-direction: row;
     margin-bottom: 10px;
 }
-.zone-row:last-child { margin-bottom: 0; }
+/* :last-child not supported in UI Toolkit USS; tolerating uniform trailing margin. */
 
 .zone-cell {
     flex-grow: 1;
@@ -128,7 +128,7 @@
     margin-right: 12px;
     height: 200px;
 }
-.zone-cell:last-child { margin-right: 0; }
+/* :last-child not supported in UI Toolkit USS; tolerating uniform trailing margin. */
 
 /* TemplateContainer wrapping the zone tile must fill the cell so the tile can
    render at the cell's full square-ish footprint. */
@@ -396,6 +396,149 @@
 .tile--cant-afford .tile-bonus,
 .tile--cant-afford .tile-footer {
     color: rgba(60, 42, 22, 0.75);
+}
+
+/* ─── Farm Upgrades: 2-column cards in simple sections ──────── */
+
+.fu-section {
+    margin-top: 8px;
+    margin-right: 18px;
+    margin-bottom: 12px;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    padding-left: 18px;
+    padding-right: 18px;
+    background-color: rgb(248, 242, 228);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-color: rgba(54, 32, 14, 0.45);
+}
+
+.fu-section-title {
+    -unity-font-style: bold;
+    font-size: 26px;
+    color: rgb(54, 32, 14);
+    margin-bottom: 10px;
+}
+
+.fu-card-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.fu-card {
+    width: 48%;
+    margin-bottom: 12px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+    flex-direction: column;
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Slot_Available_01.png?fileID=3260068808691272648&guid=d1e7240023b7a2e43a65be11eab24faf&type=3#UI_Wood_Slot_Available_01_0");
+    -unity-slice-left: 18;
+    -unity-slice-right: 18;
+    -unity-slice-top: 18;
+    -unity-slice-bottom: 18;
+    -unity-slice-scale: 1px;
+    border-top-width: 4px;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.fu-card-head {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fu-card-icon {
+    font-size: 34px;
+    -unity-text-align: middle-left;
+}
+
+.fu-card-lvl {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: rgb(255, 232, 188);
+    -unity-text-align: middle-right;
+}
+
+.fu-card-name {
+    -unity-font-style: bold;
+    font-size: 24px;
+    color: rgb(255, 240, 210);
+    margin-top: 4px;
+}
+
+.fu-card-sub {
+    font-size: 16px;
+    color: rgb(255, 236, 205);
+    white-space: normal;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.fu-card-footer {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgb(255, 240, 210);
+    -unity-text-align: middle-center;
+}
+
+/* Affordable: near-white tint + soft brown outline + dark text */
+.fu-card--buy {
+    -unity-background-image-tint-color: rgb(248, 246, 240);
+    border-color: rgb(120, 100, 78);
+}
+.fu-card--buy .fu-card-name,
+.fu-card--buy .fu-card-sub,
+.fu-card--buy .fu-card-lvl,
+.fu-card--buy .fu-card-footer {
+    color: rgb(60, 42, 22);
+}
+
+.fu-card--buy.fu-card--pressed {
+    -unity-background-image-tint-color: rgb(210, 205, 195);
+    border-color: rgb(90, 72, 52);
+}
+
+/* Unaffordable: washed out */
+.fu-card--cant-afford {
+    -unity-background-image-tint-color: rgb(190, 185, 175);
+    border-color: rgba(80, 65, 45, 0.25);
+    opacity: 0.45;
+}
+.fu-card--cant-afford .fu-card-name,
+.fu-card--cant-afford .fu-card-sub,
+.fu-card--cant-afford .fu-card-lvl,
+.fu-card--cant-afford .fu-card-footer {
+    color: rgba(60, 42, 22, 0.85);
+}
+
+/* Maxed: green tint */
+.fu-card--maxed {
+    -unity-background-image-tint-color: rgb(125, 210, 140);
+    border-color: rgb(40, 100, 50);
+}
+.fu-card--maxed .fu-card-name,
+.fu-card--maxed .fu-card-sub,
+.fu-card--maxed .fu-card-lvl,
+.fu-card--maxed .fu-card-footer {
+    color: rgb(28, 60, 30);
 }
 
 /* ─── Scrollbar ───────────────────────────────────────────── */

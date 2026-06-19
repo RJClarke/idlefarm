@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -59,6 +60,7 @@ public class FarmPopupUITK : MonoBehaviour
         if (CurrencyManager.Instance != null)
         {
             CurrencyManager.Instance.OnCoinsChanged += OnCurrencyChanged;
+            CurrencyManager.Instance.OnMoneyChanged += OnCurrencyChanged; // in-run Cash affordability
             any = true;
         }
         if (RunManager.Instance != null)
@@ -76,7 +78,10 @@ public class FarmPopupUITK : MonoBehaviour
         if (UpgradeManager.Instance != null)
             UpgradeManager.Instance.OnUpgradePurchased -= OnUpgradeChanged;
         if (CurrencyManager.Instance != null)
+        {
             CurrencyManager.Instance.OnCoinsChanged -= OnCurrencyChanged;
+            CurrencyManager.Instance.OnMoneyChanged -= OnCurrencyChanged;
+        }
         if (RunManager.Instance != null)
         {
             RunManager.Instance.OnRunStarted -= OnRunStateChanged;
@@ -152,6 +157,139 @@ public class FarmPopupUITK : MonoBehaviour
 
         SpawnZoneGrid();
         if (gridSizeUpgrade != null) SpawnGridSizeRow(gridSizeUpgrade);
+        SpawnUpgradeSections();
+    }
+
+    // ─────────────────────────────────────────────────────────────────────
+    // Farm Upgrades — 2-column card sections (Soil / Water / Crops / Land).
+    // Built in code from the Resources/FarmUpgrades catalog so no template
+    // references need wiring. Coins buy permanent levels between runs; Cash
+    // buys temporary levels during a run (from the permanent floor).
+    // ─────────────────────────────────────────────────────────────────────
+
+    private static readonly FarmUpgradeSection[] SectionOrder =
+    {
+        FarmUpgradeSection.Soil, FarmUpgradeSection.Water,
+        FarmUpgradeSection.Crops, FarmUpgradeSection.Land,
+    };
+
+    private static string SectionName(FarmUpgradeSection s)
+    {
+        switch (s)
+        {
+            case FarmUpgradeSection.Soil:  return "Soil";
+            case FarmUpgradeSection.Water: return "Water";
+            case FarmUpgradeSection.Crops: return "Crops";
+            case FarmUpgradeSection.Land:  return "Land";
+            default: return s.ToString();
+        }
+    }
+
+    private void SpawnUpgradeSections()
+    {
+        var all = FarmUpgrades.All().ToList();
+        if (all.Count == 0) return;
+
+        bool inRun = RunManager.Instance != null && RunManager.Instance.IsRunActive;
+
+        foreach (var sec in SectionOrder)
+        {
+            var items = all.Where(d => d.section == sec)
+                           .OrderBy(d => d.upgradeID, System.StringComparer.Ordinal)
+                           .ToList();
+            if (items.Count == 0) continue;
+
+            var section = new VisualElement();
+            section.AddToClassList("fu-section");
+
+            var title = new Label(SectionName(sec));
+            title.AddToClassList("fu-section-title");
+            section.Add(title);
+
+            var grid = new VisualElement();
+            grid.AddToClassList("fu-card-grid");
+            section.Add(grid);
+
+            foreach (var d in items)
+                grid.Add(BuildUpgradeCard(d, inRun));
+
+            sectionList.Add(section);
+        }
+    }
+
+    private VisualElement BuildUpgradeCard(FarmUpgradeData d, bool inRun)
+    {
+        var card = new VisualElement();
+        card.AddToClassList("fu-card");
+
+        var head = new VisualElement();
+        head.AddToClassList("fu-card-head");
+        var icon = new Label(d.icon);
+        icon.AddToClassList("fu-card-icon");
+        var lvlTag = new Label();
+        lvlTag.AddToClassList("fu-card-lvl");
+        head.Add(icon);
+        head.Add(lvlTag);
+        card.Add(head);
+
+        var nameLabel = new Label(d.displayName);
+        nameLabel.AddToClassList("fu-card-name");
+        card.Add(nameLabel);
+
+        var sub = new Label(d.subtext);
+        sub.AddToClassList("fu-card-sub");
+        card.Add(sub);
+
+        var footer = new Label();
+        footer.AddToClassList("fu-card-footer");
+        card.Add(footer);
+
+        int permLevel = SafePermLevel(d.upgradeID);
+        int curLevel = UpgradeManager.Instance != null
+            ? UpgradeManager.Instance.GetCurrentLevel(d.upgradeID)
+            : permLevel;
+        int shownLevel = inRun ? curLevel : permLevel;
+
+        bool maxed = shownLevel >= d.maxLevel;
+        if (maxed)
+        {
+            card.AddToClassList("fu-card--maxed");
+            lvlTag.text = "MAX";
+            footer.text = d.GetBonusText(shownLevel);
+            return card;
+        }
+
+        lvlTag.text = $"Lv {shownLevel}";
+
+        int nextLevel = shownLevel + 1;
+        int cost = inRun ? d.GetMoneyCostInt(nextLevel) : d.GetCoinCostInt(nextLevel);
+        bool canAfford = CurrencyManager.Instance != null &&
+            (inRun ? CurrencyManager.Instance.CanAffordMoney(cost)
+                   : CurrencyManager.Instance.CanAffordCoins(cost));
+
+        string curIcon = inRun ? "💵" : "🪙";
+        footer.text = $"{d.GetBonusText(nextLevel)}    {curIcon} {FormatCoinCost(cost)}";
+
+        card.AddToClassList(canAfford ? "fu-card--buy" : "fu-card--cant-afford");
+
+        if (canAfford)
+        {
+            string id = d.upgradeID;
+            int capturedCost = cost;
+            int capturedMax = d.maxLevel;
+            bool capturedInRun = inRun;
+            card.RegisterCallback<ClickEvent>(_ =>
+            {
+                if (UpgradeManager.Instance == null) return;
+                if (capturedInRun)
+                    UpgradeManager.Instance.PurchaseTemporaryUpgrade(id, capturedCost, capturedMax);
+                else
+                    UpgradeManager.Instance.PurchasePermanentUpgrade(id, capturedCost, capturedMax);
+            });
+            WirePressedFeedback(card, "fu-card--pressed");
+        }
+
+        return card;
     }
 
     // ─────────────────────────────────────────────────────────────────────

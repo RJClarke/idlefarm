@@ -178,11 +178,18 @@ public class UpgradeManager : MonoBehaviour
     /// <summary>
     /// Purchase temporary upgrade with Money (during run)
     /// </summary>
-    public bool PurchaseTemporaryUpgrade(string upgradeID, int moneyCost)
+    public bool PurchaseTemporaryUpgrade(string upgradeID, int moneyCost, int maxLevel = int.MaxValue)
     {
         if (RunManager.Instance == null || !RunManager.Instance.IsRunActive)
         {
             Debug.LogWarning("Cannot purchase temporary upgrades outside of a run!");
+            return false;
+        }
+
+        // Respect the track's cap — in-run Money buys can't push past maxLevel either.
+        if (GetCurrentLevel(upgradeID) >= maxLevel)
+        {
+            Debug.LogWarning($"Upgrade '{upgradeID}' already at max level ({maxLevel}); temporary purchase rejected.");
             return false;
         }
 
