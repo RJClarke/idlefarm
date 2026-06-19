@@ -49,6 +49,10 @@ public class UniversalHelper : Helper
         if (researchBonus > 0f)
             duration /= (1f + researchBonus);
 
+        // Soil Prep (farm upgrade): faster tilling specifically.
+        if (taskType == HelperTask.TaskType.Till)
+            duration /= Mathf.Max(0.01f, FarmUpgrades.SoilPrepDivisor);
+
         return duration;
     }
 

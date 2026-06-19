@@ -88,6 +88,18 @@ public class SeedInventory : MonoBehaviour
         return true;
     }
 
+    /// <summary>
+    /// Add seeds back to the current bag without charging (Seed Refund farm upgrade).
+    /// No-op outside a run / for null crops.
+    /// </summary>
+    public void RefundSeed(CropData crop, int count = 1)
+    {
+        if (crop == null || count <= 0) return;
+        if (RunManager.Instance != null && !RunManager.Instance.IsRunActive) return;
+        _seeds[crop] = SeedsRemaining(crop) + count;
+        OnSeedCountChanged?.Invoke(crop, _seeds[crop]);
+    }
+
     private bool TryBuyBag(CropData crop, Vector3 worldPos)
     {
         if (CurrencyManager.Instance == null) return false;

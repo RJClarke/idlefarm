@@ -60,6 +60,8 @@ public class Plant : MonoBehaviour
         float hpBonus = ResearchManager.Instance != null ? ResearchManager.Instance.GetBonus(Research.StatKey.CropHp) : 0f;
         currentHP = crop.maxHP * (1f + hpBonus);
         stageTimer = crop.GetStageTime(currentStage);
+        // Head Start (farm upgrade): newly planted crops begin partway into the first stage.
+        stageTimer *= (1f - FarmUpgrades.HeadStartFraction);
         isGrowing = true;
 
         currentMoisture = 100f;
@@ -122,7 +124,8 @@ public class Plant : MonoBehaviour
         float researchBonus = ResearchManager.Instance != null
             ? ResearchManager.Instance.GetBonus(Research.StatKey.CropGrowthSpeed)
             : 0f;
-        return baseSpeed * (1f + researchBonus);
+        // Growth Rate (farm upgrade) stacks multiplicatively on top of research/moisture.
+        return baseSpeed * (1f + researchBonus) * FarmUpgrades.GrowthMultiplier;
     }
 
     private void UpdateMoisture(float deltaTime)
@@ -139,14 +142,21 @@ public class Plant : MonoBehaviour
             depletionRate /= Mathf.Max(0.01f, 1f + soilBonus);
         }
 
+        // Water Retention (farm upgrade): water lasts longer still.
+        depletionRate /= Mathf.Max(0.01f, FarmUpgrades.MoistureRetentionDivisor);
+
         currentMoisture -= depletionRate * deltaTime;
-        currentMoisture = Mathf.Clamp(currentMoisture, 0f, 100f);
+        // Water Capacity (farm upgrade) raises the ceiling above 100; depletion never lifts moisture,
+        // so the upper clamp only matters alongside watering/rain, but we use it consistently.
+        currentMoisture = Mathf.Clamp(currentMoisture, 0f, FarmUpgrades.MaxMoisture);
 
         if (currentMoisture <= 0f)
         {
             dryOutTimer += deltaTime;
-            
-            if (dryOutTimer >= GameConstants.Instance.dryOutThreshold)
+
+            // Drying Grace (farm upgrade): longer grace before dry-out damage begins.
+            float dryThreshold = GameConstants.Instance.dryOutThreshold * FarmUpgrades.DryingGraceMultiplier;
+            if (dryOutTimer >= dryThreshold)
             {
                 if (!isDriedOut)
                 {
@@ -154,8 +164,9 @@ public class Plant : MonoBehaviour
                     if (visuals != null)
                         visuals.UpdateVisuals(currentStage, cropData, isDriedOut);
                 }
-                
-                currentHP -= GameConstants.Instance.dryOutDecayRate * deltaTime;
+
+                // Slow Decay (farm upgrade): slower HP loss while parched.
+                currentHP -= GameConstants.Instance.dryOutDecayRate * deltaTime / Mathf.Max(0.01f, FarmUpgrades.SlowDecayDivisor);
                 currentHP = Mathf.Max(currentHP, 0f);
                 
                 if (currentHP <= 0f)
@@ -193,7 +204,8 @@ public class Plant : MonoBehaviour
     {
         if (GameConstants.Instance == null) return;
 
-        currentHP -= GameConstants.Instance.rotDecayRate * deltaTime;
+        // Rot Resistance (farm upgrade): slower rot HP loss.
+        currentHP -= GameConstants.Instance.rotDecayRate * deltaTime / Mathf.Max(0.01f, FarmUpgrades.RotResistanceDivisor);
         currentHP = Mathf.Max(currentHP, 0f);
 
         if (currentHP <= 0f)
@@ -234,10 +246,13 @@ public class Plant : MonoBehaviour
         float waterAmount = GameConstants.Instance.manualWaterAmount;
         if (ResearchManager.Instance != null)
             waterAmount *= 1f + ResearchManager.Instance.GetBonus(Research.StatKey.HelperWaterEfficiency);
+        // Watering Power (farm upgrade): each watering adds more moisture.
+        waterAmount *= FarmUpgrades.WateringPowerMultiplier;
 
         bool wasAtMax = currentMoisture >= 100f;
         currentMoisture += waterAmount;
-        currentMoisture = Mathf.Clamp(currentMoisture, 0f, 100f);
+        // Water Capacity (farm upgrade) lets moisture exceed 100 up to the buffer ceiling.
+        currentMoisture = Mathf.Clamp(currentMoisture, 0f, FarmUpgrades.MaxMoisture);
 
         // Max Water Heals Plant HP (binary research)
         if (wasAtMax
@@ -281,6 +296,13 @@ public class Plant : MonoBehaviour
             harvestValue = Mathf.RoundToInt(harvestValue * (1f + sellBonus));
         }
 
+        // Farm upgrades: Fertilizer A × Soil Quality × Zone Level (multiplicative), plus a
+        // Bountiful Harvest crit roll that doubles the whole yield (cash AND coins) for this harvest.
+        int zone = parentTile != null ? parentTile.ZoneID : 1;
+        bool bountiful = Random.value < FarmUpgrades.BountifulChance;
+        harvestValue = Mathf.RoundToInt(harvestValue * FarmUpgrades.CashYieldMultiplier(zone));
+        if (bountiful) harvestValue *= 2;
+
         if (CurrencyManager.Instance != null)
         {
             CurrencyManager.Instance.AddMoney(harvestValue);
@@ -296,6 +318,9 @@ public class Plant : MonoBehaviour
                 float coinBonus = ResearchManager.Instance.GetBonus(Research.StatKey.CropBonusCoinAmount);
                 coinGain = Mathf.RoundToInt(coinGain * (1f + coinBonus));
             }
+            // Farm upgrades: Fertilizer B × Soil Quality × Zone Level, doubled on a Bountiful crit.
+            coinGain = Mathf.RoundToInt(coinGain * FarmUpgrades.CoinYieldMultiplier(zone));
+            if (bountiful) coinGain *= 2;
             coinGain = Mathf.Max(1, coinGain);
             CurrencyManager.Instance.AddCoins(coinGain);
             // Stagger 0.35s after the cash pop and nudge up so both numbers stay readable.
@@ -304,6 +329,13 @@ public class Plant : MonoBehaviour
         }
 
         if (RunStats.Instance != null) RunStats.Instance.AddCropHarvested(cropData);
+
+        // Seed Refund (farm upgrade): chance to hand back a seed, easing the fuel/bankruptcy pressure.
+        if (SeedInventory.Instance != null && cropData != null
+            && Random.value < FarmUpgrades.SeedRefundChance)
+        {
+            SeedInventory.Instance.RefundSeed(cropData, 1);
+        }
 
         isInHarvestWindow = false;
         isRotting = false;
@@ -360,6 +392,9 @@ public class Plant : MonoBehaviour
     {
         if (damage <= 0f) return;
 
+        // Crop Hardiness (farm upgrade): reduce incoming threat/weather damage.
+        damage /= Mathf.Max(0.01f, FarmUpgrades.HardinessDivisor);
+
         currentHP -= damage;
         currentHP  = Mathf.Max(currentHP, 0f);
 
@@ -377,7 +412,7 @@ public class Plant : MonoBehaviour
         if (amount <= 0f) return;
 
         currentMoisture += amount;
-        currentMoisture  = Mathf.Clamp(currentMoisture, 0f, 100f);
+        currentMoisture  = Mathf.Clamp(currentMoisture, 0f, FarmUpgrades.MaxMoisture);
 
         // If rain rescues a dried-out plant, recover it
         if (isDriedOut && currentMoisture > 0f)

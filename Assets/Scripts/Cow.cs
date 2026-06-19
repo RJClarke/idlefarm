@@ -17,9 +17,11 @@ public class Cow : MonoBehaviour
     [SerializeField] private int baseLumpPerEat = 15;
 
     private Coroutine loop;
+    private AnimalVisual animalVisual;
 
     private void OnEnable()
     {
+        animalVisual = GetComponent<AnimalVisual>();
         if (RunManager.Instance != null)
         {
             RunManager.Instance.OnRunStarted += BeginEatingLoop;
@@ -47,6 +49,7 @@ public class Cow : MonoBehaviour
     private void EndEatingLoop()
     {
         if (loop != null) { StopCoroutine(loop); loop = null; }
+        if (animalVisual != null) animalVisual.PauseWander = false; // ensure wander control is handed back
     }
 
     private IEnumerator EatLoop()
@@ -83,11 +86,20 @@ public class Cow : MonoBehaviour
 
     private IEnumerator WalkTo(Vector3 target)
     {
+        // Take control of movement + facing so the wander doesn't fight us and the cow faces
+        // the way it's actually walking (fixes "walking backwards" toward a crop).
+        if (animalVisual != null) animalVisual.PauseWander = true;
+
         while (Vector3.Distance(transform.position, target) > 0.05f)
         {
+            Vector3 dir = target - transform.position;
             transform.position = Vector3.MoveTowards(transform.position, target, walkSpeed * Time.deltaTime);
+            if (animalVisual != null) animalVisual.DriveMovementAnim(dir, true);
             yield return null;
         }
+
+        // Hand wander back; AnimalVisual resets to a fresh idle/wander next frame.
+        if (animalVisual != null) animalVisual.PauseWander = false;
     }
 
     /// <summary>
@@ -117,6 +129,8 @@ public class Cow : MonoBehaviour
         int lump = baseLumpPerEat;
         if (ResearchManager.Instance != null)
             lump = Mathf.RoundToInt(lump * (1f + ResearchManager.Instance.GetBonus(Research.StatKey.CowRunYield)));
+        // Compost Yield (farm upgrade) boosts compost from cow eating too.
+        lump = Mathf.RoundToInt(lump * FarmUpgrades.CompostMultiplier);
 
         CurrencyManager.Instance.AddCompost(lump);
         FloatingTextManager.ShowCompost(lump, plant.transform.position);
