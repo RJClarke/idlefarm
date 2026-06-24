@@ -112,6 +112,16 @@ public class SaveManager : MonoBehaviour
             ? NewContentTracker.Instance.GetSeenForSave()
             : new string[0];
 
+        data.farmName = NarrativeManager.Instance != null
+            ? NarrativeManager.Instance.GetFarmNameForSave()
+            : "";
+        data.firedNarrativeFlags = NarrativeManager.Instance != null
+            ? NarrativeManager.Instance.GetFiredFlagsForSave()
+            : new string[0];
+        data.inboxLetters = InboxManager.Instance != null
+            ? InboxManager.Instance.GetForSave()
+            : new InboxEntry[0];
+
         // Active-run snapshot — Money, temp upgrades, and the wall-clock start time so the
         // run can resume at the same point on the difficulty curve.
         bool runActive = RunManager.Instance != null && RunManager.Instance.IsRunActive;
@@ -226,6 +236,12 @@ public class SaveManager : MonoBehaviour
                 // After research/upgrade/animal state is restored so availability is accurate.
                 if (NewContentTracker.Instance != null)
                     NewContentTracker.Instance.LoadState(data.seenContentIds);
+
+                if (NarrativeManager.Instance != null)
+                    NarrativeManager.Instance.LoadState(data.farmName, data.firedNarrativeFlags);
+
+                if (InboxManager.Instance != null)
+                    InboxManager.Instance.LoadState(data.inboxLetters);
 
                 Debug.Log($"Game loaded! Coins: {data.coins}");
             }

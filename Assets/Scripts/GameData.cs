@@ -45,6 +45,13 @@ public class GameData
     // "equip:scarecrow". Used to drive NEW badges. Empty on a new/legacy save → tracker seeds a baseline.
     public string[] seenContentIds;
 
+    // Narrative one-shot ledger (NarrativeManager) + the player's farm/account name.
+    public string farmName;
+    public string[] firedNarrativeFlags;
+
+    // Received inbox letters (InboxManager). State only; content is looked up from the catalog by id.
+    public InboxEntry[] inboxLetters;
+
     // Active-run snapshot. If runActive=true on load, SaveManager calls RunManager.ResumeRun
     // with runStartUtcTicks and restores money + temporaryUpgradeLevels. Tactical state
     // (tiles, plants, helpers, threats) is not saved — those reset on resume.
@@ -84,6 +91,9 @@ public class GameData
         binaryFeatureFlagsSet = new string[0];
         researchLevels = new ResearchLevelEntry[0];
         seenContentIds = new string[0];
+        farmName = "";
+        firedNarrativeFlags = new string[0];
+        inboxLetters = new InboxEntry[0];
     }
 
     /// <summary>
