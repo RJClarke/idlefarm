@@ -1,0 +1,35 @@
+.inbox-root { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+.inbox-backdrop { position: absolute; top:0; left:0; right:0; bottom:0;
+    background-color: rgba(0,0,0,0.6); }
+.inbox-card { position: absolute; left: 40px; right: 40px; top: 300px; bottom: 300px;
+    background-color: rgb(248,240,222); border-radius: 24px; padding: 20px; }
+.inbox-header { flex-direction: row; align-items: center; margin-bottom: 12px; }
+.inbox-title { flex-grow: 1; font-size: 36px; -unity-font-style: bold;
+    -unity-text-align: middle-center; color: rgb(60,45,30); }
+.inbox-back, .inbox-close { width: 60px; height: 60px; font-size: 32px;
+    background-color: rgba(0,0,0,0); color: rgb(60,45,30); }
+.inbox-list { flex-grow: 1; }
+.inbox-row { flex-direction: row; align-items: center; padding: 16px;
+    background-color: rgb(255,250,238); border-radius: 14px; margin-bottom: 10px; }
+.inbox-row-unread { border-left-width: 6px; border-left-color: rgb(220,80,80); }
+.inbox-row-text { flex-grow: 1; }
+.inbox-row-sender { font-size: 22px; color: rgb(120,100,80); }
+.inbox-row-subject { font-size: 28px; color: rgb(50,40,30); -unity-font-style: bold;
+    white-space: normal; }
+.inbox-row-dot { width: 18px; height: 18px; border-radius: 9px;
+    background-color: rgb(220,80,80); }
+.inbox-detail { flex-grow: 1; }
+.inbox-sender-row { flex-direction: row; align-items: center; margin-bottom: 12px; }
+.inbox-portrait { width: 96px; height: 96px; border-radius: 48px; margin-right: 14px;
+    background-color: rgb(220,210,190); }
+.inbox-sender { font-size: 30px; -unity-font-style: bold; color: rgb(60,45,30); }
+.inbox-subject { font-size: 32px; -unity-font-style: bold; color: rgb(50,40,30);
+    margin-bottom: 10px; white-space: normal; }
+.inbox-body { font-size: 26px; color: rgb(60,50,40); white-space: normal; }
+.inbox-claim { font-size: 30px; height: 80px; margin-top: 18px; border-radius: 16px;
+    background-color: rgb(230,180,60); color: white; -unity-font-style: bold; }
+.inbox-claim:disabled { background-color: rgb(180,180,170); opacity: 0.6; }
+.inbox-cta { font-size: 30px; height: 80px; margin-top: 12px; border-radius: 16px;
+    background-color: rgb(110,160,210); color: white; -unity-font-style: bold; }
+.inbox-empty { font-size: 26px; color: rgb(120,105,90); -unity-text-align: middle-center;
+    margin-top: 40px; white-space: normal; }

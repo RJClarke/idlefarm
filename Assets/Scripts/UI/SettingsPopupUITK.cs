@@ -158,8 +158,15 @@ public class SettingsPopupUITK : MonoBehaviour
         SpawnToggleRow(rows, "Cloud Sync", "Sync save across devices (stub)",
             false, v => Debug.Log($"[Settings] Cloud sync toggled: {v}"));
 
-        SpawnButtonRow(rows, "Display Name", "Currently: Player", "Edit",
-            () => Debug.Log("[Settings] Display name editor stub"));
+        string currentName = NarrativeManager.Instance != null && !string.IsNullOrEmpty(NarrativeManager.Instance.FarmName)
+            ? NarrativeManager.Instance.FarmName
+            : "Unnamed Farm";
+        SpawnButtonRow(rows, "Farm Name", $"Currently: {currentName}", "Edit",
+            () =>
+            {
+                Close();
+                FarmNamePopupUITK.Instance?.Open(isFirstRun: false);
+            });
     }
 
     private void BuildDevSection()

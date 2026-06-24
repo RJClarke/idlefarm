@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="InboxPopupUITK.uss" />
+    <ui:VisualElement name="popup-root" class="inbox-root" style="display: none;">
+        <ui:VisualElement name="backdrop" class="inbox-backdrop" />
+        <ui:VisualElement name="card" class="inbox-card">
+            <ui:VisualElement class="inbox-header">
+                <ui:Button name="back-button" text="‹" class="inbox-back" style="display:none;" />
+                <ui:Label name="header-title" text="Mailbox" class="inbox-title" />
+                <ui:Button name="close-button" text="✕" class="inbox-close" />
+            </ui:VisualElement>
+
+            <ui:ScrollView name="list-view" class="inbox-list" />
+
+            <ui:VisualElement name="detail-view" class="inbox-detail" style="display:none;">
+                <ui:VisualElement class="inbox-sender-row">
+                    <ui:VisualElement name="portrait" class="inbox-portrait" />
+                    <ui:Label name="sender-name" class="inbox-sender" />
+                </ui:VisualElement>
+                <ui:Label name="detail-subject" class="inbox-subject" />
+                <ui:Label name="detail-body" class="inbox-body" />
+                <ui:Button name="claim-button" text="Claim" class="inbox-claim" style="display:none;" />
+                <ui:Button name="cta-button" text="Go" class="inbox-cta" style="display:none;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
