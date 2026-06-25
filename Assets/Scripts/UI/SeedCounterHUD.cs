@@ -56,9 +56,13 @@ public class SeedCounterHUD : MonoBehaviour
         if (_subscribed || SeedInventory.Instance == null || RunManager.Instance == null) return;
         SeedInventory.Instance.OnSeedCountChanged += HandleCountChanged;
         SeedInventory.Instance.OnBagPurchased += HandleBagPurchased;
-        RunManager.Instance.OnRunStarted += Clear;
+        RunManager.Instance.OnRunStarted += PopulateConfiguredCrops;
         RunManager.Instance.OnRunEnded += Clear;
         _subscribed = true;
+
+        // Catch-up: resume-on-reopen fires OnRunStarted during load, possibly before we
+        // subscribed — so if a run is already active, build the widgets now.
+        if (RunManager.Instance.IsRunActive) PopulateConfiguredCrops();
     }
 
     private void Unsubscribe()
@@ -71,7 +75,7 @@ public class SeedCounterHUD : MonoBehaviour
         }
         if (RunManager.Instance != null)
         {
-            RunManager.Instance.OnRunStarted -= Clear;
+            RunManager.Instance.OnRunStarted -= PopulateConfiguredCrops;
             RunManager.Instance.OnRunEnded -= Clear;
         }
         _subscribed = false;
@@ -81,6 +85,28 @@ public class SeedCounterHUD : MonoBehaviour
     {
         foreach (var b in _bags.Values) if (b.root != null) Destroy(b.root.gameObject);
         _bags.Clear();
+    }
+
+    private static readonly Color RedColor = new Color(0.95f, 0.25f, 0.25f);
+    private static readonly Color PriceGold = new Color(0.47f, 0.902f, 0.51f); // match cash/money green
+
+    /// <summary>
+    /// Build a persistent widget for every crop configured this run, so the player always sees
+    /// each crop's seed count + (escalating) cost for the whole run — including crops the helpers
+    /// currently can't afford (those show 0 seeds in red and a red price).
+    /// </summary>
+    private void PopulateConfiguredCrops()
+    {
+        Clear();
+        if (HelperManager.Instance == null || SeedInventory.Instance == null) return;
+        foreach (var crop in HelperManager.Instance.GetConfiguredCrops())
+        {
+            Bag bag = GetOrCreateBag(crop);
+            int remaining = SeedInventory.Instance.SeedsRemaining(crop);
+            bag.count.text = remaining.ToString();
+            bag.count.color = remaining <= 0 ? RedColor : Color.white;
+        }
+        RefreshPrices();
     }
 
     // Bag price escalates with run time, so refresh the price labels on a throttle.
@@ -93,17 +119,30 @@ public class SeedCounterHUD : MonoBehaviour
         if (_priceTimer < 0.75f) return;
         _priceTimer = 0f;
 
+        RefreshPrices();
+    }
+
+    /// <summary>Refresh each bag's price text + color: gold if the player can afford a bag, red if not.</summary>
+    private void RefreshPrices()
+    {
+        if (SeedInventory.Instance == null) return;
         foreach (var kv in _bags)
         {
-            if (kv.Value.price != null)
-                kv.Value.price.text = "$" + SeedInventory.Instance.BagCost(kv.Key);
+            if (kv.Value.price == null) continue;
+            int cost = SeedInventory.Instance.BagCost(kv.Key);
+            kv.Value.price.text = "$" + cost;
+            bool canBuy = CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordMoney(cost);
+            kv.Value.price.color = canBuy ? PriceGold : RedColor;
         }
     }
 
     private void HandleCountChanged(CropData crop, int remaining)
     {
         if (crop == null) return;
-        Bag bag = GetOrCreateBag(crop);
+        // Only refresh cards that belong to THIS run's configured crops. Never create one
+        // here — otherwise a stray seed-count event for a crop outside the current config
+        // (stale SeedInventory state) spawns a card that lingers until the next run.
+        if (!_bags.TryGetValue(crop, out var bag) || bag.root == null) return;
         bag.count.text = remaining.ToString();
         bag.count.color = remaining <= 0 ? new Color(0.95f, 0.25f, 0.25f) : Color.white;
     }
@@ -111,7 +150,7 @@ public class SeedCounterHUD : MonoBehaviour
     private void HandleBagPurchased(CropData crop, int cost)
     {
         if (crop == null) return;
-        Bag bag = GetOrCreateBag(crop);
+        if (!_bags.TryGetValue(crop, out var bag) || bag.root == null) return;
 
         // Pop the bag.
         LeanTween.cancel(bag.root.gameObject);
@@ -192,7 +231,7 @@ public class SeedCounterHUD : MonoBehaviour
         var priceGo = new GameObject("price", typeof(RectTransform));
         priceGo.transform.SetParent(root, false);
         var price = priceGo.AddComponent<TextMeshProUGUI>();
-        price.fontSize = 18;
+        price.fontSize = 24;
         price.fontStyle = FontStyles.Bold;
         price.alignment = TextAlignmentOptions.Center;
         price.raycastTarget = false;
@@ -202,8 +241,8 @@ public class SeedCounterHUD : MonoBehaviour
         prt.anchorMin = new Vector2(0f, 0f);
         prt.anchorMax = new Vector2(1f, 0f);
         prt.pivot = new Vector2(0.5f, 0f);
-        prt.sizeDelta = new Vector2(0f, 24f);
-        prt.anchoredPosition = new Vector2(0f, 6f);
+        prt.sizeDelta = new Vector2(0f, 30f);
+        prt.anchoredPosition = new Vector2(0f, 4f);
 
         var bag = new Bag { root = root, count = count, price = price };
         _bags[crop] = bag;
