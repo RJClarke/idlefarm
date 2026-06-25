@@ -30,17 +30,17 @@ public class WeatherData : ScriptableObject
 
     [Header("Storm Duration")]
     [Tooltip("Base duration of the WIND phase (seconds). Wind is the outermost layer.")]
-    [Range(10f, 300f)]
+    [Range(10f, 1500f)]
     public float baseWindDuration = 60f;
 
     [Tooltip("How many seconds after Wind starts that Rain begins. " +
              "Rain ends the same amount of time before Wind ends.")]
-    [Range(0f, 60f)]
+    [Range(0f, 600f)]
     public float rainLeadOffset = 15f;
 
     [Tooltip("How many seconds after Rain starts that Lightning begins. " +
              "Lightning ends the same amount of time before Rain ends.")]
-    [Range(0f, 40f)]
+    [Range(0f, 400f)]
     public float lightningLeadOffset = 10f;
 
     [Tooltip("Random jitter (±seconds) applied to Rain and Lightning start/end times each storm. " +
@@ -111,6 +111,11 @@ public class WeatherData : ScriptableObject
              "0.5 = one extra strike every 2 storms.")]
     [Range(0f, 3f)]
     public float lightningStrikeScalePerStorm = 0.5f;
+
+    [Tooltip("Scales the FIRST storm's lightning-phase duration (and thus strike count) down, " +
+             "so the intro storm is gentle. 0.5 = half as much lightning as it would otherwise have.")]
+    [Range(0.1f, 1f)]
+    public float firstStormLightningScale = 0.5f;
 
     [Tooltip("Damage multiplier applied to lightning damage per storm number. " +
              "0.05 = +5% per storm.")]

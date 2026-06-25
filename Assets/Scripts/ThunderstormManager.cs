@@ -69,6 +69,12 @@ public class ThunderstormManager : MonoBehaviour
     private Coroutine stormCoroutine;
     private Coroutine monitorCoroutine;
 
+    // Track in-flight lightning visuals so they can be force-cleared. StopAllCoroutines()
+    // (run end / new run / weather toggle) kills LightningFlash mid-animation before its
+    // Destroy(bolt) + tile-color restore runs, leaving a frozen bolt on screen.
+    private readonly List<GameObject> activeBolts = new List<GameObject>();
+    private readonly Dictionary<SpriteRenderer, Color> flashedTiles = new Dictionary<SpriteRenderer, Color>();
+
     // ─────────────────────────────────────────────────────────────────────
     // Unity
     // ─────────────────────────────────────────────────────────────────────
@@ -113,6 +119,7 @@ public class ThunderstormManager : MonoBehaviour
         stormActive        = false;
 
         StopAllCoroutines();
+        ClearLightningVisuals();
 
         if (RainOverlayUI.Instance != null)
         {
@@ -174,6 +181,10 @@ public class ThunderstormManager : MonoBehaviour
 
         float rainDuration      = Mathf.Max(5f, windDuration - (rainOffset * 2f));
         float lightningDuration = Mathf.Max(3f, rainDuration  - (lightningOffset * 2f));
+
+        // First storm is a gentle intro: shrink the lightning phase (→ fewer, less frequent strikes).
+        if (stormNumber <= 1)
+            lightningDuration = Mathf.Max(3f, lightningDuration * weatherData.firstStormLightningScale);
 
         Coroutine windCo      = StartCoroutine(WindPhase(windDuration, stormNumber));
         Coroutine rainCo      = StartCoroutine(DelayedRainPhase(rainOffset, rainDuration, stormNumber));
@@ -371,6 +382,11 @@ public class ThunderstormManager : MonoBehaviour
         SpriteRenderer sr = bolt.AddComponent<SpriteRenderer>();
         sr.sortingOrder = lightningSortingOrder;
 
+        // Register for force-cleanup in case a coroutine stop interrupts us mid-animation.
+        activeBolts.Add(bolt);
+        if (tileSR != null && !flashedTiles.ContainsKey(tileSR))
+            flashedTiles[tileSR] = originalColor;
+
         if (lightningFrames != null && lightningFrames.Length > 0)
         {
             // ── Real sprite animation ─────────────────────────────────────
@@ -454,8 +470,12 @@ public class ThunderstormManager : MonoBehaviour
 
         // Restore tile color exactly and clean up
         if (tileSR != null)
+        {
             tileSR.color = originalColor;
+            flashedTiles.Remove(tileSR);
+        }
 
+        activeBolts.Remove(bolt);
         Destroy(bolt);
     }
 
@@ -479,8 +499,22 @@ public class ThunderstormManager : MonoBehaviour
         rainActive      = false;
         lightningActive = false;
 
+        ClearLightningVisuals();
+
         if (RainOverlayUI.Instance != null)
             RainOverlayUI.Instance.ForceHide();
+    }
+
+    /// <summary>Destroy any frozen lightning bolts and restore any tiles still mid-flash.</summary>
+    private void ClearLightningVisuals()
+    {
+        foreach (GameObject b in activeBolts)
+            if (b != null) Destroy(b);
+        activeBolts.Clear();
+
+        foreach (var kv in flashedTiles)
+            if (kv.Key != null) kv.Key.color = kv.Value;
+        flashedTiles.Clear();
     }
 
     // ─────────────────────────────────────────────────────────────────────
