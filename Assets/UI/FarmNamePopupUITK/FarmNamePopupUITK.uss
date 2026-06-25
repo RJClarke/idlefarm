@@ -12,9 +12,9 @@
 }
 
 .fnp-frame {
-    width: 70%;
-    max-width: 620px;
-    min-width: 320px;
+    width: 74%;
+    max-width: 680px;
+    min-width: 360px;
     background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Frame_Standard_02.png");
     -unity-slice-left: 60;
     -unity-slice-right: 60;
@@ -23,15 +23,20 @@
     -unity-slice-scale: 1px;
 }
 
+/* Generous breathing room inside the wood frame (clears the carved border + air). */
 .fnp-inner {
-    padding: 64px 56px 56px 56px;
+    padding-top: 104px;
+    padding-bottom: 92px;
+    padding-left: 92px;
+    padding-right: 92px;
 }
 
 .fnp-title {
-    font-size: 36px;
-    -unity-font-style: bold;
+    font-size: 46px;
     color: rgb(95, 70, 38);
     -unity-text-align: middle-left;
+    -unity-font-definition: url("project://database/Assets/TextMesh Pro/Examples & Extras/Fonts/Bangers.ttf");
+    letter-spacing: 1px;
     white-space: normal;
 }
 
@@ -39,8 +44,8 @@
     font-size: 20px;
     color: rgb(120, 105, 90);
     -unity-text-align: middle-left;
-    margin-top: 4px;
-    margin-bottom: 18px;
+    margin-top: 6px;
+    margin-bottom: 22px;
 }
 
 .fnp-field-row {
@@ -50,15 +55,35 @@
 
 .fnp-field {
     flex-grow: 1;
-    font-size: 30px;
-    height: 76px;
+    height: 84px;
+}
+
+/* Style the inner input element with the wood text-field sprite. */
+.fnp-field .unity-base-text-field__input {
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Textfield_01.png");
+    -unity-slice-left: 6;
+    -unity-slice-right: 6;
+    -unity-slice-top: 6;
+    -unity-slice-bottom: 6;
+    -unity-slice-scale: 2px;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding-left: 22px;
+    padding-right: 22px;
+    color: rgb(70, 50, 30);
+    font-size: 34px;
+    -unity-font-definition: url("project://database/Assets/TextMesh Pro/Examples & Extras/Fonts/Bangers.ttf");
+    letter-spacing: 1px;
 }
 
 .fnp-error {
     font-size: 20px;
-    color: rgb(200, 60, 60);
+    color: rgb(180, 50, 50);
     -unity-text-align: middle-left;
-    margin-top: 8px;
+    margin-top: 12px;
     min-height: 24px;
 }
 
@@ -66,14 +91,14 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 14px;
+    margin-top: 24px;
 }
 
 .fnp-dice {
-    width: 76px;
-    height: 76px;
-    font-size: 34px;
-    margin-right: 14px;
+    width: 84px;
+    height: 84px;
+    font-size: 38px;
+    margin-right: 16px;
     border-radius: 14px;
     background-color: rgb(214, 198, 168);
     color: rgb(95, 70, 38);
@@ -84,13 +109,14 @@
 }
 
 .fnp-save {
-    width: 200px;
-    height: 76px;
-    font-size: 30px;
+    width: 220px;
+    height: 84px;
+    font-size: 34px;
     border-radius: 14px;
     background-color: rgb(120, 180, 90);
     color: white;
-    -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/TextMesh Pro/Examples & Extras/Fonts/Bangers.ttf");
+    letter-spacing: 1px;
 }
 
 .fnp-save:disabled {

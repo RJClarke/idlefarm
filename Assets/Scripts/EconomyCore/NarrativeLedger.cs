@@ -18,6 +18,14 @@ public class NarrativeLedger
         return fired.Add(id);
     }
 
+    /// <summary>Removes a flag so its beat can fire again. Returns true iff it was present.
+    /// Intended for dev/testing (e.g. re-showing the first-run naming flow).</summary>
+    public bool Clear(string id)
+    {
+        if (string.IsNullOrEmpty(id)) return false;
+        return fired.Remove(id);
+    }
+
     public void Load(IEnumerable<string> ids)
     {
         fired.Clear();

@@ -161,7 +161,7 @@ public class SettingsPopupUITK : MonoBehaviour
         string currentName = NarrativeManager.Instance != null && !string.IsNullOrEmpty(NarrativeManager.Instance.FarmName)
             ? NarrativeManager.Instance.FarmName
             : "Unnamed Farm";
-        SpawnButtonRow(rows, "Farm Name", $"Currently: {currentName}", "Edit",
+        SpawnButtonRow(rows, "Farm Name", $"Currently: {currentName}", "Change farm name",
             () =>
             {
                 Close();
@@ -197,6 +197,14 @@ public class SettingsPopupUITK : MonoBehaviour
 
         SpawnToggleRow(rows, "Show FPS", "Display FPS counter overlay (stub)",
             SettingsManager.ShowFps, v => SettingsManager.ShowFps = v);
+
+        SpawnButtonRow(rows, "Re-show Farm Naming", "Clears the one-shot flag & reopens the first-run popup", "Re-trigger",
+            () =>
+            {
+                NarrativeManager.Instance?.ClearFired("onboarding_named");
+                Close();
+                FarmNamePopupUITK.Instance?.Open(isFirstRun: true);
+            });
 
         SpawnButtonRow(rows, "Reset Save", "⚠ Deletes save & reloads scene", "Reset",
             () =>

@@ -33,6 +33,12 @@ public class NarrativeManager : MonoBehaviour
         return isNew;
     }
 
+    /// <summary>Dev/testing: clear a one-shot flag so its beat can fire again.</summary>
+    public void ClearFired(string id)
+    {
+        if (ledger.Clear(id)) SaveManager.Instance?.SaveGame();
+    }
+
     public void SetFarmName(string name)
     {
         // global:: reaches the static FarmName class; the unqualified name would bind to
