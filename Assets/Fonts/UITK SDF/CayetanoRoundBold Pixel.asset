@@ -1,12 +1,12 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-6759192819546931855
+--- !u!28 &-8144152678379747493
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: F77MinecraftRegular SDF Atlas
+  m_Name: CayetanoRoundBold Pixel Atlas
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -30,7 +30,7 @@ Texture2D:
   m_TextureDimension: 2
   m_TextureSettings:
     serializedVersion: 2
-    m_FilterMode: 1
+    m_FilterMode: 0
     m_Aniso: 1
     m_MipBias: 0
     m_WrapU: 0
@@ -46,6 +46,38 @@ Texture2D:
     offset: 0
     size: 0
     path: 
+--- !u!21 &-5137956012242252426
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CayetanoRoundBold Pixel Material
+  m_Shader: {fileID: 9001, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: -8144152678379747493}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats: []
+    m_Colors: []
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,11 +88,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 19001, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: F77MinecraftRegular SDF
+  m_Name: CayetanoRoundBold Pixel
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.TextCore.Text.FontAsset
   m_Version: 1.1.0
-  m_Material: {fileID: 6239111431024251265}
-  m_SourceFontFileGUID: cccc5f96fbaa5434fba55ce5e25f9756
+  m_Material: {fileID: -5137956012242252426}
+  m_SourceFontFileGUID: 62cd3a40d3c56204c8349d59552325a3
   m_fontAssetCreationEditorSettings:
     sourceFontFileGUID: 
     faceIndex: 0
@@ -79,51 +111,51 @@ MonoBehaviour:
     fontStyleModifier: 0
     renderMode: 0
     includeFontFeatures: 0
-  m_SourceFontFile: {fileID: 12800000, guid: cccc5f96fbaa5434fba55ce5e25f9756, type: 3}
+  m_SourceFontFile: {fileID: 12800000, guid: 62cd3a40d3c56204c8349d59552325a3, type: 3}
   m_SourceFontFilePath: 
   m_AtlasPopulationMode: 1
   InternalDynamicOS: 0
   IsEditorFont: 0
   m_FaceInfo:
     m_FaceIndex: 0
-    m_FamilyName: F77 Minecraft
-    m_StyleName: Regular
-    m_PointSize: 90
+    m_FamilyName: Cayetano Round
+    m_StyleName: Bold
+    m_PointSize: 32
     m_Scale: 1
-    m_UnitsPerEM: 4096
-    m_LineHeight: 90
-    m_AscentLine: 78.75
-    m_CapLine: 79
-    m_MeanLine: 57
+    m_UnitsPerEM: 1000
+    m_LineHeight: 45.376
+    m_AscentLine: 36
+    m_CapLine: 27
+    m_MeanLine: 20
     m_Baseline: 0
-    m_DescentLine: -11.25
-    m_SuperscriptOffset: 78.75
+    m_DescentLine: -9.376
+    m_SuperscriptOffset: 36
     m_SuperscriptSize: 0.5
-    m_SubscriptOffset: -11.25
+    m_SubscriptOffset: -9.376
     m_SubscriptSize: 0.5
-    m_UnderlineOffset: -2.2192383
-    m_UnderlineThickness: 4.482422
-    m_StrikethroughOffset: 22.8
-    m_StrikethroughThickness: 4.482422
-    m_TabWidth: 34
+    m_UnderlineOffset: -4.576
+    m_UnderlineThickness: 0.64
+    m_StrikethroughOffset: 8
+    m_StrikethroughThickness: 0.64
+    m_TabWidth: 10
   m_GlyphTable: []
   m_CharacterTable: []
   m_AtlasTextures:
-  - {fileID: -6759192819546931855}
+  - {fileID: -8144152678379747493}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 1
   m_GetFontFeatures: 1
   m_ClearDynamicDataOnBuild: 1
   m_AtlasWidth: 1024
   m_AtlasHeight: 1024
-  m_AtlasPadding: 9
-  m_AtlasRenderMode: 4165
+  m_AtlasPadding: 1
+  m_AtlasRenderMode: 4122
   m_UsedGlyphRects: []
   m_FreeGlyphRects:
   - m_X: 0
     m_Y: 0
-    m_Width: 1023
-    m_Height: 1023
+    m_Width: 1024
+    m_Height: 1024
   m_FontFeatureTable:
     m_MultipleSubstitutionRecords: []
     m_LigatureSubstitutionRecords: []
@@ -159,60 +191,3 @@ MonoBehaviour:
   m_BoldStyleSpacing: 7
   m_ItalicStyleSlant: 35
   m_TabMultiple: 10
---- !u!21 &6239111431024251265
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: F77MinecraftRegular SDF Material
-  m_Shader: {fileID: 19011, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: -6759192819546931855}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _FaceDilate: 0
-    - _GradientScale: 10
-    - _OutlineSoftness: 0
-    - _OutlineWidth: 0
-    - _PerspectiveFilter: 0.875
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
-    - _ScaleX: 1
-    - _ScaleY: 1
-    - _ShaderFlags: 0
-    - _Sharpness: 0
-    - _TextureHeight: 1024
-    - _TextureWidth: 1024
-    - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 0
-    - _UnderlayOffsetY: 0
-    - _UnderlaySoftness: 0
-    - _VertexOffsetX: 0
-    - _VertexOffsetY: 0
-    - _WeightBold: 0.75
-    - _WeightNormal: 0
-    m_Colors:
-    - _FaceColor: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1

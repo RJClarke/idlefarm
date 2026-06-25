@@ -36,13 +36,18 @@ public static class PixelFontAssetGenerator
             Font font = AssetDatabase.LoadAssetAtPath<Font>(src);
             if (font == null) { Debug.LogWarning($"[PixelFontGen] Missing font: {src}"); continue; }
 
-            string assetName = Path.GetFileNameWithoutExtension(src) + " SDF";
+            string assetName = Path.GetFileNameWithoutExtension(src) + " Pixel";
             string outPath = $"{OutDir}/{assetName}.asset";
 
-            // Dynamic population keeps the source TTF referenced and adds glyphs on demand —
-            // simplest path that guarantees every character renders in editor + build.
+            // Remove any prior asset (and its sub-assets) so we don't orphan atlases/materials.
+            if (AssetDatabase.LoadAssetAtPath<TextCoreFontAsset>(outPath) != null)
+                AssetDatabase.DeleteAsset(outPath);
+
+            // RASTER_HINTED = hard-edged bitmap glyphs (no SDF smoothing), hinted to the pixel
+            // grid. Combined with Point filtering below, this keeps pixel fonts crisp/blocky
+            // instead of fuzzy. Small sampling size + tiny padding suits a low-res pixel font.
             TextCoreFontAsset fa = TextCoreFontAsset.CreateFontAsset(
-                font, 90, 9, GlyphRenderMode.SDFAA, 1024, 1024,
+                font, 32, 1, GlyphRenderMode.RASTER_HINTED, 1024, 1024,
                 TextCoreAtlasPop.Dynamic, true);
 
             if (fa == null) { Debug.LogWarning($"[PixelFontGen] Failed to create asset for {src}"); continue; }
@@ -53,6 +58,7 @@ public static class PixelFontAssetGenerator
             if (fa.atlasTextures != null && fa.atlasTextures.Length > 0 && fa.atlasTextures[0] != null)
             {
                 fa.atlasTextures[0].name = assetName + " Atlas";
+                fa.atlasTextures[0].filterMode = FilterMode.Point; // no bilinear blur when scaled
                 AssetDatabase.AddObjectToAsset(fa.atlasTextures[0], fa);
             }
             if (fa.material != null)

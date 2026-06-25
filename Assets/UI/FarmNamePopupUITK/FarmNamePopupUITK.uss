@@ -35,7 +35,7 @@
     font-size: 46px;
     color: rgb(95, 70, 38);
     -unity-text-align: middle-left;
-    -unity-font-definition: url("project://database/Assets/Fonts/UITK SDF/Munro SDF.asset");
+    -unity-font-definition: url("project://database/Assets/Fonts/UITK SDF/Munro Pixel.asset");
     letter-spacing: 1px;
     white-space: normal;
 }
@@ -75,7 +75,7 @@
     padding-right: 22px;
     color: rgb(70, 50, 30);
     font-size: 34px;
-    -unity-font-definition: url("project://database/Assets/Fonts/UITK SDF/Munro SDF.asset");
+    -unity-font-definition: url("project://database/Assets/Fonts/UITK SDF/Munro Pixel.asset");
     letter-spacing: 1px;
 }
 
@@ -115,7 +115,7 @@
     border-radius: 14px;
     background-color: rgb(120, 180, 90);
     color: white;
-    -unity-font-definition: url("project://database/Assets/Fonts/UITK SDF/Munro SDF.asset");
+    -unity-font-definition: url("project://database/Assets/Fonts/UITK SDF/Munro Pixel.asset");
     letter-spacing: 1px;
 }
 
