@@ -25,6 +25,14 @@ public static class AtmosphereMath
     public static float EmissionRate(float baseRate, float windMul, float intensity, float stormRateMul)
         => baseRate * Mathf.Max(0f, windMul) * (1f + Mathf.Clamp01(intensity) * Mathf.Max(0f, stormRateMul));
 
+    /// <summary>
+    /// Signed horizontal velocity of a drifting patch. Clouds move in the wind direction:
+    /// windDirX -1 → negative (drifts left), +1 → positive (drifts right). This is the value
+    /// a patch's x position should change by per second (× dt at the call site).
+    /// </summary>
+    public static float PatchVelocityX(float speed, float windDirX)
+        => (windDirX < 0f ? -1f : 1f) * Mathf.Max(0f, speed);
+
     /// <summary>World X just off the UPWIND screen edge where a new patch should spawn.</summary>
     public static float SpawnEdgeX(float camX, float camHalfWidth, float patchHalfWidth, float windDirX)
     {

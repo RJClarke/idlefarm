@@ -172,7 +172,7 @@ public class WeatherData : ScriptableObject
 
     [Tooltip("Peak opacity of a shadow patch at ambient intensity.")]
     [Range(0f, 1f)]
-    public float shadowOpacity = 0.25f;
+    public float shadowOpacity = 0.45f;
 
     [Tooltip("Base drift speed (world units/sec) at wind multiplier 1.")]
     [Range(0f, 10f)]

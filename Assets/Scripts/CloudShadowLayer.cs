@@ -24,15 +24,14 @@ public class CloudShadowLayer
     private readonly List<Patch> patches = new List<Patch>();
     private Sprite softSprite;
     private Sprite ditherSprite;
-    private Material mat;
     private bool patchesVisible = true;
+    private bool seeded;
 
     public CloudShadowLayer(Transform parent) { this.parent = parent; }
 
     public void Configure(WeatherData d)
     {
         data = d;
-        if (mat == null)          mat          = new Material(Shader.Find("Sprites/Default"));
         if (softSprite == null)   softSprite   = BuildBlobSprite(false);
         if (ditherSprite == null) ditherSprite = BuildBlobSprite(true);
     }
@@ -40,7 +39,7 @@ public class CloudShadowLayer
     public void SetActiveStyle(bool visible)
     {
         patchesVisible = visible;
-        if (!visible) Clear();
+        Clear(); // reset so a toggle / style switch reseeds a fresh, distributed batch
     }
 
     public void Tick(float dt, float windMul, float intensity, Camera cam)
@@ -49,9 +48,18 @@ public class CloudShadowLayer
 
         float camX = cam.transform.position.x;
         float camHalf = cam.orthographicSize * cam.aspect;
-        float dir = Mathf.Sign(data.windDriftDirection == 0f ? -1f : data.windDriftDirection);
         float speed = AtmosphereMath.DriftSpeed(data.shadowBaseDriftSpeed, windMul, intensity, data.shadowStormSpeedMul);
+        float vx = AtmosphereMath.PatchVelocityX(speed, data.windDriftDirection); // clouds drift WITH the wind
         float opacityMul = 1f + Mathf.Clamp01(intensity) * data.shadowStormOpacityMul;
+
+        // First fill: scatter patches across the visible area so shadows show up immediately
+        // (rather than waiting ~15s for them to drift in from the edge).
+        if (!seeded && data.shadowMaxPatches > 0)
+        {
+            for (int i = 0; i < data.shadowMaxPatches; i++)
+                patches.Add(SpawnPatch(cam, camX, camHalf, onscreen: true));
+            seeded = true;
+        }
 
         // Drift + recycle existing.
         for (int i = patches.Count - 1; i >= 0; i--)
@@ -60,7 +68,7 @@ public class CloudShadowLayer
             if (p.go == null) { patches.RemoveAt(i); continue; }
 
             Vector3 pos = p.go.transform.position;
-            pos.x += -dir * speed * dt; // dir is the upwind sign; patches move downwind
+            pos.x += vx * dt;
             p.go.transform.position = pos;
 
             Color c = p.sr.color;
@@ -74,12 +82,12 @@ public class CloudShadowLayer
             }
         }
 
-        // Spawn up to the cap.
+        // Steady-state: new patches enter from the upwind edge.
         while (patches.Count < data.shadowMaxPatches)
-            patches.Add(SpawnPatch(cam, camX, camHalf));
+            patches.Add(SpawnPatch(cam, camX, camHalf, onscreen: false));
     }
 
-    private Patch SpawnPatch(Camera cam, float camX, float camHalf)
+    private Patch SpawnPatch(Camera cam, float camX, float camHalf, bool onscreen)
     {
         float width = Random.Range(data.shadowSizeRange.x, data.shadowSizeRange.y);
         float half = width * 0.5f;
@@ -88,7 +96,9 @@ public class CloudShadowLayer
 
         var go = new GameObject("CloudShadowPatch");
         go.transform.SetParent(parent, false);
-        float x = AtmosphereMath.SpawnEdgeX(camX, camHalf, half, data.windDriftDirection);
+        float x = onscreen
+            ? camX + Random.Range(-camHalf, camHalf)                          // scattered across the view
+            : AtmosphereMath.SpawnEdgeX(camX, camHalf, half, data.windDriftDirection); // enter from upwind edge
         float y = camY + Random.Range(-camHalfH, camHalfH);
         go.transform.position = new Vector3(x, y, 0f);
         float aspect = Random.Range(0.5f, 0.8f); // wider than tall
@@ -96,7 +106,9 @@ public class CloudShadowLayer
 
         var sr = go.AddComponent<SpriteRenderer>();
         sr.sprite = data.shadowStyle == ShadowStyle.Dithered ? ditherSprite : softSprite;
-        sr.material = mat;
+        // No custom material — a fresh SpriteRenderer already has the project's default sprite
+        // material (URP-correct). Forcing a built-in "Sprites/Default" material renders nothing
+        // under URP's 2D Renderer (the lightning bolt in ThunderstormManager works the same way).
         sr.sortingOrder = ShadowSortingOrder;
         sr.color = new Color(1f, 1f, 1f, data.shadowOpacity);
 
@@ -107,6 +119,7 @@ public class CloudShadowLayer
     {
         foreach (var p in patches) if (p.go != null) Object.Destroy(p.go);
         patches.Clear();
+        seeded = false;
     }
 
     /// <summary>
@@ -130,12 +143,16 @@ public class CloudShadowLayer
         for (int x = 0; x < N; x++)
         {
             float d = Vector2.Distance(new Vector2(x + 0.5f, y + 0.5f), c) / maxR; // 0 center .. 1 edge
-            float a = Mathf.Clamp01(1f - d);
-            a = a * a; // softer edge
+            // Broad flat core (a≈1 out to ~45% radius) with a soft rim — reads as a shadow,
+            // not a tiny dot. NOTE: Unity's Mathf.SmoothStep(from,to,t) interpolates *values*,
+            // it is NOT the HLSL edge-threshold smoothstep — so build the plateau manually.
+            const float core = 0.45f;                            // solid out to this fraction of radius
+            float t = Mathf.Clamp01((1f - d) / (1f - core));     // 1 inside core → 0 at edge
+            float a = t * t * (3f - 2f * t);                     // smoothstep falloff on the rim
             if (dithered)
             {
-                a = Mathf.Round(a * 4f) / 4f;        // quantize to 4 bands
-                if (((x + y) & 1) == 0) a *= 0.6f;   // checker dither on alternating pixels
+                a = Mathf.Round(a * 3f) / 3f;        // quantize to a few hard bands
+                if (((x + y) & 1) == 0) a *= 0.7f;   // checker dither on alternating pixels
             }
             // Dark sprite (RGB near black), alpha is the mask. Drawn translucent → darkens scene.
             px[y * N + x] = new Color(0.05f, 0.06f, 0.10f, a);

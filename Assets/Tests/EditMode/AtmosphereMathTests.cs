@@ -32,6 +32,29 @@ public class AtmosphereMathTests
     }
 
     [Test]
+    public void PatchVelocityX_MovesInWindDirection()
+    {
+        Assert.Less(AtmosphereMath.PatchVelocityX(5f, -1f), 0f);    // blows left → drifts left (-x)
+        Assert.Greater(AtmosphereMath.PatchVelocityX(5f, 1f), 0f);  // blows right → drifts right (+x)
+    }
+
+    [Test]
+    public void Patch_SpawnsOnscreen_DriftsAcross_ThenExitsDownwindEdge()
+    {
+        // wind left: spawn just off the RIGHT edge, drift LEFT, end up past the LEFT edge.
+        // This is the regression guard for the inverted-drift bug (patches flew off the right).
+        float camX = 0f, camHalf = 10f, half = 2f, windDir = -1f, speed = 5f;
+        float x = AtmosphereMath.SpawnEdgeX(camX, camHalf, half, windDir); // 12 (just off right)
+        Assert.IsFalse(AtmosphereMath.IsPatchOffscreen(x, half, camX, camHalf, windDir)); // not gone at spawn
+
+        for (int i = 0; i < 100; i++) // 10s @ dt 0.1
+            x += AtmosphereMath.PatchVelocityX(speed, windDir) * 0.1f;
+
+        Assert.Less(x, camX - camHalf); // drifted LEFT, past the left edge
+        Assert.IsTrue(AtmosphereMath.IsPatchOffscreen(x, half, camX, camHalf, windDir));
+    }
+
+    [Test]
     public void SpawnEdgeX_PlacesPatchJustOffUpwindEdge()
     {
         // wind blows left (-1): patches enter from the RIGHT edge.

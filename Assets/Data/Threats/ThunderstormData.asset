@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeatherData
   stormWaveInterval: 25
   initialGracePeriod: 30
-  baseWindDuration: 60
-  rainLeadOffset: 15
-  lightningLeadOffset: 10
-  timingJitter: 5
+  baseWindDuration: 1200
+  rainLeadOffset: 300
+  lightningLeadOffset: 90
+  timingJitter: 15
   durationScalePerStorm: 0.1
   rainMoisturePerTick: 1
   rainTickInterval: 2
@@ -29,9 +29,26 @@ MonoBehaviour:
   lightningMaxDamage: 100
   lightningStrikeInterval: 8
   lightningStrikeScalePerStorm: 0.5
+  firstStormLightningScale: 0.5
   lightningDamageScalePerStorm: 0.05
   rainOverlayMaxAlpha: 0.35
   rainOverlayColor: {r: 0.05, g: 0.1, b: 0.25, a: 1}
   rainFadeInDuration: 3
   rainFadeOutDuration: 4
   rainParticleRate: 150
+  atmosphereEnabled: 1
+  atmosphereStormLerpSpeed: 0.87
+  shadowStyle: 1
+  shadowMaxPatches: 6
+  shadowSizeRange: {x: 8, y: 16}
+  shadowOpacity: 0.5
+  shadowBaseDriftSpeed: 1.2
+  windDriftDirection: -1
+  shadowStormSpeedMul: 1.5
+  shadowStormOpacityMul: 1.4
+  tintDipColor: {r: 0.15, g: 0.18, b: 0.28, a: 1}
+  tintDipMaxAlpha: 0.18
+  tintDipPeriod: 14
+  debrisBaseRate: 3
+  debrisSprites: []
+  debrisStormRateMul: 3
