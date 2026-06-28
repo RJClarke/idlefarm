@@ -9,7 +9,9 @@ using UnityEngine;
 /// </summary>
 public class CloudShadowLayer
 {
-    private const int ShadowSortingOrder = 200; // above ground tiles, below the ~1000+ entity band
+    // Above the entity Y-sort band (~1000–3000) so the shadow falls OVER trees/crops/helpers/animals,
+    // like a real cloud passing overhead. Below the lightning bolt (6000) and the ScreenSpaceOverlay HUD.
+    private const int ShadowSortingOrder = 5000;
 
     private class Patch
     {

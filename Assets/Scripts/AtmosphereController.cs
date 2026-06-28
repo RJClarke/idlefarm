@@ -3,10 +3,12 @@ using UnityEngine;
 /// <summary>
 /// Always-on cosmetic atmosphere brain. Reads the global wind multiplier (WindController's
 /// _GlobalWindMul) and storm state, eases a 0..1 storm "intensity", and drives the cloud-shadow
-/// and wind-debris layers. [ExecuteAlways] so it previews in the editor like WindController.
-/// Cosmetic only — never applies gameplay effects.
+/// and wind-debris layers. Cosmetic only — never applies gameplay effects.
+///
+/// PLAY-MODE ONLY (intentionally not [ExecuteAlways]): ticking in edit mode spawned GameObjects
+/// that accumulated across domain reloads (orphaned shadow patches, duplicate leaf emitters) and
+/// made the scene drift while stopped. Tune via the WeatherData asset, then press Play to preview.
 /// </summary>
-[ExecuteAlways]
 public class AtmosphereController : MonoBehaviour
 {
     [SerializeField] private WeatherData weatherData;
@@ -22,10 +24,23 @@ public class AtmosphereController : MonoBehaviour
 
     private void OnEnable()
     {
+        DestroyStrayChildren(); // belt-and-suspenders: clear any atmosphere objects saved into the scene
         shadows ??= new CloudShadowLayer(transform);
         tintDip ??= new TintDipLayer(transform);
         debris  ??= new WindDebrisLayer(transform);
         Reconfigure();
+    }
+
+    /// <summary>Destroy any leftover layer-created children so we always start from a clean slate.</summary>
+    private void DestroyStrayChildren()
+    {
+        for (int i = transform.childCount - 1; i >= 0; i--)
+        {
+            Transform c = transform.GetChild(i);
+            if (c == null) continue;
+            if (c.name == "CloudShadowPatch" || c.name == "WindDebris" || c.name == "TintDipCanvas")
+                Destroy(c.gameObject);
+        }
     }
 
     private void OnDisable()

@@ -89,7 +89,7 @@ public class WindDebrisLayer
         rot.z = new ParticleSystem.MinMaxCurve(-2f, 2f);
 
         var renderer = go.GetComponent<ParticleSystemRenderer>();
-        renderer.sortingOrder = 250; // above shadow patches, below HUD
+        renderer.sortingOrder = 5100; // above the cloud shadows + entities so leaves blow in front; below HUD
         renderer.material = new Material(Shader.Find("Sprites/Default"));
 
         if (data.debrisSprites != null && data.debrisSprites.Length > 0)
