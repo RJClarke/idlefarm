@@ -157,7 +157,7 @@ public class WeatherData : ScriptableObject
 
     [Tooltip("How fast the storm intensity (0..1) eases in/out for the atmosphere layer.")]
     [Range(0.1f, 5f)]
-    public float atmosphereStormLerpSpeed = 0.8f;
+    public float atmosphereStormLerpSpeed = 0.87f;
 
     [Header("Ambient — Cloud Shadows")]
     [Tooltip("Soft = blurred multiply patches; Dithered = pixel-native patches; TintDip = whole-scene pulse.")]
@@ -165,14 +165,14 @@ public class WeatherData : ScriptableObject
 
     [Tooltip("Max simultaneous drifting shadow patches (Soft/Dithered modes).")]
     [Range(0, 12)]
-    public int shadowMaxPatches = 3;
+    public int shadowMaxPatches = 12;
 
     [Tooltip("Min/Max world-unit width of a shadow patch.")]
-    public Vector2 shadowSizeRange = new Vector2(8f, 16f);
+    public Vector2 shadowSizeRange = new Vector2(32f, 80f);
 
     [Tooltip("Peak opacity of a shadow patch at ambient intensity.")]
     [Range(0f, 1f)]
-    public float shadowOpacity = 0.45f;
+    public float shadowOpacity = 0.169f;
 
     [Tooltip("Base drift speed (world units/sec) at wind multiplier 1.")]
     [Range(0f, 10f)]
@@ -183,11 +183,11 @@ public class WeatherData : ScriptableObject
 
     [Tooltip("Extra drift-speed multiplier at full storm intensity.")]
     [Range(0f, 4f)]
-    public float shadowStormSpeedMul = 1.5f;
+    public float shadowStormSpeedMul = 0.65f;
 
     [Tooltip("Extra opacity multiplier at full storm intensity.")]
     [Range(0f, 3f)]
-    public float shadowStormOpacityMul = 1.4f;
+    public float shadowStormOpacityMul = 1.69f;
 
     [Header("Ambient — Cloud Shadows (TintDip style)")]
     [Tooltip("Color the whole scene dips toward when a cloud 'passes over the sun'.")]

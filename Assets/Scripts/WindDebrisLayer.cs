@@ -34,15 +34,18 @@ public class WindDebrisLayer
 
         emission.rateOverTime = AtmosphereMath.EmissionRate(data.debrisBaseRate, windMul, intensity, data.debrisStormRateMul);
 
-        float dir = Mathf.Sign(data.windDriftDirection == 0f ? -1f : data.windDriftDirection);
-        float hSpeed = -dir * (4f + 10f * Mathf.Max(0f, windMul) * (1f + Mathf.Clamp01(intensity)));
+        // Use the SAME direction math as the cloud shadows so everything blows the same way
+        // off the global windDriftDirection (-1 left / +1 right).
+        float speedMag = 4f + 10f * Mathf.Max(0f, windMul) * (1f + Mathf.Clamp01(intensity));
+        float hSpeed = AtmosphereMath.PatchVelocityX(speedMag, data.windDriftDirection); // drifts WITH the wind
         vel.x = new ParticleSystem.MinMaxCurve(hSpeed);
 
         if (cam != null)
         {
             float camHalfH = cam.orthographicSize;
             float camHalfW = cam.orthographicSize * cam.aspect;
-            float x = cam.transform.position.x + dir * (camHalfW + 1f); // emit from upwind edge
+            float x = AtmosphereMath.SpawnEdgeX(camX: cam.transform.position.x, camHalfWidth: camHalfW,
+                                                patchHalfWidth: 1f, windDirX: data.windDriftDirection); // upwind edge
             ps.transform.position = new Vector3(x, cam.transform.position.y, -1f);
             var shape = ps.shape;
             shape.scale = new Vector3(0.1f, camHalfH * 2f, 1f);

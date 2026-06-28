@@ -77,7 +77,7 @@ public class CloudShadowLayer
 
             if (AtmosphereMath.IsPatchOffscreen(pos.x, p.halfWidth, camX, camHalf, data.windDriftDirection))
             {
-                Object.Destroy(p.go);
+                SafeDestroy(p.go);
                 patches.RemoveAt(i);
             }
         }
@@ -117,9 +117,17 @@ public class CloudShadowLayer
 
     public void Clear()
     {
-        foreach (var p in patches) if (p.go != null) Object.Destroy(p.go);
+        foreach (var p in patches) if (p.go != null) SafeDestroy(p.go);
         patches.Clear();
         seeded = false;
+    }
+
+    // [ExecuteAlways] means we tick in edit mode too, where Object.Destroy is illegal.
+    private static void SafeDestroy(GameObject go)
+    {
+        if (go == null) return;
+        if (Application.isPlaying) Object.Destroy(go);
+        else Object.DestroyImmediate(go);
     }
 
     /// <summary>

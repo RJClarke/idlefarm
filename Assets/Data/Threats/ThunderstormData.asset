@@ -39,13 +39,13 @@ MonoBehaviour:
   atmosphereEnabled: 1
   atmosphereStormLerpSpeed: 0.87
   shadowStyle: 1
-  shadowMaxPatches: 6
-  shadowSizeRange: {x: 8, y: 16}
-  shadowOpacity: 0.5
+  shadowMaxPatches: 12
+  shadowSizeRange: {x: 32, y: 80}
+  shadowOpacity: 0.169
   shadowBaseDriftSpeed: 1.2
   windDriftDirection: -1
-  shadowStormSpeedMul: 1.5
-  shadowStormOpacityMul: 1.4
+  shadowStormSpeedMul: 0.65
+  shadowStormOpacityMul: 1.69
   tintDipColor: {r: 0.15, g: 0.18, b: 0.28, a: 1}
   tintDipMaxAlpha: 0.18
   tintDipPeriod: 14
