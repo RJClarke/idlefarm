@@ -148,6 +148,72 @@ public class WeatherData : ScriptableObject
     public float rainParticleRate = 150f;
 
     // ─────────────────────────────────────────────────────────────────────
+    // Ambient Atmosphere (cosmetic — cloud shadows + wind debris)
+    // ─────────────────────────────────────────────────────────────────────
+
+    [Header("Ambient Atmosphere — Master")]
+    [Tooltip("Master switch for the always-on ambient cloud-shadow + wind-debris layer.")]
+    public bool atmosphereEnabled = true;
+
+    [Tooltip("How fast the storm intensity (0..1) eases in/out for the atmosphere layer.")]
+    [Range(0.1f, 5f)]
+    public float atmosphereStormLerpSpeed = 0.8f;
+
+    [Header("Ambient — Cloud Shadows")]
+    [Tooltip("Soft = blurred multiply patches; Dithered = pixel-native patches; TintDip = whole-scene pulse.")]
+    public ShadowStyle shadowStyle = ShadowStyle.Dithered;
+
+    [Tooltip("Max simultaneous drifting shadow patches (Soft/Dithered modes).")]
+    [Range(0, 12)]
+    public int shadowMaxPatches = 3;
+
+    [Tooltip("Min/Max world-unit width of a shadow patch.")]
+    public Vector2 shadowSizeRange = new Vector2(8f, 16f);
+
+    [Tooltip("Peak opacity of a shadow patch at ambient intensity.")]
+    [Range(0f, 1f)]
+    public float shadowOpacity = 0.25f;
+
+    [Tooltip("Base drift speed (world units/sec) at wind multiplier 1.")]
+    [Range(0f, 10f)]
+    public float shadowBaseDriftSpeed = 1.2f;
+
+    [Tooltip("Drift direction sign: -1 = clouds blow left, +1 = blow right.")]
+    public float windDriftDirection = -1f;
+
+    [Tooltip("Extra drift-speed multiplier at full storm intensity.")]
+    [Range(0f, 4f)]
+    public float shadowStormSpeedMul = 1.5f;
+
+    [Tooltip("Extra opacity multiplier at full storm intensity.")]
+    [Range(0f, 3f)]
+    public float shadowStormOpacityMul = 1.4f;
+
+    [Header("Ambient — Cloud Shadows (TintDip style)")]
+    [Tooltip("Color the whole scene dips toward when a cloud 'passes over the sun'.")]
+    public Color tintDipColor = new Color(0.15f, 0.18f, 0.28f, 1f);
+
+    [Tooltip("Peak alpha of the tint-dip overlay at ambient intensity.")]
+    [Range(0f, 0.6f)]
+    public float tintDipMaxAlpha = 0.18f;
+
+    [Tooltip("Seconds for one full darken→brighten tint-dip cycle.")]
+    [Range(4f, 60f)]
+    public float tintDipPeriod = 14f;
+
+    [Header("Ambient — Wind Debris (leaves)")]
+    [Tooltip("Base leaf particles/second at wind multiplier 1.")]
+    [Range(0f, 30f)]
+    public float debrisBaseRate = 3f;
+
+    [Tooltip("Leaf sprites to scatter (random per particle). Leave empty for a tiny generated speck.")]
+    public Sprite[] debrisSprites;
+
+    [Tooltip("Extra emission multiplier at full storm intensity.")]
+    [Range(0f, 6f)]
+    public float debrisStormRateMul = 3f;
+
+    // ─────────────────────────────────────────────────────────────────────
     // Runtime Helpers (used by ThunderstormManager)
     // ─────────────────────────────────────────────────────────────────────
 
