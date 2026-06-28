@@ -68,7 +68,10 @@ public class WindDebrisLayer
         main.startRotation = new ParticleSystem.MinMaxCurve(0f, 2f * Mathf.PI);
         main.gravityModifier = 0.05f;
         main.simulationSpace = ParticleSystemSimulationSpace.World;
-        main.startColor = new Color(0.55f, 0.45f, 0.2f, 0.9f);
+        // Fresh foliage: random per-leaf between a leafy green and a yellow-green (not fall colors).
+        main.startColor = new ParticleSystem.MinMaxGradient(
+            new Color(0.33f, 0.58f, 0.18f, 0.9f),   // green
+            new Color(0.62f, 0.74f, 0.22f, 0.9f));  // yellow-green
 
         emission = ps.emission;
         emission.rateOverTime = data.debrisBaseRate;
