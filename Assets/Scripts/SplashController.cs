@@ -99,8 +99,8 @@ public class SplashController : MonoBehaviour
         scaler.referenceResolution = new Vector2(1080, 1920);
         scaler.matchWidthOrHeight = 0.5f;
 
-        // Title (top)
-        var title = CreateText("Title", canvasGO.transform, titleText, 120, new Color(0.93f, 0.94f, 0.97f, 1f));
+        // Title (top) — dark so it reads against the light, hazy sky.
+        var title = CreateText("Title", canvasGO.transform, titleText, 120, new Color(0.12f, 0.10f, 0.08f, 1f));
         var tr = title.rectTransform;
         tr.anchorMin = tr.anchorMax = new Vector2(0.5f, 1f);
         tr.pivot = new Vector2(0.5f, 1f);
@@ -109,7 +109,7 @@ public class SplashController : MonoBehaviour
         title.fontStyle = FontStyles.Bold;
 
         // Status text (above the button)
-        statusText = CreateText("StatusText", canvasGO.transform, string.Empty, 40, new Color(0.93f, 0.94f, 0.97f, 0.85f));
+        statusText = CreateText("StatusText", canvasGO.transform, string.Empty, 40, new Color(0.15f, 0.13f, 0.10f, 0.9f));
         var sr = statusText.rectTransform;
         sr.anchorMin = sr.anchorMax = new Vector2(0.5f, 0f);
         sr.pivot = new Vector2(0.5f, 0f);
@@ -121,8 +121,6 @@ public class SplashController : MonoBehaviour
         btnGO.transform.SetParent(canvasGO.transform, false);
         var img = btnGO.GetComponent<Image>();
         img.color = buttonColor;
-        var builtin = Resources.GetBuiltinResource<Sprite>("UI/Skin/UISprite.psd");
-        if (builtin != null) { img.sprite = builtin; img.type = Image.Type.Sliced; }
         var br = img.rectTransform;
         br.anchorMin = br.anchorMax = new Vector2(0.5f, 0f);
         br.pivot = new Vector2(0.5f, 0f);
