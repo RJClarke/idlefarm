@@ -44,21 +44,24 @@ public class CloudShadowLayer
         Clear(); // reset so a toggle / style switch reseeds a fresh, distributed batch
     }
 
-    public void Tick(float dt, float windMul, float intensity, Camera cam)
+    public void Tick(float dt, float cloudiness, float wind, Camera cam)
     {
         if (data == null || cam == null || !patchesVisible) return;
 
         float camX = cam.transform.position.x;
         float camHalf = cam.orthographicSize * cam.aspect;
-        float speed = AtmosphereMath.DriftSpeed(data.shadowBaseDriftSpeed, windMul, intensity, data.shadowStormSpeedMul);
-        float vx = AtmosphereMath.PatchVelocityX(speed, data.windDriftDirection); // clouds drift WITH the wind
-        float opacityMul = 1f + Mathf.Clamp01(intensity) * data.shadowStormOpacityMul;
 
-        // First fill: scatter patches across the visible area so shadows show up immediately
-        // (rather than waiting ~15s for them to drift in from the edge).
-        if (!seeded && data.shadowMaxPatches > 0)
+        // Cloudiness sets how many patches + their opacity; wind sets drift speed.
+        cloudiness = Mathf.Clamp01(cloudiness);
+        int targetCount = Mathf.RoundToInt(data.shadowMaxPatches * cloudiness);
+        float speed = data.shadowBaseDriftSpeed * (0.3f + 1.7f * Mathf.Clamp01(wind));
+        float vx = AtmosphereMath.PatchVelocityX(speed, data.windDriftDirection); // clouds drift WITH the wind
+        float opacity = data.shadowOpacity * cloudiness;
+
+        // First fill: scatter patches across the visible area so shadows show up immediately.
+        if (!seeded && targetCount > 0)
         {
-            for (int i = 0; i < data.shadowMaxPatches; i++)
+            for (int i = 0; i < targetCount; i++)
                 patches.Add(SpawnPatch(cam, camX, camHalf, onscreen: true));
             seeded = true;
         }
@@ -74,7 +77,7 @@ public class CloudShadowLayer
             p.go.transform.position = pos;
 
             Color c = p.sr.color;
-            c.a = Mathf.Clamp01(p.baseAlpha * opacityMul);
+            c.a = Mathf.Clamp01(opacity);
             p.sr.color = c;
 
             if (AtmosphereMath.IsPatchOffscreen(pos.x, p.halfWidth, camX, camHalf, data.windDriftDirection))
@@ -84,9 +87,15 @@ public class CloudShadowLayer
             }
         }
 
-        // Steady-state: new patches enter from the upwind edge.
-        while (patches.Count < data.shadowMaxPatches)
+        // Steady-state: new patches enter from the upwind edge; retire extras as cloudiness drops.
+        while (patches.Count < targetCount)
             patches.Add(SpawnPatch(cam, camX, camHalf, onscreen: false));
+        while (patches.Count > targetCount && patches.Count > 0)
+        {
+            int last = patches.Count - 1;
+            if (patches[last].go != null) SafeDestroy(patches[last].go);
+            patches.RemoveAt(last);
+        }
     }
 
     private Patch SpawnPatch(Camera cam, float camX, float camHalf, bool onscreen)
@@ -139,7 +148,7 @@ public class CloudShadowLayer
     /// </summary>
     private static Sprite BuildBlobSprite(bool dithered)
     {
-        const int N = 64;
+        const int N = 128; // finer texture so large patches don't read as giant pixels
         var tex = new Texture2D(N, N, TextureFormat.RGBA32, false)
         {
             filterMode = dithered ? FilterMode.Point : FilterMode.Bilinear,
@@ -161,8 +170,8 @@ public class CloudShadowLayer
             float a = t * t * (3f - 2f * t);                     // smoothstep falloff on the rim
             if (dithered)
             {
-                a = Mathf.Round(a * 3f) / 3f;        // quantize to a few hard bands
-                if (((x + y) & 1) == 0) a *= 0.7f;   // checker dither on alternating pixels
+                a = Mathf.Round(a * 5f) / 5f;        // gentler banding
+                if (((x + y) & 1) == 0) a *= 0.85f;  // lighter checker dither
             }
             // Dark sprite (RGB near black), alpha is the mask. Drawn translucent → darkens scene.
             px[y * N + x] = new Color(0.05f, 0.06f, 0.10f, a);

@@ -39,8 +39,8 @@ MonoBehaviour:
   atmosphereEnabled: 1
   atmosphereStormLerpSpeed: 0.87
   shadowStyle: 1
-  shadowMaxPatches: 12
-  shadowSizeRange: {x: 32, y: 80}
+  shadowMaxPatches: 8
+  shadowSizeRange: {x: 18, y: 36}
   shadowOpacity: 0.169
   shadowBaseDriftSpeed: 1.2
   windDriftDirection: -1
@@ -66,3 +66,33 @@ MonoBehaviour:
   windGustScaleRange: {x: 3, y: 6}
   windGustLife: 2.2
   windGustAlpha: 0.55
+  weatherBlendSpeed: 0.4
+  profileClear:
+    name: Clear
+    severity: 0
+    wind: 0.02
+    cloudiness: 0.05
+    precipitation: 0
+  profileCloudy:
+    name: Cloudy
+    severity: 0
+    wind: 0.12
+    cloudiness: 0.7
+    precipitation: 0
+  profileWindy:
+    name: Windy
+    severity: 0.08
+    wind: 0.65
+    cloudiness: 0.45
+    precipitation: 0
+  casualRollInterval: {x: 120, y: 240}
+  casualEventDuration: {x: 20, y: 40}
+  casualClearWeight: 2.5
+  casualCloudyWeight: 2
+  casualWindyWeight: 1.5
+  stormsToMaxSeverity: 5
+  stormCloudiness: {x: 0.6, y: 1}
+  stormWind: {x: 0.35, y: 1}
+  stormPrecip: {x: 0.4, y: 1}
+  rainMaxAngleDeg: 75
+  rainFallSpeed: {x: 5, y: 11}

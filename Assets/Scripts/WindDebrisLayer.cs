@@ -28,15 +28,16 @@ public class WindDebrisLayer
         else { ps.Stop(); ps.Clear(); }
     }
 
-    public void Tick(float windMul, float intensity, Camera cam)
+    public void Tick(float wind, Camera cam)
     {
         if (ps == null || data == null) return;
 
-        emission.rateOverTime = AtmosphereMath.EmissionRate(data.debrisBaseRate, windMul, intensity, data.debrisStormRateMul);
+        wind = Mathf.Clamp01(wind);
+        emission.rateOverTime = data.debrisBaseRate * wind * 4f; // ~0 at calm
 
         // Use the SAME direction math as the cloud shadows so everything blows the same way
         // off the global windDriftDirection (-1 left / +1 right).
-        float speedMag = 4f + 10f * Mathf.Max(0f, windMul) * (1f + Mathf.Clamp01(intensity));
+        float speedMag = 4f + 16f * wind;
         float hSpeed = AtmosphereMath.PatchVelocityX(speedMag, data.windDriftDirection); // drifts WITH the wind
         vel.x = new ParticleSystem.MinMaxCurve(hSpeed);
 

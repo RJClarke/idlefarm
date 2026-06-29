@@ -17,14 +17,12 @@ public class AtmosphereController : MonoBehaviour
     [Tooltip("Debug only: repeatedly fire wind-gust bursts in play mode (to preview without a storm).")]
     [SerializeField] private bool debugAutoGustBurst = false;
 
-    private static readonly int WindID = Shader.PropertyToID("_GlobalWindMul");
     private static readonly int TimeID = Shader.PropertyToID("_WindTime");
 
     private CloudShadowLayer shadows;
     private TintDipLayer tintDip;
     private WindDebrisLayer debris;
     private StormGustLayer gusts;
-    private float intensity;
     private ShadowStyle lastStyle;
 
     // Storm-gust timing
@@ -91,27 +89,24 @@ public class AtmosphereController : MonoBehaviour
         // React to a style switch made live in the inspector.
         if (weatherData.shadowStyle != lastStyle) ApplyStyle();
 
-        float windMul = Mathf.Max(0f, Shader.GetGlobalFloat(WindID));
-        float wTime   = Shader.GetGlobalFloat(TimeID);
+        float wTime = Shader.GetGlobalFloat(TimeID);
         float dt = Mathf.Max(Time.unscaledDeltaTime, 0.0001f);
 
-        // Ease storm intensity (cosmetic) from ThunderstormManager state.
-        float target = 0f;
-        if (Application.isPlaying && ThunderstormManager.Instance != null &&
-            (ThunderstormManager.Instance.IsWindActive || ThunderstormManager.Instance.IsStormActive))
-            target = 1f;
-        intensity = AtmosphereMath.EaseIntensity(intensity, target, dt, weatherData.atmosphereStormLerpSpeed);
+        // Everything reads the shared, eased WeatherState (Clear -> all channels ~0).
+        WeatherState s = (Application.isPlaying && WeatherController.Instance != null)
+            ? WeatherController.Instance.State
+            : default;
 
         Camera cam = Camera.main;
         if (weatherData.shadowStyle == ShadowStyle.TintDip)
-            tintDip.Tick(wTime, intensity);
+            tintDip.Tick(wTime, s.cloudiness);
         else
-            shadows.Tick(dt, windMul, intensity, cam);
+            shadows.Tick(dt, s.cloudiness, s.wind, cam);
 
-        debris.Tick(windMul, intensity, cam);
+        debris.Tick(s.wind, cam);
 
-        // Storm wind gusts: a burst when a storm begins, then occasional gusts for the early window.
-        bool storming = target > 0.5f;
+        // Storm wind gusts: a burst when severity ramps up, then occasional gusts for the early window.
+        bool storming = s.severity > 0.15f;
         if (storming && !wasStorming)
         {
             gusts.TriggerBurst(cam);
@@ -155,9 +150,6 @@ public class AtmosphereController : MonoBehaviour
         ApplyStyle();
         Debug.Log($"[Atmosphere] Style → {weatherData.shadowStyle}");
     }
-
-    [ContextMenu("Atmosphere: Force Storm Intensity")]
-    private void ForceStormIntensity() => intensity = 1f;
 
     [ContextMenu("Atmosphere: Trigger Wind Gust Burst")]
     private void DebugGustBurst() => TriggerGustBurstNow();

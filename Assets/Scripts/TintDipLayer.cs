@@ -26,13 +26,13 @@ public class TintDipLayer
         if (!active && image != null) SetAlpha(0f);
     }
 
-    public void Tick(float unscaledTime, float intensity)
+    public void Tick(float unscaledTime, float cloudiness)
     {
         if (data == null || image == null) return;
         // Slow sine; keep only the darkening half so the scene spends more time bright than dark.
         float phase = Mathf.Sin(unscaledTime * (2f * Mathf.PI / Mathf.Max(1f, data.tintDipPeriod)));
         float pulse = Mathf.Clamp01(phase);
-        float peak  = data.tintDipMaxAlpha * (1f + Mathf.Clamp01(intensity) * data.shadowStormOpacityMul);
+        float peak  = data.tintDipMaxAlpha * Mathf.Clamp01(cloudiness);
         SetAlpha(pulse * peak);
     }
 

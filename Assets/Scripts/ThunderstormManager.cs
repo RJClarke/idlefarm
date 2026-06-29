@@ -171,6 +171,10 @@ public class ThunderstormManager : MonoBehaviour
     {
         stormActive = true;
 
+        // Drive the unified weather: ramp all cosmetic channels via severity scaled by storm number.
+        if (WeatherController.Instance != null)
+            WeatherController.Instance.BeginStorm(WeatherMath.StormSeverity(stormNumber, weatherData.stormsToMaxSeverity));
+
         float windDuration = weatherData.GetWindDuration(stormNumber);
 
         float rainOffset      = weatherData.rainLeadOffset      + Random.Range(-weatherData.timingJitter, weatherData.timingJitter);
@@ -194,6 +198,7 @@ public class ThunderstormManager : MonoBehaviour
         yield return rainCo;
         yield return lightningCo;
 
+        if (WeatherController.Instance != null) WeatherController.Instance.EndStorm();
         stormActive = false;
     }
 
@@ -499,6 +504,7 @@ public class ThunderstormManager : MonoBehaviour
         rainActive      = false;
         lightningActive = false;
 
+        if (WeatherController.Instance != null) WeatherController.Instance.EndStorm();
         ClearLightningVisuals();
 
         if (RainOverlayUI.Instance != null)

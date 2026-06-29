@@ -282,6 +282,8 @@ public class WeatherData : ScriptableObject
     [Header("Weather — Rain")]
     [Tooltip("Max rain fall angle from vertical (deg) at full severity. Near-horizontal late storms.")]
     [Range(10f, 85f)] public float rainMaxAngleDeg = 75f;
+    [Tooltip("Rain fall SPEED (world units/sec): x = gentle storm, y = full-severity storm. Keep modest — high values look like bullets.")]
+    public Vector2 rainFallSpeed = new Vector2(7f, 16f);
 
     // ─────────────────────────────────────────────────────────────────────
     // Runtime Helpers (used by ThunderstormManager)

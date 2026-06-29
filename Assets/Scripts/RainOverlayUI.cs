@@ -87,26 +87,48 @@ public class RainOverlayUI : MonoBehaviour
 
     private void Update()
     {
-        if (rainParticles != null && Camera.main != null)
+        if (rainParticles == null || Camera.main == null) return;
+        Vector3 camPos = Camera.main.transform.position;
+        float screenW = Camera.main.orthographicSize * Camera.main.aspect * 2f;
+
+        if (Application.isPlaying && WeatherController.Instance != null && data != null)
         {
-            Vector3 camPos = Camera.main.transform.position;
+            WeatherState s = WeatherController.Instance.State;
+            float precip = Mathf.Clamp01(s.precipitation);
 
-            // Wind pushes rain sideways over its lifetime, so offset the emitter upwind
-            // and widen it so rain covers the full screen at every Y level
-            float avgLifetime = (rainMinLifetime + rainMaxLifetime) * 0.5f;
-            float windDrift = Mathf.Abs(rainWindX) * avgLifetime;
-            float windOffsetX = -Mathf.Sign(rainWindX) * windDrift * 0.5f;
+            var emission = rainParticles.emission;
+            emission.rateOverTime = data.rainParticleRate * precip;
+            SetOverlayAlpha(data.rainOverlayMaxAlpha * precip);
+            if (precip > 0.02f) { if (!rainParticles.isPlaying) rainParticles.Play(); }
+            else if (rainParticles.isPlaying) rainParticles.Stop();
 
-            rainParticles.transform.position = new Vector3(
-                camPos.x + windOffsetX,
-                camPos.y + rainEmitterY,
-                -1f);
+            // Straight diagonal streak: angle from vertical scales with severity, direction = the wind.
+            float angleDeg = WeatherMath.RainAngleDegrees(s.wind, s.severity, data.rainMaxAngleDeg);
+            float dir = s.windDirection < 0f ? -1f : 1f;
+            float fall = Mathf.Lerp(data.rainFallSpeed.x, data.rainFallSpeed.y, Mathf.Clamp01(s.severity));
+            float rad = angleDeg * Mathf.Deg2Rad;
+            float vxRain = dir * fall * Mathf.Sin(rad);
+            float vyRain = -fall * Mathf.Cos(rad);
 
-            // Emitter must be wide enough for screen + full wind drift on both sides
-            float screenWidth = Camera.main.orthographicSize * Camera.main.aspect * 2f;
-            float emitterWidth = screenWidth + windDrift + 4f;
+            var main = rainParticles.main; main.gravityModifier = 0f; // no parabola
+            var vel = rainParticles.velocityOverLifetime;
+            vel.enabled = true;
+            vel.space = ParticleSystemSimulationSpace.World;
+            vel.x = new ParticleSystem.MinMaxCurve(vxRain);
+            vel.y = new ParticleSystem.MinMaxCurve(vyRain);
+
+            // Emit above the camera, offset upwind + widened so the angled rain still covers the screen.
+            float avgLife = (rainMinLifetime + rainMaxLifetime) * 0.5f;
+            float drift = Mathf.Abs(vxRain) * avgLife;
+            rainParticles.transform.position = new Vector3(camPos.x - dir * drift * 0.5f, camPos.y + rainEmitterY, -1f);
             var shape = rainParticles.shape;
-            shape.scale = new Vector3(emitterWidth, 0.1f, 1f);
+            shape.scale = new Vector3(screenW + drift + 4f, 0.1f, 1f);
+        }
+        else
+        {
+            rainParticles.transform.position = new Vector3(camPos.x, camPos.y + rainEmitterY, -1f);
+            var shape = rainParticles.shape;
+            shape.scale = new Vector3(screenW + 4f, 0.1f, 1f);
         }
     }
 
@@ -240,10 +262,10 @@ public class RainOverlayUI : MonoBehaviour
         var main             = rainParticles.main;
         main.loop            = true;
         main.startLifetime   = new ParticleSystem.MinMaxCurve(rainMinLifetime, rainMaxLifetime);
-        main.startSpeed      = new ParticleSystem.MinMaxCurve(rainMinSpeed, rainMaxSpeed);
+        main.startSpeed      = new ParticleSystem.MinMaxCurve(0f); // motion comes entirely from velocityOverLifetime
         main.startSize       = new ParticleSystem.MinMaxCurve(rainMinSize, rainMaxSize);
         main.startColor      = rainColor;
-        main.gravityModifier = rainGravity;
+        main.gravityModifier = 0f; // straight line, no parabola — Update() sets the angled velocity
         main.simulationSpace = ParticleSystemSimulationSpace.World;
 
         // ── Emission ───────────────────────────────────────────────────────
@@ -261,8 +283,8 @@ public class RainOverlayUI : MonoBehaviour
         var vel = rainParticles.velocityOverLifetime;
         vel.enabled = true;
         vel.space   = ParticleSystemSimulationSpace.World;
-        vel.x       = new ParticleSystem.MinMaxCurve(rainWindX);
-        vel.y       = new ParticleSystem.MinMaxCurve(0f);
+        vel.x       = new ParticleSystem.MinMaxCurve(0f); // Update() drives x/y from wind + severity
+        vel.y       = new ParticleSystem.MinMaxCurve(-30f);
         vel.z       = new ParticleSystem.MinMaxCurve(0f);
 
         // ── Renderer ───────────────────────────────────────────────────────
@@ -270,7 +292,7 @@ public class RainOverlayUI : MonoBehaviour
         renderer.renderMode    = ParticleSystemRenderMode.Stretch;
         renderer.velocityScale = 0.12f;
         renderer.lengthScale   = rainLengthScale;
-        renderer.sortingOrder  = 55;
+        renderer.sortingOrder  = 5300; // rain in front of gusts (5200) + entities; below lightning (6000)
         renderer.material      = CreateRaindropMaterial();
     }
 
