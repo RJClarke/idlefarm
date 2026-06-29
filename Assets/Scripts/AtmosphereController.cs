@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -13,14 +14,23 @@ public class AtmosphereController : MonoBehaviour
 {
     [SerializeField] private WeatherData weatherData;
 
+    [Tooltip("Debug only: repeatedly fire wind-gust bursts in play mode (to preview without a storm).")]
+    [SerializeField] private bool debugAutoGustBurst = false;
+
     private static readonly int WindID = Shader.PropertyToID("_GlobalWindMul");
     private static readonly int TimeID = Shader.PropertyToID("_WindTime");
 
     private CloudShadowLayer shadows;
     private TintDipLayer tintDip;
     private WindDebrisLayer debris;
+    private StormGustLayer gusts;
     private float intensity;
     private ShadowStyle lastStyle;
+
+    // Storm-gust timing
+    private bool wasStorming;
+    private float stormElapsed;
+    private float gustTimer;
 
     private void OnEnable()
     {
@@ -28,6 +38,7 @@ public class AtmosphereController : MonoBehaviour
         shadows ??= new CloudShadowLayer(transform);
         tintDip ??= new TintDipLayer(transform);
         debris  ??= new WindDebrisLayer(transform);
+        gusts   ??= new StormGustLayer(transform);
         Reconfigure();
     }
 
@@ -38,7 +49,7 @@ public class AtmosphereController : MonoBehaviour
         {
             Transform c = transform.GetChild(i);
             if (c == null) continue;
-            if (c.name == "CloudShadowPatch" || c.name == "WindDebris" || c.name == "TintDipCanvas")
+            if (c.name == "CloudShadowPatch" || c.name == "WindDebris" || c.name == "TintDipCanvas" || c.name == "WindGust")
                 Destroy(c.gameObject);
         }
     }
@@ -48,6 +59,7 @@ public class AtmosphereController : MonoBehaviour
         shadows?.Clear();
         tintDip?.Clear();
         debris?.Clear();
+        gusts?.Clear();
     }
 
     private void Reconfigure()
@@ -56,6 +68,7 @@ public class AtmosphereController : MonoBehaviour
         shadows.Configure(weatherData);
         tintDip.Configure(weatherData);
         debris.Configure(weatherData);
+        gusts.Configure(weatherData);
         ApplyStyle();
     }
 
@@ -96,6 +109,41 @@ public class AtmosphereController : MonoBehaviour
             shadows.Tick(dt, windMul, intensity, cam);
 
         debris.Tick(windMul, intensity, cam);
+
+        // Storm wind gusts: a burst when a storm begins, then occasional gusts for the early window.
+        bool storming = target > 0.5f;
+        if (storming && !wasStorming)
+        {
+            gusts.TriggerBurst(cam);
+            stormElapsed = 0f;
+            gustTimer = weatherData.windGustInterval;
+        }
+        else if (storming)
+        {
+            stormElapsed += dt;
+            if (stormElapsed <= weatherData.windGustWindow)
+            {
+                gustTimer -= dt;
+                if (gustTimer <= 0f) { gusts.SpawnOne(cam); gustTimer = weatherData.windGustInterval; }
+            }
+        }
+        wasStorming = storming;
+
+        gusts.Tick(dt, cam); // always tick so in-flight gusts finish + recycle
+    }
+
+    /// <summary>Spawn a gust burst now (for debugging / previewing without waiting for a storm).</summary>
+    public void TriggerGustBurstNow() => gusts?.TriggerBurst(Camera.main);
+
+    private void Start()
+    {
+        if (debugAutoGustBurst) StartCoroutine(DebugGustLoop());
+    }
+
+    private IEnumerator DebugGustLoop()
+    {
+        var wait = new WaitForSecondsRealtime(3f);
+        while (true) { yield return wait; TriggerGustBurstNow(); }
     }
 
 #if UNITY_EDITOR
@@ -110,5 +158,8 @@ public class AtmosphereController : MonoBehaviour
 
     [ContextMenu("Atmosphere: Force Storm Intensity")]
     private void ForceStormIntensity() => intensity = 1f;
+
+    [ContextMenu("Atmosphere: Trigger Wind Gust Burst")]
+    private void DebugGustBurst() => TriggerGustBurstNow();
 #endif
 }

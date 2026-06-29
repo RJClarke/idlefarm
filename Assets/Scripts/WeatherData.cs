@@ -213,6 +213,37 @@ public class WeatherData : ScriptableObject
     [Range(0f, 6f)]
     public float debrisStormRateMul = 3f;
 
+    [Header("Ambient — Storm Wind Gusts (streaks at storm start)")]
+    [Tooltip("Wind-streak sprites that sweep across at the start of a storm (e.g. the wide sub-sprites of 5 Wind/Wind1-4).")]
+    public Sprite[] windStreakSprites;
+
+    [Tooltip("How many gust streaks burst across when a storm begins.")]
+    [Range(0, 12)]
+    public int windGustBurstCount = 4;
+
+    [Tooltip("Seconds between the occasional follow-up gusts during the early storm window.")]
+    [Range(0.5f, 15f)]
+    public float windGustInterval = 3.5f;
+
+    [Tooltip("Only spawn follow-up gusts for this many seconds after a storm starts (the 'beginning').")]
+    [Range(0f, 60f)]
+    public float windGustWindow = 12f;
+
+    [Tooltip("Gust travel speed (world units/sec) across the screen.")]
+    [Range(2f, 80f)]
+    public float windGustSpeed = 26f;
+
+    [Tooltip("Min/Max scale multiplier applied to a gust sprite.")]
+    public Vector2 windGustScaleRange = new Vector2(3f, 6f);
+
+    [Tooltip("Seconds a gust lives (also its fade duration).")]
+    [Range(0.3f, 6f)]
+    public float windGustLife = 2.2f;
+
+    [Tooltip("Peak opacity of a gust streak.")]
+    [Range(0f, 1f)]
+    public float windGustAlpha = 0.55f;
+
     // ─────────────────────────────────────────────────────────────────────
     // Runtime Helpers (used by ThunderstormManager)
     // ─────────────────────────────────────────────────────────────────────

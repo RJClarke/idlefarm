@@ -52,3 +52,17 @@ MonoBehaviour:
   debrisBaseRate: 3
   debrisSprites: []
   debrisStormRateMul: 3
+  windStreakSprites:
+  - {fileID: -1259085129970102698, guid: 0d4d37dab5bb177469fb208375dfe813, type: 3}
+  - {fileID: 5306958134031766521, guid: 7f672aef1bd457d4c98d2c713bc29f85, type: 3}
+  - {fileID: -419639335283427553, guid: ae6c1c32e28144c4886f8112643b7e4c, type: 3}
+  - {fileID: 910950190059245017, guid: eb2b1356862cff94e8212806948e46ee, type: 3}
+  - {fileID: -7197365067645711671, guid: ae6c1c32e28144c4886f8112643b7e4c, type: 3}
+  - {fileID: -959491091694036873, guid: eb2b1356862cff94e8212806948e46ee, type: 3}
+  windGustBurstCount: 4
+  windGustInterval: 3.5
+  windGustWindow: 12
+  windGustSpeed: 26
+  windGustScaleRange: {x: 3, y: 6}
+  windGustLife: 2.2
+  windGustAlpha: 0.55
