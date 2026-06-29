@@ -245,6 +245,45 @@ public class WeatherData : ScriptableObject
     public float windGustAlpha = 0.55f;
 
     // ─────────────────────────────────────────────────────────────────────
+    // Weather Profiles + Scheduler (unified casual + storm system)
+    // ─────────────────────────────────────────────────────────────────────
+
+    [Header("Weather — Blend")]
+    [Tooltip("How fast the live weather eases toward the active profile (per second).")]
+    [Range(0.05f, 3f)] public float weatherBlendSpeed = 0.4f;
+
+    [Header("Weather — Casual Profiles")]
+    public WeatherProfile profileClear  = new WeatherProfile { name = "Clear",  severity = 0f,    wind = 0.02f, cloudiness = 0.05f, precipitation = 0f };
+    public WeatherProfile profileCloudy = new WeatherProfile { name = "Cloudy", severity = 0f,    wind = 0.12f, cloudiness = 0.7f,  precipitation = 0f };
+    public WeatherProfile profileWindy  = new WeatherProfile { name = "Windy",  severity = 0.08f, wind = 0.65f, cloudiness = 0.45f, precipitation = 0f };
+
+    [Header("Weather — Casual Scheduler (runs everywhere)")]
+    [Tooltip("Random seconds between casual-weather rolls.")]
+    public Vector2 casualRollInterval = new Vector2(120f, 240f);
+    [Tooltip("Random seconds a casual mood lasts before easing back to Clear.")]
+    public Vector2 casualEventDuration = new Vector2(20f, 40f);
+    [Tooltip("Weight of rolling Clear (skip) in the casual roll.")]
+    public float casualClearWeight = 2.5f;
+    [Tooltip("Weight of rolling Cloudy in the casual roll.")]
+    public float casualCloudyWeight = 2f;
+    [Tooltip("Weight of rolling Windy in the casual roll.")]
+    public float casualWindyWeight = 1.5f;
+
+    [Header("Weather — Storm Scaling")]
+    [Tooltip("Storm number that reaches full severity (1.0).")]
+    [Range(1f, 10f)] public float stormsToMaxSeverity = 5f;
+    [Tooltip("Storm cloudiness lerped by severity (min ~Storm 1 .. max at full severity).")]
+    public Vector2 stormCloudiness = new Vector2(0.6f, 1f);
+    [Tooltip("Storm wind lerped by severity.")]
+    public Vector2 stormWind = new Vector2(0.35f, 1f);
+    [Tooltip("Storm precipitation lerped by severity.")]
+    public Vector2 stormPrecip = new Vector2(0.4f, 1f);
+
+    [Header("Weather — Rain")]
+    [Tooltip("Max rain fall angle from vertical (deg) at full severity. Near-horizontal late storms.")]
+    [Range(10f, 85f)] public float rainMaxAngleDeg = 75f;
+
+    // ─────────────────────────────────────────────────────────────────────
     // Runtime Helpers (used by ThunderstormManager)
     // ─────────────────────────────────────────────────────────────────────
 
