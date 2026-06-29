@@ -469,7 +469,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -16
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4104984988269287952, guid: d433ee86cb2540b4b8dd1127d46e2ce2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -560,7 +560,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -15
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5630208190090487303, guid: 3c22e7393267e0244a23eb2b8229eabc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -595,6 +595,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 713450573252532133, guid: f0c4d22cea1056e4cae9a650fc625322, type: 3}
+      propertyPath: m_SortingOrder
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 2207128473709898682, guid: f0c4d22cea1056e4cae9a650fc625322, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -634,6 +638,18 @@ PrefabInstance:
     - target: {fileID: 2207128473709898682, guid: f0c4d22cea1056e4cae9a650fc625322, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3691157671424284977, guid: f0c4d22cea1056e4cae9a650fc625322, type: 3}
+      propertyPath: m_SortingOrder
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3943209155754242555, guid: f0c4d22cea1056e4cae9a650fc625322, type: 3}
+      propertyPath: m_SortingOrder
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192890179392065075, guid: f0c4d22cea1056e4cae9a650fc625322, type: 3}
+      propertyPath: m_SortingOrder
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 7419159714712460600, guid: f0c4d22cea1056e4cae9a650fc625322, type: 3}
       propertyPath: m_Name
