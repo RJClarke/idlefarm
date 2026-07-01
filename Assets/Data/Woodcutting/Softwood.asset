@@ -18,7 +18,7 @@ MonoBehaviour:
   requiredAxeLevel: 0
   growSeconds: 40
   stageCount: 5
-  saplingScale: 1.2
-  fullScale: 3.5
+  saplingScale: 0.4
+  fullScale: 1.3
   standingSprite: {fileID: 4435784651841869115, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   stageSprites: []
