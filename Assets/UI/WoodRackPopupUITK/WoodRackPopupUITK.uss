@@ -1,0 +1,167 @@
+/* Wood rack sell panel — center-card style, reuses the shared wood popup chrome. */
+
+.popup-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    display: none;
+}
+
+.popup-root.open { opacity: 1; }
+
+.backdrop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.popup-container {
+    width: 82%;
+    max-width: 760px;
+    min-width: 320px;
+    background-color: rgb(179, 154, 110);
+    border-color: rgb(90, 55, 20);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    overflow: hidden;
+    scale: 0.92 0.92;
+    transition: scale 0.22s ease-out;
+    flex-direction: column;
+}
+
+.popup-root.open .popup-container { scale: 1 1; }
+
+.header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 14px;
+    padding-left: 24px;
+    padding-right: 16px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(90, 55, 20, 0.4);
+}
+
+.header-title {
+    -unity-font-style: bold;
+    font-size: 36px;
+    color: rgb(54, 32, 14);
+}
+
+.close-button {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    -unity-background-scale-mode: scale-to-fit;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+}
+
+.close-button:hover { opacity: 0.85; }
+
+/* ─── Body ─── */
+
+.body {
+    flex-direction: column;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 22px;
+    padding-bottom: 28px;
+}
+
+.wood-count {
+    -unity-font-style: bold;
+    font-size: 34px;
+    color: rgb(54, 32, 14);
+    -unity-text-align: middle-center;
+    margin-bottom: 20px;
+}
+
+.stack-row {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.stack-btn {
+    width: 96px;
+    height: 62px;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: rgb(54, 32, 14);
+    background-color: rgb(255, 252, 245);
+    border-color: rgba(54, 32, 14, 0.35);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.stack-btn--active {
+    background-color: rgb(120, 90, 45);
+    border-color: rgb(60, 38, 14);
+    color: rgb(255, 240, 210);
+}
+
+.sell-btn {
+    height: 78px;
+    font-size: 26px;
+    -unity-font-style: bold;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    margin-bottom: 12px;
+}
+
+.sell-btn--cash {
+    background-color: rgb(120, 170, 90);
+    border-color: rgb(60, 100, 40);
+    color: rgb(28, 50, 20);
+}
+
+.sell-btn--gold {
+    background-color: rgb(224, 180, 70);
+    border-color: rgb(140, 100, 30);
+    color: rgb(70, 48, 12);
+}
+
+.sell-btn:disabled { opacity: 0.45; }
+
+.cash-hint {
+    font-size: 16px;
+    color: rgba(54, 32, 14, 0.8);
+    -unity-text-align: middle-center;
+    margin-bottom: 14px;
+}
