@@ -12,6 +12,8 @@ public class GameData
     public int coins;
     public int gems;
     public int compost;
+    public int wood;
+    public int axeLevel;
     public string[] unlockedAnimalIDs;
     public string equippedAnimalID;
     public string lastEggClaimTime;
@@ -75,6 +77,8 @@ public class GameData
         coins = 0;
         gems = 0;
         compost = 0;
+        wood = 0;
+        axeLevel = 0;
         unlockedAnimalIDs = new string[0];
         equippedAnimalID = "";
         lastEggClaimTime = "";

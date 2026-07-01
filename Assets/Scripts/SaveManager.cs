@@ -133,6 +133,9 @@ public class SaveManager : MonoBehaviour
             ? UpgradeManager.Instance.GetTemporaryLevelsForSave()
             : new UpgradeLevelEntry[0];
 
+        data.wood = CurrencyManager.Instance != null ? CurrencyManager.Instance.Wood : 0;
+        data.axeLevel = WoodcuttingManager.Instance != null ? WoodcuttingManager.Instance.AxeLevel : 0;
+
         // Convert to JSON
         string json = JsonUtility.ToJson(data, true); // true = pretty print for debugging
 
@@ -175,6 +178,8 @@ public class SaveManager : MonoBehaviour
                 CurrencyManager.Instance.SetCoins(data.coins);
                 CurrencyManager.Instance.SetGems(data.gems);
                 CurrencyManager.Instance.SetCompost(data.compost);
+                CurrencyManager.Instance.SetWood(data.wood);
+                if (WoodcuttingManager.Instance != null) WoodcuttingManager.Instance.SetAxeLevel(data.axeLevel);
 
                 if (AnimalManager.Instance != null)
                 {

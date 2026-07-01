@@ -17,6 +17,7 @@ public class CurrencyManager : MonoBehaviour
     [SerializeField] private int currentCoins = 0;  // Permanent currency
     [SerializeField] private int currentGems = 0;   // Premium currency
     [SerializeField] private int currentCompost = 0; // Research-boost currency (Plan 2)
+    [SerializeField] private int currentWood = 0; // Woodcutting resource
 
     [Header("Starting Values")]
     [SerializeField] private int startingMoney = 100; // Money at start of each run
@@ -27,12 +28,14 @@ public class CurrencyManager : MonoBehaviour
     public event Action<int> OnCoinsChanged;
     public event Action<int> OnGemsChanged;
     public event Action<int> OnCompostChanged;
+    public event Action<int> OnWoodChanged;
 
     // Properties for read-only access
     public int Money => currentMoney;
     public int Coins => currentCoins;
     public int Gems => currentGems;
     public int Compost => currentCompost;
+    public int Wood => currentWood;
 
     private void Awake()
     {
@@ -118,6 +121,16 @@ public class CurrencyManager : MonoBehaviour
     public void ResetMoneyForNewRun()
     {
         currentMoney = startingMoney;
+        OnMoneyChanged?.Invoke(currentMoney);
+    }
+
+    /// <summary>
+    /// Restore money directly from a saved value (used by SaveManager when resuming an in-progress run).
+    /// Bypasses the AddMoney/SpendMoney flow and fires OnMoneyChanged once.
+    /// </summary>
+    public void SetMoney(int amount)
+    {
+        currentMoney = Mathf.Max(0, amount);
         OnMoneyChanged?.Invoke(currentMoney);
     }
 
@@ -263,6 +276,34 @@ public class CurrencyManager : MonoBehaviour
     {
         currentCompost = Mathf.Max(0, amount);
         OnCompostChanged?.Invoke(currentCompost);
+    }
+
+    #endregion
+
+    #region Wood (Woodcutting resource)
+
+    public void AddWood(int amount)
+    {
+        if (amount <= 0) return;
+        currentWood += amount;
+        OnWoodChanged?.Invoke(currentWood);
+    }
+
+    public bool SpendWood(int amount)
+    {
+        if (amount <= 0) return true;
+        if (currentWood < amount) return false;
+        currentWood -= amount;
+        OnWoodChanged?.Invoke(currentWood);
+        return true;
+    }
+
+    public bool CanAffordWood(int amount) => currentWood >= amount;
+
+    public void SetWood(int amount)
+    {
+        currentWood = Mathf.Max(0, amount);
+        OnWoodChanged?.Invoke(currentWood);
     }
 
     #endregion
