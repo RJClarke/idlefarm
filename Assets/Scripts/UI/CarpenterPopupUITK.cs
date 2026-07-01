@@ -57,15 +57,23 @@ public class CarpenterPopupUITK : MonoBehaviour
         if (CurrencyManager.Instance != null)
         {
             CurrencyManager.Instance.OnCoinsChanged += OnCurrencyChanged;
+            CurrencyManager.Instance.OnWoodChanged += OnCurrencyChanged;
             eventsSubscribed = true;
         }
+        if (WoodcuttingManager.Instance != null)
+            WoodcuttingManager.Instance.OnAxeLevelChanged += OnCurrencyChanged;
         BuildingState.OnBuildingBuilt += OnBuildingBuilt;
     }
 
     private void UnsubscribeEvents()
     {
         if (CurrencyManager.Instance != null)
+        {
             CurrencyManager.Instance.OnCoinsChanged -= OnCurrencyChanged;
+            CurrencyManager.Instance.OnWoodChanged -= OnCurrencyChanged;
+        }
+        if (WoodcuttingManager.Instance != null)
+            WoodcuttingManager.Instance.OnAxeLevelChanged -= OnCurrencyChanged;
         BuildingState.OnBuildingBuilt -= OnBuildingBuilt;
         eventsSubscribed = false;
     }
@@ -137,6 +145,7 @@ public class CarpenterPopupUITK : MonoBehaviour
         if (rowsList == null) return;
         rowsList.Clear();
         BuildGreenhouseRow();
+        BuildAxeUpgradeRow();
     }
 
     private void BuildGreenhouseRow()
@@ -195,6 +204,62 @@ public class CarpenterPopupUITK : MonoBehaviour
             row.AddToClassList("market-row--cant-afford");
             status.text = "🔒 LOCKED";
             cost.text = FormatCoinCost(greenhouseCost);
+        }
+
+        rowsList.Add(row);
+    }
+
+    private void BuildAxeUpgradeRow()
+    {
+        var wm = WoodcuttingManager.Instance;
+        if (wm == null) return;
+
+        VisualElement row = new VisualElement();
+        row.AddToClassList("market-row");
+
+        VisualElement textBlock = new VisualElement();
+        textBlock.AddToClassList("market-row-text");
+        Label title = new Label($"Upgrade Axe (Lv {wm.AxeLevel}/{wm.MaxAxeLevel})");
+        title.AddToClassList("market-row-title");
+        Label desc = new Label("Fell harder trees and chop faster.");
+        desc.AddToClassList("market-row-desc");
+        textBlock.Add(title);
+        textBlock.Add(desc);
+
+        VisualElement rightBlock = new VisualElement();
+        rightBlock.AddToClassList("market-row-right");
+        Label status = new Label();
+        status.AddToClassList("market-row-status");
+        Label cost = new Label();
+        cost.AddToClassList("market-row-cost");
+        rightBlock.Add(status);
+        rightBlock.Add(cost);
+
+        row.Add(textBlock);
+        row.Add(rightBlock);
+
+        bool maxed = wm.AxeLevel >= wm.MaxAxeLevel;
+        if (maxed)
+        {
+            row.AddToClassList("market-row--owned");
+            status.text = "✓ Max";
+            cost.text = "";
+        }
+        else
+        {
+            cost.text = $"{FormatCoinCost(wm.NextUpgradeCoinCost())} + {wm.NextUpgradeWoodCost()} wood";
+            if (wm.CanUpgradeAxe())
+            {
+                row.AddToClassList("market-row--buy");
+                status.text = "UPGRADE";
+                row.RegisterCallback<ClickEvent>(_ => { WoodcuttingManager.Instance.TryUpgradeAxe(); });
+                WirePressedFeedback(row, "market-row--pressed");
+            }
+            else
+            {
+                row.AddToClassList("market-row--cant-afford");
+                status.text = "🔒 LOCKED";
+            }
         }
 
         rowsList.Add(row);
