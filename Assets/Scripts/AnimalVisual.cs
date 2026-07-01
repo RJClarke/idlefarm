@@ -85,6 +85,17 @@ public class AnimalVisual : MonoBehaviour
         lastAnimState = state;
     }
 
+    /// <summary>
+    /// Lets another controller (e.g. Cow eating) drive the facing + walk/idle animation from a
+    /// movement direction, so the sprite faces where it's actually going. Use together with
+    /// <see cref="PauseWander"/> = true so the built-in wander doesn't fight it.
+    /// </summary>
+    public void DriveMovementAnim(Vector3 worldDirection, bool moving)
+    {
+        if (moving) UpdateFacing(worldDirection);
+        ApplyAnimState(moving);
+    }
+
     private void Update()
     {
         if (data == null)
@@ -208,11 +219,11 @@ public class AnimalVisual : MonoBehaviour
         if (eggInstance != null) return; // Already has an egg
 
         eggInstance = new GameObject("EggDrop");
-        eggInstance.transform.SetParent(transform, false);
+        // NOT parented to the chicken — drops onto the ground where she laid it and stays put as she wanders.
         eggInstance.transform.position = transform.position + Vector3.down * 0.2f;
 
         SpriteRenderer eggRenderer = eggInstance.AddComponent<SpriteRenderer>();
-        eggRenderer.sortingOrder = 9;
+        eggRenderer.sortingOrder = 11; // above the animal body (sortingOrder 10); YSort will manage by depth
 
         if (eggSprite != null)
         {
@@ -248,8 +259,8 @@ public class AnimalVisual : MonoBehaviour
         eggInstance.transform.localScale = Vector3.zero;
         LeanTween.scale(eggInstance, Vector3.one * 0.8f, 0.3f).setEaseOutBack();
 
-        // Egg is a child; fold it into the animal's YSort so it keeps its relative order.
-        GetComponent<YSort>()?.RefreshRenderers();
+        // Egg is unparented (stays on the ground), so it depth-sorts on its own.
+        YSort.Ensure(eggInstance, isStatic: true);
     }
 
     public void RemoveEgg()
