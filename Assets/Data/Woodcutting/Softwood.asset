@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Softwood
   m_EditorClassIdentifier: Assembly-CSharp::WoodTreeData
   treeName: Softwood
-  baseHitsToFell: 5
+  baseHitsToFell: 6
   woodYield: 50
-  regrowSeconds: 45
   requiredAxeLevel: 0
-  standingSprite: {fileID: 21300000, guid: 582598e5cb0311d4ca235a21afc57a18, type: 3}
-  stumpSprite: {fileID: 21300000, guid: 66cfdfd7e0b0ec24ea27cd7433951e78, type: 3}
+  growSeconds: 40
+  stageCount: 5
+  saplingScale: 1.2
+  fullScale: 3.5
+  standingSprite: {fileID: 4435784651841869115, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  stageSprites: []

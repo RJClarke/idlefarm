@@ -49,4 +49,30 @@ public static class WoodcuttingMath
         if (axeLevel >= maxLevel) return false;
         return coins >= coinCost && wood >= woodCost;
     }
+
+    // ── Tree growth (sapling -> full over stageCount stages) ──────────────
+
+    /// <summary>Current growth stage (0 = sapling .. stageCount-1 = full grown) for a 0..1 growth fraction.</summary>
+    public static int StageIndex(float growthFraction, int stageCount)
+    {
+        if (stageCount <= 1) return 0;
+        int idx = Mathf.FloorToInt(Mathf.Clamp01(growthFraction) * stageCount);
+        return Mathf.Clamp(idx, 0, stageCount - 1);
+    }
+
+    /// <summary>Wood from felling at a given stage: only a portion if cut early, full yield at the last stage.</summary>
+    public static int StageYield(int fullYield, int stageIndex, int stageCount)
+    {
+        if (stageCount <= 0) return Mathf.Max(0, fullYield);
+        int stage = Mathf.Clamp(stageIndex, 0, stageCount - 1);
+        return Mathf.RoundToInt(Mathf.Max(0, fullYield) * (stage + 1) / (float)stageCount);
+    }
+
+    /// <summary>Taps to fell scaled by stage — saplings fall fast, full trees take the full count (min 1).</summary>
+    public static int StageHits(int fullHits, int stageIndex, int stageCount)
+    {
+        if (stageCount <= 0) return Mathf.Max(1, fullHits);
+        int stage = Mathf.Clamp(stageIndex, 0, stageCount - 1);
+        return Mathf.Max(1, Mathf.RoundToInt(fullHits * (stage + 1) / (float)stageCount));
+    }
 }

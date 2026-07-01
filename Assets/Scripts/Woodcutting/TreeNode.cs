@@ -2,9 +2,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// A choppable tree in the Woods. Tap to chop; after the effective hit count it falls,
-/// awards Wood, and shows a stump that regrows after WoodTreeData.regrowSeconds
-/// (UtcNow-based so offline time counts). Only interactable when the camera is at Woods.
+/// A choppable tree in the Woods. Grows continuously from a sapling to full grown over
+/// WoodTreeData.growSeconds (UtcNow-based, so it keeps growing offline), stepping through
+/// stages that scale it up. Tap to chop at any stage: cutting early yields only a portion of
+/// the wood and restarts growth from a fresh sapling. Only interactable at the Woods.
 /// </summary>
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
@@ -16,25 +17,51 @@ public class TreeNode : MonoBehaviour
     private SpriteRenderer sr;
     private Collider2D ownCollider;
     private int hitsSoFar;
-    private bool isStump;
-    private long stumpSinceUtcTicks;
-    private Vector3 basePos;
+    private long plantedUtcTicks;
+    private int shownStage = -1;
 
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         ownCollider = GetComponent<Collider2D>();
-        basePos = transform.localPosition;
-        ShowStanding();
+        // Start at a random point in the growth cycle so the woods looks varied, not uniform.
+        double offset = data != null ? Random.value * data.growSeconds : 0.0;
+        plantedUtcTicks = System.DateTime.UtcNow.Ticks - (long)(offset * System.TimeSpan.TicksPerSecond);
     }
 
     private void Update()
     {
-        if (isStump) { TryRegrow(); return; }
-        if (data == null || !AtWoods()) return;
+        if (data == null) return;
+        ApplyGrowthVisual();
+
+        if (!AtWoods()) return;
         if (!TryReadTap(out Vector2 screenPos)) return;
         if (!PointerHitsSelf(screenPos)) return;
         Chop();
+    }
+
+    private float GrowthFraction()
+    {
+        double elapsed = (System.DateTime.UtcNow.Ticks - plantedUtcTicks) / (double)System.TimeSpan.TicksPerSecond;
+        return WoodcuttingMath.RegrowFraction(elapsed, data.growSeconds);
+    }
+
+    private void ApplyGrowthVisual()
+    {
+        float g = GrowthFraction();
+        int stage = WoodcuttingMath.StageIndex(g, data.stageCount);
+
+        // Scale steps per stage from sapling to full.
+        float t = data.stageCount > 1 ? stage / (float)(data.stageCount - 1) : 1f;
+        float scale = Mathf.Lerp(data.saplingScale, data.fullScale, t);
+        transform.localScale = new Vector3(scale, scale, 1f);
+
+        if (stage != shownStage)
+        {
+            shownStage = stage;
+            Sprite s = data.SpriteForStage(stage);
+            if (s != null) sr.sprite = s;
+        }
     }
 
     private void Chop()
@@ -44,41 +71,31 @@ public class TreeNode : MonoBehaviour
 
         if (!WoodcuttingMath.CanFell(data.requiredAxeLevel, axe))
         {
-            // Locked tree: small feedback, no progress. (Toast/hint optional.)
+            // Locked tree: no progress. (Toast/hint optional.)
             return;
         }
 
+        int stage = WoodcuttingMath.StageIndex(GrowthFraction(), data.stageCount);
+        int fullHits = WoodcuttingMath.EffectiveHitsToFell(data.baseHitsToFell, axe, reduction);
+        int needed = WoodcuttingMath.StageHits(fullHits, stage, data.stageCount);
+
         hitsSoFar++;
-        LeanTween.moveLocalX(gameObject, basePos.x + shakePixels / 32f, 0.04f).setLoopPingPong(1);
+        LeanTween.moveLocalX(gameObject, transform.localPosition.x + shakePixels / 32f, 0.04f).setLoopPingPong(1);
 
-        int needed = WoodcuttingMath.EffectiveHitsToFell(data.baseHitsToFell, axe, reduction);
-        if (hitsSoFar >= needed) Fell();
+        if (hitsSoFar >= needed) Fell(stage);
     }
 
-    private void Fell()
+    private void Fell(int stage)
     {
-        if (CurrencyManager.Instance != null) CurrencyManager.Instance.AddWood(data.woodYield);
+        int yield = WoodcuttingMath.StageYield(data.woodYield, stage, data.stageCount);
+        if (CurrencyManager.Instance != null) CurrencyManager.Instance.AddWood(yield);
         // TODO(art): floating +N text via existing floating-number system.
+
+        // Cutting restarts growth from a fresh sapling, cooldown from now.
         hitsSoFar = 0;
-        isStump = true;
-        stumpSinceUtcTicks = System.DateTime.UtcNow.Ticks;
-        ShowStump();
-    }
-
-    private void TryRegrow()
-    {
-        double elapsed = (System.DateTime.UtcNow.Ticks - stumpSinceUtcTicks) / (double)System.TimeSpan.TicksPerSecond;
-        if (WoodcuttingMath.IsRegrown(elapsed, data.regrowSeconds)) { isStump = false; ShowStanding(); }
-    }
-
-    private void ShowStanding()
-    {
-        if (data != null && data.standingSprite != null) sr.sprite = data.standingSprite;
-    }
-
-    private void ShowStump()
-    {
-        if (data != null && data.stumpSprite != null) sr.sprite = data.stumpSprite;
+        shownStage = -1;
+        plantedUtcTicks = System.DateTime.UtcNow.Ticks;
+        ApplyGrowthVisual();
     }
 
     private static bool AtWoods()

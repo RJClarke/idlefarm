@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: Hardwood
   m_EditorClassIdentifier: Assembly-CSharp::WoodTreeData
   treeName: Hardwood
-  baseHitsToFell: 9
+  baseHitsToFell: 10
   woodYield: 110
-  regrowSeconds: 90
   requiredAxeLevel: 1
-  standingSprite: {fileID: 21300000, guid: 582598e5cb0311d4ca235a21afc57a18, type: 3}
-  stumpSprite: {fileID: 21300000, guid: 66cfdfd7e0b0ec24ea27cd7433951e78, type: 3}
+  growSeconds: 80
+  stageCount: 5
+  saplingScale: 1.4
+  fullScale: 4.5
+  standingSprite: {fileID: 548253568, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  stageSprites: []
