@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class CameraPanController : MonoBehaviour
 {
-    public enum Location { Farm, Greenhouse, Market }
+    public enum Location { Farm, Greenhouse, Market, Woods }
 
     [Serializable]
     public class LocationOffset
@@ -28,6 +28,7 @@ public class CameraPanController : MonoBehaviour
         new LocationOffset { location = Location.Farm,       offset = Vector2.zero },
         new LocationOffset { location = Location.Greenhouse, offset = new Vector2(5f, 8f) },
         new LocationOffset { location = Location.Market,     offset = new Vector2(15f, 0f), durationOverride = 0.8f, easeOverride = LeanTweenType.easeInOutCubic },
+        new LocationOffset { location = Location.Woods,      offset = new Vector2(12f, -8f) },
     };
 
     [Header("Tween")]
@@ -92,6 +93,7 @@ public class CameraPanController : MonoBehaviour
     public void PanToFarm()       => PanTo(Location.Farm);
     public void PanToGreenhouse() => PanTo(Location.Greenhouse);
     public void PanToMarket()     => PanTo(Location.Market);
+    public void PanToWoods()      => PanTo(Location.Woods);
 
     public void ToggleFarmGreenhouse()
     {
