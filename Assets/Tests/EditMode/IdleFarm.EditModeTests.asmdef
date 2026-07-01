@@ -1,7 +1,7 @@
 {
     "name": "IdleFarm.EditModeTests",
     "rootNamespace": "",
-    "references": ["IdleFarm.EconomyCore"],
+    "references": ["IdleFarm.EconomyCore", "IdleFarm.WoodcuttingCore"],
     "includePlatforms": ["Editor"],
     "excludePlatforms": [],
     "overrideReferences": true,
