@@ -49,7 +49,11 @@ public class GreenhouseNavButton : MonoBehaviour
     private void OnClick()
     {
         if (panController == null) return;
-        panController.ToggleFarmGreenhouse();
+        // Zip straight to the Greenhouse from wherever we are (or back to Farm if already there) —
+        // no need to return to the Farm view first.
+        panController.PanTo(panController.CurrentLocation == CameraPanController.Location.Greenhouse
+            ? CameraPanController.Location.Farm
+            : CameraPanController.Location.Greenhouse);
     }
 
     private void OnPanStarted(CameraPanController.Location target) => UpdateVisibility(target);
