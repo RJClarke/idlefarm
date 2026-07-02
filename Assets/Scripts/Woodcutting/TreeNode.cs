@@ -51,9 +51,13 @@ public class TreeNode : MonoBehaviour
         float g = GrowthFraction();
         int stage = WoodcuttingMath.StageIndex(g, data.stageCount);
 
-        // Scale steps per stage from sapling to full.
-        float t = data.stageCount > 1 ? stage / (float)(data.stageCount - 1) : 1f;
-        float scale = Mathf.Lerp(data.saplingScale, data.fullScale, t);
+        // With per-stage art, the sprites themselves convey growth — hold a constant display
+        // scale. Without art, fall back to scaling a single sprite from sapling to full.
+        bool hasStageArt = data.stageSprites != null && data.stageSprites.Length > 0;
+        float scale = hasStageArt
+            ? data.fullScale
+            : Mathf.Lerp(data.saplingScale, data.fullScale,
+                         data.stageCount > 1 ? stage / (float)(data.stageCount - 1) : 1f);
         transform.localScale = new Vector3(scale, scale, 1f);
 
         if (stage != shownStage)

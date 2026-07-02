@@ -17,8 +17,14 @@ MonoBehaviour:
   woodYield: 110
   requiredAxeLevel: 1
   growSeconds: 80
-  stageCount: 5
+  stageCount: 6
   saplingScale: 0.5
   fullScale: 1.6
   standingSprite: {fileID: 548253568, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
-  stageSprites: []
+  stageSprites:
+  - {fileID: 1455621001347679882, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  - {fileID: -4566471581769381714, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  - {fileID: -5990934982055149062, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  - {fileID: 8164607714757790798, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  - {fileID: 5166906888149732878, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
+  - {fileID: 548253568, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
