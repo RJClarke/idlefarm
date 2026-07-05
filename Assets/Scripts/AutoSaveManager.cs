@@ -60,13 +60,15 @@ public class AutoSaveManager : MonoBehaviour
     {
         if (subscribed) return;
 
-        if (CurrencyManager.Instance != null)
-        {
-            CurrencyManager.Instance.OnMoneyChanged   += OnInt;
-            CurrencyManager.Instance.OnCoinsChanged   += OnInt;
-            CurrencyManager.Instance.OnGemsChanged    += OnInt;
-            CurrencyManager.Instance.OnCompostChanged += OnInt;
-        }
+        // CurrencyManager is the anchor subscription (Money/Coins drive most saves). If it
+        // isn't up yet, don't latch `subscribed` — leave the flag clear so a later
+        // Start/OnEnable retry can wire everything instead of silently never auto-saving.
+        if (CurrencyManager.Instance == null) return;
+
+        CurrencyManager.Instance.OnMoneyChanged   += OnInt;
+        CurrencyManager.Instance.OnCoinsChanged   += OnInt;
+        CurrencyManager.Instance.OnGemsChanged    += OnInt;
+        CurrencyManager.Instance.OnCompostChanged += OnInt;
         if (UpgradeManager.Instance != null)
             UpgradeManager.Instance.OnUpgradePurchased += OnString;
 
