@@ -7,6 +7,13 @@ using System;
 /// - Coins: Permanent currency that persists across runs
 /// - Gems: Premium currency used for special unlocks
 /// </summary>
+// Contract: CurrencyManager.Start() is the game's load trigger — it calls SaveManager.LoadGame(),
+// which applies saved state (incl. resumed-run Money via SetMoney) onto every other manager.
+// It must therefore run AFTER every other manager's Awake/Start, so those managers are fully
+// initialized before load state is applied to them. AutoSaveManager is 1500; 2000 keeps this
+// load after AutoSaveManager's event subscription, which is fine since a debounced save
+// triggered right after load is harmless.
+[DefaultExecutionOrder(2000)]
 public class CurrencyManager : MonoBehaviour
 {
     // Singleton instance for easy access from anywhere
@@ -51,19 +58,23 @@ public class CurrencyManager : MonoBehaviour
 
     private void Start()
     {
+        // Set new-game defaults FIRST, then let a save (if any) overwrite them below.
+        // This order matters: SaveManager.LoadGame() can restore an in-progress run's Money
+        // via SetMoney(), and that restored value must land LAST so it is never clobbered
+        // by ResetMoneyForNewRun(). Previously this ran in the opposite order, which reset
+        // Money back to startingMoney on every quick app restart during an active run.
+        ResetMoneyForNewRun();
+
         // Try to load saved data
         if (SaveManager.Instance != null && SaveManager.Instance.LoadGame())
         {
-            // Coins are already set by LoadGame()
+            // Coins (and, if a run is active, Money) are already set by LoadGame()
         }
         else
         {
             // New game - use starting values
             SetCoins(startingCoins);
         }
-        
-        // Always reset money for new run
-        ResetMoneyForNewRun();
     }
 
     #region Money Management (Run-Based Currency)
