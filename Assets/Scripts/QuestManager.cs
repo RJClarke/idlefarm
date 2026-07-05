@@ -29,6 +29,14 @@ public class QuestManager : MonoBehaviour
     private DateTime questWeekStart = DateTime.MinValue;
     private DateTime lastQuestDropTime = DateTime.MinValue;
 
+    // questID -> QuestData, built once from allQuests (avoids a Find/closure per active quest per gameplay event).
+    private Dictionary<string, QuestData> questsByID = new Dictionary<string, QuestData>();
+
+    // RunStats.Instance is a session-long singleton, but RunManager.OnRunStarted fires once per
+    // run (new run + resume). Guard so OnRunStarted doesn't re-subscribe lambda-free handlers onto
+    // the same RunStats instance repeatedly, which would multiply IncrementProgress calls per run.
+    private bool runStatsSubscribed;
+
     // Events
     public event Action OnQuestCompleted;
     public event Action OnQuestsDropped;
@@ -43,6 +51,19 @@ public class QuestManager : MonoBehaviour
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        BuildQuestLookup();
+    }
+
+    // allQuests is populated by serialization before Awake runs and is never reassigned at
+    // runtime; rebuild here anyway if that ever changes (e.g. a future hot-reload of the pool).
+    private void BuildQuestLookup()
+    {
+        questsByID = new Dictionary<string, QuestData>(allQuests.Count);
+        foreach (QuestData q in allQuests)
+        {
+            if (q == null || string.IsNullOrEmpty(q.questID)) continue;
+            questsByID[q.questID] = q;
+        }
     }
 
     private void Start()
@@ -184,7 +205,7 @@ public class QuestManager : MonoBehaviour
 
     public QuestData GetQuestData(string questID)
     {
-        return allQuests.Find(q => q.questID == questID);
+        return questsByID.TryGetValue(questID, out QuestData data) ? data : null;
     }
 
     public bool TryClaimQuest(string questID)
@@ -192,8 +213,7 @@ public class QuestManager : MonoBehaviour
         ActiveQuest quest = activeQuests.Find(q => q.questID == questID && !q.isClaimed);
         if (quest == null || !quest.isCompleted) return false;
 
-        QuestData data = allQuests.Find(q => q.questID == questID);
-        if (data == null) return false;
+        if (!questsByID.TryGetValue(questID, out QuestData data)) return false;
 
         CurrencyManager.Instance?.AddCoins(data.coinReward);
         quest.isClaimed = true;
@@ -270,26 +290,52 @@ public class QuestManager : MonoBehaviour
             RunManager.Instance.OnRunStarted += OnRunStarted;
         if (AnimalManager.Instance != null)
         {
-            AnimalManager.Instance.OnEggClaimed += () => IncrementProgress(QuestObjectiveType.GatherEggs);
-            AnimalManager.Instance.OnGemClaimed += () => IncrementProgress(QuestObjectiveType.GatherGems);
+            AnimalManager.Instance.OnEggClaimed += HandleEggClaimed;
+            AnimalManager.Instance.OnGemClaimed += HandleGemClaimed;
         }
-    }
-
-    private void OnRunStarted()
-    {
-        if (RunStats.Instance == null) return;
-        RunStats.Instance.OnCropHarvested += () => IncrementProgress(QuestObjectiveType.HarvestCrops);
-        RunStats.Instance.OnSeedPlanted   += () => IncrementProgress(QuestObjectiveType.PlantSeeds);
-        RunStats.Instance.OnPlantWatered  += () => IncrementProgress(QuestObjectiveType.WaterPlants);
-        RunStats.Instance.OnDeerRepelled  += () => IncrementProgress(QuestObjectiveType.RepelDeer);
-        RunStats.Instance.OnCrowRepelled  += () => IncrementProgress(QuestObjectiveType.RepelCrows);
     }
 
     private void UnsubscribeFromEvents()
     {
-        // Lambda subscriptions can't be unsubscribed by reference — acceptable for a singleton
-        // that lives for the full session.
+        if (RunManager.Instance != null)
+            RunManager.Instance.OnRunStarted -= OnRunStarted;
+        if (AnimalManager.Instance != null)
+        {
+            AnimalManager.Instance.OnEggClaimed -= HandleEggClaimed;
+            AnimalManager.Instance.OnGemClaimed -= HandleGemClaimed;
+        }
+        if (RunStats.Instance != null && runStatsSubscribed)
+        {
+            RunStats.Instance.OnCropHarvested -= HandleCropHarvested;
+            RunStats.Instance.OnSeedPlanted   -= HandleSeedPlanted;
+            RunStats.Instance.OnPlantWatered  -= HandlePlantWatered;
+            RunStats.Instance.OnDeerRepelled  -= HandleDeerRepelled;
+            RunStats.Instance.OnCrowRepelled  -= HandleCrowRepelled;
+        }
+        runStatsSubscribed = false;
     }
+
+    // RunManager.OnRunStarted fires once per run (new run + resume), but RunStats.Instance is a
+    // session-long singleton — only subscribe to it the first time so repeat run starts don't
+    // stack duplicate (unremovable) handlers that would multiply IncrementProgress calls.
+    private void OnRunStarted()
+    {
+        if (RunStats.Instance == null || runStatsSubscribed) return;
+        RunStats.Instance.OnCropHarvested += HandleCropHarvested;
+        RunStats.Instance.OnSeedPlanted   += HandleSeedPlanted;
+        RunStats.Instance.OnPlantWatered  += HandlePlantWatered;
+        RunStats.Instance.OnDeerRepelled  += HandleDeerRepelled;
+        RunStats.Instance.OnCrowRepelled  += HandleCrowRepelled;
+        runStatsSubscribed = true;
+    }
+
+    private void HandleEggClaimed() => IncrementProgress(QuestObjectiveType.GatherEggs);
+    private void HandleGemClaimed() => IncrementProgress(QuestObjectiveType.GatherGems);
+    private void HandleCropHarvested() => IncrementProgress(QuestObjectiveType.HarvestCrops);
+    private void HandleSeedPlanted() => IncrementProgress(QuestObjectiveType.PlantSeeds);
+    private void HandlePlantWatered() => IncrementProgress(QuestObjectiveType.WaterPlants);
+    private void HandleDeerRepelled() => IncrementProgress(QuestObjectiveType.RepelDeer);
+    private void HandleCrowRepelled() => IncrementProgress(QuestObjectiveType.RepelCrows);
 
     private static TimeZoneInfo GetCentralTime()
     {
@@ -303,8 +349,7 @@ public class QuestManager : MonoBehaviour
         foreach (ActiveQuest quest in activeQuests)
         {
             if (quest.isClaimed || quest.isCompleted) continue;
-            QuestData data = allQuests.Find(q => q.questID == quest.questID);
-            if (data == null || data.objectiveType != type) continue;
+            if (!questsByID.TryGetValue(quest.questID, out QuestData data) || data.objectiveType != type) continue;
             quest.progress++;
             if (quest.progress >= data.targetCount)
             {
@@ -325,8 +370,7 @@ public class QuestManager : MonoBehaviour
         foreach (ActiveQuest quest in activeQuests)
         {
             if (quest.isClaimed || quest.isCompleted) continue;
-            QuestData data = allQuests.Find(d => d.questID == quest.questID);
-            if (data == null) continue;
+            if (!questsByID.TryGetValue(quest.questID, out QuestData data)) continue;
             quest.progress = data.targetCount;
             quest.isCompleted = true;
         }
