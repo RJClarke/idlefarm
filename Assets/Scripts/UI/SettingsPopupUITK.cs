@@ -134,6 +134,16 @@ public class SettingsPopupUITK : MonoBehaviour
         SpawnToggleRow(rows, "Floating Numbers", "Show +$ popups on harvest",
             SettingsManager.ShowFloatingNumbers, v => SettingsManager.ShowFloatingNumbers = v);
 
+        SpawnToggleRow(rows, "Currency Animations", "Pulse the currency counters on change",
+            SettingsManager.CurrencyAnimations, v => SettingsManager.CurrencyAnimations = v);
+
+        SpawnCycleRow(rows, "Frame Rate", "Target frames per second",
+            FpsLabel(SettingsManager.TargetFps), () =>
+            {
+                SettingsManager.TargetFps = NextFps(SettingsManager.TargetFps);
+                return FpsLabel(SettingsManager.TargetFps);
+            });
+
         SpawnToggleRow(rows, "Haptics", "Vibration feedback (stub)",
             SettingsManager.Haptics, v => SettingsManager.Haptics = v);
 
@@ -324,6 +334,56 @@ public class SettingsPopupUITK : MonoBehaviour
             Disarm();
             onClick?.Invoke();
         });
+    }
+
+    /// <summary>
+    /// A row with a title/desc on the left and a value button on the right that cycles
+    /// through options on tap. Built programmatically (no dedicated UXML template) but
+    /// reuses the same USS classes as the toggle/button rows so it matches visually.
+    /// <paramref name="onCycle"/> advances the underlying setting and returns the new
+    /// display string, which becomes the button label.
+    /// </summary>
+    private void SpawnCycleRow(VisualElement parent, string title, string desc, string initialValue, Func<string> onCycle)
+    {
+        var row = new VisualElement();
+        row.AddToClassList("settings-row");
+
+        var textCol = new VisualElement();
+        textCol.AddToClassList("settings-row-text");
+
+        var titleLabel = new Label(title);
+        titleLabel.AddToClassList("settings-row-title");
+        var descLabel = new Label(desc);
+        descLabel.AddToClassList("settings-row-desc");
+        textCol.Add(titleLabel);
+        textCol.Add(descLabel);
+
+        // Reuse the button visual so the right-side control matches SpawnButtonRow exactly.
+        var valueButton = new Button { text = initialValue };
+        valueButton.AddToClassList("settings-row-button");
+        // :active doesn't fire on plain VisualElements, but Button routes clicks fine.
+        valueButton.RegisterCallback<ClickEvent>(_ =>
+        {
+            string newLabel = onCycle?.Invoke();
+            if (newLabel != null) valueButton.text = newLabel;
+        });
+
+        row.Add(textCol);
+        row.Add(valueButton);
+        parent.Add(row);
+    }
+
+    private static string FpsLabel(int fps) => $"{fps} FPS";
+
+    private static int NextFps(int fps)
+    {
+        switch (fps)
+        {
+            case 30:  return 60;
+            case 60:  return 120;
+            case 120: return 30;
+            default:  return 60;
+        }
     }
 
     private static string FormatPercent(float v) => $"{Mathf.RoundToInt(v * 100f)}%";

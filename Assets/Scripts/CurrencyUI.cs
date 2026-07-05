@@ -140,8 +140,10 @@ public class CurrencyUI : MonoBehaviour
         // Cancel any existing animation
         LeanTween.cancel(textComponent.gameObject);
 
-        // Scale up then back down
+        // Always reset scale first so toggling the setting mid-tween can't strand a
+        // scaled counter, then bail out if the player disabled currency animations.
         textComponent.transform.localScale = Vector3.one;
+        if (!SettingsManager.CurrencyAnimations) return;
         LeanTween.scale(textComponent.gameObject, Vector3.one * punchScale, animationDuration * 0.5f)
             .setEaseOutQuad()
             .setOnComplete(() =>
