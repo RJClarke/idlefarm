@@ -71,6 +71,9 @@ public class QuestManager : MonoBehaviour
     private void ProcessDrops()
     {
         DateTime nowUtc = DateTime.UtcNow;
+        // Forward-only: if the device clock rolled back below the last drop time, clamp to now so
+        // future drops resume from here instead of being frozen until real time passes the stale future stamp.
+        if (lastQuestDropTime > nowUtc) lastQuestDropTime = nowUtc;
         TimeZoneInfo ct = GetCentralTime();
         DateTime nowCt = TimeZoneInfo.ConvertTimeFromUtc(nowUtc, ct);
 

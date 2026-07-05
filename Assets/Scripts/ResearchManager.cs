@@ -314,6 +314,10 @@ public class ResearchManager : MonoBehaviour
             var rd = GetResearch(s.activeResearchID);
             if (rd == null) { CancelResearch(i); continue; }
 
+            // Forward-only: if the device clock moved backward below this slot's anchor, re-anchor
+            // to now so research resumes immediately instead of freezing until real time catches up.
+            if (s.startUtcTicks > nowTicks) s.startUtcTicks = nowTicks;
+
             // Auto-buy boost when expired (retries each tick until compost is available)
             if (s.HasAutoBuy && !s.HasActiveBoost(nowUtc))
                 TryAutoBuyOnExpiry(i);

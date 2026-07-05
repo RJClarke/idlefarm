@@ -90,7 +90,9 @@ public class AnimalManager : MonoBehaviour
         if (lastCompostTickUtc == DateTime.MinValue) lastCompostTickUtc = DateTime.UtcNow;
 
         double elapsedMin = (DateTime.UtcNow - lastCompostTickUtc).TotalMinutes;
-        if (elapsedMin <= 0) return;
+        // Forward-only: a backward clock (tick timestamp now in the future) re-anchors to now so
+        // the trickle resumes instead of freezing until real time catches up — never grants negatively.
+        if (elapsedMin <= 0) { lastCompostTickUtc = DateTime.UtcNow; return; }
 
         float ratePerMin = equipped.compostPerMinute;
         if (ResearchManager.Instance != null)
@@ -356,6 +358,9 @@ public class AnimalManager : MonoBehaviour
 
         bool isGemAnimal = equipped.rewardGems > 0;
         double elapsedMinutes = (DateTime.UtcNow - lastEggClaimTime).TotalMinutes;
+        // Forward-only: a backward clock (claim time now in the future) re-anchors to now so the
+        // egg/gem timer resumes counting instead of freezing until real time catches up.
+        if (elapsedMinutes < 0) { lastEggClaimTime = DateTime.UtcNow; return; }
         float effectiveCooldown = EffectiveCooldownMinutes(equipped);
 
         if (!eggReady && elapsedMinutes >= effectiveCooldown)

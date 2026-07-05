@@ -58,8 +58,9 @@ public class OfflineProgressManager : MonoBehaviour
     private void TryShow()
     {
         if (!pendingFlag || pendingLastSeenUtcTicks == 0) return;
-        DateTime lastSeen = new DateTime(pendingLastSeenUtcTicks, DateTimeKind.Utc);
-        TimeSpan gap = DateTime.UtcNow - lastSeen;
+        // Forward-only: a device clock set backward yields a 0 gap (no modal, no grants) instead
+        // of a negative TimeSpan that would flow into the offline simulator.
+        TimeSpan gap = TimeSpan.FromSeconds(OfflineClock.ForwardGapSeconds(pendingLastSeenUtcTicks, DateTime.UtcNow.Ticks));
         pendingFlag = false;
         if (gap.TotalMinutes < MinGapMinutes) return;
         ShowWithGap(gap);
@@ -72,8 +73,8 @@ public class OfflineProgressManager : MonoBehaviour
     public void ForceShow()
     {
         if (pendingLastSeenUtcTicks == 0) { Debug.LogWarning("[OfflineProgressManager] ForceShow with no seeded lastSeen — nothing to show."); return; }
-        DateTime lastSeen = new DateTime(pendingLastSeenUtcTicks, DateTimeKind.Utc);
-        TimeSpan gap = DateTime.UtcNow - lastSeen;
+        // Forward-only clamp (mirrors TryShow): a rolled-back clock can't push a negative gap into the sim.
+        TimeSpan gap = TimeSpan.FromSeconds(OfflineClock.ForwardGapSeconds(pendingLastSeenUtcTicks, DateTime.UtcNow.Ticks));
         pendingFlag = false;
         ShowWithGap(gap);
     }

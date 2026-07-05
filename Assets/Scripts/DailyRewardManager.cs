@@ -191,6 +191,16 @@ public class DailyRewardManager : MonoBehaviour
     {
         DateTime thisWeekStart = GetWeekStart(DateTime.Now);
 
+        // Forward-only: if the clock rolled back into a prior week (stored week-start is in the
+        // future), re-anchor down to the current week WITHOUT wiping existing claims, so future
+        // legitimate rollovers still fire instead of the calendar freezing on the future date.
+        if (thisWeekStart < currentWeekStart)
+        {
+            currentWeekStart = thisWeekStart;
+            SaveState();
+            return;
+        }
+
         if (thisWeekStart > currentWeekStart)
         {
             // New week — reset

@@ -42,7 +42,11 @@ public class TreeNode : MonoBehaviour
 
     private float GrowthFraction()
     {
-        double elapsed = (System.DateTime.UtcNow.Ticks - plantedUtcTicks) / (double)System.TimeSpan.TicksPerSecond;
+        long now = System.DateTime.UtcNow.Ticks;
+        // Forward-only: a backward clock (planted timestamp now in the future) re-anchors to now so
+        // the tree resumes growing from sapling instead of freezing until real time catches up.
+        if (plantedUtcTicks > now) plantedUtcTicks = now;
+        double elapsed = (now - plantedUtcTicks) / (double)System.TimeSpan.TicksPerSecond;
         return WoodcuttingMath.RegrowFraction(elapsed, data.growSeconds);
     }
 
