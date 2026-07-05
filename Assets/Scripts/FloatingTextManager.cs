@@ -18,6 +18,15 @@ public class FloatingTextManager : MonoBehaviour
     private Canvas canvas;
     [SerializeField] private TMP_FontAsset font;
 
+    // ── Label pool ────────────────────────────────────────────────────────
+    // Floating rewards are the most-fired visual in the game (every harvest),
+    // so we recycle label GameObjects instead of new/Destroy per pop.
+    private const int PoolCap = 16;
+    private readonly Queue<GameObject> idleLabels = new Queue<GameObject>();
+    // Active labels in spawn order; index 0 is the oldest still-animating one,
+    // which is the one we reclaim first when the pool is exhausted.
+    private readonly List<GameObject> activeLabels = new List<GameObject>();
+
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -102,15 +111,12 @@ public class FloatingTextManager : MonoBehaviour
     private void SpawnLabel(List<CurrencyReward> rewards, Vector2 screenPos)
     {
         if (rewards.Count == 0) return;
-        GameObject go = new GameObject("FloatingReward", typeof(RectTransform));
-        go.transform.SetParent(canvas.transform, false);
+        GameObject go = GetLabel();
+        TextMeshProUGUI tmp = go.GetComponent<TextMeshProUGUI>();
+        RectTransform rt = go.GetComponent<RectTransform>();
 
-        TextMeshProUGUI tmp = go.AddComponent<TextMeshProUGUI>();
         tmp.fontSize = 36;
         tmp.fontStyle = FontStyles.Bold;
-        tmp.alignment = TextAlignmentOptions.Center;
-        tmp.raycastTarget = false;
-        if (font != null) tmp.font = font;
 
         if (rewards.Count == 1)
         {
@@ -132,12 +138,8 @@ public class FloatingTextManager : MonoBehaviour
         }
 
         // Position: convert screen pos to canvas local pos
-        RectTransform rt = go.GetComponent<RectTransform>();
-        rt.sizeDelta = new Vector2(200, 80);
-        rt.pivot = new Vector2(0.5f, 0f);
         // null camera is correct for ScreenSpaceOverlay canvas
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvas.GetComponent<RectTransform>(), screenPos, null, out Vector2 localPt);
+        Vector2 localPt = ToLocalPoint(screenPos);
         rt.anchoredPosition = localPt;
 
         // Animate: drift up 120px over 1.2s (easeOutQuad), fade out over last 0.4s
@@ -153,28 +155,21 @@ public class FloatingTextManager : MonoBehaviour
             .setDelay(0.8f)
             .setIgnoreTimeScale(true)
             .setOnUpdate((float a) => { if (tmp != null) tmp.alpha = a; })
-            .setOnComplete(() => { if (go != null) Destroy(go); });
+            .setOnComplete(() => ReturnLabel(go));
     }
 
     private void SpawnSpendLabel(int amount, Vector2 screenPos)
     {
-        GameObject go = new GameObject("FloatingSpend", typeof(RectTransform));
-        go.transform.SetParent(canvas.transform, false);
+        GameObject go = GetLabel();
+        TextMeshProUGUI tmp = go.GetComponent<TextMeshProUGUI>();
+        RectTransform rt = go.GetComponent<RectTransform>();
 
-        TextMeshProUGUI tmp = go.AddComponent<TextMeshProUGUI>();
         tmp.fontSize = 32;
         tmp.fontStyle = FontStyles.Bold;
-        tmp.alignment = TextAlignmentOptions.Center;
-        tmp.raycastTarget = false;
-        if (font != null) tmp.font = font;
         tmp.text = $"-{amount}$";
         tmp.color = new Color(0.85f, 0.15f, 0.15f); // red
 
-        RectTransform rt = go.GetComponent<RectTransform>();
-        rt.sizeDelta = new Vector2(200, 80);
-        rt.pivot = new Vector2(0.5f, 0f);
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvas.GetComponent<RectTransform>(), screenPos, null, out Vector2 localPt);
+        Vector2 localPt = ToLocalPoint(screenPos);
         rt.anchoredPosition = localPt;
 
         // Drift DOWN (opposite of rewards) so spend reads differently from income.
@@ -185,7 +180,75 @@ public class FloatingTextManager : MonoBehaviour
         LeanTween.value(go, 1f, 0f, 0.4f)
             .setDelay(0.6f).setIgnoreTimeScale(true)
             .setOnUpdate((float a) => { if (tmp != null) tmp.alpha = a; })
-            .setOnComplete(() => { if (go != null) Destroy(go); });
+            .setOnComplete(() => ReturnLabel(go));
+    }
+
+    // ── Pool plumbing ─────────────────────────────────────────────────────
+
+    // null camera is correct for a ScreenSpaceOverlay canvas.
+    private Vector2 ToLocalPoint(Vector2 screenPos)
+    {
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvas.GetComponent<RectTransform>(), screenPos, null, out Vector2 localPt);
+        return localPt;
+    }
+
+    // Returns an active, fully-reset label ready to be configured & animated.
+    private GameObject GetLabel()
+    {
+        GameObject go;
+        if (idleLabels.Count > 0)
+        {
+            go = idleLabels.Dequeue();
+        }
+        else if (idleLabels.Count + activeLabels.Count < PoolCap)
+        {
+            go = CreateLabel();
+        }
+        else
+        {
+            // Pool exhausted: reclaim the oldest still-animating label. Its drift/
+            // fade tweens are cancelled below (cancel does NOT fire setOnComplete,
+            // so the stale ReturnLabel never runs for this reused object).
+            go = activeLabels[0];
+            activeLabels.RemoveAt(0);
+        }
+
+        // Kill any tween still keyed to this GameObject before reuse, then reset
+        // every property the animations mutate so a recycled label starts clean.
+        LeanTween.cancel(go);
+        go.transform.localScale = Vector3.one;
+        var tmp = go.GetComponent<TextMeshProUGUI>();
+        if (tmp != null) tmp.alpha = 1f;
+        go.SetActive(true);
+
+        activeLabels.Add(go);
+        return go;
+    }
+
+    private GameObject CreateLabel()
+    {
+        var go = new GameObject("FloatingLabel", typeof(RectTransform));
+        go.transform.SetParent(canvas.transform, false);
+
+        var tmp = go.AddComponent<TextMeshProUGUI>();
+        tmp.alignment = TextAlignmentOptions.Center;
+        tmp.raycastTarget = false;
+        if (font != null) tmp.font = font;
+
+        var rt = go.GetComponent<RectTransform>();
+        rt.sizeDelta = new Vector2(200, 80);
+        rt.pivot = new Vector2(0.5f, 0f);
+        return go;
+    }
+
+    // Called from a fade tween's setOnComplete: park the label back in the pool.
+    private void ReturnLabel(GameObject go)
+    {
+        if (go == null) return; // destroyed (e.g. manager torn down) — nothing to park
+        activeLabels.Remove(go);
+        go.SetActive(false);
+        idleLabels.Enqueue(go);
     }
 
     private static string FormatReward(CurrencyReward r)

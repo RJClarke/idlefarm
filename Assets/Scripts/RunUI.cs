@@ -34,6 +34,12 @@ public class RunUI : MonoBehaviour
         UpdateButtonStates();
     }
 
+    // Timer-throttle cache: the run timer only shows whole seconds, so we avoid
+    // rebuilding the string and touching TMP (mesh regen) on every frame.
+    private int lastShownSecond = -1;
+    private bool lastRunActive = false;
+    private bool timerInitialized = false;
+
     private void Update()
     {
         // Show saved equipment on first frame after all singletons are ready
@@ -46,17 +52,25 @@ public class RunUI : MonoBehaviour
             HelperManager.Instance.ShowHomeScreenHelpers();
         }
 
-        // Update timer display every frame
+        // Update timer display only when the shown value actually changes.
         if (showTimer && runTimerText != null && RunManager.Instance != null)
         {
-            if (RunManager.Instance.IsRunActive)
+            bool runActive = RunManager.Instance.IsRunActive;
+            if (runActive)
             {
-                runTimerText.text = "Run Time: " + RunManager.Instance.GetFormattedRunDuration();
+                int sec = Mathf.FloorToInt(RunManager.Instance.CurrentRunDuration);
+                if (!timerInitialized || !lastRunActive || sec != lastShownSecond)
+                {
+                    runTimerText.text = "Run Time: " + RunManager.Instance.GetFormattedRunDuration();
+                    lastShownSecond = sec;
+                }
             }
-            else
+            else if (!timerInitialized || lastRunActive)
             {
                 runTimerText.text = "No Active Run";
             }
+            lastRunActive = runActive;
+            timerInitialized = true;
         }
 
         // Update button states
