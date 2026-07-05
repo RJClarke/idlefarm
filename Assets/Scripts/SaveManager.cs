@@ -135,14 +135,16 @@ public class SaveManager : MonoBehaviour
 
         data.wood = CurrencyManager.Instance != null ? CurrencyManager.Instance.Wood : 0;
         data.axeLevel = WoodcuttingManager.Instance != null ? WoodcuttingManager.Instance.AxeLevel : 0;
+        data.trees = WoodcuttingManager.Instance != null ? WoodcuttingManager.Instance.GetTreeSaveStates() : new TreeSaveState[0];
 
         // Convert to JSON
         string json = JsonUtility.ToJson(data, true); // true = pretty print for debugging
 
-        // Write to file
+        // Write to file atomically (tmp -> swap, prior copy kept at .bak) so a crash mid-write
+        // can never corrupt the live save or its backup.
         try
         {
-            File.WriteAllText(saveFilePath, json);
+            SaveFileIO.WriteAtomic(saveFilePath, json);
             Debug.Log($"Game saved! Coins: {data.coins}");
         }
         catch (System.Exception e)
@@ -157,29 +159,40 @@ public class SaveManager : MonoBehaviour
     /// </summary>
     public bool LoadGame()
     {
-        // Check if save file exists
-        if (!File.Exists(saveFilePath))
+        // Read the live save, falling back to the .bak copy if the primary is missing/empty/corrupt.
+        // isValid does the JSON sanity check here so EconomyCore never needs to know about JsonUtility.
+        bool found = SaveFileIO.ReadWithFallback(saveFilePath, IsValidSaveJson, out string json, out bool usedBackup);
+        if (!found)
         {
             Debug.Log("No save file found. Starting new game.");
             return false;
         }
 
+        if (usedBackup)
+            Debug.LogWarning("Primary save was missing or corrupt; recovered from backup (.bak).");
+
         try
         {
-            // Read JSON from file
-            string json = File.ReadAllText(saveFilePath);
-
-            // Convert from JSON to GameData object
+            // Convert from JSON to GameData object (already validated non-null by ReadWithFallback).
             GameData data = JsonUtility.FromJson<GameData>(json);
 
-            // Apply loaded data to game
-            if (CurrencyManager.Instance != null)
+            // CurrencyManager is the anchor for all applied state; without it we can't load.
+            if (CurrencyManager.Instance == null)
+            {
+                Debug.LogError("Cannot load: CurrencyManager not found!");
+                return false;
+            }
+
             {
                 CurrencyManager.Instance.SetCoins(data.coins);
                 CurrencyManager.Instance.SetGems(data.gems);
                 CurrencyManager.Instance.SetCompost(data.compost);
                 CurrencyManager.Instance.SetWood(data.wood);
-                if (WoodcuttingManager.Instance != null) WoodcuttingManager.Instance.SetAxeLevel(data.axeLevel);
+                if (WoodcuttingManager.Instance != null)
+                {
+                    WoodcuttingManager.Instance.SetAxeLevel(data.axeLevel);
+                    WoodcuttingManager.Instance.LoadTreeStates(data.trees);
+                }
 
                 if (AnimalManager.Instance != null)
                 {
@@ -250,16 +263,29 @@ public class SaveManager : MonoBehaviour
 
                 Debug.Log($"Game loaded! Coins: {data.coins}");
             }
-            else
-            {
-                Debug.LogWarning("CurrencyManager not found during load. Data will be applied when available.");
-            }
 
             return true;
         }
         catch (System.Exception e)
         {
             Debug.LogError($"Failed to load game: {e.Message}");
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Validity check handed to <see cref="SaveFileIO.ReadWithFallback"/>: a candidate save is
+    /// valid only if it parses to a non-null <see cref="GameData"/>. Keeps the JsonUtility
+    /// dependency on the Unity side so EconomyCore stays engine-free.
+    /// </summary>
+    private static bool IsValidSaveJson(string json)
+    {
+        try
+        {
+            return JsonUtility.FromJson<GameData>(json) != null;
+        }
+        catch (System.Exception)
+        {
             return false;
         }
     }

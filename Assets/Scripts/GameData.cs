@@ -8,6 +8,11 @@ using Research;
 [Serializable]
 public class GameData
 {
+    // Save schema version. Field initializer (not set in either constructor) so JsonUtility
+    // always writes it and every code path produces a versioned save. No migration switch yet —
+    // the field existing is the hook for future migrations.
+    public int saveVersion = 1;
+
     // Permanent currency (persists between runs)
     public int coins;
     public int gems;
@@ -31,6 +36,11 @@ public class GameData
     public ResearchSlotState[] researchSlots;     // length 4, idle if startUtcTicks == 0
     public string[] binaryFeatureFlagsSet;        // ids that have been unlocked, e.g. "offline_progress"
     public ResearchLevelEntry[] researchLevels;   // serializable view of researchID -> currentLevel
+
+    // Per-tree woodcutting growth state. Each tree's plantedUtcTicks is a wall-clock anchor,
+    // so growth (and regrowth after a chop) advances correctly across offline time on load.
+    // Empty/null on legacy saves → trees fall back to their randomized first-load growth.
+    public TreeSaveState[] trees;
 
     // Wall-clock anchor for offline-progress catch-up. Set on every save; read on load
     // to compute "time away" for the welcome-back modal.
@@ -98,6 +108,7 @@ public class GameData
         farmName = "";
         firedNarrativeFlags = new string[0];
         inboxLetters = new InboxEntry[0];
+        trees = new TreeSaveState[0];
     }
 
     /// <summary>
@@ -126,6 +137,18 @@ public class GameData
         binaryFeatureFlagsSet = featureFlags ?? new string[0];
         researchLevels = levels ?? new ResearchLevelEntry[0];
     }
+}
+
+/// <summary>
+/// Serializable growth state for one Woods tree, keyed by a stable treeId (its hierarchy path
+/// unless overridden). plantedUtcTicks is UtcNow-based so growth resumes correctly after time away.
+/// </summary>
+[Serializable]
+public class TreeSaveState
+{
+    public string treeId;
+    public long plantedUtcTicks;
+    public int hitsSoFar;
 }
 
 /// <summary>
