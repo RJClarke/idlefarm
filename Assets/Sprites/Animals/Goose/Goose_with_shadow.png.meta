@@ -1,0 +1,1183 @@
+fileFormatVersion: 2
+guid: ab7106d46a02dc244b6b62e4435989d0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1850403328188202081
+    second: Goose_with_shadow_0
+  - first:
+      213: -6666704789050535269
+    second: Goose_with_shadow_1
+  - first:
+      213: -8429541286831625837
+    second: Goose_with_shadow_2
+  - first:
+      213: -2034516065615285809
+    second: Goose_with_shadow_3
+  - first:
+      213: 4025698051858599372
+    second: Goose_with_shadow_4
+  - first:
+      213: 2129325203868651068
+    second: Goose_with_shadow_5
+  - first:
+      213: 2742293810507989313
+    second: Goose_with_shadow_6
+  - first:
+      213: 5662398366799608428
+    second: Goose_with_shadow_7
+  - first:
+      213: -1773302536051617803
+    second: Goose_with_shadow_8
+  - first:
+      213: 6129965829882120468
+    second: Goose_with_shadow_9
+  - first:
+      213: 977511966033900473
+    second: Goose_with_shadow_10
+  - first:
+      213: -1563470306056699664
+    second: Goose_with_shadow_11
+  - first:
+      213: -7804152640193909393
+    second: Goose_with_shadow_12
+  - first:
+      213: 6984566951189463509
+    second: Goose_with_shadow_13
+  - first:
+      213: -4129674053295497569
+    second: Goose_with_shadow_14
+  - first:
+      213: 648250166355790131
+    second: Goose_with_shadow_15
+  - first:
+      213: 378330309309299344
+    second: Goose_with_shadow_16
+  - first:
+      213: 4572463811839435175
+    second: Goose_with_shadow_17
+  - first:
+      213: -8228789600887404014
+    second: Goose_with_shadow_18
+  - first:
+      213: 7295239230187971427
+    second: Goose_with_shadow_19
+  - first:
+      213: -929753194777914549
+    second: Goose_with_shadow_20
+  - first:
+      213: -2548197456205087895
+    second: Goose_with_shadow_21
+  - first:
+      213: -3154926427501455150
+    second: Goose_with_shadow_22
+  - first:
+      213: 52139264818272412
+    second: Goose_with_shadow_23
+  - first:
+      213: -6658980373565085581
+    second: Goose_with_shadow_24
+  - first:
+      213: 335759418445927711
+    second: Goose_with_shadow_25
+  - first:
+      213: 194377159049261639
+    second: Goose_with_shadow_26
+  - first:
+      213: -1169424195857006556
+    second: Goose_with_shadow_27
+  - first:
+      213: 2502481879971220228
+    second: Goose_with_shadow_28
+  - first:
+      213: -4539530994542896342
+    second: Goose_with_shadow_29
+  - first:
+      213: -4234682192009595210
+    second: Goose_with_shadow_30
+  - first:
+      213: -3637996616932536447
+    second: Goose_with_shadow_31
+  - first:
+      213: -8166755808353723664
+    second: Goose_with_shadow_32
+  - first:
+      213: 7151036476276293706
+    second: Goose_with_shadow_33
+  - first:
+      213: 1867701279873092697
+    second: Goose_with_shadow_34
+  - first:
+      213: -2468970738752318877
+    second: Goose_with_shadow_35
+  - first:
+      213: 8328288366416793192
+    second: Goose_with_shadow_36
+  - first:
+      213: -7985474393890958432
+    second: Goose_with_shadow_37
+  - first:
+      213: 6011754018871838671
+    second: Goose_with_shadow_38
+  - first:
+      213: 1832579948665992007
+    second: Goose_with_shadow_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goose_with_shadow_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 227
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9344241afb0256e0800000000000000
+      internalID: -1850403328188202081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 227
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b925f3ae05b1b73a0800000000000000
+      internalID: -6666704789050535269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 227
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39969ea7cd0440b80800000000000000
+      internalID: -8429541286831625837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 227
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc1fc2bea62f3c3e0800000000000000
+      internalID: -2034516065615285809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 227
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd83029c072ed730800000000000000
+      internalID: 4025698051858599372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 227
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e80e3cdf1ec8d10800000000000000
+      internalID: 2129325203868651068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 195
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141c41df0b59e0620800000000000000
+      internalID: 2742293810507989313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 195
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6ab7dd5051e49e40800000000000000
+      internalID: 5662398366799608428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_8
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 195
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff08532db6f367e0800000000000000
+      internalID: -1773302536051617803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_9
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 195
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419086fb173021550800000000000000
+      internalID: 6129965829882120468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 195
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b3f42b34f1d09d00800000000000000
+      internalID: 977511966033900473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_11
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 195
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f08e9e4a007d4ae0800000000000000
+      internalID: -1563470306056699664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 164
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6da05c958412b390800000000000000
+      internalID: -7804152640193909393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_13
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 164
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d1c493e2aa2ee060800000000000000
+      internalID: 6984566951189463509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_14
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 164
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9e9c27145370b6c0800000000000000
+      internalID: -4129674053295497569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_15
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 164
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339893b771c0ff800800000000000000
+      internalID: 648250166355790131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_16
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 164
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09af42e6969104500800000000000000
+      internalID: 378330309309299344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_17
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 164
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a1a4056c97a47f30800000000000000
+      internalID: 4572463811839435175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_18
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 132
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21a8dabb4777dcd80800000000000000
+      internalID: -8228789600887404014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_19
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 132
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36329d29d65ed3560800000000000000
+      internalID: 7295239230187971427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_20
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 132
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b435a78356ad813f0800000000000000
+      internalID: -929753194777914549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_21
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 132
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96b775d1aebf2acd0800000000000000
+      internalID: -2548197456205087895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_22
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 132
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d8984431237734d0800000000000000
+      internalID: -3154926427501455150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_23
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 132
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c98d756926c39b000800000000000000
+      internalID: 52139264818272412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_24
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 99
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378ea5b81ac8693a0800000000000000
+      internalID: -6658980373565085581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_25
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 99
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f151672896bd8a400800000000000000
+      internalID: 335759418445927711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_26
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 99
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 742b49d0ff092b200800000000000000
+      internalID: 194377159049261639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_27
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 99
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4204236c3ee55cfe0800000000000000
+      internalID: -1169424195857006556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_28
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 67
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b4988d20a9ab220800000000000000
+      internalID: 2502481879971220228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_29
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 67
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b1567ac985001c0800000000000000
+      internalID: -4539530994542896342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_30
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 67
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b678909bf26b35c0800000000000000
+      internalID: -4234682192009595210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_31
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 67
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18fc9a11a5d338dc0800000000000000
+      internalID: -3637996616932536447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_32
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 36
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fad7b39cdad9ae80800000000000000
+      internalID: -8166755808353723664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_33
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 36
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a404f4099c59d3360800000000000000
+      internalID: 7151036476276293706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_34
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 36
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95cc0652b686be910800000000000000
+      internalID: 1867701279873092697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_35
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 36
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36295dbb1347cbdd0800000000000000
+      internalID: -2468970738752318877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_36
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4
+        width: 21
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e8a43e426049370800000000000000
+      internalID: 8328288366416793192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_37
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 4
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3d62df855ed2190800000000000000
+      internalID: -7985474393890958432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_38
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 4
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc702e3bd6a0e6350800000000000000
+      internalID: 6011754018871838671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goose_with_shadow_39
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 4
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7437dbef0c1ae6910800000000000000
+      internalID: 1832579948665992007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Goose_with_shadow_0: -1850403328188202081
+      Goose_with_shadow_1: -6666704789050535269
+      Goose_with_shadow_10: 977511966033900473
+      Goose_with_shadow_11: -1563470306056699664
+      Goose_with_shadow_12: -7804152640193909393
+      Goose_with_shadow_13: 6984566951189463509
+      Goose_with_shadow_14: -4129674053295497569
+      Goose_with_shadow_15: 648250166355790131
+      Goose_with_shadow_16: 378330309309299344
+      Goose_with_shadow_17: 4572463811839435175
+      Goose_with_shadow_18: -8228789600887404014
+      Goose_with_shadow_19: 7295239230187971427
+      Goose_with_shadow_2: -8429541286831625837
+      Goose_with_shadow_20: -929753194777914549
+      Goose_with_shadow_21: -2548197456205087895
+      Goose_with_shadow_22: -3154926427501455150
+      Goose_with_shadow_23: 52139264818272412
+      Goose_with_shadow_24: -6658980373565085581
+      Goose_with_shadow_25: 335759418445927711
+      Goose_with_shadow_26: 194377159049261639
+      Goose_with_shadow_27: -1169424195857006556
+      Goose_with_shadow_28: 2502481879971220228
+      Goose_with_shadow_29: -4539530994542896342
+      Goose_with_shadow_3: -2034516065615285809
+      Goose_with_shadow_30: -4234682192009595210
+      Goose_with_shadow_31: -3637996616932536447
+      Goose_with_shadow_32: -8166755808353723664
+      Goose_with_shadow_33: 7151036476276293706
+      Goose_with_shadow_34: 1867701279873092697
+      Goose_with_shadow_35: -2468970738752318877
+      Goose_with_shadow_36: 8328288366416793192
+      Goose_with_shadow_37: -7985474393890958432
+      Goose_with_shadow_38: 6011754018871838671
+      Goose_with_shadow_39: 1832579948665992007
+      Goose_with_shadow_4: 4025698051858599372
+      Goose_with_shadow_5: 2129325203868651068
+      Goose_with_shadow_6: 2742293810507989313
+      Goose_with_shadow_7: 5662398366799608428
+      Goose_with_shadow_8: -1773302536051617803
+      Goose_with_shadow_9: 6129965829882120468
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

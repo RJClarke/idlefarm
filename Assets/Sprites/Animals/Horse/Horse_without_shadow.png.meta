@@ -1,0 +1,1183 @@
+fileFormatVersion: 2
+guid: dddad3863cca11c41a3c9fd5b327a263
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -90075344840120991
+    second: Horse_without_shadow_0
+  - first:
+      213: -2127182992354500018
+    second: Horse_without_shadow_1
+  - first:
+      213: 6001125325832236107
+    second: Horse_without_shadow_2
+  - first:
+      213: 6088002852137380727
+    second: Horse_without_shadow_3
+  - first:
+      213: -7072920781733919900
+    second: Horse_without_shadow_4
+  - first:
+      213: 3626859128432919309
+    second: Horse_without_shadow_5
+  - first:
+      213: -3114186683336552979
+    second: Horse_without_shadow_6
+  - first:
+      213: -7016477612806567469
+    second: Horse_without_shadow_7
+  - first:
+      213: -5299913669819505434
+    second: Horse_without_shadow_8
+  - first:
+      213: -5731461618286313812
+    second: Horse_without_shadow_9
+  - first:
+      213: 3389635393134100156
+    second: Horse_without_shadow_10
+  - first:
+      213: 5858012199830757764
+    second: Horse_without_shadow_11
+  - first:
+      213: 1014772564784916612
+    second: Horse_without_shadow_12
+  - first:
+      213: 7790240893014654799
+    second: Horse_without_shadow_13
+  - first:
+      213: 3789492886769871593
+    second: Horse_without_shadow_14
+  - first:
+      213: 1445816834142649431
+    second: Horse_without_shadow_15
+  - first:
+      213: 2045031388893715567
+    second: Horse_without_shadow_16
+  - first:
+      213: -4372904270364749347
+    second: Horse_without_shadow_17
+  - first:
+      213: -5414728478045060830
+    second: Horse_without_shadow_18
+  - first:
+      213: 752980487538732924
+    second: Horse_without_shadow_19
+  - first:
+      213: -5342604445644570777
+    second: Horse_without_shadow_20
+  - first:
+      213: 3191091435238699578
+    second: Horse_without_shadow_21
+  - first:
+      213: -6934494899833447936
+    second: Horse_without_shadow_22
+  - first:
+      213: -3399195361682428065
+    second: Horse_without_shadow_23
+  - first:
+      213: -1431986959883100834
+    second: Horse_without_shadow_24
+  - first:
+      213: 7741327846988389888
+    second: Horse_without_shadow_25
+  - first:
+      213: -6292668321284442003
+    second: Horse_without_shadow_26
+  - first:
+      213: -4151553097597252875
+    second: Horse_without_shadow_27
+  - first:
+      213: 6866915338837111779
+    second: Horse_without_shadow_28
+  - first:
+      213: 1223026438855930715
+    second: Horse_without_shadow_29
+  - first:
+      213: -7804124318580010051
+    second: Horse_without_shadow_30
+  - first:
+      213: 8487499718785906591
+    second: Horse_without_shadow_31
+  - first:
+      213: 8914548931628974208
+    second: Horse_without_shadow_32
+  - first:
+      213: -7862032585203725486
+    second: Horse_without_shadow_33
+  - first:
+      213: 7753009894390849794
+    second: Horse_without_shadow_34
+  - first:
+      213: -5067809812327986376
+    second: Horse_without_shadow_35
+  - first:
+      213: 4475397091093406685
+    second: Horse_without_shadow_36
+  - first:
+      213: -1435852303025429005
+    second: Horse_without_shadow_37
+  - first:
+      213: 2778376010529876939
+    second: Horse_without_shadow_38
+  - first:
+      213: 3175443900447855098
+    second: Horse_without_shadow_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Horse_without_shadow_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 469
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 165a8cb73fcffbef0800000000000000
+      internalID: -90075344840120991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 470
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e422578b65aba72e0800000000000000
+      internalID: -2127182992354500018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 469
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4ca4d240b7484350800000000000000
+      internalID: 6001125325832236107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_3
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 469
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77ba631a65eec7450800000000000000
+      internalID: 6088002852137380727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_4
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 470
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4638540e500f7dd90800000000000000
+      internalID: -7072920781733919900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_5
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 469
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0380a05921355230800000000000000
+      internalID: 3626859128432919309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_6
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 405
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded097f06bf28c4d0800000000000000
+      internalID: -3114186683336552979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_7
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 406
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d90f2a39c670ae90800000000000000
+      internalID: -7016477612806567469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_8
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 405
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4eb22f89ce276b0800000000000000
+      internalID: -5299913669819505434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_9
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 405
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cae32465602c570b0800000000000000
+      internalID: -5731461618286313812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_10
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 406
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbe79d55e676a0f20800000000000000
+      internalID: 3389635393134100156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_11
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 405
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48121d40f07db4150800000000000000
+      internalID: 5858012199830757764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_12
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 341
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48821db6542351e00800000000000000
+      internalID: 1014772564784916612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 341
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4f3cd651de7c1c60800000000000000
+      internalID: 7790240893014654799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 341
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9eaa9c2f3bbf69430800000000000000
+      internalID: 3789492886769871593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_15
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 341
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75c3a5910c2901410800000000000000
+      internalID: 1445816834142649431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_16
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 341
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c98819639616c10800000000000000
+      internalID: 2045031388893715567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_17
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 341
+        width: 44
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd1de181cb25053c0800000000000000
+      internalID: -4372904270364749347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 277
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 221ceee33250bd4b0800000000000000
+      internalID: -5414728478045060830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_19
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 277
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7feb8293cf137a00800000000000000
+      internalID: 752980487538732924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_20
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 277
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fbee120914bd5b0800000000000000
+      internalID: -5342604445644570777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_21
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 277
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32b133d0c8094c20800000000000000
+      internalID: 3191091435238699578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_22
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 277
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a5bae01a9b3cf90800000000000000
+      internalID: -6934494899833447936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_23
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 277
+        width: 44
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5f63c804d1a3d0d0800000000000000
+      internalID: -3399195361682428065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_24
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 213
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5d1d2d627f802ce0800000000000000
+      internalID: -1431986959883100834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_25
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 213
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00e159959a8be6b60800000000000000
+      internalID: 7741327846988389888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_26
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 213
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68bc747083fba8a0800000000000000
+      internalID: -6292668321284442003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_27
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 213
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa0b8f1478b266c0800000000000000
+      internalID: -4151553097597252875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_28
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 149
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e331124e1f2c4f50800000000000000
+      internalID: 6866915338837111779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_29
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 149
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b533be6f01019f010800000000000000
+      internalID: 1223026438855930715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_30
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 149
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db31d00c74e22b390800000000000000
+      internalID: -7804124318580010051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_31
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 149
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9736798608a9c570800000000000000
+      internalID: 8487499718785906591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_32
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 85
+        width: 41
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0804592a507d6bb70800000000000000
+      internalID: 8914548931628974208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_33
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 85
+        width: 40
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25bc262c40374e290800000000000000
+      internalID: -7862032585203725486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_34
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 85
+        width: 40
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2016147fb69389b60800000000000000
+      internalID: 7753009894390849794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_35
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 85
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b83fa73d58ba9b0800000000000000
+      internalID: -5067809812327986376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_36
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 21
+        width: 41
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd3607351fdcb1e30800000000000000
+      internalID: 4475397091093406685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_37
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 21
+        width: 40
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f52e3810f3d21ce0800000000000000
+      internalID: -1435852303025429005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_38
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 21
+        width: 40
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcba918d246ce8620800000000000000
+      internalID: 2778376010529876939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_without_shadow_39
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 21
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af1106a3761711c20800000000000000
+      internalID: 3175443900447855098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Horse_without_shadow_0: -90075344840120991
+      Horse_without_shadow_1: -2127182992354500018
+      Horse_without_shadow_10: 3389635393134100156
+      Horse_without_shadow_11: 5858012199830757764
+      Horse_without_shadow_12: 1014772564784916612
+      Horse_without_shadow_13: 7790240893014654799
+      Horse_without_shadow_14: 3789492886769871593
+      Horse_without_shadow_15: 1445816834142649431
+      Horse_without_shadow_16: 2045031388893715567
+      Horse_without_shadow_17: -4372904270364749347
+      Horse_without_shadow_18: -5414728478045060830
+      Horse_without_shadow_19: 752980487538732924
+      Horse_without_shadow_2: 6001125325832236107
+      Horse_without_shadow_20: -5342604445644570777
+      Horse_without_shadow_21: 3191091435238699578
+      Horse_without_shadow_22: -6934494899833447936
+      Horse_without_shadow_23: -3399195361682428065
+      Horse_without_shadow_24: -1431986959883100834
+      Horse_without_shadow_25: 7741327846988389888
+      Horse_without_shadow_26: -6292668321284442003
+      Horse_without_shadow_27: -4151553097597252875
+      Horse_without_shadow_28: 6866915338837111779
+      Horse_without_shadow_29: 1223026438855930715
+      Horse_without_shadow_3: 6088002852137380727
+      Horse_without_shadow_30: -7804124318580010051
+      Horse_without_shadow_31: 8487499718785906591
+      Horse_without_shadow_32: 8914548931628974208
+      Horse_without_shadow_33: -7862032585203725486
+      Horse_without_shadow_34: 7753009894390849794
+      Horse_without_shadow_35: -5067809812327986376
+      Horse_without_shadow_36: 4475397091093406685
+      Horse_without_shadow_37: -1435852303025429005
+      Horse_without_shadow_38: 2778376010529876939
+      Horse_without_shadow_39: 3175443900447855098
+      Horse_without_shadow_4: -7072920781733919900
+      Horse_without_shadow_5: 3626859128432919309
+      Horse_without_shadow_6: -3114186683336552979
+      Horse_without_shadow_7: -7016477612806567469
+      Horse_without_shadow_8: -5299913669819505434
+      Horse_without_shadow_9: -5731461618286313812
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

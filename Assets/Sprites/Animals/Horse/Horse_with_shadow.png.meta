@@ -1,0 +1,1183 @@
+fileFormatVersion: 2
+guid: 2359181a5c0531b42ad772231d7d03d8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2082079901870065914
+    second: Horse_with_shadow_0
+  - first:
+      213: -9196719619214386254
+    second: Horse_with_shadow_1
+  - first:
+      213: -3196398982367992388
+    second: Horse_with_shadow_2
+  - first:
+      213: -2937782212775179883
+    second: Horse_with_shadow_3
+  - first:
+      213: 3002937297011060413
+    second: Horse_with_shadow_4
+  - first:
+      213: 3579419603532966127
+    second: Horse_with_shadow_5
+  - first:
+      213: -7081691899193296083
+    second: Horse_with_shadow_6
+  - first:
+      213: 8486627156323580826
+    second: Horse_with_shadow_7
+  - first:
+      213: 1949724829365174745
+    second: Horse_with_shadow_8
+  - first:
+      213: -7798621097965840464
+    second: Horse_with_shadow_9
+  - first:
+      213: 3315828571307614219
+    second: Horse_with_shadow_10
+  - first:
+      213: 664252421092560265
+    second: Horse_with_shadow_11
+  - first:
+      213: -2058692825821133116
+    second: Horse_with_shadow_12
+  - first:
+      213: -7002800819307133061
+    second: Horse_with_shadow_13
+  - first:
+      213: 8911359662924459313
+    second: Horse_with_shadow_14
+  - first:
+      213: -8800625608411789561
+    second: Horse_with_shadow_15
+  - first:
+      213: 4645134242360371902
+    second: Horse_with_shadow_16
+  - first:
+      213: 5417190862885864809
+    second: Horse_with_shadow_17
+  - first:
+      213: 7446034384904180502
+    second: Horse_with_shadow_18
+  - first:
+      213: 3272177322183531866
+    second: Horse_with_shadow_19
+  - first:
+      213: 939898828354487593
+    second: Horse_with_shadow_20
+  - first:
+      213: 6424003810179793528
+    second: Horse_with_shadow_21
+  - first:
+      213: 8174412445379233240
+    second: Horse_with_shadow_22
+  - first:
+      213: -8485621404838701715
+    second: Horse_with_shadow_23
+  - first:
+      213: -2291420214740520158
+    second: Horse_with_shadow_24
+  - first:
+      213: -2018203341374404274
+    second: Horse_with_shadow_25
+  - first:
+      213: -7319736810712055016
+    second: Horse_with_shadow_26
+  - first:
+      213: 6863205957716358100
+    second: Horse_with_shadow_27
+  - first:
+      213: -2149485081086369773
+    second: Horse_with_shadow_28
+  - first:
+      213: -8208625431085467842
+    second: Horse_with_shadow_29
+  - first:
+      213: 6089564917027755861
+    second: Horse_with_shadow_30
+  - first:
+      213: 3746324740079385295
+    second: Horse_with_shadow_31
+  - first:
+      213: 5858120769201756065
+    second: Horse_with_shadow_32
+  - first:
+      213: 1192641157513757522
+    second: Horse_with_shadow_33
+  - first:
+      213: 766818969672998805
+    second: Horse_with_shadow_34
+  - first:
+      213: 5690869854273502588
+    second: Horse_with_shadow_35
+  - first:
+      213: 8365366168326528203
+    second: Horse_with_shadow_36
+  - first:
+      213: 7823467460915629378
+    second: Horse_with_shadow_37
+  - first:
+      213: 9104019315068463478
+    second: Horse_with_shadow_38
+  - first:
+      213: -5448858244255939122
+    second: Horse_with_shadow_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Horse_with_shadow_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 464
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af802f0b3a805ec10800000000000000
+      internalID: 2082079901870065914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 464
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb5cdd8b30be5080800000000000000
+      internalID: -9196719619214386254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_2
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 464
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5298f8f0c14a3d0800000000000000
+      internalID: -3196398982367992388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_3
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 464
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599031c74a6ea37d0800000000000000
+      internalID: -2937782212775179883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_4
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 464
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbead17bf839ca920800000000000000
+      internalID: 3002937297011060413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_5
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 464
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe8e6a23a27aca130800000000000000
+      internalID: 3579419603532966127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_6
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 400
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b72d3fcb6c8bd90800000000000000
+      internalID: -7081691899193296083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_7
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 400
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9bb9d14f6e86c570800000000000000
+      internalID: 8486627156323580826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_8
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 400
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d10218f660de0b10800000000000000
+      internalID: 1949724829365174745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_9
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 400
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b711e52e6bb5c390800000000000000
+      internalID: -7798621097965840464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_10
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 400
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b00a1e08480340e20800000000000000
+      internalID: 3315828571307614219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_11
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 400
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d4a60ce06e73900800000000000000
+      internalID: 664252421092560265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_12
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 337
+        width: 45
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c6494748cd0e63e0800000000000000
+      internalID: -2058692825821133116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 337
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b77426cd1cd01de90800000000000000
+      internalID: -7002800819307133061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_14
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 337
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d6b5626628bab70800000000000000
+      internalID: 8911359662924459313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_15
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 337
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707c86903a5edd580800000000000000
+      internalID: -8800625608411789561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_16
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 337
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebaa4e18bf4d67040800000000000000
+      internalID: 4645134242360371902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_17
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 337
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 965cdc6636abd2b40800000000000000
+      internalID: 5417190862885864809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 273
+        width: 45
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 613de8182d0a55760800000000000000
+      internalID: 7446034384904180502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_19
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 273
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d96d210fb196d20800000000000000
+      internalID: 3272177322183531866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_20
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 273
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92500ec21013b0d00800000000000000
+      internalID: 939898828354487593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_21
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 273
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 872c585fd65a62950800000000000000
+      internalID: 6424003810179793528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_22
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 273
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d58c562fc8517170800000000000000
+      internalID: 8174412445379233240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_23
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 273
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6553228a440d3a80800000000000000
+      internalID: -8485621404838701715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_24
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 208
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 223fd35847d3330e0800000000000000
+      internalID: -2291420214740520158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_25
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 208
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e494fd001c6edf3e0800000000000000
+      internalID: -2018203341374404274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_26
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 208
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813482cf6221b6a90800000000000000
+      internalID: -7319736810712055016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_27
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 208
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d3370aa4710f3f50800000000000000
+      internalID: 6863205957716358100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_28
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 144
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31068db05be7b22e0800000000000000
+      internalID: -2149485081086369773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_29
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 144
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37b9ed59aa151e80800000000000000
+      internalID: -8208625431085467842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_30
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 144
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 557de14370b728450800000000000000
+      internalID: 6089564917027755861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_31
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 144
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fca70b1908e9df330800000000000000
+      internalID: 3746324740079385295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_32
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 81
+        width: 41
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7db9b4dc93c4150800000000000000
+      internalID: 5858120769201756065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_33
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 81
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2534e1a50dc1d8010800000000000000
+      internalID: 1192641157513757522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_34
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 81
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59fd3664ac944aa00800000000000000
+      internalID: 766818969672998805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_35
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 81
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d73fe1bf70afe40800000000000000
+      internalID: 5690869854273502588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_36
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 17
+        width: 41
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc5c2f5530c71470800000000000000
+      internalID: 8365366168326528203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_37
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 17
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24d04b7843a829c60800000000000000
+      internalID: 7823467460915629378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_38
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 17
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67963f6f459f75e70800000000000000
+      internalID: 9104019315068463478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horse_with_shadow_39
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 17
+        width: 40
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec58aafcb44c164b0800000000000000
+      internalID: -5448858244255939122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Horse_with_shadow_0: 2082079901870065914
+      Horse_with_shadow_1: -9196719619214386254
+      Horse_with_shadow_10: 3315828571307614219
+      Horse_with_shadow_11: 664252421092560265
+      Horse_with_shadow_12: -2058692825821133116
+      Horse_with_shadow_13: -7002800819307133061
+      Horse_with_shadow_14: 8911359662924459313
+      Horse_with_shadow_15: -8800625608411789561
+      Horse_with_shadow_16: 4645134242360371902
+      Horse_with_shadow_17: 5417190862885864809
+      Horse_with_shadow_18: 7446034384904180502
+      Horse_with_shadow_19: 3272177322183531866
+      Horse_with_shadow_2: -3196398982367992388
+      Horse_with_shadow_20: 939898828354487593
+      Horse_with_shadow_21: 6424003810179793528
+      Horse_with_shadow_22: 8174412445379233240
+      Horse_with_shadow_23: -8485621404838701715
+      Horse_with_shadow_24: -2291420214740520158
+      Horse_with_shadow_25: -2018203341374404274
+      Horse_with_shadow_26: -7319736810712055016
+      Horse_with_shadow_27: 6863205957716358100
+      Horse_with_shadow_28: -2149485081086369773
+      Horse_with_shadow_29: -8208625431085467842
+      Horse_with_shadow_3: -2937782212775179883
+      Horse_with_shadow_30: 6089564917027755861
+      Horse_with_shadow_31: 3746324740079385295
+      Horse_with_shadow_32: 5858120769201756065
+      Horse_with_shadow_33: 1192641157513757522
+      Horse_with_shadow_34: 766818969672998805
+      Horse_with_shadow_35: 5690869854273502588
+      Horse_with_shadow_36: 8365366168326528203
+      Horse_with_shadow_37: 7823467460915629378
+      Horse_with_shadow_38: 9104019315068463478
+      Horse_with_shadow_39: -5448858244255939122
+      Horse_with_shadow_4: 3002937297011060413
+      Horse_with_shadow_5: 3579419603532966127
+      Horse_with_shadow_6: -7081691899193296083
+      Horse_with_shadow_7: 8486627156323580826
+      Horse_with_shadow_8: 1949724829365174745
+      Horse_with_shadow_9: -7798621097965840464
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
