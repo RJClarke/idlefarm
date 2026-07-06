@@ -19,6 +19,7 @@ public class GameData
     public int compost;
     public int wood;
     public int axeLevel;
+    public bool hasAxe;   // owns the first axe (gates all chopping + axe upgrades)
     public string[] unlockedAnimalIDs;
     public string equippedAnimalID;
     public string lastEggClaimTime;
@@ -89,6 +90,7 @@ public class GameData
         compost = 0;
         wood = 0;
         axeLevel = 0;
+        hasAxe = false;
         unlockedAnimalIDs = new string[0];
         equippedAnimalID = "";
         lastEggClaimTime = "";

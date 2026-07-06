@@ -135,6 +135,7 @@ public class SaveManager : MonoBehaviour
 
         data.wood = CurrencyManager.Instance != null ? CurrencyManager.Instance.Wood : 0;
         data.axeLevel = WoodcuttingManager.Instance != null ? WoodcuttingManager.Instance.AxeLevel : 0;
+        data.hasAxe = WoodcuttingManager.Instance != null && WoodcuttingManager.Instance.HasAxe;
         data.trees = WoodcuttingManager.Instance != null ? WoodcuttingManager.Instance.GetTreeSaveStates() : new TreeSaveState[0];
 
         // Convert to JSON
@@ -191,6 +192,7 @@ public class SaveManager : MonoBehaviour
                 if (WoodcuttingManager.Instance != null)
                 {
                     WoodcuttingManager.Instance.SetAxeLevel(data.axeLevel);
+                    WoodcuttingManager.Instance.SetHasAxe(data.hasAxe);
                     WoodcuttingManager.Instance.LoadTreeStates(data.trees);
                 }
 

@@ -144,8 +144,23 @@ public class CarpenterPopupUITK : MonoBehaviour
     {
         if (rowsList == null) return;
         rowsList.Clear();
+
+        AddSectionHeader("Construction");
         BuildGreenhouseRow();
-        BuildAxeUpgradeRow();
+
+        AddSectionHeader("Tools");
+        // Buy the first axe (Coins only) before any leveling exists; once owned, show the upgrade row.
+        if (WoodcuttingManager.Instance != null && !WoodcuttingManager.Instance.HasAxe)
+            BuildBuyAxeRow();
+        else
+            BuildAxeUpgradeRow();
+    }
+
+    private void AddSectionHeader(string text)
+    {
+        Label header = new Label(text);
+        header.AddToClassList("market-section-header");
+        rowsList.Add(header);
     }
 
     private void BuildGreenhouseRow()
@@ -204,6 +219,52 @@ public class CarpenterPopupUITK : MonoBehaviour
             row.AddToClassList("market-row--cant-afford");
             status.text = "🔒 LOCKED";
             cost.text = FormatCoinCost(greenhouseCost);
+        }
+
+        rowsList.Add(row);
+    }
+
+    private void BuildBuyAxeRow()
+    {
+        var wm = WoodcuttingManager.Instance;
+        if (wm == null) return;
+
+        VisualElement row = new VisualElement();
+        row.AddToClassList("market-row");
+
+        VisualElement textBlock = new VisualElement();
+        textBlock.AddToClassList("market-row-text");
+        Label title = new Label("Buy Axe");
+        title.AddToClassList("market-row-title");
+        Label desc = new Label("Your first axe. Needed to fell trees in the Woods for Wood.");
+        desc.AddToClassList("market-row-desc");
+        textBlock.Add(title);
+        textBlock.Add(desc);
+
+        VisualElement rightBlock = new VisualElement();
+        rightBlock.AddToClassList("market-row-right");
+        Label status = new Label();
+        status.AddToClassList("market-row-status");
+        Label cost = new Label();
+        cost.AddToClassList("market-row-cost");
+        rightBlock.Add(status);
+        rightBlock.Add(cost);
+
+        row.Add(textBlock);
+        row.Add(rightBlock);
+
+        cost.text = FormatCoinCost(wm.FirstAxeCoinCost);
+        if (wm.CanBuyAxe())
+        {
+            row.AddToClassList("market-row--buy");
+            status.text = "BUY";
+            row.RegisterCallback<ClickEvent>(_ => { WoodcuttingManager.Instance.TryBuyAxe(); });
+            WirePressedFeedback(row, "market-row--pressed");
+        }
+        else
+        {
+            row.AddToClassList("market-row--cant-afford");
+            status.text = "🔒 LOCKED";
         }
 
         rowsList.Add(row);

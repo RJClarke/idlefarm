@@ -43,6 +43,10 @@ public static class WoodcuttingMath
     /// <summary>Total proceeds for selling `amount` units at `pricePerUnit`. Never negative.</summary>
     public static int SellValue(int amount, int pricePerUnit) => Mathf.Max(0, amount) * Mathf.Max(0, pricePerUnit);
 
+    /// <summary>Whether the first axe can be bought: not already owned and enough Coins. Wood-free,
+    /// because you can't gather Wood until you own an axe (chicken-and-egg).</summary>
+    public static bool CanBuyAxe(bool hasAxe, int coins, int coinCost) => !hasAxe && coins >= coinCost;
+
     /// <summary>Whether an axe upgrade is allowed: under max level and both currencies affordable.</summary>
     public static bool CanUpgradeAxe(int axeLevel, int maxLevel, int coins, int coinCost, int wood, int woodCost)
     {

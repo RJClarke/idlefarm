@@ -65,6 +65,17 @@ public class WoodcuttingMathTests
     }
 
     [Test]
+    public void CanBuyAxe_RequiresNotOwnedAndEnoughCoins()
+    {
+        // don't own one, can afford → true
+        Assert.IsTrue(WoodcuttingMath.CanBuyAxe(hasAxe: false, coins: 75, coinCost: 75));
+        // can't afford → false
+        Assert.IsFalse(WoodcuttingMath.CanBuyAxe(hasAxe: false, coins: 74, coinCost: 75));
+        // already own one → false (buy is a one-time thing; upgrades are separate)
+        Assert.IsFalse(WoodcuttingMath.CanBuyAxe(hasAxe: true, coins: 1000, coinCost: 75));
+    }
+
+    [Test]
     public void CanUpgradeAxe_RequiresUnderMaxAndAffordBoth()
     {
         // under max, can afford both → true
