@@ -192,6 +192,13 @@ public class FarmPopupUITK : MonoBehaviour
 
         bool inRun = RunManager.Instance != null && RunManager.Instance.IsRunActive;
 
+        // Compost Yield is hidden until compost is actually relevant to the player:
+        // a cow has been bought, the Compost Bay has been unlocked, or they hold any compost.
+        bool compostUnlocked =
+            (AnimalManager.Instance != null && AnimalManager.Instance.IsUnlocked("cow")) ||
+            (UpgradeManager.Instance != null && UpgradeManager.Instance.GetCurrentLevel("compostbay_unlock") > 0) ||
+            (CurrencyManager.Instance != null && CurrencyManager.Instance.Compost > 0);
+
         foreach (var sec in SectionOrder)
         {
             var items = all.Where(d => d.section == sec)
@@ -211,7 +218,10 @@ public class FarmPopupUITK : MonoBehaviour
             section.Add(grid);
 
             foreach (var d in items)
+            {
+                if (d.upgradeID == "compost_yield" && !compostUnlocked) continue;
                 grid.Add(BuildUpgradeCard(d, inRun));
+            }
 
             sectionList.Add(section);
         }
@@ -224,11 +234,8 @@ public class FarmPopupUITK : MonoBehaviour
 
         var head = new VisualElement();
         head.AddToClassList("fu-card-head");
-        var icon = new Label(d.icon);
-        icon.AddToClassList("fu-card-icon");
         var lvlTag = new Label();
         lvlTag.AddToClassList("fu-card-lvl");
-        head.Add(icon);
         head.Add(lvlTag);
         card.Add(head);
 
@@ -240,9 +247,11 @@ public class FarmPopupUITK : MonoBehaviour
         sub.AddToClassList("fu-card-sub");
         card.Add(sub);
 
-        var footer = new Label();
+        var footer = new VisualElement();
         footer.AddToClassList("fu-card-footer");
         card.Add(footer);
+        var footerBonus = new Label();
+        footer.Add(footerBonus);
 
         int permLevel = SafePermLevel(d.upgradeID);
         int curLevel = UpgradeManager.Instance != null
@@ -255,7 +264,7 @@ public class FarmPopupUITK : MonoBehaviour
         {
             card.AddToClassList("fu-card--maxed");
             lvlTag.text = "MAX";
-            footer.text = d.GetBonusText(shownLevel);
+            footerBonus.text = d.GetBonusText(shownLevel);
             return card;
         }
 
@@ -267,8 +276,16 @@ public class FarmPopupUITK : MonoBehaviour
             (inRun ? CurrencyManager.Instance.CanAffordMoney(cost)
                    : CurrencyManager.Instance.CanAffordCoins(cost));
 
-        string curIcon = inRun ? "💵" : "🪙";
-        footer.text = $"{d.GetBonusText(nextLevel)}    {curIcon} {FormatCoinCost(cost)}";
+        footerBonus.text = d.GetBonusText(nextLevel);
+        var costChip = new VisualElement();
+        costChip.AddToClassList("fu-card-footer__cost");
+        var costIcon = new VisualElement();
+        costIcon.AddToClassList("currency-icon");
+        costIcon.AddToClassList(inRun ? "currency-icon--cash" : "currency-icon--coin");
+        var costLabel = new Label(FormatCoinCost(cost));
+        costChip.Add(costIcon);
+        costChip.Add(costLabel);
+        footer.Add(costChip);
 
         card.AddToClassList(canAfford ? "fu-card--buy" : "fu-card--cant-afford");
 

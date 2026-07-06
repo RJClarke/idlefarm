@@ -81,6 +81,10 @@ public class HelperManager : MonoBehaviour
         {
             RunManager.Instance.OnRunStarted += AutoSpawnHelpers;
             RunManager.Instance.OnRunEnded += ClearAllHelpers;
+
+            // Resume-on-reopen fires OnRunStarted during load — possibly before this Start ran,
+            // so we'd miss the event and never spawn. If a run is already active, catch up now.
+            if (RunManager.Instance.IsRunActive) AutoSpawnHelpers();
         }
 
         // Refresh home screen helpers when a new slot is unlocked
@@ -275,7 +279,8 @@ public class HelperManager : MonoBehaviour
 
         Vector3 spawnPos = helperSpawnPoint != null ? helperSpawnPoint.position : defaultSpawnPosition;
         GameObject helperObj = Instantiate(universalHelperPrefab, spawnPos, Quaternion.identity, transform);
-        
+        helperObj.AddComponent<CropAgitator>(); // rustles crops the helper brushes past
+
         Helper helper = helperObj.GetComponent<Helper>();
         if (helper != null)
         {
@@ -423,15 +428,18 @@ public class HelperManager : MonoBehaviour
     private void ScanForTasks()
     {
         // Scan in priority order (though all get added to queue and sorted anyway)
-        ScanForTillTasks();      // Priority 1000
-        ScanForHarvestTasks();   // Priority 800-900
-        ScanForWaterTasks();     // Priority 200-700
-        ScanForPlantTasks();     // Priority 500
+        ScanForHarvestTasks();   // Priority 800-900 (+urgency)
+        ScanForWaterTasks();     // Priority 300-900 (+urgency)
+        ScanForPlantTasks();     // Priority ~400
+        ScanForTillTasks();      // Priority 350 — lowest ("expand" only when nothing needs tending)
     }
 
     /// <summary>
     /// Scan for untilled tiles in unlocked zones.
-    /// Priority 1000 — highest, since nothing else can happen until tiles are tilled.
+    /// Priority 350 — LOW. Tilling is "expansion"; saving existing crops (water/harvest) and
+    /// planting tilled tiles all come first ("tend before expand"). At run start there are no crops
+    /// yet, so tilling still happens (it's the only available work). This stops helpers from pinning
+    /// themselves to tilling new ground while planted crops die of thirst.
     /// </summary>
     private void ScanForTillTasks()
     {
@@ -443,8 +451,11 @@ public class HelperManager : MonoBehaviour
         {
             if (!IsZoneUnlocked(tile.ZoneID)) continue;
 
-            // Only till tiles in zones that have seeds configured
-            if (GetSeedForZone(tile.ZoneID) == null) continue;
+            // Only till zones we can actually farm: a seed must be configured AND currently
+            // affordable. Otherwise helpers waste their time tilling zones that can't be planted
+            // (starving watering/harvesting of the zones you CAN afford). Watering/harvesting of
+            // already-planted crops is unaffected — those scans don't gate on affordability.
+            if (!ZoneIsWorkable(tile.ZoneID)) continue;
 
             bool alreadyHasTask = pendingTasks.Exists(task =>
                 task.Type == HelperTask.TaskType.Till &&
@@ -453,7 +464,7 @@ public class HelperManager : MonoBehaviour
 
             if (!alreadyHasTask)
             {
-                HelperTask task = HelperTask.CreateTillTask(tile, 1000);
+                HelperTask task = HelperTask.CreateTillTask(tile, 350);
                 AddTask(task);
             }
         }
@@ -565,8 +576,9 @@ public class HelperManager : MonoBehaviour
 
             if (!alreadyHasTask)
             {
-                // Check if zone has seed configured
-                if (GetSeedForZone(tile.ZoneID) != null)
+                // Only plant where there's a configured seed we can afford (so helpers don't walk
+                // to tiles they can't plant and churn).
+                if (ZoneIsWorkable(tile.ZoneID))
                 {
                     int priority = CalculatePlantPriority(tile);
                     HelperTask task = HelperTask.CreatePlantTask(tile, priority);
@@ -619,9 +631,11 @@ public class HelperManager : MonoBehaviour
 
     /// <summary>
     /// Calculate water priority
-    /// Dried out (750) > <20% (650) > <50% (550) > <75% (450) > <100% (300)
-    /// Plus urgency modifier (driest first, up to +30)
-    /// Water tasks should generally beat planting (500) once moisture drops below ~60%
+    /// Dried out (900) > <20% (800) > <50% (700) > <75% (600) > top-off <100% (300)
+    /// Plus urgency modifier (driest first, up to +30). Meaningful tiers sit well above Plant (400)
+    /// so a thirsty crop is watered before a new seed is planted even after distance penalties;
+    /// top-off stays below Plant so a healthy, watered farm still gets planted out. Water tasks also
+    /// skip the crowding penalty in task scoring so a needy crop is never passed over.
     /// </summary>
     private int CalculateWaterPriority(Plant plant)
     {
@@ -630,19 +644,19 @@ public class HelperManager : MonoBehaviour
 
         if (plant.IsDriedOut)
         {
-            basePriority = 750; // Water dried out crops (taking damage!)
+            basePriority = 900; // Water dried out crops (taking damage!)
         }
         else if (moisture < 20f)
         {
-            basePriority = 650; // Water <20% — critical
+            basePriority = 800; // Water <20% — critical
         }
         else if (moisture < 50f)
         {
-            basePriority = 550; // Water <50% — beats planting
+            basePriority = 700; // Water <50% — beats planting
         }
         else if (moisture < 75f)
         {
-            basePriority = 450; // Water <75% — competes with planting
+            basePriority = 600; // Water <75% — beats planting even when penalized
         }
         else if (moisture < 100f)
         {
@@ -688,6 +702,29 @@ public class HelperManager : MonoBehaviour
         }
 
         return basePriority;
+    }
+
+    /// <summary>
+    /// A zone is "workable" (worth tilling/planting) when it has a configured seed the player can
+    /// currently afford (or already has seeds for). Watering/harvesting existing crops is NOT gated
+    /// on this — only new till/plant work is, so helpers stop expanding into zones you can't afford
+    /// but keep tending what's already growing.
+    /// </summary>
+    private bool ZoneIsWorkable(int zoneID)
+    {
+        CropData seed = GetSeedForZone(zoneID);
+        if (seed == null) return false;
+        if (SeedInventory.Instance == null) return true; // no economy in play → allow
+        return SeedInventory.Instance.CanPlant(seed);
+    }
+
+    /// <summary>Distinct crops configured across all zones this run (for the seed HUD).</summary>
+    public List<CropData> GetConfiguredCrops()
+    {
+        var result = new List<CropData>();
+        foreach (var kv in currentZoneSeeds)
+            if (kv.Value != null && !result.Contains(kv.Value)) result.Add(kv.Value);
+        return result;
     }
 
     /// <summary>
@@ -791,13 +828,17 @@ public class HelperManager : MonoBehaviour
             Vector3 taskPos = task.TargetTile.transform.position;
             float distance = Vector3.Distance(helperPos, taskPos);
 
-            // Distance penalty: quadratic falloff so far tasks are punished much harder
-            // At 5 units: penalty ~16, at 10 units: ~50, at 20 units: ~150
-            float normalizedDistance = Mathf.Clamp01(distance / 20f);
-            float distancePenalty = normalizedDistance * normalizedDistance * 150f * distanceWeight;
+            // Distance penalty: quadratic falloff with a TIGHT "zone of influence" so helpers
+            // strongly prefer local work. At /12 normalization + 450 base × weight(0.6): ~270 max
+            // penalty at 12+ units, ~67 at 6 units. This stops a helper crossing the map for a
+            // high-priority HARVEST while a crop crisps right next to it — a far task must be far
+            // more urgent than local work to pull a helper over.
+            float normalizedDistance = Mathf.Clamp01(distance / 12f);
+            float distancePenalty = normalizedDistance * normalizedDistance * 450f * distanceWeight;
 
-            // Crowding penalty: if another busy helper is closer to this task, this helper
-            // should prefer local work instead of competing for far-away tasks
+            // Crowding penalty: if ANY busy helper is already closer to this task, back off HARD —
+            // don't pull a helper across the map for a crop a nearer helper can (and will) handle
+            // back-to-back. The closer helper wins it during assignment.
             float crowdingPenalty = 0f;
             foreach (Helper other in activeHelpers)
             {
@@ -806,8 +847,9 @@ public class HelperManager : MonoBehaviour
                 float otherDist = Vector3.Distance(other.transform.position, taskPos);
                 if (otherDist < distance)
                 {
-                    // Someone else is closer — heavy penalty to encourage spreading out
-                    crowdingPenalty = 80f;
+                    // Someone else is closer — heavy penalty so this helper doesn't cross the map
+                    // to compete for a task a nearer helper will handle.
+                    crowdingPenalty = 200f;
                     break;
                 }
             }

@@ -74,6 +74,11 @@ public class SeedSelectionData
     }
 
     /// <summary>
+    /// True if at least one zone has a crop assigned (i.e. anything is equipped at all).
+    /// </summary>
+    public bool HasAnyAssignment() => zoneAssignments.Count > 0;
+
+    /// <summary>
     /// Check if all unlocked zones have assignments
     /// </summary>
     public bool AreAllUnlockedZonesFilled()

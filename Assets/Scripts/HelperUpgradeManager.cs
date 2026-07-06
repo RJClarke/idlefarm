@@ -251,24 +251,36 @@ public class HelperUpgradeManager : MonoBehaviour
     #region Save/Load
 
     /// <summary>
-    /// Save purchased upgrades
+    /// Persistence is now driven by SaveManager.SaveGame / .LoadGame; this stub remains
+    /// only so the existing call site in PurchaseUpgrade compiles. Save-on-pause hook
+    /// flushes to disk on app background / quit.
     /// </summary>
-    private void SaveUpgrades()
-    {
-        // TODO: Extend GameData to include purchased upgrades
-        // For now, just log
+    private void SaveUpgrades() { /* no-op — SaveManager handles persistence */ }
 
+    /// <summary>Reset to a clean state. Called once in Awake; SaveManager populates after.</summary>
+    private void LoadUpgrades() { purchasedUpgradeIDs.Clear(); }
 
-    }
+    /// <summary>Serializable snapshot for SaveManager.</summary>
+    public string[] GetPurchasedIDsForSave()
+        => purchasedUpgradeIDs != null ? purchasedUpgradeIDs.ToArray() : new string[0];
 
     /// <summary>
-    /// Load purchased upgrades from save
+    /// Replace purchased-upgrade list from the saved snapshot and re-apply all bonuses.
+    /// Null-safe; unknown IDs (e.g. catalog rename) are silently skipped.
     /// </summary>
-    private void LoadUpgrades()
+    public void LoadState(string[] ids)
     {
-        // TODO: Load from SaveManager
-        // For now, start fresh each time
         purchasedUpgradeIDs.Clear();
+        if (ids != null)
+        {
+            foreach (var id in ids)
+            {
+                if (string.IsNullOrEmpty(id)) continue;
+                if (purchasedUpgradeIDs.Contains(id)) continue;
+                purchasedUpgradeIDs.Add(id);
+            }
+        }
+        RecalculateBonuses();
     }
 
     #endregion

@@ -18,6 +18,17 @@ namespace Research
         public long boostExpiresUtcTicks; // 0 = no boost active
         public float boostMultiplier = 1.0f;
 
+        // Auto-buy: when a boost expires, automatically purchase another of the same kind
+        // if the player has enough compost. 0/cleared values disable auto-buy.
+        public float autoBuyMultiplier;
+        public float autoBuyDurationSecs;
+        public int   autoBuyCost;
+
+        public bool HasActiveBoost(System.DateTime nowUtc) =>
+            boostMultiplier > 1.0f && boostExpiresUtcTicks > nowUtc.Ticks;
+
+        public bool HasAutoBuy => autoBuyMultiplier > 1.0f && autoBuyDurationSecs > 0f && autoBuyCost > 0;
+
         public bool IsIdle => string.IsNullOrEmpty(activeResearchID) || startUtcTicks == 0;
     }
 }

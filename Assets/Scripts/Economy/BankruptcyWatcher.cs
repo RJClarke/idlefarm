@@ -9,14 +9,30 @@ public class BankruptcyWatcher : MonoBehaviour
     [Tooltip("Seconds between bankruptcy checks.")]
     [SerializeField] private float checkInterval = 2f;
 
-    [Tooltip("Grace period after run start before bankruptcy can trigger.")]
+    [Tooltip("Grace period (in-run seconds) after run start before bankruptcy can trigger.")]
     [SerializeField] private float startGrace = 8f;
 
+    [Tooltip("Wall-clock grace after a run (re)starts. Critical after an OFFLINE RESUME: the run's " +
+             "in-run duration is already huge, so the startGrace above gives no protection, yet the " +
+             "tiles reset on resume — helpers need real time to replant before we judge bankruptcy.")]
+    [SerializeField] private float realStartGrace = 10f;
+
     private float _timer;
+    private float _realGrace;
+    private bool _wasActive;
 
     private void Update()
     {
-        if (RunManager.Instance == null || !RunManager.Instance.IsRunActive) return;
+        bool active = RunManager.Instance != null && RunManager.Instance.IsRunActive;
+
+        // Reset the wall-clock grace whenever a run (re)starts — covers fresh runs AND offline resumes.
+        if (active && !_wasActive) _realGrace = 0f;
+        _wasActive = active;
+        if (!active) return;
+
+        _realGrace += Time.unscaledDeltaTime;
+        if (_realGrace < realStartGrace) return;
+
         if (RunManager.Instance.CurrentRunDuration < startGrace) return;
 
         _timer += Time.unscaledDeltaTime;

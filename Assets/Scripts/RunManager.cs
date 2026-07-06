@@ -204,7 +204,17 @@ public class RunManager : MonoBehaviour
         float gameSpeedBonus = ResearchManager.Instance != null
             ? ResearchManager.Instance.GetBonus(Research.StatKey.GameSpeed)
             : 0f;
-        Time.timeScale = 1f + gameSpeedBonus;
+        // baseGameSpeed is the normalized "1×". Research (1 + bonus) and the speed stepper multiply on top.
+        Time.timeScale = BaseGameSpeed * (1f + gameSpeedBonus) * GameSpeedControl.Multiplier;
+    }
+
+    /// <summary>The tunable normalized base speed (GameConstants), shown as "1×" to the player.</summary>
+    private float BaseGameSpeed => GameConstants.Instance != null ? GameConstants.Instance.baseGameSpeed : 1.75f;
+
+    /// <summary>Re-apply game speed live (called by the speed stepper when the player changes it mid-run).</summary>
+    public void RefreshGameSpeed()
+    {
+        if (isRunActive) ApplyGameSpeedScale();
     }
 
     /// <summary>
@@ -236,7 +246,7 @@ public class RunManager : MonoBehaviour
         LastRunEndedBankrupt = bankrupt;
 
         // Reset Time.timeScale (Game Speed Multiplier only applies during runs)
-        Time.timeScale = 1f;
+        Time.timeScale = BaseGameSpeed;
 
         // Calculate rewards
         int coinsEarned = CalculateRunRewards();
@@ -293,7 +303,7 @@ public class RunManager : MonoBehaviour
         isRunActive = false;
         runStartUtcTicks = 0;
         currentRunDuration = 0f;
-        Time.timeScale = 1f;
+        Time.timeScale = BaseGameSpeed;
 
         int prevBest = PlayerPrefs.GetInt("best_run_seconds", 0);
         LastRunWasRecord = survivedSeconds > prevBest;

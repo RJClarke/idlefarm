@@ -284,7 +284,7 @@ public class EquipmentManager : MonoBehaviour
             else if (data.visualPrefab != null && FarmGrid.Instance != null)
             {
                 Vector3 zoneCenter = FarmGrid.Instance.GetZoneCenter(zoneId);
-                GameObject visual = Instantiate(data.visualPrefab, zoneCenter, Quaternion.identity);
+                GameObject visual = Instantiate(data.visualPrefab, zoneCenter + GroundPropOffset, Quaternion.identity);
                 visual.name = $"HomeEquip_{data.displayName}_Zone{zoneId}";
                 homeScreenVisuals.Add(visual);
             }
@@ -312,6 +312,10 @@ public class EquipmentManager : MonoBehaviour
     }
 
     private List<GameObject> homeScreenVisuals = new List<GameObject>();
+
+    // Small upward nudge so ground props (scarecrow, sprinkler) sit slightly above the
+    // exact zone center rather than dead-center on it. Tweak to taste.
+    private static readonly Vector3 GroundPropOffset = new Vector3(0f, -0.25f, 0f);
 
     // ─────────────────────────────────────────────────────────────────────
     // Run Lifecycle
@@ -375,7 +379,7 @@ public class EquipmentManager : MonoBehaviour
             }
             else if (data.visualPrefab != null)
             {
-                state.visualInstance = Instantiate(data.visualPrefab, zoneCenter, Quaternion.identity);
+                state.visualInstance = Instantiate(data.visualPrefab, zoneCenter + GroundPropOffset, Quaternion.identity);
                 state.visualInstance.name = $"Equipment_{data.displayName}_Zone{zoneId}";
             }
 

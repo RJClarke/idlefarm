@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -6,6 +7,11 @@ using UnityEngine;
 /// </summary>
 public static class SettingsManager
 {
+    /// <summary>
+    /// Raised whenever any audio setting (master/music/sfx/mute) changes, so live
+    /// listeners (e.g. MusicManager) can re-apply volume while the slider is dragged.
+    /// </summary>
+    public static event Action OnAudioSettingsChanged;
     // ── Audio ──
     private const string KEY_MASTER_VOLUME = "setting_master_volume";
     private const string KEY_MUSIC_VOLUME  = "setting_music_volume";
@@ -64,27 +70,37 @@ public static class SettingsManager
     public static float MasterVolume
     {
         get { EnsureLoaded(); return _masterVolume; }
-        set { EnsureLoaded(); _masterVolume = Mathf.Clamp01(value); PlayerPrefs.SetFloat(KEY_MASTER_VOLUME, _masterVolume); PlayerPrefs.Save(); ApplyAudio(); }
+        set { EnsureLoaded(); _masterVolume = Mathf.Clamp01(value); PlayerPrefs.SetFloat(KEY_MASTER_VOLUME, _masterVolume); PlayerPrefs.Save(); ApplyAudio(); OnAudioSettingsChanged?.Invoke(); }
     }
     public static float MusicVolume
     {
         get { EnsureLoaded(); return _musicVolume; }
-        set { EnsureLoaded(); _musicVolume = Mathf.Clamp01(value); PlayerPrefs.SetFloat(KEY_MUSIC_VOLUME, _musicVolume); PlayerPrefs.Save(); }
+        set { EnsureLoaded(); _musicVolume = Mathf.Clamp01(value); PlayerPrefs.SetFloat(KEY_MUSIC_VOLUME, _musicVolume); PlayerPrefs.Save(); OnAudioSettingsChanged?.Invoke(); }
     }
     public static float SfxVolume
     {
         get { EnsureLoaded(); return _sfxVolume; }
-        set { EnsureLoaded(); _sfxVolume = Mathf.Clamp01(value); PlayerPrefs.SetFloat(KEY_SFX_VOLUME, _sfxVolume); PlayerPrefs.Save(); }
+        set { EnsureLoaded(); _sfxVolume = Mathf.Clamp01(value); PlayerPrefs.SetFloat(KEY_SFX_VOLUME, _sfxVolume); PlayerPrefs.Save(); OnAudioSettingsChanged?.Invoke(); }
     }
     public static bool MuteAll
     {
         get { EnsureLoaded(); return _muteAll; }
-        set { EnsureLoaded(); _muteAll = value; PlayerPrefs.SetInt(KEY_MUTE_ALL, _muteAll ? 1 : 0); PlayerPrefs.Save(); ApplyAudio(); }
+        set { EnsureLoaded(); _muteAll = value; PlayerPrefs.SetInt(KEY_MUTE_ALL, _muteAll ? 1 : 0); PlayerPrefs.Save(); ApplyAudio(); OnAudioSettingsChanged?.Invoke(); }
+    }
+
+    /// <summary>
+    /// Effective music gain to apply on a music AudioSource. Master &amp; mute are handled
+    /// globally by <see cref="AudioListener.volume"/>, so this is just the music slider.
+    /// </summary>
+    public static float EffectiveMusicVolume
+    {
+        get { EnsureLoaded(); return _muteAll ? 0f : _musicVolume; }
     }
 
     private static void ApplyAudio()
     {
-        // Drives the global AudioListener — music/SFX sliders are stubbed until we add an AudioMixer.
+        // Master + mute drive the global AudioListener. The Music slider is applied per-source
+        // by MusicManager via EffectiveMusicVolume; SFX is still stubbed (no mixer yet).
         AudioListener.volume = _muteAll ? 0f : _masterVolume;
     }
 

@@ -64,22 +64,21 @@ public class AnimalEquipButton : MonoBehaviour
         }
         else
         {
-            // Show silhouette / empty state
-            if (emojiText != null)
+            // Empty state: prefer a silhouette icon; only fall back to the "?" text
+            // when there's no icon/silhouette to show (so they never overlap).
+            if (animalIcon != null && silhouetteSprite != null)
             {
-                emojiText.gameObject.SetActive(true);
-                emojiText.text = "?";
+                animalIcon.sprite = silhouetteSprite;
+                animalIcon.enabled = true;
+                if (emojiText != null) emojiText.gameObject.SetActive(false);
             }
-            if (animalIcon != null)
+            else
             {
-                if (silhouetteSprite != null)
+                if (animalIcon != null) animalIcon.enabled = false;
+                if (emojiText != null)
                 {
-                    animalIcon.sprite = silhouetteSprite;
-                    animalIcon.enabled = true;
-                }
-                else
-                {
-                    animalIcon.enabled = false;
+                    emojiText.gameObject.SetActive(true);
+                    emojiText.text = "?";
                 }
             }
         }

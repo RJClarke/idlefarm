@@ -222,6 +222,9 @@ public class ThreatWaveManager : MonoBehaviour
 
         threat.Initialize(data, hunger, zoneId);
 
+        if (go.GetComponent<CropAgitator>() == null)
+            go.AddComponent<CropAgitator>(); // rustles crops the animal brushes past
+
         activeThreats.Add(threat);
 
 

@@ -37,6 +37,11 @@ public class SoilTile : MonoBehaviour
     private GameObject currentPlant;
     private Plant plantComponent;
 
+    // Reserved by equipment (e.g. a sprinkler sitting on the zone's center tile). A blocked tile
+    // can't be tilled or planted, so it never gets worked/watered/harvested by helpers and stays
+    // clear for the equipment to remain visible. Recomputed each run by FarmGrid.
+    private bool isBlocked;
+
     // Properties
     public TileState State => currentState;
     public bool IsPermanentlyTilled => isPermanentlyTilled;
@@ -45,7 +50,11 @@ public class SoilTile : MonoBehaviour
     public int GridY => gridY;
     public bool IsOccupied => currentPlant != null;
     public GameObject CurrentPlant => currentPlant;
-    public bool CanPlant => currentState == TileState.Tilled && !IsOccupied;
+    public bool CanPlant => currentState == TileState.Tilled && !IsOccupied && !isBlocked;
+    public bool IsBlocked => isBlocked;
+
+    /// <summary>Reserve/unreserve this tile (e.g. for a sprinkler). Blocked tiles can't be tilled or planted.</summary>
+    public void SetBlocked(bool blocked) => isBlocked = blocked;
 
     private void Awake()
     {
@@ -182,6 +191,7 @@ public class SoilTile : MonoBehaviour
     /// </summary>
     public bool TillTemporary(int cost)
     {
+        if (isBlocked) return false;
         if (currentState == TileState.Tilled)
         {
             return false;
@@ -210,6 +220,7 @@ public class SoilTile : MonoBehaviour
     /// </summary>
     public bool TillByHelper()
     {
+        if (isBlocked) return false;
         if (currentState == TileState.Tilled) return false;
         if (isPermanentlyTilled)
         {

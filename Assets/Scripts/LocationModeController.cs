@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -14,14 +15,22 @@ public class LocationModeController : MonoBehaviour
     [Tooltip("Toggled via SetActive. Use for UI that should disappear entirely at Market.")]
     [SerializeField] private GameObject[] hideAtMarket;
 
+    [Tooltip("Same as hideAtMarket but resolved by scene-name lookup at Start. Useful when inspector " +
+             "references can't easily be wired (e.g. MCP automation). Names are resolved via " +
+             "GameObject.Find — searches are root-relative scene paths or bare names.")]
+    [SerializeField] private string[] hideAtMarketByName;
+
     [Header("Hidden while at Market — entity managers")]
     [Tooltip("Renderers + Colliders disabled (manager keeps ticking) so animals/helpers don't wander into view.")]
     [SerializeField] private GameObject[] hideEntitiesAtMarket;
 
     private CameraPanController panController;
+    private readonly List<GameObject> resolvedHideAtMarket = new List<GameObject>();
 
     private void Start()
     {
+        ResolveByName();
+
         panController = Camera.main != null ? Camera.main.GetComponent<CameraPanController>() : null;
         if (panController == null)
         {
@@ -31,6 +40,24 @@ public class LocationModeController : MonoBehaviour
         panController.OnPanStarted   += OnPanStarted;
         panController.OnPanCompleted += OnPanCompleted;
         Apply(panController.CurrentLocation);
+    }
+
+    private void ResolveByName()
+    {
+        resolvedHideAtMarket.Clear();
+        if (hideAtMarket != null)
+            for (int i = 0; i < hideAtMarket.Length; i++)
+                if (hideAtMarket[i] != null) resolvedHideAtMarket.Add(hideAtMarket[i]);
+
+        if (hideAtMarketByName == null) return;
+        for (int i = 0; i < hideAtMarketByName.Length; i++)
+        {
+            string n = hideAtMarketByName[i];
+            if (string.IsNullOrEmpty(n)) continue;
+            GameObject go = GameObject.Find(n);
+            if (go != null) resolvedHideAtMarket.Add(go);
+            else Debug.LogWarning($"[LocationModeController] hideAtMarketByName: no GameObject found for '{n}'.");
+        }
     }
 
     private void OnDestroy()
@@ -49,9 +76,9 @@ public class LocationModeController : MonoBehaviour
     {
         bool atMarket = loc == CameraPanController.Location.Market;
 
-        for (int i = 0; i < hideAtMarket.Length; i++)
+        for (int i = 0; i < resolvedHideAtMarket.Count; i++)
         {
-            GameObject go = hideAtMarket[i];
+            GameObject go = resolvedHideAtMarket[i];
             if (go != null) go.SetActive(!atMarket);
         }
 

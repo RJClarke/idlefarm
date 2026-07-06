@@ -97,6 +97,12 @@ public class OfflineProgressManager : MonoBehaviour
         }
         var researchReport = ResearchManager.Instance != null ? ResearchManager.Instance.LastOfflineReport : null;
 
+        // Daily-quest catch-up: drop any quests that should have been awarded while away.
+        // Added straight to the quest queue like a normal drop (no modal UI); the quest
+        // list refreshes via QuestManager's own OnQuestsDropped event.
+        if (QuestManager.Instance != null)
+            QuestManager.Instance.RunOfflineQuestCatchUp();
+
         // No active run -> existing welcome-back (cow/research only).
         if (!pendingRunActive)
         {
@@ -122,9 +128,11 @@ public class OfflineProgressManager : MonoBehaviour
         if (CurrencyManager.Instance != null && outcome.compostGranted > 0)
             CurrencyManager.Instance.AddCompost(outcome.compostGranted);
 
+        // Apply grants + run-state for the outcome, then present ONE unified welcome-back modal that
+        // opens as a loading bar and expands into the result (full stats if ended, recap + Continue if not).
         if (outcome.result.bankrupt)
         {
-            // Ended while away: grant taxed coins, record the run, show the existing stats popup.
+            // Ended while away: grant taxed coins, record the run, finalize it.
             if (CurrencyManager.Instance != null && outcome.taxedCoins > 0)
                 CurrencyManager.Instance.AddCoins(outcome.taxedCoins);
 
@@ -140,16 +148,10 @@ public class OfflineProgressManager : MonoBehaviour
             if (RunManager.Instance != null) RunManager.Instance.FinalizeOfflineBankruptcy(survived, real);
 
             Debug.Log($"[Offline] Run ENDED bankrupt at {survived}s; +{outcome.taxedCoins} coins, +{outcome.compostGranted} compost.");
-            // Came back AND lost: show ONE merged modal — the full Run Stats ledger with a "Welcome back"
-            // header — rather than stacking a separate welcome-back modal on top of the stats popup.
-            var ledger = RunLedgerData.FromOffline(outcome, gap);
-            if (RunStatsPopupUITK.Instance != null)
-                RunStatsPopupUITK.Instance.Show(ledger, "You were away for " + FormatAway(gap));
         }
         else
         {
-            // Survived: the run is already resumed (SaveManager). Apply the simulated farm time + taxed
-            // money on top, and grant taxed coins.
+            // Survived: the run is already resumed (SaveManager). Apply simulated farm time + taxed money.
             if (CurrencyManager.Instance != null)
             {
                 if (outcome.taxedCoins > 0) CurrencyManager.Instance.AddCoins(outcome.taxedCoins);
@@ -158,11 +160,13 @@ public class OfflineProgressManager : MonoBehaviour
             if (RunManager.Instance != null) RunManager.Instance.OverrideRunProgress(outcome.result.finalFarmSeconds);
 
             Debug.Log($"[Offline] Run CONTINUES at {outcome.result.finalFarmSeconds:F0}s; +{outcome.taxedCoins} coins, resume $ {outcome.taxedResumeMoney}, +{outcome.compostGranted} compost.");
-            var ledger = RunLedgerData.FromOffline(outcome, gap);
-            string farmAdvanced = TimeFormat.Hms(outcome.result.finalFarmSeconds - pendingRunFarmSeconds);
-            string nowHms = TimeFormat.Hms(outcome.result.finalFarmSeconds);
-            if (OfflineProgressModalUITK.Instance != null)
-                OfflineProgressModalUITK.Instance.OpenContinue(gap, ledger, farmAdvanced, nowHms, onContinue: null);
         }
+
+        var ledger = RunLedgerData.FromOffline(outcome, gap);
+        string farmAdvanced = TimeFormat.Hms(outcome.result.finalFarmSeconds - pendingRunFarmSeconds);
+        string nowHms = TimeFormat.Hms(outcome.result.finalFarmSeconds);
+        if (OfflineProgressModalUITK.Instance != null)
+            OfflineProgressModalUITK.Instance.OpenOfflineRun(
+                gap, outcome.result.bankrupt, ledger, farmAdvanced, nowHms, onContinue: null);
     }
 }

@@ -30,6 +30,11 @@ public abstract class AnimalThreat : MonoBehaviour
 
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
+    protected YSort ySort;
+
+    // Nudge a deer just in front of the plant it's eating (same row → same Y → tie). One sort-order
+    // unit ≈ 0.1 world-Y; bump this if a plant still occasionally wins the tie.
+    private const int DeerSortBias = 1;
 
     // ─────────────────────────────────────────────────────────────────────
     // Public State
@@ -53,7 +58,7 @@ public abstract class AnimalThreat : MonoBehaviour
             animator.updateMode = AnimatorUpdateMode.UnscaledTime;
 
         // Depth-sort deer/crows by Y like every other entity (crows included, per design).
-        YSort.Ensure(gameObject);
+        ySort = YSort.Ensure(gameObject);
     }
 
     // ─────────────────────────────────────────────────────────────────────
@@ -68,6 +73,10 @@ public abstract class AnimalThreat : MonoBehaviour
         data            = threatData;
         hungerRemaining = hunger;
         assignedZoneId  = zoneId;
+
+        // Deer should render in front of the plant they're biting (it's at their own Y).
+        if (ySort != null && ThreatType == AnimalThreatType.Deer)
+            ySort.SetSortBias(DeerSortBias);
 
         // Only build placeholder if no prefabs are assigned in the data
         if (threatData.prefabs == null || threatData.prefabs.Length == 0)

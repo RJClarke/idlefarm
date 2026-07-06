@@ -241,6 +241,14 @@ public class AnimalManager : MonoBehaviour
 
         SpawnAnimalVisual(data);
         OnAnimalEquipped?.Invoke(data);
+
+        // If equipped mid-run, start its run-defender behavior now — otherwise chase mode would
+        // only kick in on the next run (the dog would just wander for the rest of this one).
+        if (RunManager.Instance != null && RunManager.Instance.IsRunActive
+            && data != null && data.abilityType == AnimalAbilityType.RunDefender)
+        {
+            ActivateRunDefender(data);
+        }
     }
 
     public void UnequipAnimal()
@@ -403,6 +411,10 @@ public class AnimalManager : MonoBehaviour
             visual = activeVisualInstance.AddComponent<AnimalVisual>();
         }
         visual.Initialize(data);
+
+        // Rustle crops this animal brushes past (cow grazing, dog running through, etc.).
+        if (activeVisualInstance.GetComponent<CropAgitator>() == null)
+            activeVisualInstance.AddComponent<CropAgitator>();
     }
 
     private void DestroyActiveVisual()

@@ -24,11 +24,17 @@ public class BottomNav : MonoBehaviour
     [SerializeField] private Color normalColor = new Color(0.8f, 0.7f, 0.6f); // Light brown
     [SerializeField] private Color selectedColor = new Color(1f, 0.9f, 0.7f); // Bright parchment
 
-    [Header("Mode Icons")]
+    [Header("Mode Icons (emoji fallback)")]
     [SerializeField] private string farmIcon = "🌾";
     [SerializeField] private string helpersIcon = "🤖";
     [SerializeField] private string equipmentIcon = "🪓"; // Axe (closest to rake/shovel)
     [SerializeField] private string settingsIcon = "⚙️";
+
+    [Header("Mode Icon Sprites (optional — override emoji with a pixel icon above the label)")]
+    [SerializeField] private Sprite farmSprite;
+    [SerializeField] private Sprite helpersSprite;
+    [SerializeField] private Sprite equipmentSprite;
+    [SerializeField] private Sprite settingsSprite;
 
     private DrawerUI.MenuType selectedMenu = DrawerUI.MenuType.None;
 
@@ -76,10 +82,52 @@ public class BottomNav : MonoBehaviour
 
     private void SetupButtonIcons()
     {
-        if (farmText != null)      farmText.text      = $"{farmIcon}\nFarm";
-        if (helpersText != null)   helpersText.text   = $"{helpersIcon}\nHelpers";
-        if (equipmentText != null) equipmentText.text = $"{equipmentIcon}\nEquipment";
-        if (settingsText != null)  settingsText.text  = $"{settingsIcon}\nSettings";
+        ApplyButtonIcon(farmText,      farmSprite,      farmIcon,      "Farm");
+        ApplyButtonIcon(helpersText,   helpersSprite,   helpersIcon,   "Helpers");
+        ApplyButtonIcon(equipmentText, equipmentSprite, equipmentIcon, "Equipment");
+        ApplyButtonIcon(settingsText,  settingsSprite,  settingsIcon,  "Settings");
+    }
+
+    /// <summary>
+    /// If a sprite is assigned, render a pixel icon at the top of the button with the word
+    /// below it; otherwise fall back to the "{emoji}\n{word}" text label.
+    /// </summary>
+    private void ApplyButtonIcon(TextMeshProUGUI text, Sprite sprite, string emoji, string word)
+    {
+        if (text == null) return;
+
+        if (sprite == null)
+        {
+            text.text = $"{emoji}\n{word}";
+            return;
+        }
+
+        text.text = word;
+        text.alignment = TextAlignmentOptions.Bottom;
+
+        Transform parent = text.transform.parent; // the Button
+        Transform existing = parent.Find("NavIcon");
+        Image img;
+        if (existing != null)
+        {
+            img = existing.GetComponent<Image>();
+        }
+        else
+        {
+            var iconGO = new GameObject("NavIcon", typeof(RectTransform), typeof(Image));
+            iconGO.transform.SetParent(parent, false);
+            img = iconGO.GetComponent<Image>();
+            img.raycastTarget = false;
+            img.preserveAspect = true;
+            var rt = iconGO.GetComponent<RectTransform>();
+            rt.anchorMin = new Vector2(0.5f, 1f);
+            rt.anchorMax = new Vector2(0.5f, 1f);
+            rt.pivot     = new Vector2(0.5f, 1f);
+            rt.sizeDelta = new Vector2(40f, 40f);
+            rt.anchoredPosition = new Vector2(0f, -6f);
+        }
+        img.sprite = sprite;
+        img.enabled = true;
     }
 
     /// <summary>

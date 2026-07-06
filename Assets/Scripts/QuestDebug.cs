@@ -56,7 +56,9 @@ public class QuestDebug : MonoBehaviour
             + PADDING * 2;
         float height = isExpanded ? expandedHeight : HEADER_HEIGHT;
 
-        GUILayout.BeginArea(new Rect(10, 180, WIDTH, height));
+        // Sit below the top-left stack (Missions / Run Stats / Daily). Proportional to screen
+        // height so it stays below the daily reward button across resolutions.
+        GUILayout.BeginArea(new Rect(10, Screen.height * 0.17f, WIDTH, height));
 
         string toggleLabel = isExpanded ? "▲ Quest Debug" : "▼ Quest Debug";
         if (GUILayout.Button(toggleLabel, headerStyle, GUILayout.Height(HEADER_HEIGHT)))

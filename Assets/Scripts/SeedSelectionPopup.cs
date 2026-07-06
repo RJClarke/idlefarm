@@ -152,6 +152,13 @@ public class SeedSelectionPopup : MonoBehaviour
         return selectionData.AreAllUnlockedZonesFilled();
     }
 
+    /// <summary>True if the player has at least one crop equipped to any field.</summary>
+    public bool HasAnyCropEquipped()
+    {
+        var data = SeedSelectionData.Load();
+        return data != null && data.HasAnyAssignment();
+    }
+
     public Dictionary<int, CropData> LoadAndApplySavedSelections()
     {
         selectionData = SeedSelectionData.Load();

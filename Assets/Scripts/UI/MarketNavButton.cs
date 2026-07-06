@@ -29,12 +29,34 @@ public class MarketNavButton : MonoBehaviour
         if (button != null) button.onClick.AddListener(OnClick);
         panController.OnPanCompleted += OnPanCompleted;
         UpdateLabel(panController.CurrentLocation);
+
+        // Hide the Market button while a run is active.
+        if (RunManager.Instance != null)
+        {
+            RunManager.Instance.OnRunStarted += OnRunStarted;
+            RunManager.Instance.OnRunEnded   += OnRunEnded;
+            ApplyRunVisibility(RunManager.Instance.IsRunActive);
+        }
     }
 
     private void OnDestroy()
     {
         if (button != null) button.onClick.RemoveListener(OnClick);
         if (panController != null) panController.OnPanCompleted -= OnPanCompleted;
+        if (RunManager.Instance != null)
+        {
+            RunManager.Instance.OnRunStarted -= OnRunStarted;
+            RunManager.Instance.OnRunEnded   -= OnRunEnded;
+        }
+    }
+
+    private void OnRunStarted() => ApplyRunVisibility(true);
+    private void OnRunEnded()   => ApplyRunVisibility(false);
+
+    private void ApplyRunVisibility(bool inRun)
+    {
+        // Toggle the button object itself; the C# run events still fire to re-show it.
+        gameObject.SetActive(!inRun);
     }
 
     private void OnClick()

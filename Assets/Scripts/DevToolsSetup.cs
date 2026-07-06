@@ -18,11 +18,6 @@ public class DevToolsSetup : MonoBehaviour
     private bool isOpen = false;
 
     private static Sprite cachedPillSprite;
-    private int speedIndex = 0; // 0=base, 1=10x, 2=20x, 3=30x
-    private static readonly float[] speedOptions = { 0f, 10f, 20f, 30f }; // 0 = use base game speed
-    // Labels describe the CURRENT active speed at each index.
-    private static readonly string[] speedLabels = { "Speed: Normal", "Speed: 10x", "Speed: 20x", "Speed: 30x" };
-    private TextMeshProUGUI speedBtnText;
 
     private void Start()
     {
@@ -52,6 +47,8 @@ public class DevToolsSetup : MonoBehaviour
         const float BTN_HEIGHT = 36f;
         const float TOGGLE_HEIGHT = 40f;
         const float MARGIN = 20f;
+        // Push the whole drawer down so it starts well below the 4-row currency stack (top-right).
+        const float CURRENCY_CLEARANCE = 300f;
         const int BTN_FONT = 20;
         Color btnBg = new Color(0.96f, 0.96f, 0.96f, 1f);
         Color btnText = Color.black;
@@ -62,7 +59,7 @@ public class DevToolsSetup : MonoBehaviour
         toggleRT.anchorMin = new Vector2(1, 1);
         toggleRT.anchorMax = new Vector2(1, 1);
         toggleRT.pivot = new Vector2(1, 1);
-        toggleRT.anchoredPosition = new Vector2(-MARGIN, -MARGIN);
+        toggleRT.anchoredPosition = new Vector2(-MARGIN, -(MARGIN + CURRENCY_CLEARANCE));
         toggleRT.sizeDelta = new Vector2(DRAWER_WIDTH, TOGGLE_HEIGHT);
         ApplyPillStyle(toggleGO, btnBg, btnText);
         SetButtonText(toggleGO, "▼ Dev Tools", 17);
@@ -79,7 +76,7 @@ public class DevToolsSetup : MonoBehaviour
         drawerRT.anchorMin = new Vector2(1, 1);
         drawerRT.anchorMax = new Vector2(1, 1);
         drawerRT.pivot = new Vector2(1, 1);
-        drawerRT.anchoredPosition = new Vector2(-MARGIN, -(MARGIN + TOGGLE_HEIGHT + 6f));
+        drawerRT.anchoredPosition = new Vector2(-MARGIN, -(MARGIN + CURRENCY_CLEARANCE + TOGGLE_HEIGHT + 6f));
         drawerRT.sizeDelta = new Vector2(DRAWER_WIDTH, 320f);
 
         drawerGO.GetComponent<Image>().color = new Color(0.08f, 0.08f, 0.08f, 0.72f);
@@ -114,16 +111,13 @@ public class DevToolsSetup : MonoBehaviour
             if (ResearchManager.Instance != null) ResearchManager.Instance.DebugFinishCurrentResearches();
         });
 
-        GameObject welcomeBackGO = CreatePillButton("TestWelcomeBackButton", "Test Welcome Back (8h)", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        GameObject welcomeBackGO = CreatePillButton("TestWelcomeBackButton", "Welcome (8h)", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         welcomeBackGO.GetComponent<Button>().onClick.AddListener(OnTestWelcomeBack);
 
         GameObject offlineSimGO = CreatePillButton("ForceOfflineSimButton", "Force Offline Sim (2h)", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         offlineSimGO.GetComponent<Button>().onClick.AddListener(OnForceOfflineSim);
 
-        // Speed button at the BOTTOM — shows the currently-active speed in its label.
-        GameObject speedGO = CreatePillButton("SpeedUpButton", speedLabels[speedIndex], btnBg, btnText, BTN_FONT, BTN_HEIGHT);
-        speedBtnText = speedGO.GetComponentInChildren<TextMeshProUGUI>();
-        speedGO.GetComponent<Button>().onClick.AddListener(OnSpeedCycle);
+        // (Game speed — including 10/20/30× — lives on the stepper under the run timer now.)
 
         // ── Info Text ────────────────────────────────────────────────────
         GameObject infoGO = CreateText("InfoText", drawerGO.GetComponent<RectTransform>(), 15);
@@ -233,13 +227,6 @@ public class DevToolsSetup : MonoBehaviour
     }
 
     private float BaseSpeed => GameConstants.Instance != null ? GameConstants.Instance.baseGameSpeed : 2f;
-
-    private void OnSpeedCycle()
-    {
-        speedIndex = (speedIndex + 1) % speedOptions.Length;
-        Time.timeScale = speedOptions[speedIndex] > 0f ? speedOptions[speedIndex] : BaseSpeed;
-        if (speedBtnText != null) speedBtnText.text = speedLabels[speedIndex];
-    }
 
     /// <summary>
     /// Mimic being away for 8 hours: save now, then backdate EVERY wall-clock anchor in the
@@ -358,7 +345,7 @@ public class DevToolsSetup : MonoBehaviour
         if (ThreatWaveManager.Instance != null)
             info += $"\n<b>THREATS</b>  Wave:{ThreatWaveManager.Instance.CurrentWave}  Hunger:{ThreatWaveManager.Instance.CurrentHunger:F0}";
 
-        if (speedIndex > 0) info += $"\n<color=yellow>TIME: {Time.timeScale}x</color>";
+        if (Mathf.Abs(Time.timeScale - BaseSpeed) > 0.01f) info += $"\n<color=yellow>TIME: {Time.timeScale}x</color>";
 
         infoTMP.text = info;
     }

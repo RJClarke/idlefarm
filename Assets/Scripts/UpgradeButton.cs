@@ -140,7 +140,7 @@ public class UpgradeButton : MonoBehaviour
             {
                 int nextLevel = permanentLevel + 1;
                 int coinCost = upgradeData.GetCoinCost(nextLevel);
-                buttonText.text = $"UPGRADE Lv {nextLevel}: {coinCost} 🪙";
+                buttonText.text = $"UPGRADE Lv {nextLevel}: {coinCost} {CurrencyIcons.Coin}";
 
                 // Check affordability
                 bool canAfford = CurrencyManager.Instance != null && 
@@ -189,7 +189,7 @@ public class UpgradeButton : MonoBehaviour
                 int nextLevel = currentLevel + 1;
                 int moneyCost = UpgradeManager.Instance.CalculateMoneyCost(nextLevel);
                 string costText = UpgradeManager.Instance.FormatMoneyCost(moneyCost);
-                buttonText.text = $"UPGRADE Lv {nextLevel}: {costText} 💵";
+                buttonText.text = $"UPGRADE Lv {nextLevel}: {costText} {CurrencyIcons.Cash}";
 
                 // Check affordability
                 bool canAfford = CurrencyManager.Instance != null && 

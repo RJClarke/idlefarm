@@ -22,7 +22,9 @@ public class OfflineProgressModalUITK : MonoBehaviour
     private Label boostSummaryLabel;
     private Button continueButton;
     private VisualElement loadingBarFill;
+    private VisualElement loadingRow;
     private Label loadingLabel;
+    private System.Action _onBarComplete;
     private IVisualElementScheduledItem loadTicker;
     private double loadStartTimeSecs;
 
@@ -74,6 +76,7 @@ public class OfflineProgressModalUITK : MonoBehaviour
         boostSummaryLabel = root.Q<Label>("boost-summary");
         continueButton    = root.Q<Button>("continue-button");
         loadingBarFill    = root.Q<VisualElement>("loading-bar-fill");
+        loadingRow        = root.Q<VisualElement>("loading-row");
         loadingLabel      = root.Q<Label>("loading-label");
 
         modalTitle        = root.Q<Label>("modal-title");
@@ -106,38 +109,63 @@ public class OfflineProgressModalUITK : MonoBehaviour
         if (legacySections != null) legacySections.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
-    /// <summary>Run survived offline — green hero, light summary, "Continue the Run" CTA.</summary>
-    public void OpenContinue(TimeSpan gap, RunLedgerData d, string farmAdvancedHms, string nowHms, System.Action onContinue)
+    /// <summary>
+    /// Unified active-run welcome-back: opens as a loading bar ("Calculating your away progress…"),
+    /// then expands into the outcome. If the run ENDED, shows the full run-stats ledger; if it survived,
+    /// shows the lighter "while you were away" recap with a Continue button.
+    /// </summary>
+    public void OpenOfflineRun(TimeSpan gap, bool ended, RunLedgerData ledger,
+                               string farmAdvancedHms, string nowHms, System.Action onContinue)
     {
         if (root == null) Cache();
         if (modalRoot == null) return;
-        PrepCommon(gap, "Welcome back! 👋");
-        ShowHero("green", "Your run is still going",
-            "Farm Time +" + farmAdvancedHms, "now " + nowHms + " · ran at max speed while away");
-        RunStatsLedgerView.Build(breakdown, d, compact: true);
-        if (breakdownScroll != null) breakdownScroll.style.display = DisplayStyle.Flex;
+        RunStatsPopupUITK.Instance?.HideImmediate(); // mutual exclusion
 
-        SetCtas("▶  Continue the Run", mainGold: false, "See full breakdown",
-            onMain: onContinue,
-            onSecondaryAction: () => { Close(); RunStatsPopupUITK.Instance?.Show(d); });
-        Reveal();
+        if (modalTitle != null) modalTitle.text = "Welcome back 👋";
+        if (timeAwayLabel != null) timeAwayLabel.text = $"away for {FormatGap(gap)}";
+
+        // Phase 1 — loading bar only. Hide the outcome + the legacy cow/research rows.
+        SetDisplay(outcomeHero, false);
+        SetDisplay(breakdownScroll, false);
+        SetLegacySectionsVisible(true);
+        SetDisplay(loadingRow, true);
+        SetDisplay(currencyTitle, false);
+        SetDisplay(currencySection, false);
+        SetDisplay(researchTitle, false);
+        SetDisplay(researchSection, false);
+        if (boostSummaryLabel != null) boostSummaryLabel.style.display = DisplayStyle.None;
+        if (continueButton != null) continueButton.style.display = DisplayStyle.None;
+        if (secondaryButton != null) secondaryButton.style.display = DisplayStyle.None;
+        if (loadingLabel != null) loadingLabel.text = "Calculating your away progress…";
+
+        if (root != null) root.pickingMode = PickingMode.Position;
+        modalRoot.style.display = DisplayStyle.Flex;
+
+        StartLoadBar(() => RevealOfflineOutcome(ended, ledger, farmAdvancedHms, nowHms, onContinue));
     }
 
-    /// <summary>Run ended offline — red hero, breakdown, "View Full Run Stats" CTA.</summary>
-    public void OpenEnded(TimeSpan gap, RunLedgerData d, System.Action onNewRun)
+    private void RevealOfflineOutcome(bool ended, RunLedgerData d,
+                                      string farmAdvancedHms, string nowHms, System.Action onContinue)
     {
-        if (root == null) Cache();
-        if (modalRoot == null) return;
-        PrepCommon(gap, "Welcome back 👋");
-        ShowHero("red", "💸 Your run ended while away",
-            "Bankrupt at " + d.farmTimeHms, "ran out of seed money · final score " + d.farmTimeHms);
-        RunStatsLedgerView.Build(breakdown, d, compact: true);
-        if (breakdownScroll != null) breakdownScroll.style.display = DisplayStyle.Flex;
+        SetLegacySectionsVisible(false); // hide the loading row
 
-        SetCtas("📊  View Full Run Stats", mainGold: true, "Start a new run",
-            onMain: () => { Close(); RunStatsPopupUITK.Instance?.Show(d); },
-            onSecondaryAction: () => { Close(); onNewRun?.Invoke(); });
-        Reveal();
+        if (ended)
+        {
+            ShowHero("red", "💸 Your run ended while away",
+                "Bankrupt at " + d.farmTimeHms, "");
+            RunStatsLedgerView.Build(breakdown, d, compact: false); // FULL run stats
+            if (breakdownScroll != null) breakdownScroll.style.display = DisplayStyle.Flex;
+            SetCtas("Close", mainGold: false, null, onMain: Close, onSecondaryAction: null);
+        }
+        else
+        {
+            ShowHero("green", "While you were away…",
+                "Your run is still going  ·  Farm Time +" + farmAdvancedHms,
+                "now " + nowHms + " · ran at max speed while away");
+            RunStatsLedgerView.Build(breakdown, d, compact: true); // light "while you were away" recap
+            if (breakdownScroll != null) breakdownScroll.style.display = DisplayStyle.Flex;
+            SetCtas("Continue the Run  ▶", mainGold: false, null, onMain: onContinue, onSecondaryAction: null);
+        }
     }
 
     private void PrepCommon(TimeSpan gap, string title)
@@ -156,7 +184,11 @@ public class OfflineProgressModalUITK : MonoBehaviour
         outcomeHero.AddToClassList(variant == "red" ? "hero--red" : "hero--green");
         if (heroLabel != null) heroLabel.text = label;
         if (heroHeadline != null) heroHeadline.text = headline;
-        if (heroSub != null) heroSub.text = sub;
+        if (heroSub != null)
+        {
+            heroSub.text = sub;
+            heroSub.style.display = string.IsNullOrEmpty(sub) ? DisplayStyle.None : DisplayStyle.Flex;
+        }
     }
 
     private void SetCtas(string mainText, bool mainGold, string secondaryText,
@@ -168,15 +200,43 @@ public class OfflineProgressModalUITK : MonoBehaviour
             continueButton.RemoveFromClassList("cta--gold");
             continueButton.RemoveFromClassList("cta--primary");
             continueButton.AddToClassList(mainGold ? "cta--gold" : "cta--primary");
+            continueButton.style.display = DisplayStyle.Flex;
             continueButton.SetEnabled(true);
         }
         mainAction = onMain;
         if (secondaryButton != null)
         {
-            secondaryButton.text = secondaryText;
-            secondaryButton.style.display = DisplayStyle.Flex;
+            bool showSecondary = !string.IsNullOrEmpty(secondaryText);
+            secondaryButton.text = secondaryText ?? "";
+            secondaryButton.style.display = showSecondary ? DisplayStyle.Flex : DisplayStyle.None;
         }
         onSecondary = onSecondaryAction;
+    }
+
+    // ── Generic loading-bar phase (fills 0→100% then invokes a callback) ──────────────
+    private void StartLoadBar(System.Action onComplete)
+    {
+        _onBarComplete = onComplete;
+        if (loadingBarFill != null) loadingBarFill.style.width = new StyleLength(new Length(0f, LengthUnit.Percent));
+        loadStartTimeSecs = Time.realtimeSinceStartupAsDouble;
+        loadTicker?.Pause();
+        loadTicker = root.schedule.Execute(TickBar).Every(16);
+    }
+
+    private void TickBar()
+    {
+        double raw = (Time.realtimeSinceStartupAsDouble - loadStartTimeSecs) / LoadDurationSecs;
+        float t = (float)System.Math.Min(raw, 1.0);
+        float e = 1f - (1f - t) * (1f - t); // ease-out
+        if (loadingBarFill != null)
+            loadingBarFill.style.width = new StyleLength(new Length(e * 100f, LengthUnit.Percent));
+        if (raw >= 1.0)
+        {
+            loadTicker?.Pause();
+            loadTicker = null;
+            var cb = _onBarComplete; _onBarComplete = null;
+            cb?.Invoke();
+        }
     }
 
     private void Reveal()
@@ -291,7 +351,7 @@ public class OfflineProgressModalUITK : MonoBehaviour
             int curDelta = Mathf.RoundToInt(Mathf.Lerp(0, rt.finalDelta, e));
             int curAfter = rt.finalAfter - (rt.finalDelta - curDelta);
             int curBefore = rt.finalAfter - rt.finalDelta;
-            rt.label.text = $"L{curBefore} → L{curAfter}  (+{curDelta})";
+            rt.label.text = $"{curBefore} → {curAfter}  (+{curDelta})";
         }
     }
 
@@ -336,18 +396,18 @@ public class OfflineProgressModalUITK : MonoBehaviour
 
             int delta = sp.levelAfter - sp.levelBefore;
             var row = new VisualElement(); row.AddToClassList("research-row");
-            var label = new Label($"Slot {i + 1}: {sp.displayName}"); label.AddToClassList("research-row__label");
+            var label = new Label(sp.displayName); label.AddToClassList("research-row__label");
             var value = new Label();
             value.AddToClassList("research-row__value");
             if (delta > 0)
             {
                 // Start at zero-delta; the animation counts up.
-                value.text = $"L{sp.levelBefore} → L{sp.levelBefore}  (+0)";
+                value.text = $"{sp.levelBefore} → {sp.levelBefore}  (+0)";
                 researchTargets.Add((value, delta, sp.levelAfter));
             }
             else
             {
-                value.text = $"L{sp.levelAfter}  (no change)";
+                value.text = $"{sp.levelAfter}  (no change)";
                 value.AddToClassList("research-row__value--none");
             }
             row.Add(label); row.Add(value);

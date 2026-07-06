@@ -26,6 +26,10 @@ public class YSort : MonoBehaviour
     [Tooltip("Static objects (trees/buildings) compute once in Start; movers recompute every frame.")]
     [SerializeField] private bool isStatic = false;
 
+    [Tooltip("Added to the computed sorting order. Use a small positive value to break ties in this " +
+             "entity's favor (e.g. a deer drawing in front of the plant it's eating at the same Y).")]
+    [SerializeField] private int sortBias = 0;
+
     private SpriteRenderer[] renderers;
     private int[] relativeOffsets;
 
@@ -54,7 +58,7 @@ public class YSort : MonoBehaviour
     {
         if (renderers == null || renderers.Length == 0) return;
         float anchorY = transform.position.y + (autoFoot ? AutoFootOffset() : footOffset);
-        int baseOrder = ENTITY_BASE - Mathf.RoundToInt(anchorY * PRECISION);
+        int baseOrder = ENTITY_BASE - Mathf.RoundToInt(anchorY * PRECISION) + sortBias;
         for (int i = 0; i < renderers.Length; i++)
             if (renderers[i] != null) renderers[i].sortingOrder = baseOrder + relativeOffsets[i];
     }
@@ -67,6 +71,13 @@ public class YSort : MonoBehaviour
             if (renderers[i] != null && renderers[i].sprite != null)
                 minY = Mathf.Min(minY, renderers[i].bounds.min.y);
         return minY == float.MaxValue ? 0f : (minY - transform.position.y);
+    }
+
+    /// <summary>Bias the sorting order by a constant (positive = toward the front). Applies immediately.</summary>
+    public void SetSortBias(int bias)
+    {
+        sortBias = bias;
+        Apply();
     }
 
     /// <summary>Re-scan child renderers (call after adding/removing a child sprite at runtime).</summary>

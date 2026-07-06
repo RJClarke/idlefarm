@@ -16,6 +16,12 @@ public class RunUI : MonoBehaviour
     [Header("Display Settings")]
     [SerializeField] private bool showTimer = true;
 
+    [Header("Speed Stepper Icons (optional)")]
+    [Tooltip("If assigned, the speed-up (+) button shows this arrow sprite instead of a '+' glyph.")]
+    [SerializeField] private Sprite speedUpArrow;
+    [Tooltip("If assigned, the speed-down (-) button shows this arrow sprite instead of a '-' glyph.")]
+    [SerializeField] private Sprite speedDownArrow;
+
     private bool hasShownInitialEquipment = false;
     private CameraPanController panController;
 
@@ -125,8 +131,8 @@ public class RunUI : MonoBehaviour
         crt.anchoredPosition = new Vector2(0f, -34f);
         crt.sizeDelta = new Vector2(300f, 48f);
 
-        speedDownBtn = CreateSpeedButton(container.transform, "-", 0f, 4f, () => OnSpeedStep(-1));
-        speedUpBtn   = CreateSpeedButton(container.transform, "+", 1f, -4f, () => OnSpeedStep(1));
+        speedDownBtn = CreateSpeedButton(container.transform, "-", 0f, 4f, () => OnSpeedStep(-1), speedDownArrow);
+        speedUpBtn   = CreateSpeedButton(container.transform, "+", 1f, -4f, () => OnSpeedStep(1), speedUpArrow);
 
         // Center label with a dark pill behind it.
         var lblGO = new GameObject("SpeedLabel", typeof(RectTransform), typeof(Image));
@@ -156,7 +162,7 @@ public class RunUI : MonoBehaviour
         UpdateSpeedStepper();
     }
 
-    private Button CreateSpeedButton(Transform parent, string glyph, float anchorX, float xOffset, System.Action onClick)
+    private Button CreateSpeedButton(Transform parent, string glyph, float anchorX, float xOffset, System.Action onClick, Sprite icon = null)
     {
         var go = new GameObject("SpeedBtn", typeof(RectTransform), typeof(Image), typeof(Button));
         go.transform.SetParent(parent, false);
@@ -168,18 +174,37 @@ public class RunUI : MonoBehaviour
         rt.sizeDelta = new Vector2(64f, 44f);
         rt.anchoredPosition = new Vector2(xOffset, 0f);
 
-        var tGO = new GameObject("t", typeof(RectTransform));
-        tGO.transform.SetParent(go.transform, false);
-        var tmp = tGO.AddComponent<TextMeshProUGUI>();
-        tmp.text = glyph;
-        tmp.fontSize = 30;
-        tmp.fontStyle = FontStyles.Bold;
-        tmp.alignment = TextAlignmentOptions.Center;
-        tmp.color = Color.white;
-        tmp.raycastTarget = false;
-        var trt = tGO.GetComponent<RectTransform>();
-        trt.anchorMin = Vector2.zero; trt.anchorMax = Vector2.one;
-        trt.offsetMin = Vector2.zero; trt.offsetMax = Vector2.zero;
+        if (icon != null)
+        {
+            // Pixel-art arrow icon centered on the button (replaces the +/- glyph).
+            var iGO = new GameObject("icon", typeof(RectTransform), typeof(Image));
+            iGO.transform.SetParent(go.transform, false);
+            var iImg = iGO.GetComponent<Image>();
+            iImg.sprite = icon;
+            iImg.raycastTarget = false;
+            iImg.preserveAspect = true;
+            var irt = iGO.GetComponent<RectTransform>();
+            irt.anchorMin = new Vector2(0.5f, 0.5f);
+            irt.anchorMax = new Vector2(0.5f, 0.5f);
+            irt.pivot = new Vector2(0.5f, 0.5f);
+            irt.sizeDelta = new Vector2(30f, 30f);
+            irt.anchoredPosition = Vector2.zero;
+        }
+        else
+        {
+            var tGO = new GameObject("t", typeof(RectTransform));
+            tGO.transform.SetParent(go.transform, false);
+            var tmp = tGO.AddComponent<TextMeshProUGUI>();
+            tmp.text = glyph;
+            tmp.fontSize = 30;
+            tmp.fontStyle = FontStyles.Bold;
+            tmp.alignment = TextAlignmentOptions.Center;
+            tmp.color = Color.white;
+            tmp.raycastTarget = false;
+            var trt = tGO.GetComponent<RectTransform>();
+            trt.anchorMin = Vector2.zero; trt.anchorMax = Vector2.one;
+            trt.offsetMin = Vector2.zero; trt.offsetMax = Vector2.zero;
+        }
 
         go.GetComponent<Button>().onClick.AddListener(() => onClick());
         return go.GetComponent<Button>();

@@ -121,7 +121,10 @@ public class ShopBuilding : MonoBehaviour
 
     private bool CanInteract()
     {
-        if (RunManager.Instance != null && RunManager.Instance.IsRunActive) return false;
+        // Mid-run, most shops are off-limits — but the Greenhouse (Research) stays open so you can
+        // manage research while a run is going.
+        bool inRun = RunManager.Instance != null && RunManager.Instance.IsRunActive;
+        if (inRun && shopType != ShopType.Greenhouse) return false;
         CameraPanController pan = Camera.main != null ? Camera.main.GetComponent<CameraPanController>() : null;
         if (pan == null) return true;
         return !pan.IsPanning && pan.CurrentLocation == requiredLocation;

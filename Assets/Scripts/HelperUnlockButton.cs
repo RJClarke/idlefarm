@@ -127,7 +127,7 @@ public class HelperUnlockButton : MonoBehaviour
                 descText.text = $"Add helper #{nextSlots} permanently";
             
             if (costText != null)
-                costText.text = $"{cost} {coinIcon}";
+                costText.text = $"{cost} {CurrencyIcons.Coin}";
             
             // Check if can afford
             bool canAfford = CurrencyManager.Instance != null && 
@@ -155,7 +155,7 @@ public class HelperUnlockButton : MonoBehaviour
             descText.text = "Hire temporary helper for this run";
         
         if (costText != null)
-            costText.text = $"{rentCost / 1000}k {moneyIcon}";
+            costText.text = $"{rentCost / 1000}k {CurrencyIcons.Cash}";
         
         // Check if can afford
         bool canAfford = CurrencyManager.Instance != null && 

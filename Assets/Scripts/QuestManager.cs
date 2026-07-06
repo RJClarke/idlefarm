@@ -89,6 +89,19 @@ public class QuestManager : MonoBehaviour
 
     // ── Scheduling ───────────────────────────────────────────────
 
+    /// <summary>
+    /// Welcome-back hook: award any quest drops that should have occurred while the player
+    /// was away, based on real-world time, and roll the weekly milestone track if needed.
+    /// Called by OfflineProgressManager after the save has loaded, so it sees the real
+    /// lastQuestDropTime. Idempotent — ProcessDrops advances lastQuestDropTime, so repeat
+    /// calls within a session are no-ops.
+    /// </summary>
+    public void RunOfflineQuestCatchUp()
+    {
+        CheckWeeklyReset();
+        ProcessDrops();
+    }
+
     private void ProcessDrops()
     {
         DateTime nowUtc = DateTime.UtcNow;

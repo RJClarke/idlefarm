@@ -14,6 +14,18 @@ public class PlantVisuals : MonoBehaviour
     [Header("Current Display (Read-Only)")]
     [SerializeField] private GrowthStage displayedStage;
 
+    private static Material windMaterial;
+
+    // Per-crop wind/rustle control, pushed through a MaterialPropertyBlock so each crop is independent.
+    private MaterialPropertyBlock _mpb;
+    private static readonly int SwayEnableID = Shader.PropertyToID("_SwayEnable");
+    private static readonly int RustleID     = Shader.PropertyToID("_RustleAmount");
+    private static readonly int SeedID        = Shader.PropertyToID("_SwaySeed");
+    [Tooltip("How fast a rustle burst settles back down (units/sec).")]
+    [SerializeField] private float rustleDecay = 3.5f;
+    private float _rustle;
+    private float _seed = -1f; // per-plant random so each sways on its own schedule
+
     private void Awake()
     {
         if (spriteRenderer == null)
@@ -21,8 +33,44 @@ public class PlantVisuals : MonoBehaviour
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
+        // Apply the shared wind-sway material so crops bend in the breeze (and harder in storms).
+        if (windMaterial == null) windMaterial = Resources.Load<Material>("Materials/WindSway");
+        if (windMaterial != null) spriteRenderer.sharedMaterial = windMaterial;
+
+        _mpb = new MaterialPropertyBlock();
+        if (_seed < 0f) _seed = Random.value;
+        PushSwayBlock();
+
         // Depth-sort crops by their tile Y so the helper/animals pass in front/behind correctly.
         YSort.Ensure(gameObject, isStatic: true);
+    }
+
+    private void Update()
+    {
+        if (_rustle <= 0f) return;
+        // Unscaled so the rustle looks the same regardless of game speed.
+        _rustle = Mathf.MoveTowards(_rustle, 0f, rustleDecay * Time.unscaledDeltaTime);
+        PushSwayBlock();
+    }
+
+    /// <summary>Kick a quick rustle on this crop — called when a helper/animal brushes past it.</summary>
+    public void Rustle(float strength = 1f)
+    {
+        if (displayedStage == GrowthStage.Seed) return; // seeds don't shake (planting or walk-over)
+        _rustle = Mathf.Max(_rustle, Mathf.Clamp01(strength));
+        PushSwayBlock();
+    }
+
+    /// <summary>Push per-crop sway state: seeds don't sway; rustle adds a quick wobble on top.</summary>
+    private void PushSwayBlock()
+    {
+        if (spriteRenderer == null) return;
+        if (_mpb == null) _mpb = new MaterialPropertyBlock();
+        spriteRenderer.GetPropertyBlock(_mpb); // preserve sprite color/flip
+        _mpb.SetFloat(SwayEnableID, displayedStage == GrowthStage.Seed ? 0f : 1f);
+        _mpb.SetFloat(RustleID, _rustle);
+        _mpb.SetFloat(SeedID, _seed < 0f ? 0.5f : _seed);
+        spriteRenderer.SetPropertyBlock(_mpb);
     }
 
     /// <summary>
@@ -80,6 +128,9 @@ public class PlantVisuals : MonoBehaviour
 
         // Ensure renderer is enabled
         spriteRenderer.enabled = true;
+
+        // Seeds stay still; sprout-and-up sway. (Also refreshes rustle state.)
+        PushSwayBlock();
     }
 
     /// <summary>

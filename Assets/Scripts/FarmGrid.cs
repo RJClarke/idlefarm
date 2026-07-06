@@ -565,7 +565,7 @@ public class FarmGrid : MonoBehaviour
         List<SoilTile> untilled = new List<SoilTile>();
         foreach (SoilTile tile in allTiles)
         {
-            if (tile.State == TileState.Untilled)
+            if (tile.State == TileState.Untilled && !tile.IsBlocked)
             {
                 untilled.Add(tile);
             }
@@ -582,6 +582,43 @@ public class FarmGrid : MonoBehaviour
         {
             tile.ResetForNewRun();
         }
+        RefreshSprinklerBlocks();
+    }
+
+    /// <summary>
+    /// Re-evaluate which center tiles are "consumed" by a sprinkler. A sprinkler sits on the middle
+    /// of its zone; we block that tile so helpers don't till/plant/water it and the sprinkler stays
+    /// visible instead of being buried under crops. Cleared and recomputed from scratch each call.
+    /// </summary>
+    public void RefreshSprinklerBlocks()
+    {
+        foreach (SoilTile tile in allTiles)
+            tile.SetBlocked(false);
+
+        if (EquipmentManager.Instance == null) return;
+
+        foreach (int zoneId in GetActiveZoneIds())
+        {
+            EquipmentData eq = EquipmentManager.Instance.GetAssignment(zoneId);
+            if (eq == null || eq.equipmentType != EquipmentType.Sprinkler) continue;
+            SoilTile center = GetCenterTile(zoneId);
+            if (center != null) center.SetBlocked(true);
+        }
+    }
+
+    /// <summary>Tile nearest the geometric center of a zone (where a sprinkler is placed).</summary>
+    public SoilTile GetCenterTile(int zoneId)
+    {
+        Vector3 center = GetZoneCenter(zoneId);
+        SoilTile best = null;
+        float bestSqr = float.MaxValue;
+        foreach (SoilTile tile in allTiles)
+        {
+            if (tile.ZoneID != zoneId) continue;
+            float d = (tile.transform.position - center).sqrMagnitude;
+            if (d < bestSqr) { bestSqr = d; best = tile; }
+        }
+        return best;
     }
 
     /// <summary>

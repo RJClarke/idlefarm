@@ -36,8 +36,9 @@ public class GameConstants : MonoBehaviour
     public float manualWaterAmount = 30f; // %
 
     [Header("Game Speed")]
-    [Tooltip("Base Time.timeScale for the game (2 = everything runs at 2x)")]
-    public float baseGameSpeed = 2f;
+    [Tooltip("Base game speed — what the on-screen '1×' actually runs at. Research bonuses and the " +
+             "speed stepper multiply on top of this. Raise it to make the whole game feel faster.")]
+    public float baseGameSpeed = 1.75f;
 
     [Header("Growth Speed Bonuses")]
     [Tooltip("Moisture threshold where growth speed bonus starts (above this = faster growth)")]

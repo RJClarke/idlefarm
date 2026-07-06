@@ -116,7 +116,7 @@ public class SettingsPopupUITK : MonoBehaviour
         SpawnSliderRow(rows, "Master Volume", "Overall game volume",
             SettingsManager.MasterVolume, v => SettingsManager.MasterVolume = v);
 
-        SpawnSliderRow(rows, "Music Volume", "Background music (stub)",
+        SpawnSliderRow(rows, "Music Volume", "Background music",
             SettingsManager.MusicVolume, v => SettingsManager.MusicVolume = v);
 
         SpawnSliderRow(rows, "SFX Volume", "Sound effects (stub)",

@@ -225,7 +225,7 @@ public class UnlockButton : MonoBehaviour
 
         if (costText != null)
         {
-            costText.text = $"UNLOCK: {unlockData.coinCost} {coinIcon}";
+            costText.text = $"UNLOCK: {unlockData.coinCost} {CurrencyIcons.Coin}";
             
             bool canAfford = CurrencyManager.Instance != null && 
                            CurrencyManager.Instance.CanAffordCoins(unlockData.coinCost);
