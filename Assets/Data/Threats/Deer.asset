@@ -17,13 +17,13 @@ MonoBehaviour:
   prefabs:
   - {fileID: 6180500004319951700, guid: 1c58dd5e6883e0340bb679303d63d46f, type: 3}
   - {fileID: 3991841998217714330, guid: a96a4542e146b4f469e26a1ed26f9576, type: 3}
-  moveSpeed: 3.5
+  moveSpeed: 2.2
   grazingRadius: 7
   minBitesPerPlant: 3
   maxBitesPerPlant: 5
-  minDamagePerBite: 10
-  maxDamagePerBite: 20
-  biteInterval: 3
+  minDamagePerBite: 6
+  maxDamagePerBite: 12
+  biteInterval: 4
   seedMultiplier: 0.4
   sproutMultiplier: 1
   saplingMultiplier: 2

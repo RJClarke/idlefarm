@@ -21,7 +21,7 @@ MonoBehaviour:
   unlockID: sprinkler_unlock
   baseCooldownSeconds: 30
   baseRepelCapacity: 0
-  baseAoERadius: 2
+  baseAoERadius: 3.5
   countersTheatType: 1
   visualPrefab: {fileID: 5958846195913573462, guid: e6f4d63f20b3fd44a8628baa122a001d, type: 3}
   uiUpgradeRows:
@@ -43,7 +43,7 @@ MonoBehaviour:
   - 0.8
   - 1
   activeDurationSeconds: 10
-  baseMoisturePowerPerSecond: 1.5
+  baseMoisturePowerPerSecond: 6
   waterPowerUpgradeID: sprinkler_power
   waterPowerBonusPerLevel: 0.5
   durationUpgradeID: sprinkler_duration

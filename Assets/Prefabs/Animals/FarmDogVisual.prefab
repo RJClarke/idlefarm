@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f6e232af3882f44b0af73b92463914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalVisual
+  eggSprite: {fileID: 0}
+  gemSprite: {fileID: 0}
 --- !u!114 &8606986272289011871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,9 +122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FarmDog
   roamSpeed: 1.5
   idleDuration: 2
-  roamRadius: 3
-  chaseSpeed: 4
-  chaseCooldown: 30
+  roamRadius: 5
+  chaseSpeed: 5
+  chaseCooldown: 12
   chaseReachDistance: 0.3
   barkDuration: 2.5
 --- !u!95 &8968293219669247676

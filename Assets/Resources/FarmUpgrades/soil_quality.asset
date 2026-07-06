@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: IdleFarm.EconomyCore::FarmUpgradeData
   upgradeID: soil_quality
   displayName: Soil Quality
-  subtext: Boost ALL crop output. The master multiplier.
+  subtext: Boost the cash and coin output of harvested crops.
   icon: "\U0001F3C6"
   section: 0
   effectKey: soil_quality
