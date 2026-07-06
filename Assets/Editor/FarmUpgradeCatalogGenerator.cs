@@ -32,7 +32,7 @@ public static class FarmUpgradeCatalogGenerator
             maxLevel: 500, bonusPerLevel: 0.01f, highCap: true,
             baseCoin: 75, coinGrowth: 1.06f, baseMoney: 6000);
 
-        Create("soil_quality", "Soil Quality", "Boost ALL crop output. The master multiplier.", "🏆",
+        Create("soil_quality", "Soil Quality", "Boost the cash and coin output of harvested crops.", "🏆",
             FarmUpgradeSection.Soil, FarmUpgradeKey.SoilQuality,
             maxLevel: 1000, bonusPerLevel: 0.005f, highCap: true,
             baseCoin: 200, coinGrowth: 1.05f, baseMoney: 20000);

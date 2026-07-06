@@ -10,7 +10,10 @@ using UnityEngine;
 /// the Unity project so the AssetDatabase isn't polluted.
 ///
 /// Each texture gets its own subfolder named "<TextureName>_slices/".
-/// File names use the Sprite's name (the value you see in the Sprite Editor).
+/// File names use the pattern "r<row>_c<col>__<spriteName>.png" where row/col
+/// are the slice's top-left pixel position on the source sheet (top-down origin,
+/// zero-padded to 5 digits). Alphabetical sort = scanline order on the sheet,
+/// which makes Figma Auto Layout reconstruct the original grid trivially.
 /// </summary>
 public static class SpriteSheetSliceExporter
 {
@@ -110,16 +113,23 @@ public static class SpriteSheetSliceExporter
         }
 
         int written = 0;
+        int texHeight = tex.height;
         foreach (Object sub in AssetDatabase.LoadAllAssetsAtPath(assetPath))
         {
             Sprite sprite = sub as Sprite;
             if (sprite == null) continue;
 
-            Texture2D slice = CropToTexture(tex, sprite.textureRect);
+            Rect rect = sprite.textureRect;
+            Texture2D slice = CropToTexture(tex, rect);
             if (slice == null) continue;
 
+            // Top-down origin so alphabetical sort matches the sheet's scanline order.
+            int topRow  = Mathf.RoundToInt(texHeight - rect.y - rect.height);
+            int leftCol = Mathf.RoundToInt(rect.x);
+            string posPrefix = $"r{topRow:D5}_c{leftCol:D5}";
+
             string safeName = MakeSafeFileName(sprite.name);
-            string outPath = Path.Combine(outDir, $"{safeName}.png");
+            string outPath = Path.Combine(outDir, $"{posPrefix}__{safeName}.png");
             File.WriteAllBytes(outPath, slice.EncodeToPNG());
             Object.DestroyImmediate(slice);
             written++;
