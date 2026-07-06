@@ -32,3 +32,8 @@ debug.log
 
 # Superpowers brainstorm scratch
 .superpowers/
+
+# Editor screenshots, recovery dumps, and scratch (not source)
+Assets/Screenshots/
+Assets/_Recovery/
+.utmp/
