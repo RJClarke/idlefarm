@@ -34,6 +34,19 @@
     -unity-font-style: bold;
     font-size: 44px;
     color: rgb(255, 240, 210);
+    flex-grow: 1;
+}
+
+/* Themed Raven icon shown next to a popup title. */
+.title-icon {
+    width: 56px;
+    height: 56px;
+    margin-right: 18px;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.title-icon--book {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Misc_Books.png");
 }
 
 .close-button {
@@ -143,9 +156,8 @@
     width: 56px;
     height: 56px;
     margin-bottom: 12px;
-    background-image: url("project://database/Assets/Sprites/UI/Icons/Locked.png");
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Misc_KeyOrange.png");
     -unity-background-scale-mode: scale-to-fit;
-    -unity-background-image-tint-color: rgba(220, 195, 150, 0.8);
 }
 
 .slot-action-row {

@@ -6,10 +6,25 @@
         <ui:VisualElement name="modal-card" class="modal-card">
             <ui:VisualElement name="modal-header" class="modal-header">
                 <ui:Label name="modal-title" text="Boost Research" class="modal-title" />
-                <ui:Button name="modal-close" class="modal-close" text="X" />
+                <ui:VisualElement class="modal-header-right">
+                    <ui:VisualElement class="currency-icon currency-icon--compost currency-icon--balance" picking-mode="Ignore" />
+                    <ui:Label name="compost-balance" text="0" class="compost-balance" />
+                    <ui:Button name="modal-close" class="modal-close" text="X" />
+                </ui:VisualElement>
             </ui:VisualElement>
             <ui:Label name="modal-subtitle" text="Spend Compost to multiply this slot's research speed for a fixed window." class="modal-subtitle" />
+
+            <ui:VisualElement name="active-banner" class="active-banner" style="display: none;">
+                <ui:Label name="active-banner-text" text="" class="active-banner__text" />
+            </ui:VisualElement>
+
             <ui:ScrollView name="boost-list" class="boost-list" />
+
+            <ui:VisualElement name="auto-buy-section" class="auto-buy-section">
+                <ui:Label text="Auto-buy on expiry" class="auto-buy-title" />
+                <ui:Label name="auto-buy-current" text="Off" class="auto-buy-current" />
+                <ui:ScrollView name="auto-buy-list" class="auto-buy-list" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

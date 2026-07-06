@@ -5,6 +5,7 @@
         <ui:VisualElement name="card" class="inbox-card">
             <ui:VisualElement class="inbox-header">
                 <ui:Button name="back-button" text="‹" class="inbox-back" style="display:none;" />
+                <ui:VisualElement class="inbox-title-icon" picking-mode="Ignore" />
                 <ui:Label name="header-title" text="Mailbox" class="inbox-title" />
                 <ui:Button name="close-button" text="✕" class="inbox-close" />
             </ui:VisualElement>

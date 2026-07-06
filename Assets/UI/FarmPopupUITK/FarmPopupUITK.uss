@@ -263,8 +263,8 @@
 }
 
 .row-desc {
-    font-size: 18px;
-    color: rgba(54, 32, 14, 0.75);
+    font-size: 20px;
+    color: rgba(54, 32, 14, 0.85);
     margin-top: 0;
     margin-bottom: 12px;
     white-space: normal;
@@ -461,12 +461,7 @@
 .fu-card-head {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-}
-
-.fu-card-icon {
-    font-size: 34px;
-    -unity-text-align: middle-left;
+    justify-content: flex-end;
 }
 
 .fu-card-lvl {
@@ -484,7 +479,7 @@
 }
 
 .fu-card-sub {
-    font-size: 16px;
+    font-size: 20px;
     color: rgb(255, 236, 205);
     white-space: normal;
     margin-top: 2px;
@@ -497,6 +492,32 @@
     -unity-font-style: bold;
     color: rgb(255, 240, 210);
     -unity-text-align: middle-center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cost chip: currency icon + amount, sits after the bonus text. */
+.fu-card-footer__cost {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 12px;
+}
+
+.currency-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.currency-icon--coin {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Coin.png");
+}
+
+.currency-icon--cash {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cash.png");
 }
 
 /* Affordable: near-white tint + soft brown outline + dark text */

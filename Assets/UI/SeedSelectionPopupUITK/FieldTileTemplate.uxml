@@ -2,18 +2,20 @@
     <ui:VisualElement class="field-tile-content" picking-mode="Position">
         <ui:Label name="field-label" class="field-label" />
 
-        <ui:VisualElement name="crop-slot" class="slot crop-slot">
-            <ui:VisualElement name="crop-image" class="slot__image" />
-            <ui:Label name="crop-placeholder" text="Tap a seed" class="slot__placeholder" />
-            <ui:Label name="crop-name" class="slot__name" />
-            <ui:Button name="crop-clear" class="slot__clear" />
-        </ui:VisualElement>
+        <ui:VisualElement name="slot-row" class="slot-row">
+            <ui:VisualElement name="crop-slot" class="slot crop-slot">
+                <ui:Button name="crop-clear" class="slot__clear" />
+                <ui:VisualElement name="crop-image" class="slot__image" />
+                <ui:Label name="crop-placeholder" text="Tap a seed" class="slot__placeholder" />
+                <ui:Label name="crop-name" class="slot__name" />
+            </ui:VisualElement>
 
-        <ui:VisualElement name="equip-slot" class="slot equip-slot">
-            <ui:VisualElement name="equip-image" class="slot__image slot__image--equip" />
-            <ui:Label name="equip-placeholder" text="No Equipment" class="slot__placeholder" />
-            <ui:Label name="equip-name" class="slot__name" />
-            <ui:Button name="equip-clear" class="slot__clear" />
+            <ui:VisualElement name="equip-slot" class="slot equip-slot">
+                <ui:Button name="equip-clear" class="slot__clear" />
+                <ui:VisualElement name="equip-image" class="slot__image slot__image--equip" />
+                <ui:Label name="equip-placeholder" text="No Equipment" class="slot__placeholder" />
+                <ui:Label name="equip-name" class="slot__name" />
+            </ui:VisualElement>
         </ui:VisualElement>
 
         <ui:VisualElement name="lock-overlay" class="lock-overlay">

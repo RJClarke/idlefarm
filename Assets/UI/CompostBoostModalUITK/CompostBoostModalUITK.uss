@@ -41,7 +41,46 @@
     border-bottom-color: rgb(110, 86, 50);
 }
 
-.modal-title { font-size: 32px; -unity-font-style: bold; color: rgb(255, 240, 210); }
+.modal-title { font-size: 32px; -unity-font-style: bold; color: rgb(255, 240, 210); flex-grow: 1; }
+.modal-header-right {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Currency icon elements (compost) used in place of the 🌱 emoji. */
+.currency-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+.currency-icon--compost {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Compost.png");
+}
+.currency-icon--balance {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+}
+.boost-row__cost, .auto-buy-row__cost {
+    flex-direction: row;
+    align-items: center;
+}
+.boost-row__cost .currency-icon, .auto-buy-row__cost .currency-icon {
+    margin-left: 5px;
+}
+.compost-balance {
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: rgb(160, 220, 130);
+    margin-right: 12px;
+    padding: 4px 12px;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
 .modal-close {
     width: 56px;
     height: 56px;
@@ -55,6 +94,66 @@
     border-bottom-width: 0;
 }
 .modal-subtitle { font-size: 18px; color: rgb(200, 180, 140); white-space: normal; margin-bottom: 16px; }
+
+.active-banner {
+    padding: 12px 18px;
+    margin-bottom: 12px;
+    background-color: rgba(140, 200, 100, 0.18);
+    border-color: rgb(140, 200, 100);
+    border-left-width: 2px; border-right-width: 2px;
+    border-top-width: 2px; border-bottom-width: 2px;
+    border-top-left-radius: 14px; border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px; border-bottom-right-radius: 14px;
+}
+.active-banner__text {
+    color: rgb(160, 220, 130);
+    font-size: 22px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.auto-buy-section {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top-width: 2px;
+    border-top-color: rgb(110, 86, 50);
+    flex-direction: column;
+}
+.auto-buy-title {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgb(255, 240, 210);
+    margin-bottom: 4px;
+}
+.auto-buy-current {
+    font-size: 18px;
+    color: rgb(160, 220, 130);
+    margin-bottom: 8px;
+}
+.auto-buy-list {
+    max-height: 240px;
+}
+.auto-buy-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px;
+    margin-bottom: 6px;
+    background-color: rgba(255, 240, 210, 0.04);
+    border-color: rgba(255, 240, 210, 0.06);
+    border-left-width: 2px; border-right-width: 2px;
+    border-top-width: 2px; border-bottom-width: 2px;
+    border-top-left-radius: 10px; border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;
+}
+.auto-buy-row__label { color: rgb(220, 195, 150); font-size: 18px; flex-grow: 1; }
+.auto-buy-row__cost  { color: rgb(140, 200, 100); font-size: 18px; -unity-font-style: bold; }
+.auto-buy-row--selected {
+    background-color: rgba(140, 200, 100, 0.22);
+    border-color: rgb(140, 200, 100);
+}
+.auto-buy-row--selected .auto-buy-row__label { color: rgb(255, 240, 210); -unity-font-style: bold; }
 
 .boost-list { flex-grow: 1; }
 

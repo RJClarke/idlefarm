@@ -5,6 +5,7 @@
         <ui:VisualElement name="popup-container" class="popup-container" picking-mode="Position">
 
             <ui:VisualElement name="header" class="header">
+                <ui:VisualElement class="title-icon title-icon--scroll" picking-mode="Ignore" />
                 <ui:Label text="Daily Quests" name="title" class="title" />
                 <ui:Button name="close-button" text="&#10005;" class="close-button" />
             </ui:VisualElement>

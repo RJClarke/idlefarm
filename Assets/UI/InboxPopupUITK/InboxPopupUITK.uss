@@ -6,6 +6,9 @@
 .inbox-header { flex-direction: row; align-items: center; margin-bottom: 12px; }
 .inbox-title { flex-grow: 1; font-size: 36px; -unity-font-style: bold;
     -unity-text-align: middle-center; color: rgb(60,45,30); }
+.inbox-title-icon { width: 52px; height: 52px; margin-right: 12px;
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Misc_ScrollGreen.png"); }
 .inbox-back, .inbox-close { width: 60px; height: 60px; font-size: 32px;
     background-color: rgba(0,0,0,0); color: rgb(60,45,30); }
 .inbox-list { flex-grow: 1; }

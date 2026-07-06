@@ -136,7 +136,7 @@
     border-color: rgba(54, 32, 14, 0.35);
 }
 
-.market-row:last-child { margin-bottom: 0; }
+/* :last-child not supported in UI Toolkit USS; tolerating uniform trailing margin. */
 
 .market-row-icon {
     width: 72px;

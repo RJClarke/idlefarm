@@ -25,23 +25,23 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
 
-                <ui:Label text="Currency" class="section-title" />
-                <ui:VisualElement class="section">
+                <ui:Label name="currency-title" text="Currency" class="section-title" />
+                <ui:VisualElement name="currency-section" class="section">
                     <ui:VisualElement class="stat-row">
                         <ui:Label text="🌱 Compost from cow" class="stat-row__label" />
                         <ui:Label name="cow-compost" text="+0" class="stat-row__value stat-row__value--positive" />
                     </ui:VisualElement>
-                    <ui:VisualElement class="stat-row">
+                    <ui:VisualElement name="boost-spend-row" class="stat-row">
                         <ui:Label text="🌱 Auto-spent on Research" class="stat-row__label" />
                         <ui:Label name="boost-spend" text="−0" class="stat-row__value stat-row__value--negative" />
                     </ui:VisualElement>
-                    <ui:VisualElement class="stat-row stat-row--total">
+                    <ui:VisualElement name="net-compost-row" class="stat-row stat-row--total">
                         <ui:Label text="Net compost" class="stat-row__label" />
                         <ui:Label name="net-compost" text="+0" class="stat-row__value" />
                     </ui:VisualElement>
                 </ui:VisualElement>
 
-                <ui:Label text="Research" class="section-title" />
+                <ui:Label name="research-title" text="Research" class="section-title" />
                 <ui:VisualElement name="research-section" class="section">
                     <!-- rows added at runtime -->
                 </ui:VisualElement>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="TopBarUITK.uss" />
+    <ui:VisualElement name="topbar-root" class="topbar-root" picking-mode="Ignore">
+        <ui:VisualElement name="currency-stack" class="currency-stack" picking-mode="Ignore">
+
+            <ui:VisualElement name="row-money" class="currency-row currency-row--money" picking-mode="Ignore">
+                <ui:VisualElement class="currency-icon currency-icon--money" picking-mode="Ignore" />
+                <ui:Label name="money-value" text="0" class="currency-value currency-value--money" picking-mode="Ignore" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="row-coins" class="currency-row currency-row--coins" picking-mode="Ignore">
+                <ui:VisualElement class="currency-icon currency-icon--coins" picking-mode="Ignore" />
+                <ui:Label name="coins-value" text="0" class="currency-value currency-value--coins" picking-mode="Ignore" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="row-gems" class="currency-row currency-row--gems" picking-mode="Ignore">
+                <ui:VisualElement class="currency-icon currency-icon--gems" picking-mode="Ignore" />
+                <ui:Label name="gems-value" text="0" class="currency-value currency-value--gems" picking-mode="Ignore" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="row-compost" class="currency-row currency-row--compost" picking-mode="Ignore">
+                <ui:VisualElement class="currency-icon currency-icon--compost" picking-mode="Ignore" />
+                <ui:Label name="compost-value" text="0" class="currency-value currency-value--compost" picking-mode="Ignore" />
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

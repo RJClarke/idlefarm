@@ -6,6 +6,7 @@
             <ui:VisualElement name="popup-inner" class="popup-inner">
 
                 <ui:VisualElement name="header" class="header">
+                    <ui:VisualElement class="title-icon title-icon--chest" picking-mode="Ignore" />
                     <ui:Label text="Daily Rewards" name="title" class="title" />
                     <ui:Button name="close-button" class="close-button" />
                 </ui:VisualElement>

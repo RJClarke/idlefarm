@@ -1,0 +1,61 @@
+/* Top-bar currency stack. Hugs top-right under the Dev Tools button. */
+
+.topbar-root {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    /* root ignores picking — set on the element via picking-mode="Ignore" in UXML */
+}
+
+.currency-stack {
+    /* Hugs the very top-right corner. */
+    margin-top: 12px;
+    margin-right: 18px;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.currency-row {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 6px 14px 6px 10px;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    width: 210px;
+    justify-content: space-between;
+}
+
+.currency-icon {
+    width: 34px;
+    height: 34px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.currency-value {
+    color: rgb(255, 240, 210);
+    font-size: 26px;
+    -unity-font-style: bold;
+    min-width: 80px;
+    -unity-text-align: middle-right;
+}
+
+/* ─── Per-currency icons (flat PNG set; money uses the cash bill) ─── */
+.currency-icon--money   { background-image: url("project://database/Assets/Sprites/UI/Icons/Cash.png"); }
+.currency-icon--coins   { background-image: url("project://database/Assets/Sprites/UI/Icons/Coin.png"); }
+.currency-icon--gems    { background-image: url("project://database/Assets/Sprites/UI/Icons/Gem.png"); }
+.currency-icon--compost { background-image: url("project://database/Assets/Sprites/UI/Icons/Compost.png"); }
+
+.currency-value--money   { color: rgb(120, 230, 130); }
+.currency-value--coins   { color: rgb(255, 220, 120); }
+.currency-value--gems    { color: rgb(200, 140, 255); }
+.currency-value--compost { color: rgb(160, 220, 130); }

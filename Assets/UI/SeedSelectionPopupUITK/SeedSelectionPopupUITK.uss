@@ -149,14 +149,24 @@
 }
 
 /* ─────────────────────────────────────────────────────────────
-   Slot (crop + equip share base styling)
+   Slots — two big squares side by side (seed | equipment),
+   image on top, label centered below.
    ───────────────────────────────────────────────────────────── */
 
-.slot {
+.slot-row {
+    flex-direction: row;
     flex-grow: 1;
     flex-shrink: 1;
-    flex-direction: row;
+}
+
+.slot {
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: rgba(58, 38, 18, 0.55);
     border-color: rgb(54, 34, 14);
     border-left-width: 2px;
@@ -167,53 +177,54 @@
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    padding: 6px 8px;
-    margin-bottom: 6px;
-    min-height: 64px;
+    padding: 12px 8px;
 }
 
 .crop-slot {
-    margin-bottom: 6px;
+    margin-right: 6px;
 }
 
 .equip-slot {
-    margin-bottom: 0;
+    margin-left: 6px;
 }
 
 .slot__image {
-    width: 52px;
-    height: 52px;
-    margin-right: 10px;
+    width: 104px;
+    height: 104px;
+    margin-bottom: 10px;
     -unity-background-scale-mode: scale-to-fit;
+    background-color: rgba(0, 0, 0, 0.18);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .slot__image--equip {
     background-color: rgba(0, 0, 0, 0.25);
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
 }
 
 .slot__placeholder {
     color: rgb(210, 188, 155);
-    font-size: 14px;
+    font-size: 15px;
     -unity-font-style: italic;
-    flex-grow: 1;
+    -unity-text-align: middle-center;
+    white-space: normal;
 }
 
 .slot__name {
     color: rgb(255, 245, 220);
-    font-size: 16px;
+    font-size: 17px;
     -unity-font-style: bold;
-    flex-grow: 1;
+    -unity-text-align: middle-center;
+    white-space: normal;
     display: none;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
 }
 
 .slot__clear {
+    position: absolute;
+    top: 5px;
+    right: 5px;
     width: 26px;
     height: 26px;
     background-color: rgba(0, 0, 0, 0);

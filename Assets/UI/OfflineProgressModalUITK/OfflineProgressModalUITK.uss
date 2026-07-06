@@ -13,7 +13,7 @@
 
 .modal-card {
     width: 92%;
-    max-height: 85%;
+    max-height: 94%;
     background-color: rgb(38, 28, 16);
     border-color: rgb(110, 86, 50);
     border-left-width: 4px;
@@ -182,7 +182,36 @@
 .hero--red { background-color: rgb(58, 32, 28); border-color: rgb(110, 49, 40); }
 .hero--red .hero__label { color: rgb(255, 156, 138); }
 
-.ledger-scroll { max-height: 340px; margin-bottom: 8px; }
+/* Fill the card's remaining height (card is capped at 94%), so it only scrolls when content
+   genuinely overflows a near-full-screen modal. */
+.ledger-scroll { flex-grow: 1; min-height: 120px; margin-bottom: 8px; }
+
+/* ─── Thematic brown scrollbar (replaces the default OS-grey one) ─── */
+.ledger-scroll .unity-scroller--vertical {
+    width: 12px;
+    background-color: rgba(0, 0, 0, 0);
+}
+.ledger-scroll .unity-scroller--vertical .unity-base-slider__tracker {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+}
+.ledger-scroll .unity-scroller--vertical #unity-tracker {
+    background-color: rgba(0, 0, 0, 0.18);
+    border-width: 0;
+    border-radius: 6px;
+}
+.ledger-scroll .unity-base-slider__dragger {
+    background-color: rgb(120, 92, 52);
+    border-color: rgb(150, 118, 72);
+    border-width: 1px;
+    border-radius: 6px;
+    width: 10px;
+    margin-left: 1px;
+}
+.ledger-scroll .unity-scroller__low-button,
+.ledger-scroll .unity-scroller__high-button {
+    display: none;
+}
 .ledger { flex-direction: column; }
 
 .stat-row--total { border-top-width: 1px; border-top-color: rgba(255, 240, 210, 0.18); padding-top: 8px; }

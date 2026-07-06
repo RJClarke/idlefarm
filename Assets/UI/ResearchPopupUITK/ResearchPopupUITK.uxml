@@ -3,6 +3,7 @@
     <Style src="ResearchPopupUITK.uss" />
     <ui:VisualElement name="popup-root" class="popup-root" style="display: none;">
         <ui:VisualElement name="header" class="header">
+            <ui:VisualElement class="title-icon title-icon--book" picking-mode="Ignore" />
             <ui:Label name="header-title" text="Greenhouse — Research" class="header-title" />
             <ui:Button name="close-button" class="close-button" text="X" />
         </ui:VisualElement>

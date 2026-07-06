@@ -131,7 +131,7 @@
     border-left-width: 1px;
     border-color: rgba(54, 32, 14, 0.25);
 }
-.settings-row:last-child { margin-bottom: 0; }
+/* :last-child not supported in UI Toolkit USS; tolerating uniform trailing margin. */
 
 .settings-row-text {
     flex-direction: column;
@@ -157,7 +157,10 @@
 
 /* Toggle styled like an on/off switch.
    Strategy: the Toggle root itself becomes the pill (always visible), and the
-   inner checkmark becomes the knob that flips white→green when checked. */
+   inner checkmark becomes the knob that slides left→right (and the track fades
+   tan→green) when checked. The knob slides via `translate` so it can animate;
+   the inner flex row keeps it flush-left at rest (translate 0) and the :checked
+   rule pushes it to the right edge (translate 34px = 60px inner − 26px knob). */
 .settings-row-toggle {
     flex-shrink: 0;
     margin: 0;
@@ -177,16 +180,24 @@
     align-items: stretch;
     padding-left: 3px;
     padding-right: 3px;
+    transition-property: background-color, border-color, scale;
+    transition-duration: 0.18s, 0.18s, 0.1s;
+    transition-timing-function: ease-out, ease-out, ease-out;
 }
 .settings-row-toggle:checked {
     background-color: rgb(80, 170, 95);
     border-color: rgb(40, 100, 50);
+}
+/* Pressed state: the whole switch dips slightly for tactile feedback. */
+.settings-row-toggle:active {
+    scale: 0.92 0.92;
 }
 .settings-row-toggle > VisualElement {
     flex-grow: 1;
     flex-shrink: 1;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
     background-color: rgba(0, 0, 0, 0);
 }
 .settings-row-toggle .unity-toggle__checkmark {
@@ -204,6 +215,15 @@
     border-top-right-radius: 13px;
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
+    translate: 0 0;
+    transition-property: translate;
+    transition-duration: 0.18s;
+    transition-timing-function: ease-out;
+}
+/* Slide the knob to the right edge when the switch is on. */
+.settings-row-toggle:checked .unity-toggle__checkmark {
+    translate: 34px 0;
+    border-color: rgb(40, 100, 50);
 }
 
 /* ─── Button (right-aligned action button) ─── */

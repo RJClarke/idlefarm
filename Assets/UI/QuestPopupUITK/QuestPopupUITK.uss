@@ -72,6 +72,19 @@
     color: rgb(255, 201, 60);
     font-size: 28px;
     -unity-font-style: bold;
+    flex-grow: 1;
+}
+
+/* Themed Raven icon shown next to a popup title. */
+.title-icon {
+    width: 44px;
+    height: 44px;
+    margin-right: 14px;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.title-icon--scroll {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Misc_ScrollRoll.png");
 }
 
 .close-button {
