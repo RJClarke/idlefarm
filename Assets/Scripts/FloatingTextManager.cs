@@ -108,6 +108,39 @@ public class FloatingTextManager : MonoBehaviour
         Instance.SpawnLabel(rewards, screenPos);
     }
 
+    // Called by Plant.Harvest when a harvest is diverted into the Cannery instead of paying out.
+    public static void ShowCanneryIntake(Vector3 worldPos)
+    {
+        if (Instance == null || Camera.main == null || !SettingsManager.ShowFloatingNumbers) return;
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        Instance.SpawnTextLabel("→ Cannery", new Color(0.95f, 0.62f, 0.25f), screenPos);
+    }
+
+    // Generic single-string label using the same pool + drift animation as reward labels.
+    private void SpawnTextLabel(string text, Color color, Vector2 screenPos)
+    {
+        GameObject go = GetLabel();
+        TextMeshProUGUI tmp = go.GetComponent<TextMeshProUGUI>();
+        RectTransform rt = go.GetComponent<RectTransform>();
+
+        tmp.fontSize = 30;
+        tmp.fontStyle = FontStyles.Bold;
+        tmp.text = text;
+        tmp.color = color;
+
+        Vector2 localPt = ToLocalPoint(screenPos);
+        rt.anchoredPosition = localPt;
+        Vector2 endPos = localPt + new Vector2(0, 120f);
+
+        LeanTween.value(go, localPt, endPos, 1.2f)
+            .setEaseOutQuad().setIgnoreTimeScale(true)
+            .setOnUpdate((Vector2 p) => { if (rt != null) rt.anchoredPosition = p; });
+        LeanTween.value(go, 1f, 0f, 0.4f)
+            .setDelay(0.8f).setIgnoreTimeScale(true)
+            .setOnUpdate((float a) => { if (tmp != null) tmp.alpha = a; })
+            .setOnComplete(() => ReturnLabel(go));
+    }
+
     private void SpawnLabel(List<CurrencyReward> rewards, Vector2 screenPos)
     {
         if (rewards.Count == 0) return;

@@ -303,14 +303,20 @@ public class Plant : MonoBehaviour
         harvestValue = Mathf.RoundToInt(harvestValue * FarmUpgrades.CashYieldMultiplier(zone));
         if (bountiful) harvestValue *= 2;
 
-        if (CurrencyManager.Instance != null)
+        // Cannery intake (Pantry Economy §4a): a diverted harvest becomes jar progress
+        // instead of cash + banked coins. Stats/refund/regrow below are unaffected.
+        bool divertedToCannery = CanneryManager.Instance != null && CanneryManager.Instance.TryIntake(cropData);
+        if (divertedToCannery)
+            FloatingTextManager.ShowCanneryIntake(transform.position);
+
+        if (!divertedToCannery && CurrencyManager.Instance != null)
         {
             CurrencyManager.Instance.AddMoney(harvestValue);
             FloatingTextManager.ShowMoney(harvestValue, transform.position);
         }
 
         // Bank permanent coins for this harvest (the "keep" currency). Scaled by coin research.
-        if (CurrencyManager.Instance != null && cropData.coinValue > 0)
+        if (!divertedToCannery && CurrencyManager.Instance != null && cropData.coinValue > 0)
         {
             int coinGain = cropData.coinValue;
             if (ResearchManager.Instance != null)
