@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="CanneryPopupUITK.uss" />
+    <ui:VisualElement name="popup-root" class="popup-root" style="display: none;">
+        <ui:VisualElement name="backdrop" class="backdrop" picking-mode="Position" />
+        <ui:VisualElement name="popup-container" class="popup-container">
+            <ui:VisualElement name="header" class="header">
+                <ui:Label name="header-title" text="Cannery" class="header-title" />
+                <ui:Button name="close-button" class="close-button" text="X" />
+            </ui:VisualElement>
+            <ui:VisualElement name="body" class="body">
+                <ui:VisualElement name="intake-row" class="intake-row">
+                    <ui:Label name="intake-label" text="Harvest Intake" class="intake-label" />
+                    <ui:Button name="intake-toggle" text="ON" class="intake-toggle" />
+                </ui:VisualElement>
+                <ui:Label name="fuel-title" text="🔥 Firebox" class="section-title" />
+                <ui:VisualElement name="fuel-bar" class="fuel-bar">
+                    <ui:VisualElement name="fuel-fill" class="fuel-fill" />
+                </ui:VisualElement>
+                <ui:Label name="fuel-text" text="Fuel: 0" class="fuel-text" />
+                <ui:VisualElement name="fuel-buttons" class="stack-row">
+                    <ui:Button name="stoke-button" text="Stoke to finish" class="sell-btn sell-btn--cash" />
+                    <ui:Button name="fill-button" text="Fill furnace" class="sell-btn sell-btn--cash" />
+                </ui:VisualElement>
+                <ui:Label name="slots-title" text="Jars" class="section-title" />
+                <ui:ScrollView name="slots-list" class="slots-list" />
+                <ui:Label name="shelf-title" text="Ready Shelf" class="section-title" />
+                <ui:ScrollView name="shelf-list" class="shelf-list" />
+                <ui:Button name="sell-all" text="Sell All" class="sell-btn sell-btn--gold" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
