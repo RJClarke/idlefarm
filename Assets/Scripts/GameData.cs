@@ -43,6 +43,14 @@ public class GameData
     // Empty/null on legacy saves → trees fall back to their randomized first-load growth.
     public TreeSaveState[] trees;
 
+    // Cannery (Pantry Economy Phase 1). Built-flag lives in BuildingState (PlayerPrefs);
+    // everything else is here. canneryLastSimUtcTicks anchors offline firebox catch-up.
+    public bool canneryIntakeOn = true;
+    public double canneryFuelWood;
+    public CannerySlot[] cannerySlots;
+    public ReadyJar[] canneryReadyJars;
+    public long canneryLastSimUtcTicks;
+
     // Wall-clock anchor for offline-progress catch-up. Set on every save; read on load
     // to compute "time away" for the welcome-back modal.
     public long lastSeenUtcTicks;
@@ -111,6 +119,8 @@ public class GameData
         firedNarrativeFlags = new string[0];
         inboxLetters = new InboxEntry[0];
         trees = new TreeSaveState[0];
+        cannerySlots = new CannerySlot[0];
+        canneryReadyJars = new ReadyJar[0];
     }
 
     /// <summary>

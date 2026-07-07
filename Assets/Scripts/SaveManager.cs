@@ -138,6 +138,8 @@ public class SaveManager : MonoBehaviour
         data.hasAxe = WoodcuttingManager.Instance != null && WoodcuttingManager.Instance.HasAxe;
         data.trees = WoodcuttingManager.Instance != null ? WoodcuttingManager.Instance.GetTreeSaveStates() : new TreeSaveState[0];
 
+        if (CanneryManager.Instance != null) CanneryManager.Instance.CaptureTo(data);
+
         // Convert to JSON
         string json = JsonUtility.ToJson(data, true); // true = pretty print for debugging
 
@@ -195,6 +197,9 @@ public class SaveManager : MonoBehaviour
                     WoodcuttingManager.Instance.SetHasAxe(data.hasAxe);
                     WoodcuttingManager.Instance.LoadTreeStates(data.trees);
                 }
+
+                if (CanneryManager.Instance != null)
+                    CanneryManager.Instance.LoadFrom(data);
 
                 if (AnimalManager.Instance != null)
                 {

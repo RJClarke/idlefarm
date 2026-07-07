@@ -72,6 +72,9 @@ public class AutoSaveManager : MonoBehaviour
         if (UpgradeManager.Instance != null)
             UpgradeManager.Instance.OnUpgradePurchased += OnString;
 
+        if (CanneryManager.Instance != null)
+            CanneryManager.Instance.OnChanged += OnVoid;
+
         if (ResearchManager.Instance != null)
         {
             ResearchManager.Instance.OnSlotUnlocked       += OnInt;
@@ -118,6 +121,9 @@ public class AutoSaveManager : MonoBehaviour
         }
         if (UpgradeManager.Instance != null)
             UpgradeManager.Instance.OnUpgradePurchased -= OnString;
+
+        if (CanneryManager.Instance != null)
+            CanneryManager.Instance.OnChanged -= OnVoid;
 
         if (ResearchManager.Instance != null)
         {
