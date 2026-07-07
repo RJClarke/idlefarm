@@ -90,4 +90,83 @@ public static class ProcessingMath
         if (slotsOwned >= maxPurchasable) return false;
         return coins >= coinCost && wood >= woodCost;
     }
+
+    // ── Firebox simulation (spec §2) ─────────────────────────────────────
+
+    /// <summary>Wood consumed per second while the fire is lit: base + perSlot × cooking jars.</summary>
+    public static double BurnRatePerSecond(int cookingSlots, float baseWoodPerHour, float perSlotWoodPerHour)
+        => (Mathf.Max(0f, baseWoodPerHour) + Mathf.Max(0f, perSlotWoodPerHour) * Mathf.Max(0, cookingSlots)) / 3600.0;
+
+    /// <summary>
+    /// Advance the building by elapsed wall-clock seconds (piecewise: burn rate changes when a
+    /// jar finishes). Fire is lit while fuelWood > 0 and burns even with nothing cooking (waste
+    /// is intentional, spec §2). Fuel out → cooking pauses; nothing is ever ruined. Finished
+    /// jars move to readyJars and free their slot immediately. Returns jars finished.
+    /// </summary>
+    public static int Simulate(CanneryState st, double elapsedSeconds, float baseWoodPerHour, float perSlotWoodPerHour)
+    {
+        int finished = 0;
+        double remaining = elapsedSeconds;
+        int guard = 0;
+        while (remaining > 1e-9 && st.fuelWood > 1e-9 && ++guard < 100000)
+        {
+            int cooking = CountCooking(st);
+            double rate = BurnRatePerSecond(cooking, baseWoodPerHour, perSlotWoodPerHour);
+            if (rate <= 0) break; // base 0 + nothing cooking: fire idles for free
+
+            double fuelSecs = st.fuelWood / rate;
+            double nextFinish = double.MaxValue;
+            for (int i = 0; i < st.slots.Length; i++)
+                if (SlotIsCooking(st.slots[i]) && st.slots[i].cookSecondsRemaining < nextFinish)
+                    nextFinish = st.slots[i].cookSecondsRemaining;
+
+            double step = Math.Min(remaining, Math.Min(fuelSecs, nextFinish));
+            if (step <= 0) break;
+
+            st.fuelWood = Math.Max(0, st.fuelWood - rate * step);
+            for (int i = 0; i < st.slots.Length; i++)
+            {
+                var s = st.slots[i];
+                if (!SlotIsCooking(s)) continue;
+                s.cookSecondsRemaining -= step;
+                if (s.cookSecondsRemaining <= 1e-6)
+                {
+                    st.readyJars.Add(new ReadyJar { cropName = s.cropName, value = s.jarValue });
+                    finished++;
+                    s.cropId = null; s.cropName = null; s.tier = 0;
+                    s.unitsLoaded = 0; s.unitsRequired = 0;
+                    s.cookSecondsRemaining = 0; s.jarValue = 0;
+                }
+            }
+            remaining -= step;
+        }
+        return finished;
+    }
+
+    /// <summary>
+    /// Extra wood (beyond current fuel) needed so every currently-COOKING jar finishes —
+    /// the "Stoke to finish" amount (spec §2). Piecewise like Simulate; loading-but-not-full
+    /// jars don't burn and aren't counted. Never negative.
+    /// </summary>
+    public static double WoodToFinishLoaded(CanneryState st, float baseWoodPerHour, float perSlotWoodPerHour)
+    {
+        var remain = new List<double>();
+        for (int i = 0; i < st.slots.Length; i++)
+            if (SlotIsCooking(st.slots[i])) remain.Add(st.slots[i].cookSecondsRemaining);
+        if (remain.Count == 0) return 0.0;
+
+        double needed = 0.0;
+        while (remain.Count > 0)
+        {
+            remain.Sort();
+            double dt = remain[0];
+            needed += BurnRatePerSecond(remain.Count, baseWoodPerHour, perSlotWoodPerHour) * dt;
+            for (int i = remain.Count - 1; i >= 0; i--)
+            {
+                remain[i] -= dt;
+                if (remain[i] <= 1e-6) remain.RemoveAt(i);
+            }
+        }
+        return Math.Max(0.0, needed - st.fuelWood);
+    }
 }

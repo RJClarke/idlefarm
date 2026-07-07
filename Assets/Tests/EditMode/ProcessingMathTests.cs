@@ -74,6 +74,86 @@ public class ProcessingMathTests
         Assert.IsFalse(ProcessingMath.SlotIsCooking(s));               // done
     }
 
+    // ── Firebox simulation ─────────────────────────────────────────────
+
+    [Test]
+    public void Simulate_CooksAndConsumesFuel_FinishedJarMovesToShelfAndFreesSlot()
+    {
+        var st = MakeState(2);
+        LoadSlot(st.slots[0], "tomato", 4, 4, cookRemaining: 10);
+        st.fuelWood = 100;
+        int finished = ProcessingMath.Simulate(st, 10, baseWoodPerHour: 0f, perSlotWoodPerHour: 3600f);
+        Assert.AreEqual(1, finished);
+        Assert.AreEqual(1, st.readyJars.Count);
+        Assert.AreEqual(100, st.readyJars[0].value);
+        Assert.IsTrue(ProcessingMath.SlotIsEmpty(st.slots[0]));      // slot freed
+        Assert.AreEqual(90.0, st.fuelWood, 1e-6);                    // 1 wood/sec × 10s
+    }
+
+    [Test]
+    public void Simulate_FuelOut_PausesCooking_NothingRuined()
+    {
+        var st = MakeState(1);
+        LoadSlot(st.slots[0], "tomato", 4, 4, cookRemaining: 100);
+        st.fuelWood = 30; // only 30s of fire at 1 wood/sec
+        int finished = ProcessingMath.Simulate(st, 1000, 0f, 3600f);
+        Assert.AreEqual(0, finished);
+        Assert.AreEqual(0.0, st.fuelWood, 1e-6);
+        Assert.AreEqual(70.0, st.slots[0].cookSecondsRemaining, 1e-6); // paused at 70s left
+
+        // re-stoke and resume: part-fills are fine (spec §2)
+        st.fuelWood = 70;
+        finished = ProcessingMath.Simulate(st, 70, 0f, 3600f);
+        Assert.AreEqual(1, finished);
+    }
+
+    [Test]
+    public void Simulate_EmptyFire_BurnsBaseRate_AsWaste()
+    {
+        var st = MakeState(2); // nothing loaded
+        st.fuelWood = 10;
+        ProcessingMath.Simulate(st, 3600, baseWoodPerHour: 5f, perSlotWoodPerHour: 3600f);
+        Assert.AreEqual(5.0, st.fuelWood, 1e-6);  // base 5/h burned for an hour, no progress made
+        // and with base 0 + nothing cooking, nothing burns (no infinite loop either)
+        var st2 = MakeState(1);
+        st2.fuelWood = 10;
+        ProcessingMath.Simulate(st2, 3600, 0f, 3600f);
+        Assert.AreEqual(10.0, st2.fuelWood, 1e-6);
+    }
+
+    [Test]
+    public void Simulate_MultiSlot_RateDropsWhenFirstJarFinishes()
+    {
+        var st = MakeState(2);
+        LoadSlot(st.slots[0], "a", 4, 4, cookRemaining: 10);
+        LoadSlot(st.slots[1], "b", 4, 4, cookRemaining: 30);
+        st.fuelWood = 1000;
+        int finished = ProcessingMath.Simulate(st, 30, 0f, 3600f);
+        Assert.AreEqual(2, finished);
+        // 10s at 2 wood/sec + 20s at 1 wood/sec = 40 wood
+        Assert.AreEqual(960.0, st.fuelWood, 1e-6);
+    }
+
+    // ── Stoke-to-finish ────────────────────────────────────────────────
+
+    [Test]
+    public void WoodToFinishLoaded_ExactPiecewiseNeed_MinusCurrentFuel()
+    {
+        var st = MakeState(2);
+        LoadSlot(st.slots[0], "a", 4, 4, cookRemaining: 10);
+        LoadSlot(st.slots[1], "b", 4, 4, cookRemaining: 30);
+        st.fuelWood = 15;
+        // need 40 (see multi-slot test) minus 15 on hand = 25
+        Assert.AreEqual(25.0, ProcessingMath.WoodToFinishLoaded(st, 0f, 3600f), 1e-6);
+        // nothing cooking → zero
+        var idle = MakeState(2);
+        idle.fuelWood = 5;
+        Assert.AreEqual(0.0, ProcessingMath.WoodToFinishLoaded(idle, 5f, 3600f), 1e-6);
+        // ample fuel → zero (never negative)
+        st.fuelWood = 500;
+        Assert.AreEqual(0.0, ProcessingMath.WoodToFinishLoaded(st, 0f, 3600f), 1e-6);
+    }
+
     // ── Slot purchase gating ───────────────────────────────────────────
 
     [Test]
