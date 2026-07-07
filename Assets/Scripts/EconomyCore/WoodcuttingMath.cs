@@ -64,12 +64,14 @@ public static class WoodcuttingMath
         return Mathf.Clamp(idx, 0, stageCount - 1);
     }
 
-    /// <summary>Wood from felling at a given stage: only a portion if cut early, full yield at the last stage.</summary>
+    /// <summary>Wood from felling at a given stage: nothing at stage 0 (a fresh sapling must never
+    /// pay out, or instant chop-replant-chop mints unbounded wood), scaling to full yield at the
+    /// last stage.</summary>
     public static int StageYield(int fullYield, int stageIndex, int stageCount)
     {
-        if (stageCount <= 0) return Mathf.Max(0, fullYield);
+        if (stageCount <= 1) return Mathf.Max(0, fullYield);
         int stage = Mathf.Clamp(stageIndex, 0, stageCount - 1);
-        return Mathf.RoundToInt(Mathf.Max(0, fullYield) * (stage + 1) / (float)stageCount);
+        return Mathf.RoundToInt(Mathf.Max(0, fullYield) * stage / (float)(stageCount - 1));
     }
 
     /// <summary>Taps to fell scaled by stage — saplings fall fast, full trees take the full count (min 1).</summary>

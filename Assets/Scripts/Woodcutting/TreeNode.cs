@@ -137,6 +137,13 @@ public class TreeNode : MonoBehaviour
         }
 
         int stage = WoodcuttingMath.StageIndex(GrowthFraction(), data.stageCount);
+        if (WoodcuttingMath.StageYield(data.woodYield, stage, data.stageCount) <= 0)
+        {
+            // Sapling — worth nothing yet; shake for feedback but make no chop progress.
+            LeanTween.moveLocalX(gameObject, transform.localPosition.x + shakePixels / 32f, 0.04f).setLoopPingPong(1);
+            return;
+        }
+
         int fullHits = WoodcuttingMath.EffectiveHitsToFell(data.baseHitsToFell, axe, reduction);
         int needed = WoodcuttingMath.StageHits(fullHits, stage, data.stageCount);
 

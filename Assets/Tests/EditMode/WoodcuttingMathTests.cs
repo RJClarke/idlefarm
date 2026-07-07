@@ -99,11 +99,13 @@ public class WoodcuttingMathTests
     }
 
     [Test]
-    public void StageYield_PartialWhenEarly_FullAtLastStage()
+    public void StageYield_ZeroForSapling_ScalesToFullAtLastStage()
     {
-        // 5 stages, full yield 100 → stage 0 = 20, stage 2 = 60, stage 4 = 100
-        Assert.AreEqual(20, WoodcuttingMath.StageYield(100, 0, 5));
-        Assert.AreEqual(60, WoodcuttingMath.StageYield(100, 2, 5));
+        // 5 stages, full yield 100 → sapling pays NOTHING (anti-exploit: instant
+        // chop-replant-chop must never mint wood), then scales linearly to full.
+        Assert.AreEqual(0, WoodcuttingMath.StageYield(100, 0, 5));
+        Assert.AreEqual(25, WoodcuttingMath.StageYield(100, 1, 5));
+        Assert.AreEqual(50, WoodcuttingMath.StageYield(100, 2, 5));
         Assert.AreEqual(100, WoodcuttingMath.StageYield(100, 4, 5));
     }
 

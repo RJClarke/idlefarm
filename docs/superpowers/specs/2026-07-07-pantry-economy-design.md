@@ -87,9 +87,13 @@ a wood-rack-only, in-run-capped exit per the woodcutting spec).
 (All values are tuning knobs; the *shape* — steep premium curve justified by RNG-gated
 inputs — is the design.)
 
-- **Slots 1 → 8**, purchased **inside the Smokehouse menu** (coins + wood, escalating);
-  the **last 2 slots are research-gated** instead (alternate path).
+- **Slots 1 → 8**, purchased **inside the Smokehouse menu** (coins + wood, front-loaded
+  curve — see §5a); the **last 2 slots are research-gated** instead (alternate path).
 - Rare fish are *events*; pole upgrades raise the odds and thus the income ceiling.
+- **Saturation note:** at mostly-perch odds each running slot consumes ~6 fish/day, and a
+  manual fisher catches ~10–20. Slots 1–3 are all a human can feed; slots 6–8 only pay
+  off once the helper-fisher (Future) exists — which is exactly why the last slots are
+  research-gated.
 
 ### 3a. Fishing (the Lake)
 
@@ -123,7 +127,8 @@ forfeited while Money = survival (run-ender economy). The ladder:
   for one check-in and a small bonus. No tier dominates; sauce can never pay Pike money.
 - Single crop type per jar (readable output: "Strawberry Jam"). Crops bucket into the
   4h/8h/12h tiers by crop value (data-driven mapping).
-- **Slots 4 → 24**, purchased in the Cannery menu (coins + wood), last few research-gated.
+- **Slots 4 → 24**, purchased in the Cannery menu (coins + wood, front-loaded curve —
+  see §5a), last few research-gated.
 
 ### 4a. Intake QOL ladder (mid-run crop diversion)
 
@@ -148,6 +153,18 @@ UX principle: **easy drop points in the menu** — no inventory-management scree
    final slots gated behind research entries instead — alternate paths, not a pure ladder.
 4. Pole (and axe) upgrade paths stay in Carpenter Tools.
 
+### 5a. Slot pricing curve (front-loaded)
+
+This game is meant to stretch **years**, so slot costs are deliberately lopsided:
+
+- **The first ~25–40% of each building's slots are cheap and quick** — early game feels
+  generous and fast-moving (Smokehouse slots 2–3, Cannery slots ~5–10).
+- **After that, costs ratchet hard**: mid slots take days of normal play; late slots take
+  a week+ of grinding each. Anchor for tuning: a late slot costs *multiple days of the
+  marginal premium that slot will generate* — nonstop players earn it roughly twice as
+  fast as casuals, never instantly (income is time-capped, see §7).
+- **The final slots are research-gated instead of purchasable** — the alternate route.
+
 ## 6. Daily wood budget (the "keep chopping" dial)
 
 Target: **~3–5 Woods visits per day, held constant across progression.**
@@ -160,7 +177,39 @@ Target: **~3–5 Woods visits per day, held constant across progression.**
   and chop yield. Auto-chop remains future.
 - All numbers are inspector/SO knobs, consistent with existing tuning patterns.
 
-## 7. World layout & presentation
+## 7. Stress test & anti-exploit (nonstop-player audit, 2026-07-07)
+
+Audited: what does a player who fishes and chops **nonstop, every refresh** earn, at every
+tool level? Findings and rulings:
+
+- **Fishing cannot break the economy.** One line + ~20min bite = max ~3 fish/hour
+  regardless of effort. Base pole ≈ ~108g/bite raw (~244g smoked); a max pole with fat
+  rare odds ≈ ~290g premium/bite. A hyperactive 20-bite day ≈ 2–8k gold. Bounded by
+  real time by construction — no changes needed.
+- **Sapling exploit (FIXED in code 2026-07-07):** `StageYield` used to pay 20% of full
+  yield at stage 0 for ~1 tap, and felling replants at stage 0 instantly → tap-spam
+  minted unbounded wood (~70k/hour). Fix: `StageYield = fullYield × stage/(stageCount−1)`
+  (sapling = 0), and `TreeNode` makes no chop progress on a zero-yield stage. Regrow
+  timers are now genuinely the supply governor.
+- **Grove camping (tuning change required at implementation):** 40s/80s regrows were
+  tuned as downtime filler, not audited as a faucet — camping 3 trees ≈ 14,000 wood/hour
+  ≈ 14,000g/hour at the rack, which trivializes every sink. **Stretch regrows into the
+  minutes range** (target: softwood ~3min, hardwood ~6min → camping ≈ ~3k wood/hour,
+  and a ~90s visit still clears ~210 wood, so the intended visit experience is
+  unchanged). Values live on `WoodTreeData` SOs; final numbers are a playtest knob.
+- **Why the system is otherwise camp-proof:** processed income is capped by
+  **slot-hours and bite timers — real time — not by wood owned**. A hoard of 50k wood
+  still earns exactly `slots × hours × premium`; surplus wood's only exit is the rack at
+  1g. Nonstop players accelerate *progression* (~2× a casual), never their *income
+  rate*. Watch-item for playtest: if rack-selling still overshadows premiums, lower the
+  rack gold price rather than touching the premium tables.
+- **"Perfect engine" endgame is intended and gated:** full-tilt demand (24 cannery slots
+  + fed smokehouse) ≈ 8–12k wood/day vs ~210/visit early — the gap closes only by
+  stacking axe yield multiplier + Woods expansion + burn-efficiency research + Wood
+  Hauler + helper-fisher, with a true zero-touch engine reserved for an auto-chop
+  research at the very end of the tree.
+
+## 8. World layout & presentation
 
 - **Lake = new camera location directly RIGHT of the farm** (Research is top-right,
   Woods bottom-right; the Lake sits straight right, possibly farther out horizontally).
@@ -172,7 +221,7 @@ Target: **~3–5 Woods visits per day, held constant across progression.**
   (`WoodRackPopupUITK` pattern, shared PanelSettings).
 - Batch-complete moments surface via the existing ToastManager.
 
-## 8. Future (documented, NOT v1)
+## 9. Future (documented, NOT v1)
 
 - **Wood Hauler helper** — a considerable one-time purchase (~50,000 coins): walks wood
   from the wood holding spot to both furnaces, carry-capacity-limited and taking real
@@ -185,7 +234,7 @@ Target: **~3–5 Woods visits per day, held constant across progression.**
 - **Castable pools** at the Lake (distance meter becomes mechanical), rare-crop jackpot
   lane for the Cannery, unified market-stall sell screen.
 
-## 9. Build phasing
+## 10. Build phasing
 
 1. **Phase 1:** Pantry + `ProcessingMath` firebox core + **Cannery** (Tier-1 intake +
    ON/OFF, slots, selling). No new gathering loop — proves the whole engine.
@@ -193,7 +242,7 @@ Target: **~3–5 Woods visits per day, held constant across progression.**
 3. **Phase 3:** QOL ladder — intake bin, pre-assignment, research entries (kickoff +
    slot gates + efficiency), then Future items as separate specs.
 
-## 10. Architecture notes
+## 11. Architecture notes
 
 - `ProcessingMath` (pure, EconomyCore) + `ProcessingBuilding` state model shared by both
   buildings; `SmokehouseManager` / `CanneryManager` MonoBehaviours are thin consumers,
