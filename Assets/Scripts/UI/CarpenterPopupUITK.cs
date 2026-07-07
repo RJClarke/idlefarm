@@ -18,6 +18,14 @@ public class CarpenterPopupUITK : MonoBehaviour
         "A safe, all-season home for your research — work continues rain or shine.";
     [SerializeField] private int greenhouseCost = 1000;
 
+    [Header("Cannery Project (Pantry Economy Phase 1)")]
+    [SerializeField] private string canneryTitle = "Build Cannery";
+    [TextArea]
+    [SerializeField] private string canneryDescription =
+        "A wood-fired kettle house. Divert harvests into jars, keep the fire stoked, sell preserves for Gold.";
+    [SerializeField] private int canneryCoinCost = 800;
+    [SerializeField] private int canneryWoodCost = 300;
+
     private UIDocument document;
     private VisualElement root;
     private VisualElement popupRoot;
@@ -147,6 +155,7 @@ public class CarpenterPopupUITK : MonoBehaviour
 
         AddSectionHeader("Construction");
         BuildGreenhouseRow();
+        BuildCanneryRow();
 
         AddSectionHeader("Tools");
         // Buy the first axe (Coins only) before any leveling exists; once owned, show the upgrade row.
@@ -219,6 +228,68 @@ public class CarpenterPopupUITK : MonoBehaviour
             row.AddToClassList("market-row--cant-afford");
             status.text = "🔒 LOCKED";
             cost.text = FormatCoinCost(greenhouseCost);
+        }
+
+        rowsList.Add(row);
+    }
+
+    private void BuildCanneryRow()
+    {
+        VisualElement row = new VisualElement();
+        row.AddToClassList("market-row");
+
+        VisualElement textBlock = new VisualElement();
+        textBlock.AddToClassList("market-row-text");
+        Label title = new Label(canneryTitle);
+        title.AddToClassList("market-row-title");
+        Label desc = new Label(canneryDescription);
+        desc.AddToClassList("market-row-desc");
+        textBlock.Add(title);
+        textBlock.Add(desc);
+
+        VisualElement rightBlock = new VisualElement();
+        rightBlock.AddToClassList("market-row-right");
+        Label status = new Label();
+        status.AddToClassList("market-row-status");
+        Label cost = new Label();
+        cost.AddToClassList("market-row-cost");
+        rightBlock.Add(status);
+        rightBlock.Add(cost);
+
+        row.Add(textBlock);
+        row.Add(rightBlock);
+
+        bool built = BuildingState.IsBuilt(BuildingState.CanneryKey);
+        var cm = CurrencyManager.Instance;
+        bool canAfford = cm != null && cm.CanAffordCoins(canneryCoinCost) && cm.CanAffordWood(canneryWoodCost);
+
+        if (built)
+        {
+            row.AddToClassList("market-row--owned");
+            status.text = "✓ Built";
+            cost.text = "";
+        }
+        else if (canAfford)
+        {
+            row.AddToClassList("market-row--buy");
+            status.text = "BUILD";
+            cost.text = $"{FormatCoinCost(canneryCoinCost)} + {canneryWoodCost} wood";
+            row.RegisterCallback<ClickEvent>(_ =>
+            {
+                var c = CurrencyManager.Instance;
+                if (c == null) return;
+                if (!c.SpendCoins(canneryCoinCost)) return;
+                if (!c.SpendWood(canneryWoodCost)) { c.AddCoins(canneryCoinCost); return; }
+                BuildingState.MarkBuilt(BuildingState.CanneryKey);
+                Debug.Log("[Carpenter] Cannery built.");
+            });
+            WirePressedFeedback(row, "market-row--pressed");
+        }
+        else
+        {
+            row.AddToClassList("market-row--cant-afford");
+            status.text = "🔒 LOCKED";
+            cost.text = $"{FormatCoinCost(canneryCoinCost)} + {canneryWoodCost} wood";
         }
 
         rowsList.Add(row);
