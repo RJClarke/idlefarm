@@ -164,4 +164,22 @@ public class ProcessingMathTests
         Assert.IsFalse(ProcessingMath.CanBuySlot(4, 20, 149, 150, 99999, 40));    // short coins
         Assert.IsFalse(ProcessingMath.CanBuySlot(4, 20, 99999, 150, 39, 40));     // short wood
     }
+
+    // ── Finished good routing (Phase 2: fish tier) ──────────────────────
+
+    [Test]
+    public void Simulate_FinishedGood_CarriesTierAndSourceId()
+    {
+        var st = MakeState(1);
+        LoadSlot(st.slots[0], "fish_perch", 1, 1, cookRemaining: 10);
+        st.slots[0].tier = 2;                 // pretend a Bass
+        st.slots[0].jarValue = 1400;
+        st.fuelWood = 100;
+        int finished = ProcessingMath.Simulate(st, 10, baseWoodPerHour: 0f, perSlotWoodPerHour: 3600f);
+        Assert.AreEqual(1, finished);
+        Assert.AreEqual(1, st.readyJars.Count);
+        Assert.AreEqual(2, st.readyJars[0].tier);
+        Assert.AreEqual("fish_perch", st.readyJars[0].sourceId);
+        Assert.AreEqual(1400, st.readyJars[0].value);
+    }
 }

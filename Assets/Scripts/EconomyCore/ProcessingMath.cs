@@ -19,12 +19,15 @@ public class CannerySlot
     public int jarValue;                 // Coins on completion, fixed at jar creation
 }
 
-/// <summary>A finished jar on the ready shelf, waiting to be sold for Coins.</summary>
+/// <summary>A finished processed good on the ready shelf / awaiting deposit, waiting to be sold or
+/// banked for Coins. `tier`/`sourceId` let a consumer (e.g. the Smokehouse) route it by kind.</summary>
 [Serializable]
 public class ReadyJar
 {
     public string cropName;
     public int value;
+    public int tier;        // 1..3 — copied from the finishing slot (0 on legacy jars)
+    public string sourceId; // slot.cropId — the crop/fish that produced this good
 }
 
 /// <summary>Mutable state for one processing building (Cannery in Phase 1).</summary>
@@ -131,7 +134,7 @@ public static class ProcessingMath
                 s.cookSecondsRemaining -= step;
                 if (s.cookSecondsRemaining <= 1e-6)
                 {
-                    st.readyJars.Add(new ReadyJar { cropName = s.cropName, value = s.jarValue });
+                    st.readyJars.Add(new ReadyJar { cropName = s.cropName, value = s.jarValue, tier = s.tier, sourceId = s.cropId });
                     finished++;
                     s.cropId = null; s.cropName = null; s.tier = 0;
                     s.unitsLoaded = 0; s.unitsRequired = 0;
