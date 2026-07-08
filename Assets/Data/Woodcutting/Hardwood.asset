@@ -16,7 +16,7 @@ MonoBehaviour:
   baseHitsToFell: 10
   woodYield: 110
   requiredAxeLevel: 1
-  growSeconds: 80
+  growSeconds: 360
   stageCount: 6
   saplingScale: 0.5
   fullScale: 1.6
