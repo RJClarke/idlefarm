@@ -26,6 +26,14 @@ public class CarpenterPopupUITK : MonoBehaviour
     [SerializeField] private int canneryCoinCost = 800;
     [SerializeField] private int canneryWoodCost = 300;
 
+    [Header("Smokehouse Project (Pantry Economy Phase 2)")]
+    [SerializeField] private string smokehouseTitle = "Build Smokehouse";
+    [TextArea]
+    [SerializeField] private string smokehouseDescription =
+        "A wood-fired smoker. Smoke fish caught at the Lake into far pricier goods — the rare ones pay a fortune.";
+    [SerializeField] private int smokehouseCoinCost = 1200;
+    [SerializeField] private int smokehouseWoodCost = 450;
+
     private UIDocument document;
     private VisualElement root;
     private VisualElement popupRoot;
@@ -70,6 +78,8 @@ public class CarpenterPopupUITK : MonoBehaviour
         }
         if (WoodcuttingManager.Instance != null)
             WoodcuttingManager.Instance.OnAxeLevelChanged += OnCurrencyChanged;
+        if (FishingManager.Instance != null)
+            FishingManager.Instance.OnPoleLevelChanged += OnCurrencyChanged;
         BuildingState.OnBuildingBuilt += OnBuildingBuilt;
     }
 
@@ -82,6 +92,8 @@ public class CarpenterPopupUITK : MonoBehaviour
         }
         if (WoodcuttingManager.Instance != null)
             WoodcuttingManager.Instance.OnAxeLevelChanged -= OnCurrencyChanged;
+        if (FishingManager.Instance != null)
+            FishingManager.Instance.OnPoleLevelChanged -= OnCurrencyChanged;
         BuildingState.OnBuildingBuilt -= OnBuildingBuilt;
         eventsSubscribed = false;
     }
@@ -156,6 +168,7 @@ public class CarpenterPopupUITK : MonoBehaviour
         AddSectionHeader("Construction");
         BuildGreenhouseRow();
         BuildCanneryRow();
+        BuildSmokehouseRow();
 
         AddSectionHeader("Tools");
         // Buy the first axe (Coins only) before any leveling exists; once owned, show the upgrade row.
@@ -163,6 +176,12 @@ public class CarpenterPopupUITK : MonoBehaviour
             BuildBuyAxeRow();
         else
             BuildAxeUpgradeRow();
+
+        if (FishingManager.Instance != null)
+        {
+            if (!FishingManager.Instance.HasPole) BuildBuyPoleRow();
+            else BuildPoleUpgradeRow();
+        }
     }
 
     private void AddSectionHeader(string text)
@@ -295,6 +314,68 @@ public class CarpenterPopupUITK : MonoBehaviour
         rowsList.Add(row);
     }
 
+    private void BuildSmokehouseRow()
+    {
+        VisualElement row = new VisualElement();
+        row.AddToClassList("market-row");
+
+        VisualElement textBlock = new VisualElement();
+        textBlock.AddToClassList("market-row-text");
+        Label title = new Label(smokehouseTitle);
+        title.AddToClassList("market-row-title");
+        Label desc = new Label(smokehouseDescription);
+        desc.AddToClassList("market-row-desc");
+        textBlock.Add(title);
+        textBlock.Add(desc);
+
+        VisualElement rightBlock = new VisualElement();
+        rightBlock.AddToClassList("market-row-right");
+        Label status = new Label();
+        status.AddToClassList("market-row-status");
+        Label cost = new Label();
+        cost.AddToClassList("market-row-cost");
+        rightBlock.Add(status);
+        rightBlock.Add(cost);
+
+        row.Add(textBlock);
+        row.Add(rightBlock);
+
+        bool built = BuildingState.IsBuilt(BuildingState.SmokehouseKey);
+        var cm = CurrencyManager.Instance;
+        bool canAfford = cm != null && cm.CanAffordCoins(smokehouseCoinCost) && cm.CanAffordWood(smokehouseWoodCost);
+
+        if (built)
+        {
+            row.AddToClassList("market-row--owned");
+            status.text = "✓ Built";
+            cost.text = "";
+        }
+        else if (canAfford)
+        {
+            row.AddToClassList("market-row--buy");
+            status.text = "BUILD";
+            cost.text = $"{FormatCoinCost(smokehouseCoinCost)} + {smokehouseWoodCost} wood";
+            row.RegisterCallback<ClickEvent>(_ =>
+            {
+                var c = CurrencyManager.Instance;
+                if (c == null) return;
+                if (!c.SpendCoins(smokehouseCoinCost)) return;
+                if (!c.SpendWood(smokehouseWoodCost)) { c.AddCoins(smokehouseCoinCost); return; }
+                BuildingState.MarkBuilt(BuildingState.SmokehouseKey);
+                Debug.Log("[Carpenter] Smokehouse built.");
+            });
+            WirePressedFeedback(row, "market-row--pressed");
+        }
+        else
+        {
+            row.AddToClassList("market-row--cant-afford");
+            status.text = "🔒 LOCKED";
+            cost.text = $"{FormatCoinCost(smokehouseCoinCost)} + {smokehouseWoodCost} wood";
+        }
+
+        rowsList.Add(row);
+    }
+
     private void BuildBuyAxeRow()
     {
         var wm = WoodcuttingManager.Instance;
@@ -351,7 +432,8 @@ public class CarpenterPopupUITK : MonoBehaviour
 
         VisualElement textBlock = new VisualElement();
         textBlock.AddToClassList("market-row-text");
-        Label title = new Label($"Upgrade Axe (Lv {wm.AxeLevel}/{wm.MaxAxeLevel})");
+        // Levels read 1-based to the player: a bought axe is "Lv 1", the last upgrade is MaxAxeLevel+1.
+        Label title = new Label($"Upgrade Axe (Lv {wm.AxeLevel + 1}/{wm.MaxAxeLevel + 1})");
         title.AddToClassList("market-row-title");
         Label desc = new Label("Fell harder trees and chop faster.");
         desc.AddToClassList("market-row-desc");
@@ -385,6 +467,109 @@ public class CarpenterPopupUITK : MonoBehaviour
                 row.AddToClassList("market-row--buy");
                 status.text = "UPGRADE";
                 row.RegisterCallback<ClickEvent>(_ => { WoodcuttingManager.Instance.TryUpgradeAxe(); });
+                WirePressedFeedback(row, "market-row--pressed");
+            }
+            else
+            {
+                row.AddToClassList("market-row--cant-afford");
+                status.text = "🔒 LOCKED";
+            }
+        }
+
+        rowsList.Add(row);
+    }
+
+    private void BuildBuyPoleRow()
+    {
+        var fm = FishingManager.Instance;
+        if (fm == null) return;
+
+        VisualElement row = new VisualElement();
+        row.AddToClassList("market-row");
+
+        VisualElement textBlock = new VisualElement();
+        textBlock.AddToClassList("market-row-text");
+        Label title = new Label("Buy Fishing Pole");
+        title.AddToClassList("market-row-title");
+        Label desc = new Label("Your first pole. Needed to fish the Lake for Perch, Bass, and the rare Pike.");
+        desc.AddToClassList("market-row-desc");
+        textBlock.Add(title);
+        textBlock.Add(desc);
+
+        VisualElement rightBlock = new VisualElement();
+        rightBlock.AddToClassList("market-row-right");
+        Label status = new Label();
+        status.AddToClassList("market-row-status");
+        Label cost = new Label();
+        cost.AddToClassList("market-row-cost");
+        rightBlock.Add(status);
+        rightBlock.Add(cost);
+
+        row.Add(textBlock);
+        row.Add(rightBlock);
+
+        cost.text = FormatCoinCost(fm.FirstPoleCoinCost);
+        if (fm.CanBuyPole())
+        {
+            row.AddToClassList("market-row--buy");
+            status.text = "BUY";
+            row.RegisterCallback<ClickEvent>(_ => { if (FishingManager.Instance != null) FishingManager.Instance.TryBuyPole(); });
+            WirePressedFeedback(row, "market-row--pressed");
+        }
+        else
+        {
+            row.AddToClassList("market-row--cant-afford");
+            status.text = "🔒 LOCKED";
+        }
+
+        rowsList.Add(row);
+    }
+
+    private void BuildPoleUpgradeRow()
+    {
+        var fm = FishingManager.Instance;
+        if (fm == null) return;
+
+        VisualElement row = new VisualElement();
+        row.AddToClassList("market-row");
+
+        VisualElement textBlock = new VisualElement();
+        textBlock.AddToClassList("market-row-text");
+        // Levels read 1-based to the player: a bought pole is "Lv 1".
+        Label title = new Label($"Upgrade Pole (Lv {fm.PoleLevel + 1}/{fm.MaxPoleLevel + 1})");
+        title.AddToClassList("market-row-title");
+        Label desc = new Label("Bite faster and hook rarer fish.");
+        desc.AddToClassList("market-row-desc");
+        textBlock.Add(title);
+        textBlock.Add(desc);
+
+        VisualElement rightBlock = new VisualElement();
+        rightBlock.AddToClassList("market-row-right");
+        Label status = new Label();
+        status.AddToClassList("market-row-status");
+        Label cost = new Label();
+        cost.AddToClassList("market-row-cost");
+        rightBlock.Add(status);
+        rightBlock.Add(cost);
+
+        row.Add(textBlock);
+        row.Add(rightBlock);
+
+        bool maxed = fm.PoleLevel >= fm.MaxPoleLevel;
+        if (maxed)
+        {
+            row.AddToClassList("market-row--owned");
+            status.text = "✓ Max";
+            cost.text = "";
+        }
+        else
+        {
+            cost.text = $"{FormatCoinCost(fm.NextUpgradeCoinCost())} + {fm.NextUpgradeWoodCost()} wood";
+            if (fm.CanUpgradePole())
+            {
+                row.AddToClassList("market-row--buy");
+                status.text = "UPGRADE";
+                row.RegisterCallback<ClickEvent>(_ => { if (FishingManager.Instance != null) FishingManager.Instance.TryUpgradePole(); });
                 WirePressedFeedback(row, "market-row--pressed");
             }
             else

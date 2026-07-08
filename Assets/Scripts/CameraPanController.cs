@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class CameraPanController : MonoBehaviour
 {
-    public enum Location { Farm, Greenhouse, Market, Woods }
+    public enum Location { Farm, Greenhouse, Market, Woods, Lake }
 
     [Serializable]
     public class LocationOffset
@@ -29,6 +29,7 @@ public class CameraPanController : MonoBehaviour
         new LocationOffset { location = Location.Greenhouse, offset = new Vector2(5f, 8f) },
         new LocationOffset { location = Location.Market,     offset = new Vector2(15f, 0f), durationOverride = 0.8f, easeOverride = LeanTweenType.easeInOutCubic },
         new LocationOffset { location = Location.Woods,      offset = new Vector2(12f, -8f) },
+        new LocationOffset { location = Location.Lake,       offset = new Vector2(24f, 0f) },
     };
 
     [Header("Tween")]
@@ -79,6 +80,9 @@ public class CameraPanController : MonoBehaviour
 
         activeTweenId = LeanTween.move(gameObject, destination, duration)
             .setEase(ease)
+            // Real-time pan: Game Speed scales Time.timeScale, but camera travel is a fixed feel and
+            // must not speed up with it. Ignore time scale so the pan always takes `duration` seconds.
+            .setIgnoreTimeScale(true)
             .setOnComplete(() =>
             {
                 IsPanning = false;
@@ -94,6 +98,7 @@ public class CameraPanController : MonoBehaviour
     public void PanToGreenhouse() => PanTo(Location.Greenhouse);
     public void PanToMarket()     => PanTo(Location.Market);
     public void PanToWoods()      => PanTo(Location.Woods);
+    public void PanToLake()       => PanTo(Location.Lake);
 
     public void ToggleFarmGreenhouse()
     {

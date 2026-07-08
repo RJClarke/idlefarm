@@ -1,0 +1,257 @@
+/* Smokehouse panel — cloned from CanneryPopupUITK.uss, plus raw/smoked fish rows. */
+
+.popup-root {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    display: none;
+}
+
+.popup-root.open { opacity: 1; }
+
+.backdrop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.popup-container {
+    width: 82%;
+    max-width: 760px;
+    min-width: 320px;
+    background-color: rgb(179, 154, 110);
+    border-color: rgb(90, 55, 20);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    overflow: hidden;
+    scale: 0.92 0.92;
+    transition: scale 0.22s ease-out;
+    flex-direction: column;
+}
+
+.popup-root.open .popup-container { scale: 1 1; }
+
+.header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 14px;
+    padding-left: 24px;
+    padding-right: 16px;
+    border-bottom-width: 2px;
+    border-bottom-color: rgba(90, 55, 20, 0.4);
+}
+
+.header-title {
+    -unity-font-style: bold;
+    font-size: 36px;
+    color: rgb(54, 32, 14);
+}
+
+.close-button {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    -unity-background-scale-mode: scale-to-fit;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0);
+}
+
+.close-button:hover { opacity: 0.85; }
+
+/* ─── Body ─── */
+
+.body {
+    flex-direction: column;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 22px;
+    padding-bottom: 28px;
+}
+
+.stack-row {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.sell-btn {
+    height: 78px;
+    font-size: 26px;
+    -unity-font-style: bold;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    margin-bottom: 12px;
+}
+
+.sell-btn--cash {
+    background-color: rgb(120, 170, 90);
+    border-color: rgb(60, 100, 40);
+    color: rgb(28, 50, 20);
+}
+
+.sell-btn--gold {
+    background-color: rgb(224, 180, 70);
+    border-color: rgb(140, 100, 30);
+    color: rgb(70, 48, 12);
+}
+
+.sell-btn:disabled { opacity: 0.45; }
+
+/* ── Firebox / slots ─────────────────────────────────────────────── */
+
+.section-title {
+    -unity-font-style: bold;
+    font-size: 26px;
+    color: rgb(54, 32, 14);
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+.fuel-bar {
+    height: 20px;
+    background-color: rgba(54, 32, 14, 0.35);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+
+.fuel-fill {
+    height: 100%;
+    width: 0%;
+    background-color: rgb(224, 122, 41);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.fuel-text {
+    font-size: 19px;
+    color: rgb(70, 45, 20);
+    margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+.slots-list { max-height: 220px; }
+.shelf-list { max-height: 170px; }
+
+.slot-row, .shelf-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 4px;
+    background-color: rgba(255, 252, 245, 0.55);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.slot-row-label {
+    font-size: 21px;
+    -unity-font-style: bold;
+    color: rgb(54, 32, 14);
+}
+
+.slot-row-state {
+    font-size: 19px;
+    color: rgb(100, 70, 40);
+}
+
+.slot-row--empty .slot-row-label { color: rgba(54, 32, 14, 0.4); }
+.slot-row--cooking .slot-row-state { color: rgb(190, 90, 20); -unity-font-style: bold; }
+.slot-row--paused .slot-row-state { color: rgb(170, 45, 30); -unity-font-style: bold; }
+
+.buy-slot-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 4px;
+    background-color: rgba(120, 170, 90, 0.45);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.buy-slot-row--locked {
+    background-color: rgba(54, 32, 14, 0.15);
+    opacity: 0.75;
+}
+
+/* ── Smokehouse fish rows ─────────────────────────────────────────── */
+.fish-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 4px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.18);
+}
+.fish-row-label {
+    color: rgb(238, 232, 220);
+    font-size: 22px;
+    flex-grow: 1;
+}
+.fish-row-buttons { flex-direction: row; }
+.fish-btn {
+    font-size: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: 6px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: rgb(20, 20, 20);
+    background-color: rgb(226, 178, 92);
+}
+.fish-btn--smoke { background-color: rgb(198, 156, 109); }
+.fish-btn:disabled { opacity: 0.4; }
