@@ -2,7 +2,11 @@
 
 **Date:** 2026-07-07
 **Branch context:** brainstormed on `feat/run-ender-economy`
-**Status:** Design approved in conversation; pending spec review → implementation plan
+**Status:** Phase 1 (Pantry core + Cannery) BUILT 2026-07-07 on `feat/run-ender-economy` — plan
+`docs/superpowers/plans/2026-07-07-pantry-economy-phase1-cannery.md`, 135/135 EditMode tests,
+play-mode smoke test passed (build → intake → cook → toast → sell → save/reload). Placeholder
+art (Barn_Small sprite + Cloud smoke); not yet visually playtested by the user. Phases 2
+(Lake/Smokehouse) + 3 (QOL ladder, research gates) not started.
 **Predecessor:** `2026-06-30-woodcutting-design.md` §9 deferred "Preserves/Crafting" — this spec is that system, expanded into two buildings.
 
 ## Summary
