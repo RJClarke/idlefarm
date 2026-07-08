@@ -51,6 +51,24 @@ public class GameData
     public ReadyJar[] canneryReadyJars;
     public long canneryLastSimUtcTicks;
 
+    // Pantry (Pantry Economy Phase 2). Fungible fish counts, index 0 = tier 1 (Perch).
+    public int[] pantryRawFish;
+    public int[] pantrySmokedFish;
+
+    // Fishing (Pantry Economy Phase 2). Pole meta + the single in-flight line's cast state.
+    public int poleLevel;
+    public bool hasPole;
+    public int fishingState;              // 0 Idle / 1 Waiting / 2 Bite
+    public long fishingCastUtcTicks;
+    public long fishingBiteReadyUtcTicks;
+    public int fishingPendingTier;        // tier on the line when state == Bite
+
+    // Smokehouse (Pantry Economy Phase 2). Built-flag in BuildingState (PlayerPrefs); firebox here.
+    // Finished smoked fish are drained into Pantry counts, so no ready-shelf is persisted.
+    public double smokehouseFuelWood;
+    public CannerySlot[] smokehouseSlots;
+    public long smokehouseLastSimUtcTicks;
+
     // Wall-clock anchor for offline-progress catch-up. Set on every save; read on load
     // to compute "time away" for the welcome-back modal.
     public long lastSeenUtcTicks;
@@ -121,6 +139,9 @@ public class GameData
         trees = new TreeSaveState[0];
         cannerySlots = new CannerySlot[0];
         canneryReadyJars = new ReadyJar[0];
+        pantryRawFish = new int[FishTiers.Count];
+        pantrySmokedFish = new int[FishTiers.Count];
+        smokehouseSlots = new CannerySlot[0];
     }
 
     /// <summary>

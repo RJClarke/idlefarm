@@ -139,6 +139,9 @@ public class SaveManager : MonoBehaviour
         data.trees = WoodcuttingManager.Instance != null ? WoodcuttingManager.Instance.GetTreeSaveStates() : new TreeSaveState[0];
 
         if (CanneryManager.Instance != null) CanneryManager.Instance.CaptureTo(data);
+        if (PantryManager.Instance != null) PantryManager.Instance.CaptureTo(data);
+        if (FishingManager.Instance != null) FishingManager.Instance.CaptureTo(data);
+        if (SmokehouseManager.Instance != null) SmokehouseManager.Instance.CaptureTo(data);
 
         // Convert to JSON
         string json = JsonUtility.ToJson(data, true); // true = pretty print for debugging
@@ -200,6 +203,15 @@ public class SaveManager : MonoBehaviour
 
                 if (CanneryManager.Instance != null)
                     CanneryManager.Instance.LoadFrom(data);
+
+                // Pantry before Fishing/Smokehouse: Smokehouse.LoadFrom deposits offline-smoked
+                // fish into the Pantry, so Pantry counts must be restored first.
+                if (PantryManager.Instance != null)
+                    PantryManager.Instance.LoadFrom(data);
+                if (FishingManager.Instance != null)
+                    FishingManager.Instance.LoadFrom(data);
+                if (SmokehouseManager.Instance != null)
+                    SmokehouseManager.Instance.LoadFrom(data);
 
                 if (AnimalManager.Instance != null)
                 {

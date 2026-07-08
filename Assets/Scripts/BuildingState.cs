@@ -10,6 +10,7 @@ public static class BuildingState
 {
     public const string GreenhouseKey = "building_greenhouse_built";
     public const string CanneryKey = "building_cannery_built";
+    public const string SmokehouseKey = "building_smokehouse_built";
 
     public static event Action<string> OnBuildingBuilt; // key
 

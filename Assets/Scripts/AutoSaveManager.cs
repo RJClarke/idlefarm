@@ -74,6 +74,12 @@ public class AutoSaveManager : MonoBehaviour
 
         if (CanneryManager.Instance != null)
             CanneryManager.Instance.OnChanged += OnVoid;
+        if (PantryManager.Instance != null)
+            PantryManager.Instance.OnChanged += OnVoid;
+        if (FishingManager.Instance != null)
+            FishingManager.Instance.OnChanged += OnVoid;
+        if (SmokehouseManager.Instance != null)
+            SmokehouseManager.Instance.OnChanged += OnVoid;
 
         if (ResearchManager.Instance != null)
         {
@@ -124,6 +130,12 @@ public class AutoSaveManager : MonoBehaviour
 
         if (CanneryManager.Instance != null)
             CanneryManager.Instance.OnChanged -= OnVoid;
+        if (PantryManager.Instance != null)
+            PantryManager.Instance.OnChanged -= OnVoid;
+        if (FishingManager.Instance != null)
+            FishingManager.Instance.OnChanged -= OnVoid;
+        if (SmokehouseManager.Instance != null)
+            SmokehouseManager.Instance.OnChanged -= OnVoid;
 
         if (ResearchManager.Instance != null)
         {
