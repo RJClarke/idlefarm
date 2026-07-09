@@ -30,6 +30,12 @@ public class CanneryManager : MonoBehaviour
     [Tooltip("Coin cost of the next slot, indexed by (slotsOwned - startingSlots).")]
     [SerializeField] private int[] slotCoinCosts = { 150, 250, 400, 600, 900, 1400, 2500, 4000, 6500, 10000, 15000, 22000, 32000, 45000, 60000, 80000 };
     [SerializeField] private int[] slotWoodCosts = { 40, 60, 90, 130, 180, 250, 400, 600, 900, 1300, 1800, 2500, 3400, 4500, 6000, 8000 };
+    [Tooltip("Purchasable slots added per unlocked expansion research (Phase 3).")]
+    [SerializeField] private int slotsPerExpansion = 2;
+
+    [Header("Fuel Efficiency Research (spec §6)")]
+    [Tooltip("Max fraction of per-slot burn that efficiency research can remove (keeps demand alive).")]
+    [SerializeField] private float maxBurnReduction = 0.40f;
 
     private readonly CanneryState state = new CanneryState();
     private bool intakeOn = true;
@@ -48,6 +54,27 @@ public class CanneryManager : MonoBehaviour
     public int MaxPurchasableSlots => maxPurchasableSlots;
     public int TotalMaxSlots => totalMaxSlots;
 
+    /// <summary>Coin-purchasable slot cap after research expansions (Phase 3).</summary>
+    public int EffectiveMaxPurchasableSlots =>
+        ProcessingMath.EffectiveSlotCap(maxPurchasableSlots, totalMaxSlots, ExpansionsUnlocked(), slotsPerExpansion);
+
+    private int ExpansionsUnlocked()
+    {
+        var rm = ResearchManager.Instance;
+        if (rm == null) return 0;
+        int n = 0;
+        if (rm.IsFeatureUnlocked(Research.FeatureFlag.CanneryExpansion1)) n++;
+        if (rm.IsFeatureUnlocked(Research.FeatureFlag.CanneryExpansion2)) n++;
+        return n;
+    }
+
+    private float EffectivePerSlotBurn()
+    {
+        float bonus = ResearchManager.Instance != null
+            ? ResearchManager.Instance.GetBonus(Research.StatKey.CanneryBurnEfficiency) : 0f;
+        return ProcessingMath.EffectiveBurnPerSlot(perSlotBurnPerHour, bonus, maxBurnReduction);
+    }
+
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -55,6 +82,21 @@ public class CanneryManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         EnsureSlotArray(startingSlots);
     }
+
+    private void Start()
+    {
+        if (ResearchManager.Instance != null)
+            ResearchManager.Instance.OnFeatureFlagUnlocked += HandleFeatureFlag;
+    }
+
+    private void OnDestroy()
+    {
+        if (ResearchManager.Instance != null)
+            ResearchManager.Instance.OnFeatureFlagUnlocked -= HandleFeatureFlag;
+    }
+
+    // Refresh the open popup's Buy-Slot row when an expansion research unlocks.
+    private void HandleFeatureFlag(string _) => OnChanged?.Invoke();
 
     private void Update()
     {
@@ -65,7 +107,7 @@ public class CanneryManager : MonoBehaviour
         if (elapsed < 0) { lastSimUtcTicks = now; return; } // forward-only clock
         if (elapsed < 0.25) return;                          // throttle
         lastSimUtcTicks = now;
-        int finished = ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, perSlotBurnPerHour);
+        int finished = ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, EffectivePerSlotBurn());
         if (finished > 0)
         {
             Debug.Log($"[Cannery] {finished} jar(s) finished.");
@@ -105,14 +147,15 @@ public class CanneryManager : MonoBehaviour
     /// </summary>
     public bool TryIntake(CropData crop)
     {
-        if (crop == null || !IsBuilt || !intakeOn) return false;
+        // Only crops explicitly flagged as cannable are diverted; the rest pay out normally.
+        if (crop == null || !crop.canBeCanned || !IsBuilt || !intakeOn) return false;
         int idx = ProcessingMath.FindIntakeSlot(state, crop.name);
         if (idx < 0) return false;
 
         var s = state.slots[idx];
         if (ProcessingMath.SlotIsEmpty(s))
         {
-            int tier = Mathf.Clamp(crop.tier, 1, 3);
+            int tier = Mathf.Clamp(crop.canneryTier, 1, 3);
             s.cropId = crop.name;
             s.cropName = crop.cropName;
             s.tier = tier;
@@ -146,7 +189,7 @@ public class CanneryManager : MonoBehaviour
 
     /// <summary>Wood still needed (beyond current fuel) so the current batch finishes.</summary>
     public int StokeToFinishCost()
-        => Mathf.CeilToInt((float)ProcessingMath.WoodToFinishLoaded(state, baseBurnPerHour, perSlotBurnPerHour));
+        => Mathf.CeilToInt((float)ProcessingMath.WoodToFinishLoaded(state, baseBurnPerHour, EffectivePerSlotBurn()));
 
     public void StokeToFinish() => TryAddFuel(StokeToFinishCost());
 
@@ -174,7 +217,7 @@ public class CanneryManager : MonoBehaviour
     {
         var cm = CurrencyManager.Instance;
         if (cm == null || !IsBuilt) return false;
-        return ProcessingMath.CanBuySlot(SlotsOwned, maxPurchasableSlots,
+        return ProcessingMath.CanBuySlot(SlotsOwned, EffectiveMaxPurchasableSlots,
             cm.Coins, NextSlotCoinCost(), cm.Wood, NextSlotWoodCost());
     }
 
@@ -248,7 +291,7 @@ public class CanneryManager : MonoBehaviour
         if (IsBuilt && d.canneryLastSimUtcTicks > 0 && now > d.canneryLastSimUtcTicks)
         {
             double elapsed = (now - d.canneryLastSimUtcTicks) / (double)TimeSpan.TicksPerSecond;
-            int finished = ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, perSlotBurnPerHour);
+            int finished = ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, EffectivePerSlotBurn());
             if (finished > 0)
                 ToastManager.Show($"{finished} jar(s) finished while you were away!", "Visit the Cannery to sell.");
         }
