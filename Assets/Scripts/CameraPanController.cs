@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -110,5 +111,18 @@ public class CameraPanController : MonoBehaviour
         for (int i = 0; i < locations.Length; i++)
             if (locations[i].location == target) return locations[i];
         return null;
+    }
+
+    /// <summary>
+    /// Set (or add) the world offset the camera pans to for a location. Lets the map nav buttons own
+    /// their own pan target — edit the button's panOffset in the inspector (even at runtime) and the
+    /// next pan uses it. Existing per-location duration/ease overrides are preserved.
+    /// </summary>
+    public void SetLocationOffset(Location location, Vector2 offset)
+    {
+        LocationOffset entry = GetEntry(location);
+        if (entry != null) { entry.offset = offset; return; }
+        var list = new List<LocationOffset>(locations) { new LocationOffset { location = location, offset = offset } };
+        locations = list.ToArray();
     }
 }

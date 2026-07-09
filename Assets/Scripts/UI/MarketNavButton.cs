@@ -1,77 +1,30 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MarketNavButton : MonoBehaviour
+/// <summary>Map nav button for the Market. Hidden while a run is active (the Market trip is disruptive mid-run).</summary>
+public class MarketNavButton : MapNavButton
 {
-    [SerializeField] private Button button;
-    [SerializeField] private TMP_Text label;
-    [SerializeField] private string farmLabel = "🏪 Market";
-    [SerializeField] private string marketLabel = "🌾 Back to Farm";
+    protected override CameraPanController.Location Target => CameraPanController.Location.Market;
 
-    private CameraPanController panController;
+    protected override bool ShouldHide(CameraPanController.Location current)
+        => RunManager.Instance != null && RunManager.Instance.IsRunActive;
 
-    private void Reset()
+    protected override void SubscribeExtra()
     {
-        button = GetComponent<Button>();
-        label = GetComponentInChildren<TMP_Text>();
-    }
-
-    private void Start()
-    {
-        panController = Camera.main != null ? Camera.main.GetComponent<CameraPanController>() : null;
-        if (panController == null)
-        {
-            Debug.LogWarning("[MarketNavButton] No CameraPanController found on Main Camera.");
-            return;
-        }
-
-        if (button != null) button.onClick.AddListener(OnClick);
-        panController.OnPanCompleted += OnPanCompleted;
-        UpdateLabel(panController.CurrentLocation);
-
-        // Hide the Market button while a run is active.
         if (RunManager.Instance != null)
         {
-            RunManager.Instance.OnRunStarted += OnRunStarted;
-            RunManager.Instance.OnRunEnded   += OnRunEnded;
-            ApplyRunVisibility(RunManager.Instance.IsRunActive);
+            RunManager.Instance.OnRunStarted += OnRunChanged;
+            RunManager.Instance.OnRunEnded   += OnRunChanged;
         }
     }
 
-    private void OnDestroy()
+    protected override void UnsubscribeExtra()
     {
-        if (button != null) button.onClick.RemoveListener(OnClick);
-        if (panController != null) panController.OnPanCompleted -= OnPanCompleted;
         if (RunManager.Instance != null)
         {
-            RunManager.Instance.OnRunStarted -= OnRunStarted;
-            RunManager.Instance.OnRunEnded   -= OnRunEnded;
+            RunManager.Instance.OnRunStarted -= OnRunChanged;
+            RunManager.Instance.OnRunEnded   -= OnRunChanged;
         }
     }
 
-    private void OnRunStarted() => ApplyRunVisibility(true);
-    private void OnRunEnded()   => ApplyRunVisibility(false);
-
-    private void ApplyRunVisibility(bool inRun)
-    {
-        // Toggle the button object itself; the C# run events still fire to re-show it.
-        gameObject.SetActive(!inRun);
-    }
-
-    private void OnClick()
-    {
-        if (panController == null) return;
-        panController.PanTo(panController.CurrentLocation == CameraPanController.Location.Market
-            ? CameraPanController.Location.Farm
-            : CameraPanController.Location.Market);
-    }
-
-    private void OnPanCompleted(CameraPanController.Location loc) => UpdateLabel(loc);
-
-    private void UpdateLabel(CameraPanController.Location loc)
-    {
-        if (label == null) return;
-        label.text = loc == CameraPanController.Location.Market ? marketLabel : farmLabel;
-    }
+    private void OnRunChanged() => RefreshVisibility();
 }
