@@ -16,10 +16,10 @@ public static class TopLeftIconSetup
     private static readonly (string button, string sprite)[] Map =
     {
         ("InboxButton",            "Assets/Sprites/UI/Icons/Icons_Essential/Letter.png"),
-        ("DailyRewardChestButton", "Assets/Sprites/UI/Icons/Icons_Essential/ChestTreasure.png"),
-        ("QuestButton",            "Assets/Sprites/UI/Icons/Icons_Essential/Document.png"),
+        ("DailyRewardChestButton", "Assets/Sprites/UI/Icons/Raven/Misc_Chest.png"),      // matches daily-reward modal
+        ("QuestButton",            "Assets/Sprites/UI/Icons/Raven/Misc_ScrollRoll.png"), // matches quest modal
         ("InventoryButton",        "Assets/Sprites/UI/Icons/Icons_Essential/Backpack.png"),
-        ("PrevRunStatsButton",     "Assets/Sprites/UI/Icons/Icons_Essential/Monitor.png"),
+        ("PrevRunStatsButton",     "Assets/Sprites/UI/Icons/Icons_Essential/Trophy.png"),
     };
 
     private const float IconSize = 60f;                 // uniform icon size inside the 90x90 button
