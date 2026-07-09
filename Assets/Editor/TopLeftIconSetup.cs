@@ -22,7 +22,11 @@ public static class TopLeftIconSetup
         ("PrevRunStatsButton",     "Assets/Sprites/UI/Icons/Icons_Essential/Trophy.png"),
     };
 
-    private const float IconSize = 60f;                 // uniform icon size inside the 90x90 button
+    // Shared wood-slot background so each icon sits on a framed square (matches the game's wood UI)
+    // instead of floating on the grass.
+    private const string SlotSpritePath = "Assets/Sprites/UI/UI_Runewood/UI_Wood_Slot_Available_01.png";
+
+    private const float IconSize = 54f;                 // uniform icon size, inset within the slot frame
     private const float DotSize = 18f;                  // uniform dot diameter
     private static readonly Vector2 DotPos = new Vector2(-8f, -8f); // top-right, inset
     private static readonly Color DotColor = new Color(0.90f, 0.20f, 0.22f, 1f);
@@ -37,6 +41,8 @@ public static class TopLeftIconSetup
         if (lockup == null) { Debug.LogError("[TopLeftIcons] Canvas/TopLeftLockup not found."); return; }
 
         Sprite dotSprite = GetOrCreateDotSprite();
+        Sprite slotSprite = LoadSprite(SlotSpritePath);
+        if (slotSprite == null) Debug.LogWarning($"[TopLeftIcons] slot background missing: {SlotSpritePath}");
 
         foreach (var (btnName, spritePath) in Map)
         {
@@ -46,7 +52,7 @@ public static class TopLeftIconSetup
             Sprite icon = LoadSprite(spritePath);
             if (icon == null) { Debug.LogWarning($"[TopLeftIcons] sprite missing: {spritePath}"); continue; }
 
-            SetupButton(btn);
+            SetupButton(btn, slotSprite);
             SetupIcon(btn, icon);
             SetupDot(btn, dotSprite);
         }
@@ -57,21 +63,46 @@ public static class TopLeftIconSetup
 
     private const float ButtonSize = 90f;
 
-    // Make the button itself a uniform square, icon-only click target (transparent background), so
-    // all five align in the layout group with the icon centered — matches the Inbox/Stats style.
-    private static void SetupButton(Transform btn)
+    private static readonly Color BaseColor = new Color(0.32f, 0.23f, 0.15f, 1f); // opaque dark wood recess
+
+    // Make the button a uniform square: an OPAQUE dark base (so the icon reads the same over any world
+    // background and contrasts) with the 9-sliced wood-slot frame on top (beveled square, matches the
+    // game's wood UI). All five align in the layout group with the icon centered on the slot.
+    private static void SetupButton(Transform btn, Sprite frame)
     {
         var rt = btn.GetComponent<RectTransform>();
         rt.pivot = new Vector2(0.5f, 0.5f);
         rt.sizeDelta = new Vector2(ButtonSize, ButtonSize);
 
+        // The button's own Image is the opaque dark base fill + the click target.
         var img = btn.GetComponent<Image>();
         if (img != null)
         {
             img.sprite = null;
-            img.color = new Color(1f, 1f, 1f, 0f); // invisible, still a raycast target for the Button
+            img.type = Image.Type.Simple;
+            img.color = BaseColor;
             img.raycastTarget = true;
         }
+
+        // Wood-slot frame layered on top of the base, stretched to fill the button.
+        Transform frameT = btn.Find("SlotFrame");
+        GameObject frameGo = frameT != null
+            ? frameT.gameObject
+            : new GameObject("SlotFrame", typeof(RectTransform), typeof(Image));
+        if (frameT == null) frameGo.transform.SetParent(btn, false);
+
+        var fImg = frameGo.GetComponent<Image>();
+        fImg.sprite = frame;
+        fImg.type = Image.Type.Sliced;
+        fImg.color = Color.white;
+        fImg.raycastTarget = false;
+
+        var fRt = frameGo.GetComponent<RectTransform>();
+        fRt.anchorMin = Vector2.zero;
+        fRt.anchorMax = Vector2.one;
+        fRt.offsetMin = Vector2.zero;
+        fRt.offsetMax = Vector2.zero;
+        frameGo.transform.SetAsFirstSibling(); // under the icon + dot
     }
 
     private static void SetupIcon(Transform btn, Sprite icon)
@@ -85,7 +116,7 @@ public static class TopLeftIconSetup
 
         var go = new GameObject("Icon", typeof(RectTransform), typeof(Image));
         go.transform.SetParent(btn, false);
-        go.transform.SetSiblingIndex(0); // under the dot
+        go.transform.SetAsLastSibling(); // above the slot frame, under the dot (dot re-asserts last)
 
         var img = go.GetComponent<Image>();
         img.sprite = icon;
