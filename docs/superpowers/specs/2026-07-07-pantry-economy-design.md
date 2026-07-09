@@ -269,3 +269,39 @@ tool level? Findings and rulings:
    pass during implementation; the formulas above are the contract.
 3. Which crops bucket into which cannery tier (berries vs tomatoes vs apples etc.) —
    data decision once crop list is reviewed.
+
+## Phase 3 implementation decisions (2026-07-09)
+
+Locked during the Phase 3 brainstorm. Refines §4a / §5 / §10 for the build:
+
+- **Scope = research entries only.** The intake QOL ladder (§4a T2 intake bin, T3
+  per-slot pre-assignment) is **deferred to a Phase 4** — Phase 3 ships the research
+  gating layer alone. One combined Phase 3 plan doc (not split).
+- **Kickoff gating puts the building "in stock" at the Carpenter** (not a save-migration
+  concern — grandfathering is explicitly out of scope). Two binary researches gate the
+  existing Carpenter build rows: **"Preserving"** → `cannery_unlocked`, **"Smoking"** →
+  `smokehouse_unlocked`. Before the flag is set the build row simply isn't offered. Intended
+  ladder: research → build → buy slots → later research expansions/efficiency ("a few
+  steps, feels normal"). Woods, Lake, axe, and pole stay ungated — these buildings are the
+  opt-in enhancements to the fish/woods loops.
+- **Final-slot gates** use the managers' existing purchasable-vs-total split. Cannery
+  reserves slots 21–24: **Cannery Expansion I** (`cannery_expansion_1`, +2 → 22) and **II**
+  (`cannery_expansion_2`, +2 → 24, prereq I). Smokehouse reserves 7–8: **Smokehouse
+  Expansion** (`smokehouse_expansion_1`, +2 → 8). Each is a binary flag; managers compute
+  `effectivePurchasableCap = maxPurchasableSlots + Σ(unlocked expansion flags × 2)`, clamped
+  to `totalMaxSlots`; `CanBuySlot` reads the effective cap.
+- **Burn efficiency is per-building** (not shared): `cannery_burn_efficiency` +
+  `smokehouse_burn_efficiency` scalar (leveled) researches. Each manager scales
+  `perSlotBurnPerHour × (1 − clamp(GetBonus, 0, ~0.40))` before calling
+  `ProcessingMath.Simulate`. The ~40% clamp keeps demand alive (the "keep chopping" loop
+  must survive); only per-slot burn is reduced, not base waste burn. Consistent with the One
+  Rule — this only makes burning more efficient vs selling.
+- **Branch = Equipment** (reuse the existing tab; no new ResearchPopupUITK tab). All 7
+  entries created via `CreateBinary`/`CreateStd` in `ResearchCatalogGenerator`, then the
+  catalog is regenerated to `Resources/Research/`.
+- **New constants:** `StatKey.CanneryBurnEfficiency`, `StatKey.SmokehouseBurnEfficiency`;
+  `FeatureFlag.CanneryUnlocked`, `SmokehouseUnlocked`, `CanneryExpansion1`,
+  `CanneryExpansion2`, `SmokehouseExpansion1`.
+- **Supply-scaling levers deferred** (§6 axe yield multiplier, chop-yield research, more
+  trees): only needed once late-game slot demand actually materializes, so they belong with
+  a post-Phase-3 playtest-tuning pass, not this plan.
