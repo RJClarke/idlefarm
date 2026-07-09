@@ -80,6 +80,8 @@ public class CarpenterPopupUITK : MonoBehaviour
             WoodcuttingManager.Instance.OnAxeLevelChanged += OnCurrencyChanged;
         if (FishingManager.Instance != null)
             FishingManager.Instance.OnPoleLevelChanged += OnCurrencyChanged;
+        if (ResearchManager.Instance != null)
+            ResearchManager.Instance.OnFeatureFlagUnlocked += OnFeatureFlagChanged;
         BuildingState.OnBuildingBuilt += OnBuildingBuilt;
     }
 
@@ -94,11 +96,14 @@ public class CarpenterPopupUITK : MonoBehaviour
             WoodcuttingManager.Instance.OnAxeLevelChanged -= OnCurrencyChanged;
         if (FishingManager.Instance != null)
             FishingManager.Instance.OnPoleLevelChanged -= OnCurrencyChanged;
+        if (ResearchManager.Instance != null)
+            ResearchManager.Instance.OnFeatureFlagUnlocked -= OnFeatureFlagChanged;
         BuildingState.OnBuildingBuilt -= OnBuildingBuilt;
         eventsSubscribed = false;
     }
 
     private void OnCurrencyChanged(int _) => MarkDirty();
+    private void OnFeatureFlagChanged(string _) => MarkDirty();
     private void OnBuildingBuilt(string _) => MarkDirty();
 
     private void MarkDirty()
@@ -254,6 +259,11 @@ public class CarpenterPopupUITK : MonoBehaviour
 
     private void BuildCanneryRow()
     {
+        var rm = ResearchManager.Instance;
+        bool canneryUnlocked = rm == null || rm.IsFeatureUnlocked(Research.FeatureFlag.CanneryUnlocked);
+        if (!canneryUnlocked && !BuildingState.IsBuilt(BuildingState.CanneryKey))
+            return; // not researched yet — not offered at the Carpenter
+
         VisualElement row = new VisualElement();
         row.AddToClassList("market-row");
 
@@ -316,6 +326,11 @@ public class CarpenterPopupUITK : MonoBehaviour
 
     private void BuildSmokehouseRow()
     {
+        var rm = ResearchManager.Instance;
+        bool smokehouseUnlocked = rm == null || rm.IsFeatureUnlocked(Research.FeatureFlag.SmokehouseUnlocked);
+        if (!smokehouseUnlocked && !BuildingState.IsBuilt(BuildingState.SmokehouseKey))
+            return; // not researched yet — not offered at the Carpenter
+
         VisualElement row = new VisualElement();
         row.AddToClassList("market-row");
 
