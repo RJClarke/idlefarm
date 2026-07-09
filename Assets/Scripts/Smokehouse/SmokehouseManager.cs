@@ -36,6 +36,12 @@ public class SmokehouseManager : MonoBehaviour
     [SerializeField] private int totalMaxSlots = 8;
     [SerializeField] private int[] slotCoinCosts = { 600, 1500, 4000, 9000, 18000 };
     [SerializeField] private int[] slotWoodCosts = { 120, 300, 700, 1400, 2600 };
+    [Tooltip("Purchasable slots added per unlocked expansion research (Phase 3).")]
+    [SerializeField] private int slotsPerExpansion = 2;
+
+    [Header("Fuel Efficiency Research (spec §6)")]
+    [Tooltip("Max fraction of per-slot burn that efficiency research can remove (keeps demand alive).")]
+    [SerializeField] private float maxBurnReduction = 0.40f;
 
     private readonly ProcessingState state = new ProcessingState();
     private long lastSimUtcTicks;
@@ -52,6 +58,26 @@ public class SmokehouseManager : MonoBehaviour
     public int MaxPurchasableSlots => maxPurchasableSlots;
     public int TotalMaxSlots => totalMaxSlots;
 
+    /// <summary>Coin-purchasable slot cap after research expansions (Phase 3).</summary>
+    public int EffectiveMaxPurchasableSlots =>
+        ProcessingMath.EffectiveSlotCap(maxPurchasableSlots, totalMaxSlots, ExpansionsUnlocked(), slotsPerExpansion);
+
+    private int ExpansionsUnlocked()
+    {
+        var rm = ResearchManager.Instance;
+        if (rm == null) return 0;
+        int n = 0;
+        if (rm.IsFeatureUnlocked(Research.FeatureFlag.SmokehouseExpansion1)) n++;
+        return n;
+    }
+
+    private float EffectivePerSlotBurn()
+    {
+        float bonus = ResearchManager.Instance != null
+            ? ResearchManager.Instance.GetBonus(Research.StatKey.SmokehouseBurnEfficiency) : 0f;
+        return ProcessingMath.EffectiveBurnPerSlot(perSlotBurnPerHour, bonus, maxBurnReduction);
+    }
+
     public int RawValue(int tier) => rawValue[TierIdx(tier)];
     public int SmokedValue(int tier) => smokedValue[TierIdx(tier)];
     public int SmokeHours(int tier) => smokeHours[TierIdx(tier)];
@@ -66,6 +92,21 @@ public class SmokehouseManager : MonoBehaviour
         EnsureSlotArray(startingSlots);
     }
 
+    private void Start()
+    {
+        if (ResearchManager.Instance != null)
+            ResearchManager.Instance.OnFeatureFlagUnlocked += HandleFeatureFlag;
+    }
+
+    private void OnDestroy()
+    {
+        if (ResearchManager.Instance != null)
+            ResearchManager.Instance.OnFeatureFlagUnlocked -= HandleFeatureFlag;
+    }
+
+    // Refresh the open popup's Buy-Slot row when an expansion research unlocks.
+    private void HandleFeatureFlag(string _) => OnChanged?.Invoke();
+
     private void Update()
     {
         if (!IsBuilt) return;
@@ -75,7 +116,7 @@ public class SmokehouseManager : MonoBehaviour
         if (elapsed < 0) { lastSimUtcTicks = now; return; }
         if (elapsed < 0.25) return;
         lastSimUtcTicks = now;
-        ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, perSlotBurnPerHour);
+        ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, EffectivePerSlotBurn());
         int drained = DrainFinishedToPantry();
         if (drained > 0)
         {
@@ -151,7 +192,7 @@ public class SmokehouseManager : MonoBehaviour
     }
 
     public int StokeToFinishCost()
-        => Mathf.CeilToInt((float)ProcessingMath.WoodToFinishLoaded(state, baseBurnPerHour, perSlotBurnPerHour));
+        => Mathf.CeilToInt((float)ProcessingMath.WoodToFinishLoaded(state, baseBurnPerHour, EffectivePerSlotBurn()));
 
     public void StokeToFinish() => TryAddFuel(StokeToFinishCost());
 
@@ -179,7 +220,7 @@ public class SmokehouseManager : MonoBehaviour
     {
         var cm = CurrencyManager.Instance;
         if (cm == null || !IsBuilt) return false;
-        return ProcessingMath.CanBuySlot(SlotsOwned, maxPurchasableSlots,
+        return ProcessingMath.CanBuySlot(SlotsOwned, EffectiveMaxPurchasableSlots,
             cm.Coins, NextSlotCoinCost(), cm.Wood, NextSlotWoodCost());
     }
 
@@ -242,7 +283,7 @@ public class SmokehouseManager : MonoBehaviour
         if (IsBuilt && d.smokehouseLastSimUtcTicks > 0 && now > d.smokehouseLastSimUtcTicks)
         {
             double elapsed = (now - d.smokehouseLastSimUtcTicks) / (double)TimeSpan.TicksPerSecond;
-            ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, perSlotBurnPerHour);
+            ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, EffectivePerSlotBurn());
             int drained = DrainFinishedToPantry();
             if (drained > 0)
                 ToastManager.Show($"{drained} fish finished smoking while you were away!", "Visit the Smokehouse to sell.");
