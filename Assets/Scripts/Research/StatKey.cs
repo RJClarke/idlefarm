@@ -56,6 +56,10 @@ namespace Research
         public const string SeedBagSize = "seed_bag_size";        // +% seeds per bag
         public const string SeedBagDiscount = "seed_bag_discount"; // +% reduction to bag cost
 
+        // Processing (Pantry Economy Phase 3) — per-building fuel-efficiency (−% wood/slot-hour).
+        public const string CanneryBurnEfficiency = "cannery_burn_efficiency";
+        public const string SmokehouseBurnEfficiency = "smokehouse_burn_efficiency";
+
         // Meta
         public const string GameSpeed = "game_speed";
         public const string ResearchSpeed = "research_speed";
@@ -69,5 +73,12 @@ namespace Research
         public const string OfflineProgress = "offline_progress";
         public const string MaxWaterHealsPlant = "max_water_heals_plant";
         public const string CompostingBasics = "composting_basics"; // for Market gating Compost Bay (Plan 2)
+
+        // Processing (Pantry Economy Phase 3).
+        public const string CanneryUnlocked = "cannery_unlocked";         // "Preserving" → Cannery in Carpenter stock
+        public const string SmokehouseUnlocked = "smokehouse_unlocked";   // "Smoking"    → Smokehouse in Carpenter stock
+        public const string CanneryExpansion1 = "cannery_expansion_1";    // +2 purchasable Cannery slots (→22)
+        public const string CanneryExpansion2 = "cannery_expansion_2";    // +2 purchasable Cannery slots (→24)
+        public const string SmokehouseExpansion1 = "smokehouse_expansion_1"; // +2 purchasable Smokehouse slots (→8)
     }
 }
