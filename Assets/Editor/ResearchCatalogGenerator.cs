@@ -81,6 +81,15 @@ public static class ResearchCatalogGenerator
         CreateStd("fence_cooldown",         "Fence: Cooldown",          StatKey.FenceCooldown,          ResearchTier.Tier25,          "equipment", 0.010f, unlockID:"fence_unlock");
         CreateStd("compost_bay_conversion", "Compost Bay: Conversion Efficiency", StatKey.CompostBayConversion, ResearchTier.Tier100Standard, "equipment", 0.005f, unlockID:"compostbay_unlock");
 
+        // Processing buildings (Pantry Economy Phase 3) — kickoff, slot expansions, fuel efficiency.
+        CreateBinary("cannery_unlocked",       "Preserving",             "equipment", featureID:FeatureFlag.CanneryUnlocked,    cost:6000,  days:3);
+        CreateBinary("smokehouse_unlocked",    "Smoking",                "equipment", featureID:FeatureFlag.SmokehouseUnlocked, cost:6000,  days:3);
+        CreateBinary("cannery_expansion_1",    "Cannery Expansion I",    "equipment", featureID:FeatureFlag.CanneryExpansion1,   cost:40000, days:7,  prereqID:"cannery_unlocked");
+        CreateBinary("cannery_expansion_2",    "Cannery Expansion II",   "equipment", featureID:FeatureFlag.CanneryExpansion2,   cost:90000, days:14, prereqID:"cannery_expansion_1");
+        CreateBinary("smokehouse_expansion_1", "Smokehouse Expansion",   "equipment", featureID:FeatureFlag.SmokehouseExpansion1, cost:40000, days:7,  prereqID:"smokehouse_unlocked");
+        CreateStd("cannery_burn_efficiency",    "Cannery: Fuel Efficiency",    StatKey.CanneryBurnEfficiency,    ResearchTier.Tier25, "equipment", 0.010f, prereqID:"cannery_unlocked");
+        CreateStd("smokehouse_burn_efficiency", "Smokehouse: Fuel Efficiency", StatKey.SmokehouseBurnEfficiency, ResearchTier.Tier25, "equipment", 0.010f, prereqID:"smokehouse_unlocked");
+
         // Weather (2)
         CreateStd("storm_damage_reduction", "Storm Damage Reduction", StatKey.StormDamageReduction, ResearchTier.Tier25, "weather", 0.010f);
         CreateStd("rain_watering",          "Rain Watering",          StatKey.RainWatering,         ResearchTier.Tier25, "weather", 0.010f);
