@@ -94,6 +94,23 @@ public static class ProcessingMath
         return coins >= coinCost && wood >= woodCost;
     }
 
+    /// <summary>
+    /// Purchasable slot cap after research expansions (spec §5, Phase 3). Each unlocked expansion adds
+    /// `slotsPerExpansion` slots on top of the coin-purchasable base, clamped to the building's hard
+    /// total. Negative inputs are treated as zero.
+    /// </summary>
+    public static int EffectiveSlotCap(int basePurchasable, int totalMax, int expansionsUnlocked, int slotsPerExpansion)
+        => Mathf.Min(totalMax, basePurchasable + Mathf.Max(0, expansionsUnlocked) * Mathf.Max(0, slotsPerExpansion));
+
+    /// <summary>
+    /// Per-slot wood burn after a fuel-efficiency research bonus (spec §6). `efficiencyBonus` is a
+    /// cumulative fraction (as returned by ResearchManager.GetBonus); `maxReduction` clamps total
+    /// savings so demand never hits zero and the "keep chopping" loop survives. Only per-slot burn is
+    /// reduced — base (empty-fire waste) burn is untouched.
+    /// </summary>
+    public static float EffectiveBurnPerSlot(float basePerSlotBurn, float efficiencyBonus, float maxReduction)
+        => basePerSlotBurn * (1f - Mathf.Clamp(efficiencyBonus, 0f, Mathf.Clamp01(maxReduction)));
+
     // ── Firebox simulation (spec §2) ─────────────────────────────────────
 
     /// <summary>Wood consumed per second while the fire is lit: base + perSlot × cooking jars.</summary>

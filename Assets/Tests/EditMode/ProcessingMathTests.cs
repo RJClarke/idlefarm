@@ -165,6 +165,32 @@ public class ProcessingMathTests
         Assert.IsFalse(ProcessingMath.CanBuySlot(4, 20, 99999, 150, 39, 40));     // short wood
     }
 
+    // ── Research-gated cap + efficiency burn (Phase 3) ──────────────────
+
+    [Test]
+    public void EffectiveSlotCap_AddsPerExpansion_ClampedToTotal()
+    {
+        // Cannery: base 20, total 24, +2 per expansion.
+        Assert.AreEqual(20, ProcessingMath.EffectiveSlotCap(20, 24, 0, 2));
+        Assert.AreEqual(22, ProcessingMath.EffectiveSlotCap(20, 24, 1, 2));
+        Assert.AreEqual(24, ProcessingMath.EffectiveSlotCap(20, 24, 2, 2));
+        Assert.AreEqual(24, ProcessingMath.EffectiveSlotCap(20, 24, 3, 2)); // clamped to total
+        // Smokehouse: base 6, total 8.
+        Assert.AreEqual(6, ProcessingMath.EffectiveSlotCap(6, 8, 0, 2));
+        Assert.AreEqual(8, ProcessingMath.EffectiveSlotCap(6, 8, 1, 2));
+        // Negative expansions treated as zero.
+        Assert.AreEqual(20, ProcessingMath.EffectiveSlotCap(20, 24, -5, 2));
+    }
+
+    [Test]
+    public void EffectiveBurnPerSlot_ReducesByBonus_ClampedToMax()
+    {
+        Assert.AreEqual(20f, ProcessingMath.EffectiveBurnPerSlot(20f, 0f,   0.4f), 1e-4f); // no bonus
+        Assert.AreEqual(18f, ProcessingMath.EffectiveBurnPerSlot(20f, 0.1f, 0.4f), 1e-4f); // 10% off
+        Assert.AreEqual(12f, ProcessingMath.EffectiveBurnPerSlot(20f, 0.9f, 0.4f), 1e-4f); // capped at 40% off
+        Assert.AreEqual(20f, ProcessingMath.EffectiveBurnPerSlot(20f, -1f,  0.4f), 1e-4f); // negative bonus ignored
+    }
+
     // ── Finished good routing (Phase 2: fish tier) ──────────────────────
 
     [Test]
