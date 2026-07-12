@@ -32,7 +32,7 @@ public static class SmokehouseDevMenu
     {
         var fm = FishingManager.Instance;
         if (fm == null) { Debug.LogWarning("[SmokehouseDev] No FishingManager."); return; }
-        bool cast = fm.Cast();
+        bool cast = fm.Cast(1f, Vector2.up); // dev: full-power straight cast
         Debug.Log($"[SmokehouseDev] Cast()={cast}, State={fm.State}.");
     }
 
