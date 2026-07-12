@@ -43,6 +43,16 @@ public class FishingManager : MonoBehaviour
     [Header("Hints")]
     [SerializeField] private string noPoleHintText = "You need to buy a fishing pole first.";
 
+    [Header("Cast / Reel (spec 2026-07-12)")]
+    [Tooltip("Reel taps for the shortest cast.")]
+    [SerializeField] private int minReelTaps = 3;
+    [Tooltip("Reel taps for a full-power cast.")]
+    [SerializeField] private int maxReelTaps = 10;
+
+    [Header("Whirlpool")]
+    [Tooltip("Average seconds to a bite while the bobber sits inside a whirlpool (fast, not instant).")]
+    [SerializeField] private float hotspotBiteAvgSeconds = 20f;
+
     private int poleLevel;
     private bool hasPole;
     private CastState state = CastState.Idle;
@@ -50,6 +60,13 @@ public class FishingManager : MonoBehaviour
     private long biteReadyUtcTicks;
     private int pendingTier;
     private WorldHintPopup activeHint;
+
+    private float castPower01;
+    private Vector2 castDir = Vector2.up;
+    private int reelTapsTotal;
+    private int reelTapsRemaining;
+    private bool inHotspot;
+    private bool caughtFromHotspot;
 
     public event Action OnChanged;             // durable: state/pole change, load
     public event Action<int> OnPoleLevelChanged; // Carpenter UI refresh (mirrors OnAxeLevelChanged)
@@ -61,6 +78,12 @@ public class FishingManager : MonoBehaviour
     public CastState State => state;
     public bool HasBite => state == CastState.Bite;
     public int PendingTier => pendingTier;
+    public float CastPower01 => castPower01;
+    public Vector2 CastDir => castDir;
+    public int ReelTapsRemaining => reelTapsRemaining;
+    public int ReelTapsTotal => reelTapsTotal;
+    public float ReelProgress01 => reelTapsTotal > 0 ? (float)reelTapsRemaining / reelTapsTotal : 0f;
+    public bool CaughtFromHotspot => caughtFromHotspot;
 
     private void Awake()
     {
@@ -86,24 +109,81 @@ public class FishingManager : MonoBehaviour
     private void TransitionToBite()
     {
         pendingTier = FishingMath.RollFishTier(CurrentTier().weights, UnityEngine.Random.value);
+        caughtFromHotspot = inHotspot;
         state = CastState.Bite;
         Debug.Log($"[Fishing] Bite: {FishTiers.Name(pendingTier)} on the line.");
         OnChanged?.Invoke();
     }
 
-    // ── Cast / collect (spec §3a) ────────────────────────────────────────
+    // ── Cast / reel / collect (spec §3a + 2026-07-12) ────────────────────
 
-    /// <summary>Cast the line if idle and a pole is owned. Rolls the bite time now (UtcNow-anchored).</summary>
-    public bool Cast()
+    /// <summary>Cast the line if idle and a pole is owned. Power sets reel effort + landing distance;
+    /// dir is the aim direction (unit). Rolls a baseline bite time (UtcNow-anchored).</summary>
+    public bool Cast(float power01, Vector2 dir)
     {
         if (!hasPole || state != CastState.Idle) return false;
-        long now = DateTime.UtcNow.Ticks;
-        double biteSecs = FishingMath.RollBiteSeconds(CurrentTier().biteAvgSeconds, UnityEngine.Random.value);
-        castUtcTicks = now;
-        biteReadyUtcTicks = now + (long)(biteSecs * TimeSpan.TicksPerSecond);
+        castPower01 = Mathf.Clamp01(power01);
+        castDir = dir.sqrMagnitude > 1e-6f ? dir.normalized : Vector2.up;
+        reelTapsTotal = FishingMath.ReelTapsForPower(minReelTaps, maxReelTaps, castPower01);
+        reelTapsRemaining = reelTapsTotal;
+        inHotspot = false;
+        caughtFromHotspot = false;
+        RollBaselineBite();
         state = CastState.Waiting;
+        Debug.Log($"[Fishing] Cast power={castPower01:0.00} taps={reelTapsTotal}.");
         OnChanged?.Invoke();
         return true;
+    }
+
+    private void RollBaselineBite()
+    {
+        long now = DateTime.UtcNow.Ticks;
+        double secs = FishingMath.RollBiteSeconds(CurrentTier().biteAvgSeconds, UnityEngine.Random.value);
+        castUtcTicks = now;
+        biteReadyUtcTicks = now + (long)(secs * TimeSpan.TicksPerSecond);
+    }
+
+    private void RollHotspotBite()
+    {
+        long now = DateTime.UtcNow.Ticks;
+        double secs = FishingMath.RollBiteSeconds(hotspotBiteAvgSeconds, UnityEngine.Random.value);
+        biteReadyUtcTicks = now + (long)(secs * TimeSpan.TicksPerSecond);
+    }
+
+    /// <summary>Bobber entered/left a live whirlpool (called by LakeNode). Re-anchors the bite:
+    /// entering grants a fast bite; leaving before biting reverts to baseline. No-op once biting.</summary>
+    public void SetInHotspot(bool inside)
+    {
+        if (state != CastState.Waiting || inside == inHotspot) return;
+        inHotspot = inside;
+        if (inside) RollHotspotBite(); else RollBaselineBite();
+        OnChanged?.Invoke();
+    }
+
+    /// <summary>Pull the bobber one step toward shore. Valid only while Waiting/Bite. Reaching shore
+    /// lands a biting fish (Collect) or retrieves an empty line. Returns true if a step was consumed.</summary>
+    public bool Reel()
+    {
+        if (state != CastState.Waiting && state != CastState.Bite) return false;
+        if (reelTapsRemaining > 0) reelTapsRemaining--;
+        if (reelTapsRemaining > 0) { OnChanged?.Invoke(); return true; }
+        if (state == CastState.Bite) Collect(); else RetrieveEmpty();
+        return true;
+    }
+
+    private void RetrieveEmpty()
+    {
+        ClearLine();
+        state = CastState.Idle;
+        Debug.Log("[Fishing] Line retrieved (no fish).");
+        OnChanged?.Invoke();
+    }
+
+    private void ClearLine()
+    {
+        castUtcTicks = 0; biteReadyUtcTicks = 0; pendingTier = 0;
+        castPower01 = 0f; castDir = Vector2.up; reelTapsTotal = 0; reelTapsRemaining = 0;
+        inHotspot = false; caughtFromHotspot = false;
     }
 
     /// <summary>Collect a fish on the line into the Pantry. Returns the caught tier (0 if none).</summary>
@@ -112,9 +192,7 @@ public class FishingManager : MonoBehaviour
         if (state != CastState.Bite) return 0;
         int tier = pendingTier;
         if (PantryManager.Instance != null) PantryManager.Instance.AddRaw(tier);
-        pendingTier = 0;
-        castUtcTicks = 0;
-        biteReadyUtcTicks = 0;
+        ClearLine();
         state = CastState.Idle;
         Debug.Log($"[Fishing] Collected {FishTiers.Name(tier)}.");
         OnChanged?.Invoke();
@@ -195,6 +273,11 @@ public class FishingManager : MonoBehaviour
         d.fishingCastUtcTicks = castUtcTicks;
         d.fishingBiteReadyUtcTicks = biteReadyUtcTicks;
         d.fishingPendingTier = pendingTier;
+        d.fishingCastPower01 = castPower01;
+        d.fishingCastDirX = castDir.x;
+        d.fishingCastDirY = castDir.y;
+        d.fishingReelTapsTotal = reelTapsTotal;
+        d.fishingReelTapsRemaining = reelTapsRemaining;
     }
 
     public void LoadFrom(GameData d)
@@ -205,6 +288,11 @@ public class FishingManager : MonoBehaviour
         castUtcTicks = d.fishingCastUtcTicks;
         biteReadyUtcTicks = d.fishingBiteReadyUtcTicks;
         pendingTier = d.fishingPendingTier;
+        castPower01 = Mathf.Clamp01(d.fishingCastPower01);
+        castDir = new Vector2(d.fishingCastDirX, d.fishingCastDirY);
+        if (castDir.sqrMagnitude < 1e-6f) castDir = Vector2.up; else castDir.Normalize();
+        reelTapsTotal = Mathf.Max(0, d.fishingReelTapsTotal);
+        reelTapsRemaining = Mathf.Clamp(d.fishingReelTapsRemaining, 0, Mathf.Max(0, reelTapsTotal));
 
         // Offline catch-up: a line left waiting whose bite time has passed is now biting.
         if (state == CastState.Waiting && biteReadyUtcTicks > 0 && DateTime.UtcNow.Ticks >= biteReadyUtcTicks)

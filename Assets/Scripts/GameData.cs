@@ -62,6 +62,12 @@ public class GameData
     public long fishingCastUtcTicks;
     public long fishingBiteReadyUtcTicks;
     public int fishingPendingTier;        // tier on the line when state == Bite
+    // Fishing active cast (2026-07-12): power/direction + reel progress for the in-flight line.
+    public float fishingCastPower01;      // meter fill at release (0..1)
+    public float fishingCastDirX;         // unit aim direction x (dimensionless)
+    public float fishingCastDirY;         // unit aim direction y
+    public int fishingReelTapsTotal;      // taps to reel this cast fully in
+    public int fishingReelTapsRemaining;  // taps left before the bobber reaches shore
 
     // Smokehouse (Pantry Economy Phase 2). Built-flag in BuildingState (PlayerPrefs); firebox here.
     // Finished smoked fish are drained into Pantry counts, so no ready-shelf is persisted.
