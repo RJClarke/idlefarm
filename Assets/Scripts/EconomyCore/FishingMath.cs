@@ -35,6 +35,22 @@ public static class FishingMath
         return weights.Length; // rand01 == 1 → last tier
     }
 
+    /// <summary>
+    /// Reel taps to bring a cast back to shore: scales linearly with cast power so a long cast is
+    /// more work than a short one (spec — reel effort scales with distance). Clamped to
+    /// [minTaps, maxTaps] and never below 1, so a line is always retrievable.
+    /// </summary>
+    public static int ReelTapsForPower(int minTaps, int maxTaps, float power01)
+    {
+        int taps = Mathf.RoundToInt(Mathf.Lerp(minTaps, maxTaps, Mathf.Clamp01(power01)));
+        return Mathf.Max(1, taps);
+    }
+
+    /// <summary>True when p lies within radius of center — used to test whether the bobber sits
+    /// inside a whirlpool. Boundary counts as inside.</summary>
+    public static bool PointInCircle(Vector2 center, float radius, Vector2 p)
+        => (p - center).sqrMagnitude <= radius * radius;
+
     /// <summary>First pole is Coins-only (you can't fish without one — same chicken-and-egg as the axe).</summary>
     public static bool CanBuyPole(bool hasPole, int coins, int coinCost) => !hasPole && coins >= coinCost;
 

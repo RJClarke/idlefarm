@@ -33,6 +33,26 @@ public class FishingMathTests
     }
 
     [Test]
+    public void ReelTapsForPower_ScalesWithPowerAndClamps()
+    {
+        Assert.AreEqual(3,  FishingMath.ReelTapsForPower(3, 10, 0f));    // short cast → min
+        Assert.AreEqual(10, FishingMath.ReelTapsForPower(3, 10, 1f));    // max cast → max
+        Assert.AreEqual(7,  FishingMath.ReelTapsForPower(3, 10, 0.57f)); // lerp 3..10 @0.57 ≈ 6.99 → 7
+        Assert.AreEqual(3,  FishingMath.ReelTapsForPower(3, 10, -5f));   // power clamps low
+        Assert.AreEqual(10, FishingMath.ReelTapsForPower(3, 10, 9f));    // power clamps high
+        Assert.AreEqual(1,  FishingMath.ReelTapsForPower(0, 0, 0f));     // never below 1 (always retrievable)
+    }
+
+    [Test]
+    public void PointInCircle_InsideBoundaryOutside()
+    {
+        var c = new UnityEngine.Vector2(5f, 5f);
+        Assert.IsTrue(FishingMath.PointInCircle(c, 2f, new UnityEngine.Vector2(5f, 6f)));    // inside
+        Assert.IsTrue(FishingMath.PointInCircle(c, 2f, new UnityEngine.Vector2(5f, 7f)));    // exactly on edge (dist == 2)
+        Assert.IsFalse(FishingMath.PointInCircle(c, 2f, new UnityEngine.Vector2(5f, 7.5f))); // outside
+    }
+
+    [Test]
     public void PoleGating_MirrorsAxe()
     {
         Assert.IsTrue(FishingMath.CanBuyPole(false, 80, 75));
