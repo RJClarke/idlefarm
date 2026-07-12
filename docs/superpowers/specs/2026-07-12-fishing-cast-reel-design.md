@@ -33,16 +33,19 @@ resolution, and Pantry deposit all keep working as they do today. This is an
   time; reeling effort scales with cast distance.
 - Bite bubble (fish icon) anchored **above the bobber**, following it as it's reeled.
 - Penalty-free re-aim: reel an empty line all the way in and recast.
-- **Whirlpool hotspots** (placeholder dark-blue circle): landing your bobber in one
-  gives that cast a much faster bite, so accurate aiming has a real, testable payoff.
+- **Whirlpool hotspots** (placeholder dark-blue circle): while the bobber sits inside
+  one, bites come fast (under ~30s). A whirlpool holds a few fish and then despawns, so
+  it's an occasional "something to do," not a faucet. You can **reel into** one you
+  overshot, so aiming rewards without demanding perfection.
 
 ## Non-Goals (this pass)
 
-- **Dynamic "boost only while the bobber sits in the whirlpool."** The whirlpool boost
-  is **snapshotted at cast time** (see Whirlpool Hotspots) to stay offline-safe. A
-  continuous while-inside boost that also fades when the whirlpool despawns mid-wait is
-  a later refinement.
 - **Whirlpool as a rarity boost.** For now it only speeds up the bite, not the odds.
+- **Offline whirlpool simulation.** Whirlpools exist only while you're at the lake; they
+  don't spawn or grant catches offline. (A fast bite you already earned is safe — it's
+  baked into the cast's saved bite time.)
+- **Reel physics / continuous drag.** Reeling stays discrete taps; the bobber doesn't
+  free-slide, and you can't reel *outward* — only shoreward.
 - Changing baseline bite timing, rarity odds, pole tiers, costs, or Pantry economy.
 - Final art. Everything ships with **placeholder art** (emoji / simple sprites),
   matching how Pantry Economy shipped.
@@ -52,8 +55,12 @@ resolution, and Pantry deposit all keep working as they do today. This is an
 
 | Question | Decision |
 |---|---|
-| Does cast distance matter mechanically? | **Yes, via whirlpools** (in this pass): landing your bobber in a whirlpool speeds up that cast's bite, so accurate aiming pays off. Baseline fishing (no whirlpool present, or a miss) is unaffected. |
-| Whirlpool in scope? | **Yes** — placeholder dark-blue circle, so we can playtest whether aiming is fun. Boost is snapshotted at cast. |
+| Does cast distance matter mechanically? | **Yes, via whirlpools** (in this pass): while the bobber sits inside a whirlpool, bites come fast, so accurate aiming pays off. Baseline fishing (no whirlpool, or bobber outside) is unaffected. |
+| Whirlpool in scope? | **Yes** — placeholder dark-blue circle, to playtest whether aiming is fun. |
+| Whirlpool boost model | **Dynamic / position-based** — evaluated from the bobber's live position, so you can **reel into** a whirlpool you overshot. (Reeling is shoreward-only, so an undershoot can't reach it.) |
+| Whirlpool bite speed | Fast but **not instant** — bite in **under ~30s** while inside (vs ~20 min baseline). |
+| Whirlpool capacity | Holds **2–4 fish**; each bite consumes one; empties → despawns (also despawns at lifetime end). |
+| Whirlpool cadence | Occasional, present-only, tunable. Deliberately throttled so fishing + woodcutting can't be farmed nonstop. |
 | Charge meter behavior | **Fill-and-hold**: fills 0→full while held, caps and holds at full. Release locks the power. |
 | Reel effort | **Scales with distance** — ~3 taps for a short cast, ~10 for a max cast. |
 | Aim dimensionality | **2D**, derived from the touch. |
@@ -132,10 +139,17 @@ New methods:
   `Idle`. Fires `OnChanged`. Returns whether a step was consumed.
 - Expose `CastPower01`, `CastDir`, `ReelTapsRemaining`, `ReelTapsTotal`,
   `ReelProgress01` (= `reelTapsRemaining / reelTapsTotal`) for the visual.
-- **Whirlpool hook:** `Cast` accepts `float biteSpeedMultiplier = 1f` and multiplies
-  the rolled bite seconds by it (a value `< 1` means a faster bite). The multiplier is
-  supplied by `LakeNode` from `WhirlpoolManager` at cast time and baked into
-  `biteReadyUtcTicks`, so it survives offline with no extra state.
+- **Whirlpool hook (dynamic):** `Cast(power01, dir)` keeps its simple signature. The
+  whirlpool influence instead arrives through the bobber's live position:
+  `SetInHotspot(bool inside)` is called by `LakeNode` on each enter/exit transition.
+  - **Enter** while `Waiting` and not yet biting → re-anchor a **fast** bite:
+    `biteReadyUtcTicks = now + roll(hotspotBiteAvgSeconds)` (~20s avg → mostly <30s).
+  - **Exit** before biting (reeled out the shore side, or the whirlpool despawned) →
+    re-anchor a fresh **baseline** bite. Matches "back to normal when it's gone."
+  - A fast bite that has already landed is baked into `biteReadyUtcTicks`, so it's
+    **offline-safe** with no extra saved state.
+  - Expose `bool CaughtFromHotspot` on the pending catch so `LakeNode` can tell
+    `WhirlpoolManager` to consume one of the whirlpool's fish when a hotspot bite fires.
 
 Reel/cast math (taps-from-distance, power→distance normalization) lives in
 `FishingMath` as pure functions so it's unit-tested.
@@ -144,14 +158,17 @@ Reel/cast math (taps-from-distance, power→distance normalization) lives in
 Extends today's pointer handling. Responsibilities:
 
 - **Idle gesture:** press-down sets reticle + direction + target tick; drives the
-  charge meter over time; on release computes the bobber's world landing point, queries
-  `WhirlpoolManager.BiteMultiplierAt(landing)`, and calls
-  `FishingManager.Cast(power01, dir, multiplier)`.
+  charge meter over time; on release calls `FishingManager.Cast(power01, dir)`.
 - **Waiting/Bite gesture:** a tap on the water calls `FishingManager.Reel()`.
+- **Whirlpool tracking (per frame, while Waiting/Bite):** compute the bobber's current
+  world position, call `WhirlpoolManager.IsInside(...)`, and forward enter/exit to
+  `FishingManager.SetInHotspot(...)`. When a hotspot bite fires, call
+  `WhirlpoolManager.ConsumeFish()`.
 - **Rendering** (reads `FishingManager` + its own authored `castOrigin`/`maxCastRange`):
   - Bobber sprite at
     `castOrigin + CastDir × (CastPower01 × maxCastRange × ReelProgress01)`
-    (retreats toward origin as it's reeled).
+    (retreats toward origin as it's reeled). Swaps to an **agitated look** while inside
+    a whirlpool.
   - A line (`LineRenderer`) from the pole to the bobber.
   - Bite bubble above the bobber (the current `SyncBiteIndicator`, now following the
     bobber instead of a fixed `bobberOffset`).
@@ -168,18 +185,26 @@ the castable water (references the water collider + the pole's `castOrigin` +
 - **Spawning:** one active whirlpool at a time. It picks a random point that is inside
   the water collider **and** within `maxCastRange` of `castOrigin` (so it's always
   reachable), shows the circle for `whirlpoolLifetimeSeconds`, then despawns and waits
-  `whirlpoolGapSeconds` before the next. Randomized within tunable ranges.
-- **Visual:** a semi-transparent **dark-blue circle** sprite (placeholder), with a slow
-  rotate/pulse tween for legibility. Sized to `whirlpoolRadius`.
-- **Query:** `float BiteMultiplierAt(Vector2 worldLanding)` → returns
-  `whirlpoolBiteMultiplier` (e.g. ~0.05, a near-instant bite) if `worldLanding` is
-  within `whirlpoolRadius` of the active whirlpool, else `1f`.
-- On cast, `LakeNode` computes the bobber's world landing point, calls
-  `BiteMultiplierAt`, and passes the result into `FishingManager.Cast(...)`. Landing in
-  the circle → that cast bites fast; missing → normal.
-- **Not persisted, not offline-simulated.** Whirlpools are ephemeral cosmetic targets;
-  on reload they simply respawn fresh. Any speed-up you earned is already baked into the
-  cast's `biteReadyUtcTicks`.
+  `whirlpoolGapSeconds` before the next. Ranges are tunable and intentionally sparse
+  (see Whirlpool Hotspots → cadence/economy).
+- **Reservoir:** at spawn it rolls `fishRemaining` in `[minWhirlpoolFish, maxWhirlpoolFish]`
+  (default 2–4). `ConsumeFish()` decrements it; hitting 0 despawns the whirlpool
+  immediately (the already-hooked fish still reels in normally).
+- **Visual:** a semi-transparent **dark-blue circle** sprite (placeholder) with a slow
+  rotate/pulse tween, sized to `whirlpoolRadius`. Optionally shows `fishRemaining` as
+  small pips. It visibly **intensifies** while a bobber is inside it (see below).
+- **Query:** `bool IsInside(Vector2 worldPoint)` → true if within `whirlpoolRadius` of
+  the active whirlpool. Pure point-in-circle; EditMode-testable.
+- **No persistence, no offline sim.** Whirlpools are present-only cosmetic targets that
+  respawn fresh on reload; a fast bite already earned lives in the cast's saved bite
+  time.
+
+`LakeNode` drives the interaction each frame while `Waiting`: it computes the bobber's
+current world position, calls `WhirlpoolManager.IsInside(...)`, and forwards
+enter/exit transitions to `FishingManager.SetInHotspot(...)`. On a hotspot bite it
+calls `WhirlpoolManager.ConsumeFish()`. While the bobber is inside, `LakeNode` swaps the
+bobber to an agitated "in the whirlpool" look (spin/wobble) so the player knows to stop
+reeling and wait.
 
 ### Charge meter UI
 A **vertical fill bar** with a target tick, pinned to the **left near the shore**,
@@ -212,27 +237,49 @@ you resume the bobber mid-reel where you left it.
 - `minReelTaps` (~3) / `maxReelTaps` (~10).
 - Meter position/size, bobber/line/reticle placeholder sprites.
 - Whirlpool: `whirlpoolRadius`, `whirlpoolLifetimeSeconds` / `whirlpoolGapSeconds`
-  (ranges), `whirlpoolBiteMultiplier` (~0.05), circle sprite/color.
+  (ranges), `minWhirlpoolFish` / `maxWhirlpoolFish` (2–4), `hotspotBiteAvgSeconds`
+  (~20s), circle sprite/color, agitated-bobber look.
 
 ## Whirlpool Hotspots (in scope, placeholder art)
 
-A single roaming **dark-blue circle** on the water is the reward for aiming well.
-Owned by `WhirlpoolManager` (see Architecture).
+A single **dark-blue circle** on the water is the reward for aiming well. Owned by
+`WhirlpoolManager` (see Architecture).
 
-- **Behavior:** one at a time; spawns at a random reachable water point, lives
-  `whirlpoolLifetimeSeconds`, despawns, waits `whirlpoolGapSeconds`, repeats.
-- **Payoff:** if the bobber's landing point is within `whirlpoolRadius`, that cast's
-  bite time is multiplied by `whirlpoolBiteMultiplier` (~0.05 → a near-instant bite),
-  baked into `biteReadyUtcTicks` at cast. A miss casts normally.
-- **Snapshot, not continuous (this pass):** the boost is decided once, at cast. A line
-  already in the water is unaffected by a whirlpool appearing/despawning later, and the
-  farther refinement — boost applies only *while* the bobber sits in a live whirlpool
-  and fades when it goes — is a Non-Goal here (noted above).
-- **No persistence / no offline sim:** whirlpools respawn fresh on reload; the earned
-  speed-up already lives in the cast's saved bite time.
+### The player loop
+1. A whirlpool appears at a random reachable spot; the reticle/meter let you aim at it.
+2. **Cast at or past it.** Landing directly inside is best; overshooting is fine —
+   because reeling is shoreward-only, you can **reel back through** a whirlpool you
+   overcast. (Undershooting can't reach it: reeling only moves toward shore.)
+3. When the bobber is **inside** the circle, it takes on an agitated look — your cue to
+   **stop reeling and wait.** A bite comes fast (~under 30s vs ~20 min baseline).
+4. **Reel the rest of the way in to bank** the fish (normal `Collect` at the pole).
+5. The whirlpool holds **2–4 fish**; that bite consumed one. If any remain (and its
+   lifetime hasn't ended), recast and repeat; otherwise it despawns.
 
-This is deliberately minimal — enough to answer "is aiming fun?" before investing in
-real art or the dynamic model.
+### Rules
+- **Dynamic, position-based boost.** The fast bite is granted while the bobber sits
+  inside a live whirlpool (`FishingManager.SetInHotspot`), not snapshotted at cast.
+  Leaving the circle before biting — or the whirlpool despawning under you — reverts to
+  a baseline bite ("back to normal when it's gone").
+- **Fast, not instant.** In-whirlpool bite averages `hotspotBiteAvgSeconds` (~20s) with
+  the normal 0.5×–1.5× spread, so mostly 10–30s.
+- **Capacity.** `fishRemaining` rolls 2–4 at spawn; each hotspot bite consumes one;
+  reaching 0 despawns the whirlpool immediately (the hooked fish still reels in).
+- **Rarity unchanged.** In-whirlpool casts use the pole's normal tier weights.
+
+### Cadence & economy (the throttle)
+Whirlpools are a periodic "nice thing to do," **not a faucet** — the explicit goal is
+that fishing + woodcutting can't be farmed nonstop without breaking the economy.
+Levers, all inspector-tunable:
+
+- **Sparse spawns:** long `whirlpoolGapSeconds` between whirlpools.
+- **Small reservoir:** 2–4 fish each.
+- **Present-only:** no offline spawns or catches — you must actively be at the lake.
+
+Starting defaults are deliberate guesses (e.g. lifetime ~90–150s, gap ~3–6 min, 2–4
+fish); **final cadence is a playtest tuning target**, watched against total fish/hour
+feeding the Pantry economy. This is minimal on purpose — enough to answer "is aiming
+fun, and is the pace healthy?" before investing in real art.
 
 ## Testing
 
@@ -243,11 +290,14 @@ Extend `FishingMathTests` / `FishingManager` coverage (EditMode):
 - `Reel()` decrements; reaching 0 in **Bite** deposits to Pantry, in **Waiting**
   returns to Idle with no deposit.
 - `Cast` guards (`Idle` + `hasPole`) still hold; bite time still rolled/anchored.
-- `Cast(power, dir, multiplier)` scales the bite seconds by the multiplier (a `< 1`
-  value yields a proportionally earlier `biteReadyUtcTicks`); default `1f` is unchanged.
-- `WhirlpoolManager.BiteMultiplierAt` returns the boost inside `whirlpoolRadius` and
-  `1f` outside / when no whirlpool is active (pure point-in-circle; EditMode-testable).
-- Save/load round-trips the new fields; offline Waiting→Bite still resolves.
+- `SetInHotspot(true)` while Waiting re-anchors `biteReadyUtcTicks` to a fast roll;
+  `SetInHotspot(false)` before biting re-anchors to a baseline roll; toggling has no
+  effect once `Bite` is reached.
+- `WhirlpoolManager.IsInside` is true within `whirlpoolRadius` and false outside / when
+  no whirlpool is active (pure point-in-circle, EditMode-testable); `ConsumeFish`
+  decrements and despawns at 0.
+- Save/load round-trips the new fields; offline Waiting→Bite still resolves (a fast bite
+  already anchored resolves offline; no whirlpool is simulated offline).
 
 ## Edge Cases
 
@@ -259,7 +309,12 @@ Extend `FishingMathTests` / `FishingManager` coverage (EditMode):
 - Max-distance spots can't overshoot (meter caps at full) — acceptable.
 - Whirlpool spawns only where it's reachable (inside water **and** within
   `maxCastRange`), so there's never an un-castable target.
-- No active whirlpool when you cast → normal bite; a cancelled cast never queries it.
+- Undershoot → bobber never reaches the whirlpool (reeling is shoreward-only); a normal
+  bite applies. Overshoot → reeling passes through it and grants the fast bite.
+- Whirlpool despawns (fish depleted or lifetime) while the bobber is parked inside
+  waiting → treated as an exit; the pending bite reverts to baseline.
+- Bobber sitting inside a whirlpool when it despawns still keeps any bite that already
+  fired; only a not-yet-fired fast bite reverts.
 
 ## Rollout
 
