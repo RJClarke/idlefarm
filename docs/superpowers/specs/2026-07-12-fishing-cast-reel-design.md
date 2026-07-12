@@ -208,9 +208,19 @@ reeling and wait.
 
 ### Charge meter UI
 A **vertical fill bar** with a target tick, pinned to the **left near the shore**,
-never over the water. World-space sprite anchored near the pole (pans with the camera
-at the Lake) is simplest; placeholder art = a filled rect + tick sprite. Visible only
-while charging.
+never over the water. World-space sprites anchored near the pole (pan with the camera at
+the Lake). Visible only while charging.
+
+**Art (from `Assets/Sprites/UI/UI_Craftpix/Bars.png`, sliced during implementation):**
+- **Track/frame:** the gold vertical bar at sheet rect **(242, 913, 11×45)** — its tan
+  interior reads as "empty."
+- **Fill:** the solid green bar at **(84, 957, 52×6)**, used as a bottom-pivoted
+  `SpriteRenderer` whose `localScale.y` = `CastPower01` (grows upward inside the frame;
+  no mask needed since the fill is a plain rect). Green reads as "power/charge."
+- **Target tick:** a thin marker sprite positioned at the pressed spot's distance level.
+- These are thin at native res (11px wide); scale up in the scene. **Vector fallback:**
+  if slicing is fussy, a plain two-sprite rect track+fill is fine — the mock proved the
+  layout works either way.
 
 ### Pole prop
 A visible fishing-pole/rod sprite placed at the fixed `castOrigin` on the near shore
