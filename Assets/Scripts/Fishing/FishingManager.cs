@@ -70,6 +70,7 @@ public class FishingManager : MonoBehaviour
 
     public event Action OnChanged;             // durable: state/pole change, load
     public event Action<int> OnPoleLevelChanged; // Carpenter UI refresh (mirrors OnAxeLevelChanged)
+    public event Action<int> OnCatch;            // fired with the caught tier when a fish is banked
 
     public bool HasPole => hasPole;
     public int PoleLevel => poleLevel;
@@ -195,6 +196,7 @@ public class FishingManager : MonoBehaviour
         ClearLine();
         state = CastState.Idle;
         Debug.Log($"[Fishing] Collected {FishTiers.Name(tier)}.");
+        OnCatch?.Invoke(tier);
         OnChanged?.Invoke();
         return tier;
     }

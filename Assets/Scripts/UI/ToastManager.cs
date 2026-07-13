@@ -37,6 +37,7 @@ public class ToastManager : MonoBehaviour
     private UIDocument document;
     private PanelSettings runtimePanelSettings;
     private VisualElement stack;
+    private VisualElement bottomStack;   // horizontal catch toasts, anchored above the bottom nav
     private int visibleCount;
     private readonly Queue<PendingToast> pending = new Queue<PendingToast>();
 
@@ -135,7 +136,77 @@ public class ToastManager : MonoBehaviour
         stack.style.alignItems = Align.Center;
         root.Add(stack);
 
+        bottomStack = new VisualElement { name = "toast-bottom-stack" };
+        bottomStack.pickingMode = PickingMode.Ignore;
+        bottomStack.style.position = Position.Absolute;
+        bottomStack.style.bottom = 190; // clear the bottom nav
+        bottomStack.style.left = 0;
+        bottomStack.style.right = 0;
+        bottomStack.style.alignItems = Align.Center;
+        root.Add(bottomStack);
+
         Pump(); // flush anything queued before the stack was ready
+    }
+
+    // ── Bottom catch toast (icon left, text right) ───────────────
+
+    /// <summary>A small bottom toast for a fish catch: emoji icon on the left, message on the right.
+    /// Slides up from below, holds, slides back down. Fire-and-forget (no queue).</summary>
+    public static void ShowCatch(string emoji, string message)
+    {
+        if (Instance == null || string.IsNullOrEmpty(message)) return;
+        if (Instance.bottomStack == null) return;
+        Instance.SpawnCatchToast(emoji, message);
+    }
+
+    private void SpawnCatchToast(string emoji, string message)
+    {
+        VisualElement toast = BuildCatchElement(emoji, message);
+        bottomStack.Add(toast);
+        StartCoroutine(CatchLifecycle(toast));
+    }
+
+    private IEnumerator CatchLifecycle(VisualElement toast)
+    {
+        yield return Animate(toast, 0f, 1f, 130f, 0f, IN_SEC, true);   // rise from below
+        yield return new WaitForSecondsRealtime(HOLD_SEC);
+        yield return Animate(toast, 1f, 0f, 0f, 130f, OUT_SEC, false); // sink back down
+        toast.RemoveFromHierarchy();
+    }
+
+    private VisualElement BuildCatchElement(string emoji, string message)
+    {
+        VisualElement toast = new VisualElement { name = "catch-toast" };
+        toast.pickingMode = PickingMode.Ignore;
+        toast.style.flexDirection = FlexDirection.Row;
+        toast.style.alignItems = Align.Center;
+        toast.style.paddingLeft = 20;
+        toast.style.paddingRight = 28;
+        toast.style.paddingTop = 12;
+        toast.style.paddingBottom = 12;
+        SetBorderRadius(toast, 22);
+        toast.style.backgroundColor = new Color(0.11f, 0.12f, 0.13f, 0.95f);
+        Color accent = new Color(0.35f, 0.6f, 0.95f); // watery blue
+        SetBorderWidth(toast, 2);
+        SetBorderColor(toast, accent);
+
+        Label icon = new Label(emoji);
+        icon.pickingMode = PickingMode.Ignore;
+        icon.style.fontSize = 46;
+        icon.style.marginRight = 14;
+        toast.Add(icon);
+
+        Label text = new Label(message);
+        text.pickingMode = PickingMode.Ignore;
+        text.style.color = Color.white;
+        text.style.fontSize = 31;
+        text.style.unityFontStyleAndWeight = FontStyle.Bold;
+        text.style.unityTextAlign = TextAnchor.MiddleLeft;
+        toast.Add(text);
+
+        toast.style.opacity = 0f;
+        toast.style.translate = new Translate(0, Length.Percent(130f));
+        return toast;
     }
 
     private void SpawnToast(string title, string subtitle, ToastKind kind)

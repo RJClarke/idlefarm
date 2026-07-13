@@ -6,7 +6,7 @@ public class FloatingTextManager : MonoBehaviour
 {
     public static FloatingTextManager Instance { get; private set; }
 
-    public enum CurrencyType { Money, Coins, Gems, Compost }
+    public enum CurrencyType { Money, Coins, Gems, Compost, Wood }
 
     public struct CurrencyReward
     {
@@ -102,10 +102,26 @@ public class FloatingTextManager : MonoBehaviour
         Instance.SpawnLabel(new List<CurrencyReward> { new CurrencyReward(CurrencyType.Compost, amount) }, screenPos);
     }
 
+    // Called by TreeNode while chopping — a small +N per swing so gathered Wood ticks up as you chop.
+    public static void ShowWood(int amount, Vector3 worldPos)
+    {
+        if (Instance == null || Camera.main == null || !SettingsManager.ShowFloatingNumbers) return;
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        Instance.SpawnLabel(new List<CurrencyReward> { new CurrencyReward(CurrencyType.Wood, amount) }, screenPos);
+    }
+
     public static void Show(List<CurrencyReward> rewards, Vector2 screenPos)
     {
         if (Instance == null || !SettingsManager.ShowFloatingNumbers) return;
         Instance.SpawnLabel(rewards, screenPos);
+    }
+
+    // Generic colored text pop at a world position (e.g. the fishing "+1 🐟" over the pole).
+    public static void ShowText(string text, Color color, Vector3 worldPos)
+    {
+        if (Instance == null || Camera.main == null || !SettingsManager.ShowFloatingNumbers) return;
+        Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
+        Instance.SpawnTextLabel(text, color, screenPos);
     }
 
     // Called by Plant.Harvest when a harvest is diverted into the Cannery instead of paying out.
@@ -292,6 +308,7 @@ public class FloatingTextManager : MonoBehaviour
             CurrencyType.Coins => $"+{r.amount}G",
             CurrencyType.Gems  => $"+{r.amount}\u2736",
             CurrencyType.Compost => $"+{r.amount}\U0001F331",
+            CurrencyType.Wood => $"+{r.amount}\U0001FAB5",
             _ => $"+{r.amount}"
         };
     }
@@ -304,6 +321,7 @@ public class FloatingTextManager : MonoBehaviour
             CurrencyType.Coins => new Color(1f, 0.843f, 0f),         // #FFD700
             CurrencyType.Gems  => new Color(0.659f, 0.333f, 0.969f), // #A855F7
             CurrencyType.Compost => new Color(0.439f, 0.788f, 0.392f), // #70C964 (compost green)
+            CurrencyType.Wood => new Color(0.647f, 0.435f, 0.239f),    // #A56F3D warm log brown
             _ => Color.white
         };
     }

@@ -18,6 +18,8 @@ public class ChargeMeter : MonoBehaviour
     [SerializeField] private float interiorBottomY = -0.6f;
     [Tooltip("Local width the fill should render at inside the frame.")]
     [SerializeField] private float interiorWidth = 0.25f;
+    [Tooltip("Local X offset for the target caret so it sits just beside the meter, pointing in.")]
+    [SerializeField] private float tickSideOffsetX = -0.32f;
 
     // Cached native sprite size (units at scale 1) so fill scaling is independent of the sprite's
     // pixel dimensions — localScale = desired / native.
@@ -61,14 +63,16 @@ public class ChargeMeter : MonoBehaviour
         fill.transform.localPosition = p;
     }
 
-    /// <summary>Position the target tick at tick01 up the interior (0 = bottom, 1 = top).</summary>
+    /// <summary>Position the target caret beside the meter at tick01 up the interior (0 = bottom, 1 = top),
+    /// pointing at the cast level you're aiming for.</summary>
     public void SetTick(float tick01)
     {
         if (tick == null) return;
         bool show = tick01 > 0.0001f && tick01 < 0.9999f;
         tick.enabled = show;
-        var p = tick.transform.localPosition;
-        p.y = interiorBottomY + Mathf.Clamp01(tick01) * interiorHeight;
-        tick.transform.localPosition = p;
+        tick.transform.localPosition = new Vector3(
+            tickSideOffsetX,
+            interiorBottomY + Mathf.Clamp01(tick01) * interiorHeight,
+            tick.transform.localPosition.z);
     }
 }

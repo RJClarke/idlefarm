@@ -49,12 +49,19 @@ public class LakeNode : MonoBehaviour
     private int scaleTweenId = -1;
     private bool isPressed;
 
+    [Header("Feel")]
+    [Tooltip("Cooldown after a line resolves before a new cast can start — stops mash-taps from " +
+             "instantly recasting the moment you finish reeling in.")]
+    [SerializeField] private float recastDelay = 0.5f;
+
     // charge gesture state
     private bool charging;
     private float chargeT;              // 0..1 fill
     private Vector2 aimDir = Vector2.up;
     private float aimTargetDist;        // world distance to the pressed spot (for the tick)
     private bool hotspotBiteConsumed;
+    private float recastReadyTime;      // Time.time before which charging is blocked
+    private FishingManager.CastState prevState;
 
     public Vector3 CastOrigin => castOrigin != null ? castOrigin.position : transform.position;
     public float MaxCastRange => maxCastRange;
@@ -88,9 +95,38 @@ public class LakeNode : MonoBehaviour
         baseColor = spriteRenderer.color;
     }
 
+    private void Start()
+    {
+        if (FishingManager.Instance != null)
+        {
+            FishingManager.Instance.OnCatch += OnFishCaught;
+            prevState = FishingManager.Instance.State;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (FishingManager.Instance != null) FishingManager.Instance.OnCatch -= OnFishCaught;
+    }
+
+    // Celebrate a bank: float "+1 🐟" over the pole and drop a bottom catch toast.
+    private void OnFishCaught(int tier)
+    {
+        Vector3 polePos = CastOrigin + Vector3.up * 0.6f;
+        FloatingTextManager.ShowText("+1 \U0001F41F", new Color(0.35f, 0.6f, 0.95f), polePos);
+        ToastManager.ShowCatch("\U0001F41F", $"You caught a {FishTiers.Name(tier)}!");
+    }
+
     private void Update()
     {
         TrackWhirlpool();
+
+        // Start a short recast cooldown the moment a line resolves back to Idle (anti-mash-cast).
+        var fmState = FishingManager.Instance != null ? FishingManager.Instance.State : FishingManager.CastState.Idle;
+        if ((prevState == FishingManager.CastState.Waiting || prevState == FishingManager.CastState.Bite)
+            && fmState == FishingManager.CastState.Idle)
+            recastReadyTime = Time.time + recastDelay;
+        prevState = fmState;
 
         if (!TryReadPointer(out Vector2 screenPos, out bool justPressed, out bool justReleased, out bool held))
         { if (charging && !held) CancelCharge(); return; }
@@ -109,7 +145,7 @@ public class LakeNode : MonoBehaviour
     private void HandleChargeGesture(Vector2 screenPos, bool justPressed, bool justReleased, bool held)
     {
         var fm = FishingManager.Instance;
-        if (justPressed && !charging && PointerHitsSelf(screenPos))
+        if (justPressed && !charging && Time.time >= recastReadyTime && PointerHitsSelf(screenPos))
         {
             if (!fm.HasPole) { fm.ShowNoPoleHint(transform.position); return; }
             charging = true; chargeT = 0f;
@@ -129,10 +165,26 @@ public class LakeNode : MonoBehaviour
         }
         if (charging && justReleased)
         {
-            float power = chargeT;
+            float power = ClampPowerToWater(aimDir, chargeT);
             EndCharge();
             fm.Cast(power, aimDir);
         }
+    }
+
+    /// <summary>Clamp the charged power so the bobber lands ON water: scan the cast ray inward from the
+    /// desired distance and return the farthest point that sits on the water collider. Keeps casts from
+    /// overshooting onto land — the bobber just goes as far as the water allows.</summary>
+    private float ClampPowerToWater(Vector2 dir, float desiredPower01)
+    {
+        if (hitCollider == null || maxCastRange <= 0f) return desiredPower01;
+        Vector2 origin = (Vector2)CastOrigin;
+        float desiredDist = Mathf.Clamp01(desiredPower01) * maxCastRange;
+        const float step = 0.2f;
+        for (float d = desiredDist; d >= 0f; d -= step)
+        {
+            if (hitCollider.OverlapPoint(origin + dir * d)) return d / maxCastRange;
+        }
+        return 0f; // no water along the ray (shouldn't happen — you aim by pressing on water)
     }
 
     // ── Waiting/Bite: tap ANYWHERE in the lake view to reel a step toward shore ──

@@ -16,8 +16,14 @@ public class WhirlpoolManager : MonoBehaviour
 
     [Header("Tuning")]
     [SerializeField] private float radius = 1.1f;
-    [SerializeField] private Vector2 lifetimeSecondsRange = new Vector2(90f, 150f);
-    [SerializeField] private Vector2 gapSecondsRange = new Vector2(180f, 360f);
+    [Tooltip("How long a whirlpool lingers before it times out (unless you empty it first). ~5 min.")]
+    [SerializeField] private Vector2 lifetimeSecondsRange = new Vector2(270f, 330f);
+    [Tooltip("Gap before the next whirlpool after one TIMED OUT un-emptied (kept short so the water stays lively).")]
+    [SerializeField] private Vector2 gapSecondsRange = new Vector2(15f, 30f);
+    [Tooltip("Gap before the next whirlpool after you EMPTY one — the reward throttle (~30 min).")]
+    [SerializeField] private float emptyCooldownSeconds = 1800f;
+    [Tooltip("While your bobber is inside a whirlpool, re-check this often instead of despawning it.")]
+    [SerializeField] private float occupiedRecheckSeconds = 5f;
     [SerializeField] private int minFish = 2;
     [SerializeField] private int maxFish = 4;
 
@@ -34,7 +40,18 @@ public class WhirlpoolManager : MonoBehaviour
         if (!active) return;
         fishRemaining--;
         Debug.Log($"[Whirlpool] Fish consumed, {fishRemaining} left.");
-        if (fishRemaining <= 0) Despawn();
+        if (fishRemaining <= 0) Despawn(emptied: true); // emptying triggers the long cooldown
+    }
+
+    // True while a cast line's bobber is sitting inside this whirlpool — used to defer despawn so it
+    // never vanishes out from under the player mid-wait.
+    private bool Occupied()
+    {
+        if (!active || lake == null) return false;
+        var fm = FishingManager.Instance;
+        if (fm == null) return false;
+        bool casting = fm.State == FishingManager.CastState.Waiting || fm.State == FishingManager.CastState.Bite;
+        return casting && FishingMath.PointInCircle(center, radius, lake.CurrentBobberWorldPos());
     }
 
     private void Awake()
@@ -47,7 +64,13 @@ public class WhirlpoolManager : MonoBehaviour
     {
         timer -= Time.deltaTime;
         if (timer > 0f) return;
-        if (active) Despawn(); else Spawn();
+        if (active)
+        {
+            // Don't despawn while the player is fishing it; re-check shortly instead.
+            if (Occupied()) { timer = occupiedRecheckSeconds; return; }
+            Despawn(emptied: false);
+        }
+        else Spawn();
     }
 
     private void Spawn()
@@ -66,11 +89,13 @@ public class WhirlpoolManager : MonoBehaviour
         Debug.Log($"[Whirlpool] Spawned with {fishRemaining} fish at {center}.");
     }
 
-    private void Despawn()
+    private void Despawn(bool emptied)
     {
         active = false;
         if (circle != null) circle.enabled = false;
-        timer = Random.Range(gapSecondsRange.x, gapSecondsRange.y);
+        // Emptying one gates the next spawn behind the long cooldown; a timeout uses the short gap.
+        timer = emptied ? emptyCooldownSeconds : Random.Range(gapSecondsRange.x, gapSecondsRange.y);
+        Debug.Log($"[Whirlpool] Despawned (emptied={emptied}); next in {timer:0}s.");
     }
 
     // Rejection-sample a point within cast range of the origin that lands on the water.
