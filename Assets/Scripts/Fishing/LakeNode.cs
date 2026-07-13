@@ -135,24 +135,14 @@ public class LakeNode : MonoBehaviour
         }
     }
 
-    // ── Waiting/Bite: tap the water to reel a step toward shore ──────────
+    // ── Waiting/Bite: tap ANYWHERE in the lake view to reel a step toward shore ──
+    // You reel the line back toward the pole, so a tap on the grass (near shore) reads more
+    // naturally than having to tap the water out past the bobber. Any tap-release reels one step.
     private void HandleReelGesture(Vector2 screenPos, bool justPressed, bool justReleased)
     {
         var fm = FishingManager.Instance;
         if (fm == null || !CanInteract()) return;
-        if (justPressed && !isPressed && PointerHitsSelf(screenPos))
-        {
-            isPressed = true;
-            spriteRenderer.color = pressTint * baseColor;
-            DoTween(baseScale * pressScale, pressDuration);
-            return;
-        }
-        if (justReleased && isPressed)
-        {
-            bool overSelf = PointerHitsSelf(screenPos);
-            CancelPress();
-            if (overSelf) fm.Reel();
-        }
+        if (justReleased) fm.Reel();
     }
 
     // ── Whirlpool: drive dynamic hotspot state from the bobber position ──

@@ -48,13 +48,17 @@ public class ChargeMeter : MonoBehaviour
 
     public void Hide() => gameObject.SetActive(false);
 
-    /// <summary>Fill 0..1 grows the green bar upward from the interior bottom to fill interiorHeight.</summary>
+    /// <summary>Fill 0..1 grows the green bar upward, bottom-anchored at interiorBottomY. Works with a
+    /// center-pivot sprite: the sprite's center is placed half its rendered height above the bottom.</summary>
     public void SetFill(float fill01)
     {
         if (fill == null) return;
         float f = Mathf.Clamp01(fill01);
-        fill.transform.localScale = new Vector3(interiorWidth / fillNativeW, (f * interiorHeight) / fillNativeH, 1f);
-        var p = fill.transform.localPosition; p.y = interiorBottomY; fill.transform.localPosition = p;
+        float renderedH = f * interiorHeight;
+        fill.transform.localScale = new Vector3(interiorWidth / fillNativeW, renderedH / fillNativeH, 1f);
+        var p = fill.transform.localPosition;
+        p.y = interiorBottomY + renderedH * 0.5f; // bottom edge sits at interiorBottomY
+        fill.transform.localPosition = p;
     }
 
     /// <summary>Position the target tick at tick01 up the interior (0 = bottom, 1 = top).</summary>
