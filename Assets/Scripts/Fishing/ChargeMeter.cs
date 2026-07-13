@@ -12,14 +12,33 @@ public class ChargeMeter : MonoBehaviour
     [SerializeField] private SpriteRenderer fill;   // meter_fill (green, bottom pivot)
     [SerializeField] private SpriteRenderer tick;   // meter_tick (tinted red)
 
-    [Tooltip("World height of the fillable interior at fill=1 (tune to sit inside the frame).")]
+    [Tooltip("Local height of the fillable interior at fill=1 (tune so full fill fills the frame).")]
     [SerializeField] private float interiorHeight = 1.2f;
     [Tooltip("Local Y of the interior bottom (where fill starts and tick=0 sits).")]
     [SerializeField] private float interiorBottomY = -0.6f;
-    [Tooltip("Local X scale applied to the fill (width inside the frame). Preserved when scaling height.")]
-    [SerializeField] private float fillWidthScale = 1f;
+    [Tooltip("Local width the fill should render at inside the frame.")]
+    [SerializeField] private float interiorWidth = 0.25f;
 
-    private void Awake() => Hide();
+    // Cached native sprite size (units at scale 1) so fill scaling is independent of the sprite's
+    // pixel dimensions — localScale = desired / native.
+    private float fillNativeH = 1f;
+    private float fillNativeW = 1f;
+
+    private void Awake()
+    {
+        CacheFillNative();
+        Hide();
+    }
+
+    private void CacheFillNative()
+    {
+        if (fill != null && fill.sprite != null)
+        {
+            Vector2 s = fill.sprite.bounds.size;
+            if (s.y > 1e-4f) fillNativeH = s.y;
+            if (s.x > 1e-4f) fillNativeW = s.x;
+        }
+    }
 
     public void Show()
     {
@@ -29,12 +48,12 @@ public class ChargeMeter : MonoBehaviour
 
     public void Hide() => gameObject.SetActive(false);
 
-    /// <summary>Fill 0..1 grows the green bar upward from the interior bottom.</summary>
+    /// <summary>Fill 0..1 grows the green bar upward from the interior bottom to fill interiorHeight.</summary>
     public void SetFill(float fill01)
     {
         if (fill == null) return;
         float f = Mathf.Clamp01(fill01);
-        fill.transform.localScale = new Vector3(fillWidthScale, f * interiorHeight, 1f);
+        fill.transform.localScale = new Vector3(interiorWidth / fillNativeW, (f * interiorHeight) / fillNativeH, 1f);
         var p = fill.transform.localPosition; p.y = interiorBottomY; fill.transform.localPosition = p;
     }
 
