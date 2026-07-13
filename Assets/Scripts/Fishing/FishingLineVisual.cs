@@ -56,7 +56,9 @@ public class FishingLineVisual : MonoBehaviour
         if (biting && !biteShown)
         {
             HideBubble();
-            biteIndicator = WorldHintPopup.Create(at, "🐟");
+            // Persistent: the bite bubble must stay above the bobber until the fish is reeled in,
+            // not fade after a couple seconds like a transient hint.
+            biteIndicator = WorldHintPopup.Create(at, "🐟", true);
             biteShown = true;
         }
         else if (biting && biteShown && biteIndicator != null)

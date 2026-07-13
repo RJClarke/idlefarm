@@ -7,27 +7,65 @@ using TMPro;
 /// destroys itself. Lives in the world (not the HUD) so it sits at the object it was spawned on —
 /// the Woods uses it to say "You need to buy an axe first." above a tapped tree.
 ///
-/// Fully self-constructing (see <see cref="Create"/>): a world-space Canvas with a dark, rounded
-/// 9-sliced background that auto-sizes to the text. No prefab or scene wiring required; the spawner
-/// destroys the previous instance to "refresh" it on a repeated tap.
+/// The look is a <b>prefab</b> at <c>Resources/WorldHintPopup</c> (a "style carrier"): the canvas,
+/// rounded 9-slice background, and label are built at runtime from the serialized fields below, so
+/// tuning the font, colors, size, padding, and timing is a one-place inspector edit on the prefab.
+/// <see cref="Create"/> instantiates that prefab; if it's missing it falls back to a code-built
+/// instance with these same defaults, so the hint never hard-breaks.
 /// </summary>
 public class WorldHintPopup : MonoBehaviour
 {
+    [Header("Text")]
+    [Tooltip("Pixel font for the hint. Pick one from Assets/Fonts/UITK SDF (a different face than the " +
+             "Name-the-Farm banner, which uses Munro). Left null falls back to the TMP default.")]
+    [SerializeField] private TMP_FontAsset font;
+    [SerializeField] private float fontSize = 28f;
+    [SerializeField] private Color textColor = new Color32(0xF0, 0xE6, 0xD6, 0xFF); // warm off-white
+
+    [Header("Box")]
+    [SerializeField] private Color boxFill = new Color32(0x1C, 0x11, 0x0A, 0xF2);   // near-black dark brown
+    [SerializeField] private Color boxStroke = new Color32(0x5A, 0x37, 0x14, 0xFF); // game UI brown
+    [SerializeField] private int cornerRadius = 4;
+    [SerializeField] private int borderThickness = 4;
+    [Tooltip("Inner horizontal padding around the text (px, before world scale).")]
+    [SerializeField] private int paddingHorizontal = 20;
+    [Tooltip("Inner vertical padding around the text (px, before world scale).")]
+    [SerializeField] private int paddingVertical = 14;
+
+    [Header("Placement & timing")]
+    [SerializeField] private float worldScale = 0.035f;
+    [Tooltip("Vertical offset above the spawn point so the box floats over the tapped object.")]
+    [SerializeField] private float yOffset = 1.4f;
+    [SerializeField] private float holdSeconds = 1.4f;
+    [SerializeField] private float fadeSeconds = 0.6f;
+
     private CanvasGroup group;
 
-    /// <summary>Build a hint at worldPos (+offset), show text, hold, fade out, then self-destroy.</summary>
-    public static WorldHintPopup Create(Vector3 worldPos, string text,
-        float holdSeconds = 1.4f, float fadeSeconds = 0.6f, float worldScale = 0.035f)
+    /// <summary>Build a hint at worldPos, show text, hold, fade out, then self-destroy. Instantiates the
+    /// Resources/WorldHintPopup prefab so its serialized style drives the look; falls back to a bare,
+    /// default-styled instance if the prefab is absent.</summary>
+    /// <summary>Build a hint at worldPos. By default it holds, fades, and self-destroys. Pass
+    /// persistent = true for a bubble the caller owns and repositions (e.g. the fishing bite
+    /// indicator that must stay above the bobber until the fish is reeled in); it never fades or
+    /// self-destroys, so the caller must Destroy it.</summary>
+    public static WorldHintPopup Create(Vector3 worldPos, string text, bool persistent = false)
     {
-        var go = new GameObject("AxeHintPopup");
-        var hint = go.AddComponent<WorldHintPopup>();
-        hint.Build(text, worldScale);
-        go.transform.position = worldPos + new Vector3(0f, 1.4f, 0f);
-        hint.Play(holdSeconds, fadeSeconds);
+        WorldHintPopup prefab = Resources.Load<WorldHintPopup>("WorldHintPopup");
+        WorldHintPopup hint = prefab != null
+            ? Instantiate(prefab)
+            : new GameObject("WorldHintPopup").AddComponent<WorldHintPopup>();
+        hint.gameObject.name = "AxeHintPopup";
+
+        hint.Build(text);
+        // Non-persistent hints lift by yOffset to float over the tapped object; a persistent hint
+        // sits exactly where the owner places it (the owner repositions it every frame).
+        hint.transform.position = persistent ? worldPos : worldPos + new Vector3(0f, hint.yOffset, 0f);
+        if (persistent) { if (hint.group != null) hint.group.alpha = 1f; }
+        else hint.Play();
         return hint;
     }
 
-    private void Build(string text, float worldScale)
+    private void Build(string text)
     {
         var canvas = gameObject.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.WorldSpace;
@@ -36,14 +74,14 @@ public class WorldHintPopup : MonoBehaviour
         group = gameObject.AddComponent<CanvasGroup>();
 
         // Root sizes itself to the text (+ padding) and carries the dark rounded background with
-        // a 1px brown stroke (colors are baked into the sprite, so tint stays white).
+        // a brown stroke (colors are baked into the sprite, so tint stays white).
         var bg = gameObject.AddComponent<Image>();
-        bg.sprite = BoxSprite();
+        bg.sprite = BuildBoxSprite();
         bg.type = Image.Type.Sliced;
         bg.color = Color.white;
 
         var layout = gameObject.AddComponent<HorizontalLayoutGroup>();
-        layout.padding = new RectOffset(20, 20, 14, 14);
+        layout.padding = new RectOffset(paddingHorizontal, paddingHorizontal, paddingVertical, paddingVertical);
         layout.childAlignment = TextAnchor.MiddleCenter;
 
         var fitter = gameObject.AddComponent<ContentSizeFitter>();
@@ -56,28 +94,25 @@ public class WorldHintPopup : MonoBehaviour
         var labelGO = new GameObject("Label");
         labelGO.transform.SetParent(transform, false);
         var label = labelGO.AddComponent<TextMeshProUGUI>();
+        if (font != null) label.font = font;
         label.text = text;
-        label.fontSize = 28f;
-        label.color = new Color32(0xF0, 0xE6, 0xD6, 0xFF); // warm off-white
+        label.fontSize = fontSize;
+        label.color = textColor;
         label.alignment = TextAlignmentOptions.Center;
         label.enableWordWrapping = false;
         label.raycastTarget = false;
     }
 
-    // Procedurally built once, then reused: a pixel-art rounded rect (2px corner radius) filled dark
-    // brown with a 1px brown stroke, 9-sliced (corner region preserved, 2px middle stretches) so it
-    // scales to any text width without distorting the border or corners.
-    private static Sprite cachedBox;
-    private static Sprite BoxSprite()
+    // A pixel-art rounded rect filled with boxFill and a boxStroke ring, 9-sliced (corner region
+    // preserved, 2px middle stretches) so it scales to any text width without distorting the border.
+    private Sprite BuildBoxSprite()
     {
-        if (cachedBox != null) return cachedBox;
-
-        const int radius = 4;   // corner radius, px
-        const int border = 4;   // stroke thickness, px
+        int radius = Mathf.Max(0, cornerRadius);
+        int border = Mathf.Max(1, borderThickness);
         int corner = radius + border + 1;   // 9-slice corner region must contain the rounded stroke
         int size = corner * 2 + 2;          // + a 2px stretchable middle
-        Color32 fill = new Color32(0x1C, 0x11, 0x0A, 0xF2);   // near-black dark brown
-        Color32 stroke = new Color32(0x5A, 0x37, 0x14, 0xFF); // game UI brown
+        Color32 fill = boxFill;
+        Color32 stroke = boxStroke;
 
         var tex = new Texture2D(size, size, TextureFormat.RGBA32, false)
         {
@@ -102,13 +137,13 @@ public class WorldHintPopup : MonoBehaviour
         tex.SetPixels32(px);
         tex.Apply();
 
-        cachedBox = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), 100f, 0,
-                                  SpriteMeshType.FullRect, new Vector4(corner, corner, corner, corner));
-        return cachedBox;
+        return Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), 100f, 0,
+                             SpriteMeshType.FullRect, new Vector4(corner, corner, corner, corner));
     }
 
-    private void Play(float holdSeconds, float fadeSeconds)
+    private void Play()
     {
+        if (group == null) return;
         group.alpha = 1f;
         LeanTween.value(gameObject, 1f, 0f, fadeSeconds)
             .setDelay(holdSeconds)
