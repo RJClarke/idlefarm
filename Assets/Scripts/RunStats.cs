@@ -104,6 +104,15 @@ public class RunStats : MonoBehaviour
     // Increment methods
     public void AddTileTilled() => TilesTilled++;
     public void AddSeedPlanted() { SeedsPlanted++; OnSeedPlanted?.Invoke(); }
+
+    /// <summary>Crop-aware plant record: also stamps the zone card's crop, so the Fields cards
+    /// show the crop icon/name from the very first seed (not the first harvest/death).</summary>
+    public void AddSeedPlanted(int zoneId, CropData crop)
+    {
+        var z = Zone(zoneId);
+        if (crop != null) z.crop = crop;
+        AddSeedPlanted();
+    }
     public void AddPlantWatered() { PlantsWatered++; OnPlantWatered?.Invoke(); }
     public void AddCropHarvested() { CropsHarvested++; OnCropHarvested?.Invoke(); }
     public void AddCropHarvested(CropData crop)

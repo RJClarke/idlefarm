@@ -305,7 +305,7 @@ public class SoilTile : MonoBehaviour
         if (plantComponent != null)
         {
             plantComponent.Initialize(cropData, this);
-            if (RunStats.Instance != null) RunStats.Instance.AddSeedPlanted();
+            if (RunStats.Instance != null) RunStats.Instance.AddSeedPlanted(zoneID, cropData);
         }
         else
         {
