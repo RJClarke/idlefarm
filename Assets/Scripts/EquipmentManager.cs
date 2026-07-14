@@ -40,6 +40,9 @@ public class EquipmentManager : MonoBehaviour
         public bool sprinklerActive;      // true = watering, false = inactive
         public float sprinklerCycleTimer; // counts down current phase
         public bool sprinklerPinging;     // true = ping animation running
+        // Plants already counted as "watered" during the current sprinkler active phase,
+        // so the run-stat counts each plant once per watering cycle (not once per frame).
+        public readonly HashSet<Plant> wateredThisPhase = new HashSet<Plant>();
 
         // Scene-placed fence visual (not instantiated, found in scene)
         public FenceVisual fenceVisual;
@@ -173,6 +176,7 @@ public class EquipmentManager : MonoBehaviour
             {
                 state.sprinklerActive = true;
                 state.sprinklerCycleTimer = state.data.activeDurationSeconds;
+                state.wateredThisPhase.Clear(); // fresh watering cycle → plants count again
             }
         }
     }
@@ -195,7 +199,11 @@ public class EquipmentManager : MonoBehaviour
 
             Plant plant = tile.CurrentPlant.GetComponent<Plant>();
             if (plant != null)
+            {
                 plant.ApplyRain(moistureThisFrame);
+                if (state.wateredThisPhase.Add(plant) && RunStats.Instance != null)
+                    RunStats.Instance.AddSprinklerWatered(state.zoneId);
+            }
         }
     }
 
@@ -284,7 +292,8 @@ public class EquipmentManager : MonoBehaviour
             else if (data.visualPrefab != null && FarmGrid.Instance != null)
             {
                 Vector3 zoneCenter = FarmGrid.Instance.GetZoneCenter(zoneId);
-                GameObject visual = Instantiate(data.visualPrefab, zoneCenter + GroundPropOffset, Quaternion.identity);
+                Vector3 propPos = GetPropPosition(zoneId, data, zoneCenter);
+                GameObject visual = Instantiate(data.visualPrefab, propPos + GroundPropOffset, Quaternion.identity);
                 visual.name = $"HomeEquip_{data.displayName}_Zone{zoneId}";
                 homeScreenVisuals.Add(visual);
             }
@@ -316,6 +325,21 @@ public class EquipmentManager : MonoBehaviour
     // Small upward nudge so ground props (scarecrow, sprinkler) sit slightly above the
     // exact zone center rather than dead-center on it. Tweak to taste.
     private static readonly Vector3 GroundPropOffset = new Vector3(0f, -0.25f, 0f);
+
+    /// <summary>
+    /// World position to place a piece of equipment's ground prop. Sprinklers snap onto the exact
+    /// tile they block (so the prop always sits ON a square, never floating between tiles); everything
+    /// else sits at the zone's geometric center.
+    /// </summary>
+    private Vector3 GetPropPosition(int zoneId, EquipmentData data, Vector3 zoneCenter)
+    {
+        if (data != null && data.equipmentType == EquipmentType.Sprinkler && FarmGrid.Instance != null)
+        {
+            SoilTile centerTile = FarmGrid.Instance.GetCenterTile(zoneId);
+            if (centerTile != null) return centerTile.transform.position;
+        }
+        return zoneCenter;
+    }
 
     // ─────────────────────────────────────────────────────────────────────
     // Run Lifecycle
@@ -379,7 +403,8 @@ public class EquipmentManager : MonoBehaviour
             }
             else if (data.visualPrefab != null)
             {
-                state.visualInstance = Instantiate(data.visualPrefab, zoneCenter + GroundPropOffset, Quaternion.identity);
+                Vector3 propPos = GetPropPosition(zoneId, data, zoneCenter);
+                state.visualInstance = Instantiate(data.visualPrefab, propPos + GroundPropOffset, Quaternion.identity);
                 state.visualInstance.name = $"Equipment_{data.displayName}_Zone{zoneId}";
             }
 
@@ -433,7 +458,7 @@ public class EquipmentManager : MonoBehaviour
         // Repel!
         ConsumeCharge(state);
         if (RunStats.Instance != null && state.data.equipmentType == EquipmentType.Scarecrow)
-            RunStats.Instance.AddCrowRepelledByScarecrow();
+            RunStats.Instance.AddCrowRepelled(zoneId);
         Debug.Log($"[Equipment] {state.data.displayName} repelled {threatType} in Zone {zoneId} — " +
                   $"charges left: {state.repelChargesRemaining}");
         return true;
@@ -460,7 +485,7 @@ public class EquipmentManager : MonoBehaviour
             {
                 ConsumeCharge(state);
                 if (RunStats.Instance != null && state.data.equipmentType == EquipmentType.Scarecrow)
-                    RunStats.Instance.AddCrowRepelledByScarecrow();
+                    RunStats.Instance.AddCrowRepelled(kvp.Key);
                 Debug.Log($"[Equipment] {state.data.displayName} intercepted {threatType} flying past Zone {kvp.Key} — " +
                           $"charges left: {state.repelChargesRemaining}");
                 return kvp.Key;
@@ -508,7 +533,7 @@ public class EquipmentManager : MonoBehaviour
                 SegmentsIntersect(p1, p2, state.fenceEdgeBStart, state.fenceEdgeBEnd))
             {
                 ConsumeCharge(state);
-                if (RunStats.Instance != null) RunStats.Instance.AddDeerRepelledByFence();
+                if (RunStats.Instance != null) RunStats.Instance.AddDeerRepelled(kvp.Key);
                 Debug.Log($"[Equipment] {state.data.displayName} blocked deer in Zone {kvp.Key} — " +
                           $"charges left: {state.repelChargesRemaining}");
                 return kvp.Key;

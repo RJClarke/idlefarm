@@ -202,6 +202,7 @@ public class FarmDog : MonoBehaviour
         if (deer != null && !deer.IsDone)
         {
             deer.ForceRepel();
+            if (RunStats.Instance != null) RunStats.Instance.AddDeerChasedByDog();
             Debug.Log("[FarmDog] Chased off a deer!");
         }
 

@@ -33,6 +33,27 @@ public class RunStats : MonoBehaviour
     public int MoneyEarned { get; private set; }
     public int CoinsSaved { get; private set; }
     public int CoinsBanked { get; private set; }
+    public int DeerChasedByDog { get; private set; }
+    public int PlantsEatenByCow { get; private set; }
+    public int CompostFromCow { get; private set; }
+
+    /// <summary>Per-zone breakdown for the run-stats zone cards. Keyed by FarmGrid ZoneID.</summary>
+    public class ZoneStats
+    {
+        public CropData crop;    // set on first harvest/death recorded in the zone
+        public int harvested, moneyEarned, coinsBanked;
+        public int eatenByDeer, eatenByCrows, struckByLightning, driedUp, rotted;
+        public int deerRepelledByFence, crowsRepelledByScarecrow, wateredBySprinkler;
+    }
+
+    private readonly SortedDictionary<int, ZoneStats> zoneStats = new SortedDictionary<int, ZoneStats>();
+    public IReadOnlyDictionary<int, ZoneStats> ZoneStatsByZone => zoneStats;
+
+    private ZoneStats Zone(int zoneId)
+    {
+        if (!zoneStats.TryGetValue(zoneId, out var z)) { z = new ZoneStats(); zoneStats[zoneId] = z; }
+        return z;
+    }
 
     private void Awake()
     {
@@ -74,6 +95,10 @@ public class RunStats : MonoBehaviour
         MoneyEarned = 0;
         CoinsSaved = 0;
         CoinsBanked = 0;
+        DeerChasedByDog = 0;
+        PlantsEatenByCow = 0;
+        CompostFromCow = 0;
+        zoneStats.Clear();
     }
 
     // Increment methods
@@ -91,7 +116,41 @@ public class RunStats : MonoBehaviour
         }
         OnCropHarvested?.Invoke();
     }
-    public void AddPlantStruckByLightning() => PlantsStruckByLightning++;
+    /// <summary>One recorder for every unharvested plant death: bumps the aggregate cause counter
+    /// AND the per-zone card. Cause strings match Plant.Die.</summary>
+    public void AddPlantDeath(int zoneId, CropData crop, string cause)
+    {
+        var z = Zone(zoneId);
+        if (crop != null) z.crop = crop;
+        switch (cause)
+        {
+            case "dry-out":   PlantsDehydrated++;        z.driedUp++;           break;
+            case "rot":       CropsDecayed++;            z.rotted++;            break;
+            case "deer":      PlantsEatenByDeer++;       z.eatenByDeer++;       break;
+            case "crow":      PlantsEatenByCrows++;      z.eatenByCrows++;      break;
+            case "lightning": PlantsStruckByLightning++; z.struckByLightning++; break;
+        }
+    }
+
+    /// <summary>Zone-side harvest record (aggregates are recorded separately at the same call
+    /// site via AddCropHarvested/AddCoinsBanked — do not double count).</summary>
+    public void AddZoneHarvest(int zoneId, CropData crop, int money, int coins)
+    {
+        var z = Zone(zoneId);
+        if (crop != null) z.crop = crop;
+        z.harvested++;
+        z.moneyEarned += money;
+        z.coinsBanked += coins;
+    }
+
+    public void AddSprinklerWatered(int zoneId) => Zone(zoneId).wateredBySprinkler++;
+    public void AddDeerChasedByDog() => DeerChasedByDog++;
+
+    public void AddCowEat(int compostLump)
+    {
+        PlantsEatenByCow++;
+        CompostFromCow += compostLump;
+    }
 
     /// <summary>
     /// Overwrite this run's stats from a simulated offline result (used when a run ended while away).
@@ -118,12 +177,19 @@ public class RunStats : MonoBehaviour
         MoneyEarned = moneyEarned;
         CoinsBanked = coinsBanked;
     }
-    public void AddPlantDehydrated() => PlantsDehydrated++;
-    public void AddCropDecayed() => CropsDecayed++;
-    public void AddPlantEatenByDeer() => PlantsEatenByDeer++;
-    public void AddPlantEatenByCrow() => PlantsEatenByCrows++;
-    public void AddDeerRepelledByFence() { DeerRepelledByFence++; OnDeerRepelled?.Invoke(); }
-    public void AddCrowRepelledByScarecrow() { CrowsRepelledByScarecrow++; OnCrowRepelled?.Invoke(); }
+    public void AddDeerRepelled(int zoneId)
+    {
+        DeerRepelledByFence++;
+        Zone(zoneId).deerRepelledByFence++;
+        OnDeerRepelled?.Invoke();
+    }
+
+    public void AddCrowRepelled(int zoneId)
+    {
+        CrowsRepelledByScarecrow++;
+        Zone(zoneId).crowsRepelledByScarecrow++;
+        OnCrowRepelled?.Invoke();
+    }
     public void AddMoneyEarned(int amount) => MoneyEarned += amount;
     public void SetCoinsSaved(int amount) => CoinsSaved = amount;
     public void AddCoinsBanked(int amount) => CoinsBanked += amount;

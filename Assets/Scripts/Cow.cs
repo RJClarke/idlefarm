@@ -133,6 +133,8 @@ public class Cow : MonoBehaviour
         lump = Mathf.RoundToInt(lump * FarmUpgrades.CompostMultiplier);
 
         CurrencyManager.Instance.AddCompost(lump);
+        if (RunStats.Instance != null && RunManager.Instance != null && RunManager.Instance.IsRunActive)
+            RunStats.Instance.AddCowEat(lump);
         FloatingTextManager.ShowCompost(lump, plant.transform.position);
 
         // Remove the plant — no money awarded (cow ate it, not harvested).

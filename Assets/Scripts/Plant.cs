@@ -316,9 +316,10 @@ public class Plant : MonoBehaviour
         }
 
         // Bank permanent coins for this harvest (the "keep" currency). Scaled by coin research.
+        int coinGain = 0;
         if (!divertedToCannery && CurrencyManager.Instance != null && cropData.coinValue > 0)
         {
-            int coinGain = cropData.coinValue;
+            coinGain = cropData.coinValue;
             if (ResearchManager.Instance != null)
             {
                 float coinBonus = ResearchManager.Instance.GetBonus(Research.StatKey.CropBonusCoinAmount);
@@ -335,6 +336,13 @@ public class Plant : MonoBehaviour
         }
 
         if (RunStats.Instance != null) RunStats.Instance.AddCropHarvested(cropData);
+
+        // Per-zone card: harvest count always; money/coins only when actually paid out
+        // (a cannery-diverted harvest pays jar progress, not currency).
+        if (RunStats.Instance != null)
+            RunStats.Instance.AddZoneHarvest(zone, cropData,
+                divertedToCannery ? 0 : harvestValue,
+                divertedToCannery ? 0 : coinGain);
 
         // Seed Refund (farm upgrade): chance to hand back a seed, easing the fuel/bankruptcy pressure.
         if (SeedInventory.Instance != null && cropData != null
@@ -449,13 +457,7 @@ public class Plant : MonoBehaviour
         Debug.Log($"💀 {cropData.cropName} DIED from {cause}!");
 
         if (RunStats.Instance != null)
-        {
-            if (cause == "dry-out") RunStats.Instance.AddPlantDehydrated();
-            else if (cause == "rot") RunStats.Instance.AddCropDecayed();
-            else if (cause == "deer") RunStats.Instance.AddPlantEatenByDeer();
-            else if (cause == "crow") RunStats.Instance.AddPlantEatenByCrow();
-            else if (cause == "lightning") RunStats.Instance.AddPlantStruckByLightning();
-        }
+            RunStats.Instance.AddPlantDeath(parentTile != null ? parentTile.ZoneID : -1, cropData, cause);
 
         if (parentTile != null && cropData != null)
             OnPlantDied?.Invoke(parentTile.ZoneID, cropData.tier, transform.position);
