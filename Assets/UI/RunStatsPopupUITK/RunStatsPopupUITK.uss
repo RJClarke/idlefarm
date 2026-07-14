@@ -8,7 +8,19 @@
     padding-top: 22px; padding-bottom: 22px; padding-left: 22px; padding-right: 22px;
     flex-direction: column;
 }
-.modal-title { font-size: 36px; -unity-font-style: bold; color: rgb(245,233,200); -unity-text-align: middle-center; margin-bottom: 6px; }
+.modal-title { font-size: 40px; -unity-font-style: bold; color: rgb(245,233,200); -unity-text-align: middle-center; margin-bottom: 18px; }
+
+/* Top-right dismiss (replaces the old bottom Close button). */
+.x-button {
+    position: absolute; top: 12px; right: 12px;
+    width: 44px; height: 44px; padding: 0;
+    font-size: 22px; -unity-font-style: bold; -unity-text-align: middle-center;
+    color: rgb(230,214,180);
+    background-color: rgba(20,15,8,0.7); border-color: rgb(110,86,50);
+    border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px;
+    border-top-left-radius: 22px; border-top-right-radius: 22px; border-bottom-left-radius: 22px; border-bottom-right-radius: 22px;
+}
+.x-button:hover { background-color: rgba(150,52,44,0.85); color: rgb(255,235,230); }
 
 .welcome-row { align-items: center; margin-bottom: 10px; }
 .welcome-row__title { font-size: 26px; -unity-font-style: bold; color: rgb(245,233,200); -unity-text-align: middle-center; }
@@ -17,21 +29,24 @@
 .hero { background-color: rgb(34,26,14); border-color: rgb(90,74,48); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 14px; border-top-right-radius: 14px; border-bottom-left-radius: 14px; border-bottom-right-radius: 14px; padding-top: 14px; padding-bottom: 14px; padding-left: 14px; padding-right: 14px; margin-bottom: 12px; align-items: center; }
 .hero__label { font-size: 16px; color: rgb(255,215,0); -unity-font-style: bold; letter-spacing: 2px; }
 .hero__score { font-size: 40px; -unity-font-style: bold; color: rgb(255,255,255); }
-.hero__real { font-size: 16px; color: rgb(138,125,96); margin-top: 2px; }
+.hero__real { font-size: 21px; color: rgb(158,144,112); margin-top: 5px; }
 
 .bankrupt-banner { background-color: rgb(90,31,28); color: rgb(255,180,168); -unity-text-align: middle-center; -unity-font-style: bold; font-size: 18px; padding-top: 8px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-bottom: 12px; white-space: normal; }
 
 .ledger-scroll { flex-grow: 1; margin-bottom: 12px; }
 .ledger { flex-direction: column; }
 
-.section-title { font-size: 20px; -unity-font-style: bold; color: rgb(255,220,140); margin-top: 8px; margin-bottom: 6px; border-bottom-width: 2px; border-bottom-color: rgb(80,64,40); padding-bottom: 4px; }
-.section { flex-direction: column; margin-bottom: 6px; }
-.stat-row { flex-direction: row; justify-content: space-between; align-items: center; padding-top: 5px; padding-bottom: 5px; }
-.stat-row--total { border-top-width: 1px; border-top-color: rgba(255,240,210,0.18); padding-top: 8px; margin-top: 2px; }
+.section-title { font-size: 26px; -unity-font-style: bold; color: rgb(255,220,140); margin-top: 30px; margin-bottom: 10px; border-bottom-width: 2px; border-bottom-color: rgb(80,64,40); padding-bottom: 6px; }
+.section { flex-direction: column; margin-bottom: 26px; }
+.stat-row { flex-direction: row; justify-content: space-between; align-items: center; padding-top: 6px; padding-bottom: 6px; }
+.stat-row--total { border-top-width: 1px; border-top-color: rgba(255,240,210,0.18); padding-top: 10px; margin-top: 4px; justify-content: flex-end; }
+.stat-row--total .stat-row__label { margin-right: 16px; }
+.stat-row__value-group { flex-direction: row; align-items: center; }
+.stat-row__value-icon { font-size: 22px; margin-right: 7px; }
 .stat-row--coin { background-color: rgb(51,41,15); border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; padding-left: 8px; padding-right: 8px; }
 .stat-row--dim { opacity: 0.6; }
-.stat-row__label { color: rgb(216,201,166); font-size: 20px; }
-.stat-row__value { color: rgb(255,255,255); font-size: 21px; -unity-font-style: bold; }
+.stat-row__label { color: rgb(216,201,166); font-size: 22px; }
+.stat-row__value { color: rgb(255,255,255); font-size: 23px; -unity-font-style: bold; }
 .stat-row__value--positive { color: rgb(155,216,78); }
 .stat-row__value--negative { color: rgb(255,140,122); }
 
@@ -43,3 +58,72 @@
 .cta--primary:hover { background-color: rgb(105,158,60); }
 .cta--gold { background-color: rgb(107,90,30); color: rgb(255,255,255); border-color: rgb(150,124,40); }
 .cta--ghost { background-color: rgba(0,0,0,0); color: rgb(168,152,120); font-size: 18px; border-color: rgba(0,0,0,0); }
+.cta--danger { background-color: rgb(150,52,44); color: rgb(255,235,230); border-color: rgb(190,80,70); }
+.cta--danger:hover { background-color: rgb(172,64,54); }
+
+/* "🏁 manually ended" recap banner — neutral/green, mirrors the bankrupt banner slot. */
+.ended-banner { background-color: rgb(51,64,40); color: rgb(205,230,165); -unity-text-align: middle-center; -unity-font-style: bold; font-size: 18px; padding-top: 8px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-bottom: 12px; white-space: normal; }
+
+/* Small, unobtrusive End Run action (the modal is now dismissed with the top-right ✕). */
+.end-run-row { flex-direction: row; justify-content: center; }
+.end-run-btn {
+    align-self: center;
+    font-size: 20px; -unity-font-style: bold; -unity-text-align: middle-center;
+    padding-top: 11px; padding-bottom: 11px; padding-left: 34px; padding-right: 34px;
+    color: rgb(240,196,188);
+    background-color: rgba(150,52,44,0.45); border-color: rgb(170,82,72);
+    border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px;
+    border-top-left-radius: 11px; border-top-right-radius: 11px; border-bottom-left-radius: 11px; border-bottom-right-radius: 11px;
+}
+.end-run-btn:hover { background-color: rgba(172,64,54,0.65); color: rgb(255,235,230); }
+
+/* "Are you sure?" confirmation, drawn over the whole modal. */
+.confirm-overlay { position: absolute; top:0; left:0; right:0; bottom:0; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
+.confirm-box {
+    width: 84%; max-width: 525px;
+    background-color: rgb(44,36,23); border-color: rgb(110,86,50);
+    border-left-width: 4px; border-right-width: 4px; border-top-width: 4px; border-bottom-width: 4px;
+    border-top-left-radius: 22px; border-top-right-radius: 22px; border-bottom-left-radius: 22px; border-bottom-right-radius: 22px;
+    padding-top: 28px; padding-bottom: 28px; padding-left: 28px; padding-right: 28px; align-items: center;
+}
+.confirm-title { font-size: 32px; -unity-font-style: bold; color: rgb(245,233,200); -unity-text-align: middle-center; margin-bottom: 10px; }
+.confirm-msg { font-size: 21px; color: rgb(200,180,140); -unity-text-align: middle-center; white-space: normal; margin-bottom: 22px; }
+.confirm-actions { flex-direction: row; justify-content: center; }
+.confirm-btn {
+    font-size: 22px; -unity-font-style: bold; -unity-text-align: middle-center;
+    padding-top: 14px; padding-bottom: 14px; padding-left: 32px; padding-right: 32px;
+    margin-left: 10px; margin-right: 10px;
+    border-top-left-radius: 13px; border-top-right-radius: 13px; border-bottom-left-radius: 13px; border-bottom-right-radius: 13px;
+    border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px;
+}
+.confirm-btn--cancel { background-color: rgba(0,0,0,0.25); color: rgb(210,196,166); border-color: rgb(110,86,50); }
+.confirm-btn--cancel:hover { background-color: rgba(255,255,255,0.08); }
+.confirm-btn--end { background-color: rgb(150,52,44); color: rgb(255,235,230); border-color: rgb(190,80,70); }
+.confirm-btn--end:hover { background-color: rgb(172,64,54); }
+
+/* ── Per-zone Fields grid + currency icons (2026-07-14) ─────────────── */
+.zone-grid { flex-direction: row; flex-wrap: wrap; justify-content: space-between; margin-bottom: 10px; }
+.zone-card {
+    width: 48.5%;
+    background-color: rgb(34,26,14); border-color: rgb(90,74,48);
+    border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px;
+    border-top-left-radius: 12px; border-top-right-radius: 12px; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;
+    padding-top: 10px; padding-bottom: 10px; padding-left: 12px; padding-right: 12px;
+    margin-bottom: 14px;
+}
+.zone-card__header { flex-direction: row; align-items: center; margin-bottom: 8px; border-bottom-width: 1px; border-bottom-color: rgba(255,240,210,0.14); padding-bottom: 7px; }
+.zone-card__icon { width: 34px; height: 34px; margin-right: 8px; -unity-background-scale-mode: scale-to-fit; flex-shrink: 0; }
+.zone-card__name { font-size: 21px; -unity-font-style: bold; color: rgb(245,233,200); flex-shrink: 1; }
+.zone-card__zone { font-size: 14px; color: rgb(140,126,98); margin-left: 6px; }
+.zone-row { flex-direction: row; justify-content: space-between; align-items: center; padding-top: 2px; padding-bottom: 2px; }
+.zone-row--zero { opacity: 0.4; }
+.zone-row__label { color: rgb(200,184,150); font-size: 17px; }
+.zone-row__value { color: rgb(255,255,255); font-size: 18px; -unity-font-style: bold; }
+.zone-row__value--defense { color: rgb(120,190,235); }
+
+.ledger-currency-icon { width: 26px; height: 26px; margin-right: 6px; -unity-background-scale-mode: scale-to-fit; flex-shrink: 0; }
+.ledger-currency-icon--small { width: 20px; height: 20px; margin-right: 5px; -unity-background-scale-mode: scale-to-fit; flex-shrink: 0; }
+.currency-icon--money   { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Cash.png"); }
+.currency-icon--coins   { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Coin.png"); }
+.currency-icon--gems    { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Gem.png"); }
+.currency-icon--compost { background-image: url("project://database/Assets/Sprites/UI/Icons/Cyberpunk/Plants/Seedling_Dirt.png"); }
