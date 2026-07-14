@@ -111,18 +111,53 @@ public class OfflineProgressManager : MonoBehaviour
             return;
         }
 
-        // Active run -> simulate the away-period.
+        // Active run -> open the modal in its "Calculating…" phase IMMEDIATELY, before any heavy
+        // work: the away-period sim can hitch for seconds on device, and the player should be
+        // looking at a loading state, not a frozen farm. The outcome is computed a frame later
+        // and delivered to the modal, which reveals it once its loading bar finishes.
+        if (OfflineProgressModalUITK.Instance != null)
+            OfflineProgressModalUITK.Instance.OpenOfflineRunLoading(gap);
+        StartCoroutine(ComputeAndDeliverOfflineRun(gap));
+    }
+
+    private System.Collections.IEnumerator ComputeAndDeliverOfflineRun(TimeSpan gap)
+    {
+        yield return null; // let the loading modal render a frame before the sim hitch
+
         var outcome = OfflineRunContextBuilder.BuildAndSimulate(
             (float)gap.TotalSeconds, pendingRunFarmSeconds, pendingRunMoney);
 
-        // Sim unavailable (offline_progress locked / no zones): SaveManager already resumed the run the
-        // old way — just show the existing welcome-back modal.
+        // Sim unavailable (offline_progress locked / no seeds / no zones): SaveManager already
+        // resumed the run plainly. Judge it ourselves right now — if it can't plant anything and
+        // nothing is growing it is already bankrupt, and finalizing here (instead of letting
+        // BankruptcyWatcher end it ~10s from now) keeps the whole story inside this one modal.
         if (outcome == null)
         {
-            if (OfflineProgressModalUITK.Instance != null)
-                OfflineProgressModalUITK.Instance.Open(gap, cowCompost, researchReport);
-            return;
+            var rm = RunManager.Instance;
+            if (rm != null && rm.IsRunActive && BankruptcyWatcher.IsBankrupt())
+            {
+                int survived = Mathf.FloorToInt(rm.CurrentRunDuration);
+                rm.FinalizeOfflineBankruptcy(survived, Mathf.FloorToInt((float)gap.TotalSeconds));
+                if (OfflineProgressModalUITK.Instance != null)
+                    OfflineProgressModalUITK.Instance.DeliverOfflineOutcome(
+                        true, RunLedgerData.FromCurrentRun(), "", TimeFormat.Hms(survived), onContinue: null);
+            }
+            else
+            {
+                // Run resumed and can keep going — show the light recap over the live run state.
+                float nowSecs = rm != null ? rm.CurrentRunDuration : 0f;
+                string farmAdvanced = TimeFormat.Hms(Mathf.Max(0f, nowSecs - pendingRunFarmSeconds));
+                if (OfflineProgressModalUITK.Instance != null)
+                    OfflineProgressModalUITK.Instance.DeliverOfflineOutcome(
+                        false, RunLedgerData.FromActiveRun(), farmAdvanced, TimeFormat.Hms(nowSecs), onContinue: null);
+            }
+            yield break;
         }
+        ApplyAndDeliverOutcome(outcome, gap);
+    }
+
+    private void ApplyAndDeliverOutcome(OfflineRunOutcome outcome, TimeSpan gap)
+    {
 
         // Grant compost (untaxed) now, for both branches.
         if (CurrencyManager.Instance != null && outcome.compostGranted > 0)
@@ -137,11 +172,7 @@ public class OfflineProgressManager : MonoBehaviour
                 CurrencyManager.Instance.AddCoins(outcome.taxedCoins);
 
             if (RunStats.Instance != null)
-                RunStats.Instance.IngestOfflineResult(
-                    outcome.harvestedByCrop,
-                    outcome.result.eatenByDeer, outcome.result.eatenByCrows, outcome.result.struckByLightning,
-                    outcome.result.driedUp, outcome.result.rotted,
-                    outcome.result.seedsPlanted, outcome.result.moneyEarned, outcome.taxedCoins);
+                RunStats.Instance.IngestOfflineResult(outcome); // aggregates + per-zone cards
 
             int survived = Mathf.FloorToInt(outcome.result.finalFarmSeconds);
             int real = Mathf.FloorToInt((float)gap.TotalSeconds);
@@ -166,7 +197,7 @@ public class OfflineProgressManager : MonoBehaviour
         string farmAdvanced = TimeFormat.Hms(outcome.result.finalFarmSeconds - pendingRunFarmSeconds);
         string nowHms = TimeFormat.Hms(outcome.result.finalFarmSeconds);
         if (OfflineProgressModalUITK.Instance != null)
-            OfflineProgressModalUITK.Instance.OpenOfflineRun(
-                gap, outcome.result.bankrupt, ledger, farmAdvanced, nowHms, onContinue: null);
+            OfflineProgressModalUITK.Instance.DeliverOfflineOutcome(
+                outcome.result.bankrupt, ledger, farmAdvanced, nowHms, onContinue: null);
     }
 }

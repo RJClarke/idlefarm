@@ -177,6 +177,31 @@ public class RunStats : MonoBehaviour
         MoneyEarned = moneyEarned;
         CoinsBanked = coinsBanked;
     }
+
+    /// <summary>Ingest a full offline outcome: aggregates + the per-zone cards, so the
+    /// "Prev. Run Stats" popup after reopening matches the welcome-back modal exactly.</summary>
+    public void IngestOfflineResult(OfflineRunOutcome outcome)
+    {
+        IngestOfflineResult(
+            outcome.harvestedByCrop,
+            outcome.result.eatenByDeer, outcome.result.eatenByCrows, outcome.result.struckByLightning,
+            outcome.result.driedUp, outcome.result.rotted,
+            outcome.result.seedsPlanted, outcome.result.moneyEarned, outcome.taxedCoins);
+
+        foreach (var zs in outcome.result.zones)
+        {
+            var z = Zone(zs.zoneId);
+            if (zs.cropId != null && outcome.cropById.TryGetValue(zs.cropId, out var crop)) z.crop = crop;
+            z.harvested = zs.harvested;
+            z.moneyEarned = zs.moneyEarned;
+            z.coinsBanked = zs.coinsBanked;
+            z.eatenByDeer = zs.eatenByDeer;
+            z.eatenByCrows = zs.eatenByCrows;
+            z.struckByLightning = zs.struckByLightning;
+            z.driedUp = zs.driedUp;
+            z.rotted = zs.rotted;
+        }
+    }
     public void AddDeerRepelled(int zoneId)
     {
         DeerRepelledByFence++;

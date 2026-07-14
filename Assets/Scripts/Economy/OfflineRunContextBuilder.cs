@@ -10,6 +10,8 @@ public class OfflineRunOutcome
     public int taxedResumeMoney;  // floor(result.finalMoney  * (1 - effectiveTax))
     public int compostGranted;    // untaxed
     public Dictionary<CropData, int> harvestedByCrop = new Dictionary<CropData, int>();
+    /// <summary>Sim crop id (CropData.cropName) → CropData, for mapping per-zone results back.</summary>
+    public Dictionary<string, CropData> cropById = new Dictionary<string, CropData>();
 }
 
 /// <summary>
@@ -64,6 +66,7 @@ public static class OfflineRunContextBuilder
             cropById[crop.cropName] = crop;
             ctx.zones.Add(new SimZone
             {
+                zoneId = kv.Key,
                 tileCount = FarmGrid.Instance.TileCountPerZone,
                 crop = new SimCrop
                 {
@@ -93,6 +96,7 @@ public static class OfflineRunContextBuilder
             taxedResumeMoney = OfflineTax.Payout(result.finalMoney, effBonus),
             compostGranted = result.compostGained, // untaxed
         };
+        outcome.cropById = cropById;
         foreach (var kv in result.harvestedByCropId)
             if (cropById.TryGetValue(kv.Key, out var c)) outcome.harvestedByCrop[c] = kv.Value;
         return outcome;
