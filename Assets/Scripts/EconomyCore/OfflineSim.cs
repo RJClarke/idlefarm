@@ -21,6 +21,18 @@ public struct SimZone
 {
     public SimCrop crop;
     public int tileCount;
+    public int zoneId;   // FarmGrid ZoneID this sim zone mirrors (per-zone stat attribution)
+}
+
+/// <summary>Per-zone slice of an OfflineRunResult (harvests, worth, losses by cause).</summary>
+public class ZoneSimStats
+{
+    public int zoneId;
+    public string cropId;
+    public int harvested;
+    public int moneyEarned;
+    public int coinsBanked;
+    public int eatenByDeer, eatenByCrows, struckByLightning, driedUp, rotted;
 }
 
 /// <summary>All inputs the simulator needs. Caller (Plan 2) gathers these from save + live managers.</summary>
@@ -56,6 +68,9 @@ public class OfflineRunResult
     public int struckByLightning;
     public int driedUp;
     public int rotted;
+
+    /// <summary>Per-zone breakdown, same order as ctx.zones. The flat totals are the sums.</summary>
+    public List<ZoneSimStats> zones = new List<ZoneSimStats>();
 
     public int seedsPlanted;
     public int moneyEarned;       // gross harvest income

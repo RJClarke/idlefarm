@@ -48,6 +48,8 @@ public static class OfflineRunSimulator
     {
         var t = ctx.tuning;
         var r = new OfflineRunResult();
+        for (int z = 0; z < ctx.zones.Count; z++)
+            r.zones.Add(new ZoneSimStats { zoneId = ctx.zones[z].zoneId, cropId = ctx.zones[z].crop.id });
 
         float farmStart = ctx.startFarmSeconds;
         float farmEnd = farmStart + ctx.awaySeconds * Mathf.Max(1f, ctx.maxGameSpeed);
@@ -99,6 +101,9 @@ public static class OfflineRunSimulator
                         money += crop.harvestValue;
                         r.moneyEarned += crop.harvestValue;
                         r.coinsBanked += crop.coinValue;
+                        r.zones[z].harvested++;
+                        r.zones[z].moneyEarned += crop.harvestValue;
+                        r.zones[z].coinsBanked += crop.coinValue;
                         AddHarvest(r, crop.id);
                         occupied[z].RemoveAt(i);
                     }
@@ -156,11 +161,16 @@ public static class OfflineRunSimulator
                     if (occupied[z][i] > crop.growSeconds + crop.harvestWindowSeconds) overWindow++;
                 accRot[z] += overWindow * t.rotFractionPerSecond * dt;
 
-                r.eatenByDeer       += TakeWhole(ref accDeer[z],  occupied[z], ref r.compostGained, crop.tier);
-                r.eatenByCrows      += TakeWhole(ref accCrow[z],  occupied[z], ref r.compostGained, crop.tier);
-                r.struckByLightning += TakeWhole(ref accLight[z], occupied[z], ref r.compostGained, crop.tier);
-                r.driedUp           += TakeWhole(ref accDry[z],   occupied[z], ref r.compostGained, crop.tier);
-                r.rotted            += TakeWhole(ref accRot[z],   occupied[z], ref r.compostGained, crop.tier);
+                int nDeer  = TakeWhole(ref accDeer[z],  occupied[z], ref r.compostGained, crop.tier);
+                int nCrow  = TakeWhole(ref accCrow[z],  occupied[z], ref r.compostGained, crop.tier);
+                int nLight = TakeWhole(ref accLight[z], occupied[z], ref r.compostGained, crop.tier);
+                int nDry   = TakeWhole(ref accDry[z],   occupied[z], ref r.compostGained, crop.tier);
+                int nRot   = TakeWhole(ref accRot[z],   occupied[z], ref r.compostGained, crop.tier);
+                r.eatenByDeer += nDeer;             r.zones[z].eatenByDeer += nDeer;
+                r.eatenByCrows += nCrow;            r.zones[z].eatenByCrows += nCrow;
+                r.struckByLightning += nLight;      r.zones[z].struckByLightning += nLight;
+                r.driedUp += nDry;                  r.zones[z].driedUp += nDry;
+                r.rotted += nRot;                   r.zones[z].rotted += nRot;
             }
 
             // 5. bankruptcy: nothing growing, no seeds, can't afford any bag
