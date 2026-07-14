@@ -27,6 +27,13 @@ public class ToastManager : MonoBehaviour
              "toasts draw above popups. If left null, a fresh PanelSettings is created.")]
     [SerializeField] private PanelSettings sourcePanelSettings;
 
+    [Header("Catch Toast (fishing)")]
+    [Tooltip("9-sliced wooden plank background for the bottom catch toast (Runewood frame). " +
+             "Falls back to the flat dark style if unset.")]
+    [SerializeField] private Sprite catchBackground;
+    [Tooltip("Pixel font for the catch toast text (a UITK TextCore FontAsset from Fonts/UITK SDF).")]
+    [SerializeField] private UnityEngine.TextCore.Text.FontAsset catchFont;
+
     private const int MAX_VISIBLE = 3;
     private const float IN_SEC = 0.25f;    // slide/fade in
     private const float HOLD_SEC = 2.2f;   // time fully visible
@@ -150,18 +157,19 @@ public class ToastManager : MonoBehaviour
 
     // ── Bottom catch toast (icon left, text right) ───────────────
 
-    /// <summary>A small bottom toast for a fish catch: emoji icon on the left, message on the right.
-    /// Slides up from below, holds, slides back down. Fire-and-forget (no queue).</summary>
-    public static void ShowCatch(string emoji, string message)
+    /// <summary>A small bottom toast for a fish catch: the fish's sprite on the left, message on
+    /// the right (rich text ok — the fish name arrives pre-colorized). Slides up from below, holds,
+    /// slides back down. Fire-and-forget (no queue).</summary>
+    public static void ShowCatch(Sprite icon, string message)
     {
         if (Instance == null || string.IsNullOrEmpty(message)) return;
         if (Instance.bottomStack == null) return;
-        Instance.SpawnCatchToast(emoji, message);
+        Instance.SpawnCatchToast(icon, message);
     }
 
-    private void SpawnCatchToast(string emoji, string message)
+    private void SpawnCatchToast(Sprite icon, string message)
     {
-        VisualElement toast = BuildCatchElement(emoji, message);
+        VisualElement toast = BuildCatchElement(icon, message);
         bottomStack.Add(toast);
         StartCoroutine(CatchLifecycle(toast));
     }
@@ -174,34 +182,58 @@ public class ToastManager : MonoBehaviour
         toast.RemoveFromHierarchy();
     }
 
-    private VisualElement BuildCatchElement(string emoji, string message)
+    private VisualElement BuildCatchElement(Sprite icon, string message)
     {
         VisualElement toast = new VisualElement { name = "catch-toast" };
         toast.pickingMode = PickingMode.Ignore;
         toast.style.flexDirection = FlexDirection.Row;
         toast.style.alignItems = Align.Center;
-        toast.style.paddingLeft = 20;
-        toast.style.paddingRight = 28;
-        toast.style.paddingTop = 12;
-        toast.style.paddingBottom = 12;
-        SetBorderRadius(toast, 22);
-        toast.style.backgroundColor = new Color(0.11f, 0.12f, 0.13f, 0.95f);
-        Color accent = new Color(0.35f, 0.6f, 0.95f); // watery blue
-        SetBorderWidth(toast, 2);
-        SetBorderColor(toast, accent);
+        // Generous padding so icon + text sit well clear of the sliced wooden frame.
+        toast.style.paddingLeft = 44;
+        toast.style.paddingRight = 50;
+        toast.style.paddingTop = 30;
+        toast.style.paddingBottom = 30;
 
-        Label icon = new Label(emoji);
-        icon.pickingMode = PickingMode.Ignore;
-        icon.style.fontSize = 46;
-        icon.style.marginRight = 14;
-        toast.Add(icon);
+        if (catchBackground != null)
+        {
+            // Wooden plank sign (Runewood frame, no authored border → slice manually).
+            toast.style.backgroundImage = new StyleBackground(catchBackground);
+            toast.style.unitySliceLeft = 14;
+            toast.style.unitySliceRight = 14;
+            toast.style.unitySliceTop = 12;
+            toast.style.unitySliceBottom = 12;
+            toast.style.unitySliceScale = 2f;
+        }
+        else
+        {
+            // Fallback: the old flat dark card with a watery-blue border.
+            SetBorderRadius(toast, 22);
+            toast.style.backgroundColor = new Color(0.11f, 0.12f, 0.13f, 0.95f);
+            SetBorderWidth(toast, 2);
+            SetBorderColor(toast, new Color(0.35f, 0.6f, 0.95f));
+        }
 
+        if (icon != null)
+        {
+            Image img = new Image { sprite = icon, scaleMode = ScaleMode.ScaleToFit };
+            img.pickingMode = PickingMode.Ignore;
+            img.style.width = 52;
+            img.style.height = 52;
+            img.style.marginRight = 14;
+            toast.Add(img);
+        }
+
+        // Dark walnut text — cream was illegible on the light plank. No outline: the plank is a
+        // flat light field, so a stroke just muddies the pixels. Rich-text tier tints on the fish
+        // name stay their own (mid-dark) colors, which read fine on the wood.
         Label text = new Label(message);
         text.pickingMode = PickingMode.Ignore;
-        text.style.color = Color.white;
-        text.style.fontSize = 31;
+        text.style.color = (Color)new Color32(0x3E, 0x2A, 0x16, 0xFF);
+        text.style.fontSize = 30;
         text.style.unityFontStyleAndWeight = FontStyle.Bold;
         text.style.unityTextAlign = TextAnchor.MiddleLeft;
+        if (catchFont != null)
+            text.style.unityFontDefinition = new StyleFontDefinition(catchFont);
         toast.Add(text);
 
         toast.style.opacity = 0f;

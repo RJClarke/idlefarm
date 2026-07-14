@@ -36,10 +36,32 @@ public class LakeNode : MonoBehaviour
     [SerializeField] private ChargeMeter chargeMeter;
     [SerializeField] private FishingLineVisual lineVisual;
     [SerializeField] private SpriteRenderer reticle;        // reticle.png, shown while charging
-    [SerializeField] private float chargeFillSeconds = 1.2f;
+    [Tooltip("Seconds of hold to reach a full-power cast. Gentle quadratic wind-up over the first " +
+             "quarter of the ramp, then CONSTANT speed all the way to max — no end coast.")]
+    [SerializeField] private float chargeRampSeconds = 4f;
+
+    [Header("Reel")]
+    [Tooltip("Hold this long (line out) to switch from tap-per-step to a continuous slow reel.")]
+    [SerializeField] private float holdReelDelay = 0.35f;
+    [Tooltip("Reel steps per second while holding — slow, but carries the bobber all the way to " +
+             "shore in one smooth motion.")]
+    [SerializeField] private float holdReelStepsPerSecond = 1.6f;
 
     [Header("Whirlpool (optional)")]
     [SerializeField] private WhirlpoolManager whirlpool;    // may be null until wired
+
+    [Header("Fish Icons (index = tier-1: Perch, Bass, Pike)")]
+    [Tooltip("Per-tier fish sprites shown in the bite bubble and the catch toast.")]
+    [SerializeField] private Sprite[] fishIcons = new Sprite[3];
+
+    // Per-tier fish-name tint for the catch toast (index = tier-1): lake blue, bass green,
+    // rare-pike purple.
+    private static readonly Color[] FishNameColors =
+    {
+        new Color(0.24f, 0.50f, 0.75f),
+        new Color(0.25f, 0.56f, 0.23f),
+        new Color(0.56f, 0.27f, 0.68f),
+    };
 
     private SpriteRenderer spriteRenderer;
     private Collider2D ownCollider;
@@ -56,12 +78,18 @@ public class LakeNode : MonoBehaviour
 
     // charge gesture state
     private bool charging;
-    private float chargeT;              // 0..1 fill
+    private float chargeElapsed;        // seconds held so far
+    private float chargeT;              // 0..1 eased fill
     private Vector2 aimDir = Vector2.up;
     private float aimTargetDist;        // world distance to the pressed spot (for the tick)
     private bool hotspotBiteConsumed;
     private float recastReadyTime;      // Time.time before which charging is blocked
     private FishingManager.CastState prevState;
+
+    // reel gesture state
+    private bool reelPressActive;       // a press began while the line was out
+    private bool reelHolding;           // press has lasted past holdReelDelay → continuous reel
+    private float reelPressTime;
 
     public Vector3 CastOrigin => castOrigin != null ? castOrigin.position : transform.position;
     public float MaxCastRange => maxCastRange;
@@ -93,6 +121,10 @@ public class LakeNode : MonoBehaviour
 
         baseScale = transform.localScale;
         baseColor = spriteRenderer.color;
+
+        // The reticle only exists while aiming a cast — hide it regardless of its authored
+        // scene state (left enabled, it sits visible in the middle of the map from boot).
+        if (reticle != null) reticle.enabled = false;
     }
 
     private void Start()
@@ -100,21 +132,48 @@ public class LakeNode : MonoBehaviour
         if (FishingManager.Instance != null)
         {
             FishingManager.Instance.OnCatch += OnFishCaught;
+            FishingManager.Instance.OnEmptyReel += OnEmptyReel;
             prevState = FishingManager.Instance.State;
         }
     }
 
     private void OnDestroy()
     {
-        if (FishingManager.Instance != null) FishingManager.Instance.OnCatch -= OnFishCaught;
+        if (FishingManager.Instance != null)
+        {
+            FishingManager.Instance.OnCatch -= OnFishCaught;
+            FishingManager.Instance.OnEmptyReel -= OnEmptyReel;
+        }
     }
 
-    // Celebrate a bank: float "+1 🐟" over the pole and drop a bottom catch toast.
+    /// <summary>Fish sprite for a 1-based tier (null if unwired / out of range).</summary>
+    public Sprite FishIcon(int tier)
+    {
+        int i = tier - 1;
+        return fishIcons != null && i >= 0 && i < fishIcons.Length ? fishIcons[i] : null;
+    }
+
+    // Celebrate a bank: float "+1 <fish>" over the pole and drop a bottom catch toast with the
+    // caught fish's icon and its name tinted per tier. The float uses the TMP sprite icon, not
+    // the 🐟 emoji — emoji glyphs go solid black under the floating text's outline.
     private void OnFishCaught(int tier)
     {
         Vector3 polePos = CastOrigin + Vector3.up * 0.6f;
-        FloatingTextManager.ShowText("+1 \U0001F41F", new Color(0.35f, 0.6f, 0.95f), polePos);
-        ToastManager.ShowCatch("\U0001F41F", $"You caught a {FishTiers.Name(tier)}!");
+        FloatingTextManager.ShowText("+1 " + CurrencyIcons.Fish, new Color(0.35f, 0.6f, 0.95f), polePos);
+        Color nameColor = FishNameColors[Mathf.Clamp(tier - 1, 0, FishNameColors.Length - 1)];
+        string hex = ColorUtility.ToHtmlStringRGB(nameColor);
+        ToastManager.ShowCatch(FishIcon(tier), $"Caught a <color=#{hex}>{FishTiers.Name(tier)}</color>!");
+    }
+
+    // The consolation prize: a grey float over the pole + a bottom toast carrying the equipped
+    // pole's icon, so an empty line reads clearly as "no fish" rather than a silent reset.
+    private void OnEmptyReel()
+    {
+        Vector3 polePos = CastOrigin + Vector3.up * 0.6f;
+        FloatingTextManager.ShowText("No bites...", new Color(0.78f, 0.80f, 0.84f), polePos);
+        var fm = FishingManager.Instance;
+        Sprite rod = fm != null ? fm.PoleIcon(fm.PoleLevel) : null;
+        ToastManager.ShowCatch(rod, "Nothing was biting...");
     }
 
     private void Update()
@@ -138,7 +197,7 @@ public class LakeNode : MonoBehaviour
         if (interact && fm.State == FishingManager.CastState.Idle)
             HandleChargeGesture(screenPos, justPressed, justReleased, held);
         else
-            HandleReelGesture(screenPos, justPressed, justReleased);
+            HandleReelGesture(screenPos, justPressed, justReleased, held);
     }
 
     // ── Idle: press-hold to charge + 2D-aim, release to cast ─────────────
@@ -148,7 +207,7 @@ public class LakeNode : MonoBehaviour
         if (justPressed && !charging && Time.time >= recastReadyTime && PointerHitsSelf(screenPos))
         {
             if (!fm.HasPole) { fm.ShowNoPoleHint(transform.position); return; }
-            charging = true; chargeT = 0f;
+            charging = true; chargeElapsed = 0f; chargeT = 0f;
             Vector3 spot = PointerWorld(screenPos);
             Vector2 to = (Vector2)(spot - CastOrigin);
             aimDir = to.sqrMagnitude > 1e-6f ? to.normalized : Vector2.up;
@@ -159,7 +218,14 @@ public class LakeNode : MonoBehaviour
         }
         if (charging && held)
         {
-            chargeT = Mathf.Clamp01(chargeT + Time.deltaTime / Mathf.Max(0.01f, chargeFillSeconds));
+            // Unscaled time: charging is a player gesture and must feel identical at any Game Speed.
+            chargeElapsed += Time.unscaledDeltaTime;
+            float k = Mathf.Clamp01(chargeElapsed / Mathf.Max(0.01f, chargeRampSeconds));
+            // Quadratic wind-up over the first quarter, then linear to max (slope-continuous at
+            // k=c, f(1)=1): a readable slow start with NO slow-down again near the top.
+            const float c = 0.25f;
+            const float a = 1f / (2f * c - c * c);   // ≈2.29 → fill ≈14% at the c boundary
+            chargeT = k <= c ? a * k * k : a * c * c + 2f * a * c * (k - c);
             if (chargeMeter != null) chargeMeter.SetFill(chargeT);
             return;
         }
@@ -189,12 +255,35 @@ public class LakeNode : MonoBehaviour
 
     // ── Waiting/Bite: tap ANYWHERE in the lake view to reel a step toward shore ──
     // You reel the line back toward the pole, so a tap on the grass (near shore) reads more
-    // naturally than having to tap the water out past the bobber. Any tap-release reels one step.
-    private void HandleReelGesture(Vector2 screenPos, bool justPressed, bool justReleased)
+    // naturally than having to tap the water out past the bobber. A quick tap-release reels one
+    // step; press-and-HOLD switches to a slow continuous reel that carries the bobber all the
+    // way to shore in one smooth motion.
+    private void HandleReelGesture(Vector2 screenPos, bool justPressed, bool justReleased, bool held)
     {
         var fm = FishingManager.Instance;
         if (fm == null || !CanInteract()) return;
-        if (justReleased) fm.Reel();
+
+        if (justPressed)
+        {
+            reelPressActive = true;
+            reelHolding = false;
+            reelPressTime = Time.unscaledTime;
+        }
+
+        if (reelPressActive && held && !reelHolding
+            && Time.unscaledTime - reelPressTime >= holdReelDelay)
+            reelHolding = true;
+
+        if (reelHolding && held)
+            fm.ReelHold(Time.unscaledDeltaTime * holdReelStepsPerSecond);
+
+        if (justReleased)
+        {
+            // A quick tap (never crossed into hold territory) reels one discrete step.
+            if (!reelHolding) fm.Reel();
+            reelPressActive = false;
+            reelHolding = false;
+        }
     }
 
     // ── Whirlpool: drive dynamic hotspot state from the bobber position ──
@@ -222,7 +311,7 @@ public class LakeNode : MonoBehaviour
 
     private void EndCharge()
     {
-        charging = false; chargeT = 0f;
+        charging = false; chargeElapsed = 0f; chargeT = 0f;
         if (chargeMeter != null) chargeMeter.Hide();
         if (reticle != null) reticle.enabled = false;
     }

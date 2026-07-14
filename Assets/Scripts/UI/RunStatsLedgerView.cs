@@ -23,7 +23,8 @@ public static class RunStatsLedgerView
             Row(econ, "Money earned", d.moneyEarned.ToString("N0"), null, "money");
             if (d.moneySpentOnBags > 0) Row(econ, "Spent on seed bags", "−" + d.moneySpentOnBags.ToString("N0"), "neg", "money");
         }
-        Row(econ, "Coins banked", "+" + d.coinsBanked.ToString("N0"), "coin", "coins");
+        // Plain row like its neighbors (no pill inset); coin value in inventory yellow.
+        Row(econ, "Coins banked", "+" + d.coinsBanked.ToString("N0"), "coins", "coins");
         if (d.compostGained > 0) Row(econ, "Compost gained", "+" + d.compostGained.ToString("N0"), "pos", "compost");
         Row(econ, "Total harvested", d.totalHarvested.ToString("N0"), "total");
         if (d.offlineTaxApplied) Row(econ, "after 30% offline tax", "applied", "dim");
@@ -71,7 +72,7 @@ public static class RunStatsLedgerView
 
         ZoneRow(card, "Harvested", c.harvested.ToString("N0"), c.harvested == 0, null, null);
         ZoneRow(card, "Cash", "+" + c.moneyEarned.ToString("N0"), c.moneyEarned == 0, "money", "pos");
-        ZoneRow(card, "Coins", "+" + c.coinsBanked.ToString("N0"), c.coinsBanked == 0, "coins", "pos");
+        ZoneRow(card, "Coins", "+" + c.coinsBanked.ToString("N0"), c.coinsBanked == 0, "coins", "coins");
 
         ZoneRow(card, "Deer ate", c.eatenByDeer.ToString(), c.eatenByDeer == 0, null, "neg");
         ZoneRow(card, "Crows ate", c.eatenByCrows.ToString(), c.eatenByCrows == 0, null, "neg");
@@ -99,6 +100,7 @@ public static class RunStatsLedgerView
         var v = new Label(value); v.AddToClassList("zone-row__value");
         if (mod == "neg" && !zero) v.AddToClassList("stat-row__value--negative");
         if (mod == "pos" && !zero) v.AddToClassList("stat-row__value--positive");
+        if (mod == "coins" && !zero) v.AddToClassList("stat-row__value--coins");
         if (mod == "def") v.AddToClassList("zone-row__value--defense");
         group.Add(v);
         row.Add(l); row.Add(group);
@@ -130,7 +132,6 @@ public static class RunStatsLedgerView
     {
         var row = new VisualElement(); row.AddToClassList("stat-row");
         if (valueMod == "total") row.AddToClassList("stat-row--total");
-        if (valueMod == "coin")  row.AddToClassList("stat-row--coin");
         if (valueMod == "dim")   row.AddToClassList("stat-row--dim");
         var l = new Label(label); l.AddToClassList("stat-row__label");
 
@@ -138,7 +139,8 @@ public static class RunStatsLedgerView
         if (!string.IsNullOrEmpty(currency)) valueGroup.Add(CurrencyIcon(currency, small: false));
         var v = new Label(value); v.AddToClassList("stat-row__value");
         if (valueMod == "neg") v.AddToClassList("stat-row__value--negative");
-        if (valueMod == "pos" || valueMod == "coin") v.AddToClassList("stat-row__value--positive");
+        if (valueMod == "pos") v.AddToClassList("stat-row__value--positive");
+        if (valueMod == "coins") v.AddToClassList("stat-row__value--coins");
         valueGroup.Add(v);
 
         row.Add(l); row.Add(valueGroup);

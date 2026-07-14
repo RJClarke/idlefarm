@@ -119,6 +119,7 @@
 
 .stat-row__value--positive { color: rgb(160, 220, 130); }
 .stat-row__value--negative { color: rgb(220, 130, 90); }
+.stat-row__value--coins    { color: rgb(255, 220, 120); } /* matches the top-bar coin value */
 
 .research-row {
     flex-direction: row;

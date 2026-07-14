@@ -49,6 +49,7 @@
 .stat-row__value { color: rgb(255,255,255); font-size: 23px; -unity-font-style: bold; }
 .stat-row__value--positive { color: rgb(155,216,78); }
 .stat-row__value--negative { color: rgb(255,140,122); }
+.stat-row__value--coins    { color: rgb(255,220,120); } /* matches the top-bar coin value */
 
 .crop-row__left { flex-direction: row; align-items: center; }
 .crop-row__icon { width: 28px; height: 28px; margin-right: 10px; -unity-background-scale-mode: scale-to-fit; }
