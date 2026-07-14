@@ -33,7 +33,7 @@ debug.log
 # Superpowers brainstorm scratch
 .superpowers/
 
-# Editor screenshots, recovery dumps, and scratch (not source)
-Assets/Screenshots/
+# Recovery dumps and scratch (not source)
+# NOTE: Assets/Screenshots/ is intentionally TRACKED — kept as a marketing/dev archive.
 Assets/_Recovery/
 .utmp/
