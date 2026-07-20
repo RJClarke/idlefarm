@@ -34,8 +34,21 @@ public class SaveManager : MonoBehaviour
     /// <summary>
     /// Save current game data to disk
     /// </summary>
+    /// <summary>
+    /// True when LoadGame read a valid save but crashed while applying it: in-memory state is
+    /// partial, so writing it out would clobber the good file on disk. All saves are refused
+    /// for the rest of the session (including quit/pause saves) until a restart loads cleanly.
+    /// </summary>
+    public bool LoadFaulted { get; private set; }
+
     public void SaveGame()
     {
+        if (LoadFaulted)
+        {
+            Debug.LogError("SaveGame refused: the last load failed mid-apply, so current state is " +
+                           "partial and would overwrite good save data. Restart to load cleanly.");
+            return;
+        }
         if (CurrencyManager.Instance == null)
         {
             Debug.LogError("Cannot save: CurrencyManager not found!");
@@ -111,6 +124,9 @@ public class SaveManager : MonoBehaviour
         data.seenContentIds = NewContentTracker.Instance != null
             ? NewContentTracker.Instance.GetSeenForSave()
             : new string[0];
+        data.completedTutorialIds = TutorialManager.Instance != null
+            ? TutorialManager.Instance.GetCompletedForSave()
+            : new string[0];
 
         data.farmName = NarrativeManager.Instance != null
             ? NarrativeManager.Instance.GetFarmNameForSave()
@@ -142,6 +158,7 @@ public class SaveManager : MonoBehaviour
         if (PantryManager.Instance != null) PantryManager.Instance.CaptureTo(data);
         if (FishingManager.Instance != null) FishingManager.Instance.CaptureTo(data);
         if (SmokehouseManager.Instance != null) SmokehouseManager.Instance.CaptureTo(data);
+        if (ItemInventoryManager.Instance != null) ItemInventoryManager.Instance.CaptureTo(data);
 
         // Convert to JSON
         string json = JsonUtility.ToJson(data, true); // true = pretty print for debugging
@@ -170,12 +187,35 @@ public class SaveManager : MonoBehaviour
         bool found = SaveFileIO.ReadWithFallback(saveFilePath, IsValidSaveJson, out string json, out bool usedBackup);
         if (!found)
         {
-            Debug.Log("No save file found. Starting new game.");
+            // Distinguish "no save" from "save exists but is unreadable". In the latter case the
+            // files must be moved aside NOW: the fresh session that follows will auto-save within
+            // seconds, and two WriteAtomic rotations would destroy both potentially-recoverable
+            // copies (this is how the 2026-07-14 dev save was lost).
+            string qPrimary = SaveFileIO.Quarantine(saveFilePath);
+            string qBackup = SaveFileIO.Quarantine(saveFilePath + SaveFileIO.BakSuffix);
+            if (qPrimary != null || qBackup != null)
+            {
+                Debug.LogError("Save data exists but could not be read; moved aside for manual recovery " +
+                               $"(primary -> {qPrimary ?? "n/a"}, backup -> {qBackup ?? "n/a"}). Starting new game.");
+            }
+            else
+            {
+                Debug.Log("No save file found. Starting new game.");
+            }
             return false;
         }
 
         if (usedBackup)
-            Debug.LogWarning("Primary save was missing or corrupt; recovered from backup (.bak).");
+        {
+            // The corrupt primary must not stay in place: the next WriteAtomic would rotate it
+            // over the good .bak we just recovered from. Quarantine it, then re-persist the
+            // recovered contents as the new primary (first-write path, .bak stays untouched).
+            string q = SaveFileIO.Quarantine(saveFilePath);
+            Debug.LogWarning("Primary save was missing or corrupt; recovered from backup (.bak)" +
+                             (q != null ? $", corrupt primary moved to {q}" : "") + ".");
+            try { SaveFileIO.WriteAtomic(saveFilePath, json); }
+            catch (System.Exception e) { Debug.LogError($"Failed to re-persist recovered save: {e.Message}"); }
+        }
 
         try
         {
@@ -212,11 +252,13 @@ public class SaveManager : MonoBehaviour
                     FishingManager.Instance.LoadFrom(data);
                 if (SmokehouseManager.Instance != null)
                     SmokehouseManager.Instance.LoadFrom(data);
+                if (ItemInventoryManager.Instance != null)
+                    ItemInventoryManager.Instance.LoadFrom(data);
 
                 if (AnimalManager.Instance != null)
                 {
                     AnimalManager.Instance.LoadState(data.unlockedAnimalIDs, data.equippedAnimalID, data.lastEggClaimTime);
-                    AnimalManager.Instance.LoadCompostTime(data.lastCompostClaimTime);
+                    AnimalManager.Instance.LoadCompostTime(data.lastCompostClaimTime, data.lastSeenUtcTicks);
                 }
 
                 if (QuestManager.Instance != null)
@@ -274,6 +316,9 @@ public class SaveManager : MonoBehaviour
                 if (NewContentTracker.Instance != null)
                     NewContentTracker.Instance.LoadState(data.seenContentIds);
 
+                if (TutorialManager.Instance != null)
+                    TutorialManager.Instance.LoadState(data.completedTutorialIds);
+
                 if (NarrativeManager.Instance != null)
                     NarrativeManager.Instance.LoadState(data.farmName, data.firedNarrativeFlags);
 
@@ -287,7 +332,11 @@ public class SaveManager : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            Debug.LogError($"Failed to load game: {e.Message}");
+            // The file on disk is valid (it passed IsValidSaveJson) but applying it blew up, so
+            // in-memory state is now partial. Disable saving so the partial state can't be
+            // written over the good file.
+            LoadFaulted = true;
+            Debug.LogError($"Failed to apply loaded save — SAVING DISABLED for this session: {e}");
             return false;
         }
     }
@@ -314,15 +363,13 @@ public class SaveManager : MonoBehaviour
     /// </summary>
     public void DeleteSave()
     {
-        if (File.Exists(saveFilePath))
-        {
-            File.Delete(saveFilePath);
-            Debug.Log("Save file deleted.");
-        }
-        else
-        {
-            Debug.Log("No save file to delete.");
-        }
+        // The .bak must go too: ReadWithFallback falls back to it, so leaving it behind would
+        // silently resurrect the "deleted" save on next boot.
+        string bakPath = saveFilePath + SaveFileIO.BakSuffix;
+        bool existed = File.Exists(saveFilePath) || File.Exists(bakPath);
+        if (File.Exists(saveFilePath)) File.Delete(saveFilePath);
+        if (File.Exists(bakPath)) File.Delete(bakPath);
+        Debug.Log(existed ? "Save file deleted (incl. .bak)." : "No save file to delete.");
     }
 
     /// <summary>

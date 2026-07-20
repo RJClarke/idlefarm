@@ -55,6 +55,12 @@ public class GameData
     public int[] pantryRawFish;
     public int[] pantrySmokedFish;
 
+    // Item inventory (Reputation Phase 1). Counted crop stacks keyed by cropName, plus the
+    // egg stack and the run-HUD Collect/Sell toggle. Null/empty on legacy saves → empty inventory.
+    public ItemStackEntry[] cropStacks;
+    public int eggStack;
+    public bool collectModeOn;
+
     // Fishing (Pantry Economy Phase 2). Pole meta + the single in-flight line's cast state.
     public int poleLevel;
     public bool hasPole;
@@ -89,6 +95,10 @@ public class GameData
     // Content IDs the player has already seen (NewContentTracker), e.g. "research:scarecrow_aoe",
     // "equip:scarecrow". Used to drive NEW badges. Empty on a new/legacy save → tracker seeds a baseline.
     public string[] seenContentIds;
+
+    // Tutorial sequences the player has completed (TutorialManager). A completed id never
+    // auto-runs again; empty on new/legacy saves → all tutorials eligible.
+    public string[] completedTutorialIds;
 
     // Narrative one-shot ledger (NarrativeManager) + the player's farm/account name.
     public string farmName;
@@ -139,6 +149,7 @@ public class GameData
         binaryFeatureFlagsSet = new string[0];
         researchLevels = new ResearchLevelEntry[0];
         seenContentIds = new string[0];
+        completedTutorialIds = new string[0];
         farmName = "";
         firedNarrativeFlags = new string[0];
         inboxLetters = new InboxEntry[0];
@@ -148,6 +159,7 @@ public class GameData
         pantryRawFish = new int[FishTiers.Count];
         pantrySmokedFish = new int[FishTiers.Count];
         smokehouseSlots = new CannerySlot[0];
+        cropStacks = new ItemStackEntry[0];
     }
 
     /// <summary>
@@ -211,3 +223,4 @@ public class UpgradeLevelEntry
     public string upgradeID;
     public int level;
 }
+
