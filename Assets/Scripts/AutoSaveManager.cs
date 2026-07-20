@@ -82,6 +82,8 @@ public class AutoSaveManager : MonoBehaviour
             SmokehouseManager.Instance.OnChanged += OnVoid;
         if (ItemInventoryManager.Instance != null)
             ItemInventoryManager.Instance.OnChanged += OnVoid;
+        if (ReputationManager.Instance != null)
+            ReputationManager.Instance.OnChanged += OnVoid;
 
         if (ResearchManager.Instance != null)
         {
@@ -140,6 +142,8 @@ public class AutoSaveManager : MonoBehaviour
             SmokehouseManager.Instance.OnChanged -= OnVoid;
         if (ItemInventoryManager.Instance != null)
             ItemInventoryManager.Instance.OnChanged -= OnVoid;
+        if (ReputationManager.Instance != null)
+            ReputationManager.Instance.OnChanged -= OnVoid;
 
         if (ResearchManager.Instance != null)
         {

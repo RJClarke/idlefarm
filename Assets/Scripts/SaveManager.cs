@@ -159,6 +159,7 @@ public class SaveManager : MonoBehaviour
         if (FishingManager.Instance != null) FishingManager.Instance.CaptureTo(data);
         if (SmokehouseManager.Instance != null) SmokehouseManager.Instance.CaptureTo(data);
         if (ItemInventoryManager.Instance != null) ItemInventoryManager.Instance.CaptureTo(data);
+        if (ReputationManager.Instance != null) ReputationManager.Instance.CaptureTo(data);
 
         // Convert to JSON
         string json = JsonUtility.ToJson(data, true); // true = pretty print for debugging
@@ -254,6 +255,8 @@ public class SaveManager : MonoBehaviour
                     SmokehouseManager.Instance.LoadFrom(data);
                 if (ItemInventoryManager.Instance != null)
                     ItemInventoryManager.Instance.LoadFrom(data);
+                if (ReputationManager.Instance != null)
+                    ReputationManager.Instance.LoadFrom(data);
 
                 if (AnimalManager.Instance != null)
                 {

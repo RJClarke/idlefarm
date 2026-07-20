@@ -61,6 +61,15 @@ public class GameData
     public int eggStack;
     public bool collectModeOn;
 
+    // Reputation (Reputation Phase 2). Bar progress/points persist; 3 board slots by fixed
+    // difficulty (0=Easy,1=Medium,2=Hard). A slot's request is a sentinel empty-items
+    // DeliveryRequest while on cooldown (never null — see ReputationCore.ExportRequests).
+    public int repBarProgress;
+    public int repPointsEarned;
+    public int repUnspentPoints;
+    public int repConsecutiveSkips;
+    public RequestSlotSave[] repSlots;
+
     // Fishing (Pantry Economy Phase 2). Pole meta + the single in-flight line's cast state.
     public int poleLevel;
     public bool hasPole;
@@ -160,6 +169,7 @@ public class GameData
         pantrySmokedFish = new int[FishTiers.Count];
         smokehouseSlots = new CannerySlot[0];
         cropStacks = new ItemStackEntry[0];
+        repSlots = new RequestSlotSave[0];
     }
 
     /// <summary>
@@ -222,5 +232,13 @@ public class UpgradeLevelEntry
 {
     public string upgradeID;
     public int level;
+}
+
+/// <summary>One Town Requests board slot's saved state (Reputation Phase 2).</summary>
+[Serializable]
+public class RequestSlotSave
+{
+    public DeliveryRequest request;
+    public long cooldownEndUtcTicks;
 }
 
