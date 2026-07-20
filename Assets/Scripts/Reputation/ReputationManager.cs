@@ -65,6 +65,13 @@ public class ReputationManager : MonoBehaviour
         return true;
     }
 
+    public bool TrySpendPoint()
+    {
+        bool ok = core.TrySpendPoint();
+        if (ok) OnChanged?.Invoke();
+        return ok;
+    }
+
     public bool TrySkip(int slot)
     {
         DeliveryRequest request = core.GetSlotRequest(slot);

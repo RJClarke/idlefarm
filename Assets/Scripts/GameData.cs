@@ -70,6 +70,9 @@ public class GameData
     public int repConsecutiveSkips;
     public RequestSlotSave[] repSlots;
 
+    // Barn skills (Reputation Phase 3). 7 tracks, 0-25 each, index = FarmSkillTrack enum value.
+    public int[] farmSkillLevels;
+
     // Fishing (Pantry Economy Phase 2). Pole meta + the single in-flight line's cast state.
     public int poleLevel;
     public bool hasPole;
@@ -170,6 +173,7 @@ public class GameData
         smokehouseSlots = new CannerySlot[0];
         cropStacks = new ItemStackEntry[0];
         repSlots = new RequestSlotSave[0];
+        farmSkillLevels = new int[0];
     }
 
     /// <summary>

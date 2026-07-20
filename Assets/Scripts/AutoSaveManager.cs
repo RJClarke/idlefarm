@@ -84,6 +84,8 @@ public class AutoSaveManager : MonoBehaviour
             ItemInventoryManager.Instance.OnChanged += OnVoid;
         if (ReputationManager.Instance != null)
             ReputationManager.Instance.OnChanged += OnVoid;
+        if (FarmSkillsManager.Instance != null)
+            FarmSkillsManager.Instance.OnChanged += OnVoid;
 
         if (ResearchManager.Instance != null)
         {
@@ -144,6 +146,8 @@ public class AutoSaveManager : MonoBehaviour
             ItemInventoryManager.Instance.OnChanged -= OnVoid;
         if (ReputationManager.Instance != null)
             ReputationManager.Instance.OnChanged -= OnVoid;
+        if (FarmSkillsManager.Instance != null)
+            FarmSkillsManager.Instance.OnChanged -= OnVoid;
 
         if (ResearchManager.Instance != null)
         {
