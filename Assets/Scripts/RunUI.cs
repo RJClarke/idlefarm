@@ -24,6 +24,7 @@ public class RunUI : MonoBehaviour
 
     private bool hasShownInitialEquipment = false;
     private CameraPanController panController;
+    private Button backToFarmButton;
 
     private void Start()
     {
@@ -36,9 +37,28 @@ public class RunUI : MonoBehaviour
         if (equipFieldsButton != null)
             equipFieldsButton.onClick.AddListener(OnEquipFieldsClicked);
 
+        BuildBackToFarmButton();
+        BuildCollectToggle();
         BuildGameSpeedStepper();
+
+        // Re-assert button visibility the instant a pan starts/ends. LocationModeController force-
+        // activates Start/Equip (they're in its "hide at market" list) at the START of every pan,
+        // but CurrentLocation only flips when the pan COMPLETES — so without this, those buttons
+        // flash for one frame behind "Back to Farm" during a run until our next Update() hides them.
+        // LocationModeController runs at DefaultExecutionOrder(-50) and subscribes in its Start, so
+        // this subscription (default order, later Start) is invoked AFTER it in the same synchronous
+        // event dispatch and corrects the state before any frame is drawn.
+        CameraPanController pan = GetPanController();
+        if (pan != null)
+        {
+            pan.OnPanStarted   += OnLocationChanging;
+            pan.OnPanCompleted += OnLocationChanging;
+        }
+
         UpdateButtonStates();
     }
+
+    private void OnLocationChanging(CameraPanController.Location loc) => UpdateButtonStates();
 
     // Timer-throttle cache: the run timer only shows whole seconds, so we avoid
     // rebuilding the string and touching TMP (mesh regen) on every frame.
@@ -87,29 +107,162 @@ public class RunUI : MonoBehaviour
     {
         if (RunManager.Instance == null) return;
 
-        bool inRun     = RunManager.Instance.IsRunActive;
-        bool atMarket  = IsAtMarket();
-        bool showHome  = !inRun && !atMarket;
+        bool inRun = RunManager.Instance.IsRunActive;
+        CameraPanController.Location loc = CurrentLocation();
+        bool atFarm     = loc == CameraPanController.Location.Farm;
+        bool atMarket   = loc == CameraPanController.Location.Market;
+        bool awayNature = !atFarm && !atMarket;   // Greenhouse / Lake / Woods
 
-        if (startRunButton != null)
-            startRunButton.gameObject.SetActive(showHome);
+        // Start Run + Equip Fields belong to the Farm home screen only (pre-run).
+        bool showHome = !inRun && atFarm;
+        if (startRunButton != null)   startRunButton.gameObject.SetActive(showHome);
+        if (equipFieldsButton != null) equipFieldsButton.gameObject.SetActive(showHome);
 
-        if (endRunButton != null)
-            endRunButton.gameObject.SetActive(inRun);
+        // End Run is no longer a standalone button — it now lives at the bottom of the Run Stats modal.
+        if (endRunButton != null) endRunButton.gameObject.SetActive(false);
 
-        // Equip Fields only visible on home screen (pre-run), and never at Market.
-        if (equipFieldsButton != null)
-            equipFieldsButton.gameObject.SetActive(showHome);
+        // A single "Back to Farm" button sits where Start/Field were, whenever we're viewing a
+        // non-farm nature location (Greenhouse/Lake/Woods). One button always brings you home.
+        if (backToFarmButton != null) backToFarmButton.gameObject.SetActive(awayNature);
+
+        // Collect/Sell toggle: only meaningful while harvesting, so in-run at the Farm only.
+        if (collectToggleBtn != null) collectToggleBtn.gameObject.SetActive(inRun && atFarm);
     }
 
-    private bool IsAtMarket()
+    private CameraPanController GetPanController()
     {
-        if (panController == null)
-        {
-            if (Camera.main == null) return false;
+        if (panController == null && Camera.main != null)
             panController = Camera.main.GetComponent<CameraPanController>();
+        return panController;
+    }
+
+    private CameraPanController.Location CurrentLocation()
+    {
+        CameraPanController pan = GetPanController();
+        return pan != null ? pan.CurrentLocation : CameraPanController.Location.Farm;
+    }
+
+    /// <summary>
+    /// Build the "Back to Farm" button. It's cloned from a map NAV button so it inherits the
+    /// navigation buttons' colour/sprite (clearly distinct from the green Start Run button), but it's
+    /// placed and sized like Start — centered between where Start and Equip Fields sit — so it slots
+    /// neatly into that central spot. Falls back to cloning Start Run if no nav button is found.
+    /// </summary>
+    private void BuildBackToFarmButton()
+    {
+        if (startRunButton == null) return;
+
+        RectTransform startRT = startRunButton.GetComponent<RectTransform>();
+        RectTransform fieldRT = equipFieldsButton != null ? equipFieldsButton.GetComponent<RectTransform>() : startRT;
+
+        // Prefer a nav button as the visual template; fall back to Start Run if none exists yet.
+        MapNavButton navTemplate = FindFirstObjectByType<MapNavButton>(FindObjectsInactive.Include);
+        GameObject source = navTemplate != null ? navTemplate.gameObject : startRunButton.gameObject;
+
+        GameObject clone = Instantiate(source, startRT.parent);
+        clone.name = "BackToFarmButton";
+
+        // Strip the nav-button behaviour so the clone doesn't try to pan to the template's location.
+        MapNavButton nav = clone.GetComponent<MapNavButton>();
+        if (nav != null) Destroy(nav);
+
+        // Drop the nav button's location icon (we want a plain coloured button, no icon). Only strip
+        // child Images when the root itself carries the background, so we never delete the background.
+        Image rootImg = clone.GetComponent<Image>();
+        if (rootImg != null)
+        {
+            foreach (Image img in clone.GetComponentsInChildren<Image>(true))
+                if (img != rootImg) Destroy(img.gameObject);
         }
-        return panController != null && panController.CurrentLocation == CameraPanController.Location.Market;
+
+        Button b = clone.GetComponent<Button>();
+        if (b != null)
+        {
+            b.onClick.RemoveAllListeners();
+            b.onClick.AddListener(OnBackToFarmClicked);
+        }
+
+        // Plain label — no leading icon/emoji, centered on the (larger) button.
+        TextMeshProUGUI txt = clone.GetComponentInChildren<TextMeshProUGUI>(true);
+        if (txt != null)
+        {
+            txt.text = "Back to Farm";
+            txt.alignment = TextAlignmentOptions.Center;
+        }
+
+        // Adopt Start's placement/size (bottom-center, big), centered vertically between Start & Field.
+        RectTransform rt = clone.GetComponent<RectTransform>();
+        rt.anchorMin = startRT.anchorMin;
+        rt.anchorMax = startRT.anchorMax;
+        rt.pivot     = startRT.pivot;
+        rt.sizeDelta = startRT.sizeDelta;
+        float midY = (startRT.anchoredPosition.y + fieldRT.anchoredPosition.y) * 0.5f;
+        rt.anchoredPosition = new Vector2(startRT.anchoredPosition.x, midY);
+
+        backToFarmButton = b;
+        clone.SetActive(false);
+    }
+
+    private void OnBackToFarmClicked()
+    {
+        CameraPanController pan = GetPanController();
+        if (pan != null) pan.PanTo(CameraPanController.Location.Farm);
+    }
+
+    // ── Collect/Sell toggle (Reputation Phase 1) ──────────────────────────
+    private Button collectToggleBtn;
+    private TextMeshProUGUI collectToggleLabel;
+    private Image collectToggleBg;
+
+    private void BuildCollectToggle()
+    {
+        if (startRunButton == null) return;
+        RectTransform startRT = startRunButton.GetComponent<RectTransform>();
+
+        GameObject clone = Instantiate(startRunButton.gameObject, startRT.parent);
+        clone.name = "CollectToggleButton";
+
+        collectToggleBtn = clone.GetComponent<Button>();
+        collectToggleBtn.onClick.RemoveAllListeners();
+        collectToggleBtn.onClick.AddListener(OnCollectToggleClicked);
+        collectToggleBg = clone.GetComponent<Image>();
+        collectToggleLabel = clone.GetComponentInChildren<TextMeshProUGUI>(true);
+
+        // Slimmer than the Start CTA, same anchor slot (free during an in-run Farm view).
+        RectTransform rt = clone.GetComponent<RectTransform>();
+        rt.anchorMin = startRT.anchorMin;
+        rt.anchorMax = startRT.anchorMax;
+        rt.pivot     = startRT.pivot;
+        rt.sizeDelta = new Vector2(startRT.sizeDelta.x * 0.6f, startRT.sizeDelta.y * 0.8f);
+        rt.anchoredPosition = startRT.anchoredPosition;
+
+        RefreshCollectToggleVisual();
+        clone.SetActive(false);
+
+        if (ItemInventoryManager.Instance != null)
+            ItemInventoryManager.Instance.OnCollectModeChanged += OnCollectModeChanged;
+    }
+
+    private void OnCollectToggleClicked()
+    {
+        if (ItemInventoryManager.Instance == null) return;
+        ItemInventoryManager.Instance.CollectMode = !ItemInventoryManager.Instance.CollectMode;
+    }
+
+    private void OnCollectModeChanged(bool _) => RefreshCollectToggleVisual();
+
+    private void RefreshCollectToggleVisual()
+    {
+        bool collect = ItemInventoryManager.Instance != null && ItemInventoryManager.Instance.CollectMode;
+        if (collectToggleLabel != null)
+        {
+            collectToggleLabel.text = collect ? "Collecting" : "Auto-Sell";
+            collectToggleLabel.alignment = TextAlignmentOptions.Center;
+        }
+        if (collectToggleBg != null)
+            collectToggleBg.color = collect
+                ? new Color(0.36f, 0.62f, 0.32f)   // green: banking items
+                : new Color(0.85f, 0.72f, 0.25f);  // yellow: cash mode
     }
 
     // ── Game Speed Stepper (under the run timer) ──────────────────────────
@@ -323,11 +476,18 @@ public class RunUI : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (panController != null)
+        {
+            panController.OnPanStarted   -= OnLocationChanging;
+            panController.OnPanCompleted -= OnLocationChanging;
+        }
         if (startRunButton != null)
             startRunButton.onClick.RemoveListener(OnStartRunButtonClicked);
         if (endRunButton != null)
             endRunButton.onClick.RemoveListener(OnEndRunButtonClicked);
         if (equipFieldsButton != null)
             equipFieldsButton.onClick.RemoveListener(OnEquipFieldsClicked);
+        if (ItemInventoryManager.Instance != null)
+            ItemInventoryManager.Instance.OnCollectModeChanged -= OnCollectModeChanged;
     }
 }
