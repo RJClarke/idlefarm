@@ -20,6 +20,10 @@ public class TownRequestsPopupUITK : MonoBehaviour
         new Color(0.8f, 0.35f, 0.3f),    // Hard - red
     };
 
+    [Tooltip("Shared RunewoodPanelSettings, cloned at runtime with a higher sort order (ToastManager pattern). " +
+             "If left null, a fresh PanelSettings is created — but with no theme, text will not render.")]
+    [SerializeField] private PanelSettings sourcePanelSettings;
+
     private UIDocument document;
     private PanelSettings runtimePanelSettings;
     private VisualElement root;
@@ -37,11 +41,18 @@ public class TownRequestsPopupUITK : MonoBehaviour
         document = GetComponent<UIDocument>();
         if (document == null) document = gameObject.AddComponent<UIDocument>();
 
-        runtimePanelSettings = ScriptableObject.CreateInstance<PanelSettings>();
+        if (sourcePanelSettings != null)
+        {
+            runtimePanelSettings = Instantiate(sourcePanelSettings);
+        }
+        else
+        {
+            runtimePanelSettings = ScriptableObject.CreateInstance<PanelSettings>();
+            runtimePanelSettings.scaleMode = PanelScaleMode.ScaleWithScreenSize;
+            runtimePanelSettings.referenceResolution = new Vector2Int(1080, 1920);
+            runtimePanelSettings.match = 0.5f;
+        }
         runtimePanelSettings.name = "TownRequestsPanelSettings (runtime)";
-        runtimePanelSettings.scaleMode = PanelScaleMode.ScaleWithScreenSize;
-        runtimePanelSettings.referenceResolution = new Vector2Int(1080, 1920);
-        runtimePanelSettings.match = 0.5f;
         runtimePanelSettings.sortingOrder = SORT_ORDER;
 
         document.enabled = false;
@@ -94,6 +105,11 @@ public class TownRequestsPopupUITK : MonoBehaviour
         root = document.rootVisualElement;
         if (root == null) { Debug.LogWarning("[TownRequestsPopupUITK] rootVisualElement null."); return; }
         root.pickingMode = PickingMode.Ignore;
+        // Default root height is auto/content-sized; a Position.Absolute child (popupRoot) is out
+        // of flow and contributes nothing, so root collapses to height 0 without this. Width
+        // stretches by default (column cross-axis), height does not (column main-axis) — hence
+        // only height needs the explicit override.
+        root.style.height = Length.Percent(100);
 
         popupRoot = new VisualElement { name = "town-requests-root" };
         popupRoot.style.position = Position.Absolute;

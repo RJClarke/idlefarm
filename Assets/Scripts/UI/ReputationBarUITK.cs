@@ -12,6 +12,10 @@ public class ReputationBarUITK : MonoBehaviour
     public static ReputationBarUITK Instance { get; private set; }
     private const int SORT_ORDER = 900;
 
+    [Tooltip("Shared RunewoodPanelSettings, cloned at runtime with a higher sort order (ToastManager pattern). " +
+             "If left null, a fresh PanelSettings is created — but with no theme, text will not render.")]
+    [SerializeField] private PanelSettings sourcePanelSettings;
+
     private UIDocument document;
     private PanelSettings runtimePanelSettings;
     private VisualElement barRoot;
@@ -29,11 +33,18 @@ public class ReputationBarUITK : MonoBehaviour
         document = GetComponent<UIDocument>();
         if (document == null) document = gameObject.AddComponent<UIDocument>();
 
-        runtimePanelSettings = ScriptableObject.CreateInstance<PanelSettings>();
+        if (sourcePanelSettings != null)
+        {
+            runtimePanelSettings = Instantiate(sourcePanelSettings);
+        }
+        else
+        {
+            runtimePanelSettings = ScriptableObject.CreateInstance<PanelSettings>();
+            runtimePanelSettings.scaleMode = PanelScaleMode.ScaleWithScreenSize;
+            runtimePanelSettings.referenceResolution = new Vector2Int(1080, 1920);
+            runtimePanelSettings.match = 0.5f;
+        }
         runtimePanelSettings.name = "ReputationBarPanelSettings (runtime)";
-        runtimePanelSettings.scaleMode = PanelScaleMode.ScaleWithScreenSize;
-        runtimePanelSettings.referenceResolution = new Vector2Int(1080, 1920);
-        runtimePanelSettings.match = 0.5f;
         runtimePanelSettings.sortingOrder = SORT_ORDER;
 
         document.enabled = false;
@@ -93,6 +104,10 @@ public class ReputationBarUITK : MonoBehaviour
         VisualElement root = document.rootVisualElement;
         if (root == null) { Debug.LogWarning("[ReputationBarUITK] rootVisualElement null."); return; }
         root.pickingMode = PickingMode.Ignore;
+        // Same root-collapse issue as TownRequestsPopupUITK: an absolute-positioned child
+        // contributes nothing to root's auto height. Not currently load-bearing here (barRoot
+        // anchors via top+explicit height, not top+bottom), but kept consistent defensively.
+        root.style.height = Length.Percent(100);
 
         barRoot = new VisualElement { name = "rep-bar-root" };
         barRoot.style.position = Position.Absolute;
