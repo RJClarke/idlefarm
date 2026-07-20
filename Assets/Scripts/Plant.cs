@@ -309,7 +309,19 @@ public class Plant : MonoBehaviour
         if (divertedToCannery)
             FloatingTextManager.ShowCanneryIntake(transform.position);
 
-        if (!divertedToCannery && CurrencyManager.Instance != null)
+        // Collect mode (Reputation Phase 1): the harvest becomes an inventory item instead of
+        // cash + banked coins — the same forgone-income rule as the Cannery. A full stack falls
+        // back to a normal sale so the harvest is never silently lost.
+        bool divertedToInventory = false;
+        if (!divertedToCannery && ItemInventoryManager.Instance != null && ItemInventoryManager.Instance.CollectMode)
+        {
+            divertedToInventory = ItemInventoryManager.Instance.AddCrop(cropData.cropName, 1, out _) > 0;
+            if (divertedToInventory)
+                FloatingTextManager.ShowText($"+1 {cropData.cropName}", new Color(0.55f, 0.8f, 0.35f), transform.position);
+        }
+        bool paidOut = !divertedToCannery && !divertedToInventory;
+
+        if (paidOut && CurrencyManager.Instance != null)
         {
             CurrencyManager.Instance.AddMoney(harvestValue);
             FloatingTextManager.ShowMoney(harvestValue, transform.position);
@@ -317,7 +329,7 @@ public class Plant : MonoBehaviour
 
         // Bank permanent coins for this harvest (the "keep" currency). Scaled by coin research.
         int coinGain = 0;
-        if (!divertedToCannery && CurrencyManager.Instance != null && cropData.coinValue > 0)
+        if (paidOut && CurrencyManager.Instance != null && cropData.coinValue > 0)
         {
             coinGain = cropData.coinValue;
             if (ResearchManager.Instance != null)
@@ -338,11 +350,11 @@ public class Plant : MonoBehaviour
         if (RunStats.Instance != null) RunStats.Instance.AddCropHarvested(cropData);
 
         // Per-zone card: harvest count always; money/coins only when actually paid out
-        // (a cannery-diverted harvest pays jar progress, not currency).
+        // (a cannery- or inventory-diverted harvest pays no currency).
         if (RunStats.Instance != null)
             RunStats.Instance.AddZoneHarvest(zone, cropData,
-                divertedToCannery ? 0 : harvestValue,
-                divertedToCannery ? 0 : coinGain);
+                paidOut ? harvestValue : 0,
+                paidOut ? coinGain : 0);
 
         // Seed Refund (farm upgrade): chance to hand back a seed, easing the fuel/bankruptcy pressure.
         if (SeedInventory.Instance != null && cropData != null

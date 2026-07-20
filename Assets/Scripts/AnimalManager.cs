@@ -29,6 +29,11 @@ public class AnimalManager : MonoBehaviour
     private float eggCheckTimer = 0f;
     private const float EGG_CHECK_INTERVAL = 1f;
 
+    // Rooster (gem) reward carry: the effective gem reward is fractional (e.g. 2.4 at mid
+    // efficiency), so we accumulate the remainder and roll it into the next claim instead of
+    // rounding each drop away — 2.4 → grant 2 (carry .4); next 2.8 → 2 (carry .8); next 3.2 → 3…
+    private double gemRewardCarry = 0.0;
+
     // Cow passive compost accumulator (UtcNow-based so it works while app is closed)
     private DateTime lastCompostTickUtc = DateTime.MinValue;
     private float compostTickAccumulator;
@@ -50,6 +55,10 @@ public class AnimalManager : MonoBehaviour
         {
             RunManager.Instance.OnRunStarted += OnRunStarted;
             RunManager.Instance.OnRunEnded += OnRunEnded;
+
+            // Resume race: SaveManager.ResumeRun fires OnRunStarted during load, possibly before
+            // this Start() subscribed - without catch-up the RunDefender never activates.
+            if (RunManager.Instance.IsRunActive) OnRunStarted();
         }
     }
 
@@ -154,11 +163,24 @@ public class AnimalManager : MonoBehaviour
     public string GetLastCompostTimeISO() =>
         lastCompostTickUtc == DateTime.MinValue ? "" : lastCompostTickUtc.ToString("o");
 
-    public void LoadCompostTime(string iso)
+    public void LoadCompostTime(string iso, long fallbackLastSeenUtcTicks = 0)
     {
-        if (string.IsNullOrEmpty(iso)) { lastCompostTickUtc = DateTime.MinValue; return; }
-        if (DateTime.TryParse(iso, null, System.Globalization.DateTimeStyles.RoundtripKind, out var t))
+        if (!string.IsNullOrEmpty(iso)
+            && DateTime.TryParse(iso, null, System.Globalization.DateTimeStyles.RoundtripKind, out var t))
+        {
             lastCompostTickUtc = t.ToUniversalTime();
+            return;
+        }
+
+        // No saved anchor (e.g. a compost animal was equipped but never ticked before the app closed).
+        // If we know when the app was last online AND a compost animal was the equipped one at save
+        // time, credit the away window from there rather than losing it. Gated on the equipped animal
+        // so we never credit compost for a window when no cow was equipped. Requires the caller to have
+        // already restored the equipped animal (SaveManager loads AnimalManager state before this).
+        AnimalData equipped = GetEquippedAnimal();
+        lastCompostTickUtc = (fallbackLastSeenUtcTicks > 0 && equipped != null && equipped.compostPerMinute > 0f)
+            ? new DateTime(fallbackLastSeenUtcTicks, DateTimeKind.Utc)
+            : DateTime.MinValue;
     }
 
     // ── Data Access ──────────────────────────────
@@ -239,6 +261,13 @@ public class AnimalManager : MonoBehaviour
         AnimalData data = GetAnimalData(animalID);
         Debug.Log($"Equipped animal: {data.displayName}");
 
+        // Start the passive-compost clock immediately on equip. Otherwise the anchor is only set by
+        // the periodic (every 5s) TickCompost, so equipping a cow and closing the app within a few
+        // seconds saves an empty anchor — and the next launch's offline catch-up would credit +0 for
+        // the whole away window instead of the compost the cow earned.
+        if (data != null && data.compostPerMinute > 0f && lastCompostTickUtc == DateTime.MinValue)
+            lastCompostTickUtc = DateTime.UtcNow;
+
         SpawnAnimalVisual(data);
         OnAnimalEquipped?.Invoke(data);
 
@@ -314,6 +343,21 @@ public class AnimalManager : MonoBehaviour
         return Mathf.RoundToInt(baseReward * (1f + bonus));
     }
 
+    /// <summary>Exact (unrounded) efficiency-scaled reward. Used by the gem carry-over path so the
+    /// fractional part isn't lost to rounding — see <see cref="gemRewardCarry"/>.</summary>
+    private static double EffectiveRewardExact(AnimalData a, int baseReward)
+    {
+        if (a == null || ResearchManager.Instance == null) return baseReward;
+        string key = a.animalID switch
+        {
+            "chicken" => Research.StatKey.ChickenEfficiency,
+            "rooster" => Research.StatKey.RoosterEfficiency,
+            _ => null
+        };
+        if (string.IsNullOrEmpty(key)) return baseReward;
+        return baseReward * (1.0 + ResearchManager.Instance.GetBonus(key));
+    }
+
     public void ClaimEgg() => ClaimPassiveReward(); // legacy alias
 
     public void ClaimPassiveReward()
@@ -331,19 +375,35 @@ public class AnimalManager : MonoBehaviour
 
         if (isGemAnimal)
         {
-            int reward = EffectiveReward(equipped, equipped.rewardGems);
+            // Fractional carry: accumulate the exact (unrounded) reward and grant the whole part,
+            // keeping the remainder for next time so no partial gems are lost to rounding.
+            double total = gemRewardCarry + EffectiveRewardExact(equipped, equipped.rewardGems);
+            int reward = (int)System.Math.Floor(total);
+            gemRewardCarry = total - reward;
             CurrencyManager.Instance.AddGems(reward);
-            Debug.Log($"Claimed gems! +{reward} gems");
+            Debug.Log($"Claimed gems! +{reward} gems (carry {gemRewardCarry:F2})");
             if (visual != null) visual.RemoveGem();
             FloatingTextManager.ShowGems(reward, rewardWorldPos);
         }
         else
         {
-            int reward = EffectiveReward(equipped, equipped.rewardCoins);
-            CurrencyManager.Instance.AddCoins(reward);
-            Debug.Log($"Claimed egg! +{reward} coins");
-            if (visual != null) visual.RemoveEgg();
-            FloatingTextManager.ShowCoins(reward, rewardWorldPos);
+            // Collect mode (Reputation Phase 1): bank the egg as an inventory item instead of
+            // coins. Full egg stack falls back to the normal coin payout.
+            if (ItemInventoryManager.Instance != null && ItemInventoryManager.Instance.CollectMode
+                && ItemInventoryManager.Instance.AddEggs(1, out _) > 0)
+            {
+                Debug.Log("Claimed egg into inventory (+1 egg)");
+                if (visual != null) visual.RemoveEgg();
+                FloatingTextManager.ShowText("+1 Egg", new Color(0.55f, 0.8f, 0.35f), rewardWorldPos);
+            }
+            else
+            {
+                int reward = EffectiveReward(equipped, equipped.rewardCoins);
+                CurrencyManager.Instance.AddCoins(reward);
+                Debug.Log($"Claimed egg! +{reward} coins");
+                if (visual != null) visual.RemoveEgg();
+                FloatingTextManager.ShowCoins(reward, rewardWorldPos);
+            }
         }
 
         // Defensive: zap any leftover egg/gem GameObjects in the scene. The active visual's
