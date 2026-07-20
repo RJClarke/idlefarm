@@ -70,6 +70,14 @@ public class ReputationCore
 
     public void OnSkipped() => ConsecutiveSkips++;
 
+    /// <summary>Spends one unspent point (Barn level-up, Reputation Phase 3). No respec — never re-credited.</summary>
+    public bool TrySpendPoint()
+    {
+        if (UnspentPoints <= 0) return false;
+        UnspentPoints--;
+        return true;
+    }
+
     public int NextSkipCost() => ReputationMath.SkipCost(ConsecutiveSkips);
 
     public void Import(int barProgress, int pointsEarned, int unspentPoints, int consecutiveSkips,

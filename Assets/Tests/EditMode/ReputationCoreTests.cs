@@ -106,6 +106,18 @@ public class ReputationCoreTests
     }
 
     [Test]
+    public void TrySpendPoint_FailsWhenNoneUnspent_SucceedsAfterEarning()
+    {
+        var core = new ReputationCore();
+        Assert.IsFalse(core.TrySpendPoint());
+        core.AddRep(100); // exactly point 1's cost
+        Assert.AreEqual(1, core.UnspentPoints);
+        Assert.IsTrue(core.TrySpendPoint());
+        Assert.AreEqual(0, core.UnspentPoints);
+        Assert.IsFalse(core.TrySpendPoint());
+    }
+
+    [Test]
     public void Import_NullArrays_IsSafeAndEmpty()
     {
         var core = new ReputationCore();
