@@ -237,6 +237,8 @@ public class CanneryManager : MonoBehaviour
 
     // ── Selling (Gold only, spec §1) ─────────────────────────────────────
 
+    public int ReadyJarCount => state.readyJars.Count;
+
     public bool TrySellJar(int index)
     {
         var cm = CurrencyManager.Instance;
