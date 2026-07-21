@@ -124,6 +124,8 @@ public class WoodRackPopupUITK : MonoBehaviour
     private void WireCallbacks()
     {
         if (closeButton != null) closeButton.RegisterCallback<ClickEvent>(_ => Close());
+        // Tap outside the card (on the dim backdrop) closes the popup, like the other modals.
+        root.Q<VisualElement>("backdrop")?.RegisterCallback<ClickEvent>(_ => Close());
         if (stack1 != null)   stack1.RegisterCallback<ClickEvent>(_ => SetStack(WoodcuttingMath.StackMode.One));
         if (stack10 != null)  stack10.RegisterCallback<ClickEvent>(_ => SetStack(WoodcuttingMath.StackMode.Ten));
         if (stackAll != null) stackAll.RegisterCallback<ClickEvent>(_ => SetStack(WoodcuttingMath.StackMode.All));
@@ -193,7 +195,12 @@ public class WoodRackPopupUITK : MonoBehaviour
         bool inRun = RunManager.Instance != null && RunManager.Instance.IsRunActive;
         int amount = WoodcuttingMath.ResolveStackAmount(stackMode, wood);
 
-        if (woodCount != null) woodCount.text = $"Wood: {wood}";
+        bool isFull = cm != null && wood >= cm.MaxWood;
+        if (woodCount != null)
+        {
+            woodCount.text = isFull ? $"{wood} (Full)" : $"{wood}"; // Log icon precedes it (see .wood-icon)
+            woodCount.EnableInClassList("wood-count--full", isFull);
+        }
 
         SetStackActive(stack1, stackMode == WoodcuttingMath.StackMode.One);
         SetStackActive(stack10, stackMode == WoodcuttingMath.StackMode.Ten);

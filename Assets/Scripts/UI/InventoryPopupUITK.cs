@@ -155,7 +155,8 @@ public class InventoryPopupUITK : MonoBehaviour
         AddSellRow("wood", "inv-icon--wood", "Wood", cm.Wood,
             enabled: inRun && woodPrice > 0 && cm.Wood > 0,
             payoutLabel: n => $"+{WoodcuttingMath.SellValue(n, woodPrice)} Cash",
-            onSell: n => { if (cm.SpendWood(n)) cm.AddMoney(WoodcuttingMath.SellValue(n, woodPrice)); });
+            onSell: n => { if (cm.SpendWood(n)) cm.AddMoney(WoodcuttingMath.SellValue(n, woodPrice)); },
+            valueTextOverride: $"{cm.Wood:N0} / {cm.MaxWood:N0}");
         // Compost has no sell price in v1 — the button ships visible but disabled (user decision).
         AddSellRow("compost", "inv-icon--compost", "Compost", cm.Compost,
             enabled: false, payoutLabel: null, onSell: null);
@@ -229,13 +230,13 @@ public class InventoryPopupUITK : MonoBehaviour
     }
 
     private void AddSellRow(string rowId, string iconClass, string name, int count,
-        bool enabled, System.Func<int, string> payoutLabel, System.Action<int> onSell)
+        bool enabled, System.Func<int, string> payoutLabel, System.Action<int> onSell, string valueTextOverride = null)
     {
         var row = new VisualElement(); row.AddToClassList("inv-row");
         var icon = new VisualElement(); icon.AddToClassList("inv-icon"); icon.AddToClassList(iconClass);
         icon.pickingMode = PickingMode.Ignore;
         var nameLbl = new Label(name); nameLbl.AddToClassList("inv-name");
-        var valLbl = new Label(count.ToString("N0")); valLbl.AddToClassList("inv-value");
+        var valLbl = new Label(valueTextOverride ?? count.ToString("N0")); valLbl.AddToClassList("inv-value");
         var sellBtn = new Button(() =>
         {
             expandedRowId = expandedRowId == rowId ? null : rowId;

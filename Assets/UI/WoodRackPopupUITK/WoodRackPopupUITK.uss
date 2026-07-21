@@ -68,7 +68,7 @@
     width: 56px;
     height: 56px;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Cross_Medium.png");
     -unity-background-scale-mode: scale-to-fit;
     border-left-width: 0;
     border-right-width: 0;
@@ -90,18 +90,53 @@
     padding-bottom: 28px;
 }
 
+.wood-count-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Log icon — the shared "wood" glyph, so players learn to read it as the wood resource. */
+.wood-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgResources/Log.png");
+}
+
 .wood-count {
     -unity-font-style: bold;
     font-size: 34px;
     color: rgb(54, 32, 14);
     -unity-text-align: middle-center;
-    margin-bottom: 20px;
+}
+
+.wood-count--full {
+    color: rgb(178, 42, 30);
 }
 
 .stack-row {
     flex-direction: row;
     justify-content: center;
     margin-bottom: 22px;
+}
+
+/* Sell block sits apart from the wood/stack controls above it. */
+.sell-section {
+    flex-direction: column;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top-width: 2px;
+    border-top-color: rgba(90, 55, 20, 0.35);
+}
+
+/* Cash + Gold sit side by side along the bottom. */
+.sell-row {
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .stack-btn {
@@ -131,9 +166,12 @@
 }
 
 .sell-btn {
-    height: 78px;
-    font-size: 26px;
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 84px;
+    font-size: 24px;
     -unity-font-style: bold;
+    white-space: normal;
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
     border-bottom-left-radius: 14px;
@@ -142,8 +180,10 @@
     border-right-width: 3px;
     border-top-width: 3px;
     border-bottom-width: 3px;
-    margin-bottom: 12px;
 }
+
+.sell-btn--cash { margin-right: 7px; }
+.sell-btn--gold { margin-left: 7px; }
 
 .sell-btn--cash {
     background-color: rgb(120, 170, 90);
@@ -160,8 +200,9 @@
 .sell-btn:disabled { opacity: 0.45; }
 
 .cash-hint {
-    font-size: 16px;
-    color: rgba(54, 32, 14, 0.8);
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: rgb(48, 28, 12);
     -unity-text-align: middle-center;
     margin-bottom: 14px;
 }
