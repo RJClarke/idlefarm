@@ -43,6 +43,11 @@ public class FishingManager : MonoBehaviour
     [Header("Hints")]
     [SerializeField] private string noPoleHintText = "You need to buy a fishing pole first.";
 
+    [Header("Pole Icons (index = pole level)")]
+    [Tooltip("Icon per pole level (FishingRod_01_Wood → 04_Orange). Shown in the Carpenter shop " +
+             "rows and on the 'nothing was biting' toast.")]
+    [SerializeField] private Sprite[] poleIcons = new Sprite[4];
+
     [Header("Cast / Reel (spec 2026-07-12)")]
     [Tooltip("Reel taps for the shortest cast.")]
     [SerializeField] private int minReelTaps = 3;
@@ -65,12 +70,14 @@ public class FishingManager : MonoBehaviour
     private Vector2 castDir = Vector2.up;
     private int reelTapsTotal;
     private int reelTapsRemaining;
+    private float reelPartial;          // fractional progress toward the next step (hold-to-reel)
     private bool inHotspot;
     private bool caughtFromHotspot;
 
     public event Action OnChanged;             // durable: state/pole change, load
     public event Action<int> OnPoleLevelChanged; // Carpenter UI refresh (mirrors OnAxeLevelChanged)
     public event Action<int> OnCatch;            // fired with the caught tier when a fish is banked
+    public event Action OnEmptyReel;             // line reached shore with no fish on it
 
     public bool HasPole => hasPole;
     public int PoleLevel => poleLevel;
@@ -83,8 +90,16 @@ public class FishingManager : MonoBehaviour
     public Vector2 CastDir => castDir;
     public int ReelTapsRemaining => reelTapsRemaining;
     public int ReelTapsTotal => reelTapsTotal;
-    public float ReelProgress01 => reelTapsTotal > 0 ? (float)reelTapsRemaining / reelTapsTotal : 0f;
+    public float ReelProgress01 => reelTapsTotal > 0
+        ? Mathf.Clamp01((reelTapsRemaining - reelPartial) / reelTapsTotal) : 0f;
     public bool CaughtFromHotspot => caughtFromHotspot;
+
+    /// <summary>Shop/toast icon for a pole level (null if unwired).</summary>
+    public Sprite PoleIcon(int level)
+    {
+        if (poleIcons == null || poleIcons.Length == 0) return null;
+        return poleIcons[Mathf.Clamp(level, 0, poleIcons.Length - 1)];
+    }
 
     private void Awake()
     {
@@ -140,6 +155,7 @@ public class FishingManager : MonoBehaviour
     {
         long now = DateTime.UtcNow.Ticks;
         double secs = FishingMath.RollBiteSeconds(CurrentTier().biteAvgSeconds, UnityEngine.Random.value);
+        secs *= BarnFishingWaitMultiplier();
         castUtcTicks = now;
         biteReadyUtcTicks = now + (long)(secs * TimeSpan.TicksPerSecond);
     }
@@ -148,7 +164,15 @@ public class FishingManager : MonoBehaviour
     {
         long now = DateTime.UtcNow.Ticks;
         double secs = FishingMath.RollBiteSeconds(hotspotBiteAvgSeconds, UnityEngine.Random.value);
+        secs *= BarnFishingWaitMultiplier();
         biteReadyUtcTicks = now + (long)(secs * TimeSpan.TicksPerSecond);
+    }
+
+    // Barn Fishing: each level shortens the bite wait (spec §4.2, "-2% bite wait time" per point).
+    private static double BarnFishingWaitMultiplier()
+    {
+        if (FarmSkillsManager.Instance == null) return 1.0;
+        return Math.Max(0.1, 1.0 - FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Fishing));
     }
 
     /// <summary>Bobber entered/left a live whirlpool (called by LakeNode). Re-anchors the bite:
@@ -172,11 +196,27 @@ public class FishingManager : MonoBehaviour
         return true;
     }
 
+    /// <summary>Continuous hold-to-reel: accumulate fractional steps (deltaSteps = seconds × rate)
+    /// so the bobber glides smoothly shoreward, consuming a discrete Reel() each whole step.
+    /// The fraction feeds <see cref="ReelProgress01"/>; it is transient (not saved).</summary>
+    public void ReelHold(float deltaSteps)
+    {
+        if (state != CastState.Waiting && state != CastState.Bite) return;
+        reelPartial += Mathf.Max(0f, deltaSteps);
+        while (reelPartial >= 1f && (state == CastState.Waiting || state == CastState.Bite))
+        {
+            reelPartial -= 1f;
+            Reel();
+        }
+        OnChanged?.Invoke();
+    }
+
     private void RetrieveEmpty()
     {
         ClearLine();
         state = CastState.Idle;
         Debug.Log("[Fishing] Line retrieved (no fish).");
+        OnEmptyReel?.Invoke();
         OnChanged?.Invoke();
     }
 
@@ -184,6 +224,7 @@ public class FishingManager : MonoBehaviour
     {
         castUtcTicks = 0; biteReadyUtcTicks = 0; pendingTier = 0;
         castPower01 = 0f; castDir = Vector2.up; reelTapsTotal = 0; reelTapsRemaining = 0;
+        reelPartial = 0f;
         inHotspot = false; caughtFromHotspot = false;
     }
 

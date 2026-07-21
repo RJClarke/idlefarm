@@ -124,8 +124,11 @@ public class Plant : MonoBehaviour
         float researchBonus = ResearchManager.Instance != null
             ? ResearchManager.Instance.GetBonus(Research.StatKey.CropGrowthSpeed)
             : 0f;
-        // Growth Rate (farm upgrade) stacks multiplicatively on top of research/moisture.
-        return baseSpeed * (1f + researchBonus) * FarmUpgrades.GrowthMultiplier;
+        float plantingBonus = FarmSkillsManager.Instance != null
+            ? FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Planting)
+            : 0f;
+        // Growth Rate (farm upgrade) stacks multiplicatively on top of research/moisture/Barn Planting.
+        return baseSpeed * (1f + researchBonus) * (1f + plantingBonus) * FarmUpgrades.GrowthMultiplier;
     }
 
     private void UpdateMoisture(float deltaTime)
@@ -144,6 +147,10 @@ public class Plant : MonoBehaviour
 
         // Water Retention (farm upgrade): water lasts longer still.
         depletionRate /= Mathf.Max(0.01f, FarmUpgrades.MoistureRetentionDivisor);
+
+        // Barn Watering: each level reduces depletion further (moisture lasts longer).
+        if (FarmSkillsManager.Instance != null)
+            depletionRate /= Mathf.Max(0.01f, 1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Watering));
 
         currentMoisture -= depletionRate * deltaTime;
         // Water Capacity (farm upgrade) raises the ceiling above 100; depletion never lifts moisture,

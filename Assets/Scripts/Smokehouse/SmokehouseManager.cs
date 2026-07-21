@@ -82,6 +82,11 @@ public class SmokehouseManager : MonoBehaviour
     public int SmokedValue(int tier) => smokedValue[TierIdx(tier)];
     public int SmokeHours(int tier) => smokeHours[TierIdx(tier)];
 
+    // Barn Processing: each level shortens smoke time (spec §4.2 — speed, not burn rate). Applied
+    // to required cook time at slot-load, not to Update()'s burn simulation.
+    private static float BarnProcessingSpeedMultiplier()
+        => FarmSkillsManager.Instance != null ? 1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Processing) : 1f;
+
     private static int TierIdx(int tier) => Mathf.Clamp(tier, 1, FishTiers.Count) - 1;
 
     private void Awake()
@@ -171,7 +176,7 @@ public class SmokehouseManager : MonoBehaviour
         s.unitsRequired = 1;
         s.unitsLoaded = 1;                                   // one fish fills a slot immediately
         s.jarValue = SmokedValue(t);
-        s.cookSecondsRemaining = SmokeHours(t) * 3600.0;     // cooking starts now
+        s.cookSecondsRemaining = SmokeHours(t) * 3600.0 / BarnProcessingSpeedMultiplier(); // cooking starts now
         OnChanged?.Invoke();
         return true;
     }

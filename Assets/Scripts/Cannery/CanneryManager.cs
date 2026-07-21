@@ -133,6 +133,12 @@ public class CanneryManager : MonoBehaviour
         OnChanged?.Invoke();
     }
 
+    // Barn Processing: each level shortens cook time (spec §4.2 — speed, deliberately not burn rate,
+    // to avoid double-dipping the research fuel-efficiency knob). Applied to required cook time at
+    // slot-load, not to Update()'s burn simulation, so fuel consumption timing is untouched.
+    private static float BarnProcessingSpeedMultiplier()
+        => FarmSkillsManager.Instance != null ? 1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Processing) : 1f;
+
     private float MultiplierForTier(int tier)
     {
         int idx = Mathf.Clamp(tier, 1, 3) - 1;
@@ -166,7 +172,7 @@ public class CanneryManager : MonoBehaviour
         }
         s.unitsLoaded++;
         if (s.unitsLoaded >= s.unitsRequired)
-            s.cookSecondsRemaining = ProcessingMath.CookHoursForTier(s.tier) * 3600.0;
+            s.cookSecondsRemaining = ProcessingMath.CookHoursForTier(s.tier) * 3600.0 / BarnProcessingSpeedMultiplier();
         OnChanged?.Invoke();
         return true;
     }

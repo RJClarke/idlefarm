@@ -15,7 +15,9 @@ using UnityEngine;
 public class TreeNode : MonoBehaviour
 {
     [SerializeField] private WoodTreeData data;
-    [SerializeField] private float shakePixels = 3f;
+    [Tooltip("How many degrees the tree jerks when hit. Rotated about its base (like the wind sway) so " +
+             "it recoils from the ground instead of sliding the whole sprite sideways.")]
+    [SerializeField] private float shakeDegrees = 5f;
     [Tooltip("Stable id for save/load. Leave empty to use the scene hierarchy path.")]
     [SerializeField] private string treeId;
 
@@ -26,6 +28,20 @@ public class TreeNode : MonoBehaviour
 
     /// <summary>Stable identity used to persist this tree's growth. Defaults to the hierarchy path.</summary>
     public string TreeId => !string.IsNullOrEmpty(treeId) ? treeId : HierarchyPath(transform);
+
+    /// <summary>World-space AABB of the current sprite — the tree's visible footprint, used by
+    /// WoodcuttingManager to hit-test taps against the actual tree instead of a fat radius.</summary>
+    public Bounds WorldBounds => sr != null ? sr.bounds : new Bounds(transform.position, Vector3.zero);
+
+    /// <summary>True if a world point falls on this tree's sprite, expanded by a small padding for
+    /// touch forgiveness. Saplings have tiny sprites, so their tap zone shrinks with them.</summary>
+    public bool ContainsWorldPoint(Vector2 world, float padding)
+    {
+        if (sr == null) return false;
+        Bounds b = sr.bounds;
+        b.Expand(new Vector3(padding * 2f, padding * 2f, 0f)); // Expand takes total size, not per-side
+        return world.x >= b.min.x && world.x <= b.max.x && world.y >= b.min.y && world.y <= b.max.y;
+    }
 
     private void Awake()
     {
@@ -132,15 +148,19 @@ public class TreeNode : MonoBehaviour
 
         if (!WoodcuttingMath.CanFell(data.requiredAxeLevel, axe))
         {
-            // Locked tree: no progress. (Toast/hint optional.)
+            // Too hard for this axe: point the player at the fix, no chop progress. Levels are shown
+            // 1-based to the player (bought axe = Lv 1), so a requiredAxeLevel of N reads as "level N+1".
+            if (wm != null) wm.ShowHint(transform.position, $"Upgrade axe to level {data.requiredAxeLevel + 1}");
             return;
         }
 
         int stage = WoodcuttingMath.StageIndex(GrowthFraction(), data.stageCount);
-        if (WoodcuttingMath.StageYield(data.woodYield, stage, data.stageCount) <= 0)
+        int yield = WoodcuttingMath.StageYield(data.woodYield, stage, data.stageCount);
+        if (yield <= 0)
         {
-            // Sapling — worth nothing yet; shake for feedback but make no chop progress.
-            LeanTween.moveLocalX(gameObject, transform.localPosition.x + shakePixels / 32f, 0.04f).setLoopPingPong(1);
+            // Sapling — worth nothing yet; shake for feedback but make no chop progress. Seeing zero
+            // wood come off it is the point: it teaches that saplings aren't ready.
+            Shake();
             return;
         }
 
@@ -148,20 +168,45 @@ public class TreeNode : MonoBehaviour
         int needed = WoodcuttingMath.StageHits(fullHits, stage, data.stageCount);
 
         hitsSoFar++;
-        LeanTween.moveLocalX(gameObject, transform.localPosition.x + shakePixels / 32f, 0.04f).setLoopPingPong(1);
+        Shake();
 
-        if (hitsSoFar >= needed) Fell(stage);
+        // Drip the yield out per swing — small teasers early, the bulk on the felling blow (10 wood
+        // over 5 hits → 1,1,1,1,6) instead of one lump, so the wood you're getting, and that an
+        // immature tree gives less, is visible on every hit while the final blow stays the big reward.
+        int swingWood = WoodcuttingMath.SwingWood(yield, hitsSoFar, needed);
+        if (swingWood > 0 && FarmSkillsManager.Instance != null)
+            swingWood = Mathf.RoundToInt(swingWood * (1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Forestry)));
+        if (swingWood > 0)
+        {
+            if (CurrencyManager.Instance != null) CurrencyManager.Instance.AddWood(swingWood);
+            if (wm != null) wm.NotifyWoodGathered(swingWood); // "collect X wood" quest
+            Bounds b = WorldBounds;
+            FloatingTextManager.ShowWood(swingWood, new Vector3(b.center.x, b.max.y, 0f));
+        }
+
+        if (hitsSoFar >= needed) Fell();
     }
 
-    private void Fell(int stage)
+    // A quick, aggressive recoil rotated about the tree's base (bottom-pivot sprite), so the trunk
+    // pivots from the ground like the wind sway rather than the whole sprite sliding sideways. Cancel
+    // any in-flight shake first so rapid taps re-fire crisply and always settle back to upright.
+    private void Shake()
     {
-        int yield = WoodcuttingMath.StageYield(data.woodYield, stage, data.stageCount);
-        if (CurrencyManager.Instance != null) CurrencyManager.Instance.AddWood(yield);
-        // TODO(art): floating +N text via existing floating-number system.
+        LeanTween.cancel(gameObject);
+        transform.localEulerAngles = Vector3.zero;
+        LeanTween.rotateZ(gameObject, shakeDegrees, 0.04f)
+            .setLoopPingPong(1)
+            .setOnComplete(() => { if (this != null) transform.localEulerAngles = Vector3.zero; });
+    }
 
+    private void Fell()
+    {
+        // Wood was already credited swing-by-swing in HandleTap; felling just resets the tree.
+        if (WoodcuttingManager.Instance != null) WoodcuttingManager.Instance.NotifyTreeFelled(); // "chop X trees" quest
         // Cutting restarts growth from a fresh sapling, cooldown from now.
         hitsSoFar = 0;
         shownStage = -1;
+        transform.localEulerAngles = Vector3.zero; // clear any residual shake tilt
         plantedUtcTicks = System.DateTime.UtcNow.Ticks;
         ApplyGrowthVisual();
     }
