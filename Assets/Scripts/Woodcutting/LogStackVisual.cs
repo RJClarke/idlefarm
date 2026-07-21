@@ -2,18 +2,27 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// One of 4 world-placed log piles near the Wood Rack, each representing an equal share of the
-/// wood cap (spec: wood-pile-visuals-design §3). Fills in index order — pile 1 shows nothing
-/// until pile 0 is full — and swaps through 4 sprites by fill fraction. Clickable exactly like
-/// the Wood Rack itself (opens the same sell popup); interaction/press-feedback pattern cloned
-/// from WoodRack.cs. A pile with zero fill is hidden and not interactable.
+/// One of several hand-placed world log piles near the Wood Rack, each representing a fixed
+/// 250-wood share of the wood cap (spec: wood-pile-visuals-design §3) — independent of the
+/// current CurrencyManager.MaxWood, so piles beyond today's cap sit inert in the scene ready for
+/// a future silo-expansion upgrade rather than needing to be re-added. Fills in pileIndex order —
+/// pile 1 shows nothing until pile 0 is full — and swaps through 4 sprites by fill fraction.
+/// Clickable exactly like the Wood Rack itself (opens the same sell popup); interaction/press
+/// -feedback pattern cloned from WoodRack.cs. A pile with zero fill (including one entirely past
+/// the current wood cap) is hidden and not interactable, so placement/order in the scene is left
+/// entirely to hand-placed transforms — this component only ever swaps the sprite.
 /// </summary>
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Collider2D))]
 public class LogStackVisual : MonoBehaviour
 {
-    [Tooltip("0-3. Pile 0 fills first; capacity per pile = CurrencyManager.MaxWood / 4.")]
+    [Tooltip("0-based. Pile 0 fills first, covering wood [0, woodPerPile]; pile 1 covers " +
+             "(woodPerPile, 2x woodPerPile], etc.")]
     [SerializeField] private int pileIndex;
+
+    [Tooltip("Wood this single pile represents. Fixed regardless of the current wood cap, so " +
+             "higher-indexed piles simply stay hidden until the cap grows to reach them.")]
+    [SerializeField] private int woodPerPile = 250;
 
     [Header("Sprites by fill fraction")]
     [SerializeField] private Sprite lowSprite;    // 0 < f < 0.30
@@ -26,8 +35,6 @@ public class LogStackVisual : MonoBehaviour
     [SerializeField] private float pressDuration = 0.08f;
     [SerializeField] private float releaseDuration = 0.18f;
     [SerializeField] private Color pressTint = new Color(0.78f, 0.78f, 0.78f, 1f);
-
-    private const int PileCount = 4;
 
     private SpriteRenderer spriteRenderer;
     private Collider2D ownCollider;
@@ -63,8 +70,7 @@ public class LogStackVisual : MonoBehaviour
     private void Refresh()
     {
         var cm = CurrencyManager.Instance;
-        int capacityPerPile = cm != null ? cm.MaxWood / PileCount : 0;
-        float fraction = cm != null ? WoodcuttingMath.PileFillFraction(cm.Wood, pileIndex, capacityPerPile) : 0f;
+        float fraction = cm != null ? WoodcuttingMath.PileFillFraction(cm.Wood, pileIndex, woodPerPile) : 0f;
 
         interactable = fraction > 0f;
         spriteRenderer.enabled = interactable;
