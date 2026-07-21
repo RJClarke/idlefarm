@@ -399,6 +399,8 @@ public class AnimalManager : MonoBehaviour
             else
             {
                 int reward = EffectiveReward(equipped, equipped.rewardCoins);
+                if (FarmSkillsManager.Instance != null)
+                    reward = Mathf.RoundToInt(reward * (1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Ranching)));
                 CurrencyManager.Instance.AddCoins(reward);
                 Debug.Log($"Claimed egg! +{reward} coins");
                 if (visual != null) visual.RemoveEgg();

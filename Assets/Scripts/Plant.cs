@@ -300,6 +300,8 @@ public class Plant : MonoBehaviour
         // Bountiful Harvest crit roll that doubles the whole yield (cash AND coins) for this harvest.
         int zone = parentTile != null ? parentTile.ZoneID : 1;
         bool bountiful = Random.value < FarmUpgrades.BountifulChance;
+        if (FarmSkillsManager.Instance != null)
+            harvestValue = Mathf.RoundToInt(harvestValue * (1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Harvesting)));
         harvestValue = Mathf.RoundToInt(harvestValue * FarmUpgrades.CashYieldMultiplier(zone));
         if (bountiful) harvestValue *= 2;
 
