@@ -25,6 +25,7 @@ public class CurrencyManager : MonoBehaviour
     [SerializeField] private int currentGems = 0;   // Premium currency
     [SerializeField] private int currentCompost = 0; // Research-boost currency (Plan 2)
     [SerializeField] private int currentWood = 0; // Woodcutting resource
+    [SerializeField] private int maxWood = 1000; // Log-pile visual cap (spec: wood-pile-visuals-design)
 
     [Header("Starting Values")]
     [SerializeField] private int startingMoney = 100; // Money at start of each run
@@ -43,6 +44,7 @@ public class CurrencyManager : MonoBehaviour
     public int Gems => currentGems;
     public int Compost => currentCompost;
     public int Wood => currentWood;
+    public int MaxWood => maxWood;
 
     private void Awake()
     {
@@ -296,7 +298,7 @@ public class CurrencyManager : MonoBehaviour
     public void AddWood(int amount)
     {
         if (amount <= 0) return;
-        currentWood += amount;
+        currentWood = WoodcuttingMath.ClampToCap(currentWood, amount, maxWood);
         OnWoodChanged?.Invoke(currentWood);
     }
 

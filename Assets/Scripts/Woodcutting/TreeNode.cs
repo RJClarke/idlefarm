@@ -154,6 +154,14 @@ public class TreeNode : MonoBehaviour
             return;
         }
 
+        // Wood storage is full: refuse the swing entirely (no hit, no tree damage) rather than
+        // waste chops against a tree for nothing once there's nowhere for the wood to go.
+        if (CurrencyManager.Instance != null && WoodcuttingMath.IsAtCap(CurrencyManager.Instance.Wood, CurrencyManager.Instance.MaxWood))
+        {
+            if (wm != null) wm.ShowHint(transform.position, "Wood storage full!");
+            return;
+        }
+
         int stage = WoodcuttingMath.StageIndex(GrowthFraction(), data.stageCount);
         int yield = WoodcuttingMath.StageYield(data.woodYield, stage, data.stageCount);
         if (yield <= 0)
