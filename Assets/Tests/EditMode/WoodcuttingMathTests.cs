@@ -118,4 +118,95 @@ public class WoodcuttingMathTests
         // never below 1 even for a tiny full count at an early stage
         Assert.AreEqual(1, WoodcuttingMath.StageHits(1, 0, 5));
     }
+
+    [Test]
+    public void SwingWood_SmallTeasersEarly_BulkOnTheFellingBlow()
+    {
+        // The user's example: 10 wood over 5 hits at the 0.6 default → 1,1,1,1,6 (10/10/10/10/60%).
+        int[] expected = { 1, 1, 1, 1, 6 };
+        for (int i = 0; i < 5; i++)
+            Assert.AreEqual(expected[i], WoodcuttingMath.SwingWood(10, i + 1, 5), $"hit {i + 1}");
+    }
+
+    [Test]
+    public void SwingWood_FinalBlowIsAlwaysTheLargestSwing()
+    {
+        // Whatever the hit count, the felling blow must be the biggest single reward (lopsided).
+        foreach (var (yield, needed) in new[] { (50, 6), (110, 10), (25, 3), (30, 2), (7, 4) })
+        {
+            int final = WoodcuttingMath.SwingWood(yield, needed, needed);
+            for (int i = 1; i < needed; i++)
+                Assert.GreaterOrEqual(final, WoodcuttingMath.SwingWood(yield, i, needed),
+                    $"final blow must be ≥ swing {i} (yield {yield}, {needed} hits)");
+        }
+    }
+
+    [Test]
+    public void SwingWood_SwingsAlwaysSumToTotal()
+    {
+        // Whatever the split, the per-swing amounts must total exactly the yield (no minting/loss).
+        foreach (var (yield, needed) in new[] { (50, 6), (25, 3), (7, 10), (100, 1), (0, 4) })
+        {
+            int sum = 0;
+            for (int i = 1; i <= needed; i++) sum += WoodcuttingMath.SwingWood(yield, i, needed);
+            Assert.AreEqual(yield, sum, $"yield {yield} over {needed} hits");
+        }
+    }
+
+    [Test]
+    public void SwingWood_SingleHitFell_PaysWholeTreeOnThatBlow()
+    {
+        Assert.AreEqual(100, WoodcuttingMath.SwingWood(100, 1, 1));
+    }
+
+    [Test]
+    public void ClampToCap_DepositUnderCap_AddsFully()
+    {
+        Assert.AreEqual(150, WoodcuttingMath.ClampToCap(100, 50, 1000));
+    }
+
+    [Test]
+    public void ClampToCap_DepositWouldOverflow_TruncatesToCap()
+    {
+        Assert.AreEqual(1000, WoodcuttingMath.ClampToCap(990, 15, 1000));
+    }
+
+    [Test]
+    public void ClampToCap_AlreadyAtCap_StaysAtCap()
+    {
+        Assert.AreEqual(1000, WoodcuttingMath.ClampToCap(1000, 5, 1000));
+    }
+
+    [Test]
+    public void ClampToCap_NonPositiveAdd_ReturnsCurrentUnchanged()
+    {
+        Assert.AreEqual(500, WoodcuttingMath.ClampToCap(500, 0, 1000));
+        Assert.AreEqual(500, WoodcuttingMath.ClampToCap(500, -10, 1000));
+    }
+
+    [Test]
+    public void IsAtCap_TrueOnlyAtOrAboveCap()
+    {
+        Assert.IsFalse(WoodcuttingMath.IsAtCap(999, 1000));
+        Assert.IsTrue(WoodcuttingMath.IsAtCap(1000, 1000));
+        Assert.IsTrue(WoodcuttingMath.IsAtCap(1001, 1000));
+    }
+
+    [Test]
+    public void PileFillFraction_FirstPileFillsBeforeSecondStarts()
+    {
+        // capacityPerPile=250: pile 0 covers wood 0-250, pile 1 covers 250-500, etc.
+        Assert.AreEqual(0f, WoodcuttingMath.PileFillFraction(0, 0, 250));
+        Assert.AreEqual(0.4f, WoodcuttingMath.PileFillFraction(100, 0, 250), 0.0001f);
+        Assert.AreEqual(1f, WoodcuttingMath.PileFillFraction(250, 0, 250));
+        Assert.AreEqual(1f, WoodcuttingMath.PileFillFraction(300, 0, 250)); // pile 0 caps at its own 250
+        Assert.AreEqual(0f, WoodcuttingMath.PileFillFraction(250, 1, 250)); // pile 1 hasn't started yet
+        Assert.AreEqual(0.2f, WoodcuttingMath.PileFillFraction(300, 1, 250), 0.0001f);
+    }
+
+    [Test]
+    public void PileFillFraction_ZeroCapacity_ReturnsZeroSafely()
+    {
+        Assert.AreEqual(0f, WoodcuttingMath.PileFillFraction(500, 0, 0));
+    }
 }

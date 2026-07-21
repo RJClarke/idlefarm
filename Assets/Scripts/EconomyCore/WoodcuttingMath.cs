@@ -81,4 +81,53 @@ public static class WoodcuttingMath
         int stage = Mathf.Clamp(stageIndex, 0, stageCount - 1);
         return Mathf.Max(1, Mathf.RoundToInt(fullHits * (stage + 1) / (float)stageCount));
     }
+
+    /// <summary>Fraction of a tree's wood paid on the felling blow. The remaining
+    /// (1 - this) is split evenly across the earlier swings as small teasers, so the final hit is
+    /// always the big reward.</summary>
+    public const float DefaultFinalBlowShare = 0.6f;
+
+    /// <summary>Wood credited on a single swing so the payout drips out as you chop instead of
+    /// landing in one lump. Earlier swings each get a small even slice of the leading
+    /// (1 - <paramref name="finalShare"/>) portion; the felling blow takes the rest — the bulk — so
+    /// it's always the largest single reward and the chop feels lopsided toward the finish. With the
+    /// 0.6 default this is 10 wood over 5 hits → 1,1,1,1,6 (i.e. 10/10/10/10/60%). Swings always sum
+    /// to exactly totalYield. <paramref name="hitIndex"/> is 1-based (neededHits = the felling swing).</summary>
+    public static int SwingWood(int totalYield, int hitIndex, int neededHits, float finalShare = DefaultFinalBlowShare)
+    {
+        totalYield = Mathf.Max(0, totalYield);
+        neededHits = Mathf.Max(1, neededHits);
+        hitIndex = Mathf.Clamp(hitIndex, 1, neededHits);
+        if (neededHits == 1) return totalYield; // a one-hit fell gets the whole tree on that blow
+
+        finalShare = Mathf.Clamp01(finalShare);
+        // Round the leading pool to an int first (so float error can't turn an intended 1.0 into
+        // 0.999… and floor it away), then split it across the earlier swings with integer division.
+        int leadingPool = Mathf.RoundToInt(totalYield * (1f - finalShare));
+        int perSwing = leadingPool / (neededHits - 1);
+        return hitIndex < neededHits ? perSwing : totalYield - perSwing * (neededHits - 1);
+    }
+
+    // ── Wood cap (log pile visuals + hard cap) ───────────
+
+    /// <summary>New wood total after depositing `add`, truncated so it never exceeds `cap`.
+    /// A non-positive `add` leaves `current` unchanged.</summary>
+    public static int ClampToCap(int current, int add, int cap)
+    {
+        if (add <= 0) return current;
+        return Mathf.Min(current + add, cap);
+    }
+
+    /// <summary>True once wood is at or above the cap — used to refuse further chopping.</summary>
+    public static bool IsAtCap(int current, int cap) => current >= cap;
+
+    /// <summary>0..1 fill fraction for one of several equal-capacity log piles, filling in index
+    /// order: pile 0 covers wood [0, capacityPerPile], pile 1 covers (capacityPerPile, 2x], etc.</summary>
+    public static float PileFillFraction(int totalWood, int pileIndex, int capacityPerPile)
+    {
+        if (capacityPerPile <= 0) return 0f;
+        int pileFloor = pileIndex * capacityPerPile;
+        int fillWithinPile = Mathf.Clamp(totalWood - pileFloor, 0, capacityPerPile);
+        return fillWithinPile / (float)capacityPerPile;
+    }
 }
