@@ -5,6 +5,8 @@ public class LakeNavButton : MapNavButton
 {
     protected override CameraPanController.Location Target => CameraPanController.Location.Lake;
 
+    protected override bool TogglesBackToFarm => false;
+
     protected override bool ShouldHide(CameraPanController.Location current)
         => current == CameraPanController.Location.Market;
 }

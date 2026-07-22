@@ -79,6 +79,11 @@ public class EquipmentManager : MonoBehaviour
         {
             RunManager.Instance.OnRunStarted += OnRunStarted;
             RunManager.Instance.OnRunEnded += OnRunEnded;
+
+            // Resume race: SaveManager.ResumeRun fires OnRunStarted during load, possibly before
+            // this Start() subscribed - without catch-up no zone equipment (fences/scarecrows)
+            // is built for the entire resumed run.
+            if (RunManager.Instance.IsRunActive) OnRunStarted();
         }
 
         if (UpgradeManager.Instance != null)

@@ -14,6 +14,7 @@ public static class SaveFileIO
 {
     public const string TmpSuffix = ".tmp";
     public const string BakSuffix = ".bak";
+    public const string CorruptSuffix = ".corrupt-";
 
     /// <summary>
     /// Write <paramref name="contents"/> to <paramref name="path"/> atomically. The bytes are
@@ -74,6 +75,35 @@ public static class SaveFileIO
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Move an unreadable save file aside to <c>path + ".corrupt-&lt;utc-stamp&gt;"</c> so a later
+    /// <see cref="WriteAtomic"/> cannot rotate it out of existence — the file may still be
+    /// hand-recoverable. Returns the quarantine path, or null when there was nothing to move
+    /// (or the move itself failed; the caller should treat null as "file left in place").
+    /// </summary>
+    public static string Quarantine(string path)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(path) || !File.Exists(path)) return null;
+
+            string stem = path + CorruptSuffix + DateTime.UtcNow.ToString("yyyyMMdd-HHmmss");
+            string dest = stem;
+            for (int n = 1; File.Exists(dest); n++) dest = stem + "-" + n;
+
+            File.Move(path, dest);
+            return dest;
+        }
+        catch (IOException)
+        {
+            return null;
+        }
+        catch (UnauthorizedAccessException)
+        {
+            return null;
+        }
     }
 
     private static bool TryReadValid(string path, Func<string, bool> isValid, out string contents)

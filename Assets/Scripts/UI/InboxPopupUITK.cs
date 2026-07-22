@@ -10,7 +10,7 @@ public class InboxPopupUITK : MonoBehaviour
     public static InboxPopupUITK Instance { get; private set; }
 
     private UIDocument document;
-    private VisualElement popupRoot, listView, detailView, portrait, backdrop;
+    private VisualElement popupRoot, listView, detailView, portrait, backdrop, rewardItems, rewardItemsList;
     private Button backButton, closeButton, claimButton, ctaButton;
     private Label headerTitle, senderName, detailSubject, detailBody;
 
@@ -48,6 +48,8 @@ public class InboxPopupUITK : MonoBehaviour
         backdrop      = root.Q<VisualElement>("backdrop");
         listView      = root.Q<ScrollView>("list-view");
         detailView    = root.Q<VisualElement>("detail-view");
+        rewardItems   = root.Q<VisualElement>("reward-items");
+        rewardItemsList = root.Q<VisualElement>("reward-items-list");
         portrait      = root.Q<VisualElement>("portrait");
         backButton    = root.Q<Button>("back-button");
         closeButton   = root.Q<Button>("close-button");
@@ -148,16 +150,57 @@ public class InboxPopupUITK : MonoBehaviour
         bool hasReward = def.rewardKind != RewardKind.None && def.rewardAmount > 0;
         var entry = FindEntry(letterId);
         bool claimed = entry != null && entry.claimed;
+
+        // Enclosed items live in their own inset list (below the message) rather than crammed onto the
+        // button — so future letters can grant several things without running out of button.
+        BuildRewardItems(def, hasReward);
+
         if (claimButton != null)
         {
             claimButton.style.display = hasReward ? DisplayStyle.Flex : DisplayStyle.None;
-            claimButton.text = claimed ? "Claimed" : $"Claim {def.rewardAmount} {def.rewardKind}";
-            claimButton.SetEnabled(hasReward && !claimed);
+            // Amount now shows in the items list; the button is just the action / done-state.
+            claimButton.text = claimed ? "Items Claimed" : "Claim";
+            if (claimed) claimButton.AddToClassList("inbox-claim--claimed");
+            else claimButton.RemoveFromClassList("inbox-claim--claimed");
+            // Kept "enabled" when claimed so it stays a readable brown pill (not the gray :disabled
+            // wash); it's made non-interactive instead, and OnClaim is idempotent regardless.
+            claimButton.SetEnabled(true);
+            claimButton.pickingMode = claimed ? PickingMode.Ignore : PickingMode.Position;
         }
         if (ctaButton != null)
         {
             ctaButton.style.display = def.ctaKind != CtaKind.None ? DisplayStyle.Flex : DisplayStyle.None;
             ctaButton.text = CtaLabel(def.ctaKind);
+        }
+    }
+
+    // Renders the letter's reward(s) into the inset "Enclosed" list. One reward today, but built as a
+    // list so multi-item letters just add more rows here without touching the button.
+    private void BuildRewardItems(LetterDef def, bool hasReward)
+    {
+        if (rewardItems == null || rewardItemsList == null) return;
+        rewardItemsList.Clear();
+        if (!hasReward) { rewardItems.style.display = DisplayStyle.None; return; }
+
+        rewardItems.style.display = DisplayStyle.Flex;
+
+        var itemRow = new VisualElement(); itemRow.AddToClassList("inbox-item");
+        var icon = new VisualElement(); icon.AddToClassList("inbox-item-icon");
+        icon.AddToClassList(RewardIconClass(def.rewardKind));
+        icon.pickingMode = PickingMode.Ignore;
+        var label = new Label($"{def.rewardAmount:N0} {def.rewardKind}");
+        label.AddToClassList("inbox-item-label");
+        itemRow.Add(icon); itemRow.Add(label);
+        rewardItemsList.Add(itemRow);
+    }
+
+    private static string RewardIconClass(RewardKind kind)
+    {
+        switch (kind)
+        {
+            case RewardKind.Gems:    return "inbox-item-icon--gems";
+            case RewardKind.Compost: return "inbox-item-icon--compost";
+            default:                 return "inbox-item-icon--coins";
         }
     }
 

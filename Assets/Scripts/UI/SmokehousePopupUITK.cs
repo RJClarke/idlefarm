@@ -89,6 +89,8 @@ public class SmokehousePopupUITK : MonoBehaviour
     private void WireCallbacks()
     {
         if (closeButton != null) closeButton.RegisterCallback<ClickEvent>(_ => Close());
+        // Tap outside the card (on the dim backdrop) closes the popup, like the other modals.
+        root.Q<VisualElement>("backdrop")?.RegisterCallback<ClickEvent>(_ => Close());
         if (stokeButton != null) stokeButton.RegisterCallback<ClickEvent>(_ =>
         {
             if (SmokehouseManager.Instance != null) SmokehouseManager.Instance.StokeToFinish();
@@ -127,6 +129,19 @@ public class SmokehousePopupUITK : MonoBehaviour
             popupRoot.style.display = DisplayStyle.None;
             if (root != null) root.pickingMode = PickingMode.Ignore;
         }).StartingIn(260);
+    }
+
+    // Maps a fish tier (1 Perch / 2 Bass / 3 Northern Pike) to its USS icon modifier class. The
+    // per-tier class carries the sprite via background-image in the USS, matching the icon pattern
+    // used elsewhere (e.g. WoodRack's .wood-icon).
+    private static string FishIconClass(int tier)
+    {
+        switch (Mathf.Clamp(tier, 1, FishTiers.Count))
+        {
+            case 1:  return "fish-icon--perch";
+            case 2:  return "fish-icon--bass";
+            default: return "fish-icon--pike";
+        }
     }
 
     private static string FormatDuration(double seconds)
@@ -189,6 +204,9 @@ public class SmokehousePopupUITK : MonoBehaviour
             int count = pantry != null ? pantry.GetRaw(tier) : 0;
             var row = new VisualElement();
             row.AddToClassList("fish-row");
+            var icon = new VisualElement();
+            icon.AddToClassList("fish-icon");
+            icon.AddToClassList(FishIconClass(tier));
             var label = new Label($"{FishTiers.Name(tier)}  ×{count}");
             label.AddToClassList("fish-row-label");
             var buttons = new VisualElement();
@@ -208,6 +226,7 @@ public class SmokehousePopupUITK : MonoBehaviour
 
             buttons.Add(smoke);
             buttons.Add(sell);
+            row.Add(icon);
             row.Add(label);
             row.Add(buttons);
             rawList.Add(row);
@@ -280,6 +299,9 @@ public class SmokehousePopupUITK : MonoBehaviour
             totalCount += count;
             var row = new VisualElement();
             row.AddToClassList("fish-row");
+            var icon = new VisualElement();
+            icon.AddToClassList("fish-icon");
+            icon.AddToClassList(FishIconClass(tier));
             var label = new Label($"{FishTiers.SmokedName(tier)}  ×{count}");
             label.AddToClassList("fish-row-label");
             int t = tier;
@@ -287,6 +309,7 @@ public class SmokehousePopupUITK : MonoBehaviour
             sell.AddToClassList("fish-btn");
             sell.SetEnabled(count > 0);
             sell.RegisterCallback<ClickEvent>(_ => { if (SmokehouseManager.Instance != null) SmokehouseManager.Instance.TrySellSmoked(t); });
+            row.Add(icon);
             row.Add(label);
             row.Add(sell);
             smokedList.Add(row);

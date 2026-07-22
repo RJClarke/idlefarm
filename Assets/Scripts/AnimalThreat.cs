@@ -44,6 +44,17 @@ public abstract class AnimalThreat : MonoBehaviour
 
     public AnimalThreatType ThreatType => data != null ? data.threatType : AnimalThreatType.Deer;
 
+    /// <summary>
+    /// Toggle all renderers on/off without pausing the threat. Used by ThreatWaveManager to hide
+    /// threats while the camera is parked at the Lake — they keep running/eating (the run economy is
+    /// unchanged), we just don't draw them crossing the water. Movement/coroutines are untouched.
+    /// </summary>
+    public void SetRenderersVisible(bool visible)
+    {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>(true);
+        for (int i = 0; i < renderers.Length; i++) renderers[i].enabled = visible;
+    }
+
     // ─────────────────────────────────────────────────────────────────────
     // Unity
     // ─────────────────────────────────────────────────────────────────────

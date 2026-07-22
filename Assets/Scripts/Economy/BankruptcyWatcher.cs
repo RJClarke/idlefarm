@@ -46,8 +46,10 @@ public class BankruptcyWatcher : MonoBehaviour
     /// <summary>
     /// Bankrupt = (a) no equipped crop can be planted (no seeds AND no affordable bag) AND
     /// (b) zero crops currently growing anywhere (no harvest income incoming).
+    /// Public + static so the offline reopen gate can judge a just-resumed run immediately
+    /// instead of waiting out this watcher's grace period.
     /// </summary>
-    private bool IsBankrupt()
+    public static bool IsBankrupt()
     {
         if (FarmGrid.Instance == null || HelperManager.Instance == null || SeedInventory.Instance == null)
             return false;

@@ -184,6 +184,13 @@ public class QuestManager : MonoBehaviour
                 !AnimalManager.Instance.IsUnlocked(quest.requiredAnimalID))
                 return false;
         }
+        // Woodcutting objectives are impossible without an axe — don't drop them until you own one.
+        if (quest.objectiveType == QuestObjectiveType.ChopTrees ||
+            quest.objectiveType == QuestObjectiveType.CollectWood)
+        {
+            if (WoodcuttingManager.Instance == null || !WoodcuttingManager.Instance.HasAxe)
+                return false;
+        }
         return true;
     }
 
@@ -300,11 +307,26 @@ public class QuestManager : MonoBehaviour
     private void SubscribeToEvents()
     {
         if (RunManager.Instance != null)
+        {
             RunManager.Instance.OnRunStarted += OnRunStarted;
+
+            // Resume race: SaveManager.ResumeRun fires OnRunStarted during load, possibly before
+            // we subscribed - without catch-up the RunStats hooks never wire and quest progress
+            // (harvest/plant/water/repel) is dead for the entire resumed run. Idempotent via
+            // the runStatsSubscribed flag.
+            if (RunManager.Instance.IsRunActive) OnRunStarted();
+        }
         if (AnimalManager.Instance != null)
         {
             AnimalManager.Instance.OnEggClaimed += HandleEggClaimed;
             AnimalManager.Instance.OnGemClaimed += HandleGemClaimed;
+        }
+        // Woodcutting is a stable DontDestroyOnLoad singleton (like AnimalManager), so subscribe once
+        // here. Chopping happens in/out of runs, so these progress anytime.
+        if (WoodcuttingManager.Instance != null)
+        {
+            WoodcuttingManager.Instance.OnTreeFelled   += HandleTreeFelled;
+            WoodcuttingManager.Instance.OnWoodGathered += HandleWoodGathered;
         }
     }
 
@@ -316,6 +338,11 @@ public class QuestManager : MonoBehaviour
         {
             AnimalManager.Instance.OnEggClaimed -= HandleEggClaimed;
             AnimalManager.Instance.OnGemClaimed -= HandleGemClaimed;
+        }
+        if (WoodcuttingManager.Instance != null)
+        {
+            WoodcuttingManager.Instance.OnTreeFelled   -= HandleTreeFelled;
+            WoodcuttingManager.Instance.OnWoodGathered -= HandleWoodGathered;
         }
         if (RunStats.Instance != null && runStatsSubscribed)
         {
@@ -344,6 +371,8 @@ public class QuestManager : MonoBehaviour
 
     private void HandleEggClaimed() => IncrementProgress(QuestObjectiveType.GatherEggs);
     private void HandleGemClaimed() => IncrementProgress(QuestObjectiveType.GatherGems);
+    private void HandleTreeFelled() => IncrementProgress(QuestObjectiveType.ChopTrees);
+    private void HandleWoodGathered(int amount) => IncrementProgress(QuestObjectiveType.CollectWood, amount);
     private void HandleCropHarvested() => IncrementProgress(QuestObjectiveType.HarvestCrops);
     private void HandleSeedPlanted() => IncrementProgress(QuestObjectiveType.PlantSeeds);
     private void HandlePlantWatered() => IncrementProgress(QuestObjectiveType.WaterPlants);
@@ -356,14 +385,15 @@ public class QuestManager : MonoBehaviour
         catch { return TimeZoneInfo.FindSystemTimeZoneById("America/Chicago"); }
     }
 
-    private void IncrementProgress(QuestObjectiveType type)
+    private void IncrementProgress(QuestObjectiveType type, int amount = 1)
     {
+        if (amount <= 0) return;
         bool anyCompleted = false;
         foreach (ActiveQuest quest in activeQuests)
         {
             if (quest.isClaimed || quest.isCompleted) continue;
             if (!questsByID.TryGetValue(quest.questID, out QuestData data) || data.objectiveType != type) continue;
-            quest.progress++;
+            quest.progress += amount;
             if (quest.progress >= data.targetCount)
             {
                 quest.isCompleted = true;

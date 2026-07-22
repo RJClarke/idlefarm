@@ -13,13 +13,20 @@ using TMPro;
 public class SeedCounterHUD : MonoBehaviour
 {
     [SerializeField] private TMP_FontAsset font;
+    [Tooltip("9-sliced frame drawn behind each seed bag (the wooden slot look). Falls back to a " +
+             "flat dark panel if unset.")]
+    [SerializeField] private Sprite frameSprite;
 
-    // Layout (screen pixels; canvas is ConstantPixelSize like FloatingTextManager).
+    // Layout is authored in 1080x1920 reference pixels (the canvas below scales with screen size,
+    // matching the rest of the UI, so these line up with the map-nav buttons on every resolution).
     private const float WidgetW = 110f;
-    private const float WidgetH = 134f;
+    private const float WidgetH = 150f;   // a touch taller so the icon + price both breathe
     private const float Spacing = 14f;
     private const float RightMargin = 16f;
-    private const float BottomStart = 300f; // clear of the bottom nav
+    private const float BadgeSize = 46f;   // cream/brown seeds-remaining badge in the top-right corner
+    // Sit the stack above the map-nav button column (Greenhouse/Lake/Woods top out ~436) so the two
+    // never overlap, while staying well below the top currency bar even with all 4 bags shown.
+    private const float BottomStart = 500f;
 
     private Canvas _canvas;
 
@@ -39,7 +46,14 @@ public class SeedCounterHUD : MonoBehaviour
         _canvas = gameObject.AddComponent<Canvas>();
         _canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         _canvas.sortingOrder = 400;
-        gameObject.AddComponent<CanvasScaler>();
+        // Scale with screen size (ref 1080x1920, match 0.5) so our reference-pixel layout stays
+        // aligned with the map-nav buttons / top bar on any device resolution — not the old
+        // ConstantPixelSize, which drifted out of alignment as the render resolution changed.
+        var scaler = gameObject.AddComponent<CanvasScaler>();
+        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+        scaler.referenceResolution = new Vector2(1080f, 1920f);
+        scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
+        scaler.matchWidthOrHeight = 0.5f;
         gameObject.AddComponent<GraphicRaycaster>();
     }
 
@@ -87,8 +101,38 @@ public class SeedCounterHUD : MonoBehaviour
         _bags.Clear();
     }
 
-    private static readonly Color RedColor = new Color(0.95f, 0.25f, 0.25f);
-    private static readonly Color PriceGold = new Color(0.47f, 0.902f, 0.51f); // match cash/money green
+    // Text colors tuned for legibility on the light wooden frame.
+    private static readonly Color CountInk = new Color(0.20f, 0.14f, 0.09f);   // dark brown: seeds remaining
+    private static readonly Color RedColor = new Color(0.75f, 0.13f, 0.10f);   // deep red: out of seeds / can't afford
+    private static readonly Color PriceGreen = new Color(0.10f, 0.45f, 0.16f); // deep green: bag price when affordable
+
+    // Cream/brown count badge (top-right corner).
+    private static readonly Color BadgeCream = new Color(0.98f, 0.93f, 0.78f); // warm cream fill
+    private static readonly Color BadgeRing  = new Color(0.30f, 0.20f, 0.11f); // dark brown ring
+
+    // A soft-edged white circle sprite built once and tinted for both badge layers. Cached so every
+    // bag reuses the same texture.
+    private static Sprite _circleSprite;
+    private static Sprite CircleSprite()
+    {
+        if (_circleSprite != null) return _circleSprite;
+        const int size = 64;
+        var tex = new Texture2D(size, size, TextureFormat.RGBA32, false) { filterMode = FilterMode.Bilinear };
+        float r = size / 2f;
+        var center = new Vector2(r, r);
+        var px = new Color[size * size];
+        for (int y = 0; y < size; y++)
+            for (int x = 0; x < size; x++)
+            {
+                float d = Vector2.Distance(new Vector2(x + 0.5f, y + 0.5f), center);
+                float a = Mathf.Clamp01(r - d); // ~1px anti-aliased edge
+                px[y * size + x] = new Color(1f, 1f, 1f, a);
+            }
+        tex.SetPixels(px);
+        tex.Apply();
+        _circleSprite = Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), size);
+        return _circleSprite;
+    }
 
     /// <summary>
     /// Build a persistent widget for every crop configured this run, so the player always sees
@@ -104,7 +148,7 @@ public class SeedCounterHUD : MonoBehaviour
             Bag bag = GetOrCreateBag(crop);
             int remaining = SeedInventory.Instance.SeedsRemaining(crop);
             bag.count.text = remaining.ToString();
-            bag.count.color = remaining <= 0 ? RedColor : Color.white;
+            bag.count.color = remaining <= 0 ? RedColor : CountInk;
         }
         RefreshPrices();
     }
@@ -132,7 +176,7 @@ public class SeedCounterHUD : MonoBehaviour
             int cost = SeedInventory.Instance.BagCost(kv.Key);
             kv.Value.price.text = "$" + cost;
             bool canBuy = CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordMoney(cost);
-            kv.Value.price.color = canBuy ? PriceGold : RedColor;
+            kv.Value.price.color = canBuy ? PriceGreen : RedColor;
         }
     }
 
@@ -144,7 +188,7 @@ public class SeedCounterHUD : MonoBehaviour
         // (stale SeedInventory state) spawns a card that lingers until the next run.
         if (!_bags.TryGetValue(crop, out var bag) || bag.root == null) return;
         bag.count.text = remaining.ToString();
-        bag.count.color = remaining <= 0 ? new Color(0.95f, 0.25f, 0.25f) : Color.white;
+        bag.count.color = remaining <= 0 ? RedColor : CountInk;
     }
 
     private void HandleBagPurchased(CropData crop, int cost)
@@ -185,15 +229,27 @@ public class SeedCounterHUD : MonoBehaviour
         root.sizeDelta = new Vector2(WidgetW, WidgetH);
         root.anchoredPosition = new Vector2(-RightMargin, BottomStart + index * (WidgetH + Spacing));
 
-        // Background panel for legibility behind the icon.
+        // Framed panel behind the icon/text — the wooden "slot" look from the top-bar buttons, so
+        // the icon and numbers read clearly against the busy farm behind them. Falls back to a flat
+        // dark panel when no frame sprite is wired.
         var bgGo = new GameObject("bg", typeof(RectTransform));
         bgGo.transform.SetParent(root, false);
         var bgImg = bgGo.AddComponent<Image>();
-        bgImg.color = new Color(0f, 0f, 0f, 0.55f);
+        if (frameSprite != null)
+        {
+            bgImg.sprite = frameSprite;
+            bgImg.type = Image.Type.Sliced;
+            bgImg.color = Color.white;
+        }
+        else
+        {
+            bgImg.color = new Color(0f, 0f, 0f, 0.55f);
+        }
         bgImg.raycastTarget = false;
         Stretch(bgGo.GetComponent<RectTransform>());
 
-        // Seed-packet icon (fallback to crop sprite). Sits in the upper portion of the widget.
+        // Seed-packet icon (fallback to crop sprite). Fills the upper portion, leaving a bottom band
+        // for the price. The seed count now lives in a corner badge, not under the icon.
         Sprite icon = crop.seedPacketSprite != null ? crop.seedPacketSprite : crop.cropSprite;
         if (icon != null)
         {
@@ -207,42 +263,67 @@ public class SeedCounterHUD : MonoBehaviour
             irt.anchorMin = new Vector2(0.5f, 1f);
             irt.anchorMax = new Vector2(0.5f, 1f);
             irt.pivot = new Vector2(0.5f, 1f);
-            irt.sizeDelta = new Vector2(WidgetW - 24f, WidgetH - 40f);
-            irt.anchoredPosition = new Vector2(0f, -8f);
+            irt.sizeDelta = new Vector2(WidgetW - 28f, WidgetH - 54f);
+            irt.anchoredPosition = new Vector2(0f, -10f);
         }
 
-        // Seed count label (seeds remaining).
+        // Seeds-remaining badge: a cream disc with a dark-brown ring, pinned to the top-right corner
+        // (notification-dot placement) so the number stays legible on a high-contrast background no
+        // matter what's behind the widget. Two stacked circles give the ring; the number sits on top.
+        var badgeGo = new GameObject("countBadge", typeof(RectTransform));
+        badgeGo.transform.SetParent(root, false);
+        var badgeRing = badgeGo.AddComponent<Image>();
+        badgeRing.sprite = CircleSprite();
+        badgeRing.color = BadgeRing;
+        badgeRing.raycastTarget = false;
+        var brt = badgeGo.GetComponent<RectTransform>();
+        brt.anchorMin = new Vector2(1f, 1f);
+        brt.anchorMax = new Vector2(1f, 1f);
+        brt.pivot = new Vector2(0.5f, 0.5f);
+        brt.sizeDelta = new Vector2(BadgeSize, BadgeSize);
+        brt.anchoredPosition = new Vector2(-BadgeSize * 0.32f, -BadgeSize * 0.32f);
+
+        var fillGo = new GameObject("fill", typeof(RectTransform));
+        fillGo.transform.SetParent(badgeGo.transform, false);
+        var fillImg = fillGo.AddComponent<Image>();
+        fillImg.sprite = CircleSprite();
+        fillImg.color = BadgeCream;
+        fillImg.raycastTarget = false;
+        var frt = fillGo.GetComponent<RectTransform>();
+        frt.anchorMin = Vector2.zero; frt.anchorMax = Vector2.one;
+        frt.offsetMin = new Vector2(4f, 4f); frt.offsetMax = new Vector2(-4f, -4f);
+
         var countGo = new GameObject("count", typeof(RectTransform));
-        countGo.transform.SetParent(root, false);
+        countGo.transform.SetParent(badgeGo.transform, false);
         var count = countGo.AddComponent<TextMeshProUGUI>();
-        count.fontSize = 30;
+        count.enableAutoSizing = true;      // shrink so 2–3 digit counts still fit the disc
+        count.fontSizeMin = 14f;
+        count.fontSizeMax = 26f;
         count.fontStyle = FontStyles.Bold;
         count.alignment = TextAlignmentOptions.Center;
         count.raycastTarget = false;
+        count.color = CountInk;
         if (font != null) count.font = font;
         var crt = countGo.GetComponent<RectTransform>();
-        crt.anchorMin = new Vector2(0f, 0f);
-        crt.anchorMax = new Vector2(1f, 0f);
-        crt.pivot = new Vector2(0.5f, 0f);
-        crt.sizeDelta = new Vector2(0f, 34f);
-        crt.anchoredPosition = new Vector2(0f, 30f);
+        crt.anchorMin = Vector2.zero; crt.anchorMax = Vector2.one;
+        crt.offsetMin = new Vector2(2f, 2f); crt.offsetMax = new Vector2(-2f, -2f);
 
-        // Live (escalating) bag price across the very bottom.
+        // Live (escalating) bag price across the bottom band (lifted off the very edge so it fits).
         var priceGo = new GameObject("price", typeof(RectTransform));
         priceGo.transform.SetParent(root, false);
         var price = priceGo.AddComponent<TextMeshProUGUI>();
-        price.fontSize = 24;
+        price.fontSize = 26;
         price.fontStyle = FontStyles.Bold;
         price.alignment = TextAlignmentOptions.Center;
         price.raycastTarget = false;
-        price.color = new Color(1f, 0.85f, 0.4f);
+        price.color = PriceGreen;
         if (font != null) price.font = font;
         var prt = priceGo.GetComponent<RectTransform>();
         prt.anchorMin = new Vector2(0f, 0f);
         prt.anchorMax = new Vector2(1f, 0f);
         prt.pivot = new Vector2(0.5f, 0f);
-        prt.sizeDelta = new Vector2(0f, 30f);
-        prt.anchoredPosition = new Vector2(0f, 4f);
+        prt.sizeDelta = new Vector2(0f, 34f);
+        prt.anchoredPosition = new Vector2(0f, 12f);
 
         var bag = new Bag { root = root, count = count, price = price };
         _bags[crop] = bag;

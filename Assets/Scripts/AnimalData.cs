@@ -41,4 +41,9 @@ public class AnimalData : ScriptableObject
     public GameObject visualPrefab;
     public float roamSpeed = 0.6f;
     public Sprite iconSprite;
+
+    [Header("Click SFX")]
+    [Tooltip("Sounds played (one picked at random, with slight pitch jitter) when the player taps this " +
+             "animal on the farm. Leave empty until clips are ready — tapping still does the little hop.")]
+    public AudioClip[] clickSounds;
 }

@@ -5,6 +5,8 @@ public class WoodsNavButton : MapNavButton
 {
     protected override CameraPanController.Location Target => CameraPanController.Location.Woods;
 
+    protected override bool TogglesBackToFarm => false;
+
     protected override bool ShouldHide(CameraPanController.Location current)
         => current == CameraPanController.Location.Market;
 }

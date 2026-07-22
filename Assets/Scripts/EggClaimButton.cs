@@ -15,6 +15,12 @@ public class EggClaimButton : MonoBehaviour
     [SerializeField] private Color readyColor = new Color(0.55f, 0.35f, 0.17f, 0.9f);
     [SerializeField] private Color cooldownColor = new Color(0.35f, 0.35f, 0.35f, 0.5f);
 
+    // Icon felt oversized at full scale — trimmed to 0.75× collectible / 0.56× on cooldown, with a
+    // proportionally smaller ready-pop so all three stay in the same size family.
+    private const float ReadyScale = 0.75f;
+    private const float CooldownScale = ReadyScale * 0.75f; // ≈0.56
+    private const float PopScale = ReadyScale * 1.15f;      // ≈0.86
+
     private System.Action<AnimalData> onEquipped;
     private System.Action onUnequipped;
     private System.Action onEggReady;
@@ -105,7 +111,7 @@ public class EggClaimButton : MonoBehaviour
         if (emojiText != null)
             emojiText.text = "🥚";
 
-        float targetScale = ready ? 1f : 0.75f;
+        float targetScale = ready ? ReadyScale : CooldownScale;
         LeanTween.cancel(gameObject);
         LeanTween.scale(gameObject, Vector3.one * targetScale, 0.2f).setEaseOutBack();
     }
@@ -132,10 +138,10 @@ public class EggClaimButton : MonoBehaviour
     {
         UpdateState();
 
-        // Pop to full size with a little overshoot
+        // Pop with a little overshoot, then settle at the collectible size.
         LeanTween.cancel(gameObject);
-        LeanTween.scale(gameObject, Vector3.one * 1.15f, 0.2f)
+        LeanTween.scale(gameObject, Vector3.one * PopScale, 0.2f)
             .setEaseOutBack()
-            .setOnComplete(() => LeanTween.scale(gameObject, Vector3.one, 0.1f).setEaseInQuad());
+            .setOnComplete(() => LeanTween.scale(gameObject, Vector3.one * ReadyScale, 0.1f).setEaseInQuad());
     }
 }

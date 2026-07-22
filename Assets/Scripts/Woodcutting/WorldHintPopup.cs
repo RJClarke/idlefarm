@@ -41,22 +41,36 @@ public class WorldHintPopup : MonoBehaviour
 
     private CanvasGroup group;
 
-    /// <summary>Build a hint at worldPos, show text, hold, fade out, then self-destroy. Instantiates the
-    /// Resources/WorldHintPopup prefab so its serialized style drives the look; falls back to a bare,
-    /// default-styled instance if the prefab is absent.</summary>
     /// <summary>Build a hint at worldPos. By default it holds, fades, and self-destroys. Pass
     /// persistent = true for a bubble the caller owns and repositions (e.g. the fishing bite
     /// indicator that must stay above the bobber until the fish is reeled in); it never fades or
-    /// self-destroys, so the caller must Destroy it.</summary>
+    /// self-destroys, so the caller must Destroy it. Instantiates the Resources/WorldHintPopup
+    /// prefab so its serialized style drives the look; falls back to a bare, default-styled
+    /// instance if the prefab is absent.</summary>
     public static WorldHintPopup Create(Vector3 worldPos, string text, bool persistent = false)
+        => Spawn(worldPos, text, null, null, null, persistent);
+
+    /// <summary>Icon bubble variant: a sprite instead of text, with optional fill/stroke override —
+    /// e.g. the fishing bite bubble (cream fill, charcoal stroke, the hooked fish's icon). Styled
+    /// as a true speech bubble: extra corner rounding plus a pointy tail off the bottom.</summary>
+    public static WorldHintPopup CreateIcon(Vector3 worldPos, Sprite icon,
+        Color? fill = null, Color? stroke = null, bool persistent = false)
+        => Spawn(worldPos, null, icon, fill, stroke, persistent);
+
+    private static WorldHintPopup Spawn(Vector3 worldPos, string text, Sprite icon,
+        Color? fill, Color? stroke, bool persistent)
     {
         WorldHintPopup prefab = Resources.Load<WorldHintPopup>("WorldHintPopup");
         WorldHintPopup hint = prefab != null
             ? Instantiate(prefab)
             : new GameObject("WorldHintPopup").AddComponent<WorldHintPopup>();
-        hint.gameObject.name = "AxeHintPopup";
+        hint.gameObject.name = "WorldHintPopup";
 
-        hint.Build(text);
+        if (fill.HasValue) hint.boxFill = fill.Value;
+        if (stroke.HasValue) hint.boxStroke = stroke.Value;
+        if (icon != null) hint.cornerRadius = 10; // speech bubble reads rounder than the hint box
+
+        hint.Build(text, icon);
         // Non-persistent hints lift by yOffset to float over the tapped object; a persistent hint
         // sits exactly where the owner places it (the owner repositions it every frame).
         hint.transform.position = persistent ? worldPos : worldPos + new Vector3(0f, hint.yOffset, 0f);
@@ -65,7 +79,7 @@ public class WorldHintPopup : MonoBehaviour
         return hint;
     }
 
-    private void Build(string text)
+    private void Build(string text, Sprite icon = null)
     {
         var canvas = gameObject.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.WorldSpace;
@@ -91,6 +105,23 @@ public class WorldHintPopup : MonoBehaviour
         var rt = (RectTransform)transform;
         rt.localScale = Vector3.one * worldScale;
 
+        if (icon != null)
+        {
+            // Icon bubble: a sprite instead of text (e.g. the hooked fish above the bobber).
+            var iconGO = new GameObject("Icon");
+            iconGO.transform.SetParent(transform, false);
+            var img = iconGO.AddComponent<Image>();
+            img.sprite = icon;
+            img.preserveAspect = true;
+            img.raycastTarget = false;
+            var le = iconGO.AddComponent<LayoutElement>();
+            le.preferredWidth = 44f;
+            le.preferredHeight = 44f;
+
+            AddSpeechTail();
+            return;
+        }
+
         var labelGO = new GameObject("Label");
         labelGO.transform.SetParent(transform, false);
         var label = labelGO.AddComponent<TextMeshProUGUI>();
@@ -103,16 +134,17 @@ public class WorldHintPopup : MonoBehaviour
         label.raycastTarget = false;
     }
 
-    // A pixel-art rounded rect filled with boxFill and a boxStroke ring, 9-sliced (corner region
-    // preserved, 2px middle stretches) so it scales to any text width without distorting the border.
-    private Sprite BuildBoxSprite()
+    private Sprite BuildBoxSprite() => BuildBoxSprite(boxFill, boxStroke, cornerRadius, borderThickness);
+
+    // A pixel-art rounded rect filled with `fill` and a `stroke` ring, 9-sliced (corner region
+    // preserved, 2px middle stretches) so it scales to any content size without distorting the
+    // border. Public + static so other speech-bubble UI (LakeBiteAlert) shares the exact look.
+    public static Sprite BuildBoxSprite(Color32 fill, Color32 stroke, int cornerRadius, int borderThickness)
     {
         int radius = Mathf.Max(0, cornerRadius);
         int border = Mathf.Max(1, borderThickness);
         int corner = radius + border + 1;   // 9-slice corner region must contain the rounded stroke
         int size = corner * 2 + 2;          // + a 2px stretchable middle
-        Color32 fill = boxFill;
-        Color32 stroke = boxStroke;
 
         var tex = new Texture2D(size, size, TextureFormat.RGBA32, false)
         {
@@ -139,6 +171,67 @@ public class WorldHintPopup : MonoBehaviour
 
         return Sprite.Create(tex, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), 100f, 0,
                              SpriteMeshType.FullRect, new Vector4(corner, corner, corner, corner));
+    }
+
+    // The speech-bubble tail: a small down-pointing triangle hung under the box's bottom-center.
+    // Its top rows are pure fill and overlap the box's bottom stroke band (drawn after it, so on
+    // top), which visually opens the border and merges tail + box into one bubble.
+    private void AddSpeechTail()
+    {
+        var tailGO = new GameObject("Tail");
+        tailGO.transform.SetParent(transform, false);
+        var img = tailGO.AddComponent<Image>();
+        img.sprite = BuildTailSprite();
+        img.raycastTarget = false;
+        // Decoration only — must not participate in the size-fitted layout group.
+        var le = tailGO.AddComponent<LayoutElement>();
+        le.ignoreLayout = true;
+
+        var rt = (RectTransform)tailGO.transform;
+        rt.anchorMin = new Vector2(0.5f, 0f);
+        rt.anchorMax = new Vector2(0.5f, 0f);
+        rt.pivot = new Vector2(0.5f, 1f);
+        rt.sizeDelta = new Vector2(24f, 16f);
+        // Overlap the box's stroke so the tail's fill rows open the border.
+        rt.anchoredPosition = new Vector2(0f, borderThickness);
+    }
+
+    private Sprite BuildTailSprite()
+        => BuildTailSprite(boxFill, boxStroke, borderThickness, pointRight: false, length: 16, breadth: 24);
+
+    /// <summary>
+    /// A pixel-art speech-bubble tail: a triangle pointing down (or right) whose base rows/columns
+    /// are pure fill — overlap them onto the box's stroke band and the border visually opens into
+    /// the tail. Static so other speech-bubble UI (LakeBiteAlert) shares the exact look.
+    /// </summary>
+    public static Sprite BuildTailSprite(Color32 fill, Color32 stroke, int borderThickness,
+        bool pointRight, int length, int breadth)
+    {
+        int border = Mathf.Max(1, borderThickness);
+        int w = pointRight ? length : breadth;
+        int h = pointRight ? breadth : length;
+
+        var tex = new Texture2D(w, h, TextureFormat.RGBA32, false)
+        {
+            filterMode = FilterMode.Point,
+            wrapMode = TextureWrapMode.Clamp,
+        };
+        var px = new Color32[w * h];
+        for (int y = 0; y < h; y++)
+        for (int x = 0; x < w; x++)
+        {
+            // Distance from the tip (bottom row for Down, rightmost column for Right) and
+            // across the taper axis; the half-breadth shrinks toward the tip.
+            int fromTip = pointRight ? (w - 1 - x) : y;
+            float across = pointRight ? Mathf.Abs(y + 0.5f - h * 0.5f) : Mathf.Abs(x + 0.5f - w * 0.5f);
+            float halfBreadth = (fromTip + 1f) * (breadth * 0.5f) / length;
+            bool inside = across <= halfBreadth;
+            bool strokePx = inside && (across > halfBreadth - border || fromTip < border);
+            px[y * w + x] = !inside ? new Color32(0, 0, 0, 0) : strokePx ? stroke : fill;
+        }
+        tex.SetPixels32(px);
+        tex.Apply();
+        return Sprite.Create(tex, new Rect(0, 0, w, h), new Vector2(0.5f, 0.5f), 100f, 0, SpriteMeshType.FullRect);
     }
 
     private void Play()

@@ -284,7 +284,8 @@ public class ResearchManager : MonoBehaviour
         if (rd == null || levelOneIndexed < 1) return 0f;
         if (rd.IsBinary) return rd.binaryFixedDurationSecs;
         float p = tuning != null ? tuning.pTime : 2.16f;
-        float baseSecs = rd.baseDurationSecs * rd.timeDifficulty;
+        float timeMul = tuning != null ? tuning.timeMultiplier : 0.5f;
+        float baseSecs = rd.baseDurationSecs * rd.timeDifficulty * timeMul;
         // Apply Research Speed bonus globally (divide duration by 1 + bonus)
         float rsBonus = GetBonus(StatKey.ResearchSpeed);
         float scaled = baseSecs * Mathf.Pow(levelOneIndexed, p) / Mathf.Max(0.01f, 1f + rsBonus);
@@ -296,7 +297,8 @@ public class ResearchManager : MonoBehaviour
         if (rd == null || levelOneIndexed < 1) return 0;
         if (rd.IsBinary) return rd.binaryFixedCost;
         float p = tuning != null ? tuning.pCost : 2.0f;
-        float baseCost = rd.baseCostCoins * rd.costDifficulty;
+        float costMul = tuning != null ? tuning.costMultiplier : 0.25f;
+        float baseCost = rd.baseCostCoins * rd.costDifficulty * costMul;
         return Mathf.CeilToInt(baseCost * Mathf.Pow(levelOneIndexed, p));
     }
 

@@ -20,11 +20,15 @@ using TMPro;
 public class SplashController : MonoBehaviour
 {
     [Header("Scene")]
-    [SerializeField] private string gameSceneName = "SampleScene";
+    [SerializeField] private string gameSceneName = "FarmMain";
 
     [Header("Text")]
     [SerializeField] private string titleText = "Farm Silo";
     [SerializeField] private string startLabel = "Start";
+
+    [Header("Fonts (TMP assets — leave empty for TMP default)")]
+    [SerializeField] private TMP_FontAsset titleFont;
+    [SerializeField] private TMP_FontAsset buttonFont;
 
     [Header("Start button look")]
     [SerializeField] private Color buttonColor = new Color(0.95f, 0.76f, 0.28f, 1f);
@@ -100,11 +104,14 @@ public class SplashController : MonoBehaviour
         scaler.matchWidthOrHeight = 0.5f;
 
         // Title (top) — dark so it reads against the light, hazy sky.
-        var title = CreateText("Title", canvasGO.transform, titleText, 120, new Color(0.12f, 0.10f, 0.08f, 1f));
+        // "Silo" on line 1, "Idle Farm" 40% smaller on line 2 (rich-text <size> tag).
+        var title = CreateText("Title", canvasGO.transform, "Silo\n<size=60%>Idle Farm</size>", 120, new Color(0.12f, 0.10f, 0.08f, 1f), titleFont);
+        title.richText = true;
+        title.enableWordWrapping = false;
         var tr = title.rectTransform;
         tr.anchorMin = tr.anchorMax = new Vector2(0.5f, 1f);
         tr.pivot = new Vector2(0.5f, 1f);
-        tr.sizeDelta = new Vector2(1000, 240);
+        tr.sizeDelta = new Vector2(1000, 400);
         tr.anchoredPosition = new Vector2(0, -180);
         title.fontStyle = FontStyles.Bold;
 
@@ -114,7 +121,7 @@ public class SplashController : MonoBehaviour
         sr.anchorMin = sr.anchorMax = new Vector2(0.5f, 0f);
         sr.pivot = new Vector2(0.5f, 0f);
         sr.sizeDelta = new Vector2(800, 80);
-        sr.anchoredPosition = new Vector2(0, 200);
+        sr.anchoredPosition = new Vector2(0, 320); // above the Start button (button top ≈ 280)
 
         // Start button (bottom)
         var btnGO = new GameObject("StartButton", typeof(Image), typeof(Button));
@@ -125,23 +132,25 @@ public class SplashController : MonoBehaviour
         br.anchorMin = br.anchorMax = new Vector2(0.5f, 0f);
         br.pivot = new Vector2(0.5f, 0f);
         br.sizeDelta = new Vector2(520, 160);
-        br.anchoredPosition = new Vector2(0, 300);
+        // Bottom-anchored, bottom pivot: y = pixels above the screen bottom (1080x1920 ref).
+        br.anchoredPosition = new Vector2(0, 120);
 
         startButton = btnGO.GetComponent<Button>();
         startButton.onClick.AddListener(OnStartPressed);
 
-        var label = CreateText("Label", btnGO.transform, startLabel, 70, buttonTextColor);
+        var label = CreateText("Label", btnGO.transform, startLabel, 70, buttonTextColor, buttonFont);
         label.fontStyle = FontStyles.Bold;
         var lr = label.rectTransform;
         lr.anchorMin = Vector2.zero; lr.anchorMax = Vector2.one;
         lr.offsetMin = Vector2.zero; lr.offsetMax = Vector2.zero;
     }
 
-    private static TMP_Text CreateText(string name, Transform parent, string text, float size, Color color)
+    private static TMP_Text CreateText(string name, Transform parent, string text, float size, Color color, TMP_FontAsset font = null)
     {
         var go = new GameObject(name, typeof(TextMeshProUGUI));
         go.transform.SetParent(parent, false);
         var t = go.GetComponent<TextMeshProUGUI>();
+        if (font != null) t.font = font;
         t.text = text;
         t.fontSize = size;
         t.color = color;

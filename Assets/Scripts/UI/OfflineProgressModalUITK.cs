@@ -10,6 +10,10 @@ public class OfflineProgressModalUITK : MonoBehaviour
 
     private const float LoadDurationSecs = 1.5f;
 
+    // Green tint for the "(+N)" research gain only — the "before → after" part stays regular menu
+    // text (matches .research-row__value in USS). Hex of rgb(160, 220, 130).
+    private const string GainGreenHex = "#A0DC82";
+
     private UIDocument document;
     private VisualElement root;
     private VisualElement modalRoot;
@@ -109,22 +113,37 @@ public class OfflineProgressModalUITK : MonoBehaviour
         if (legacySections != null) legacySections.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
     }
 
+    // Two-phase active-run welcome-back state: the modal opens in its loading phase IMMEDIATELY
+    // (before the offline sim runs — that can hitch for seconds on device), and the outcome is
+    // delivered whenever the computation finishes. The reveal happens once BOTH the loading bar
+    // has completed (so quick results still get their beat) AND the outcome has arrived.
+    private bool offlineBarDone;
+    private bool offlineOutcomeReady;
+    private bool offlineEnded;
+    private RunLedgerData offlineLedger;
+    private string offlineFarmAdvancedHms, offlineNowHms;
+    private System.Action offlineOnContinue;
+
     /// <summary>
-    /// Unified active-run welcome-back: opens as a loading bar ("Calculating your away progress…"),
-    /// then expands into the outcome. If the run ENDED, shows the full run-stats ledger; if it survived,
-    /// shows the lighter "while you were away" recap with a Continue button.
+    /// Phase 1 of the unified active-run welcome-back: open instantly as a loading bar
+    /// ("Calculating your away progress…"). Call <see cref="DeliverOfflineOutcome"/> when the
+    /// away-period result is known; the modal reveals it after the bar completes.
     /// </summary>
-    public void OpenOfflineRun(TimeSpan gap, bool ended, RunLedgerData ledger,
-                               string farmAdvancedHms, string nowHms, System.Action onContinue)
+    public void OpenOfflineRunLoading(TimeSpan gap)
     {
         if (root == null) Cache();
         if (modalRoot == null) return;
         RunStatsPopupUITK.Instance?.HideImmediate(); // mutual exclusion
 
-        if (modalTitle != null) modalTitle.text = "Welcome back 👋";
+        offlineBarDone = false;
+        offlineOutcomeReady = false;
+        offlineLedger = null;
+        offlineOnContinue = null;
+
+        if (modalTitle != null) modalTitle.text = "Welcome Back!";
         if (timeAwayLabel != null) timeAwayLabel.text = $"away for {FormatGap(gap)}";
 
-        // Phase 1 — loading bar only. Hide the outcome + the legacy cow/research rows.
+        // Loading bar only. Hide the outcome + the legacy cow/research rows.
         SetDisplay(outcomeHero, false);
         SetDisplay(breakdownScroll, false);
         SetLegacySectionsVisible(true);
@@ -141,7 +160,32 @@ public class OfflineProgressModalUITK : MonoBehaviour
         if (root != null) root.pickingMode = PickingMode.Position;
         modalRoot.style.display = DisplayStyle.Flex;
 
-        StartLoadBar(() => RevealOfflineOutcome(ended, ledger, farmAdvancedHms, nowHms, onContinue));
+        StartLoadBar(() => { offlineBarDone = true; TryRevealOfflineOutcome(); });
+    }
+
+    /// <summary>
+    /// Phase 2: hand the modal the computed away-period outcome. If the run ENDED, it reveals the
+    /// full run-stats ledger; if it survived, the lighter "while you were away" recap + Continue.
+    /// </summary>
+    public void DeliverOfflineOutcome(bool ended, RunLedgerData ledger,
+                                      string farmAdvancedHms, string nowHms, System.Action onContinue)
+    {
+        offlineEnded = ended;
+        offlineLedger = ledger;
+        offlineFarmAdvancedHms = farmAdvancedHms;
+        offlineNowHms = nowHms;
+        offlineOnContinue = onContinue;
+        offlineOutcomeReady = true;
+        TryRevealOfflineOutcome();
+    }
+
+    private void TryRevealOfflineOutcome()
+    {
+        if (!offlineBarDone || !offlineOutcomeReady || offlineLedger == null) return;
+        RevealOfflineOutcome(offlineEnded, offlineLedger, offlineFarmAdvancedHms, offlineNowHms, offlineOnContinue);
+        offlineOutcomeReady = false;
+        offlineLedger = null;
+        offlineOnContinue = null;
     }
 
     private void RevealOfflineOutcome(bool ended, RunLedgerData d,
@@ -149,9 +193,11 @@ public class OfflineProgressModalUITK : MonoBehaviour
     {
         SetLegacySectionsVisible(false); // hide the loading row
 
+        // NOTE: no emoji in any of these strings — the UITK panel has no emoji fallback on
+        // Android, so emoji render as invisible glyph-width gaps on device.
         if (ended)
         {
-            ShowHero("red", "💸 Your run ended while away",
+            ShowHero("red", "Your run ended while away",
                 "Bankrupt at " + d.farmTimeHms, "");
             RunStatsLedgerView.Build(breakdown, d, compact: false); // FULL run stats
             if (breakdownScroll != null) breakdownScroll.style.display = DisplayStyle.Flex;
@@ -164,7 +210,7 @@ public class OfflineProgressModalUITK : MonoBehaviour
                 "now " + nowHms + " · ran at max speed while away");
             RunStatsLedgerView.Build(breakdown, d, compact: true); // light "while you were away" recap
             if (breakdownScroll != null) breakdownScroll.style.display = DisplayStyle.Flex;
-            SetCtas("Continue the Run  ▶", mainGold: false, null, onMain: onContinue, onSecondaryAction: null);
+            SetCtas("Continue the Run", mainGold: false, null, onMain: onContinue, onSecondaryAction: null);
         }
     }
 
@@ -291,8 +337,10 @@ public class OfflineProgressModalUITK : MonoBehaviour
         BuildResearchRows(report);
         BuildBoostSummary(report);
 
-        // Section/row visibility — only surface what's relevant to this player.
-        bool hasCow = AnimalManager.Instance != null && AnimalManager.Instance.IsUnlocked("cow");
+        // Section/row visibility — only surface what's relevant to this player. Passive compost only
+        // accrues from the EQUIPPED cow, so gate the row on that (not merely owning a cow) — otherwise a
+        // player away with a different animal equipped sees a confusing "Compost from cow +0".
+        bool hasCow = AnimalManager.Instance != null && AnimalManager.Instance.GetEquippedAnimalID() == "cow";
         bool researchUnlocked = BuildingState.IsBuilt(BuildingState.GreenhouseKey);
         bool showAutoSpend = targetBoostSpend > 0; // hide auto-spend + (now-redundant) net rows when nothing was spent
 
@@ -351,7 +399,7 @@ public class OfflineProgressModalUITK : MonoBehaviour
             int curDelta = Mathf.RoundToInt(Mathf.Lerp(0, rt.finalDelta, e));
             int curAfter = rt.finalAfter - (rt.finalDelta - curDelta);
             int curBefore = rt.finalAfter - rt.finalDelta;
-            rt.label.text = $"{curBefore} → {curAfter}  (+{curDelta})";
+            rt.label.text = $"{curBefore} → {curAfter}  <color={GainGreenHex}>(+{curDelta})</color>";
         }
     }
 
@@ -402,7 +450,7 @@ public class OfflineProgressModalUITK : MonoBehaviour
             if (delta > 0)
             {
                 // Start at zero-delta; the animation counts up.
-                value.text = $"{sp.levelBefore} → {sp.levelBefore}  (+0)";
+                value.text = $"{sp.levelBefore} → {sp.levelBefore}  <color={GainGreenHex}>(+0)</color>";
                 researchTargets.Add((value, delta, sp.levelAfter));
             }
             else
@@ -432,7 +480,7 @@ public class OfflineProgressModalUITK : MonoBehaviour
             return;
         }
         // Defer text until the load animation completes — it appears in FinishLoadAnimation.
-        boostSummaryFinalText = $"Auto-bought {report.totalAutoBuyRenewals} boost{(report.totalAutoBuyRenewals == 1 ? "" : "s")} for {report.compostSpentOnAutoBuy:N0} 🌱.";
+        boostSummaryFinalText = $"Auto-bought {report.totalAutoBuyRenewals} boost{(report.totalAutoBuyRenewals == 1 ? "" : "s")} for {report.compostSpentOnAutoBuy:N0} compost.";
         boostSummaryLabel.text = "";
         boostSummaryLabel.style.display = DisplayStyle.None;
     }

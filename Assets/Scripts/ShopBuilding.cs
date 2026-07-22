@@ -44,6 +44,9 @@ public class ShopBuilding : MonoBehaviour
         if (!TryReadPointer(out Vector2 screenPos, out bool justPressed, out bool justReleased, out bool held))
             return;
 
+        // A menu/overlay over the pointer swallows the tap so it can't fall through to the world.
+        if (UITapBlocker.PointerOverUI(screenPos)) { CancelPress(); return; }
+
         // Press start: pointer just went down on this collider.
         if (justPressed && !isPressed && CanInteract() && PointerHitsSelf(screenPos))
         {

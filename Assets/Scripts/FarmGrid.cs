@@ -67,6 +67,11 @@ public class FarmGrid : MonoBehaviour
         {
             RunManager.Instance.OnRunStarted += OnRunStarted;
             RunManager.Instance.OnRunEnded += OnRunEnded;
+
+            // Resume race: SaveManager.ResumeRun fires OnRunStarted during load, possibly before
+            // this Start() subscribed. Tiles are scene-fresh at boot so ResetForNewRun is a no-op,
+            // but RefreshSprinklerBlocks must run or helpers plant over sprinkler tiles.
+            if (RunManager.Instance.IsRunActive) OnRunStarted();
         }
 
         // Subscribe to upgrade events to regenerate grid
@@ -606,19 +611,17 @@ public class FarmGrid : MonoBehaviour
         }
     }
 
-    /// <summary>Tile nearest the geometric center of a zone (where a sprinkler is placed).</summary>
+    /// <summary>
+    /// The tile a sprinkler sits on / blocks. We always target the center of a FULL 5×5 plot
+    /// (index 2,2) so the sprinkler's square is consistent no matter how many size upgrades you own.
+    /// On smaller grids that index is clamped to the last tile, so the blocked square slides toward
+    /// a corner of the grow zone as the plot shrinks (2×2/3×3 → corner; 4×4/5×5 → middle).
+    /// </summary>
     public SoilTile GetCenterTile(int zoneId)
     {
-        Vector3 center = GetZoneCenter(zoneId);
-        SoilTile best = null;
-        float bestSqr = float.MaxValue;
-        foreach (SoilTile tile in allTiles)
-        {
-            if (tile.ZoneID != zoneId) continue;
-            float d = (tile.transform.position - center).sqrMagnitude;
-            if (d < bestSqr) { bestSqr = d; best = tile; }
-        }
-        return best;
+        const int FullPlotCenterIndex = 2; // middle of a 5-wide plot
+        int c = Mathf.Min(FullPlotCenterIndex, tilesPerZone - 1);
+        return GetTile(zoneId, c, c);
     }
 
     /// <summary>

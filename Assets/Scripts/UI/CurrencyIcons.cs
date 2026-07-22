@@ -11,4 +11,6 @@ public static class CurrencyIcons
     public const string Cash    = "<sprite=\"CurrencySprites\" name=\"cash\">";
     public const string Gem     = "<sprite=\"CurrencySprites\" name=\"gem\">";
     public const string Compost = "<sprite=\"CurrencySprites\" name=\"compost\">";
+    public const string Wood    = "<sprite=\"CurrencySprites\" name=\"wood\">";
+    public const string Fish    = "<sprite=\"CurrencySprites\" name=\"fish\">";
 }

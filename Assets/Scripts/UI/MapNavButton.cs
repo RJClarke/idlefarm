@@ -30,6 +30,14 @@ public abstract class MapNavButton : MonoBehaviour
     /// <summary>The camera location this button toggles to (and back from).</summary>
     protected abstract CameraPanController.Location Target { get; }
 
+    /// <summary>
+    /// Whether tapping this button while already at its location returns to the Farm (and the label
+    /// swaps to <see cref="atLabel"/>). The nature nav buttons (Greenhouse/Lake/Woods) now set this
+    /// false: a dedicated center "Back to Farm" button owns the return trip, so these always just pan
+    /// to their <see cref="Target"/> and keep a stable label. Market still toggles.
+    /// </summary>
+    protected virtual bool TogglesBackToFarm => true;
+
     protected virtual void Reset()
     {
         button = GetComponent<Button>();
@@ -69,12 +77,17 @@ public abstract class MapNavButton : MonoBehaviour
     private void OnClick()
     {
         if (panController == null) return;
-        // Re-push the (possibly retuned) target, then zip straight there — or back to Farm if we're
-        // already at this location — without routing through the Farm view first.
+        // Re-push the (possibly retuned) target so live inspector tweaks frame the new spot.
         panController.SetLocationOffset(Target, panOffset);
-        panController.PanTo(panController.CurrentLocation == Target
-            ? CameraPanController.Location.Farm
-            : Target);
+
+        // Toggling buttons (Market) zip back to Farm when tapped at their location; the nature nav
+        // buttons always just pan to their Target (the center "Back to Farm" button handles return).
+        if (TogglesBackToFarm)
+            panController.PanTo(panController.CurrentLocation == Target
+                ? CameraPanController.Location.Farm
+                : Target);
+        else
+            panController.PanTo(Target);
     }
 
     private void OnPanStarted(CameraPanController.Location target) => RefreshVisibility(target);
@@ -83,7 +96,8 @@ public abstract class MapNavButton : MonoBehaviour
     protected void UpdateLabel(CameraPanController.Location loc)
     {
         if (label == null) return;
-        label.text = loc == Target ? atLabel : farmLabel;
+        // Non-toggling nav buttons keep a stable label (no "Back to Farm" swap).
+        label.text = (TogglesBackToFarm && loc == Target) ? atLabel : farmLabel;
     }
 
     protected void RefreshVisibility() =>

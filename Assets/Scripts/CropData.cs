@@ -56,6 +56,16 @@ public class CropData : ScriptableObject
     [Tooltip("Crop tier for compost yield (default 1). Higher tier = more compost when this crop dies.")]
     public int tier = 1;
 
+    [Header("Cannery / Preserving")]
+    [Tooltip("Can this crop be turned into preserves at the Cannery? Only canned crops are diverted " +
+             "from harvest into jars; everything else always pays out cash + coins as normal.")]
+    public bool canBeCanned = false;
+
+    [Tooltip("Cannery processing tier when canned: 1 = 4h jam, 2 = 8h compote, 3 = 12h sauce. " +
+             "Sets cook time, units required per jar, and the jar value multiplier. Ignored unless canBeCanned.")]
+    [Range(1, 3)]
+    public int canneryTier = 1;
+
     [Header("Regrowth")]
     [Tooltip("Does this crop regrow after harvest, or is it removed?")]
     public bool canRegrow = false;

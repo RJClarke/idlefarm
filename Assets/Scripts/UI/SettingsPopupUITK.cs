@@ -196,6 +196,20 @@ public class SettingsPopupUITK : MonoBehaviour
                 if (CurrencyManager.Instance != null) CurrencyManager.Instance.AddGems(1_000);
             });
 
+        SpawnButtonRow(rows, "Grant $", "+10,000 run money (only during a run)", "+10k",
+            () =>
+            {
+                // Money is per-run fuel — it's meaningless outside a run and gets reset on run start.
+                if (RunManager.Instance != null && RunManager.Instance.IsRunActive)
+                {
+                    if (CurrencyManager.Instance != null) CurrencyManager.Instance.AddMoney(10_000);
+                }
+                else
+                {
+                    Debug.Log("[Settings] Grant $ ignored — start a run first (Money only exists during a run).");
+                }
+            });
+
         SpawnButtonRow(rows, "Force End Run", "Ends the active run immediately", "End",
             () =>
             {

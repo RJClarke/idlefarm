@@ -89,6 +89,8 @@ public class CanneryPopupUITK : MonoBehaviour
     private void WireCallbacks()
     {
         if (closeButton != null) closeButton.RegisterCallback<ClickEvent>(_ => Close());
+        // Tap outside the card (on the dim backdrop) closes the popup, like the other modals.
+        root.Q<VisualElement>("backdrop")?.RegisterCallback<ClickEvent>(_ => Close());
         if (intakeToggle != null) intakeToggle.RegisterCallback<ClickEvent>(_ =>
         {
             var mgr = CanneryManager.Instance;
@@ -154,10 +156,9 @@ public class CanneryPopupUITK : MonoBehaviour
         if (mgr == null || slotsList == null) return;
         var st = mgr.State;
 
-        // Intake toggle
+        // Intake switch: green + knob-right = ON, gray + knob-left = OFF (styling in USS; no text).
         if (intakeToggle != null)
         {
-            intakeToggle.text = mgr.IntakeOn ? "ON" : "OFF";
             if (mgr.IntakeOn) intakeToggle.RemoveFromClassList("intake-toggle--off");
             else intakeToggle.AddToClassList("intake-toggle--off");
         }

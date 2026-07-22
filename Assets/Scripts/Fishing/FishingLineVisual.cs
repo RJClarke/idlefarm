@@ -12,7 +12,9 @@ public class FishingLineVisual : MonoBehaviour
     [SerializeField] private LakeNode lake;              // geometry source
     [SerializeField] private SpriteRenderer bobber;      // bobber.png
     [SerializeField] private LineRenderer line;          // pole → bobber
-    [SerializeField] private Vector3 bubbleOffset = new Vector3(0f, 0.8f, 0f);
+    [Tooltip("World gap between the bobber and the bottom of the bubble's tail (0.25 = 8px at 32 PPU), " +
+             "so the end of the line stays visible while reeling in.")]
+    [SerializeField] private float bubbleClearance = 0.25f;
     [Tooltip("Degrees/second the bobber spins while inside a whirlpool.")]
     [SerializeField] private float agitationSpin = 540f;
 
@@ -48,8 +50,28 @@ public class FishingLineVisual : MonoBehaviour
             line.SetPosition(0, lake.CastOrigin);
             line.SetPosition(1, pos);
         }
-        SyncBubble(fm.HasBite, pos + bubbleOffset);
+        SyncBubble(fm.HasBite, pos + Vector3.up * BubbleLift());
     }
+
+    /// <summary>How far above the bobber the bubble's center must sit so its lowest point (the
+    /// speech tail) clears the bobber by <see cref="bubbleClearance"/>. Measured from the live
+    /// bubble rect (zero on the creation frame — corrected next frame once layout has run).</summary>
+    private float BubbleLift()
+    {
+        float halfExtent = 0f;
+        if (biteIndicator != null)
+        {
+            var rt = (RectTransform)biteIndicator.transform;
+            // Half the box height plus the 12px of speech tail that hangs below the box
+            // (16px tail overlapping the 4px border), all in world units.
+            halfExtent = (rt.rect.height * 0.5f + 12f) * rt.localScale.y;
+        }
+        return halfExtent + bubbleClearance;
+    }
+
+    // Speech-bubble palette: cream fill with a charcoal outline so the bubble reads against water.
+    private static readonly Color BubbleCream    = new Color32(0xFA, 0xF3, 0xE1, 0xF5);
+    private static readonly Color BubbleCharcoal = new Color32(0x32, 0x2F, 0x2B, 0xFF);
 
     private void SyncBubble(bool biting, Vector3 at)
     {
@@ -57,8 +79,13 @@ public class FishingLineVisual : MonoBehaviour
         {
             HideBubble();
             // Persistent: the bite bubble must stay above the bobber until the fish is reeled in,
-            // not fade after a couple seconds like a transient hint.
-            biteIndicator = WorldHintPopup.Create(at, "🐟", true);
+            // not fade after a couple seconds like a transient hint. Shows the hooked fish's own
+            // icon; falls back to the generic emoji if no icon is wired for the tier.
+            var fm = FishingManager.Instance;
+            Sprite icon = lake != null && fm != null ? lake.FishIcon(fm.PendingTier) : null;
+            biteIndicator = icon != null
+                ? WorldHintPopup.CreateIcon(at, icon, BubbleCream, BubbleCharcoal, true)
+                : WorldHintPopup.Create(at, "🐟", true);
             biteShown = true;
         }
         else if (biting && biteShown && biteIndicator != null)

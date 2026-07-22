@@ -91,6 +91,11 @@ public class ThunderstormManager : MonoBehaviour
         {
             RunManager.Instance.OnRunStarted += OnRunStarted;
             RunManager.Instance.OnRunEnded   += OnRunEnded;
+
+            // Resume race: SaveManager.ResumeRun fires OnRunStarted during load, which can happen
+            // BEFORE this Start() subscribes — so on a resumed run the storm monitor would never
+            // start (no storms all run). If a run is already active, catch up now.
+            if (RunManager.Instance.IsRunActive) OnRunStarted();
         }
 
         if (RainOverlayUI.Instance != null && weatherData != null)

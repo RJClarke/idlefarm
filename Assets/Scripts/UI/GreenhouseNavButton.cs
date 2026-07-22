@@ -5,6 +5,8 @@ public class GreenhouseNavButton : MapNavButton
 {
     protected override CameraPanController.Location Target => CameraPanController.Location.Greenhouse;
 
+    protected override bool TogglesBackToFarm => false;
+
     protected override bool ShouldHide(CameraPanController.Location current)
         => !BuildingState.IsBuilt(BuildingState.GreenhouseKey)
         || current == CameraPanController.Location.Market;

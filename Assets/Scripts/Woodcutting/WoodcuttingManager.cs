@@ -29,10 +29,11 @@ public class WoodcuttingManager : MonoBehaviour
     [SerializeField] private string noAxeHintText = "You need to buy an axe first.";
 
     [Header("Tapping")]
-    [Tooltip("World-space forgiveness radius: a tap within this distance of a tree's center chops the " +
-             "nearest such tree. Larger = easier to hit small/low placeholder trees. Trees are ~5+ units " +
-             "apart, so keep it under that to avoid ambiguity.")]
-    [SerializeField] private float tapRadius = 6f;
+    [Tooltip("World-space padding added around each tree's sprite bounds when hit-testing a tap. A tap " +
+             "must land on (or within this margin of) a tree's actual sprite to chop it — so the click " +
+             "zone hugs the visible tree and shrinks with saplings, instead of a big radius that fired " +
+             "on empty ground under/beside the tree. Small forgiveness for tiny targets; keep it modest.")]
+    [SerializeField] private float tapPadding = 0.4f;
 
     private int axeLevel;
     private bool hasAxe;
@@ -46,6 +47,15 @@ public class WoodcuttingManager : MonoBehaviour
     public bool HasAxe => hasAxe;
     public int FirstAxeCoinCost => firstAxeCoinCost;
     public event Action<int> OnAxeLevelChanged;
+
+    /// <summary>Raised when a tree is felled (once per fell). Drives the "chop X trees" daily quest.</summary>
+    public event Action OnTreeFelled;
+    /// <summary>Raised with the wood amount each time chopping yields wood. Drives the "collect X wood"
+    /// daily quest (counts gathered wood, not sells).</summary>
+    public event Action<int> OnWoodGathered;
+
+    public void NotifyTreeFelled() => OnTreeFelled?.Invoke();
+    public void NotifyWoodGathered(int amount) { if (amount > 0) OnWoodGathered?.Invoke(amount); }
 
     private void Awake()
     {
@@ -62,6 +72,8 @@ public class WoodcuttingManager : MonoBehaviour
     {
         if (!AtWoods()) return;
         if (!TryReadTap(out Vector2 screenPos)) return;
+        // Don't chop through an open menu/overlay covering the tap point.
+        if (UITapBlocker.PointerOverUI(screenPos)) return;
         TreeNode tree = NearestTreeToTap(screenPos);
         if (tree != null) tree.HandleTap();
     }
@@ -71,13 +83,17 @@ public class WoodcuttingManager : MonoBehaviour
         Camera cam = Camera.main;
         if (cam == null) return null;
         Vector3 world = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, -cam.transform.position.z));
+        Vector2 world2D = world;
 
+        // Only trees whose sprite (padded) actually sits under the tap qualify — so the click zone
+        // hugs the visible tree. If several overlap the tap, take the one whose sprite center is
+        // nearest so a tap never chops two trees or one hidden behind another.
         TreeNode best = null;
-        float bestDist = tapRadius; // ignore taps farther than tapRadius from every tree
+        float bestDist = float.MaxValue;
         foreach (var t in registeredTrees)
         {
-            if (t == null) continue;
-            float d = Vector2.Distance(world, t.transform.position);
+            if (t == null || !t.ContainsWorldPoint(world2D, tapPadding)) continue;
+            float d = Vector2.Distance(world2D, (Vector2)t.WorldBounds.center);
             if (d < bestDist) { bestDist = d; best = t; }
         }
         return best;
@@ -144,10 +160,14 @@ public class WoodcuttingManager : MonoBehaviour
 
     /// <summary>Spawn the "buy an axe first" hint at a world position, replacing any live one so a
     /// repeated tap re-shows it anchored to the newly-tapped tree.</summary>
-    public void ShowAxeHint(Vector3 worldPos)
+    public void ShowAxeHint(Vector3 worldPos) => ShowHint(worldPos, noAxeHintText);
+
+    /// <summary>Spawn a world-space hint at a position (e.g. "Upgrade axe to level 2" on a tree that's
+    /// too hard for the current axe), replacing any live one so repeated taps re-anchor it.</summary>
+    public void ShowHint(Vector3 worldPos, string text)
     {
         if (activeHint != null) Destroy(activeHint.gameObject);
-        activeHint = WorldHintPopup.Create(worldPos, noAxeHintText);
+        activeHint = WorldHintPopup.Create(worldPos, text);
     }
 
     public bool CanUpgradeAxe()

@@ -1,7 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AnimalVisual : MonoBehaviour
 {
+    // Tap-to-react: a tiny hop + a randomized sound when the player taps the animal on the farm.
+    private bool isHopping;
+    private const float TapPadding = 0.3f;
+
     private AnimalData data;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -24,6 +29,18 @@ public class AnimalVisual : MonoBehaviour
     private const float WANDER_RADIUS = 5f;
     private const float MIN_PAUSE = 1f;
     private const float MAX_PAUSE = 2.5f;
+    private const float WANDER_INSET = 0.08f; // keep targets a little in from the framing edge
+
+    // Penning: while a run is active OR the camera is parked at the Lake, the animal stays within the
+    // Farm framing instead of following the camera around. This is the "no wandering onto the water"
+    // barrier, and it keeps every equipped animal home doing its job during a run. If the animal has
+    // drifted out (idle wander took it toward the Lake before a run started, say), it briskly walks
+    // home first. Non-penned idle wander is unchanged — animals still follow the camera to the
+    // Greenhouse/Woods like before.
+    [SerializeField] private float returnHomeSpeed = 4f;
+    private const float ReturnHomeEpsilonSqr = 0.01f; // ignore <0.1u overshoot so an edge target can't trap it
+    private CameraPanController pan;
+    private CameraPanController.Location effectiveLocation = CameraPanController.Location.Farm;
 
     // Egg visual
     [SerializeField] private Sprite eggSprite;
@@ -64,6 +81,26 @@ public class AnimalVisual : MonoBehaviour
 
         // Depth-sort the animal by its Y (wanders, so it updates every frame).
         YSort.Ensure(gameObject);
+
+        // Track the camera's location so we can pen the animal at the Lake / during runs.
+        pan = Camera.main != null ? Camera.main.GetComponent<CameraPanController>() : null;
+        if (pan != null)
+        {
+            effectiveLocation = pan.CurrentLocation;
+            pan.OnPanStarted += OnPanStarted;     // fires with the TARGET at pan start
+            pan.OnPanCompleted += OnPanCompleted;
+        }
+    }
+
+    private void OnPanStarted(CameraPanController.Location target) => effectiveLocation = target;
+    private void OnPanCompleted(CameraPanController.Location loc) => effectiveLocation = loc;
+
+    // Penned = confined to the Farm framing (no camera-following). True during a run, or whenever the
+    // camera is heading to / sitting at the Lake.
+    private bool IsPenned()
+    {
+        bool runActive = RunManager.Instance != null && RunManager.Instance.IsRunActive;
+        return runActive || effectiveLocation == CameraPanController.Location.Lake;
     }
 
     private static bool HasAnimStateParam(Animator a)
@@ -98,12 +135,39 @@ public class AnimalVisual : MonoBehaviour
 
     private void Update()
     {
+        HandleClickTap();
+
+        // While a hop is playing we briefly own the transform (see Hop) — skip wander so the two
+        // don't fight over position; the hop is short enough that pausing the roam is invisible.
+        if (isHopping) return;
+
         if (data == null)
         {
             ApplyAnimState(false);
             return;
         }
         if (PauseWander) return;
+
+        // While penned, keep inside the Farm framing — walk home first if we've drifted out.
+        // NOTE: compare against the CLAMPED home point, not Rect.Contains(). Rect.Contains treats the
+        // max edges as exclusive while our clamp is inclusive, so a target sitting exactly on xMax/yMax
+        // reads as "outside" with a zero correction vector — that used to trap the animal walking in
+        // place at the edge (facing its last direction). Only return home when the correction is real.
+        if (IsPenned() && pan != null)
+        {
+            Rect farm = pan.GetViewRect(CameraPanController.Location.Farm, WANDER_INSET);
+            Vector3 home = ClampToRect(transform.position, farm);
+            if ((home - transform.position).sqrMagnitude > ReturnHomeEpsilonSqr)
+            {
+                Vector3 dir = home - transform.position;
+                UpdateFacing(dir);
+                ApplyAnimState(true);
+                transform.position = Vector3.MoveTowards(transform.position, home, returnHomeSpeed * Time.deltaTime);
+                isPaused = false;      // don't resume a stale pause mid-return
+                wanderTarget = home;   // and don't yank back out on the next wander step
+                return;
+            }
+        }
 
         if (isPaused)
         {
@@ -167,8 +231,19 @@ public class AnimalVisual : MonoBehaviour
         Vector2 randomOffset = Random.insideUnitCircle * WANDER_RADIUS;
         Vector3 candidate = transform.position + new Vector3(randomOffset.x, randomOffset.y, 0);
 
-        // Clamp to visible screen bounds
-        wanderTarget = ClampToScreenBounds(candidate);
+        // Penned → confine to the Farm framing; otherwise free-follow the current camera view
+        // (so idle animals still trail you to the Greenhouse / Woods).
+        wanderTarget = (IsPenned() && pan != null)
+            ? ClampToRect(candidate, pan.GetViewRect(CameraPanController.Location.Farm, WANDER_INSET))
+            : ClampToScreenBounds(candidate);
+    }
+
+    private static Vector3 ClampToRect(Vector3 position, Rect rect)
+    {
+        position.x = Mathf.Clamp(position.x, rect.xMin, rect.xMax);
+        position.y = Mathf.Clamp(position.y, rect.yMin, rect.yMax);
+        position.z = 0;
+        return position;
     }
 
     private Vector3 ClampToScreenBounds(Vector3 position)
@@ -186,6 +261,62 @@ public class AnimalVisual : MonoBehaviour
         position.z = 0;
 
         return position;
+    }
+
+    // ── Tap to react (hop + sound) ───────────────
+
+    private void HandleClickTap()
+    {
+        if (spriteRenderer == null) return;
+        if (!TryReadTap(out Vector2 screenPos)) return;
+        if (UITapBlocker.PointerOverUI(screenPos)) return;
+
+        Camera cam = Camera.main;
+        if (cam == null) return;
+        Vector3 world = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, -cam.transform.position.z));
+
+        Bounds b = spriteRenderer.bounds;
+        b.Expand(new Vector3(TapPadding * 2f, TapPadding * 2f, 0f)); // forgiving hit area for a small target
+        if (world.x < b.min.x || world.x > b.max.x || world.y < b.min.y || world.y > b.max.y) return;
+
+        Hop();
+        if (SfxManager.Instance != null && data != null) SfxManager.Instance.PlayRandom(data.clickSounds);
+    }
+
+    // A quick vertical bounce. Wander is gated (isHopping) so it doesn't fight the tween; on complete we
+    // snap Y back to the pre-hop value so the roam resumes cleanly from where it was.
+    private void Hop()
+    {
+        if (isHopping) return;
+        isHopping = true;
+        float baseY = transform.position.y;
+        LeanTween.moveY(gameObject, baseY + 0.18f, 0.11f)
+            .setEase(LeanTweenType.easeOutQuad)
+            .setLoopPingPong(1)
+            .setOnComplete(() =>
+            {
+                if (this == null) return;
+                Vector3 p = transform.position;
+                p.y = baseY;
+                transform.position = p;
+                isHopping = false;
+            });
+    }
+
+    private static bool TryReadTap(out Vector2 screenPos)
+    {
+        screenPos = default;
+        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+        {
+            screenPos = Touchscreen.current.primaryTouch.position.ReadValue();
+            return true;
+        }
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            screenPos = Mouse.current.position.ReadValue();
+            return true;
+        }
+        return false;
     }
 
     // ── Peck ─────────────────────────────────────
@@ -255,6 +386,9 @@ public class AnimalVisual : MonoBehaviour
             eggRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, 12, 16), new Vector2(0.5f, 0f), 32f);
         }
 
+        // Tap the egg directly on the farm to collect it (in addition to the HUD collect button).
+        eggInstance.AddComponent<DropClickCollector>();
+
         // Subtle drop animation
         eggInstance.transform.localScale = Vector3.zero;
         LeanTween.scale(eggInstance, Vector3.one * 0.8f, 0.3f).setEaseOutBack();
@@ -317,6 +451,9 @@ public class AnimalVisual : MonoBehaviour
             gemRenderer.sprite = Sprite.Create(tex, new Rect(0, 0, 12, 16), new Vector2(0.5f, 0f), 32f);
         }
 
+        // Tap the gem directly on the farm to collect it (in addition to the HUD collect button).
+        gemInstance.AddComponent<DropClickCollector>();
+
         gemInstance.transform.localScale = Vector3.zero;
         LeanTween.scale(gemInstance, Vector3.one * 1.3f, 0.3f).setEaseOutBack(); // procedural gem sprite is tiny; 1.3x reads as a dropped gem
 
@@ -339,6 +476,12 @@ public class AnimalVisual : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (pan != null)
+        {
+            pan.OnPanStarted -= OnPanStarted;
+            pan.OnPanCompleted -= OnPanCompleted;
+        }
+
         // Drops are unparented (so they stay on the ground as the animal wanders), so they no
         // longer die with the visual automatically — clean them up here on unequip/swap/destroy.
         if (eggInstance != null) Destroy(eggInstance);

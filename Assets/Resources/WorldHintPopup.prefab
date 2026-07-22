@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5708049204714294940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 273940080619009306}
+  - component: {fileID: 4345146779643064386}
+  m_Layer: 0
+  m_Name: WorldHintPopup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &273940080619009306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708049204714294940}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4345146779643064386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708049204714294940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a8d4b23ac1e4fa44803005b6e44ec28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldHintPopup
+  font: {fileID: 11400000, guid: bf4286e70d05d1c40bb4596a1fc19e16, type: 2}
+  fontSize: 28
+  textColor: {r: 0.9411765, g: 0.9019608, b: 0.8392157, a: 1}
+  boxFill: {r: 0.10980392, g: 0.06666667, b: 0.039215688, a: 0.9490196}
+  boxStroke: {r: 0.3529412, g: 0.21568628, b: 0.078431375, a: 1}
+  cornerRadius: 4
+  borderThickness: 4
+  paddingHorizontal: 20
+  paddingVertical: 14
+  worldScale: 0.035
+  yOffset: 1.4
+  holdSeconds: 1.4
+  fadeSeconds: 0.6

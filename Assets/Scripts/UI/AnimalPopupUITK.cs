@@ -178,6 +178,9 @@ public class AnimalPopupUITK : MonoBehaviour
             {
                 iconElem.style.backgroundImage = new StyleBackground(animal.iconSprite);
                 iconElem.style.display = DisplayStyle.Flex;
+                // Chicken & rooster read a touch large in their box — shrink just those ~25%.
+                bool small = animal.animalID == "chicken" || animal.animalID == "rooster";
+                iconElem.style.scale = new Scale(new Vector2(small ? 0.75f : 1f, small ? 0.75f : 1f));
                 if (iconFallback != null) iconFallback.style.display = DisplayStyle.None;
             }
             else

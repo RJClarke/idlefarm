@@ -49,10 +49,37 @@ public class CameraPanController : MonoBehaviour
 
     private Vector3 homePosition;
     private int activeTweenId = -1;
+    private Camera cam;
+
+    /// <summary>The camera's Farm-home world position (captured at Awake). Location view rects are
+    /// this plus the location's offset.</summary>
+    public Vector3 HomePosition => homePosition;
 
     private void Awake()
     {
         homePosition = transform.position;
+        cam = GetComponent<Camera>();
+    }
+
+    /// <summary>
+    /// World-space camera view rect for a location, using the LIVE camera size (so it tracks any
+    /// zoom). <paramref name="insetFraction"/> (0..0.5) shrinks the rect on every edge. Animals read
+    /// this to pen their wander to the Farm framing while a run is active or while you're at the Lake.
+    /// </summary>
+    public Rect GetViewRect(Location loc, float insetFraction = 0f)
+    {
+        LocationOffset entry = GetEntry(loc);
+        Vector2 offset = entry != null ? entry.offset : Vector2.zero;
+
+        float halfH = cam != null ? cam.orthographicSize : 5f;
+        float halfW = halfH * (cam != null ? cam.aspect : 0.5625f);
+        float cx = homePosition.x + offset.x;
+        float cy = homePosition.y + offset.y;
+
+        float insetX = halfW * 2f * insetFraction;
+        float insetY = halfH * 2f * insetFraction;
+        return Rect.MinMaxRect(cx - halfW + insetX, cy - halfH + insetY,
+                               cx + halfW - insetX, cy + halfH - insetY);
     }
 
     public void PanTo(Location target)

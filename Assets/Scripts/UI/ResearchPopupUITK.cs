@@ -20,6 +20,7 @@ public class ResearchPopupUITK : MonoBehaviour
     private VisualElement picker;
     private ScrollView pickerList;
     private Button pickerClose;
+    private Label pickerCoinsAmount;
     private int pickerSlotIndex = -1;
 
     // Research detail modal (built in code, layered above the picker).
@@ -132,6 +133,34 @@ public class ResearchPopupUITK : MonoBehaviour
         picker      = root.Q<VisualElement>("picker");
         pickerList  = root.Q<ScrollView>("picker-list");
         pickerClose = root.Q<Button>("picker-close");
+        pickerCoinsAmount = root.Q<Label>("picker-coins-amount");
+
+        // Wire each slot card's click ONCE, dispatching on the slot's CURRENT state. Re-registering
+        // inside the render methods piled up stale callbacks (VisualElement.Clear() removes children,
+        // not the card's own callbacks) — an ex-empty card kept its "open picker" handler, so tapping
+        // ⚡ Boost on it opened the Select Research picker underneath the boost modal.
+        for (int i = 0; i < ResearchManager.SlotCount; i++)
+        {
+            VisualElement card = root.Q<VisualElement>($"slot-{i}");
+            if (card == null) continue;
+            int captured = i;
+            card.RegisterCallback<ClickEvent>(_ => OnSlotCardClicked(captured));
+            WirePressedFeedback(card, "slot-card--pressed");
+        }
+    }
+
+    private void OnSlotCardClicked(int slotIndex)
+    {
+        ResearchManager mgr = ResearchManager.Instance;
+        if (mgr == null) return;
+        if (!mgr.IsSlotUnlocked(slotIndex))
+        {
+            if (mgr.CanUnlockSlot(slotIndex)) mgr.TryUnlockSlot(slotIndex);
+            return;
+        }
+        var state = mgr.GetSlot(slotIndex);
+        if (state == null || state.IsIdle) OpenPicker(slotIndex);
+        // Active slots: the Boost / Cancel labels own their own (non-bubbling) clicks.
     }
 
     private void WireCallbacks()
@@ -184,6 +213,16 @@ public class ResearchPopupUITK : MonoBehaviour
     {
         if (root == null) return;
         for (int i = 0; i < ResearchManager.SlotCount; i++) RenderSlot(i);
+        // Currency events flow through here (via MarkDirty), so keep the picker balance current
+        // while it's open — the number the player checks against each row's cost.
+        if (picker != null && picker.style.display == DisplayStyle.Flex) UpdatePickerCoins();
+    }
+
+    private void UpdatePickerCoins()
+    {
+        if (pickerCoinsAmount == null) return;
+        int coins = CurrencyManager.Instance != null ? CurrencyManager.Instance.Coins : 0;
+        pickerCoinsAmount.text = coins.ToString("N0");
     }
 
     private void RenderSlot(int slotIndex)
@@ -242,13 +281,8 @@ public class ResearchPopupUITK : MonoBehaviour
 
         // Per design: all locked slots share the same locked look (the gems/coins slot no longer
         // gets the bright "affordable" highlight); affordable slots stay clickable.
+        // (Click handling lives on the card's single dispatcher — see OnSlotCardClicked.)
         card.AddToClassList("slot-card--locked");
-        if (mgr.CanUnlockSlot(slotIndex))
-        {
-            int captured = slotIndex;
-            card.RegisterCallback<ClickEvent>(_ => ResearchManager.Instance?.TryUnlockSlot(captured));
-            WirePressedFeedback(card, "slot-card--pressed");
-        }
     }
 
     private void RenderEmptySlot(VisualElement card, int slotIndex)
@@ -256,9 +290,7 @@ public class ResearchPopupUITK : MonoBehaviour
         card.AddToClassList("slot-card--unlocked-empty");
         Label statusLabel = new Label("No Active Research"); statusLabel.AddToClassList("slot-status");
         Label actionLabel = new Label("Tap to assign");      actionLabel.AddToClassList("slot-action");
-        int captured = slotIndex;
-        card.RegisterCallback<ClickEvent>(_ => OpenPicker(captured));
-        WirePressedFeedback(card, "slot-card--pressed");
+        // Click handling lives on the card's single dispatcher — see OnSlotCardClicked.
         card.Add(statusLabel); card.Add(actionLabel);
     }
 
@@ -298,15 +330,22 @@ public class ResearchPopupUITK : MonoBehaviour
         boostBtn.AddToClassList("slot-card__cancel");
         boostBtn.style.color = new StyleColor(new Color(0.55f, 0.78f, 0.39f));
         int capturedSlotBoost = slotIndex;
-        boostBtn.RegisterCallback<ClickEvent>(_ =>
+        boostBtn.RegisterCallback<ClickEvent>(e =>
         {
+            e.StopPropagation(); // don't bubble into the card's own click handling
             if (CompostBoostModalUITK.Instance != null)
                 CompostBoostModalUITK.Instance.Open(capturedSlotBoost);
         });
 
         Label cancel = new Label("Cancel ↩"); cancel.AddToClassList("slot-card__cancel");
         int captured = slotIndex;
-        cancel.RegisterCallback<ClickEvent>(_ => CancelSlotAndRefresh(captured));
+        cancel.RegisterCallback<ClickEvent>(e =>
+        {
+            // Stop the bubble: cancelling idles the slot, and the card's dispatcher would read the
+            // fresh idle state and immediately open the Select Research picker.
+            e.StopPropagation();
+            CancelSlotAndRefresh(captured);
+        });
 
         card.Add(nameLabel); card.Add(bar); card.Add(timer); card.Add(boost); card.Add(boostBtn); card.Add(cancel);
     }
@@ -344,6 +383,7 @@ public class ResearchPopupUITK : MonoBehaviour
     {
         pickerSlotIndex = slotIndex;
         if (picker != null) picker.style.display = DisplayStyle.Flex;
+        UpdatePickerCoins();
         RebuildPickerList();
     }
 

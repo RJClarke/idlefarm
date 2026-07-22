@@ -26,6 +26,10 @@ public class CarpenterPopupUITK : MonoBehaviour
     [SerializeField] private int canneryCoinCost = 800;
     [SerializeField] private int canneryWoodCost = 300;
 
+    [Header("Tool Icons")]
+    [Tooltip("Axe icon for the Buy/Upgrade Axe rows (RpgResources Axe).")]
+    [SerializeField] private Sprite axeIcon;
+
     [Header("Smokehouse Project (Pantry Economy Phase 2)")]
     [SerializeField] private string smokehouseTitle = "Build Smokehouse";
     [TextArea]
@@ -135,6 +139,8 @@ public class CarpenterPopupUITK : MonoBehaviour
     private void WireCallbacks()
     {
         if (closeButton != null) closeButton.RegisterCallback<ClickEvent>(_ => Close());
+        // Tap outside the card (on the dim backdrop) closes the popup, like the other modals.
+        root.Q<VisualElement>("backdrop")?.RegisterCallback<ClickEvent>(_ => Close());
     }
 
     public void Open()
@@ -419,6 +425,7 @@ public class CarpenterPopupUITK : MonoBehaviour
 
         row.Add(textBlock);
         row.Add(rightBlock);
+        AddRowIcon(row, axeIcon);
 
         cost.text = FormatCoinCost(wm.FirstAxeCoinCost);
         if (wm.CanBuyAxe())
@@ -466,6 +473,7 @@ public class CarpenterPopupUITK : MonoBehaviour
 
         row.Add(textBlock);
         row.Add(rightBlock);
+        AddRowIcon(row, axeIcon);
 
         bool maxed = wm.AxeLevel >= wm.MaxAxeLevel;
         if (maxed)
@@ -522,6 +530,7 @@ public class CarpenterPopupUITK : MonoBehaviour
 
         row.Add(textBlock);
         row.Add(rightBlock);
+        AddRowIcon(row, fm.PoleIcon(0)); // FishingRod_01_Wood — the starter pole
 
         cost.text = FormatCoinCost(fm.FirstPoleCoinCost);
         if (fm.CanBuyPole())
@@ -569,8 +578,9 @@ public class CarpenterPopupUITK : MonoBehaviour
 
         row.Add(textBlock);
         row.Add(rightBlock);
-
+        // Show the pole this upgrade buys (02_Curved / 03_Thin / 04_Orange); the current one at max.
         bool maxed = fm.PoleLevel >= fm.MaxPoleLevel;
+        AddRowIcon(row, fm.PoleIcon(maxed ? fm.PoleLevel : fm.PoleLevel + 1));
         if (maxed)
         {
             row.AddToClassList("market-row--owned");
@@ -595,6 +605,20 @@ public class CarpenterPopupUITK : MonoBehaviour
         }
 
         rowsList.Add(row);
+    }
+
+    /// <summary>Prepend a tool icon to a shop row (no-op when the sprite is unwired).</summary>
+    private static void AddRowIcon(VisualElement row, Sprite sprite)
+    {
+        if (sprite == null) return;
+        var img = new Image { sprite = sprite, scaleMode = ScaleMode.ScaleToFit };
+        img.pickingMode = PickingMode.Ignore;
+        img.style.width = 56;
+        img.style.height = 56;
+        img.style.marginRight = 14;
+        img.style.flexShrink = 0;
+        img.style.alignSelf = Align.Center;
+        row.Insert(0, img);
     }
 
     private static void WirePressedFeedback(VisualElement ve, string pressedClass)

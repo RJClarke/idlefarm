@@ -73,6 +73,9 @@ public class CanneryBuilding : MonoBehaviour
         if (!TryReadPointer(out Vector2 screenPos, out bool justPressed, out bool justReleased, out bool held))
             return;
 
+        // A menu/overlay over the pointer swallows the tap so it can't fall through to the world.
+        if (UITapBlocker.PointerOverUI(screenPos)) { CancelPress(); return; }
+
         if (justPressed && !isPressed && CanInteract() && PointerHitsSelf(screenPos))
         {
             isPressed = true;

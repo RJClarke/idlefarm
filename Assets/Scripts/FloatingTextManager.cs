@@ -129,10 +129,11 @@ public class FloatingTextManager : MonoBehaviour
     {
         if (Instance == null || Camera.main == null || !SettingsManager.ShowFloatingNumbers) return;
         Vector2 screenPos = Camera.main.WorldToScreenPoint(worldPos);
-        Instance.SpawnTextLabel("→ Cannery", new Color(0.95f, 0.62f, 0.25f), screenPos);
+        // "»" (U+00BB), not "→" (U+2192) — NotoSans SDF lacks the arrow glyph.
+        Instance.SpawnTextLabel("» Cannery", new Color(0.95f, 0.62f, 0.25f), screenPos);
     }
 
-    // Generic single-string label using the same pool + drift animation as reward labels.
+    // Generic single-string label using the same pool + arc animation as reward labels.
     private void SpawnTextLabel(string text, Color color, Vector2 screenPos)
     {
         GameObject go = GetLabel();
@@ -144,16 +145,43 @@ public class FloatingTextManager : MonoBehaviour
         tmp.text = text;
         tmp.color = color;
 
-        Vector2 localPt = ToLocalPoint(screenPos);
-        rt.anchoredPosition = localPt;
-        Vector2 endPos = localPt + new Vector2(0, 120f);
+        AnimateRewardPop(go, rt, ToLocalPoint(screenPos));
+    }
 
-        LeanTween.value(go, localPt, endPos, 1.2f)
-            .setEaseOutQuad().setIgnoreTimeScale(true)
-            .setOnUpdate((Vector2 p) => { if (rt != null) rt.anchoredPosition = p; });
-        LeanTween.value(go, 1f, 0f, 0.4f)
-            .setDelay(0.8f).setIgnoreTimeScale(true)
-            .setOnUpdate((float a) => { if (tmp != null) tmp.alpha = a; })
+    // Flips each spawn so back-to-back pops (tree chops, multi-harvests) fan left/right
+    // instead of stacking into an unreadable column.
+    private float nextDriftSign = 1f;
+
+    /// <summary>
+    /// Shared reward motion: spawn jitter, pop-in scale, and a gentle arc — the sideways drift
+    /// eases out faster (cubic) than the rise (quad), so the path curves from diagonal to
+    /// vertical. Fades the whole label (incl. emoji sub-meshes) via CanvasGroup, then pools it.
+    /// </summary>
+    private void AnimateRewardPop(GameObject go, RectTransform rt, Vector2 localPt,
+        float rise = 130f, float duration = 1.2f, float fadeDelay = 0.8f, float fadeDuration = 0.4f)
+    {
+        localPt.x += Random.Range(-25f, 25f);
+        nextDriftSign = -nextDriftSign;
+        float drift = nextDriftSign * Random.Range(30f, 70f);
+
+        rt.anchoredPosition = localPt;
+        go.transform.localScale = Vector3.one * 0.6f;
+        LeanTween.scale(go, Vector3.one, 0.15f).setEaseOutBack().setIgnoreTimeScale(true);
+
+        LeanTween.value(go, 0f, 1f, duration)
+            .setIgnoreTimeScale(true)
+            .setOnUpdate((float t) =>
+            {
+                if (rt == null) return;
+                float xT = 1f - Mathf.Pow(1f - t, 3f);
+                float yT = 1f - Mathf.Pow(1f - t, 2f);
+                rt.anchoredPosition = localPt + new Vector2(drift * xT, rise * yT);
+            });
+
+        CanvasGroup cg = go.GetComponent<CanvasGroup>();
+        LeanTween.value(go, 1f, 0f, fadeDuration)
+            .setDelay(fadeDelay).setIgnoreTimeScale(true)
+            .setOnUpdate((float a) => { if (cg != null) cg.alpha = a; })
             .setOnComplete(() => ReturnLabel(go));
     }
 
@@ -186,25 +214,7 @@ public class FloatingTextManager : MonoBehaviour
             tmp.color = Color.white;
         }
 
-        // Position: convert screen pos to canvas local pos
-        // null camera is correct for ScreenSpaceOverlay canvas
-        Vector2 localPt = ToLocalPoint(screenPos);
-        rt.anchoredPosition = localPt;
-
-        // Animate: drift up 120px over 1.2s (easeOutQuad), fade out over last 0.4s
-        Vector2 endPos = localPt + new Vector2(0, 120f);
-
-        LeanTween.value(go, localPt, endPos, 1.2f)
-            .setEaseOutQuad()
-            .setIgnoreTimeScale(true)
-            .setOnUpdate((Vector2 p) => { if (rt != null) rt.anchoredPosition = p; });
-
-        // Fade: starts at t=0.8s, duration 0.4s
-        LeanTween.value(go, 1f, 0f, 0.4f)
-            .setDelay(0.8f)
-            .setIgnoreTimeScale(true)
-            .setOnUpdate((float a) => { if (tmp != null) tmp.alpha = a; })
-            .setOnComplete(() => ReturnLabel(go));
+        AnimateRewardPop(go, rt, ToLocalPoint(screenPos));
     }
 
     private void SpawnSpendLabel(int amount, Vector2 screenPos)
@@ -219,16 +229,18 @@ public class FloatingTextManager : MonoBehaviour
         tmp.color = new Color(0.85f, 0.15f, 0.15f); // red
 
         Vector2 localPt = ToLocalPoint(screenPos);
+        localPt.x += Random.Range(-20f, 20f);
         rt.anchoredPosition = localPt;
 
         // Drift DOWN (opposite of rewards) so spend reads differently from income.
-        Vector2 endPos = localPt + new Vector2(0, -70f);
+        Vector2 endPos = localPt + new Vector2(Random.Range(-25f, 25f), -70f);
         LeanTween.value(go, localPt, endPos, 1.0f)
             .setEaseOutQuad().setIgnoreTimeScale(true)
             .setOnUpdate((Vector2 p) => { if (rt != null) rt.anchoredPosition = p; });
+        CanvasGroup cg = go.GetComponent<CanvasGroup>();
         LeanTween.value(go, 1f, 0f, 0.4f)
             .setDelay(0.6f).setIgnoreTimeScale(true)
-            .setOnUpdate((float a) => { if (tmp != null) tmp.alpha = a; })
+            .setOnUpdate((float a) => { if (cg != null) cg.alpha = a; })
             .setOnComplete(() => ReturnLabel(go));
     }
 
@@ -267,8 +279,8 @@ public class FloatingTextManager : MonoBehaviour
         // every property the animations mutate so a recycled label starts clean.
         LeanTween.cancel(go);
         go.transform.localScale = Vector3.one;
-        var tmp = go.GetComponent<TextMeshProUGUI>();
-        if (tmp != null) tmp.alpha = 1f;
+        var cg = go.GetComponent<CanvasGroup>();
+        if (cg != null) cg.alpha = 1f;
         go.SetActive(true);
 
         activeLabels.Add(go);
@@ -280,10 +292,19 @@ public class FloatingTextManager : MonoBehaviour
         var go = new GameObject("FloatingLabel", typeof(RectTransform));
         go.transform.SetParent(canvas.transform, false);
 
+        // CanvasGroup drives the fade-out: unlike TMP vertex alpha it also fades the SDF
+        // outline and any emoji fallback sub-meshes.
+        go.AddComponent<CanvasGroup>();
+
         var tmp = go.AddComponent<TextMeshProUGUI>();
         tmp.alignment = TextAlignmentOptions.Center;
         tmp.raycastTarget = false;
         if (font != null) tmp.font = font;
+
+        // Heavy black stroke so pops stay readable over grass/water/soil. (Color-emoji
+        // fallback glyphs can't take an SDF outline — they keep their own full-color art.)
+        tmp.outlineColor = new Color32(0, 0, 0, 255);
+        tmp.outlineWidth = 0.5f;
 
         var rt = go.GetComponent<RectTransform>();
         rt.sizeDelta = new Vector2(200, 80);
@@ -300,15 +321,18 @@ public class FloatingTextManager : MonoBehaviour
         idleLabels.Enqueue(go);
     }
 
+    // Icons are TMP SPRITE tags, not emoji: the label's black outline propagates to emoji
+    // fallback materials and turns those glyphs into solid black silhouettes, while sprites
+    // render on their own material with their authored colors.
     private static string FormatReward(CurrencyReward r)
     {
         return r.type switch
         {
             CurrencyType.Money => $"+{r.amount}$",
             CurrencyType.Coins => $"+{r.amount}G",
-            CurrencyType.Gems  => $"+{r.amount}\u2736",
-            CurrencyType.Compost => $"+{r.amount}\U0001F331",
-            CurrencyType.Wood => $"+{r.amount}\U0001FAB5",
+            CurrencyType.Gems  => $"+{r.amount}{CurrencyIcons.Gem}",
+            CurrencyType.Compost => $"+{r.amount}{CurrencyIcons.Compost}",
+            CurrencyType.Wood => $"+{r.amount}{CurrencyIcons.Wood}",
             _ => $"+{r.amount}"
         };
     }
@@ -317,7 +341,9 @@ public class FloatingTextManager : MonoBehaviour
     {
         return t switch
         {
-            CurrencyType.Money => new Color(0.039f, 0.220f, 0.051f), // #0A380D very dark green
+            // Brightened from the old #0A380D: with the black stroke supplying contrast, a
+            // livelier cash green reads far better over grass than near-black did.
+            CurrencyType.Money => new Color(0.30f, 0.85f, 0.35f),   // #4DD959 cash green
             CurrencyType.Coins => new Color(1f, 0.843f, 0f),         // #FFD700
             CurrencyType.Gems  => new Color(0.659f, 0.333f, 0.969f), // #A855F7
             CurrencyType.Compost => new Color(0.439f, 0.788f, 0.392f), // #70C964 (compost green)

@@ -8,7 +8,11 @@ public enum QuestObjectiveType
     RepelDeer,
     RepelCrows,
     GatherEggs,
-    GatherGems
+    GatherGems,
+    ChopTrees,   // fell a tree in the Woods (counts once per tree felled)
+    CollectWood  // wood gathered while chopping (counts by amount, not by swing)
+    // NOTE: CatchFish is intentionally not here yet — add it alongside the Fishing system so a
+    // fishing quest can actually progress (no event source exists to advance it today).
 }
 
 [CreateAssetMenu(menuName = "Farm Game/Quest Data", order = 8)]

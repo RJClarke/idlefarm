@@ -36,13 +36,14 @@ public class LakeNode : MonoBehaviour
     [SerializeField] private ChargeMeter chargeMeter;
     [SerializeField] private FishingLineVisual lineVisual;
     [SerializeField] private SpriteRenderer reticle;        // reticle.png, shown while charging
-    [Tooltip("Seconds of hold to reach a full-power cast. Gentle quadratic wind-up over the first " +
-             "quarter of the ramp, then CONSTANT speed all the way to max — no end coast.")]
-    [SerializeField] private float chargeRampSeconds = 4f;
+    [Tooltip("Seconds of hold to reach a full-power cast. Quadratic fill: starts slow and the fill " +
+             "speed rises steadily the whole way to max (constant acceleration, no end coast).")]
+    [SerializeField] private float chargeRampSeconds = 2.5f;
 
     [Header("Reel")]
-    [Tooltip("Hold this long (line out) to switch from tap-per-step to a continuous slow reel.")]
-    [SerializeField] private float holdReelDelay = 0.35f;
+    [Tooltip("After the instant press-yank, hold this long before the continuous reel takes over " +
+             "and carries the bobber the rest of the way to shore.")]
+    [SerializeField] private float holdReelDelay = 0.2f;
     [Tooltip("Reel steps per second while holding — slow, but carries the bobber all the way to " +
              "shore in one smooth motion.")]
     [SerializeField] private float holdReelStepsPerSecond = 1.6f;
@@ -221,11 +222,9 @@ public class LakeNode : MonoBehaviour
             // Unscaled time: charging is a player gesture and must feel identical at any Game Speed.
             chargeElapsed += Time.unscaledDeltaTime;
             float k = Mathf.Clamp01(chargeElapsed / Mathf.Max(0.01f, chargeRampSeconds));
-            // Quadratic wind-up over the first quarter, then linear to max (slope-continuous at
-            // k=c, f(1)=1): a readable slow start with NO slow-down again near the top.
-            const float c = 0.25f;
-            const float a = 1f / (2f * c - c * c);   // ≈2.29 → fill ≈14% at the c boundary
-            chargeT = k <= c ? a * k * k : a * c * c + 2f * a * c * (k - c);
+            // Pure quadratic fill (rate = 2k): starts slow and the fill speed rises steadily the
+            // WHOLE way to max — constant acceleration, not an exponential blow-up at the end.
+            chargeT = k * k;
             if (chargeMeter != null) chargeMeter.SetFill(chargeT);
             return;
         }
@@ -255,9 +254,10 @@ public class LakeNode : MonoBehaviour
 
     // ── Waiting/Bite: tap ANYWHERE in the lake view to reel a step toward shore ──
     // You reel the line back toward the pole, so a tap on the grass (near shore) reads more
-    // naturally than having to tap the water out past the bobber. A quick tap-release reels one
-    // step; press-and-HOLD switches to a slow continuous reel that carries the bobber all the
-    // way to shore in one smooth motion.
+    // naturally than having to tap the water out past the bobber. Tap and hold BLEND into one
+    // gesture rather than competing: the instant you press, the line yanks one discrete step
+    // (exactly a tap's worth); keep holding past a short delay and a continuous reel takes over
+    // and carries the bobber the rest of the way to shore. A quick tap = just the press-yank.
     private void HandleReelGesture(Vector2 screenPos, bool justPressed, bool justReleased, bool held)
     {
         var fm = FishingManager.Instance;
@@ -265,9 +265,11 @@ public class LakeNode : MonoBehaviour
 
         if (justPressed)
         {
+            // Yank immediately on touch — no hold delay before the line responds.
             reelPressActive = true;
             reelHolding = false;
             reelPressTime = Time.unscaledTime;
+            fm.Reel();
         }
 
         if (reelPressActive && held && !reelHolding
@@ -279,8 +281,7 @@ public class LakeNode : MonoBehaviour
 
         if (justReleased)
         {
-            // A quick tap (never crossed into hold territory) reels one discrete step.
-            if (!reelHolding) fm.Reel();
+            // The discrete step already fired on press; release just resets gesture state.
             reelPressActive = false;
             reelHolding = false;
         }

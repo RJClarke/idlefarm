@@ -43,9 +43,9 @@ public class DevToolsSetup : MonoBehaviour
         if (oldHelper != null) Destroy(oldHelper.gameObject);
 
         // Shared sizing — vertical drawer along the right edge.
-        const float DRAWER_WIDTH = 240f;
-        const float BTN_HEIGHT = 36f;
-        const float TOGGLE_HEIGHT = 40f;
+        const float DRAWER_WIDTH = 260f;
+        const float BTN_HEIGHT = 46f;
+        const float TOGGLE_HEIGHT = 46f;
         const float MARGIN = 20f;
         // Push the whole drawer down so it starts well below the 4-row currency stack (top-right).
         const float CURRENCY_CLEARANCE = 300f;
@@ -77,7 +77,7 @@ public class DevToolsSetup : MonoBehaviour
         drawerRT.anchorMax = new Vector2(1, 1);
         drawerRT.pivot = new Vector2(1, 1);
         drawerRT.anchoredPosition = new Vector2(-MARGIN, -(MARGIN + CURRENCY_CLEARANCE + TOGGLE_HEIGHT + 6f));
-        drawerRT.sizeDelta = new Vector2(DRAWER_WIDTH, 320f);
+        drawerRT.sizeDelta = new Vector2(DRAWER_WIDTH, 470f + 2f * (BTN_HEIGHT + 6f)); // +2 tutorial buttons
 
         drawerGO.GetComponent<Image>().color = new Color(0.08f, 0.08f, 0.08f, 0.72f);
 
@@ -116,6 +116,16 @@ public class DevToolsSetup : MonoBehaviour
 
         GameObject offlineSimGO = CreatePillButton("ForceOfflineSimButton", "Force Offline Sim (2h)", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         offlineSimGO.GetComponent<Button>().onClick.AddListener(OnForceOfflineSim);
+
+        // Tutorial overlay smoke test: Start shows the 3-step spotlight demo (dim + spotlight +
+        // tooltip + tap/press/event advance modes); step 3 waits on the Fire Event button since
+        // nothing in normal play sends "demo_event". Same trick works for any real sequence via
+        // TutorialManager.ForceStart(yourSequence) once content is authored.
+        GameObject tutorialStartGO = CreatePillButton("TestTutorialStartButton", "Test Tutorial", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        tutorialStartGO.GetComponent<Button>().onClick.AddListener(TutorialManager.ForceStartDemo);
+
+        GameObject tutorialEventGO = CreatePillButton("TestTutorialEventButton", "Tutorial: Fire Event", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        tutorialEventGO.GetComponent<Button>().onClick.AddListener(() => TutorialManager.Notify("demo_event"));
 
         // (Game speed — including 10/20/30× — lives on the stepper under the run timer now.)
 
