@@ -28,17 +28,36 @@ public static class DeliveryService
     private static bool CanFulfillLine(DeliveryLineItem item)
     {
         if (item == null || string.IsNullOrEmpty(item.itemId) || item.count <= 0) return false;
-        string id = item.itemId;
+        return HeldCount(item.itemId) >= item.count;
+    }
 
-        if (id == "egg") return ItemInventoryManager.Instance != null && ItemInventoryManager.Instance.Eggs >= item.count;
-        if (id == "wood") return CurrencyManager.Instance != null && CurrencyManager.Instance.Wood >= item.count;
-        if (id == "compost") return CurrencyManager.Instance != null && CurrencyManager.Instance.Compost >= item.count;
+    /// <summary>
+    /// How many of this line's item the player currently holds. Drives the board's have/need
+    /// progress bars, and is the single source CanFulfillLine compares against so the bar and the
+    /// Submit button can never disagree.
+    /// </summary>
+    public static int HeldCount(DeliveryLineItem item) => item == null ? 0 : HeldCount(item.itemId);
+
+    /// <summary>How many of the given itemId the player currently holds (0 if unknown/missing).</summary>
+    public static int HeldCount(string id)
+    {
+        if (string.IsNullOrEmpty(id)) return 0;
+
+        if (id == "egg") return ItemInventoryManager.Instance != null ? ItemInventoryManager.Instance.Eggs : 0;
+        if (id == "wood") return CurrencyManager.Instance != null ? CurrencyManager.Instance.Wood : 0;
+        if (id == "compost") return CurrencyManager.Instance != null ? CurrencyManager.Instance.Compost : 0;
         if (id.StartsWith("fish_raw_"))
-            return TryParseTier(id, "fish_raw_", out int rawTier) && PantryManager.Instance != null && PantryManager.Instance.GetRaw(rawTier) >= item.count;
+        {
+            if (!TryParseTier(id, "fish_raw_", out int rawTier) || PantryManager.Instance == null) return 0;
+            return PantryManager.Instance.GetRaw(rawTier);
+        }
         if (id.StartsWith("fish_smoked_"))
-            return TryParseTier(id, "fish_smoked_", out int smokedTier) && PantryManager.Instance != null && PantryManager.Instance.GetSmoked(smokedTier) >= item.count;
+        {
+            if (!TryParseTier(id, "fish_smoked_", out int smokedTier) || PantryManager.Instance == null) return 0;
+            return PantryManager.Instance.GetSmoked(smokedTier);
+        }
 
-        return ItemInventoryManager.Instance != null && ItemInventoryManager.Instance.GetCrop(id) >= item.count;
+        return ItemInventoryManager.Instance != null ? ItemInventoryManager.Instance.GetCrop(id) : 0;
     }
 
     private static void SpendLine(DeliveryLineItem item)

@@ -89,6 +89,85 @@ public class ReputationManager : MonoBehaviour
     private void RollSlot(int slot)
     {
         if (catalog == null) return;
+        // Hand-authored townsfolk requests are the primary source; the old template roller stays
+        // as a fallback for when nothing in the authored pool is currently obtainable.
+        if (TryRollAuthored(slot)) return;
+        RollFromTemplates(slot);
+    }
+
+    /// <summary>
+    /// Weighted pick from the authored pool, filtered to requests whose every item is currently
+    /// obtainable. Premium outliers carry a low weight and a reward multiplier.
+    /// </summary>
+    private bool TryRollAuthored(int slot)
+    {
+        AuthoredRequest[] pool = TownRequestContent.ForSlot(slot);
+        if (pool == null || pool.Length == 0) return false;
+
+        int totalWeight = 0;
+        foreach (AuthoredRequest candidate in pool)
+            if (IsRequestAvailable(candidate)) totalWeight += Mathf.Max(1, candidate.weight);
+        if (totalWeight <= 0) return false;
+
+        int roll = UnityEngine.Random.Range(0, totalWeight);
+        AuthoredRequest chosen = null;
+        foreach (AuthoredRequest candidate in pool)
+        {
+            if (!IsRequestAvailable(candidate)) continue;
+            roll -= Mathf.Max(1, candidate.weight);
+            if (roll < 0) { chosen = candidate; break; }
+        }
+        if (chosen == null) return false;
+
+        int repBase = slot == 0 ? catalog.easyRepBase : slot == 1 ? catalog.mediumRepBase : catalog.hardRepBase;
+        float varianceRoll = 1f + UnityEngine.Random.Range(-catalog.rewardVariance, catalog.rewardVariance);
+        float multiplier = chosen.rewardMultiplier <= 0f ? 1f : chosen.rewardMultiplier;
+        int reward = Mathf.Max(1, Mathf.RoundToInt(repBase * multiplier * varianceRoll));
+
+        var items = new DeliveryLineItem[chosen.lines.Length];
+        for (int i = 0; i < chosen.lines.Length; i++)
+            items[i] = new DeliveryLineItem { itemId = chosen.lines[i].itemId, count = chosen.lines[i].count };
+
+        core.SetSlotRequest(slot, new DeliveryRequest
+        {
+            items = items,
+            repReward = reward,
+            requesterName = chosen.requester,
+            flavorText = chosen.blurb,
+        });
+        OnChanged?.Invoke();
+        return true;
+    }
+
+    /// <summary>A request is only offered once every item in it is actually obtainable.</summary>
+    private bool IsRequestAvailable(AuthoredRequest request)
+    {
+        if (request?.lines == null || request.lines.Length == 0) return false;
+        foreach (AuthoredLine line in request.lines)
+            if (line.count <= 0 || !IsItemAvailable(line.itemId)) return false;
+        return true;
+    }
+
+    private bool IsItemAvailable(string id)
+    {
+        if (string.IsNullOrEmpty(id)) return false;
+        if (id == "wood") return WoodcuttingManager.Instance != null && WoodcuttingManager.Instance.HasAxe;
+        if (id == "egg" || id == "compost") return true; // always available in v1 (spec §9 deviation)
+        if (id.StartsWith("fish_raw_")) return FishingManager.Instance != null && FishingManager.Instance.HasPole;
+        if (id.StartsWith("fish_smoked_")) return SmokehouseManager.Instance != null && SmokehouseManager.Instance.IsBuilt;
+        return IsCropUnlocked(id);
+    }
+
+    private bool IsCropUnlocked(string cropName)
+    {
+        if (cropDatabase == null || cropDatabase.startingCrops == null) return false;
+        foreach (CropData crop in cropDatabase.startingCrops)
+            if (crop != null && crop.cropName == cropName) return true;
+        return false;
+    }
+
+    private void RollFromTemplates(int slot)
+    {
         RequestItemTemplate[] templates = slot == 0 ? catalog.easyPool : slot == 1 ? catalog.mediumPool : catalog.hardPool;
         int repBase = slot == 0 ? catalog.easyRepBase : slot == 1 ? catalog.mediumRepBase : catalog.hardRepBase;
 

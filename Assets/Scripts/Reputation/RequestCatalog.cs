@@ -2,6 +2,33 @@ using UnityEngine;
 
 public enum RequestItemKind { SpecificId, AnyUnlockedCrop, AnyRawFish, AnySmokedFish }
 
+/// <summary>One line of an authored request: a concrete itemId plus a fixed count.</summary>
+[System.Serializable]
+public struct AuthoredLine
+{
+    public string itemId;
+    public int count;
+}
+
+/// <summary>
+/// A hand-authored townsfolk request: who is asking, why, and exactly what they want. Authored
+/// requests replace template rolling when the difficulty's array is non-empty (templates remain
+/// as a fallback). Counts are value-balanced per difficulty band — see the design spec.
+/// </summary>
+[System.Serializable]
+public class AuthoredRequest
+{
+    public string requester;
+    [Tooltip("Short in-world reason the goods are needed. Shown on the request note.")]
+    public string blurb;
+    public AuthoredLine[] lines;
+    [Tooltip("Relative pick weight. Premium outliers use a low weight so they roll rarely.")]
+    public int weight;
+    [Tooltip("Reward multiplier vs the difficulty base. >1 for premium outliers whose item value " +
+             "far exceeds the band (a single Pike/Smoked Bass cannot be scaled down below qty 1).")]
+    public float rewardMultiplier;
+}
+
 /// <summary>One catalog line: a category of requestable item plus its count range and pick weight.</summary>
 [System.Serializable]
 public struct RequestItemTemplate

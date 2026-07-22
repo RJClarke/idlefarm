@@ -160,16 +160,22 @@ public class ToastManager : MonoBehaviour
     /// <summary>A small bottom toast for a fish catch: the fish's sprite on the left, message on
     /// the right (rich text ok — the fish name arrives pre-colorized). Slides up from below, holds,
     /// slides back down. Fire-and-forget (no queue).</summary>
-    public static void ShowCatch(Sprite icon, string message)
+    public static void ShowCatch(Sprite icon, string message) => ShowCatch(icon, message, null);
+
+    /// <summary>
+    /// As above, but tappable: onClick fires if the player hits the toast before it sinks. Used by
+    /// the Reputation level-up toast to jump the player to the Barn.
+    /// </summary>
+    public static void ShowCatch(Sprite icon, string message, System.Action onClick)
     {
         if (Instance == null || string.IsNullOrEmpty(message)) return;
         if (Instance.bottomStack == null) return;
-        Instance.SpawnCatchToast(icon, message);
+        Instance.SpawnCatchToast(icon, message, onClick);
     }
 
-    private void SpawnCatchToast(Sprite icon, string message)
+    private void SpawnCatchToast(Sprite icon, string message, System.Action onClick)
     {
-        VisualElement toast = BuildCatchElement(icon, message);
+        VisualElement toast = BuildCatchElement(icon, message, onClick);
         bottomStack.Add(toast);
         StartCoroutine(CatchLifecycle(toast));
     }
@@ -182,10 +188,14 @@ public class ToastManager : MonoBehaviour
         toast.RemoveFromHierarchy();
     }
 
-    private VisualElement BuildCatchElement(Sprite icon, string message)
+    private VisualElement BuildCatchElement(Sprite icon, string message, System.Action onClick = null)
     {
         VisualElement toast = new VisualElement { name = "catch-toast" };
-        toast.pickingMode = PickingMode.Ignore;
+        // Catch toasts are normally inert; a toast with an action becomes tappable and consumes
+        // the click so it cannot fall through to the world behind it.
+        toast.pickingMode = onClick == null ? PickingMode.Ignore : PickingMode.Position;
+        if (onClick != null)
+            toast.RegisterCallback<ClickEvent>(evt => { evt.StopPropagation(); onClick(); });
         toast.style.flexDirection = FlexDirection.Row;
         toast.style.alignItems = Align.Center;
         // Generous padding so icon + text sit well clear of the sliced wooden frame.

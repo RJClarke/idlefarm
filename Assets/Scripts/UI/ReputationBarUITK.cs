@@ -16,6 +16,9 @@ public class ReputationBarUITK : MonoBehaviour
              "If left null, a fresh PanelSettings is created — but with no theme, text will not render.")]
     [SerializeField] private PanelSettings sourcePanelSettings;
 
+    [Tooltip("Icon shown on the bottom toast when a Reputation point is earned (e.g. Raven/Misc_StarGold).")]
+    [SerializeField] private Sprite levelUpIcon;
+
     private UIDocument document;
     private PanelSettings runtimePanelSettings;
     private VisualElement barRoot;
@@ -59,7 +62,10 @@ public class ReputationBarUITK : MonoBehaviour
         Refresh();
 
         if (ReputationManager.Instance != null)
+        {
             ReputationManager.Instance.OnChanged += Refresh;
+            ReputationManager.Instance.OnPointsAwarded += OnPointsAwarded;
+        }
 
         CameraPanController pan = GetPanController();
         if (pan != null)
@@ -72,7 +78,10 @@ public class ReputationBarUITK : MonoBehaviour
     private void OnDestroy()
     {
         if (ReputationManager.Instance != null)
+        {
             ReputationManager.Instance.OnChanged -= Refresh;
+            ReputationManager.Instance.OnPointsAwarded -= OnPointsAwarded;
+        }
         if (panController != null)
         {
             panController.OnPanStarted -= OnLocationChanging;
@@ -90,6 +99,28 @@ public class ReputationBarUITK : MonoBehaviour
     }
 
     private void OnLocationChanging(CameraPanController.Location _) => RefreshVisibility();
+
+    /// <summary>
+    /// Earning a Reputation point is the payoff moment for the whole board, so it gets the same
+    /// bottom toast treatment as a fish catch. Tapping it takes the player where the point is
+    /// spent: back to the Farm, Barn menu open.
+    /// </summary>
+    private void OnPointsAwarded(int awarded)
+    {
+        if (awarded <= 0) return;
+        int unspent = ReputationManager.Instance != null ? ReputationManager.Instance.UnspentPoints : awarded;
+        // Pluralise on the number actually shown (unspent), not on how many were just awarded.
+        string noun = unspent == 1 ? "point" : "points";
+        string message = awarded == 1
+            ? $"<b>Reputation Up!</b>  {unspent} {noun} to spend"
+            : $"<b>Reputation Up!</b>  +{awarded} points ({unspent} {noun} to spend)";
+
+        ToastManager.ShowCatch(levelUpIcon, message, () =>
+        {
+            GetPanController()?.PanToFarm();
+            BarnPopupUITK.Instance?.Open();
+        });
+    }
 
     private void RefreshVisibility()
     {
@@ -111,7 +142,9 @@ public class ReputationBarUITK : MonoBehaviour
 
         barRoot = new VisualElement { name = "rep-bar-root" };
         barRoot.style.position = Position.Absolute;
-        barRoot.style.top = 20;
+        // Anchored to the bottom of the Market view — at the top it competed with the currency HUD
+        // and got lost. Sits above the bottom nav, below where catch toasts rise (bottom: 190).
+        barRoot.style.bottom = 120;
         barRoot.style.left = Length.Percent(10);
         barRoot.style.right = Length.Percent(10);
         barRoot.style.height = 64;
