@@ -22,6 +22,7 @@ MonoBehaviour:
   cooldownMinutes: 20
   rewardCoins: 0
   rewardGems: 2
+  compostPerMinute: 0
   visualPrefab: {fileID: 2277226766109622324, guid: bf739e3e0be4fcf4ea622acb7191745f, type: 3}
   roamSpeed: 0.6
-  iconSprite: {fileID: 0}
+  iconSprite: {fileID: -8767061869188347446, guid: 37df4b15c65032149b0c68d3450d3fc5, type: 3}

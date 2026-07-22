@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
   animalID: cow
   displayName: Cow
-  description: Coming soon...
+  description: A patient old girl. She'll graze whatever crops are within reach,
+    but keeps the compost bay full in return - nature's tireless little recycler.
   animalEmoji: "\U0001F404"
   sortOrder: 3
   gemCost: 3000
@@ -25,4 +26,4 @@ MonoBehaviour:
   compostPerMinute: 0.5
   visualPrefab: {fileID: 4596623498287381685, guid: 008bf5cf4efc775498c61c137f19baa6, type: 3}
   roamSpeed: 0.6
-  iconSprite: {fileID: 0}
+  iconSprite: {fileID: -3830543989396087736, guid: 1f9f19b104fc94e48b6257291a4b7435, type: 3}

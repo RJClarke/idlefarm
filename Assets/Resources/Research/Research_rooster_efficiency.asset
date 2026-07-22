@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: rooster_efficiency
   displayName: 'Rooster: Efficiency'
-  description: +1.0% per level. Maxes at +25%.
+  description: +4% per level. Maxes at +100% (fractional gems roll over).
   branchID: animals
   tier: 2
   targetStatKey: rooster_efficiency
-  bonusPerLevel: 0.01
+  bonusPerLevel: 0.04
   baseCostCoins: 50
   baseDurationSecs: 120
   timeDifficulty: 1

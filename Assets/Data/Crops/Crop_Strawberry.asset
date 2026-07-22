@@ -21,6 +21,12 @@ MonoBehaviour:
   maxHP: 78
   harvestWindowSeconds: 50
   harvestValue: 15
+  coinValue: 1
+  seedBagSize: 20
+  seedBagBaseCost: 50
+  tier: 1
+  canBeCanned: 1
+  canneryTier: 1
   canRegrow: 1
   regrowSeconds: 0
   plantPrefab: {fileID: 8146968038167197194, guid: 97d89bffd06bc2d43b83fabe1fa849d3, type: 3}
