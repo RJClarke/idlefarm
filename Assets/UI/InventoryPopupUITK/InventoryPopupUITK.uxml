@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="InventoryPopupUITK.uss" />
+    <ui:VisualElement name="popup-root" class="popup-root" style="display: none;">
+        <ui:VisualElement name="backdrop" class="backdrop" picking-mode="Position" />
+        <ui:VisualElement name="popup-container" class="popup-container">
+            <ui:VisualElement name="header" class="header">
+                <ui:Label name="header-title" text="Inventory" class="header-title" />
+                <ui:Button name="close-button" class="close-button" text="" />
+            </ui:VisualElement>
+            <ui:ScrollView name="inventory-list" class="inv-list" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

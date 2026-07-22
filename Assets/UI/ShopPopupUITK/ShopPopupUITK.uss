@@ -75,7 +75,7 @@
     width: 56px;
     height: 56px;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Cross_Medium.png");
     -unity-background-scale-mode: scale-to-fit;
     border-left-width: 0;
     border-right-width: 0;

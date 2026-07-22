@@ -129,7 +129,9 @@
     padding-bottom: 8px;
 }
 .research-row__label { color: rgb(220, 195, 150); font-size: 20px; flex-grow: 1; }
-.research-row__value { color: rgb(160, 220, 130); font-size: 22px; -unity-font-style: bold; }
+/* Base value ("4 → 7") reads as regular menu text; only the (+N) gain is tinted green via an
+   inline rich-text <color> tag built in code. */
+.research-row__value { color: rgb(255, 240, 210); font-size: 22px; -unity-font-style: bold; }
 .research-row__value--none { color: rgb(140, 128, 100); }
 
 .boost-summary {
@@ -269,4 +271,4 @@
 .currency-icon--money   { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Cash.png"); }
 .currency-icon--coins   { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Coin.png"); }
 .currency-icon--gems    { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Gem.png"); }
-.currency-icon--compost { background-image: url("project://database/Assets/Sprites/UI/Icons/Cyberpunk/Plants/Seedling_Dirt.png"); }
+.currency-icon--compost { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Compost.png"); }

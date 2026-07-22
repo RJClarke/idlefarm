@@ -18,7 +18,13 @@
     <!-- Picker is a sibling of popup-root so it covers the full screen as a top-level overlay -->
     <ui:VisualElement name="picker" class="picker" style="display: none;">
         <ui:VisualElement name="picker-header" class="picker-header">
-            <ui:Label name="picker-title" text="Select Research" class="picker-title" />
+            <ui:VisualElement name="picker-header-left" class="picker-header-left">
+                <ui:Label name="picker-title" text="Select Research" class="picker-title" />
+                <ui:VisualElement name="picker-coins" class="picker-coins" picking-mode="Ignore">
+                    <ui:VisualElement class="picker-coins__icon" picking-mode="Ignore" />
+                    <ui:Label name="picker-coins-amount" text="0" class="picker-coins__amount" />
+                </ui:VisualElement>
+            </ui:VisualElement>
             <ui:Button name="picker-close" class="picker-close" text="X" />
         </ui:VisualElement>
         <ui:ScrollView name="picker-list" class="picker-list" />

@@ -68,7 +68,7 @@
     width: 56px;
     height: 56px;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Cross_Medium.png");
     -unity-background-scale-mode: scale-to-fit;
     border-left-width: 0;
     border-right-width: 0;
@@ -180,7 +180,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+/* Label + explanation stacked on the left, switch pinned right. */
+.intake-text-col {
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-right: 14px;
 }
 
 .intake-label {
@@ -189,28 +199,49 @@
     color: rgb(54, 32, 14);
 }
 
+.intake-desc {
+    font-size: 15px;
+    color: rgba(54, 32, 14, 0.75);
+    white-space: normal;
+    margin-top: 2px;
+}
+
+/* Switch: a rounded track with a sliding knob. Green + knob-right = ON; gray + knob-left = OFF, so
+   the state reads at a glance instead of an "ON"/"OFF" word. */
 .intake-toggle {
-    width: 96px;
-    height: 48px;
+    width: 72px;
+    height: 40px;
+    flex-shrink: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 4px;
     background-color: rgb(120, 170, 90);
     border-color: rgb(60, 100, 40);
-    border-left-width: 3px;
-    border-right-width: 3px;
-    border-top-width: 3px;
-    border-bottom-width: 3px;
-    color: rgb(28, 50, 20);
-    font-size: 22px;
-    -unity-font-style: bold;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.intake-knob {
+    width: 28px;
+    height: 28px;
+    background-color: rgb(255, 252, 245);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
 }
 
 .intake-toggle--off {
-    background-color: rgb(190, 95, 75);
-    border-color: rgb(120, 50, 35);
-    color: rgb(60, 20, 12);
+    background-color: rgb(150, 120, 96);
+    border-color: rgb(90, 70, 52);
+    justify-content: flex-start;
 }
 
 .fuel-bar {
@@ -233,11 +264,26 @@
     border-bottom-right-radius: 10px;
 }
 
+.fuel-text-row {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+/* Log icon — the shared "wood" glyph, so players read the firebox fuel as wood. */
+.wood-icon {
+    width: 26px;
+    height: 26px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgResources/Log.png");
+}
+
 .fuel-text {
     font-size: 19px;
     color: rgb(70, 45, 20);
-    margin-top: 4px;
-    margin-bottom: 6px;
 }
 
 .slots-list { max-height: 250px; }

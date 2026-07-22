@@ -12,10 +12,10 @@ using TMPro;
 /// </summary>
 public static class CurrencySpriteAssetBuilder
 {
-    private const string TexPath   = "Assets/Sprites/UI/Icons/CurrencySprites.png";
+    private const string TexPath   = "Assets/Sprites/UI/Icons/Icons_Essential/CurrencySprites.png";
     private const string AssetPath = "Assets/Resources/Sprite Assets/CurrencySprites.asset";
     private const int Cell = 32;
-    private static readonly string[] Names = { "coin", "gem", "cash", "compost" };
+    private static readonly string[] Names = { "coin", "gem", "cash", "compost", "wood", "fish" };
 
     [MenuItem("Farm Game/Build Currency Sprite Asset")]
     public static void Build()

@@ -15,7 +15,7 @@
     width: 74%;
     max-width: 680px;
     min-width: 360px;
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Frame_Standard_02.png");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Frame_Standard_02.png");
     -unity-slice-left: 60;
     -unity-slice-right: 60;
     -unity-slice-top: 60;
@@ -60,7 +60,7 @@
 
 /* Style the inner input element with the wood text-field sprite. */
 .fnp-field .unity-base-text-field__input {
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Textfield_01.png");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Textfield_01.png");
     -unity-slice-left: 6;
     -unity-slice-right: 6;
     -unity-slice-top: 6;

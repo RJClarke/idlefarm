@@ -327,7 +327,7 @@
 .coin-icon {
     width: 20px;
     height: 20px;
-    background-image: url("project://database/Assets/Sprites/UI/Icons/Coin.png");
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Coin.png");
     -unity-background-scale-mode: scale-to-fit;
     margin-right: 5px;
 }

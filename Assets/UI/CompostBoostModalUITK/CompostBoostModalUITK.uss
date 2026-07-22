@@ -55,7 +55,7 @@
     -unity-background-scale-mode: scale-to-fit;
 }
 .currency-icon--compost {
-    background-image: url("project://database/Assets/Sprites/UI/Icons/Compost.png");
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Compost.png");
 }
 .currency-icon--balance {
     width: 24px;

@@ -23,15 +23,23 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 8px;
-    padding: 6px 14px 6px 10px;
-    background-color: rgba(0, 0, 0, 0.55);
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
-    border-top-right-radius: 18px;
-    border-bottom-right-radius: 18px;
+    padding: 8px 16px 8px 12px;
+    /* Wood-slot sprite background (same family as the HUD buttons), 9-sliced so it stretches into a
+       wide pill. Each currency tints it a distinct dark shade below — no more shared gray box. */
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Slot_Available_01.png");
+    -unity-slice-left: 6;
+    -unity-slice-right: 8;
+    -unity-slice-top: 6;
+    -unity-slice-bottom: 8;
     width: 210px;
     justify-content: space-between;
 }
+
+/* Per-currency dark tint of the wood slot → distinct, readable chips (light text stays high-contrast). */
+.currency-row--money   { -unity-background-image-tint-color: rgb(74, 132, 80); }
+.currency-row--coins   { -unity-background-image-tint-color: rgb(156, 122, 52); }
+.currency-row--gems    { -unity-background-image-tint-color: rgb(116, 84, 164); }
+.currency-row--compost { -unity-background-image-tint-color: rgb(120, 92, 58); }
 
 .currency-icon {
     width: 34px;
@@ -50,10 +58,10 @@
 }
 
 /* ─── Per-currency icons (flat PNG set; money uses the cash bill) ─── */
-.currency-icon--money   { background-image: url("project://database/Assets/Sprites/UI/Icons/Cash.png"); }
-.currency-icon--coins   { background-image: url("project://database/Assets/Sprites/UI/Icons/Coin.png"); }
-.currency-icon--gems    { background-image: url("project://database/Assets/Sprites/UI/Icons/Gem.png"); }
-.currency-icon--compost { background-image: url("project://database/Assets/Sprites/UI/Icons/Compost.png"); }
+.currency-icon--money   { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Cash.png"); }
+.currency-icon--coins   { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Coin.png"); }
+.currency-icon--gems    { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Gem.png"); }
+.currency-icon--compost { background-image: url("project://database/Assets/Sprites/UI/Icons/Cyberpunk/Plants/Seedling_Dirt.png"); }
 
 .currency-value--money   { color: rgb(120, 230, 130); }
 .currency-value--coins   { color: rgb(255, 220, 120); }

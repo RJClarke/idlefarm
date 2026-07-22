@@ -63,7 +63,7 @@
     width: 56px;
     height: 56px;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Cross_Medium.png");
     -unity-background-scale-mode: scale-to-fit;
     border-left-width: 0;
     border-right-width: 0;
@@ -87,7 +87,7 @@
 /* ─── Wood card background (shared by slot section + speed rows) ─── */
 
 .wood-card {
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Slot_Available_01.png?fileID=3260068808691272648&guid=d1e7240023b7a2e43a65be11eab24faf&type=3#UI_Wood_Slot_Available_01_0");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Slot_Available_01.png?fileID=3260068808691272648&guid=d1e7240023b7a2e43a65be11eab24faf&type=3#UI_Wood_Slot_Available_01_0");
     -unity-slice-left: 18;
     -unity-slice-right: 18;
     -unity-slice-top: 18;
@@ -273,7 +273,7 @@
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Slot_Available_01.png?fileID=3260068808691272648&guid=d1e7240023b7a2e43a65be11eab24faf&type=3#UI_Wood_Slot_Available_01_0");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Slot_Available_01.png?fileID=3260068808691272648&guid=d1e7240023b7a2e43a65be11eab24faf&type=3#UI_Wood_Slot_Available_01_0");
     -unity-slice-left: 18;
     -unity-slice-right: 18;
     -unity-slice-top: 18;

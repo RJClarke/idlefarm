@@ -1,16 +1,34 @@
 .inbox-root { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
 .inbox-backdrop { position: absolute; top:0; left:0; right:0; bottom:0;
     background-color: rgba(0,0,0,0.6); }
+/* Shares the tan card + brown border chrome of the other modals (Wood Rack, Research),
+   while keeping its own letter/scroll flavor. */
 .inbox-card { position: absolute; left: 40px; right: 40px; top: 300px; bottom: 300px;
-    background-color: rgb(248,240,222); border-radius: 24px; padding: 20px; }
-.inbox-header { flex-direction: row; align-items: center; margin-bottom: 12px; }
+    background-color: rgb(179,154,110);
+    border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px;
+    border-left-color: rgb(90,55,20); border-right-color: rgb(90,55,20);
+    border-top-color: rgb(90,55,20); border-bottom-color: rgb(90,55,20);
+    border-radius: 20px; padding: 20px; }
+.inbox-header { flex-direction: row; align-items: center; margin-bottom: 14px;
+    padding-bottom: 12px; border-bottom-width: 2px; border-bottom-color: rgba(90,55,20,0.4); }
 .inbox-title { flex-grow: 1; font-size: 36px; -unity-font-style: bold;
-    -unity-text-align: middle-center; color: rgb(60,45,30); }
-.inbox-title-icon { width: 52px; height: 52px; margin-right: 12px;
+    -unity-text-align: middle-center; color: rgb(54,32,14); }
+.inbox-title-icon { width: 48px; height: 48px; margin-right: 10px;
     -unity-background-scale-mode: scale-to-fit;
     background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Misc_ScrollGreen.png"); }
-.inbox-back, .inbox-close { width: 60px; height: 60px; font-size: 32px;
-    background-color: rgba(0,0,0,0); color: rgb(60,45,30); }
+
+/* Obvious back button: a labelled brown pill, not a faint glyph. */
+.inbox-back { width: auto; height: 56px; padding-left: 20px; padding-right: 22px;
+    font-size: 26px; -unity-font-style: bold; border-radius: 14px; border-width: 0;
+    background-color: rgb(120,90,45); color: rgb(255,240,210); margin-right: 10px; }
+.inbox-back:hover { background-color: rgb(135,102,52); }
+
+/* Close reuses the shared wood-cross asset like the other popups. */
+.inbox-close { width: 56px; height: 56px; padding: 0; border-width: 0;
+    background-color: rgba(0,0,0,0); color: rgba(0,0,0,0);
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Cross_Medium.png"); }
+.inbox-close:hover { opacity: 0.85; }
 .inbox-list { flex-grow: 1; }
 .inbox-row { flex-direction: row; align-items: center; padding: 16px;
     background-color: rgb(255,250,238); border-radius: 14px; margin-bottom: 10px; }
@@ -29,9 +47,28 @@
 .inbox-subject { font-size: 32px; -unity-font-style: bold; color: rgb(50,40,30);
     margin-bottom: 10px; white-space: normal; }
 .inbox-body { font-size: 26px; color: rgb(60,50,40); white-space: normal; }
+
+/* Enclosed items — inset from the message so a list of rewards reads as separate from the text. */
+.inbox-items { margin-top: 18px; margin-left: 14px; padding: 12px 16px;
+    background-color: rgba(90,55,20,0.12); border-radius: 12px;
+    border-left-width: 4px; border-left-color: rgb(120,90,45); }
+.inbox-items-title { font-size: 20px; -unity-font-style: bold; color: rgb(90,68,38);
+    margin-bottom: 8px; }
+.inbox-items-list { flex-direction: column; }
+.inbox-item { flex-direction: row; align-items: center; margin-top: 4px; margin-bottom: 4px; }
+.inbox-item-icon { width: 34px; height: 34px; margin-right: 10px; flex-shrink: 0; border-radius: 6px;
+    -unity-background-scale-mode: scale-to-fit; }
+.inbox-item-icon--coins { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Coin.png"); }
+.inbox-item-icon--gems  { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Gem.png"); }
+.inbox-item-icon--compost { background-color: rgb(112,150,100); }
+.inbox-item-label { font-size: 26px; -unity-font-style: bold; color: rgb(54,32,14); }
+
 .inbox-claim { font-size: 30px; height: 80px; margin-top: 18px; border-radius: 16px;
-    background-color: rgb(230,180,60); color: white; -unity-font-style: bold; }
-.inbox-claim:disabled { background-color: rgb(180,180,170); opacity: 0.6; }
+    background-color: rgb(230,180,60); color: rgb(70,48,12); -unity-font-style: bold; }
+.inbox-claim:hover { background-color: rgb(240,192,74); }
+/* Claimed: browned-out but fully readable (dark brown pill, cream text) — not a gray-on-white blur. */
+.inbox-claim--claimed { background-color: rgb(120,90,45); color: rgb(255,240,210); opacity: 1; }
+.inbox-claim--claimed:hover { background-color: rgb(120,90,45); }
 .inbox-cta { font-size: 30px; height: 80px; margin-top: 12px; border-radius: 16px;
     background-color: rgb(110,160,210); color: white; -unity-font-style: bold; }
 .inbox-empty { font-size: 26px; color: rgb(120,105,90); -unity-text-align: middle-center;

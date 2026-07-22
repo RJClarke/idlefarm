@@ -10,14 +10,22 @@
             </ui:VisualElement>
             <ui:VisualElement name="body" class="body">
                 <ui:VisualElement name="intake-row" class="intake-row">
-                    <ui:Label name="intake-label" text="Harvest Intake" class="intake-label" />
-                    <ui:Button name="intake-toggle" text="ON" class="intake-toggle" />
+                    <ui:VisualElement name="intake-text-col" class="intake-text-col">
+                        <ui:Label name="intake-label" text="Harvest Intake" class="intake-label" />
+                        <ui:Label name="intake-desc" text="Harvested crops that can be canned go straight into the Cannery." class="intake-desc" />
+                    </ui:VisualElement>
+                    <ui:Button name="intake-toggle" class="intake-toggle">
+                        <ui:VisualElement name="intake-knob" class="intake-knob" />
+                    </ui:Button>
                 </ui:VisualElement>
                 <ui:Label name="fuel-title" text="🔥 Firebox" class="section-title" />
                 <ui:VisualElement name="fuel-bar" class="fuel-bar">
                     <ui:VisualElement name="fuel-fill" class="fuel-fill" />
                 </ui:VisualElement>
-                <ui:Label name="fuel-text" text="Fuel: 0" class="fuel-text" />
+                <ui:VisualElement name="fuel-text-row" class="fuel-text-row">
+                    <ui:VisualElement class="wood-icon" />
+                    <ui:Label name="fuel-text" text="Fuel: 0" class="fuel-text" />
+                </ui:VisualElement>
                 <ui:VisualElement name="fuel-buttons" class="stack-row">
                     <ui:Button name="stoke-button" text="Stoke to finish" class="sell-btn sell-btn--cash" />
                     <ui:Button name="fill-button" text="Fill furnace" class="sell-btn sell-btn--cash" />

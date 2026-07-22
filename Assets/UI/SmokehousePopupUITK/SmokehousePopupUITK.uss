@@ -68,7 +68,7 @@
     width: 56px;
     height: 56px;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Cross_Medium.png");
     -unity-background-scale-mode: scale-to-fit;
     border-left-width: 0;
     border-right-width: 0;
@@ -232,6 +232,23 @@
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     background-color: rgba(0, 0, 0, 0.18);
+}
+/* Fish icon at the left of each raw/smoked row — the actual catch sprite, sized to the row. */
+.fish-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+.fish-icon--perch {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_Perch.png");
+}
+.fish-icon--bass {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_BassGreen.png");
+}
+.fish-icon--pike {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_GreenPike.png");
 }
 .fish-row-label {
     color: rgb(238, 232, 220);

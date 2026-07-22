@@ -4,10 +4,10 @@
         <ui:VisualElement name="backdrop" class="inbox-backdrop" />
         <ui:VisualElement name="card" class="inbox-card">
             <ui:VisualElement class="inbox-header">
-                <ui:Button name="back-button" text="‹" class="inbox-back" style="display:none;" />
+                <ui:Button name="back-button" text="‹ Back" class="inbox-back" style="display:none;" />
                 <ui:VisualElement class="inbox-title-icon" picking-mode="Ignore" />
                 <ui:Label name="header-title" text="Mailbox" class="inbox-title" />
-                <ui:Button name="close-button" text="✕" class="inbox-close" />
+                <ui:Button name="close-button" text="" class="inbox-close" />
             </ui:VisualElement>
 
             <ui:ScrollView name="list-view" class="inbox-list" />
@@ -19,6 +19,10 @@
                 </ui:VisualElement>
                 <ui:Label name="detail-subject" class="inbox-subject" />
                 <ui:Label name="detail-body" class="inbox-body" />
+                <ui:VisualElement name="reward-items" class="inbox-items" style="display:none;">
+                    <ui:Label text="Enclosed:" class="inbox-items-title" />
+                    <ui:VisualElement name="reward-items-list" class="inbox-items-list" />
+                </ui:VisualElement>
                 <ui:Button name="claim-button" text="Claim" class="inbox-claim" style="display:none;" />
                 <ui:Button name="cta-button" text="Go" class="inbox-cta" style="display:none;" />
             </ui:VisualElement>

@@ -28,7 +28,7 @@
     width: 92%;
     max-width: 960px;
     min-width: 320px;
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Frame_Standard_02.png?fileID=3858287901567477150&guid=bb37785e3a3eccb448d194497b84d6c0&type=3#UI_Wood_Frame_Standard_02_0");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Frame_Standard_02.png?fileID=3858287901567477150&guid=bb37785e3a3eccb448d194497b84d6c0&type=3#UI_Wood_Frame_Standard_02_0");
     -unity-slice-left: 60;
     -unity-slice-right: 60;
     -unity-slice-top: 60;
@@ -76,7 +76,7 @@
     width: 50px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Cross_Medium.png?fileID=3567889282709117160&guid=f22de2d072d334144aeca2ca86db4fbc&type=3#UI_Wood_Cross_Medium_0");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Cross_Medium.png?fileID=3567889282709117160&guid=f22de2d072d334144aeca2ca86db4fbc&type=3#UI_Wood_Cross_Medium_0");
     -unity-background-scale-mode: scale-to-fit;
     border-left-width: 0;
     border-right-width: 0;
@@ -103,7 +103,7 @@
     padding: 12px 6px 12px 6px;
     align-items: center;
     justify-content: space-between;
-    background-image: url("project://database/Assets/Sprites/UI/UI_Runewood/UI_Wood_Slot_Available_01.png?fileID=3260068808691272648&guid=d1e7240023b7a2e43a65be11eab24faf&type=3#UI_Wood_Slot_Available_01_0");
+    background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Slot_Available_01.png?fileID=3260068808691272648&guid=d1e7240023b7a2e43a65be11eab24faf&type=3#UI_Wood_Slot_Available_01_0");
     -unity-slice-left: 18;
     -unity-slice-right: 18;
     -unity-slice-top: 18;
