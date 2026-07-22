@@ -138,6 +138,42 @@ public class SaveFileIOTests
     }
 
     [Test]
+    public void Quarantine_MissingFile_ReturnsNull()
+    {
+        string dest = SaveFileIO.Quarantine(_path);
+
+        Assert.IsNull(dest);
+    }
+
+    [Test]
+    public void Quarantine_MovesFileAside_PreservingContents()
+    {
+        File.WriteAllText(_path, "precious");
+
+        string dest = SaveFileIO.Quarantine(_path);
+
+        Assert.IsNotNull(dest);
+        Assert.IsFalse(File.Exists(_path), "original should be moved, not copied");
+        Assert.IsTrue(File.Exists(dest), "quarantine copy should exist");
+        Assert.AreEqual("precious", File.ReadAllText(dest));
+        StringAssert.StartsWith(_path + SaveFileIO.CorruptSuffix, dest);
+    }
+
+    [Test]
+    public void Quarantine_RepeatedCalls_KeepEveryCopy()
+    {
+        // Two corrupt saves quarantined in the same second must not overwrite each other.
+        File.WriteAllText(_path, "first");
+        string dest1 = SaveFileIO.Quarantine(_path);
+        File.WriteAllText(_path, "second");
+        string dest2 = SaveFileIO.Quarantine(_path);
+
+        Assert.AreNotEqual(dest1, dest2, "each quarantine must get a distinct name");
+        Assert.AreEqual("first", File.ReadAllText(dest1));
+        Assert.AreEqual("second", File.ReadAllText(dest2));
+    }
+
+    [Test]
     public void WriteThenReadRoundTrip_SurvivesCorruptedPrimary()
     {
         // Simulate: save v1, save v2 (v1 -> .bak), primary later corrupted on disk.
