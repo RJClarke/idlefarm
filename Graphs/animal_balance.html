@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animal Balance — IdleFarm</title>
+<style>
+  :root{
+    color-scheme: light;
+    --page:#f9f9f7; --surface:#fcfcfb; --panel:#ffffff;
+    --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+    --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,0.10);
+    --s1:#2a78d6; --s2:#1baf7a; --s3:#eda100; --s4:#008300;
+    --accent:#2a78d6; --ref:#d03b3b;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])){
+      color-scheme: dark;
+      --page:#0d0d0d; --surface:#1a1a19; --panel:#201f1e;
+      --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+      --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,0.10);
+      --s1:#3987e5; --s2:#199e70; --s3:#c98500; --s4:#008300;
+      --accent:#3987e5; --ref:#e66767;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --page:#0d0d0d; --surface:#1a1a19; --panel:#201f1e;
+    --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,0.10);
+    --s1:#3987e5; --s2:#199e70; --s3:#c98500; --s4:#008300;
+    --accent:#3987e5; --ref:#e66767;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.45}
+  .wrap{max-width:1080px;margin:0 auto;padding:22px 18px 60px}
+  header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+  h1{font-size:23px;margin:0;font-weight:700}
+  .sub{color:var(--ink2);font-size:13px}
+  .snapshot{color:var(--muted);font-size:12px;margin:2px 0 16px}
+  .tabs{display:flex;gap:4px;margin-bottom:18px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+  .tab{appearance:none;background:none;border:none;color:var(--ink2);font:inherit;
+    padding:9px 13px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
+  .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+  .theme-toggle{margin-left:auto;appearance:none;background:var(--panel);border:1px solid var(--border);
+    color:var(--ink2);border-radius:7px;padding:5px 11px;cursor:pointer;font:inherit;font-size:13px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin-bottom:18px}
+  .controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px 26px;
+    background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:18px}
+  .ctl label{font-size:12px;color:var(--ink2);margin-bottom:5px;font-weight:600;
+    display:flex;justify-content:space-between;gap:8px}
+  .ctl label b{color:var(--ink);font-variant-numeric:tabular-nums;font-weight:700}
+  input[type=range]{width:100%;accent-color:var(--accent);margin:0}
+  .ctl .hint{font-size:11px;color:var(--muted);margin-top:3px}
+  .chart-title{font-size:14px;font-weight:700;margin:0 0 2px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .chart-title .reset{appearance:none;background:var(--panel);border:1px solid var(--border);color:var(--ink2);
+    border-radius:6px;padding:3px 9px;font:inherit;font-size:11.5px;cursor:pointer;font-weight:600}
+  .chart-note{font-size:12px;color:var(--ink2);margin:0 0 12px}
+  svg{display:block;width:100%;height:auto;overflow:visible;touch-action:none}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin:4px 0 10px;font-size:12.5px;color:var(--ink2)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .swatch{width:14px;height:3px;border-radius:2px;display:inline-block}
+  .swatch.dash{height:0;border-top:2px dashed var(--muted);width:16px}
+  .readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:6px}
+  .stat{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+  .stat .k{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+  .stat .v{font-size:22px;font-weight:700;margin-top:3px;font-variant-numeric:tabular-nums}
+  .stat .v small{font-size:13px;font-weight:600;color:var(--ink2)}
+  .flag{background:rgba(208,59,59,.09);border:1px solid rgba(208,59,59,.35);color:var(--ref);
+    border-radius:9px;padding:9px 12px;font-size:12.5px;margin-top:12px;font-weight:600}
+  text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  .dot{cursor:ew-resize}
+  .tt{position:fixed;pointer-events:none;background:var(--panel);border:1px solid var(--border);
+    border-radius:8px;padding:8px 10px;font-size:12px;box-shadow:0 6px 20px rgba(0,0,0,.18);
+    z-index:9;opacity:0;transition:opacity .08s;min-width:120px}
+  .tt .lv{font-weight:700;margin-bottom:5px}
+  .tt .row{display:flex;justify-content:space-between;gap:14px;font-variant-numeric:tabular-nums}
+  .tt .row i{width:9px;height:9px;border-radius:2px;display:inline-block;margin-right:6px}
+  .tt .row span{display:inline-flex;align-items:center}
+  .hidden{display:none}
+  .foot{color:var(--muted);font-size:12px;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Animal Balance</h1>
+    <span class="sub">IdleFarm · research effectiveness &amp; investment</span>
+    <button class="theme-toggle" id="themeBtn">◐ Theme</button>
+  </header>
+  <div class="snapshot" id="snapshot"></div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true"  data-tab="chicken">🐔 Chicken</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="rooster">🐓 Rooster</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="cow">🐄 Cow</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="dog">🐕 Dog</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="breakdown">📋 Breakdown</button>
+  </div>
+
+  <!-- ───────── PER-ANIMAL EFFECTIVENESS (JS-driven) ───────── -->
+  <section id="tab-animal">
+    <div class="controls" id="animal-controls"></div>
+    <div class="card">
+      <p class="chart-title" id="animal-chart-title"></p>
+      <p class="chart-note" id="animal-chart-note"></p>
+      <div class="legend" id="animal-legend"></div>
+      <svg id="animal-chart" viewBox="0 0 720 380" role="img"></svg>
+      <div class="readout" id="animal-readout"></div>
+      <div id="animal-flag"></div>
+      <p class="foot" id="animal-foot"></p>
+    </div>
+  </section>
+
+  <!-- ───────── RESEARCH BREAKDOWN ───────── -->
+  <section id="tab-breakdown" class="hidden">
+    <p class="chart-note" style="margin-bottom:16px">Every animal research on a shared <b>log scale</b> so the 75× spread stays visible. The small tick is where each sits <b>today</b>; drag the dot to sketch a value and compare. This board doesn't change anything — it's just for eyeballing balance. The bold red line on Time is the 2-week floor.</p>
+    <div class="card">
+      <p class="chart-title">Research TIME to max <button class="reset" id="reset-time">Reset to current</button></p>
+      <p class="chart-note">Real research-seconds summed over every level (one slot, no research-speed bonus).</p>
+      <svg id="time-chart" viewBox="0 0 720 380" role="img" aria-label="Time to max per research"></svg>
+    </div>
+    <div class="card">
+      <p class="chart-title">Research COST to max <button class="reset" id="reset-cost">Reset to current</button></p>
+      <p class="chart-note">Total coins summed over every level.</p>
+      <svg id="cost-chart" viewBox="0 0 720 380" role="img" aria-label="Cost to max per research"></svg>
+    </div>
+  </section>
+</div>
+<div class="tt" id="tt"></div>
+
+<script>
+"use strict";
+// ─── Baked snapshot of live ScriptableObject values (see Graphs/README.md) ───
+const DATA = { snapshotDate:"2026-07-16", tuning:{ pCost:2.0, pTime:2.16, costMultiplier:0.25, timeMultiplier:0.5 } };
+const T = DATA.tuning;
+
+// Per-animal effectiveness config. type: timer | passive | defender.
+const ANIMALS = {
+  chicken:{ name:"Chicken", type:"timer", unit:"coins",
+    baseCooldownMin:20, baseReward:30, cdBonus:0.0266667, effBonus:0.01, maxL:25,
+    cdHint:"faster eggs · 20→12 min", effHint:"more coins/egg · 30→38" },
+  rooster:{ name:"Rooster", type:"timer", unit:"gems", carry:true,
+    baseCooldownMin:20, baseReward:2, cdBonus:0.01, effBonus:0.04, maxL:25,
+    cdHint:"faster gems · 20→16 min", effHint:"more gems/drop · 2→4, +100% (rolls over)" },
+  cow:{ name:"Cow", type:"passive", unit:"compost",
+    baseRatePerMin:0.5, passiveBonus:0.005, passiveMax:100, runBonus:0.01, runMax:25 },
+  dog:{ name:"Dog", type:"defender", cdBonus:0.01, effBonus:0.01, maxL:25 },
+};
+
+// Breakdown board: every animal research (mirrors .asset files)
+const RESEARCH = [
+  {key:"chick_cd",  animal:"Chicken", color:"var(--s1)", short:"Cooldown",   affects:"faster eggs · 20→12 min",  r:{baseCost:50,baseDur:120,costDiff:1,timeDiff:1,maxLevel:25}},
+  {key:"chick_eff", animal:"Chicken", color:"var(--s1)", short:"Efficiency", affects:"more coins/egg · +25%",     r:{baseCost:50,baseDur:120,costDiff:1,timeDiff:1,maxLevel:25}},
+  {key:"roost_cd",  animal:"Rooster", color:"var(--s2)", short:"Cooldown",   affects:"faster gems",              r:{baseCost:50,baseDur:120,costDiff:1,timeDiff:1,maxLevel:25}},
+  {key:"roost_eff", animal:"Rooster", color:"var(--s2)", short:"Efficiency", affects:"gems/drop · 2→4, +100%",  r:{baseCost:50,baseDur:120,costDiff:1,timeDiff:1,maxLevel:25}},
+  {key:"cow_pass",  animal:"Cow",     color:"var(--s3)", short:"Passive compost", affects:"compost/min · +50% (100 lvl)", r:{baseCost:50,baseDur:120,costDiff:1,timeDiff:1,maxLevel:100}},
+  {key:"cow_run",   animal:"Cow",     color:"var(--s3)", short:"Run yield",  affects:"grazing compost · +25%",   r:{baseCost:50,baseDur:120,costDiff:1,timeDiff:1,maxLevel:25}},
+  {key:"dog_cd",    animal:"Dog",     color:"var(--s4)", short:"Cooldown",   affects:"acts more often · +25%",   r:{baseCost:50,baseDur:120,costDiff:1,timeDiff:1,maxLevel:25}},
+  {key:"dog_eff",   animal:"Dog",     color:"var(--s4)", short:"Efficiency", affects:"more effective · +25%",    r:{baseCost:50,baseDur:120,costDiff:1,timeDiff:1,maxLevel:25}},
+];
+
+// ─── Formulas (mirror ResearchManager) ───
+const costAt = (r, L) => Math.ceil(r.baseCost * r.costDiff * T.costMultiplier * Math.pow(L, T.pCost));
+const durAt  = (r, L) => r.baseDur * r.timeDiff * T.timeMultiplier * Math.pow(L, T.pTime);
+function totalCost(r){ let s=0; for(let L=1;L<=r.maxLevel;L++) s+=costAt(r,L); return s; }
+function totalTimeDays(r){ let s=0; for(let L=1;L<=r.maxLevel;L++) s+=durAt(r,L); return s/86400; }
+const spec = lvl => ({baseCost:50,baseDur:120,costDiff:1,timeDiff:1,maxLevel:lvl});
+function roundHalfEven(x){ const f=Math.floor(x), d=x-f; if(d<0.5)return f; if(d>0.5)return f+1; return f%2===0?f:f+1; }
+
+// Timer-animal (chicken/rooster) effect
+const cdMin   = (a, L) => a.baseCooldownMin / (1 + L*a.cdBonus);
+// With carry-over (rooster) the effective reward is the exact fractional value — nothing rounds
+// away over time. Without it (chicken) each drop is rounded independently.
+const rewardOf= (a, L) => { const x=a.baseReward*(1+L*a.effBonus); return a.carry ? x : roundHalfEven(x); };
+const fmtReward= (a, L) => a.carry ? rewardOf(a,L).toFixed(1) : rewardOf(a,L);
+function eggsPerDay(a, cdL, hrs){
+  const cd=cdMin(a,cdL), ceiling=1440/cd;
+  const activeMin=Math.max(0,Math.min(24,hrs))*60, idleMin=1440-activeMin;
+  const banked = idleMin>0 ? Math.min(1, idleMin/cd) : 0;
+  return Math.min(ceiling, activeMin/cd + banked);
+}
+
+// ─── Formatting ───
+const fmt = n => Math.round(n).toLocaleString("en-US");
+function fmtDays(d){ if(d<1) return (d*24).toFixed(1)+" h"; if(d<14) return d.toFixed(1)+" d"; return d.toFixed(0)+" d"; }
+function fmtCoins(n){ if(n>=1e6) return (n/1e6).toFixed(2)+"M"; if(n>=1e3) return (n/1e3).toFixed(1)+"k"; return fmt(n); }
+
+const NS="http://www.w3.org/2000/svg";
+function el(tag, attrs){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); return e; }
+function q(id){ return document.getElementById(id); }
+const tt = q("tt");
+
+// ─── Generic line chart ───
+// cfg: {svg, xMax, xTicks, series:[{name,color,pts:[y0..yMax]}], ceiling:[y]|null, dots:[{x,y,color}], yFmt, xLabel, hover:(L)=>html}
+function drawLines(cfg){
+  const svg=cfg.svg; svg.innerHTML="";
+  const W=720,H=380,m={l:70,r:96,t:14,b:40}, iw=W-m.l-m.r, ih=H-m.t-m.b;
+  const all=[].concat(...cfg.series.map(s=>s.pts), cfg.ceiling||[]);
+  const yMax=Math.max(...all,1)*1.08;
+  const x=L=>m.l+(L/cfg.xMax)*iw, y=v=>m.t+ih-(v/yMax)*ih;
+  for(let i=0;i<=5;i++){ const v=yMax*i/5, yy=y(v);
+    svg.appendChild(el("line",{x1:m.l,y1:yy,x2:m.l+iw,y2:yy,stroke:"var(--grid)","stroke-width":1}));
+    const t=el("text",{x:m.l-10,y:yy+4,"text-anchor":"end","font-size":11,fill:"var(--muted)"}); t.textContent=cfg.yFmt(v); svg.appendChild(t); }
+  svg.appendChild(el("line",{x1:m.l,y1:m.t+ih,x2:m.l+iw,y2:m.t+ih,stroke:"var(--axis)","stroke-width":1}));
+  cfg.xTicks.forEach(L=>{ const t=el("text",{x:x(L),y:m.t+ih+22,"text-anchor":"middle","font-size":11,fill:"var(--muted)"}); t.textContent=L; svg.appendChild(t); });
+  const xl=el("text",{x:m.l+iw/2,y:H-4,"text-anchor":"middle","font-size":12,fill:"var(--ink2)"}); xl.textContent=cfg.xLabel; svg.appendChild(xl);
+  if(cfg.ceiling) svg.appendChild(el("polyline",{points:cfg.ceiling.map((v,L)=>x(L)+","+y(v)).join(" "),fill:"none",stroke:"var(--muted)","stroke-width":2,"stroke-dasharray":"5 5","stroke-linejoin":"round",opacity:.7}));
+  cfg.series.forEach(s=>{
+    svg.appendChild(el("polyline",{points:s.pts.map((v,L)=>x(L)+","+y(v)).join(" "),fill:"none",stroke:s.color,"stroke-width":2.5,"stroke-linejoin":"round","stroke-linecap":"round"}));
+    const lab=el("text",{x:x(cfg.xMax)+8,y:y(s.pts[cfg.xMax])+4,"font-size":11.5,fill:s.color,"font-weight":600}); lab.textContent=cfg.yFmt(s.pts[cfg.xMax]); svg.appendChild(lab);
+  });
+  (cfg.dots||[]).forEach(d=>svg.appendChild(el("circle",{cx:x(d.x),cy:y(d.y),r:5,fill:d.color,stroke:"var(--surface)","stroke-width":2})));
+  const hit=el("rect",{x:m.l,y:m.t,width:iw,height:ih,fill:"transparent"}); svg.appendChild(hit);
+  hit.addEventListener("mousemove",ev=>{ const r=svg.getBoundingClientRect(); const px=(ev.clientX-r.left)*(720/r.width);
+    const L=Math.max(0,Math.min(cfg.xMax,Math.round((px-m.l)/iw*cfg.xMax)));
+    tt.style.opacity=1; tt.style.left=(ev.clientX+14)+"px"; tt.style.top=(ev.clientY+14)+"px"; tt.innerHTML=cfg.hover(L); });
+  hit.addEventListener("mouseleave",()=>tt.style.opacity=0);
+}
+
+// ─── State ───
+const perState = {
+  chicken:{r1:25,r2:25,act:4}, rooster:{r1:25,r2:25,act:4},
+  cow:{p:100,run:25,act:4}, dog:{cd:25,eff:25,act:4},
+};
+let active="chicken";
+
+// ─── Control panels ───
+function slider(id,label,min,max,val,step,hint){
+  return `<div class="ctl"><label for="${id}">${label} <b id="${id}-v"></b></label>
+    <input type="range" id="${id}" min="${min}" max="${max}" step="${step}" value="${val}">
+    <div class="hint">${hint}</div></div>`;
+}
+function buildControls(){
+  const a=ANIMALS[active], st=perState[active], c=q("animal-controls"); let html="";
+  if(a.type==="timer"){
+    html+=slider("s_r1","R1 · Cooldown level",0,a.maxL,st.r1,1,a.cdHint);
+    html+=slider("s_r2","R2 · Efficiency level",0,a.maxL,st.r2,1,a.effHint);
+    html+=slider("s_act","Activity",0,24,st.act,0.5,"Hours/day collecting (idle banks 1)");
+  } else if(a.type==="passive"){
+    html+=slider("s_p","Passive compost level",0,a.passiveMax,st.p,1,"compost/min rate · +50% at 100");
+    html+=slider("s_run","Run yield level",0,a.runMax,st.run,1,"grazing compost · +25% (run-only)");
+    html+=slider("s_act","Activity",0,24,st.act,0.5,"Passive accrues offline — line stays flat");
+  } else {
+    html+=slider("s_cd","Cooldown level",0,a.maxL,st.cd,1,"acts more often · +25%");
+    html+=slider("s_eff","Efficiency level",0,a.maxL,st.eff,1,"more effective per action · +25%");
+    html+=slider("s_act","Activity",0,24,st.act,0.5,"Hours/day in runs (dog only acts in runs)");
+  }
+  c.innerHTML=html;
+  c.querySelectorAll("input[type=range]").forEach(inp=>inp.addEventListener("input",()=>{ readControls(); renderAnimal(); }));
+  readControls();
+}
+function readControls(){
+  const a=ANIMALS[active], st=perState[active];
+  const g=id=>+q(id).value, setv=(id,txt)=>{const e=q(id+"-v"); if(e)e.textContent=txt;};
+  if(a.type==="timer"){ st.r1=g("s_r1"); st.r2=g("s_r2"); st.act=g("s_act");
+    setv("s_r1","L"+st.r1); setv("s_r2","L"+st.r2); setv("s_act",st.act+" h/day"); }
+  else if(a.type==="passive"){ st.p=g("s_p"); st.run=g("s_run"); st.act=g("s_act");
+    setv("s_p","L"+st.p); setv("s_run","L"+st.run); setv("s_act",st.act+" h/day"); }
+  else { st.cd=g("s_cd"); st.eff=g("s_eff"); st.act=g("s_act");
+    setv("s_cd","L"+st.cd); setv("s_eff","L"+st.eff); setv("s_act",st.act+" h/day"); }
+}
+
+// ─── Per-animal renderers ───
+function renderAnimal(){
+  const a=ANIMALS[active];
+  if(a.type==="timer") return renderTimer(a, perState[active]);
+  if(a.type==="passive") return renderPassive(a, perState[active]);
+  return renderDefender(a, perState[active]);
+}
+function statBox(rows){ return rows.map(([k,v])=>`<div class="stat"><div class="k">${k}</div><div class="v">${v}</div></div>`).join(""); }
+
+function renderTimer(a, st){
+  const U=a.unit, maxL=a.maxL;
+  const cdOnly=[], effOnly=[], both=[], ceil=[];
+  for(let L=0;L<=maxL;L++){
+    cdOnly.push(eggsPerDay(a,L,st.act)*rewardOf(a,0));
+    effOnly.push(eggsPerDay(a,0,st.act)*rewardOf(a,L));
+    both.push(eggsPerDay(a,L,st.act)*rewardOf(a,L));
+    ceil.push((1440/cdMin(a,L))*rewardOf(a,L));
+  }
+  q("animal-chart-title").innerHTML=`${a.name} ${U}/day vs research level <span style="font-weight:600;color:var(--ink2)">— at ${st.act}h/day</span>`;
+  q("animal-chart-note").textContent="Each line isolates one track (the other stays at 0). Faint dashed = perfect-collection ceiling (24h). Dots mark your R1 / R2.";
+  q("animal-legend").innerHTML=[["Cooldown only","var(--s1)"],["Efficiency only","var(--s2)"],["Both tracks","var(--s3)"]]
+    .map(([n,c])=>`<span><i class="swatch" style="background:${c}"></i>${n}</span>`).join("")+`<span><i class="swatch dash"></i>Ceiling (24h)</span>`;
+  drawLines({ svg:q("animal-chart"), xMax:maxL, xTicks:[0,5,10,15,20,25], xLabel:"research level", yFmt:v=>fmtCoins(v),
+    series:[{name:"cd",color:"var(--s1)",pts:cdOnly},{name:"eff",color:"var(--s2)",pts:effOnly},{name:"both",color:"var(--s3)",pts:both}],
+    ceiling:ceil, dots:[{x:st.r1,y:cdOnly[st.r1],color:"var(--s1)"},{x:st.r2,y:effOnly[st.r2],color:"var(--s2)"}],
+    hover:L=>`<div class="lv">Level ${L} · timer ${cdMin(a,L).toFixed(1)}m · ${fmtReward(a,L)} ${U}/drop</div>`+
+      [["Cooldown only",cdOnly[L],"var(--s1)"],["Efficiency only",effOnly[L],"var(--s2)"],["Both",both[L],"var(--s3)"],["Ceiling",ceil[L],"var(--muted)"]]
+      .map(([n,v,c])=>`<div class="row"><span><i style="background:${c}"></i>${n}</span><b>${fmt(v)}</b></div>`).join("") });
+  const real=eggsPerDay(a,st.r1,st.act)*rewardOf(a,st.r2), theo=(1440/cdMin(a,st.r1))*rewardOf(a,st.r2);
+  const cost=totalCost(spec(st.r1))+totalCost(spec(st.r2)), timeD=totalTimeDays(spec(st.r1))+totalTimeDays(spec(st.r2));
+  q("animal-readout").innerHTML=statBox([
+    ["Drop timer", cdMin(a,st.r1).toFixed(1)+"<small> min</small>"],
+    [U+" / drop", fmtReward(a,st.r2)],
+    [U+" / day", fmt(real)+`<small> of ${fmt(theo)} max</small>`],
+    ["Cost to R1+R2", fmtCoins(cost)+"<small> coins</small>"],
+    ["Time to R1+R2", fmtDays(timeD)+"<small> · 1 slot</small>"],
+  ]);
+  // Dead-research flag: efficiency never changes the rounded reward (carry animals never dead)
+  const effDead = !a.carry && rewardOf(a,maxL)===rewardOf(a,0);
+  q("animal-flag").innerHTML = effDead
+    ? `<div class="flag">⚠ Efficiency research is dead: base ${U}/drop is ${a.baseReward}, and +${Math.round(a.effBonus*maxL*100)}% = ${(a.baseReward*(1+a.effBonus*maxL)).toFixed(2)} rounds back to ${rewardOf(a,maxL)}. All 25 levels give +0.</div>` : "";
+  const pct=theo>0?Math.round(100*real/theo):0;
+  q("animal-foot").textContent=`At ${st.act}h/day active you collect ~${pct}% of the theoretical maximum for this build.`;
+}
+
+function renderPassive(a, st){
+  const rate=L=>a.baseRatePerMin*(1+L*a.passiveBonus);
+  const perDay=[]; for(let L=0;L<=a.passiveMax;L++) perDay.push(rate(L)*1440);
+  q("animal-chart-title").innerHTML=`Cow passive compost/day vs level <span style="font-weight:600;color:var(--ink2)">— activity-independent</span>`;
+  q("animal-chart-note").textContent="Passive compost accrues 24/7 even while the game is closed — the Activity slider does NOT move this line (that's the point). Run yield is a separate run-only bonus, shown at right.";
+  q("animal-legend").innerHTML=`<span><i class="swatch" style="background:var(--s3)"></i>Passive compost / day</span>`;
+  drawLines({ svg:q("animal-chart"), xMax:a.passiveMax, xTicks:[0,20,40,60,80,100], xLabel:"passive compost level", yFmt:v=>fmt(v),
+    series:[{name:"passive",color:"var(--s3)",pts:perDay}], ceiling:null,
+    dots:[{x:st.p,y:perDay[st.p],color:"var(--s3)"}],
+    hover:L=>`<div class="lv">Level ${L}</div><div class="row"><span><i style="background:var(--s3)"></i>Compost/day</span><b>${fmt(perDay[L])}</b></div><div class="row"><span>Rate</span><b>${rate(L).toFixed(2)}/min</b></div>` });
+  const cost=totalCost(spec(st.p))+totalCost(spec(st.run)), timeD=totalTimeDays(spec(st.p))+totalTimeDays(spec(st.run));
+  q("animal-readout").innerHTML=statBox([
+    ["Rate", rate(st.p).toFixed(2)+"<small> /min</small>"],
+    ["Compost / day", fmt(rate(st.p)*1440)],
+    ["Run yield", "+"+Math.round(a.runBonus*st.run*100)+"%<small> grazing</small>"],
+    ["Cost to both", fmtCoins(cost)+"<small> coins</small>"],
+    ["Time to both", fmtDays(timeD)+"<small> · 1 slot</small>"],
+  ]);
+  q("animal-flag").innerHTML="";
+  q("animal-foot").textContent="Passive compost is the only animal effect that ignores engagement — set-and-forget. Run yield (+"+Math.round(a.runBonus*st.run*100)+"%) only applies to crops the cow grazes during active runs.";
+}
+
+function renderDefender(a, st){
+  const cdPct=[], effPct=[];
+  for(let L=0;L<=a.maxL;L++){ cdPct.push(L*a.cdBonus*100); effPct.push(L*a.effBonus*100); }
+  q("animal-chart-title").innerHTML=`Dog research bonuses vs level <span style="font-weight:600;color:var(--ink2)">— threat defense, no currency</span>`;
+  q("animal-chart-note").textContent="Dog defends crops during runs; there's no clean per-day currency, so these are the two raw bonus tracks. Both cap at +25%. Activity = how often the benefit applies, not the values.";
+  q("animal-legend").innerHTML=[["Cooldown (acts more often)","var(--s1)"],["Efficiency (more effective)","var(--s2)"]]
+    .map(([n,c])=>`<span><i class="swatch" style="background:${c}"></i>${n}</span>`).join("");
+  drawLines({ svg:q("animal-chart"), xMax:a.maxL, xTicks:[0,5,10,15,20,25], xLabel:"research level", yFmt:v=>v.toFixed(0)+"%",
+    series:[{name:"cd",color:"var(--s1)",pts:cdPct},{name:"eff",color:"var(--s2)",pts:effPct}], ceiling:null,
+    dots:[{x:st.cd,y:cdPct[st.cd],color:"var(--s1)"},{x:st.eff,y:effPct[st.eff],color:"var(--s2)"}],
+    hover:L=>`<div class="lv">Level ${L}</div>`+
+      [["Cooldown",cdPct[L],"var(--s1)"],["Efficiency",effPct[L],"var(--s2)"]].map(([n,v,c])=>`<div class="row"><span><i style="background:${c}"></i>${n}</span><b>+${v.toFixed(0)}%</b></div>`).join("") });
+  const cost=totalCost(spec(st.cd))+totalCost(spec(st.eff)), timeD=totalTimeDays(spec(st.cd))+totalTimeDays(spec(st.eff));
+  q("animal-readout").innerHTML=statBox([
+    ["Cooldown", "+"+Math.round(st.cd*a.cdBonus*100)+"%"],
+    ["Efficiency", "+"+Math.round(st.eff*a.effBonus*100)+"%"],
+    ["Cost to both", fmtCoins(cost)+"<small> coins</small>"],
+    ["Time to both", fmtDays(timeD)+"<small> · 1 slot</small>"],
+  ]);
+  q("animal-flag").innerHTML=`<div class="flag" style="background:rgba(137,135,129,.12);border-color:var(--border);color:var(--ink2)">Dog's economic value depends on threat/crop-loss modeling (crows, deer) — not captured here yet. These tracks show reach + investment only.</div>`;
+  q("animal-foot").textContent="Both dog tracks are linear to +25%. Bigger question for tuning: is +25% enough to matter against late-game threat waves?";
+}
+
+// ─── Research breakdown (draggable log dots) ───
+const bd = { time:{}, cost:{} };
+RESEARCH.forEach(r=>{ bd.time[r.key]=totalTimeDays(r.r); bd.cost[r.key]=totalCost(r.r); });
+const AXIS = {
+  time:{ min:0.25, max:1000, ticks:[0.5,1,3,7,14,30,90,365,1000], fmt:fmtDays, ref:14, refLabel:"2 weeks" },
+  cost:{ min:1000, max:2e8, ticks:[1e3,1e4,1e5,1e6,1e7,1e8], fmt:fmtCoins, ref:null },
+};
+const drag = { active:null };
+function renderMetric(metric){
+  const A=AXIS[metric], svg=q(metric+"-chart"); svg.innerHTML="";
+  const W=720,H=380,m={l:212,r:66,t:30,b:14}, iw=W-m.l-m.r, ih=H-m.t-m.b;
+  const lmin=Math.log(A.min), lmax=Math.log(A.max);
+  const toX=v=>m.l+(Math.log(Math.max(A.min,Math.min(A.max,v)))-lmin)/(lmax-lmin)*iw;
+  const rowH=ih/RESEARCH.length;
+  A.ticks.forEach(tv=>{ const xx=toX(tv);
+    svg.appendChild(el("line",{x1:xx,y1:m.t,x2:xx,y2:m.t+ih,stroke:"var(--grid)","stroke-width":1}));
+    const t=el("text",{x:xx,y:m.t-8,"text-anchor":"middle","font-size":10.5,fill:"var(--muted)"}); t.textContent=A.fmt(tv); svg.appendChild(t); });
+  if(A.ref){ const xx=toX(A.ref);
+    svg.appendChild(el("line",{x1:xx,y1:m.t-2,x2:xx,y2:m.t+ih,stroke:"var(--ref)","stroke-width":2}));
+    const t=el("text",{x:xx,y:m.t+ih+11,"text-anchor":"middle","font-size":10.5,fill:"var(--ref)","font-weight":700}); t.textContent=A.refLabel; svg.appendChild(t); }
+  RESEARCH.forEach((r,i)=>{
+    const cy=m.t+rowH*i+rowH/2;
+    const nm=el("text",{x:m.l-14,y:cy-2,"text-anchor":"end","font-size":13,fill:"var(--ink)","font-weight":600}); nm.textContent=r.animal+" · "+r.short; svg.appendChild(nm);
+    const af=el("text",{x:m.l-14,y:cy+13,"text-anchor":"end","font-size":10.5,fill:"var(--muted)"}); af.textContent=r.affects; svg.appendChild(af);
+    svg.appendChild(el("line",{x1:m.l,y1:cy,x2:m.l+iw,y2:cy,stroke:"var(--grid)","stroke-width":2,"stroke-linecap":"round",opacity:.6}));
+    const curVal = metric==="time"?totalTimeDays(r.r):totalCost(r.r), ctx=toX(curVal);
+    svg.appendChild(el("line",{x1:ctx,y1:cy-9,x2:ctx,y2:cy+9,stroke:"var(--muted)","stroke-width":2,opacity:.8}));
+    const dx=toX(bd[metric][r.key]);
+    svg.appendChild(el("line",{x1:m.l,y1:cy,x2:dx,y2:cy,stroke:r.color,"stroke-width":3,"stroke-linecap":"round"}));
+    const dot=el("circle",{cx:dx,cy:cy,r:8,fill:r.color,stroke:"var(--surface)","stroke-width":2,class:"dot"});
+    dot.addEventListener("pointerdown",ev=>{ drag.active={metric,key:r.key}; ev.preventDefault(); });
+    svg.appendChild(dot);
+    const vl=el("text",{x:m.l+iw+8,y:cy+4,"font-size":12,fill:r.color,"font-weight":700}); vl.textContent=A.fmt(bd[metric][r.key]); svg.appendChild(vl);
+  });
+  svg._toXinv=px=>Math.exp(lmin+Math.max(0,Math.min(1,(px-m.l)/iw))*(lmax-lmin));
+}
+window.addEventListener("pointermove",ev=>{ if(!drag.active) return; const {metric,key}=drag.active, svg=q(metric+"-chart");
+  const r=svg.getBoundingClientRect(); bd[metric][key]=svg._toXinv((ev.clientX-r.left)*(720/r.width)); renderMetric(metric); });
+window.addEventListener("pointerup",()=>{ drag.active=null; });
+function renderBreakdown(){ renderMetric("time"); renderMetric("cost"); }
+q("reset-time").addEventListener("click",()=>{ RESEARCH.forEach(r=>bd.time[r.key]=totalTimeDays(r.r)); renderMetric("time"); });
+q("reset-cost").addEventListener("click",()=>{ RESEARCH.forEach(r=>bd.cost[r.key]=totalCost(r.r)); renderMetric("cost"); });
+
+// ─── Tabs / wiring ───
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected", x===t));
+  const isBreak=t.dataset.tab==="breakdown";
+  q("tab-animal").classList.toggle("hidden", isBreak);
+  q("tab-breakdown").classList.toggle("hidden", !isBreak);
+  if(isBreak){ renderBreakdown(); } else { active=t.dataset.tab; buildControls(); renderAnimal(); }
+}));
+q("themeBtn").addEventListener("click",()=>{
+  const cur=document.documentElement.getAttribute("data-theme");
+  const dark=cur? cur==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.setAttribute("data-theme", dark?"light":"dark");
+  if(q("tab-breakdown").classList.contains("hidden")) renderAnimal(); else renderBreakdown();
+});
+q("snapshot").textContent=`Snapshot of ${DATA.snapshotDate} · effective values include the game's current global knobs (cost ×${T.costMultiplier}, time ×${T.timeMultiplier})`;
+buildControls(); renderAnimal(); renderBreakdown();
+window.addEventListener("resize",()=>{ if(q("tab-breakdown").classList.contains("hidden")) renderAnimal(); else renderBreakdown(); });
+</script>
+</body>
+</html>
