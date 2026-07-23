@@ -4,16 +4,15 @@ using UnityEngine.UIElements;
 /// <summary>
 /// The Barn: 7 skill tracks as 25-tick bars with a "+" spend button per row, a Renown bar
 /// (total levels, max 175) up top, and clickable tier/milestone markers that show their bonus
-/// description. No respec. Fully code-driven UIDocument. Spec: 2026-07-19-reputation-design.md §4.
+/// in a floating tooltip anchored above the tapped marker. No respec. Fully code-driven
+/// UIDocument (ToastManager pattern) with a wood-frame board background matching the Town
+/// Requests board. Spec: 2026-07-19-reputation-design.md §4.
 /// </summary>
 [DefaultExecutionOrder(1050)]
 public class BarnPopupUITK : MonoBehaviour
 {
     public static BarnPopupUITK Instance { get; private set; }
     private const int SORT_ORDER = 1000;
-
-    [Tooltip("Shared RunewoodPanelSettings, cloned at runtime (ToastManager pattern) so text renders.")]
-    [SerializeField] private PanelSettings sourcePanelSettings;
 
     private static readonly (string name, Color color)[] TrackMeta =
     {
@@ -32,6 +31,22 @@ public class BarnPopupUITK : MonoBehaviour
         "double wood knockdown", "second-egg chance", "double-jar chance",
     };
 
+    private static readonly Color RenownColor = new Color(0.78f, 0.35f, 0.85f);
+    private static readonly Color TitleBrown = new Color(0.373f, 0.275f, 0.149f);
+
+    [Tooltip("Shared RunewoodPanelSettings, cloned at runtime (ToastManager pattern) so text renders.")]
+    [SerializeField] private PanelSettings sourcePanelSettings;
+
+    [Header("Board art (all optional — solid colours are used when unassigned)")]
+    [Tooltip("Wooden frame for the card, e.g. UI_Wood/UI_Wood_Frame_Standard_02 (same as the Town Requests board).")]
+    [SerializeField] private Sprite boardFrame;
+    [Tooltip("Renown progress bar track, e.g. UI_Book/UI_NoteBook_Bar01a.")]
+    [SerializeField] private Sprite barTrack;
+    [Tooltip("Renown progress bar fill, e.g. UI_Book/UI_NoteBook_BarFill01a.")]
+    [SerializeField] private Sprite barFill;
+    [Tooltip("Close button icon, e.g. UI_Wood/UI_Wood_Cross_Medium.png.")]
+    [SerializeField] private Sprite closeIcon;
+
     private UIDocument document;
     private PanelSettings runtimePanelSettings;
     private VisualElement root;
@@ -40,7 +55,10 @@ public class BarnPopupUITK : MonoBehaviour
     private Label pointsLabel;
     private VisualElement renownFill;
     private Label renownLabel;
-    private Label descriptionLabel;
+    private VisualElement tooltip;
+    private Label tooltipLabel;
+    private VisualElement tooltipAnchor;
+    private IVisualElementScheduledItem tooltipHideTimer;
     private bool isOpen;
     public bool IsOpen => isOpen;
 
@@ -101,8 +119,31 @@ public class BarnPopupUITK : MonoBehaviour
     {
         if (!isOpen) return;
         isOpen = false;
+        HideTooltip();
         if (popupRoot != null) popupRoot.style.display = DisplayStyle.None;
         if (root != null) root.pickingMode = PickingMode.Ignore;
+    }
+
+    /// <summary>
+    /// Applies a sprite as a 9-sliced background, falling back to a flat colour. sliceScale scales
+    /// the rendered border thickness — the board art is small (96px), so it needs scaling up to
+    /// read as a chunky wooden frame at popup size. Mirrors TownRequestsPopupUITK.ApplyFrame.
+    /// </summary>
+    private static void ApplyFrame(VisualElement element, Sprite sprite, int slice, Color fallback, float sliceScale = 1f)
+    {
+        if (sprite == null)
+        {
+            element.style.backgroundColor = fallback;
+            element.style.borderTopLeftRadius = 10; element.style.borderTopRightRadius = 10;
+            element.style.borderBottomLeftRadius = 10; element.style.borderBottomRightRadius = 10;
+            return;
+        }
+        element.style.backgroundImage = new StyleBackground(sprite);
+        element.style.unitySliceLeft = slice;
+        element.style.unitySliceRight = slice;
+        element.style.unitySliceTop = slice;
+        element.style.unitySliceBottom = slice;
+        element.style.unitySliceScale = sliceScale;
     }
 
     private void Build()
@@ -130,13 +171,15 @@ public class BarnPopupUITK : MonoBehaviour
 
         VisualElement card = new VisualElement { name = "barn-card" };
         card.style.width = Length.Percent(90);
-        card.style.maxWidth = 720;
+        // Wider than the old 720 flat-card value: the frame's padding eats into row width, and a
+        // 25-tick + 5 tier-marker row needs the extra room to avoid wrapping onto a second line.
+        card.style.maxWidth = 800;
         card.style.maxHeight = Length.Percent(85);
-        card.style.backgroundColor = new Color(0.70f, 0.60f, 0.43f);
-        card.style.borderTopLeftRadius = 18; card.style.borderTopRightRadius = 18;
-        card.style.borderBottomLeftRadius = 18; card.style.borderBottomRightRadius = 18;
-        card.style.paddingLeft = 20; card.style.paddingRight = 20;
-        card.style.paddingTop = 16; card.style.paddingBottom = 16;
+        // Padding clears the rendered frame border (slice 30 x scale 2 = 60px on every edge) with
+        // a little extra so content never grazes the planks.
+        card.style.paddingLeft = 64; card.style.paddingRight = 64;
+        card.style.paddingTop = 70; card.style.paddingBottom = 70;
+        ApplyFrame(card, boardFrame, 30, new Color(0.70f, 0.60f, 0.43f), 2f);
         popupRoot.Add(card);
 
         VisualElement header = new VisualElement();
@@ -148,40 +191,63 @@ public class BarnPopupUITK : MonoBehaviour
         Label title = new Label("Barn");
         title.style.fontSize = 34;
         title.style.unityFontStyleAndWeight = FontStyle.Bold;
-        title.style.color = new Color(0.21f, 0.13f, 0.06f);
+        title.style.color = TitleBrown;
         header.Add(title);
 
-        Button closeBtn = new Button(Close) { text = "×" };
+        // Close: a real icon when one is wired, otherwise the "×" glyph.
+        Button closeBtn = new Button(Close) { text = closeIcon != null ? string.Empty : "×" };
         closeBtn.style.width = 48; closeBtn.style.height = 48;
         closeBtn.style.fontSize = 30;
         closeBtn.style.unityFontStyleAndWeight = FontStyle.Bold;
         closeBtn.style.backgroundColor = new Color(0f, 0f, 0f, 0f);
         closeBtn.style.borderTopWidth = 0; closeBtn.style.borderBottomWidth = 0;
         closeBtn.style.borderLeftWidth = 0; closeBtn.style.borderRightWidth = 0;
-        closeBtn.style.color = new Color(0.21f, 0.13f, 0.06f);
+        closeBtn.style.color = TitleBrown;
+        if (closeIcon != null)
+        {
+            closeBtn.style.backgroundImage = new StyleBackground(closeIcon);
+            closeBtn.style.backgroundSize = new StyleBackgroundSize(new BackgroundSize(BackgroundSizeType.Contain));
+        }
         header.Add(closeBtn);
+
+        // 7 tracks don't reliably fit under the card's maxHeight, so everything below the header
+        // scrolls in its own body — without this, content overflowed straight through the wood
+        // frame's bottom plank instead of being contained by it. minHeight=0 overrides Yoga's
+        // default (a flex child won't shrink below its content size otherwise), letting the
+        // ScrollView actually claim only the space left after the fixed header.
+        var body = new ScrollView(ScrollViewMode.Vertical) { name = "barn-body" };
+        body.style.flexGrow = 1;
+        body.style.minHeight = 0;
+        body.style.marginTop = 6;
+        card.Add(body);
 
         pointsLabel = new Label();
         pointsLabel.style.fontSize = 24;
         pointsLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
         pointsLabel.style.color = new Color(0.15f, 0.35f, 0.1f);
         pointsLabel.style.marginTop = 4; pointsLabel.style.marginBottom = 10;
-        card.Add(pointsLabel);
+        body.Add(pointsLabel);
 
         // Renown bar (total levels 0-175). Milestone rewards are Phase 4 — notches are clickable
         // and honest about that ("Reward not yet implemented"), per user feedback on readability.
         VisualElement renownTrack = new VisualElement();
         renownTrack.style.height = 28;
-        renownTrack.style.backgroundColor = new Color(0f, 0f, 0f, 0.2f);
-        renownTrack.style.borderTopLeftRadius = 8; renownTrack.style.borderTopRightRadius = 8;
-        renownTrack.style.borderBottomLeftRadius = 8; renownTrack.style.borderBottomRightRadius = 8;
         renownTrack.style.overflow = Overflow.Hidden;
         renownTrack.style.marginBottom = 4;
-        card.Add(renownTrack);
+        ApplyFrame(renownTrack, barTrack, 3, new Color(0f, 0f, 0f, 0.2f));
+        if (barTrack != null)
+            // The track sprite is near-white; tint it tan so it doesn't wash out on the wood card.
+            renownTrack.style.unityBackgroundImageTintColor = new Color(0.78f, 0.70f, 0.56f);
+        body.Add(renownTrack);
 
         renownFill = new VisualElement();
         renownFill.style.height = Length.Percent(100);
-        renownFill.style.backgroundColor = new Color(0.78f, 0.35f, 0.85f);
+        if (barFill != null)
+        {
+            renownFill.style.backgroundImage = new StyleBackground(barFill);
+            renownFill.style.unityBackgroundImageTintColor = RenownColor;
+        }
+        else renownFill.style.backgroundColor = RenownColor;
         renownTrack.Add(renownFill);
 
         renownLabel = new Label();
@@ -209,36 +275,77 @@ public class BarnPopupUITK : MonoBehaviour
         {
             int threshold = renownMilestones[i];
             string desc = renownDesc[i];
-            Button notch = new Button(() => ShowDescription($"Renown {threshold}", desc)) { text = threshold.ToString() };
+            Button notch = new Button { text = threshold.ToString() };
             notch.style.fontSize = 14;
             notch.style.height = 30;
             notch.style.backgroundColor = new Color(0.35f, 0.22f, 0.1f);
             notch.style.color = Color.white;
             notch.style.borderTopWidth = 0; notch.style.borderBottomWidth = 0;
             notch.style.borderLeftWidth = 0; notch.style.borderRightWidth = 0;
+            notch.clicked += () => ShowTooltip(notch, $"Renown {threshold}\n{desc}");
             renownNotches.Add(notch);
         }
-        card.Add(renownNotches);
+        body.Add(renownNotches);
 
         tracksColumn = new VisualElement();
-        card.Add(tracksColumn);
+        body.Add(tracksColumn);
 
-        descriptionLabel = new Label();
-        descriptionLabel.style.fontSize = 20;
-        descriptionLabel.style.color = new Color(0.15f, 0.1f, 0.05f);
-        descriptionLabel.style.whiteSpace = WhiteSpace.Normal;
-        descriptionLabel.style.marginTop = 10;
-        descriptionLabel.style.paddingTop = 10;
-        descriptionLabel.style.borderTopWidth = 1;
-        descriptionLabel.style.borderTopColor = new Color(0f, 0f, 0f, 0.2f);
-        descriptionLabel.style.display = DisplayStyle.None;
-        card.Add(descriptionLabel);
+        // Floating tooltip: added to popupRoot (not card) so it can float above the card edges
+        // without being clipped, and positioned per-anchor in ShowTooltip below. Replaces the old
+        // always-reserved description panel at the bottom of the card.
+        tooltip = new VisualElement { name = "barn-tooltip" };
+        tooltip.style.position = Position.Absolute;
+        tooltip.style.display = DisplayStyle.None;
+        tooltip.style.maxWidth = 280;
+        tooltip.style.paddingLeft = 14; tooltip.style.paddingRight = 14;
+        tooltip.style.paddingTop = 10; tooltip.style.paddingBottom = 10;
+        tooltip.style.backgroundColor = new Color(0.16f, 0.10f, 0.05f, 0.95f);
+        tooltip.style.borderTopLeftRadius = 10; tooltip.style.borderTopRightRadius = 10;
+        tooltip.style.borderBottomLeftRadius = 10; tooltip.style.borderBottomRightRadius = 10;
+        // Centers horizontally on the anchor and sits with its bottom edge at the anchor's top,
+        // without needing to pre-measure the tooltip's own size (percentages are relative to it).
+        tooltip.style.translate = new StyleTranslate(new Translate(Length.Percent(-50), Length.Percent(-100)));
+        tooltip.pickingMode = PickingMode.Ignore;
+        popupRoot.Add(tooltip);
+
+        tooltipLabel = new Label();
+        tooltipLabel.style.color = Color.white;
+        tooltipLabel.style.fontSize = 16;
+        tooltipLabel.style.whiteSpace = WhiteSpace.Normal;
+        tooltipLabel.style.unityTextAlign = TextAnchor.MiddleCenter;
+        tooltip.Add(tooltipLabel);
     }
 
-    private void ShowDescription(string title, string body)
+    /// <summary>Shows (or, tapping the same anchor again, hides) a tooltip floating above `anchor`.
+    /// Auto-hides after a few seconds so it never needs its own close affordance.</summary>
+    private void ShowTooltip(VisualElement anchor, string text)
     {
-        descriptionLabel.text = $"{title}\n{body}";
-        descriptionLabel.style.display = DisplayStyle.Flex;
+        if (tooltip == null || popupRoot == null) return;
+
+        if (tooltipAnchor == anchor && tooltip.style.display == DisplayStyle.Flex)
+        {
+            HideTooltip();
+            return;
+        }
+
+        tooltipAnchor = anchor;
+        tooltipLabel.text = text;
+        tooltip.style.display = DisplayStyle.Flex;
+
+        Vector2 topCenterWorld = new Vector2(anchor.worldBound.center.x, anchor.worldBound.yMin);
+        Vector2 local = popupRoot.WorldToLocal(topCenterWorld);
+        tooltip.style.left = local.x;
+        tooltip.style.top = local.y - 10f;
+
+        tooltipHideTimer?.Pause();
+        tooltipHideTimer = tooltip.schedule.Execute(HideTooltip).StartingIn(3500);
+    }
+
+    private void HideTooltip()
+    {
+        if (tooltip == null) return;
+        tooltip.style.display = DisplayStyle.None;
+        tooltipAnchor = null;
     }
 
     private void BuildContent()
@@ -283,63 +390,76 @@ public class BarnPopupUITK : MonoBehaviour
         ticksWrap.style.flexDirection = FlexDirection.Row;
         ticksWrap.style.flexGrow = 1;
         ticksWrap.style.flexWrap = Wrap.Wrap;
+        ticksWrap.style.alignItems = Align.Center;
         tickRow.Add(ticksWrap);
 
         for (int lvl = 1; lvl <= FarmSkillsCore.MaxLevel; lvl++)
         {
-            bool filled = lvl <= level;
             bool isTier = System.Array.IndexOf(FarmSkillsManager.TierMarkers, lvl) >= 0;
 
-            VisualElement tick = new VisualElement();
-            tick.style.width = 16;
-            tick.style.height = 26;
-            tick.style.marginRight = 2;
-            tick.style.borderTopLeftRadius = 3; tick.style.borderTopRightRadius = 3;
-            tick.style.borderBottomLeftRadius = 3; tick.style.borderBottomRightRadius = 3;
-            tick.style.backgroundColor = filled ? meta.color : new Color(meta.color.r, meta.color.g, meta.color.b, 0.25f);
             if (isTier)
             {
-                tick.style.borderBottomWidth = 3;
-                tick.style.borderBottomColor = Color.white;
-            }
-            ticksWrap.Add(tick);
-
-            if (isTier)
-            {
+                // A tier level gets one bigger, square, numbered marker instead of a regular tick —
+                // both showing which level it is and doubling as the clickable "what does this
+                // unlock" affordance (previously a plain "|" glyph button next to the tick).
                 int tierLevel = lvl;
-                Button tierBtn = new Button(() => OnTierClicked(track, tierLevel)) { text = "|" };
-                tierBtn.style.width = 20; tierBtn.style.height = 26;
-                tierBtn.style.marginRight = 4;
-                tierBtn.style.fontSize = 14;
-                tierBtn.style.backgroundColor = fs.IsTierUnlocked(track, tierLevel) ? meta.color : new Color(0.4f, 0.4f, 0.4f, 0.6f);
+                bool unlocked = fs.IsTierUnlocked(track, tierLevel);
+
+                Button tierBtn = new Button { text = tierLevel.ToString() };
+                tierBtn.style.width = 34; tierBtn.style.height = 34;
+                tierBtn.style.marginRight = 2;
+                tierBtn.style.fontSize = 15;
+                tierBtn.style.unityFontStyleAndWeight = FontStyle.Bold;
                 tierBtn.style.color = Color.white;
-                tierBtn.style.borderTopWidth = 0; tierBtn.style.borderBottomWidth = 0;
-                tierBtn.style.borderLeftWidth = 0; tierBtn.style.borderRightWidth = 0;
+                tierBtn.style.backgroundColor = unlocked ? meta.color : new Color(meta.color.r, meta.color.g, meta.color.b, 0.25f);
+                tierBtn.style.borderTopWidth = 2; tierBtn.style.borderBottomWidth = 2;
+                tierBtn.style.borderLeftWidth = 2; tierBtn.style.borderRightWidth = 2;
+                Color ring = unlocked ? Color.white : new Color(1f, 1f, 1f, 0.35f);
+                tierBtn.style.borderTopColor = ring; tierBtn.style.borderBottomColor = ring;
+                tierBtn.style.borderLeftColor = ring; tierBtn.style.borderRightColor = ring;
+                tierBtn.style.borderTopLeftRadius = 8; tierBtn.style.borderTopRightRadius = 8;
+                tierBtn.style.borderBottomLeftRadius = 8; tierBtn.style.borderBottomRightRadius = 8;
+                tierBtn.clicked += () => OnTierClicked(track, tierLevel, tierBtn);
                 ticksWrap.Add(tierBtn);
+            }
+            else
+            {
+                bool filled = lvl <= level;
+                VisualElement tick = new VisualElement();
+                tick.style.width = 16;
+                tick.style.height = 26;
+                tick.style.marginRight = 2;
+                tick.style.borderTopLeftRadius = 3; tick.style.borderTopRightRadius = 3;
+                tick.style.borderBottomLeftRadius = 3; tick.style.borderBottomRightRadius = 3;
+                tick.style.backgroundColor = filled ? meta.color : new Color(meta.color.r, meta.color.g, meta.color.b, 0.25f);
+                ticksWrap.Add(tick);
             }
         }
 
         bool canLevel = level < FarmSkillsCore.MaxLevel && ReputationManager.Instance.UnspentPoints > 0;
         Button plusBtn = new Button(() => OnPlusClicked(track)) { text = "+" };
-        plusBtn.style.width = 44; plusBtn.style.height = 32;
+        plusBtn.style.width = 44; plusBtn.style.height = 34;
+        plusBtn.style.marginLeft = 4;
         plusBtn.style.fontSize = 22;
         plusBtn.style.unityFontStyleAndWeight = FontStyle.Bold;
         plusBtn.style.backgroundColor = canLevel ? meta.color : new Color(0.6f, 0.6f, 0.6f);
         plusBtn.style.color = Color.white;
         plusBtn.style.borderTopWidth = 0; plusBtn.style.borderBottomWidth = 0;
         plusBtn.style.borderLeftWidth = 0; plusBtn.style.borderRightWidth = 0;
+        plusBtn.style.borderTopLeftRadius = 8; plusBtn.style.borderTopRightRadius = 8;
+        plusBtn.style.borderBottomLeftRadius = 8; plusBtn.style.borderBottomRightRadius = 8;
         plusBtn.SetEnabled(canLevel);
         tickRow.Add(plusBtn);
 
         return row;
     }
 
-    private void OnTierClicked(FarmSkillTrack track, int tierLevel)
+    private void OnTierClicked(FarmSkillTrack track, int tierLevel, VisualElement anchor)
     {
         var fs = FarmSkillsManager.Instance;
         string flavor = TierFlavor[(int)track];
         string status = fs.IsTierUnlocked(track, tierLevel) ? "Unlocked" : "Locked";
-        ShowDescription($"{TrackMeta[(int)track].name} — Level {tierLevel} ({status})", flavor);
+        ShowTooltip(anchor, $"{TrackMeta[(int)track].name} Lv {tierLevel} ({status})\n{flavor}");
     }
 
     private void OnPlusClicked(FarmSkillTrack track)
