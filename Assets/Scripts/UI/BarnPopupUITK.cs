@@ -33,6 +33,13 @@ public class BarnPopupUITK : MonoBehaviour
 
     private static readonly Color RenownColor = new Color(0.78f, 0.35f, 0.85f);
     private static readonly Color TitleBrown = new Color(0.373f, 0.275f, 0.149f);
+    // Warm near-black (not pure #000, which reads harsh against the wood/paper palette) for every
+    // label and outline that used to be white — white was low-contrast on the light card interior.
+    private static readonly Color InkBlack = new Color(0.12f, 0.08f, 0.05f);
+
+    /// <summary>Darkened variant of a track colour for text — the raw palette (tuned for small
+    /// vivid tick fills) reads too pale as label text against the card's light interior.</summary>
+    private static Color Darken(Color c, float factor) => new Color(c.r * factor, c.g * factor, c.b * factor, c.a);
 
     [Tooltip("Shared RunewoodPanelSettings, cloned at runtime (ToastManager pattern) so text renders.")]
     [SerializeField] private PanelSettings sourcePanelSettings;
@@ -170,11 +177,18 @@ public class BarnPopupUITK : MonoBehaviour
         popupRoot.Add(backdrop);
 
         VisualElement card = new VisualElement { name = "barn-card" };
-        card.style.width = Length.Percent(90);
+        card.style.width = Length.Percent(94);
         // Wider than the old 720 flat-card value: the frame's padding eats into row width, and a
         // 25-tick + 5 tier-marker row needs the extra room to avoid wrapping onto a second line.
-        card.style.maxWidth = 800;
-        card.style.maxHeight = Length.Percent(85);
+        card.style.maxWidth = 920;
+        // A fixed minHeight (not just a maxHeight cap) so the card reads as a substantial board
+        // filling the screen rather than shrink-wrapping to content — the flat-card version could
+        // get away with that, but a small card floating in a sea of dimmed farm looks undersized
+        // once it's got a wood frame drawing attention to its edges. 62% gives noticeably more
+        // presence than the ~50%-of-screen the 7 rows actually need, without leaving a half-empty
+        // card (80% left a near-empty bottom third).
+        card.style.minHeight = Length.Percent(62);
+        card.style.maxHeight = Length.Percent(92);
         // Padding clears the rendered frame border (slice 30 x scale 2 = 60px on every edge) with
         // a little extra so content never grazes the planks.
         card.style.paddingLeft = 64; card.style.paddingRight = 64;
@@ -250,12 +264,25 @@ public class BarnPopupUITK : MonoBehaviour
         else renownFill.style.backgroundColor = RenownColor;
         renownTrack.Add(renownFill);
 
+        // "Overall Farm Level" name reads left, the X / 175 count reads right — two labels sharing
+        // the track rather than one centered string, so both stay legible without crowding the
+        // middle of the bar.
+        Label renownTitle = new Label("Overall Farm Level");
+        renownTitle.style.position = Position.Absolute;
+        renownTitle.style.left = 10; renownTitle.style.top = 0; renownTitle.style.bottom = 0;
+        renownTitle.style.color = InkBlack;
+        renownTitle.style.fontSize = 16;
+        renownTitle.style.unityFontStyleAndWeight = FontStyle.Bold;
+        renownTitle.style.unityTextAlign = TextAnchor.MiddleLeft;
+        renownTrack.Add(renownTitle);
+
         renownLabel = new Label();
         renownLabel.style.position = Position.Absolute;
-        renownLabel.style.left = 0; renownLabel.style.right = 0; renownLabel.style.top = 0; renownLabel.style.bottom = 0;
-        renownLabel.style.color = Color.white;
+        renownLabel.style.right = 10; renownLabel.style.top = 0; renownLabel.style.bottom = 0;
+        renownLabel.style.color = InkBlack;
         renownLabel.style.fontSize = 18;
-        renownLabel.style.unityTextAlign = TextAnchor.MiddleCenter;
+        renownLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
+        renownLabel.style.unityTextAlign = TextAnchor.MiddleRight;
         renownTrack.Add(renownLabel);
 
         VisualElement renownNotches = new VisualElement();
@@ -265,11 +292,11 @@ public class BarnPopupUITK : MonoBehaviour
         int[] renownMilestones = { 10, 25, 50, 100, 175 };
         string[] renownDesc =
         {
-            "10 total levels: Reward not yet implemented.",
-            "25 total levels: Reward not yet implemented.",
-            "50 total levels: Reward not yet implemented.",
-            "100 total levels: Reward not yet implemented.",
-            "175 total levels: Reward not yet implemented.",
+            "Reward not yet implemented.",
+            "Silo: increases inventory space. (Not yet implemented.)",
+            "Reward not yet implemented.",
+            "Reward not yet implemented.",
+            "Reward not yet implemented.",
         };
         for (int i = 0; i < renownMilestones.Length; i++)
         {
@@ -282,7 +309,8 @@ public class BarnPopupUITK : MonoBehaviour
             notch.style.color = Color.white;
             notch.style.borderTopWidth = 0; notch.style.borderBottomWidth = 0;
             notch.style.borderLeftWidth = 0; notch.style.borderRightWidth = 0;
-            notch.clicked += () => ShowTooltip(notch, $"Renown {threshold}\n{desc}");
+            string notchTitle = threshold == 25 ? "Silo (Farm Level 25)" : $"Farm Level {threshold}";
+            notch.clicked += () => ShowTooltip(notch, $"{notchTitle}\n{desc}");
             renownNotches.Add(notch);
         }
         body.Add(renownNotches);
@@ -358,7 +386,7 @@ public class BarnPopupUITK : MonoBehaviour
 
         int totalLevels = fs.TotalLevels;
         renownFill.style.width = Length.Percent(totalLevels / 175f * 100f);
-        renownLabel.text = $"Renown  {totalLevels} / 175";
+        renownLabel.text = $"{totalLevels} / 175";
 
         tracksColumn.Clear();
         foreach (FarmSkillTrack track in System.Enum.GetValues(typeof(FarmSkillTrack)))
@@ -377,7 +405,9 @@ public class BarnPopupUITK : MonoBehaviour
         Label nameLabel = new Label($"{meta.name}  ({level}/{FarmSkillsCore.MaxLevel})");
         nameLabel.style.fontSize = 20;
         nameLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
-        nameLabel.style.color = meta.color;
+        // The raw track colour is tuned for small vivid tick fills — as label text against the
+        // card's light interior it read too pale, hence the darkened variant here.
+        nameLabel.style.color = Darken(meta.color, 0.6f);
         nameLabel.style.marginBottom = 4;
         row.Add(nameLabel);
 
@@ -410,11 +440,14 @@ public class BarnPopupUITK : MonoBehaviour
                 tierBtn.style.marginRight = 2;
                 tierBtn.style.fontSize = 15;
                 tierBtn.style.unityFontStyleAndWeight = FontStyle.Bold;
-                tierBtn.style.color = Color.white;
-                tierBtn.style.backgroundColor = unlocked ? meta.color : new Color(meta.color.r, meta.color.g, meta.color.b, 0.25f);
+                tierBtn.style.color = InkBlack;
+                // Locked used to be a near-invisible 25%-alpha wash; darkening the fill instead of
+                // just fading it keeps the box readable as a box while still reading "dimmer" than
+                // the vivid unlocked fill.
+                tierBtn.style.backgroundColor = unlocked ? meta.color : Darken(meta.color, 0.7f);
                 tierBtn.style.borderTopWidth = 2; tierBtn.style.borderBottomWidth = 2;
                 tierBtn.style.borderLeftWidth = 2; tierBtn.style.borderRightWidth = 2;
-                Color ring = unlocked ? Color.white : new Color(1f, 1f, 1f, 0.35f);
+                Color ring = unlocked ? InkBlack : new Color(InkBlack.r, InkBlack.g, InkBlack.b, 0.45f);
                 tierBtn.style.borderTopColor = ring; tierBtn.style.borderBottomColor = ring;
                 tierBtn.style.borderLeftColor = ring; tierBtn.style.borderRightColor = ring;
                 tierBtn.style.borderTopLeftRadius = 8; tierBtn.style.borderTopRightRadius = 8;
