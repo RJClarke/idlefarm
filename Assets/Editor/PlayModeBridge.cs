@@ -14,6 +14,8 @@ public static class PlayModeBridge
     private const string ExitRequestPath = "Temp/exit_play_mode.request";
     private const string ScreenshotRequestPath = "Temp/screenshot.request";
     private const string ScreenshotOutputPath = "Temp/game_screenshot.png";
+    private const string OpenPopupRequestPath = "Temp/open_popup.request";
+    private const string OpenPopupResultPath = "Temp/open_popup_result.txt";
 
     private static double nextPoll;
 
@@ -45,5 +47,29 @@ public static class PlayModeBridge
             if (File.Exists(ScreenshotOutputPath)) File.Delete(ScreenshotOutputPath);
             UnityEngine.ScreenCapture.CaptureScreenshot(Path.GetFullPath(ScreenshotOutputPath));
         }
+        else if (File.Exists(OpenPopupRequestPath))
+        {
+            // Request body is a type name, e.g. "BarnPopupUITK" — every *PopupUITK singleton
+            // exposes `static X Instance` + `void Open()`, so this works for any of them without
+            // per-popup plumbing. Play-mode only (Instance is null in edit mode).
+            string typeName = File.ReadAllText(OpenPopupRequestPath).Trim();
+            File.Delete(OpenPopupRequestPath);
+            string result = OpenPopup(typeName);
+            File.WriteAllText(OpenPopupResultPath, result);
+        }
+    }
+
+    private static string OpenPopup(string typeName)
+    {
+        if (!EditorApplication.isPlaying) return "NOT PLAYING";
+        System.Type type = System.Type.GetType(typeName + ", Assembly-CSharp");
+        if (type == null) return "TYPE NOT FOUND: " + typeName;
+        System.Reflection.PropertyInfo instanceProp = type.GetProperty("Instance", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+        object instance = instanceProp != null ? instanceProp.GetValue(null) : null;
+        if (instance == null) return "INSTANCE NULL: " + typeName;
+        System.Reflection.MethodInfo openMethod = type.GetMethod("Open", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
+        if (openMethod == null) return "NO Open() ON: " + typeName;
+        openMethod.Invoke(instance, null);
+        return "OK: " + typeName + ".Open()";
     }
 }

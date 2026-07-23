@@ -18,6 +18,12 @@ public static class EditModeTestBridge
 
     private static double nextPoll;
     private static bool running;
+    private static double runStartedAt;
+    // A run that errors before RunFinished fires (e.g. triggered while still in play mode, where
+    // the test tree is unavailable) leaves `running` stuck true with no further callback ever
+    // resetting it — and unlike a script edit, entering/exiting play mode alone never recompiles
+    // to clear statics either. Treat a run older than this as abandoned rather than in-progress.
+    private const double StaleRunSeconds = 30.0;
 
     static EditModeTestBridge()
     {
@@ -26,6 +32,11 @@ public static class EditModeTestBridge
 
     private static void Poll()
     {
+        if (running && EditorApplication.timeSinceStartup - runStartedAt > StaleRunSeconds)
+        {
+            Debug.LogWarning("[EditModeTestBridge] Previous run never completed (stale) — resetting.");
+            running = false;
+        }
         if (running || EditorApplication.timeSinceStartup < nextPoll) return;
         nextPoll = EditorApplication.timeSinceStartup + 2.0;
         if (!File.Exists(RequestPath)) return;
@@ -33,6 +44,7 @@ public static class EditModeTestBridge
         File.Delete(RequestPath);
         if (File.Exists(ResultPath)) File.Delete(ResultPath);
         running = true;
+        runStartedAt = EditorApplication.timeSinceStartup;
 
         var api = ScriptableObject.CreateInstance<TestRunnerApi>();
         api.RegisterCallbacks(new ResultWriter());
