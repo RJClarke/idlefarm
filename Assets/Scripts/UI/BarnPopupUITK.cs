@@ -31,6 +31,15 @@ public class BarnPopupUITK : MonoBehaviour
         "double wood knockdown", "second-egg chance", "double-jar chance",
     };
 
+    // What each point actually buys, shown right on the row — mirrors FarmSkillsManager's
+    // per-point values exactly (harvestingPerPoint=0.04, plantingPerPoint=0.02, etc.); update
+    // both together if those tuning values ever change.
+    private static readonly string[] TrackBonusText =
+    {
+        "+4%/lvl Money", "+2%/lvl Growth", "+3%/lvl Moisture", "+2%/lvl Faster Bites",
+        "+2%/lvl Wood", "+3%/lvl Egg Value", "+2%/lvl Speed",
+    };
+
     private static readonly Color RenownColor = new Color(0.78f, 0.35f, 0.85f);
     private static readonly Color TitleBrown = new Color(0.373f, 0.275f, 0.149f);
     // Warm near-black (not pure #000, which reads harsh against the wood/paper palette) for every
@@ -177,17 +186,16 @@ public class BarnPopupUITK : MonoBehaviour
         popupRoot.Add(backdrop);
 
         VisualElement card = new VisualElement { name = "barn-card" };
-        card.style.width = Length.Percent(94);
-        // Wider than the old 720 flat-card value: the frame's padding eats into row width, and a
-        // 25-tick + 5 tier-marker row needs the extra room to avoid wrapping onto a second line.
-        card.style.maxWidth = 920;
+        // Matches TownRequestsPopupUITK's board width exactly (96% / maxWidth 860) — a wider
+        // maxWidth (920, tried earlier) pushed the card past the visible area and off-center on
+        // narrower/non-portrait windows instead of just capping cleanly.
+        card.style.width = Length.Percent(96);
+        card.style.maxWidth = 860;
         // A fixed minHeight (not just a maxHeight cap) so the card reads as a substantial board
         // filling the screen rather than shrink-wrapping to content — the flat-card version could
         // get away with that, but a small card floating in a sea of dimmed farm looks undersized
-        // once it's got a wood frame drawing attention to its edges. 62% gives noticeably more
-        // presence than the ~50%-of-screen the 7 rows actually need, without leaving a half-empty
-        // card (80% left a near-empty bottom third).
-        card.style.minHeight = Length.Percent(62);
+        // once it's got a wood frame drawing attention to its edges.
+        card.style.minHeight = Length.Percent(72);
         card.style.maxHeight = Length.Percent(92);
         // Padding clears the rendered frame border (slice 30 x scale 2 = 60px on every edge) with
         // a little extra so content never grazes the planks.
@@ -402,14 +410,43 @@ public class BarnPopupUITK : MonoBehaviour
         VisualElement row = new VisualElement();
         row.style.marginBottom = 14;
 
+        // Name plus a small "i" badge for what the track actually buys you — tried flexing the
+        // bonus text to the row's far right first, but the ScrollView's reserved scrollbar-track
+        // width made the row's true right edge narrower than it looked (ticks don't stretch to
+        // fill, so nothing else revealed the mismatch), and the text quietly clipped. A tap-to-
+        // reveal badge next to the name sidesteps needing to know that edge at all.
+        VisualElement nameRow = new VisualElement();
+        nameRow.style.flexDirection = FlexDirection.Row;
+        nameRow.style.alignItems = Align.Center;
+        nameRow.style.marginBottom = 4;
+        row.Add(nameRow);
+
         Label nameLabel = new Label($"{meta.name}  ({level}/{FarmSkillsCore.MaxLevel})");
         nameLabel.style.fontSize = 20;
         nameLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
         // The raw track colour is tuned for small vivid tick fills — as label text against the
         // card's light interior it read too pale, hence the darkened variant here.
         nameLabel.style.color = Darken(meta.color, 0.6f);
-        nameLabel.style.marginBottom = 4;
-        row.Add(nameLabel);
+        nameRow.Add(nameLabel);
+
+        Button infoBadge = new Button { text = "i" };
+        infoBadge.style.width = 22; infoBadge.style.height = 22;
+        infoBadge.style.marginLeft = 8;
+        infoBadge.style.fontSize = 14;
+        infoBadge.style.unityFontStyleAndWeight = FontStyle.BoldAndItalic;
+        infoBadge.style.color = InkBlack;
+        infoBadge.style.backgroundColor = Darken(meta.color, 0.85f);
+        infoBadge.style.borderTopWidth = 1; infoBadge.style.borderBottomWidth = 1;
+        infoBadge.style.borderLeftWidth = 1; infoBadge.style.borderRightWidth = 1;
+        infoBadge.style.borderTopColor = InkBlack; infoBadge.style.borderBottomColor = InkBlack;
+        infoBadge.style.borderLeftColor = InkBlack; infoBadge.style.borderRightColor = InkBlack;
+        infoBadge.style.borderTopLeftRadius = 11; infoBadge.style.borderTopRightRadius = 11;
+        infoBadge.style.borderBottomLeftRadius = 11; infoBadge.style.borderBottomRightRadius = 11;
+        infoBadge.style.paddingLeft = 0; infoBadge.style.paddingRight = 0;
+        infoBadge.style.paddingTop = 0; infoBadge.style.paddingBottom = 0;
+        string bonusText = TrackBonusText[(int)track];
+        infoBadge.clicked += () => ShowTooltip(infoBadge, $"{meta.name}\n{bonusText}");
+        nameRow.Add(infoBadge);
 
         VisualElement tickRow = new VisualElement();
         tickRow.style.flexDirection = FlexDirection.Row;
@@ -418,7 +455,8 @@ public class BarnPopupUITK : MonoBehaviour
 
         VisualElement ticksWrap = new VisualElement();
         ticksWrap.style.flexDirection = FlexDirection.Row;
-        ticksWrap.style.flexGrow = 1;
+        // No flexGrow: this used to stretch to fill the row, which just pushed a big empty gap
+        // between the last tick and the "+" button instead of sitting snug next to it.
         ticksWrap.style.flexWrap = Wrap.Wrap;
         ticksWrap.style.alignItems = Align.Center;
         tickRow.Add(ticksWrap);
