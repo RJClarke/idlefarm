@@ -122,6 +122,126 @@ TextureImporter:
   - first:
       213: 3175443900447855098
     second: Horse_without_shadow_39
+  - first:
+      213: -7850655460619407537
+    second: Horse_WalkD1
+  - first:
+      213: 1726081966624921674
+    second: Horse_WalkD2
+  - first:
+      213: -6817952249723517780
+    second: Horse_WalkD3
+  - first:
+      213: 6344082676513654241
+    second: Horse_WalkD4
+  - first:
+      213: 7148728454807805355
+    second: Horse_WalkD5
+  - first:
+      213: -2609840573051074855
+    second: Horse_WalkD6
+  - first:
+      213: -8784778974255427738
+    second: Horse_WalkU1
+  - first:
+      213: 6080842692577355601
+    second: Horse_WalkU2
+  - first:
+      213: -2068301464034116454
+    second: Horse_WalkU3
+  - first:
+      213: -6350660962545214843
+    second: Horse_WalkU4
+  - first:
+      213: -2442362862847706277
+    second: Horse_WalkU5
+  - first:
+      213: 1383512683827309720
+    second: Horse_WalkU6
+  - first:
+      213: 4016176550704718454
+    second: Horse_WalkR1
+  - first:
+      213: -9006740351485858552
+    second: Horse_WalkR2
+  - first:
+      213: 1843894366190939924
+    second: Horse_WalkR3
+  - first:
+      213: 4554435006311076845
+    second: Horse_WalkR4
+  - first:
+      213: 740917698375807379
+    second: Horse_WalkR5
+  - first:
+      213: -834296403682203817
+    second: Horse_WalkR6
+  - first:
+      213: -284768724194370393
+    second: Horse_WalkL1
+  - first:
+      213: 5550948366024223679
+    second: Horse_WalkL2
+  - first:
+      213: 931948021328409513
+    second: Horse_WalkL3
+  - first:
+      213: -7987265436968209060
+    second: Horse_WalkL4
+  - first:
+      213: 2212529345957827478
+    second: Horse_WalkL5
+  - first:
+      213: 8360604701221207391
+    second: Horse_WalkL6
+  - first:
+      213: 492017903106114566
+    second: Horse_IdleD1
+  - first:
+      213: 6713413480306833504
+    second: Horse_IdleD2
+  - first:
+      213: -8714137321330585559
+    second: Horse_IdleD3
+  - first:
+      213: -4071993699459818274
+    second: Horse_IdleD4
+  - first:
+      213: -5439844908020777175
+    second: Horse_IdleU1
+  - first:
+      213: 4742233025279113446
+    second: Horse_IdleU2
+  - first:
+      213: -2440557877779878979
+    second: Horse_IdleU3
+  - first:
+      213: 431544460344976336
+    second: Horse_IdleU4
+  - first:
+      213: 8830674392825180157
+    second: Horse_IdleR1
+  - first:
+      213: 4442292336433360903
+    second: Horse_IdleR2
+  - first:
+      213: 6419413866764912377
+    second: Horse_IdleR3
+  - first:
+      213: 5307891264210244579
+    second: Horse_IdleR4
+  - first:
+      213: 8000821647835377659
+    second: Horse_IdleL1
+  - first:
+      213: -5212616468645047933
+    second: Horse_IdleL2
+  - first:
+      213: -8408681978097233760
+    second: Horse_IdleL3
+  - first:
+      213: -7125400913692747059
+    second: Horse_IdleL4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -154,7 +274,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -168,7 +288,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 21
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -192,7 +312,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -243,881 +363,881 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Horse_without_shadow_0
+      name: Horse_WalkD1
       rect:
         serializedVersion: 2
-        x: 25
-        y: 469
-        width: 15
-        height: 31
+        x: 0
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 165a8cb73fcffbef0800000000000000
-      internalID: -90075344840120991
+      spriteID: f4faccff37edc0390800000000000000
+      internalID: -7850655460619407537
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_1
+      name: Horse_WalkD2
       rect:
         serializedVersion: 2
-        x: 89
-        y: 470
-        width: 15
-        height: 29
+        x: 64
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e422578b65aba72e0800000000000000
-      internalID: -2127182992354500018
+      spriteID: a48d2e9476644f710800000000000000
+      internalID: 1726081966624921674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_2
+      name: Horse_WalkD3
       rect:
         serializedVersion: 2
-        x: 153
-        y: 469
-        width: 15
-        height: 29
+        x: 128
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b4ca4d240b7484350800000000000000
-      internalID: 6001125325832236107
+      spriteID: ca487ab4d84c161a0800000000000000
+      internalID: -6817952249723517780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_3
+      name: Horse_WalkD4
       rect:
         serializedVersion: 2
-        x: 217
-        y: 469
-        width: 15
-        height: 30
+        x: 192
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 77ba631a65eec7450800000000000000
-      internalID: 6088002852137380727
+      spriteID: 1e54e47f495ba0850800000000000000
+      internalID: 6344082676513654241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_4
+      name: Horse_WalkD5
       rect:
         serializedVersion: 2
-        x: 281
-        y: 470
-        width: 15
-        height: 30
+        x: 256
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4638540e500f7dd90800000000000000
-      internalID: -7072920781733919900
+      spriteID: baddb8077a2653360800000000000000
+      internalID: 7148728454807805355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_5
+      name: Horse_WalkD6
       rect:
         serializedVersion: 2
-        x: 345
-        y: 469
-        width: 15
-        height: 32
+        x: 320
+        y: 448
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d0380a05921355230800000000000000
-      internalID: 3626859128432919309
+      spriteID: 9d683ea83dbf7cbd0800000000000000
+      internalID: -2609840573051074855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_6
+      name: Horse_WalkU1
       rect:
         serializedVersion: 2
-        x: 25
-        y: 405
-        width: 15
-        height: 31
+        x: 0
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ded097f06bf28c4d0800000000000000
-      internalID: -3114186683336552979
+      spriteID: 66f4f211112361680800000000000000
+      internalID: -8784778974255427738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_7
+      name: Horse_WalkU2
       rect:
         serializedVersion: 2
-        x: 89
-        y: 406
-        width: 15
-        height: 29
+        x: 64
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d90f2a39c670ae90800000000000000
-      internalID: -7016477612806567469
+      spriteID: 1576a12163e736450800000000000000
+      internalID: 6080842692577355601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_8
+      name: Horse_WalkU3
       rect:
         serializedVersion: 2
-        x: 153
-        y: 405
-        width: 15
-        height: 29
+        x: 128
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e4eb22f89ce276b0800000000000000
-      internalID: -5299913669819505434
+      spriteID: a9c73dbd6caeb43e0800000000000000
+      internalID: -2068301464034116454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_9
+      name: Horse_WalkU4
       rect:
         serializedVersion: 2
-        x: 217
-        y: 405
-        width: 15
-        height: 30
+        x: 192
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cae32465602c570b0800000000000000
-      internalID: -5731461618286313812
+      spriteID: 58a5d86708bedd7a0800000000000000
+      internalID: -6350660962545214843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_10
+      name: Horse_WalkU5
       rect:
         serializedVersion: 2
-        x: 281
-        y: 406
-        width: 15
-        height: 30
+        x: 256
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cbe79d55e676a0f20800000000000000
-      internalID: 3389635393134100156
+      spriteID: b5b3b5b9aebfa1ed0800000000000000
+      internalID: -2442362862847706277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_11
+      name: Horse_WalkU6
       rect:
         serializedVersion: 2
-        x: 345
-        y: 405
-        width: 15
-        height: 32
+        x: 320
+        y: 384
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48121d40f07db4150800000000000000
-      internalID: 5858012199830757764
+      spriteID: 89c26cda479333310800000000000000
+      internalID: 1383512683827309720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_12
+      name: Horse_WalkR1
       rect:
         serializedVersion: 2
-        x: 10
-        y: 341
-        width: 45
-        height: 31
+        x: 0
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48821db6542351e00800000000000000
-      internalID: 1014772564784916612
+      spriteID: 67222045b435cb730800000000000000
+      internalID: 4016176550704718454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_13
+      name: Horse_WalkR2
       rect:
         serializedVersion: 2
-        x: 79
-        y: 341
-        width: 40
-        height: 32
+        x: 64
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4f3cd651de7c1c60800000000000000
-      internalID: 7790240893014654799
+      spriteID: 80d228dbe51a10380800000000000000
+      internalID: -9006740351485858552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_14
+      name: Horse_WalkR3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 341
-        width: 39
-        height: 31
+        x: 128
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9eaa9c2f3bbf69430800000000000000
-      internalID: 3789492886769871593
+      spriteID: 41fa72c1824d69910800000000000000
+      internalID: 1843894366190939924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_15
+      name: Horse_WalkR4
       rect:
         serializedVersion: 2
-        x: 208
-        y: 341
-        width: 39
-        height: 32
+        x: 192
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 75c3a5910c2901410800000000000000
-      internalID: 1445816834142649431
+      spriteID: de396cff18a943f30800000000000000
+      internalID: 4554435006311076845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_16
+      name: Horse_WalkR5
       rect:
         serializedVersion: 2
-        x: 271
-        y: 341
-        width: 40
-        height: 33
+        x: 256
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6c98819639616c10800000000000000
-      internalID: 2045031388893715567
+      spriteID: 3917d7b98b4484a00800000000000000
+      internalID: 740917698375807379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_17
+      name: Horse_WalkR6
       rect:
         serializedVersion: 2
-        x: 331
-        y: 341
-        width: 44
-        height: 32
+        x: 320
+        y: 320
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd1de181cb25053c0800000000000000
-      internalID: -4372904270364749347
+      spriteID: 757e22557dbfb64f0800000000000000
+      internalID: -834296403682203817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_18
+      name: Horse_WalkL1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 277
-        width: 45
-        height: 31
+        x: 0
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 221ceee33250bd4b0800000000000000
-      internalID: -5414728478045060830
+      spriteID: 7acd047aa5c4c0cf0800000000000000
+      internalID: -284768724194370393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_19
+      name: Horse_WalkL2
       rect:
         serializedVersion: 2
-        x: 73
-        y: 277
-        width: 40
-        height: 32
+        x: 64
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7feb8293cf137a00800000000000000
-      internalID: 752980487538732924
+      spriteID: fbba863f02ee80d40800000000000000
+      internalID: 5550948366024223679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_20
+      name: Horse_WalkL3
       rect:
         serializedVersion: 2
-        x: 137
-        y: 277
-        width: 39
-        height: 31
+        x: 128
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 76fbee120914bd5b0800000000000000
-      internalID: -5342604445644570777
+      spriteID: 9a37868a9c1feec00800000000000000
+      internalID: 931948021328409513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_21
+      name: Horse_WalkL4
       rect:
         serializedVersion: 2
-        x: 201
-        y: 277
-        width: 39
-        height: 32
+        x: 192
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a32b133d0c8094c20800000000000000
-      internalID: 3191091435238699578
+      spriteID: c5531c64768872190800000000000000
+      internalID: -7987265436968209060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_22
+      name: Horse_WalkL5
       rect:
         serializedVersion: 2
-        x: 265
-        y: 277
-        width: 40
-        height: 33
+        x: 256
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00a5bae01a9b3cf90800000000000000
-      internalID: -6934494899833447936
+      spriteID: 69391f8b7bb74be10800000000000000
+      internalID: 2212529345957827478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_23
+      name: Horse_WalkL6
       rect:
         serializedVersion: 2
-        x: 329
-        y: 277
-        width: 44
-        height: 32
+        x: 320
+        y: 256
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5f63c804d1a3d0d0800000000000000
-      internalID: -3399195361682428065
+      spriteID: f5d30cbeda5d60470800000000000000
+      internalID: 8360604701221207391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_24
+      name: Horse_IdleD1
       rect:
         serializedVersion: 2
-        x: 25
-        y: 213
-        width: 15
-        height: 31
+        x: 0
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5d1d2d627f802ce0800000000000000
-      internalID: -1431986959883100834
+      spriteID: 604c5c11daff3d600800000000000000
+      internalID: 492017903106114566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_25
+      name: Horse_IdleD2
       rect:
         serializedVersion: 2
-        x: 89
-        y: 213
-        width: 15
-        height: 30
+        x: 64
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00e159959a8be6b60800000000000000
-      internalID: 7741327846988389888
+      spriteID: 068f10cbdf5da2d50800000000000000
+      internalID: 6713413480306833504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_26
+      name: Horse_IdleD3
       rect:
         serializedVersion: 2
-        x: 153
-        y: 213
-        width: 15
-        height: 30
+        x: 128
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d68bc747083fba8a0800000000000000
-      internalID: -6292668321284442003
+      spriteID: 920dd16964a211780800000000000000
+      internalID: -8714137321330585559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_27
+      name: Horse_IdleD4
       rect:
         serializedVersion: 2
-        x: 217
-        y: 213
-        width: 15
-        height: 31
+        x: 192
+        y: 192
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5fa0b8f1478b266c0800000000000000
-      internalID: -4151553097597252875
+      spriteID: edc91100e4f5d77c0800000000000000
+      internalID: -4071993699459818274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_28
+      name: Horse_IdleU1
       rect:
         serializedVersion: 2
-        x: 25
-        y: 149
-        width: 15
-        height: 31
+        x: 0
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e331124e1f2c4f50800000000000000
-      internalID: 6866915338837111779
+      spriteID: 92f3430b0e9c184b0800000000000000
+      internalID: -5439844908020777175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_29
+      name: Horse_IdleU2
       rect:
         serializedVersion: 2
-        x: 89
-        y: 149
-        width: 15
-        height: 30
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b533be6f01019f010800000000000000
-      internalID: 1223026438855930715
+      spriteID: 6e833e1afcbcfc140800000000000000
+      internalID: 4742233025279113446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_30
+      name: Horse_IdleU3
       rect:
         serializedVersion: 2
-        x: 153
-        y: 149
-        width: 15
-        height: 30
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db31d00c74e22b390800000000000000
-      internalID: -7804124318580010051
+      spriteID: dbb26217a85612ed0800000000000000
+      internalID: -2440557877779878979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_31
+      name: Horse_IdleU4
       rect:
         serializedVersion: 2
-        x: 217
-        y: 149
-        width: 15
-        height: 31
+        x: 192
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9736798608a9c570800000000000000
-      internalID: 8487499718785906591
+      spriteID: 0d366a776672df500800000000000000
+      internalID: 431544460344976336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_32
+      name: Horse_IdleR1
       rect:
         serializedVersion: 2
-        x: 14
-        y: 85
-        width: 41
-        height: 31
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0804592a507d6bb70800000000000000
-      internalID: 8914548931628974208
+      spriteID: dffab77c29bdc8a70800000000000000
+      internalID: 8830674392825180157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_33
+      name: Horse_IdleR2
       rect:
         serializedVersion: 2
-        x: 79
-        y: 85
-        width: 40
-        height: 30
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 25bc262c40374e290800000000000000
-      internalID: -7862032585203725486
+      spriteID: 700fc8df75136ad30800000000000000
+      internalID: 4442292336433360903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_34
+      name: Horse_IdleR3
       rect:
         serializedVersion: 2
-        x: 143
-        y: 85
-        width: 40
-        height: 30
+        x: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2016147fb69389b60800000000000000
-      internalID: 7753009894390849794
+      spriteID: 9f64dba76e6561950800000000000000
+      internalID: 6419413866764912377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_35
+      name: Horse_IdleR4
       rect:
         serializedVersion: 2
-        x: 207
-        y: 85
-        width: 40
-        height: 31
+        x: 192
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83b83fa73d58ba9b0800000000000000
-      internalID: -5067809812327986376
+      spriteID: 3e396ad7bfa69a940800000000000000
+      internalID: 5307891264210244579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_36
+      name: Horse_IdleL1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 21
-        width: 41
-        height: 31
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd3607351fdcb1e30800000000000000
-      internalID: 4475397091093406685
+      spriteID: bffab7606e0a80f60800000000000000
+      internalID: 8000821647835377659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_37
+      name: Horse_IdleL2
       rect:
         serializedVersion: 2
-        x: 73
-        y: 21
-        width: 40
-        height: 30
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f52e3810f3d21ce0800000000000000
-      internalID: -1435852303025429005
+      spriteID: 3819f0c70f019a7b0800000000000000
+      internalID: -5212616468645047933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_38
+      name: Horse_IdleL3
       rect:
         serializedVersion: 2
-        x: 137
-        y: 21
-        width: 40
-        height: 30
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bcba918d246ce8620800000000000000
-      internalID: 2778376010529876939
+      spriteID: 0a01942ca4c5e4b80800000000000000
+      internalID: -8408681978097233760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Horse_without_shadow_39
+      name: Horse_IdleL4
       rect:
         serializedVersion: 2
-        x: 201
-        y: 21
-        width: 40
-        height: 31
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af1106a3761711c20800000000000000
-      internalID: 3175443900447855098
+      spriteID: dca9919fe9d7d1d90800000000000000
+      internalID: -7125400913692747059
       vertices: []
       indices: 
       edges: []
@@ -1136,6 +1256,46 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Horse_IdleD1: 492017903106114566
+      Horse_IdleD2: 6713413480306833504
+      Horse_IdleD3: -8714137321330585559
+      Horse_IdleD4: -4071993699459818274
+      Horse_IdleL1: 8000821647835377659
+      Horse_IdleL2: -5212616468645047933
+      Horse_IdleL3: -8408681978097233760
+      Horse_IdleL4: -7125400913692747059
+      Horse_IdleR1: 8830674392825180157
+      Horse_IdleR2: 4442292336433360903
+      Horse_IdleR3: 6419413866764912377
+      Horse_IdleR4: 5307891264210244579
+      Horse_IdleU1: -5439844908020777175
+      Horse_IdleU2: 4742233025279113446
+      Horse_IdleU3: -2440557877779878979
+      Horse_IdleU4: 431544460344976336
+      Horse_WalkD1: -7850655460619407537
+      Horse_WalkD2: 1726081966624921674
+      Horse_WalkD3: -6817952249723517780
+      Horse_WalkD4: 6344082676513654241
+      Horse_WalkD5: 7148728454807805355
+      Horse_WalkD6: -2609840573051074855
+      Horse_WalkL1: -284768724194370393
+      Horse_WalkL2: 5550948366024223679
+      Horse_WalkL3: 931948021328409513
+      Horse_WalkL4: -7987265436968209060
+      Horse_WalkL5: 2212529345957827478
+      Horse_WalkL6: 8360604701221207391
+      Horse_WalkR1: 4016176550704718454
+      Horse_WalkR2: -9006740351485858552
+      Horse_WalkR3: 1843894366190939924
+      Horse_WalkR4: 4554435006311076845
+      Horse_WalkR5: 740917698375807379
+      Horse_WalkR6: -834296403682203817
+      Horse_WalkU1: -8784778974255427738
+      Horse_WalkU2: 6080842692577355601
+      Horse_WalkU3: -2068301464034116454
+      Horse_WalkU4: -6350660962545214843
+      Horse_WalkU5: -2442362862847706277
+      Horse_WalkU6: 1383512683827309720
       Horse_without_shadow_0: -90075344840120991
       Horse_without_shadow_1: -2127182992354500018
       Horse_without_shadow_10: 3389635393134100156

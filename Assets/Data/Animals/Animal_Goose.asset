@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236a5fbb3bccf23469f66467b41b14f2, type: 3}
+  m_Name: Animal_Goose
+  m_EditorClassIdentifier: Assembly-CSharp::AnimalData
+  animalID: goose
+  displayName: Goose
+  description: Lays a fine big egg every 25 minutes - and she is a genuine menace.
+    She'll run off deer AND crows during a run, though she is a step slower about
+    it than the dog.
+  animalEmoji: "\U0001FABF"
+  sortOrder: 6
+  gemCost: 12000
+  abilityType: 3
+  cooldownMinutes: 25
+  rewardCoins: 75
+  rewardGems: 0
+  compostPerMinute: 0
+  visualPrefab: {fileID: 6222582176096309404, guid: 12bc94ac8fe111340b34f73daffc6870, type: 3}
+  roamSpeed: 0.7
+  iconSprite: {fileID: -3677501692410637885, guid: ab7106d46a02dc244b6b62e4435989d0, type: 3}
+  clickSounds: []

@@ -274,7 +274,7 @@ public class AnimalManager : MonoBehaviour
         // If equipped mid-run, start its run-defender behavior now — otherwise chase mode would
         // only kick in on the next run (the dog would just wander for the rest of this one).
         if (RunManager.Instance != null && RunManager.Instance.IsRunActive
-            && data != null && data.abilityType == AnimalAbilityType.RunDefender)
+            && data != null && data.abilityType.HasFlag(AnimalAbilityType.RunDefender))
         {
             ActivateRunDefender(data);
         }
@@ -306,7 +306,7 @@ public class AnimalManager : MonoBehaviour
     public float GetCooldownProgress()
     {
         AnimalData equipped = GetEquippedAnimal();
-        if (equipped == null || equipped.abilityType != AnimalAbilityType.PassiveTimer)
+        if (equipped == null || !equipped.abilityType.HasFlag(AnimalAbilityType.PassiveTimer))
             return 0f;
 
         double elapsedMinutes = (DateTime.UtcNow - lastEggClaimTime).TotalMinutes;
@@ -363,7 +363,7 @@ public class AnimalManager : MonoBehaviour
     public void ClaimPassiveReward()
     {
         AnimalData equipped = GetEquippedAnimal();
-        if (equipped == null || equipped.abilityType != AnimalAbilityType.PassiveTimer) return;
+        if (equipped == null || !equipped.abilityType.HasFlag(AnimalAbilityType.PassiveTimer)) return;
         if (!eggReady) return;
 
         bool isGemAnimal = equipped.rewardGems > 0;
@@ -424,7 +424,7 @@ public class AnimalManager : MonoBehaviour
     private void UpdatePassiveTimer()
     {
         AnimalData equipped = GetEquippedAnimal();
-        if (equipped == null || equipped.abilityType != AnimalAbilityType.PassiveTimer) return;
+        if (equipped == null || !equipped.abilityType.HasFlag(AnimalAbilityType.PassiveTimer)) return;
 
         bool isGemAnimal = equipped.rewardGems > 0;
         double elapsedMinutes = (DateTime.UtcNow - lastEggClaimTime).TotalMinutes;
@@ -493,6 +493,17 @@ public class AnimalManager : MonoBehaviour
         Camera cam = Camera.main;
         if (cam == null) return Vector3.zero;
 
+        // Animals must never appear at the Market. Spawning at the visible area would drop a newly
+        // equipped animal straight into town if the player happens to be parked there — AnimalVisual's
+        // penning would then walk it home, but only after it had already been standing in the market.
+        // Place it in the Farm framing instead.
+        CameraPanController pan = cam.GetComponent<CameraPanController>();
+        if (pan != null && pan.CurrentLocation == CameraPanController.Location.Market)
+        {
+            Rect farm = pan.GetViewRect(CameraPanController.Location.Farm, 0.08f);
+            return new Vector3(farm.center.x, Mathf.Lerp(farm.yMin, farm.yMax, 0.3f), 0f);
+        }
+
         // Spawn near bottom-center of visible area
         Vector3 bottomCenter = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.3f, cam.nearClipPlane));
         bottomCenter.z = 0;
@@ -506,7 +517,7 @@ public class AnimalManager : MonoBehaviour
         AnimalData equipped = GetEquippedAnimal();
         if (equipped == null) return;
 
-        if (equipped.abilityType == AnimalAbilityType.RunDefender)
+        if (equipped.abilityType.HasFlag(AnimalAbilityType.RunDefender))
         {
             ActivateRunDefender(equipped);
         }
@@ -517,40 +528,40 @@ public class AnimalManager : MonoBehaviour
         AnimalData equipped = GetEquippedAnimal();
         if (equipped == null) return;
 
-        if (equipped.abilityType == AnimalAbilityType.RunDefender)
+        if (equipped.abilityType.HasFlag(AnimalAbilityType.RunDefender))
         {
             DeactivateRunDefender();
         }
     }
 
+    // Any defender animal is found by its AnimalDefender base type — no per-animal ID checks, so a
+    // new defender only has to add the component to its visual prefab and set the RunDefender flag.
     private void ActivateRunDefender(AnimalData data)
     {
-        if (data.animalID == "farm_dog" && activeVisualInstance != null)
-        {
-            AnimalVisual visual = activeVisualInstance.GetComponent<AnimalVisual>();
-            if (visual != null) visual.PauseWander = true;
+        if (activeVisualInstance == null) return;
 
-            FarmDog dog = activeVisualInstance.GetComponent<FarmDog>();
-            if (dog != null)
-            {
-                dog.ActivateChaseMode();
-            }
+        AnimalDefender defender = activeVisualInstance.GetComponent<AnimalDefender>();
+        if (defender == null)
+        {
+            Debug.LogWarning($"AnimalManager: {data.displayName} is flagged RunDefender but its visual " +
+                             "prefab has no AnimalDefender component — it will just wander.");
+            return;
         }
+
+        AnimalVisual visual = activeVisualInstance.GetComponent<AnimalVisual>();
+        if (visual != null) visual.PauseWander = true;
+        defender.ActivateChaseMode();
     }
 
     private void DeactivateRunDefender()
     {
-        if (activeVisualInstance != null)
-        {
-            FarmDog dog = activeVisualInstance.GetComponent<FarmDog>();
-            if (dog != null)
-            {
-                dog.DeactivateChaseMode();
-            }
+        if (activeVisualInstance == null) return;
 
-            AnimalVisual visual = activeVisualInstance.GetComponent<AnimalVisual>();
-            if (visual != null) visual.PauseWander = false;
-        }
+        AnimalDefender defender = activeVisualInstance.GetComponent<AnimalDefender>();
+        if (defender != null) defender.DeactivateChaseMode();
+
+        AnimalVisual visual = activeVisualInstance.GetComponent<AnimalVisual>();
+        if (visual != null) visual.PauseWander = false;
     }
 
     // ── Save / Load ──────────────────────────────

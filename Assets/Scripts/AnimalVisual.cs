@@ -31,12 +31,12 @@ public class AnimalVisual : MonoBehaviour
     private const float MAX_PAUSE = 2.5f;
     private const float WANDER_INSET = 0.08f; // keep targets a little in from the framing edge
 
-    // Penning: while a run is active OR the camera is parked at the Lake, the animal stays within the
-    // Farm framing instead of following the camera around. This is the "no wandering onto the water"
-    // barrier, and it keeps every equipped animal home doing its job during a run. If the animal has
-    // drifted out (idle wander took it toward the Lake before a run started, say), it briskly walks
-    // home first. Non-penned idle wander is unchanged — animals still follow the camera to the
-    // Greenhouse/Woods like before.
+    // Penning: while a run is active, or the camera is parked at the Lake or the Market, the animal
+    // stays within the Farm framing instead of following the camera around. This is the "no wandering
+    // onto the water" barrier and the "no livestock in town" barrier, and it keeps every equipped
+    // animal home doing its job during a run. If the animal has drifted out (idle wander took it
+    // toward the Lake before a run started, say), it briskly walks home first. Non-penned idle wander
+    // is unchanged — animals still follow the camera to the Greenhouse/Woods like before.
     [SerializeField] private float returnHomeSpeed = 4f;
     private const float ReturnHomeEpsilonSqr = 0.01f; // ignore <0.1u overshoot so an edge target can't trap it
     private CameraPanController pan;
@@ -44,6 +44,8 @@ public class AnimalVisual : MonoBehaviour
 
     // Egg visual
     [SerializeField] private Sprite eggSprite;
+    [Tooltip("Size of the dropped egg. Bigger birds lay bigger eggs — the goose sits above the chicken.")]
+    [SerializeField] private float eggScale = 0.8f;
     private GameObject eggInstance;
 
     // Gem visual
@@ -96,11 +98,18 @@ public class AnimalVisual : MonoBehaviour
     private void OnPanCompleted(CameraPanController.Location loc) => effectiveLocation = loc;
 
     // Penned = confined to the Farm framing (no camera-following). True during a run, or whenever the
-    // camera is heading to / sitting at the Lake.
+    // camera is heading to / sitting at the Lake or the Market.
+    //
+    // Market is a hard exclusion: animals must never appear in town. Because effectiveLocation is set
+    // from OnPanStarted, which fires with the pan's TARGET, penning engages the instant a pan toward
+    // the Market begins — so the animal turns for home rather than trailing the camera into town and
+    // being walked back afterwards.
     private bool IsPenned()
     {
         bool runActive = RunManager.Instance != null && RunManager.Instance.IsRunActive;
-        return runActive || effectiveLocation == CameraPanController.Location.Lake;
+        return runActive
+            || effectiveLocation == CameraPanController.Location.Lake
+            || effectiveLocation == CameraPanController.Location.Market;
     }
 
     private static bool HasAnimStateParam(Animator a)
@@ -391,7 +400,7 @@ public class AnimalVisual : MonoBehaviour
 
         // Subtle drop animation
         eggInstance.transform.localScale = Vector3.zero;
-        LeanTween.scale(eggInstance, Vector3.one * 0.8f, 0.3f).setEaseOutBack();
+        LeanTween.scale(eggInstance, Vector3.one * Mathf.Max(0.05f, eggScale), 0.3f).setEaseOutBack();
 
         // Egg is unparented (stays on the ground), so it depth-sorts on its own.
         YSort.Ensure(eggInstance, isStatic: true);

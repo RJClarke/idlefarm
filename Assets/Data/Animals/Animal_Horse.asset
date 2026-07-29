@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
   animalID: horse
   displayName: Horse
-  description: Coming soon...
+  description: A steady old workhorse who wanders the pasture keeping an eye on the
+    place. No trade to ply just yet.
   animalEmoji: "\U0001F434"
   sortOrder: 5
   gemCost: 8000
@@ -23,6 +24,7 @@ MonoBehaviour:
   rewardCoins: 30
   rewardGems: 0
   compostPerMinute: 0
-  visualPrefab: {fileID: 0}
+  visualPrefab: {fileID: 634830360863180926, guid: a124e45ff95235c47a802e183e2d483f, type: 3}
   roamSpeed: 0.6
-  iconSprite: {fileID: 1014772564784916612, guid: dddad3863cca11c41a3c9fd5b327a263, type: 3}
+  iconSprite: {fileID: 7427403520787910613, guid: 2359181a5c0531b42ad772231d7d03d8, type: 3}
+  clickSounds: []

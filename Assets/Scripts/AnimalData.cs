@@ -1,10 +1,16 @@
 using UnityEngine;
 
+/// <summary>
+/// What an equipped animal does. Flags, because the goose both lays an egg on a timer AND
+/// defends during runs. The values are the original enum's ordinals (0/1/2), so every
+/// Animal_*.asset serialized before this became a flags enum still deserializes correctly.
+/// </summary>
+[System.Flags]
 public enum AnimalAbilityType
 {
-    None,
-    PassiveTimer,
-    RunDefender
+    None         = 0,
+    PassiveTimer = 1,
+    RunDefender  = 2
 }
 
 [CreateAssetMenu(fileName = "New Animal", menuName = "Farm Game/Animal Data", order = 7)]

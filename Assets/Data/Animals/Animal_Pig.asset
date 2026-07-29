@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
   animalID: pig
   displayName: Pig
-  description: Coming soon...
+  description: Snuffles contentedly around the farm all day. He hasn't found a job
+    yet - but he's very good at being a pig.
   animalEmoji: "\U0001F416"
   sortOrder: 4
   gemCost: 5000
@@ -23,6 +24,7 @@ MonoBehaviour:
   rewardCoins: 30
   rewardGems: 0
   compostPerMinute: 0
-  visualPrefab: {fileID: 0}
+  visualPrefab: {fileID: 3748916945851536382, guid: b2e19c324bac3054aa2371e7063a1b57, type: 3}
   roamSpeed: 0.6
-  iconSprite: {fileID: 9089061819798448522, guid: d9b7f233364e3154b8220b565126b748, type: 3}
+  iconSprite: {fileID: 3607795038562715953, guid: d9b7f233364e3154b8220b565126b748, type: 3}
+  clickSounds: []

@@ -264,41 +264,79 @@ public abstract class AnimalThreat : MonoBehaviour
     }
 
     // ─────────────────────────────────────────────────────────────────────
-    // Camera Edge Helpers
+    // Farm Edge Helpers
     // ─────────────────────────────────────────────────────────────────────
+    //
+    // These are FARM-relative, not camera-relative. Threats must always enter and leave just outside
+    // the player's plot regardless of where the camera happens to be, because the Market is reachable
+    // during a run: keyed to the live camera, a deer spawning while you shopped would appear at the
+    // market's screen edge (~100 world units away) and then walk across town to reach your crops —
+    // both visually wrong and an exploit, since a wave spawned during a shopping trip would arrive
+    // far later than normal.
+    //
+    // Parked at the farm these return exactly what the camera-relative versions did, so normal play
+    // is unchanged; they only diverge when the camera is elsewhere.
 
-    protected float ScreenTopY(float padding = 1.5f) =>
-        Camera.main.transform.position.y + Camera.main.orthographicSize + padding;
+    /// <summary>Half-extents and center of the Farm framing, falling back to the live camera when no
+    /// pan controller exists (edit mode, tests, or a scene without one).</summary>
+    private void GetFarmFrame(out Vector3 center, out float halfW, out float halfH)
+    {
+        Camera cam = Camera.main;
+        CameraPanController pan = cam != null ? cam.GetComponent<CameraPanController>() : null;
 
-    protected float ScreenBottomY(float padding = 1.5f) =>
-        Camera.main.transform.position.y - Camera.main.orthographicSize - padding;
+        if (pan != null)
+        {
+            Rect farm = pan.GetViewRect(CameraPanController.Location.Farm);
+            center = new Vector3(farm.center.x, farm.center.y, 0f);
+            halfW  = farm.width * 0.5f;
+            halfH  = farm.height * 0.5f;
+            return;
+        }
+
+        center = cam != null ? cam.transform.position : Vector3.zero;
+        halfH  = cam != null ? cam.orthographicSize : 5f;
+        halfW  = halfH * (cam != null ? cam.aspect : 0.5625f);
+    }
+
+    protected float ScreenTopY(float padding = 1.5f)
+    {
+        GetFarmFrame(out Vector3 c, out _, out float hh);
+        return c.y + hh + padding;
+    }
+
+    protected float ScreenBottomY(float padding = 1.5f)
+    {
+        GetFarmFrame(out Vector3 c, out _, out float hh);
+        return c.y - hh - padding;
+    }
 
     protected float ScreenLeftX(float padding = 1.5f)
     {
-        float hw = Camera.main.orthographicSize * Camera.main.aspect;
-        return Camera.main.transform.position.x - hw - padding;
+        GetFarmFrame(out Vector3 c, out float hw, out _);
+        return c.x - hw - padding;
     }
 
     protected float ScreenRightX(float padding = 1.5f)
     {
-        float hw = Camera.main.orthographicSize * Camera.main.aspect;
-        return Camera.main.transform.position.x + hw + padding;
+        GetFarmFrame(out Vector3 c, out float hw, out _);
+        return c.x + hw + padding;
     }
 
     protected Vector3 GetScreenEdgePoint(float angleDegrees, float padding = 1.5f)
     {
-        float rad      = angleDegrees * Mathf.Deg2Rad;
-        float dirX     = Mathf.Cos(rad);
-        float dirY     = Mathf.Sin(rad);
-        float hw       = Camera.main.orthographicSize * Camera.main.aspect + padding;
-        float hh       = Camera.main.orthographicSize + padding;
-        Vector3 camPos = Camera.main.transform.position;
+        float rad  = angleDegrees * Mathf.Deg2Rad;
+        float dirX = Mathf.Cos(rad);
+        float dirY = Mathf.Sin(rad);
+
+        GetFarmFrame(out Vector3 center, out float halfW, out float halfH);
+        float hw = halfW + padding;
+        float hh = halfH + padding;
 
         float scaleX = dirX != 0f ? Mathf.Abs(hw / dirX) : float.MaxValue;
         float scaleY = dirY != 0f ? Mathf.Abs(hh / dirY) : float.MaxValue;
         float scale  = Mathf.Min(scaleX, scaleY);
 
-        return new Vector3(camPos.x + dirX * scale, camPos.y + dirY * scale, 0f);
+        return new Vector3(center.x + dirX * scale, center.y + dirY * scale, 0f);
     }
 
     // ─────────────────────────────────────────────────────────────────────
