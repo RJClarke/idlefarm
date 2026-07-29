@@ -14,8 +14,8 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private int questsPerDrop = 2;
     [SerializeField] private int maxActiveQuests = 10;
 
-    // Drop times in CT (hours): 6am, 12pm, 6pm, 12am
-    private static readonly int[] DropHoursCT = { 0, 6, 12, 18 };
+    // Drop schedule lives in QuestSchedule (pure, platform-independent — see the note there on
+    // why this must never go back to TimeZoneInfo).
 
     // Milestone thresholds and rewards (index 0-7 → 5,10,15,20,25,30,35,40 quests)
     private static readonly int[] MilestoneThresholds = { 5, 10, 15, 20, 25, 30, 35, 40 };
@@ -108,24 +108,9 @@ public class QuestManager : MonoBehaviour
         // Forward-only: if the device clock rolled back below the last drop time, clamp to now so
         // future drops resume from here instead of being frozen until real time passes the stale future stamp.
         if (lastQuestDropTime > nowUtc) lastQuestDropTime = nowUtc;
-        TimeZoneInfo ct = GetCentralTime();
-        DateTime nowCt = TimeZoneInfo.ConvertTimeFromUtc(nowUtc, ct);
 
-        // Build list of all drop times (UTC) for today and yesterday
-        List<DateTime> recentDropsUtc = new List<DateTime>();
-        for (int dayOffset = -1; dayOffset <= 0; dayOffset++)
-        {
-            DateTime day = nowCt.Date.AddDays(dayOffset);
-            foreach (int hour in DropHoursCT)
-            {
-                DateTime dropCt = day.AddHours(hour);
-                DateTime dropUtc = TimeZoneInfo.ConvertTimeToUtc(dropCt, ct);
-                if (dropUtc <= nowUtc)
-                    recentDropsUtc.Add(dropUtc);
-            }
-        }
-
-        recentDropsUtc.Sort();
+        // Drop times (UTC) for today and yesterday, ascending.
+        List<DateTime> recentDropsUtc = QuestSchedule.RecentDropsUtc(nowUtc);
 
         // Count how many drop windows have passed since lastQuestDropTime
         int missedDrops = 0;
@@ -198,14 +183,8 @@ public class QuestManager : MonoBehaviour
 
     private void CheckWeeklyReset()
     {
-        DateTime nowUtc = DateTime.UtcNow;
-        TimeZoneInfo ct = GetCentralTime();
-        DateTime nowCt = TimeZoneInfo.ConvertTimeFromUtc(nowUtc, ct);
-
-        // Sunday midnight CT = start of this week
-        int daysSinceSunday = (int)nowCt.DayOfWeek;
-        DateTime thisWeekStartCt = nowCt.Date.AddDays(-daysSinceSunday);
-        DateTime thisWeekStartUtc = TimeZoneInfo.ConvertTimeToUtc(thisWeekStartCt, ct);
+        // Sunday midnight game time = start of this week.
+        DateTime thisWeekStartUtc = QuestSchedule.WeekStartUtc(DateTime.UtcNow);
 
         if (questWeekStart < thisWeekStartUtc)
         {
@@ -261,20 +240,7 @@ public class QuestManager : MonoBehaviour
         return true;
     }
 
-    public DateTime GetNextDropTimeUtc()
-    {
-        TimeZoneInfo ct = GetCentralTime();
-        DateTime nowCt = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, ct);
-
-        foreach (int hour in DropHoursCT)
-        {
-            DateTime candidate = nowCt.Date.AddHours(hour);
-            if (candidate > nowCt)
-                return TimeZoneInfo.ConvertTimeToUtc(candidate, ct);
-        }
-        // Next drop is 6am tomorrow
-        return TimeZoneInfo.ConvertTimeToUtc(nowCt.Date.AddDays(1).AddHours(6), ct);
-    }
+    public DateTime GetNextDropTimeUtc() => QuestSchedule.NextDropUtc(DateTime.UtcNow);
 
     public int ActiveQuestCount => activeQuests.Count(q => !q.isClaimed);
     public bool HasUnclaimedCompleted => activeQuests.Any(q => q.isCompleted && !q.isClaimed);
@@ -378,12 +344,6 @@ public class QuestManager : MonoBehaviour
     private void HandlePlantWatered() => IncrementProgress(QuestObjectiveType.WaterPlants);
     private void HandleDeerRepelled() => IncrementProgress(QuestObjectiveType.RepelDeer);
     private void HandleCrowRepelled() => IncrementProgress(QuestObjectiveType.RepelCrows);
-
-    private static TimeZoneInfo GetCentralTime()
-    {
-        try { return TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time"); }
-        catch { return TimeZoneInfo.FindSystemTimeZoneById("America/Chicago"); }
-    }
 
     private void IncrementProgress(QuestObjectiveType type, int amount = 1)
     {
