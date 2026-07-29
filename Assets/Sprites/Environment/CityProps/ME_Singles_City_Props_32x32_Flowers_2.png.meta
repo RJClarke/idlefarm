@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: ad03735f9f69e3b478420a5bf0fa7017
+guid: b0cbdb15883e0d64f99f79d114fb5684
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8261743837782345347
-    second: UI_NoteBook_Frame01b_0
+      213: 3492565026226717600
+    second: ME_Singles_City_Props_32x32_Flowers_2_0
+  - first:
+      213: -2725455798162214139
+    second: ME_Singles_City_Props_32x32_Flowers_2_1
+  - first:
+      213: 2499976530555465014
+    second: ME_Singles_City_Props_32x32_Flowers_2_2
+  - first:
+      213: 8096903826087440700
+    second: ME_Singles_City_Props_32x32_Flowers_2_3
+  - first:
+      213: -77696594905783144
+    second: ME_Singles_City_Props_32x32_Flowers_2_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_NoteBook_Frame01b_0
+      name: ME_Singles_City_Props_32x32_Flowers_2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 46
-        height: 14
+        x: 1
+        y: 15
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +153,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3860a447f3c97a270800000000000000
-      internalID: 8261743837782345347
+      spriteID: 0a3423f0365187030800000000000000
+      internalID: 3492565026226717600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ME_Singles_City_Props_32x32_Flowers_2_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 19
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5033383446c3d2ad0800000000000000
+      internalID: -2725455798162214139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ME_Singles_City_Props_32x32_Flowers_2_2
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 23
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63d629ab863b1b220800000000000000
+      internalID: 2499976530555465014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ME_Singles_City_Props_32x32_Flowers_2_3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 3
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c31717e612bfd5070800000000000000
+      internalID: 8096903826087440700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ME_Singles_City_Props_32x32_Flowers_2_4
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 11
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 894226ccb57fbeef0800000000000000
+      internalID: -77696594905783144
       vertices: []
       indices: 
       edges: []
@@ -151,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_NoteBook_Frame01b_0: 8261743837782345347
+      ME_Singles_City_Props_32x32_Flowers_2_0: 3492565026226717600
+      ME_Singles_City_Props_32x32_Flowers_2_1: -2725455798162214139
+      ME_Singles_City_Props_32x32_Flowers_2_2: 2499976530555465014
+      ME_Singles_City_Props_32x32_Flowers_2_3: 8096903826087440700
+      ME_Singles_City_Props_32x32_Flowers_2_4: -77696594905783144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
