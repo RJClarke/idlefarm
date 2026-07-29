@@ -6,8 +6,28 @@
         <ui:VisualElement name="popup-container" class="popup-container">
             <ui:VisualElement name="header" class="header">
                 <ui:Label name="header-title" text="Inventory" class="header-title" />
+                <ui:VisualElement name="currency-strip" class="currency-strip">
+                    <ui:VisualElement class="cs-icon cs-icon--coins" />
+                    <ui:Label name="cs-coins" text="0" class="cs-value" />
+                    <ui:VisualElement class="cs-icon cs-icon--gems" />
+                    <ui:Label name="cs-gems" text="0" class="cs-value" />
+                    <ui:VisualElement class="cs-icon cs-icon--money" />
+                    <ui:Label name="cs-money" text="0" class="cs-value" />
+                </ui:VisualElement>
                 <ui:Button name="close-button" class="close-button" text="" />
             </ui:VisualElement>
+
+            <ui:VisualElement name="sell-zone" class="sell-zone">
+                <ui:VisualElement name="zone-icon" class="zone-icon zone-icon--empty" picking-mode="Ignore" />
+                <ui:Label name="zone-title" text="Tap an item to sell it" class="zone-title" />
+                <ui:VisualElement name="stack-row" class="stack-row">
+                    <ui:Button name="stack-1" text="x1" class="stack-btn" />
+                    <ui:Button name="stack-10" text="x10" class="stack-btn" />
+                    <ui:Button name="stack-all" text="All" class="stack-btn" />
+                </ui:VisualElement>
+                <ui:Button name="zone-confirm" text="Sell for Gold" class="zone-confirm" />
+            </ui:VisualElement>
+
             <ui:ScrollView name="inventory-list" class="inv-list" />
         </ui:VisualElement>
     </ui:VisualElement>

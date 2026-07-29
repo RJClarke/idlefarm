@@ -1,5 +1,5 @@
-/* Inventory overview — read-only list of every resource. Shares the tan/brown card chrome of
-   the other popups (Wood Rack, Research). */
+/* Inventory — held goods + a staging zone that sells any of them for Gold. Shares the tan/brown
+   card chrome of the other popups (Wood Rack, Research). */
 
 .popup-root {
     position: absolute;
@@ -20,8 +20,8 @@
 }
 
 .popup-container {
-    width: 82%;
-    max-width: 680px;
+    width: 92%;
+    max-width: 900px;
     min-width: 320px;
     background-color: rgb(179, 154, 110);
     border-color: rgb(90, 55, 20);
@@ -36,17 +36,40 @@
 
 .popup-root.open .popup-container { scale: 1 1; }
 
+/* ─── Header: title | currency strip | close ─── */
+
 .header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding-top: 18px; padding-bottom: 14px;
     padding-left: 24px; padding-right: 16px;
-    border-bottom-width: 2px;
-    border-bottom-color: rgba(90, 55, 20, 0.4);
+    border-bottom-width: 3px;
+    border-bottom-color: rgb(82, 50, 18);
 }
 
-.header-title { -unity-font-style: bold; font-size: 36px; color: rgb(54, 32, 14); }
+.header-title { -unity-font-style: bold; font-size: 36px; color: rgb(54, 32, 14); flex-shrink: 0; }
+
+.currency-strip {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-right: 16px;
+}
+
+.cs-icon {
+    width: 32px; height: 32px;
+    margin-left: 18px; margin-right: 6px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.cs-value { font-size: 24px; -unity-font-style: bold; color: rgb(54, 32, 14); }
+
+.cs-icon--coins { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Coin.png"); }
+.cs-icon--gems  { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Gem.png"); }
+.cs-icon--money { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Cash.png"); }
 
 .close-button {
     width: 56px; height: 56px;
@@ -56,25 +79,156 @@
     border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;
     padding: 0;
     color: rgba(0, 0, 0, 0);
+    flex-shrink: 0;
 }
 .close-button:hover { opacity: 0.85; }
 
-/* ─── List ─── */
-.inv-list { flex-grow: 1; max-height: 640px; padding: 16px 22px 22px 22px; }
+/* ─── Sell zone (fixed, outside the ScrollView) ─── */
 
+/* Notebook paper page. All pack art is 14–46px, so every sprite here is 9-sliced; the slice
+   values were measured off the sprites (first repeating column/row) rather than eyeballed. */
+/* 400px, not 340: the contents measure ~356px (96 icon + 52 title + 82 stack row + 86 sell bar
+   + 40 padding), so the old height pushed the sell bar through the paper's bottom edge. */
+.sell-zone {
+    height: 400px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 28px 22px 28px;
+    margin: 12px 16px 14px 16px;
+    background-image: url("project://database/Assets/Sprites/UI/NoteBook/UI_NoteBook_Frame09a.png");
+    -unity-slice-left: 4;
+    -unity-slice-right: 5;
+    -unity-slice-top: 4;
+    -unity-slice-bottom: 5;
+    -unity-slice-scale: 1px;
+}
+
+.zone-icon {
+    width: 96px; height: 96px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.zone-icon--empty {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgThings/Crate_OpenEmpty.png");
+    opacity: 0.4;
+}
+
+.zone-title {
+    font-size: 30px;
+    -unity-font-style: bold;
+    color: rgb(54, 32, 14);
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+.stack-row {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Flat framed boxes, no raised 3D edge. Inactive is the dark-filled Frame05a; active is Frame04a,
+   the light variant from the same family — a light/dark swap reads instantly, whereas Frame04b
+   (dark maroon) sits at almost the same value as Frame05a and the two would blur together. */
+.stack-btn {
+    width: 150px;
+    height: 72px;
+    margin-left: 7px; margin-right: 7px;
+    font-size: 27px;
+    -unity-font-style: bold;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/NoteBook/UI_NoteBook_Frame05a.png");
+    -unity-slice-left: 3;
+    -unity-slice-right: 3;
+    -unity-slice-top: 5;
+    -unity-slice-bottom: 3;
+    -unity-slice-scale: 1px;
+    color: rgb(232, 216, 192);
+    border-width: 0;
+    padding: 0;
+}
+
+/* Active: light fill, dark ink. */
+.stack-btn--active {
+    background-image: url("project://database/Assets/Sprites/UI/NoteBook/UI_NoteBook_Frame04a.png");
+    -unity-slice-left: 4;
+    -unity-slice-right: 4;
+    -unity-slice-top: 4;
+    -unity-slice-bottom: 5;
+    color: rgb(58, 34, 18);
+}
+
+.stack-btn:disabled { opacity: 0.4; }
+
+/* Flat solid peach bar — the primary action, prominent without the raised 3D lip. */
+.zone-confirm {
+    width: 100%;
+    max-width: 560px;
+    height: 86px;
+    font-size: 30px;
+    -unity-font-style: bold;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/NoteBook/UI_NoteBook_Frame13a.png");
+    -unity-slice-left: 3;
+    -unity-slice-right: 3;
+    -unity-slice-top: 3;
+    -unity-slice-bottom: 3;
+    -unity-slice-scale: 1px;
+    color: rgb(58, 34, 18);
+    border-width: 0;
+    padding: 0;
+}
+
+.zone-confirm:disabled { opacity: 0.4; }
+
+/* ─── List ─── */
+
+/* Divider between the sell page and the item list — matches the header rule below the title. */
+.inv-list {
+    flex-grow: 1;
+    max-height: 900px;
+    padding: 16px 22px 22px 22px;
+    border-top-width: 3px;
+    border-top-color: rgb(82, 50, 18);
+}
+
+/* Unselected row: soft peach outline, sits back. */
 .inv-row {
     flex-direction: row;
     align-items: center;
-    padding: 12px 16px;
-    margin-bottom: 10px;
-    background-color: rgb(255, 250, 238);
-    border-radius: 14px;
-    border-left-width: 5px;
-    border-left-color: rgba(90, 55, 20, 0.35);
+    min-height: 84px;
+    padding: 10px 30px;
+    margin-bottom: 12px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/NoteBook/UI_NoteBook_Frame01b.png");
+    -unity-slice-left: 5;
+    -unity-slice-right: 5;
+    -unity-slice-top: 4;
+    -unity-slice-bottom: 5;
+    -unity-slice-scale: 1px;
+    border-width: 0;
+}
+
+.inv-row--sellable:hover { -unity-background-image-tint-color: rgb(255, 244, 226); }
+
+/* A type the player holds none of: listed so the full set is visible, but clearly absent. */
+.inv-row--empty { opacity: 0.45; }
+
+/* Selected row: hard black outline + drop shadow — the "Plank" state from the pack's own
+   inventory mockup. Same sprite family and identical dimensions as .inv-row, so selecting a
+   row changes only its outline weight; nothing shifts or resizes. */
+.inv-row--staged {
+    background-image: url("project://database/Assets/Sprites/UI/NoteBook/UI_NoteBook_Frame01a.png");
+    -unity-slice-left: 5;
+    -unity-slice-right: 5;
+    -unity-slice-top: 4;
+    -unity-slice-bottom: 5;
 }
 
 .inv-icon {
-    width: 40px; height: 40px;
+    width: 48px; height: 48px;
     margin-right: 14px;
     flex-shrink: 0;
     -unity-background-scale-mode: scale-to-fit;
@@ -89,15 +243,6 @@
     -unity-text-align: middle-right;
 }
 
-/* Per-resource icons (shared with the top bar / Wood Rack). */
-.inv-icon--coins   { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Coin.png"); }
-.inv-icon--gems    { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Gem.png"); }
-.inv-icon--money   { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Cash.png"); }
-.inv-icon--compost { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Compost.png"); }
-.inv-icon--wood    { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgResources/Log.png"); }
-
-/* ── Mega-list sell rows (Reputation Phase 1) ─────────────────────────── */
-
 .inv-section {
     -unity-font-style: bold;
     font-size: 26px;
@@ -106,49 +251,63 @@
     margin-bottom: 4px;
 }
 
-.inv-sell-btn {
-    width: 90px;
-    height: 44px;
-    margin-left: 10px;
-    background-color: rgb(122, 92, 55);
-    color: rgb(245, 235, 215);
-    border-radius: 8px;
+/* ─── Per-item icons ─── */
+
+.inv-icon--compost    { background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Compost.png"); }
+.inv-icon--wood       { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgResources/Log.png"); }
+.inv-icon--eggs       { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Food/Egg.png"); }
+.inv-icon--jars       { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgThings/Jug_Orange.png"); }
+.inv-icon--fish-perch { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_Perch.png"); }
+.inv-icon--fish-bass  { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_BassGreen.png"); }
+.inv-icon--fish-pike  { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_GreenPike.png"); }
+
+/* No smoked-fish art in the packs — an amber tint over the raw fish reads as cured. */
+.inv-icon--smoked { -unity-background-image-tint-color: rgb(188, 132, 74); }
+
+/* ─── Scrollbar (notebook handle) ───
+   UITK builds the scroller from nested parts; hide the arrow buttons, drop the tracker, and
+   dress only the dragger. Pattern mirrors AnimalPopupUITK. */
+
+.inv-list .unity-scroller--vertical {
+    width: 22px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-left: 6px;
+}
+
+.inv-list .unity-scroller--vertical .unity-scroller__low-button,
+.inv-list .unity-scroller--vertical .unity-scroller__high-button {
+    display: none;
+}
+
+/* Track: BarFill01a is 14x2, so there is no border to preserve — stretch it flat. */
+.inv-list .unity-scroller--vertical .unity-base-slider__tracker {
+    width: 14px;
+    left: 4px;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/NoteBook/UI_NoteBook_BarFill01a.png");
+    -unity-slice-scale: 1px;
     border-width: 0;
+    border-radius: 0;
+    margin: 0;
 }
 
-.inv-sell-btn:disabled {
-    opacity: 0.35;
-}
-
-.inv-sell-panel {
-    background-color: rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 6px;
-}
-
-.inv-quick-row {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 6px;
-}
-
-.inv-quick-btn {
-    flex-grow: 1;
-    height: 40px;
-    margin-right: 6px;
-    background-color: rgb(160, 132, 92);
-    color: rgb(245, 235, 215);
-    border-radius: 8px;
+/* Draggable handle. min-height matters: without it UITK collapses the dragger to a sliver on
+   long lists and there is nothing left to grab — which is why it looked missing before. */
+.inv-list .unity-scroller--vertical .unity-base-slider__dragger {
+    width: 22px;
+    left: 0;
+    min-height: 64px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/NoteBook/UI_NoteBook_BarHandle01a.png");
+    -unity-slice-left: 1;
+    -unity-slice-right: 1;
+    -unity-slice-top: 1;
+    -unity-slice-bottom: 1;
+    -unity-slice-scale: 1px;
     border-width: 0;
-}
-
-.inv-confirm-btn {
-    height: 48px;
-    margin-top: 8px;
-    background-color: rgb(96, 128, 66);
-    color: rgb(245, 235, 215);
-    border-radius: 8px;
-    border-width: 0;
-    -unity-font-style: bold;
+    border-radius: 0;
+    margin: 0;
 }

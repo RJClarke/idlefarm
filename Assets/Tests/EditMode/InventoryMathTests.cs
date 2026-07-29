@@ -47,4 +47,37 @@ public class InventoryMathTests
         Assert.AreEqual(0, stored);
         Assert.AreEqual(0, overflow);
     }
+
+    [Test]
+    public void JarStackValue_SumsLeadingJars()
+    {
+        var values = new[] { 100, 250, 40, 900 };
+        Assert.AreEqual(0,   InventoryMath.JarStackValue(values, 0));
+        Assert.AreEqual(100, InventoryMath.JarStackValue(values, 1));
+        Assert.AreEqual(350, InventoryMath.JarStackValue(values, 2));
+        Assert.AreEqual(390, InventoryMath.JarStackValue(values, 3));
+    }
+
+    [Test]
+    public void JarStackValue_ClampsAboveCount()
+    {
+        var values = new[] { 100, 250, 40 };
+        Assert.AreEqual(390, InventoryMath.JarStackValue(values, 99));
+    }
+
+    [Test]
+    public void JarStackValue_NonPositiveOrEmptyPaysNothing()
+    {
+        var values = new[] { 100, 250 };
+        Assert.AreEqual(0, InventoryMath.JarStackValue(values, -5));
+        Assert.AreEqual(0, InventoryMath.JarStackValue(new int[0], 3));
+        Assert.AreEqual(0, InventoryMath.JarStackValue(null, 3));
+    }
+
+    [Test]
+    public void JarStackValue_IgnoresNegativeJarValues()
+    {
+        var values = new[] { 100, -50, 25 };
+        Assert.AreEqual(125, InventoryMath.JarStackValue(values, 3));
+    }
 }

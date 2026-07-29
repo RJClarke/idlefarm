@@ -245,6 +245,11 @@ public class CanneryManager : MonoBehaviour
 
     public int ReadyJarCount => state.readyJars.Count;
 
+    /// <summary>Coin value of the ready jar at <paramref name="index"/>, or 0 if out of range.
+    /// Lets the Inventory preview a multi-jar sale without exposing the mutable jar list.</summary>
+    public int JarValueAt(int index)
+        => index < 0 || index >= state.readyJars.Count ? 0 : state.readyJars[index].value;
+
     public bool TrySellJar(int index)
     {
         var cm = CurrencyManager.Instance;
