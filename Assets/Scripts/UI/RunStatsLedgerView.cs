@@ -44,10 +44,16 @@ public static class RunStatsLedgerView
         }
 
         // Animals — small sprite icon rows; live full view only.
-        if (!compact && (d.hasDog || d.hasCow))
+        if (!compact && (d.hasDefender || d.hasCow))
         {
             var animals = Section(container, "Animals");
-            if (d.hasDog) IconRow(animals, d.dogSprite, "Dog — deer chased off", d.deerChasedByDog.ToString());
+            if (d.hasDefender)
+            {
+                IconRow(animals, d.defenderSprite, d.defenderName + " — deer chased off", d.deerChasedByDefender.ToString());
+                // Only the goose goes after crows; hide the line for defenders that never do.
+                if (d.crowsChasedByDefender > 0)
+                    IconRow(animals, d.defenderSprite, d.defenderName + " — crows chased off", d.crowsChasedByDefender.ToString());
+            }
             if (d.hasCow)
             {
                 IconRow(animals, d.cowSprite, "Cow — plants eaten", d.plantsEatenByCow.ToString());

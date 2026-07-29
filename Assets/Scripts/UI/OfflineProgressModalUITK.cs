@@ -436,6 +436,7 @@ public class OfflineProgressModalUITK : MonoBehaviour
         }
 
         bool anyActive = false;
+        bool anyChanged = false;
         for (int i = 0; i < report.slots.Length; i++)
         {
             var sp = report.slots[i];
@@ -443,21 +444,16 @@ public class OfflineProgressModalUITK : MonoBehaviour
             anyActive = true;
 
             int delta = sp.levelAfter - sp.levelBefore;
+            if (delta <= 0) continue; // no-change slots are clutter — only surface what actually moved
+
+            anyChanged = true;
             var row = new VisualElement(); row.AddToClassList("research-row");
             var label = new Label(sp.displayName); label.AddToClassList("research-row__label");
             var value = new Label();
             value.AddToClassList("research-row__value");
-            if (delta > 0)
-            {
-                // Start at zero-delta; the animation counts up.
-                value.text = $"{sp.levelBefore} → {sp.levelBefore}  <color={GainGreenHex}>(+0)</color>";
-                researchTargets.Add((value, delta, sp.levelAfter));
-            }
-            else
-            {
-                value.text = $"{sp.levelAfter}  (no change)";
-                value.AddToClassList("research-row__value--none");
-            }
+            // Start at zero-delta; the animation counts up.
+            value.text = $"{sp.levelBefore} → {sp.levelBefore}  <color={GainGreenHex}>(+0)</color>";
+            researchTargets.Add((value, delta, sp.levelAfter));
             row.Add(label); row.Add(value);
             researchSection.Add(row);
         }
@@ -465,6 +461,11 @@ public class OfflineProgressModalUITK : MonoBehaviour
         if (!anyActive)
         {
             var none = new Label("No active research."); none.AddToClassList("research-row__label");
+            researchSection.Add(none);
+        }
+        else if (!anyChanged)
+        {
+            var none = new Label("No research progress while away."); none.AddToClassList("research-row__label");
             researchSection.Add(none);
         }
     }

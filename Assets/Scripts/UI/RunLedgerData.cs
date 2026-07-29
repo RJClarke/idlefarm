@@ -41,7 +41,9 @@ public class RunLedgerData
     public readonly List<LedgerZoneCard> zoneCards = new List<LedgerZoneCard>();
 
     // Animals (live only; offline never simulates them).
-    public bool hasDog; public int deerChasedByDog; public Sprite dogSprite;
+    // Whichever defender animal was equipped (dog chases deer; goose chases deer AND crows).
+    public bool hasDefender; public int deerChasedByDefender, crowsChasedByDefender;
+    public Sprite defenderSprite; public string defenderName;
     public bool hasCow; public int plantsEatenByCow, compostFromCow; public Sprite cowSprite;
 
     /// <summary>Build from the just-ended live run (RunStats + RunManager).</summary>
@@ -97,18 +99,26 @@ public class RunLedgerData
 
             // Animals: show the equipped animal even at zero, plus anything that recorded counts.
             string equippedAnimal = AnimalManager.Instance != null ? AnimalManager.Instance.GetEquippedAnimalID() : null;
-            d.deerChasedByDog = rs.DeerChasedByDog;
-            d.hasDog = rs.DeerChasedByDog > 0 || equippedAnimal == "farm_dog";
+            d.deerChasedByDefender = rs.DeerChasedByDog;
+            d.crowsChasedByDefender = rs.CrowsChasedByAnimal;
+            AnimalData defender = AnimalManager.Instance != null ? AnimalManager.Instance.GetEquippedAnimal() : null;
+            bool defenderEquipped = defender != null && defender.abilityType.HasFlag(AnimalAbilityType.RunDefender);
+            d.hasDefender = defenderEquipped || rs.DeerChasedByDog > 0 || rs.CrowsChasedByAnimal > 0;
+            d.defenderName = defenderEquipped ? defender.displayName : "Dog";
+            d.defenderSprite = defenderEquipped ? defender.iconSprite : null;
             d.plantsEatenByCow = rs.PlantsEatenByCow;
             d.compostFromCow = rs.CompostFromCow;
             d.hasCow = rs.PlantsEatenByCow > 0 || rs.CompostFromCow > 0 || equippedAnimal == "cow";
             if (d.compostGained == 0) d.compostGained = rs.CompostFromCow; // Economy line, live path
             if (AnimalManager.Instance != null)
             {
-                var dog = AnimalManager.Instance.GetAnimalData("farm_dog");
                 var cow = AnimalManager.Instance.GetAnimalData("cow");
-                d.dogSprite = dog != null ? dog.iconSprite : null;
                 d.cowSprite = cow != null ? cow.iconSprite : null;
+                if (d.defenderSprite == null)
+                {
+                    var dog = AnimalManager.Instance.GetAnimalData("farm_dog");
+                    d.defenderSprite = dog != null ? dog.iconSprite : null;
+                }
             }
         }
         return d;

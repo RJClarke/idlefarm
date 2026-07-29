@@ -144,7 +144,8 @@ public class ReputationBarUITK : MonoBehaviour
         barRoot.style.position = Position.Absolute;
         // Anchored to the bottom of the Market view — at the top it competed with the currency HUD
         // and got lost. Sits above the bottom nav, below where catch toasts rise (bottom: 190).
-        barRoot.style.bottom = 120;
+        // Lowered from 120 so its top edge clears the bottom-right "Back to Farm" button.
+        barRoot.style.bottom = 85;
         barRoot.style.left = Length.Percent(10);
         barRoot.style.right = Length.Percent(10);
         barRoot.style.height = 64;

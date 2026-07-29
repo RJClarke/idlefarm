@@ -78,6 +78,13 @@ public class ReputationCore
         return true;
     }
 
+    /// <summary>Dev-tools only: grants unspent points outside the normal rep-bar earn path.</summary>
+    public void DevAddUnspentPoints(int amount)
+    {
+        if (amount <= 0) return;
+        UnspentPoints += amount;
+    }
+
     public int NextSkipCost() => ReputationMath.SkipCost(ConsecutiveSkips);
 
     public void Import(int barProgress, int pointsEarned, int unspentPoints, int consecutiveSkips,

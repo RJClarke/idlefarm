@@ -37,10 +37,6 @@ public class CameraPanController : MonoBehaviour
     [SerializeField] private float panDuration = 0.55f;
     [SerializeField] private LeanTweenType easeType = LeanTweenType.easeInOutQuad;
 
-    [Header("Behavior")]
-    [Tooltip("If true, pans are blocked while a run is active.")]
-    [SerializeField] private bool blockDuringRun = true;
-
     public event Action<Location> OnPanStarted;
     public event Action<Location> OnPanCompleted;
 
@@ -85,14 +81,12 @@ public class CameraPanController : MonoBehaviour
     public void PanTo(Location target)
     {
         if (target == CurrentLocation && !IsPanning) return;
-        // During a run, keep Farm/Greenhouse reachable (so research can be changed mid-run) but
-        // block Market — only the Market trip is disruptive to an in-progress run.
-        if (blockDuringRun && target == Location.Market
-            && RunManager.Instance != null && RunManager.Instance.IsRunActive)
-        {
-            Debug.LogWarning("[CameraPanController] Pan to Market blocked: run is active.");
-            return;
-        }
+
+        // Every location is reachable during a run, including the Market: you can check Reputation,
+        // work the town board, deposit goods and manage Carpenter tools without ending the run.
+        // Nothing sold at the Market retroactively edits an active run, and the run clock keeps
+        // ticking while you are away. Threats stay farm-relative (see AnimalThreat's edge helpers)
+        // so a wave spawned during a shopping trip can neither cross town nor arrive late.
 
         LocationOffset entry = GetEntry(target);
         Vector2 offset = entry != null ? entry.offset : Vector2.zero;

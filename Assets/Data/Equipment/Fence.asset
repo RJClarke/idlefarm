@@ -16,7 +16,7 @@ MonoBehaviour:
   displayName: Fence
   equipmentType: 1
   icon: "\U0001F9F1"
-  iconSprite: {fileID: 6066187685456290173, guid: 2b8106ddf5536004b9870c031d063c1c, type: 3}
+  iconSprite: {fileID: 21300000, guid: 013a8846e3b1467ca4195bd0a1aadea3, type: 3}
   description: L-shaped fence along zone edges. Repels deer that approach.
   unlockID: fence_unlock
   baseCooldownSeconds: 45

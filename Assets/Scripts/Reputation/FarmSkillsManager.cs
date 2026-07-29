@@ -62,6 +62,15 @@ public class FarmSkillsManager : MonoBehaviour
         return true;
     }
 
+    /// <summary>Dev-tools only: wipes all 7 tracks and refunds the spent points back to the unspent pool.</summary>
+    public void DevResetAllSkills()
+    {
+        int refund = core.ResetAll();
+        if (refund > 0 && ReputationManager.Instance != null) ReputationManager.Instance.DevAddPoints(refund);
+        Debug.Log($"[FarmSkills] Dev reset — refunded {refund} points.");
+        OnChanged?.Invoke();
+    }
+
     public void CaptureTo(GameData d) => d.farmSkillLevels = core.Export();
     public void LoadFrom(GameData d)
     {

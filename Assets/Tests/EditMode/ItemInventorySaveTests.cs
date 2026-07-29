@@ -85,6 +85,38 @@ public class ItemInventorySaveTests
         Assert.AreEqual(0, inv.Eggs);
     }
 
+    // The Collect/Sell control sets its mode explicitly per segment rather than inverting the flag,
+    // so that tapping the already-active segment is a no-op. Guards against a regression to
+    // flip-based toggling, which would silently redirect farm output on a repeat tap.
+    [Test]
+    public void CollectMode_RepeatedAssignment_IsIdempotent()
+    {
+        var inv = NewCore();
+
+        inv.CollectMode = true;
+        inv.CollectMode = true;
+        Assert.IsTrue(inv.CollectMode, "Re-selecting Collect must stay on, not flip off.");
+
+        inv.CollectMode = false;
+        inv.CollectMode = false;
+        Assert.IsFalse(inv.CollectMode, "Re-selecting Sell must stay off, not flip on.");
+    }
+
+    [Test]
+    public void ExportImport_RoundTripsCollectModeOff()
+    {
+        var inv = NewCore();
+        inv.CollectMode = false;
+        inv.AddEggs(2, out _);
+
+        var inv2 = NewCore();
+        inv2.CollectMode = true; // start opposite so a no-op Import would be caught
+        inv2.Import(inv.ExportCrops(), inv.Eggs, inv.CollectMode);
+
+        Assert.IsFalse(inv2.CollectMode);
+        Assert.AreEqual(2, inv2.Eggs);
+    }
+
     [Test]
     public void ExportCrops_OmitsEmptyStacks()
     {

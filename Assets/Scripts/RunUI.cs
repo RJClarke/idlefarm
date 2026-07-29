@@ -38,7 +38,6 @@ public class RunUI : MonoBehaviour
             equipFieldsButton.onClick.AddListener(OnEquipFieldsClicked);
 
         BuildBackToFarmButton();
-        BuildCollectToggle();
         BuildGameSpeedStepper();
 
         // Re-assert button visibility the instant a pan starts/ends. LocationModeController force-
@@ -125,8 +124,15 @@ public class RunUI : MonoBehaviour
         // non-farm nature location (Greenhouse/Lake/Woods). One button always brings you home.
         if (backToFarmButton != null) backToFarmButton.gameObject.SetActive(awayNature);
 
-        // Collect/Sell toggle: only meaningful while harvesting, so in-run at the Farm only.
-        if (collectToggleBtn != null) collectToggleBtn.gameObject.SetActive(inRun && atFarm);
+        // The Collect/Sell toggle now lives in the top-left lockup and owns its own visibility;
+        // see CollectModeToggle.
+
+        // Run timer (and the Game Speed stepper, which is parented to it) stay visible in town while
+        // a run is active — you can shop mid-run now, and you still need to see the clock and be able
+        // to change speed. Idle at the Market it would only read "No Active Run", so it stays hidden
+        // there. Every other location is unaffected. RunTimerText was removed from
+        // LocationModeController's hideAtMarketByName list so this is the single owner of that state.
+        if (runTimerText != null) runTimerText.gameObject.SetActive(inRun || !atMarket);
     }
 
     private CameraPanController GetPanController()
@@ -207,62 +213,6 @@ public class RunUI : MonoBehaviour
     {
         CameraPanController pan = GetPanController();
         if (pan != null) pan.PanTo(CameraPanController.Location.Farm);
-    }
-
-    // ── Collect/Sell toggle (Reputation Phase 1) ──────────────────────────
-    private Button collectToggleBtn;
-    private TextMeshProUGUI collectToggleLabel;
-    private Image collectToggleBg;
-
-    private void BuildCollectToggle()
-    {
-        if (startRunButton == null) return;
-        RectTransform startRT = startRunButton.GetComponent<RectTransform>();
-
-        GameObject clone = Instantiate(startRunButton.gameObject, startRT.parent);
-        clone.name = "CollectToggleButton";
-
-        collectToggleBtn = clone.GetComponent<Button>();
-        collectToggleBtn.onClick.RemoveAllListeners();
-        collectToggleBtn.onClick.AddListener(OnCollectToggleClicked);
-        collectToggleBg = clone.GetComponent<Image>();
-        collectToggleLabel = clone.GetComponentInChildren<TextMeshProUGUI>(true);
-
-        // Slimmer than the Start CTA, same anchor slot (free during an in-run Farm view).
-        RectTransform rt = clone.GetComponent<RectTransform>();
-        rt.anchorMin = startRT.anchorMin;
-        rt.anchorMax = startRT.anchorMax;
-        rt.pivot     = startRT.pivot;
-        rt.sizeDelta = new Vector2(startRT.sizeDelta.x * 0.6f, startRT.sizeDelta.y * 0.8f);
-        rt.anchoredPosition = startRT.anchoredPosition;
-
-        RefreshCollectToggleVisual();
-        clone.SetActive(false);
-
-        if (ItemInventoryManager.Instance != null)
-            ItemInventoryManager.Instance.OnCollectModeChanged += OnCollectModeChanged;
-    }
-
-    private void OnCollectToggleClicked()
-    {
-        if (ItemInventoryManager.Instance == null) return;
-        ItemInventoryManager.Instance.CollectMode = !ItemInventoryManager.Instance.CollectMode;
-    }
-
-    private void OnCollectModeChanged(bool _) => RefreshCollectToggleVisual();
-
-    private void RefreshCollectToggleVisual()
-    {
-        bool collect = ItemInventoryManager.Instance != null && ItemInventoryManager.Instance.CollectMode;
-        if (collectToggleLabel != null)
-        {
-            collectToggleLabel.text = collect ? "Collecting" : "Auto-Sell";
-            collectToggleLabel.alignment = TextAlignmentOptions.Center;
-        }
-        if (collectToggleBg != null)
-            collectToggleBg.color = collect
-                ? new Color(0.36f, 0.62f, 0.32f)   // green: banking items
-                : new Color(0.85f, 0.72f, 0.25f);  // yellow: cash mode
     }
 
     // ── Game Speed Stepper (under the run timer) ──────────────────────────
@@ -487,7 +437,5 @@ public class RunUI : MonoBehaviour
             endRunButton.onClick.RemoveListener(OnEndRunButtonClicked);
         if (equipFieldsButton != null)
             equipFieldsButton.onClick.RemoveListener(OnEquipFieldsClicked);
-        if (ItemInventoryManager.Instance != null)
-            ItemInventoryManager.Instance.OnCollectModeChanged -= OnCollectModeChanged;
     }
 }

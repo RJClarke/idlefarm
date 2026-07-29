@@ -33,7 +33,9 @@ public class RunStats : MonoBehaviour
     public int MoneyEarned { get; private set; }
     public int CoinsSaved { get; private set; }
     public int CoinsBanked { get; private set; }
+    // "ByDog" is historical — any equipped defender animal (dog, goose) feeds these.
     public int DeerChasedByDog { get; private set; }
+    public int CrowsChasedByAnimal { get; private set; }
     public int PlantsEatenByCow { get; private set; }
     public int CompostFromCow { get; private set; }
 
@@ -96,6 +98,7 @@ public class RunStats : MonoBehaviour
         CoinsSaved = 0;
         CoinsBanked = 0;
         DeerChasedByDog = 0;
+        CrowsChasedByAnimal = 0;
         PlantsEatenByCow = 0;
         CompostFromCow = 0;
         zoneStats.Clear();
@@ -153,7 +156,9 @@ public class RunStats : MonoBehaviour
     }
 
     public void AddSprinklerWatered(int zoneId) => Zone(zoneId).wateredBySprinkler++;
-    public void AddDeerChasedByDog() => DeerChasedByDog++;
+    public void AddDeerChasedByAnimal() => DeerChasedByDog++;
+    public void AddDeerChasedByDog() => AddDeerChasedByAnimal(); // legacy alias
+    public void AddCrowChasedByAnimal() => CrowsChasedByAnimal++;
 
     public void AddCowEat(int compostLump)
     {

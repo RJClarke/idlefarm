@@ -72,6 +72,13 @@ public class ReputationManager : MonoBehaviour
         return ok;
     }
 
+    /// <summary>Dev-tools only: grants Barn skill points outside the normal rep-bar earn path.</summary>
+    public void DevAddPoints(int amount)
+    {
+        core.DevAddUnspentPoints(amount);
+        OnChanged?.Invoke();
+    }
+
     public bool TrySkip(int slot)
     {
         DeliveryRequest request = core.GetSlotRequest(slot);

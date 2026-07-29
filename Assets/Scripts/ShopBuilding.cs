@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(BoxCollider2D))]
 public class ShopBuilding : MonoBehaviour
 {
-    public enum ShopType { Plants, Equipment, Carpenter, Greenhouse }
+    public enum ShopType { Plants, Equipment, Carpenter, Greenhouse, TownBoard }
 
     [Header("Identity")]
     [SerializeField] private ShopType shopType = ShopType.Plants;
@@ -124,10 +124,10 @@ public class ShopBuilding : MonoBehaviour
 
     private bool CanInteract()
     {
-        // Mid-run, most shops are off-limits — but the Greenhouse (Research) stays open so you can
-        // manage research while a run is going.
-        bool inRun = RunManager.Instance != null && RunManager.Instance.IsRunActive;
-        if (inRun && shopType != ShopType.Greenhouse) return false;
+        // Every shop stays open during a run — this used to carve out the Greenhouse (Research) as
+        // the sole exception, but nothing sold here retroactively edits an active run: crop unlocks
+        // only matter at seed selection, and EquipmentManager defers its zone rebuild while a run is
+        // active. Location and pan state are the only gates.
         CameraPanController pan = Camera.main != null ? Camera.main.GetComponent<CameraPanController>() : null;
         if (pan == null) return true;
         return !pan.IsPanning && pan.CurrentLocation == requiredLocation;
@@ -148,6 +148,11 @@ public class ShopBuilding : MonoBehaviour
                 break;
             case ShopType.Carpenter:
                 if (CarpenterPopupUITK.Instance != null) { CarpenterPopupUITK.Instance.Open(); return; }
+                break;
+            case ShopType.TownBoard:
+                // The Town Message Board opens the same Town Requests / Reputation popup that tapping
+                // the always-on rep bar does.
+                if (TownRequestsPopupUITK.Instance != null) { TownRequestsPopupUITK.Instance.Open(); return; }
                 break;
         }
         if (MarketPopupUITK.Instance != null)

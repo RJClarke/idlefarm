@@ -89,7 +89,7 @@ public class EggClaimButton : MonoBehaviour
     private void UpdateVisibility()
     {
         AnimalData equipped = AnimalManager.Instance?.GetEquippedAnimal();
-        bool showButton = equipped != null && equipped.abilityType == AnimalAbilityType.PassiveTimer && equipped.rewardCoins > 0;
+        bool showButton = equipped != null && equipped.abilityType.HasFlag(AnimalAbilityType.PassiveTimer) && equipped.rewardCoins > 0;
         gameObject.SetActive(showButton);
 
         if (showButton)

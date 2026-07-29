@@ -3,9 +3,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Map nav button for the Market. Hidden while a run is active (the Market trip is disruptive
-/// mid-run) AND while at the Market itself — a cloned "Back to Farm →" twin, anchored bottom-right
-/// at the same height, owns the return trip.
+/// Map nav button for the Market. Hidden only while at the Market itself — a cloned "Back to Farm →"
+/// twin, anchored bottom-right at the same height, owns the return trip.
+///
+/// The Market is reachable DURING a run so you can check Reputation, work the town board, deposit
+/// goods, and manage Carpenter tools without ending the run. Nothing sold there retroactively edits
+/// an active run: crop unlocks only matter at seed selection, and EquipmentManager defers its zone
+/// rebuild while a run is active, so gear lands next run. The run clock keeps ticking while you shop.
 /// </summary>
 public class MarketNavButton : MapNavButton
 {
@@ -25,8 +29,7 @@ public class MarketNavButton : MapNavButton
     protected override bool TogglesBackToFarm => false;
 
     protected override bool ShouldHide(CameraPanController.Location current)
-        => (RunManager.Instance != null && RunManager.Instance.IsRunActive)
-           || current == CameraPanController.Location.Market;
+        => current == CameraPanController.Location.Market;
 
     protected override void Start()
     {
@@ -36,32 +39,18 @@ public class MarketNavButton : MapNavButton
         RefreshBackVisibility(panController.CurrentLocation);
     }
 
+    // No run subscriptions: visibility depends only on location now that the Market stays open
+    // mid-run, so there is nothing for OnRunStarted/OnRunEnded to re-sync.
     protected override void SubscribeExtra()
     {
-        if (RunManager.Instance != null)
-        {
-            RunManager.Instance.OnRunStarted += OnRunChanged;
-            RunManager.Instance.OnRunEnded   += OnRunChanged;
-
-            // Resume race: SaveManager.ResumeRun fires OnRunStarted during load, possibly before
-            // we subscribed - re-sync visibility so the button state matches the resumed run.
-            if (RunManager.Instance.IsRunActive) OnRunChanged();
-        }
         // Swap the pair at pan START, mirroring how this button hides itself.
         if (panController != null) panController.OnPanStarted += RefreshBackVisibility;
     }
 
     protected override void UnsubscribeExtra()
     {
-        if (RunManager.Instance != null)
-        {
-            RunManager.Instance.OnRunStarted -= OnRunChanged;
-            RunManager.Instance.OnRunEnded   -= OnRunChanged;
-        }
         if (panController != null) panController.OnPanStarted -= RefreshBackVisibility;
     }
-
-    private void OnRunChanged() => RefreshVisibility();
 
     /// <summary>
     /// Clone this button into a "Back to Farm →" twin so it inherits the exact nav-button style,

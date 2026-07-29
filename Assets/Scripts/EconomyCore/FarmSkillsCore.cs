@@ -26,6 +26,14 @@ public class FarmSkillsCore
         return true;
     }
 
+    /// <summary>Dev-tools only: wipes every track back to 0. Returns the total levels that were cleared (for point refund).</summary>
+    public int ResetAll()
+    {
+        int refund = TotalLevels;
+        System.Array.Clear(levels, 0, levels.Length);
+        return refund;
+    }
+
     public void Import(int[] source)
     {
         for (int i = 0; i < levels.Length; i++)
