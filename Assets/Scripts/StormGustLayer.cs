@@ -24,9 +24,18 @@ public class StormGustLayer
     private WeatherData data;
     private readonly List<Gust> gusts = new List<Gust>();
 
+    /// <summary>Continuous -1..+1 wind direction from WeatherState (eases through 0 when it turns).</summary>
+    private float windDirSigned = -1f;
+
     public StormGustLayer(Transform parent) { this.parent = parent; }
 
-    public void Configure(WeatherData d) { data = d; }
+    public void Configure(WeatherData d)
+    {
+        data = d;
+        windDirSigned = (d != null && d.windDriftDirection < 0f) ? -1f : 1f;
+    }
+
+    public void SetWindDirection(float signed) => windDirSigned = Mathf.Clamp(signed, -1f, 1f);
 
     private bool HasSprites => data != null && data.windStreakSprites != null && data.windStreakSprites.Length > 0;
 
@@ -62,16 +71,16 @@ public class StormGustLayer
         go.transform.localScale = new Vector3(scale, scale, 1f);
 
         // Enter from the upwind edge; spread the burst out further upwind so they trail in over time.
-        float edge = AtmosphereMath.SpawnEdgeX(camX, camHalfW, 0f, data.windDriftDirection);
+        float edge = AtmosphereMath.SpawnEdgeX(camX, camHalfW, 0f, windDirSigned);
         float backOff = Random.Range(0f, camHalfW); // further off-screen on the upwind side
-        float x = edge + (data.windDriftDirection < 0f ? backOff : -backOff);
+        float x = edge + (windDirSigned < 0f ? backOff : -backOff);
         float y = camY + Random.Range(-camHalfH * 0.8f, camHalfH * 0.9f);
         go.transform.position = new Vector3(x, y, 0f);
 
         var sr = go.AddComponent<SpriteRenderer>();
         sr.sprite = s;
         sr.sortingOrder = GustSortingOrder;
-        sr.flipX = data.windDriftDirection > 0f; // streaks point the way the wind blows
+        sr.flipX = windDirSigned > 0f; // streaks point the way the wind blows
         sr.color = new Color(1f, 1f, 1f, data.windGustAlpha);
 
         float speed = data.windGustSpeed * Random.Range(0.8f, 1.2f);
@@ -81,7 +90,7 @@ public class StormGustLayer
             sr = sr,
             life = 0f,
             maxLife = data.windGustLife,
-            vx = AtmosphereMath.PatchVelocityX(speed, data.windDriftDirection)
+            vx = AtmosphereMath.PatchVelocityX(speed, windDirSigned)
         });
     }
 
@@ -106,7 +115,7 @@ public class StormGustLayer
 
             bool off = cam != null &&
                        AtmosphereMath.IsPatchOffscreen(pos.x, 0f, cam.transform.position.x,
-                                                       cam.orthographicSize * cam.aspect, data.windDriftDirection);
+                                                       cam.orthographicSize * cam.aspect, windDirSigned);
             if (g.life >= g.maxLife || off)
             {
                 SafeDestroy(g.go);

@@ -97,13 +97,24 @@ public class AtmosphereController : MonoBehaviour
             ? WeatherController.Instance.State
             : default;
 
+        // One live wind direction for every layer, so clouds, leaves, gusts and rain all agree.
+        float windDir = (Application.isPlaying && WeatherController.Instance != null)
+            ? s.windDirection
+            : weatherData.windDriftDirection;
+        shadows.SetWindDirection(windDir);
+        debris.SetWindDirection(windDir);
+        gusts.SetWindDirection(windDir);
+
+        // Leaves steer toward the rain's angle while it is raining — same number the rain uses.
+        float rainAngleDeg = WeatherMath.RainAngleDegrees(s.wind, s.severity, weatherData.rainMaxAngleDeg);
+
         Camera cam = Camera.main;
         if (weatherData.shadowStyle == ShadowStyle.TintDip)
             tintDip.Tick(wTime, s.cloudiness);
         else
             shadows.Tick(dt, s.cloudiness, s.wind, cam);
 
-        debris.Tick(s.wind, cam);
+        debris.Tick(s.wind, s.precipitation, rainAngleDeg, cam);
 
         // Storm wind gusts: a burst when severity ramps up, then occasional gusts for the early window.
         bool storming = s.severity > 0.15f;

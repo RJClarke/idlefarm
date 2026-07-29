@@ -69,12 +69,15 @@ public class ThreatWaveManager : MonoBehaviour
 
     private List<AnimalThreat> activeThreats = new List<AnimalThreat>();
 
-    // While the camera is parked at the Lake, threats are hidden (not despawned) so we never see
-    // deer/crows crossing the water on their way to the farm. They keep spawning, running, and
-    // eating — only their renderers are toggled, so the run economy is identical whether you fish
-    // or not. See SetThreatVisibility / OnCameraPan.
+    // While the camera is parked at the Lake or the Market, threats are hidden (not despawned) so we
+    // never see deer/crows out over the water or wandering through town. They keep spawning, running,
+    // and eating — only their renderers are toggled, so the run economy is identical whether you
+    // fish, shop, or stay home. See OnCameraPan.
+    //
+    // This is the second of two layers: AnimalThreat's edge helpers are farm-relative, so threats
+    // should never be positioned off-plot in the first place. This stays as a cheap guard.
     private CameraPanController panController;
-    private bool threatsHiddenForLake;
+    private bool threatsHidden;
 
     // ─────────────────────────────────────────────────────────────────────
     // Unity
@@ -99,12 +102,12 @@ public class ThreatWaveManager : MonoBehaviour
             if (RunManager.Instance.IsRunActive) OnRunStarted();
         }
 
-        // Hide threats while at the Lake (same pan hook LocationModeController uses).
+        // Hide threats while at the Lake or Market (same pan hook LocationModeController uses).
         panController = Camera.main != null ? Camera.main.GetComponent<CameraPanController>() : null;
         if (panController != null)
         {
             panController.OnPanStarted += OnCameraPan;
-            threatsHiddenForLake = panController.CurrentLocation == CameraPanController.Location.Lake;
+            threatsHidden = HidesThreats(panController.CurrentLocation);
         }
     }
 
@@ -119,17 +122,21 @@ public class ThreatWaveManager : MonoBehaviour
         if (panController != null) panController.OnPanStarted -= OnCameraPan;
     }
 
-    // Fired at the START of a pan (target location), so threats hide the instant a Lake trip begins
-    // and reappear the instant you head back — no flash of deer on the water.
+    private static bool HidesThreats(CameraPanController.Location loc)
+        => loc == CameraPanController.Location.Lake
+        || loc == CameraPanController.Location.Market;
+
+    // Fired at the START of a pan (target location), so threats hide the instant a Lake or Market
+    // trip begins and reappear the instant you head back — no flash of deer on the water or in town.
     private void OnCameraPan(CameraPanController.Location target)
     {
-        bool hide = target == CameraPanController.Location.Lake;
-        if (hide == threatsHiddenForLake) return;
-        threatsHiddenForLake = hide;
+        bool hide = HidesThreats(target);
+        if (hide == threatsHidden) return;
+        threatsHidden = hide;
 
         PruneDeadThreats();
         foreach (AnimalThreat t in activeThreats)
-            if (t != null) t.SetRenderersVisible(!threatsHiddenForLake);
+            if (t != null) t.SetRenderersVisible(!threatsHidden);
     }
 
     // ─────────────────────────────────────────────────────────────────────
@@ -262,8 +269,8 @@ public class ThreatWaveManager : MonoBehaviour
 
         activeThreats.Add(threat);
 
-        // Spawned while parked at the Lake? Start hidden so it never flashes crossing the water.
-        if (threatsHiddenForLake) threat.SetRenderersVisible(false);
+        // Spawned while parked at the Lake or Market? Start hidden so it never flashes off-plot.
+        if (threatsHidden) threat.SetRenderersVisible(false);
     }
 
     // ─────────────────────────────────────────────────────────────────────

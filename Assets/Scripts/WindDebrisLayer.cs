@@ -13,13 +13,19 @@ public class WindDebrisLayer
     private ParticleSystem.EmissionModule emission;
     private ParticleSystem.VelocityOverLifetimeModule vel;
 
+    /// <summary>Continuous -1..+1 wind direction from WeatherState (eases through 0 when it turns).</summary>
+    private float windDirSigned = -1f;
+
     public WindDebrisLayer(Transform parent) { this.parent = parent; }
 
     public void Configure(WeatherData d)
     {
         data = d;
+        windDirSigned = (d != null && d.windDriftDirection < 0f) ? -1f : 1f;
         if (ps == null) Build();
     }
+
+    public void SetWindDirection(float signed) => windDirSigned = Mathf.Clamp(signed, -1f, 1f);
 
     public void SetActive(bool active)
     {
@@ -28,28 +34,48 @@ public class WindDebrisLayer
         else { ps.Stop(); ps.Clear(); }
     }
 
-    public void Tick(float wind, Camera cam)
+    /// <summary>
+    /// Drive the leaves off the live weather. Leaves travel on a straight line at an angle from
+    /// vertical: they lie down toward horizontal as the wind rises, but while rain is falling they
+    /// swing back toward the rain's own angle (and slow down) so the two layers agree.
+    /// </summary>
+    public void Tick(float wind, float precipitation, float rainAngleDeg, Camera cam)
     {
         if (ps == null || data == null) return;
 
         wind = Mathf.Clamp01(wind);
         emission.rateOverTime = data.debrisBaseRate * wind * 4f; // ~0 at calm
 
-        // Use the SAME direction math as the cloud shadows so everything blows the same way
-        // off the global windDriftDirection (-1 left / +1 right).
-        float speedMag = 4f + 16f * wind;
-        float hSpeed = AtmosphereMath.PatchVelocityX(speedMag, data.windDriftDirection); // drifts WITH the wind
-        vel.x = new ParticleSystem.MinMaxCurve(hSpeed);
+        float speed = WeatherMath.DebrisSpeed(wind, precipitation,
+                                              data.debrisSpeedRange.x, data.debrisSpeedRange.y,
+                                              data.debrisRainSpeedMul);
+        float angleDeg = WeatherMath.DebrisAngleDegrees(wind, precipitation, rainAngleDeg,
+                                                        data.debrisCalmAngleDeg, data.debrisWindyAngleDeg,
+                                                        data.debrisRainMatchOffsetDeg);
+        float rad = angleDeg * Mathf.Deg2Rad;
+
+        // Continuous direction so a turning wind eases through a lull instead of snapping sides.
+        vel.x = new ParticleSystem.MinMaxCurve(AtmosphereMath.SignedDriftX(speed * Mathf.Sin(rad), windDirSigned));
+        vel.y = new ParticleSystem.MinMaxCurve(-speed * Mathf.Cos(rad));
 
         if (cam != null)
         {
+            // Leaves now fall as well as blow, so they stream in from above like the rain does
+            // (a horizontal line offset upwind and widened by the sideways drift) rather than from
+            // a vertical slot at the screen edge — that only ever covered a diagonal band.
             float camHalfH = cam.orthographicSize;
-            float camHalfW = cam.orthographicSize * cam.aspect;
-            float x = AtmosphereMath.SpawnEdgeX(camX: cam.transform.position.x, camHalfWidth: camHalfW,
-                                                patchHalfWidth: 1f, windDirX: data.windDriftDirection); // upwind edge
-            ps.transform.position = new Vector3(x, cam.transform.position.y, -1f);
+            float camW = cam.orthographicSize * cam.aspect * 2f;
+            Vector3 camPos = cam.transform.position;
+
+            float vx = vel.x.constant;
+            float avgLife = 5.5f; // matches startLifetime 4..7
+            float drift = Mathf.Abs(vx) * avgLife;
+            float dirSign = windDirSigned < 0f ? -1f : 1f;
+
+            ps.transform.position = new Vector3(camPos.x - dirSign * drift * 0.5f, camPos.y + camHalfH + 2f, -1f);
             var shape = ps.shape;
-            shape.scale = new Vector3(0.1f, camHalfH * 2f, 1f);
+            shape.shapeType = ParticleSystemShapeType.Rectangle;
+            shape.scale = new Vector3(camW + drift + 4f, 0.1f, 1f);
         }
     }
 
@@ -80,13 +106,13 @@ public class WindDebrisLayer
         var shape = ps.shape;
         shape.enabled = true;
         shape.shapeType = ParticleSystemShapeType.Rectangle;
-        shape.scale = new Vector3(0.1f, 20f, 1f);
+        shape.scale = new Vector3(40f, 0.1f, 1f); // Tick() corrects width + position every frame
 
         vel = ps.velocityOverLifetime;
         vel.enabled = true;
         vel.space = ParticleSystemSimulationSpace.World;
-        vel.x = new ParticleSystem.MinMaxCurve(-8f);
-        vel.y = new ParticleSystem.MinMaxCurve(-1f);
+        vel.x = new ParticleSystem.MinMaxCurve(-4f);
+        vel.y = new ParticleSystem.MinMaxCurve(-4f);
 
         var rot = ps.rotationOverLifetime; // leaves tumble
         rot.enabled = true;

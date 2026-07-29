@@ -129,10 +129,15 @@ public class WeatherData : ScriptableObject
     [Header("Rain Visual — Overlay")]
     [Tooltip("Target alpha of the dark screen overlay when rain is fully active.")]
     [Range(0f, 0.8f)]
-    public float rainOverlayMaxAlpha = 0.35f;
+    public float rainOverlayMaxAlpha = 0.5f;
+
+    [Tooltip("EXTRA overlay alpha added at full storm severity, on top of rainOverlayMaxAlpha. " +
+             "Makes late-run storms noticeably darker and more dramatic than the first one.")]
+    [Range(0f, 0.5f)]
+    public float rainOverlaySeverityBoost = 0.22f;
 
     [Tooltip("Color of the screen overlay during rain.")]
-    public Color rainOverlayColor = new Color(0.05f, 0.1f, 0.25f, 1f); // Dark blue
+    public Color rainOverlayColor = new Color(0.04f, 0.07f, 0.18f, 1f); // Dark blue
 
     [Tooltip("Seconds for the overlay to fade in at rain start.")]
     [Range(0.5f, 10f)]
@@ -178,8 +183,22 @@ public class WeatherData : ScriptableObject
     [Range(0f, 10f)]
     public float shadowBaseDriftSpeed = 1.2f;
 
-    [Tooltip("Drift direction sign: -1 = clouds blow left, +1 = blow right.")]
+    [Tooltip("Default drift direction sign: -1 = wind blows left, +1 = blows right. Used as the " +
+             "starting direction, and as the fixed direction when randomizeWindDirection is off.")]
     public float windDriftDirection = -1f;
+
+    [Tooltip("Re-roll the wind direction on each new casual mood and each storm, so weather does " +
+             "not always blow the same way.")]
+    public bool randomizeWindDirection = true;
+
+    [Tooltip("Chance a re-roll picks LEFT (-1). 0.5 = even split between left and right.")]
+    [Range(0f, 1f)]
+    public float windDirectionLeftChance = 0.5f;
+
+    [Tooltip("How fast the wind direction swings when it turns (per second). Lower = a longer, " +
+             "smoother lull as it comes about; the debris/clouds ease through it rather than snapping.")]
+    [Range(0.1f, 5f)]
+    public float windDirectionTurnSpeed = 0.5f;
 
     [Tooltip("Extra drift-speed multiplier at full storm intensity.")]
     [Range(0f, 4f)]
@@ -212,6 +231,28 @@ public class WeatherData : ScriptableObject
     [Tooltip("Extra emission multiplier at full storm intensity.")]
     [Range(0f, 6f)]
     public float debrisStormRateMul = 3f;
+
+    [Tooltip("Leaf travel speed (world units/sec): x = calm air, y = full wind.")]
+    public Vector2 debrisSpeedRange = new Vector2(5f, 18f);
+
+    [Tooltip("Leaf travel angle FROM VERTICAL (deg) in calm air. 0 = falls straight down, " +
+             "90 = flies dead horizontal.")]
+    [Range(0f, 89f)]
+    public float debrisCalmAngleDeg = 35f;
+
+    [Tooltip("Leaf travel angle FROM VERTICAL (deg) at full wind, when it is NOT raining.")]
+    [Range(0f, 89f)]
+    public float debrisWindyAngleDeg = 68f;
+
+    [Tooltip("While it rains, leaves swing to the RAIN's angle plus this much extra (deg) — they " +
+             "catch more wind than water does. Keep small so leaves and rain read as one storm.")]
+    [Range(0f, 30f)]
+    public float debrisRainMatchOffsetDeg = 10f;
+
+    [Tooltip("Leaf speed multiplier while rain is at full strength. Below 1 = leaves calm down " +
+             "during the downpour and only gust in the build-up and the tail of the storm.")]
+    [Range(0f, 2f)]
+    public float debrisRainSpeedMul = 0.5f;
 
     [Header("Ambient — Storm Wind Gusts (streaks at storm start)")]
     [Tooltip("Wind-streak sprites that sweep across at the start of a storm (e.g. the wide sub-sprites of 5 Wind/Wind1-4).")]

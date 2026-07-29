@@ -3,6 +3,15 @@ using NUnit.Framework;
 public class AtmosphereMathTests
 {
     [Test]
+    public void SignedDriftX_EasesThroughZero_OnATurningWind()
+    {
+        Assert.AreEqual(-10f, AtmosphereMath.SignedDriftX(10f, -1f),   1e-4f);
+        Assert.AreEqual(  0f, AtmosphereMath.SignedDriftX(10f,  0f),   1e-4f); // mid-turn lull
+        Assert.AreEqual(  5f, AtmosphereMath.SignedDriftX(10f,  0.5f), 1e-4f);
+        Assert.AreEqual( 10f, AtmosphereMath.SignedDriftX(10f,  3f),   1e-4f); // clamped
+    }
+
+    [Test]
     public void EaseIntensity_MovesTowardTargetByLerpSpeedTimesDt()
     {
         // 0 -> 1 target, dt 0.5, speed 1  => +0.5

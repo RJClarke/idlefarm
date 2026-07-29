@@ -98,7 +98,9 @@ public class RainOverlayUI : MonoBehaviour
 
             var emission = rainParticles.emission;
             emission.rateOverTime = data.rainParticleRate * precip;
-            SetOverlayAlpha(data.rainOverlayMaxAlpha * precip);
+            // Heavier storms drop the light further, not just the rain rate.
+            SetOverlayAlpha(WeatherMath.StormDarkness(precip, s.severity,
+                                                      data.rainOverlayMaxAlpha, data.rainOverlaySeverityBoost));
             if (precip > 0.02f) { if (!rainParticles.isPlaying) rainParticles.Play(); }
             else if (rainParticles.isPlaying) rainParticles.Stop();
 

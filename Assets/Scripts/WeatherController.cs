@@ -23,23 +23,38 @@ public class WeatherController : MonoBehaviour
     private CasualWeather casualMood = CasualWeather.Clear;
     private float rollTimer;
     private float eventTimer;                    // >0 while a casual mood is held
+    private float targetWindDir = -1f;           // -1/+1; state.windDirection eases toward it
 
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-        state.windDirection = WindDir();
+        targetWindDir = DefaultWindDir();
+        state.windDirection = targetWindDir;
         rollTimer = data != null ? Random.Range(data.casualRollInterval.x, data.casualRollInterval.y) : 120f;
     }
 
     private void OnDestroy() { if (Instance == this) Instance = null; }
 
-    private float WindDir() => (data != null && data.windDriftDirection < 0f) ? -1f : 1f;
+    private float DefaultWindDir() => (data != null && data.windDriftDirection < 0f) ? -1f : 1f;
+
+    /// <summary>
+    /// Pick which way the next stretch of weather blows. Fixed to the authored direction unless
+    /// randomizeWindDirection is on. state.windDirection then SWINGS to it over a second or two,
+    /// so leaves and cloud shadows come about smoothly rather than reversing on a frame.
+    /// </summary>
+    private void RerollWindDirection()
+    {
+        targetWindDir = (data != null && data.randomizeWindDirection)
+            ? WeatherMath.RollWindDirection(Random.value, data.windDirectionLeftChance)
+            : DefaultWindDir();
+    }
 
     public void BeginStorm(float severity)
     {
         if (data == null) return;
         severity = Mathf.Clamp01(severity);
+        if (!stormActive) RerollWindDirection(); // each storm rolls in from its own side
         stormActive = true;
         stormProfile = new WeatherProfile
         {
@@ -67,7 +82,7 @@ public class WeatherController : MonoBehaviour
         state.wind          = WeatherMath.EaseChannel(state.wind,          target.wind,          dt, spd);
         state.cloudiness    = WeatherMath.EaseChannel(state.cloudiness,    target.cloudiness,    dt, spd);
         state.precipitation = WeatherMath.EaseChannel(state.precipitation, target.precipitation, dt, spd);
-        state.windDirection = WindDir();
+        state.windDirection = WeatherMath.EaseChannel(state.windDirection, targetWindDir, dt, data.windDirectionTurnSpeed);
     }
 
     private void TickCasualSchedule(float dt)
@@ -84,6 +99,7 @@ public class WeatherController : MonoBehaviour
             rollTimer = Random.Range(data.casualRollInterval.x, data.casualRollInterval.y);
             int pick = WeatherMath.RollCasual(Random.value, data.casualClearWeight, data.casualCloudyWeight, data.casualWindyWeight);
             casualMood = (CasualWeather)pick;
+            RerollWindDirection(); // each new mood may blow in from the other side
             if (casualMood != CasualWeather.Clear)
                 eventTimer = Random.Range(data.casualEventDuration.x, data.casualEventDuration.y);
         }
@@ -120,5 +136,6 @@ public class WeatherController : MonoBehaviour
     [ContextMenu("Weather: Force Storm 3")] private void DbgStorm3() => BeginStorm(WeatherMath.StormSeverity(3, data != null ? data.stormsToMaxSeverity : 5f));
     [ContextMenu("Weather: Force Storm 5")] private void DbgStorm5() => BeginStorm(WeatherMath.StormSeverity(5, data != null ? data.stormsToMaxSeverity : 5f));
     [ContextMenu("Weather: End Storm")]    private void DbgEndStorm() => EndStorm();
+    [ContextMenu("Weather: Flip Wind Direction")] private void DbgFlipWind() { targetWindDir = -targetWindDir; Debug.Log($"[Weather] Wind turning to {(targetWindDir < 0f ? "LEFT" : "RIGHT")}"); }
 #endif
 }

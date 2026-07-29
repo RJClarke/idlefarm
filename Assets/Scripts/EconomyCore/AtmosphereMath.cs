@@ -33,6 +33,13 @@ public static class AtmosphereMath
     public static float PatchVelocityX(float speed, float windDirX)
         => (windDirX < 0f ? -1f : 1f) * Mathf.Max(0f, speed);
 
+    /// <summary>
+    /// Like <see cref="PatchVelocityX"/> but honours a CONTINUOUS direction in -1..+1, so a wind
+    /// that is turning slows to a stop and swings around instead of snapping to the other side.
+    /// </summary>
+    public static float SignedDriftX(float speed, float windDirSigned)
+        => Mathf.Clamp(windDirSigned, -1f, 1f) * Mathf.Max(0f, speed);
+
     /// <summary>World X just off the UPWIND screen edge where a new patch should spawn.</summary>
     public static float SpawnEdgeX(float camX, float camHalfWidth, float patchHalfWidth, float windDirX)
     {

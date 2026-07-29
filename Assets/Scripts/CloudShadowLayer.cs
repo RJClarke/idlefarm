@@ -31,12 +31,18 @@ public class CloudShadowLayer
 
     public CloudShadowLayer(Transform parent) { this.parent = parent; }
 
+    /// <summary>Continuous -1..+1 wind direction from WeatherState (eases through 0 when it turns).</summary>
+    private float windDirSigned = -1f;
+
     public void Configure(WeatherData d)
     {
         data = d;
+        windDirSigned = (d != null && d.windDriftDirection < 0f) ? -1f : 1f;
         if (softSprite == null)   softSprite   = BuildBlobSprite(false);
         if (ditherSprite == null) ditherSprite = BuildBlobSprite(true);
     }
+
+    public void SetWindDirection(float signed) => windDirSigned = Mathf.Clamp(signed, -1f, 1f);
 
     public void SetActiveStyle(bool visible)
     {
@@ -55,7 +61,7 @@ public class CloudShadowLayer
         cloudiness = Mathf.Clamp01(cloudiness);
         int targetCount = Mathf.RoundToInt(data.shadowMaxPatches * cloudiness);
         float speed = data.shadowBaseDriftSpeed * (0.3f + 1.7f * Mathf.Clamp01(wind));
-        float vx = AtmosphereMath.PatchVelocityX(speed, data.windDriftDirection); // clouds drift WITH the wind
+        float vx = AtmosphereMath.SignedDriftX(speed, windDirSigned); // clouds drift WITH the wind, easing through a turn
         float opacity = data.shadowOpacity * cloudiness;
 
         // First fill: scatter patches across the visible area so shadows show up immediately.
@@ -80,7 +86,7 @@ public class CloudShadowLayer
             c.a = Mathf.Clamp01(opacity);
             p.sr.color = c;
 
-            if (AtmosphereMath.IsPatchOffscreen(pos.x, p.halfWidth, camX, camHalf, data.windDriftDirection))
+            if (AtmosphereMath.IsPatchOffscreen(pos.x, p.halfWidth, camX, camHalf, windDirSigned))
             {
                 SafeDestroy(p.go);
                 patches.RemoveAt(i);
@@ -109,7 +115,7 @@ public class CloudShadowLayer
         go.transform.SetParent(parent, false);
         float x = onscreen
             ? camX + Random.Range(-camHalf, camHalf)                          // scattered across the view
-            : AtmosphereMath.SpawnEdgeX(camX, camHalf, half, data.windDriftDirection); // enter from upwind edge
+            : AtmosphereMath.SpawnEdgeX(camX, camHalf, half, windDirSigned); // enter from upwind edge
         float y = camY + Random.Range(-camHalfH, camHalfH);
         go.transform.position = new Vector3(x, y, 0f);
         float aspect = Random.Range(0.5f, 0.8f); // wider than tall
