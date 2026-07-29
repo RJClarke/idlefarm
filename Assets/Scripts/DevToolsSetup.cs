@@ -49,6 +49,9 @@ public class DevToolsSetup : MonoBehaviour
         const float MARGIN = 20f;
         // Push the whole drawer down so it starts well below the 4-row currency stack (top-right).
         const float CURRENCY_CLEARANCE = 300f;
+        // Extra offset for the Collect/Sell toggle, which now occupies the slot directly under the
+        // currency stack (64px tall + 12px gap). See CollectModeToggle.
+        const float COLLECT_TOGGLE_CLEARANCE = 76f;
         const int BTN_FONT = 20;
         Color btnBg = new Color(0.96f, 0.96f, 0.96f, 1f);
         Color btnText = Color.black;
@@ -59,7 +62,7 @@ public class DevToolsSetup : MonoBehaviour
         toggleRT.anchorMin = new Vector2(1, 1);
         toggleRT.anchorMax = new Vector2(1, 1);
         toggleRT.pivot = new Vector2(1, 1);
-        toggleRT.anchoredPosition = new Vector2(-MARGIN, -(MARGIN + CURRENCY_CLEARANCE));
+        toggleRT.anchoredPosition = new Vector2(-MARGIN, -(MARGIN + CURRENCY_CLEARANCE + COLLECT_TOGGLE_CLEARANCE));
         toggleRT.sizeDelta = new Vector2(DRAWER_WIDTH, TOGGLE_HEIGHT);
         ApplyPillStyle(toggleGO, btnBg, btnText);
         SetButtonText(toggleGO, "▼ Dev Tools", 17);
@@ -76,8 +79,8 @@ public class DevToolsSetup : MonoBehaviour
         drawerRT.anchorMin = new Vector2(1, 1);
         drawerRT.anchorMax = new Vector2(1, 1);
         drawerRT.pivot = new Vector2(1, 1);
-        drawerRT.anchoredPosition = new Vector2(-MARGIN, -(MARGIN + CURRENCY_CLEARANCE + TOGGLE_HEIGHT + 6f));
-        drawerRT.sizeDelta = new Vector2(DRAWER_WIDTH, 470f + 2f * (BTN_HEIGHT + 6f)); // +2 tutorial buttons
+        drawerRT.anchoredPosition = new Vector2(-MARGIN, -(MARGIN + CURRENCY_CLEARANCE + COLLECT_TOGGLE_CLEARANCE + TOGGLE_HEIGHT + 6f));
+        drawerRT.sizeDelta = new Vector2(DRAWER_WIDTH, 470f + 4f * (BTN_HEIGHT + 6f)); // +2 tutorial buttons, +2 skill-point buttons
 
         drawerGO.GetComponent<Image>().color = new Color(0.08f, 0.08f, 0.08f, 0.72f);
 
@@ -126,6 +129,17 @@ public class DevToolsSetup : MonoBehaviour
 
         GameObject tutorialEventGO = CreatePillButton("TestTutorialEventButton", "Tutorial: Fire Event", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         tutorialEventGO.GetComponent<Button>().onClick.AddListener(() => TutorialManager.Notify("demo_event"));
+
+        // Barn skill points (ReputationManager.UnspentPoints, spent via FarmSkillsManager.TryLevelUp).
+        GameObject grantSkillGO = CreatePillButton("GrantSkillPointsButton", "+25 Skill Points", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        grantSkillGO.GetComponent<Button>().onClick.AddListener(() => {
+            if (ReputationManager.Instance != null) ReputationManager.Instance.DevAddPoints(25);
+        });
+
+        GameObject resetSkillGO = CreatePillButton("ResetSkillsButton", "Reset Farm Skills", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        resetSkillGO.GetComponent<Button>().onClick.AddListener(() => {
+            if (FarmSkillsManager.Instance != null) FarmSkillsManager.Instance.DevResetAllSkills();
+        });
 
         // (Game speed — including 10/20/30× — lives on the stepper under the run timer now.)
 

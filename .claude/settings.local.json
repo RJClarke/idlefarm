@@ -116,7 +116,14 @@
       "Bash(python -c \"from PIL import Image; im=Image.open\\('Sprites/Things/Drone3.png'\\); print\\('size',im.size,'mode',im.mode\\)\")",
       "Bash(mkdir -p \"/c/Users/rjcla/AppData/Local/Temp/claude/C--Users-rjcla-IdleFarm---Silo/008e4f38-99bd-41bb-96a8-91f0f601f6b9/scratchpad/dronframes\")",
       "Bash(python -)",
-      "mcp__gladekit-unity__look_at_game_view"
+      "mcp__gladekit-unity__look_at_game_view",
+      "PowerShell(git add \"docs/superpowers/specs/2026-07-07-pantry-economy-design.md\")",
+      "mcp__gladekit-unity__get_gameobject_info",
+      "Bash(git check-ignore *)",
+      "Bash(git status *)",
+      "Bash(grep '\\\\.png$')",
+      "Bash(mkdir -p /c/Users/rjcla/Desktop/Silo/SiloScreenshots)",
+      "Read(//c/Users/rjcla/Desktop/Silo/SiloScreenshots/**)"
     ]
   },
   "remoteControlAtStartup": true

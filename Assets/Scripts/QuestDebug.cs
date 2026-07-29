@@ -27,8 +27,12 @@ public class QuestDebug : MonoBehaviour
     private const float BTN_HEIGHT = 46f;
     private const float MARGIN = 20f;
     private const float CURRENCY_CLEARANCE = 300f;
-    // Below the Dev Tools toggle (which sits at MARGIN+CURRENCY_CLEARANCE, TOGGLE_HEIGHT tall).
-    private const float TOGGLE_Y = MARGIN + CURRENCY_CLEARANCE + TOGGLE_HEIGHT + 8f;
+    // The Collect/Sell toggle occupies the slot directly under the currency stack (64px + 12px gap),
+    // so both dev drawers shift down past it. See CollectModeToggle.
+    private const float COLLECT_TOGGLE_CLEARANCE = 76f;
+    // Below the Dev Tools toggle (which sits at MARGIN+CURRENCY_CLEARANCE+COLLECT_TOGGLE_CLEARANCE,
+    // TOGGLE_HEIGHT tall).
+    private const float TOGGLE_Y = MARGIN + CURRENCY_CLEARANCE + COLLECT_TOGGLE_CLEARANCE + TOGGLE_HEIGHT + 8f;
     private const int BTN_FONT = 19;
 
     private void Start()
