@@ -19,7 +19,7 @@
         </ui:VisualElement>
 
         <ui:VisualElement name="lock-overlay" class="lock-overlay">
-            <ui:Label text="🔒" class="lock-icon" />
+            <ui:VisualElement class="lock-icon" picking-mode="Ignore" />
             <ui:Label text="Locked" class="lock-label" />
         </ui:VisualElement>
     </ui:VisualElement>

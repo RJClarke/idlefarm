@@ -95,4 +95,33 @@ public class OfflineRunSimulatorTests
         Assert.AreEqual(a.bankrupt, b.bankrupt);
         Assert.AreEqual(a.finalMoney, b.finalMoney);
     }
+
+    // ---- regrowing crops ----
+    private static OfflineSimContext NoLossCtx(float regrowSeconds)
+    {
+        var t = new OfflineSimTuning { deerPlantsPerHungerSecond = 0f, crowPlantsPerHungerSecond = 0f,
+                                       dryFractionPerSecond = 0f, lightningPlantsPerStrike = 0f };
+        var crop = FastCheapCrop(); crop.regrowSeconds = regrowSeconds;
+        return new OfflineSimContext {
+            awaySeconds = 600f, startFarmSeconds = 0f, startMoney = 1000, maxGameSpeed = 1f,
+            zones = new List<SimZone> { new SimZone { crop = crop, tileCount = 4 } }, tuning = t
+        };
+    }
+
+    [Test]
+    public void Simulate_Regrower_PlantsOnceAndKeepsHarvesting()
+    {
+        var r = OfflineRunSimulator.Simulate(NoLossCtx(10f));
+        Assert.AreEqual(4, r.seedsPlanted, "a regrowing plant stays in the ground after a harvest");
+        Assert.Greater(r.TotalHarvested, 4 * 10, "grows back in 10s instead of the full 30s");
+    }
+
+    [Test]
+    public void Simulate_Regrower_OutHarvestsReplantedCrop()
+    {
+        var regrow = OfflineRunSimulator.Simulate(NoLossCtx(10f));
+        var replant = OfflineRunSimulator.Simulate(NoLossCtx(0f));
+        Assert.Greater(replant.seedsPlanted, 4);
+        Assert.Greater(regrow.TotalHarvested, replant.TotalHarvested);
+    }
 }

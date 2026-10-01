@@ -264,9 +264,12 @@
 .field-tile--locked .lock-overlay { display: flex; }
 
 .lock-icon {
-    color: rgb(255, 230, 180);
-    font-size: 38px;
+    /* Key sprite, not the padlock emoji: emoji render invisible on Android. */
+    width: 44px;
+    height: 44px;
     margin-bottom: 4px;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Misc_KeyOrange.png");
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 .lock-label {
@@ -368,6 +371,12 @@
 .rail-tile--assigned {
     background-color: rgba(60, 105, 50, 0.85);
     border-color: rgb(110, 170, 80);
+}
+
+/* "More seeds" tile at the end of the seed rail: opens Hazel's stall. Key sprite, not an emoji. */
+.rail-tile--hazel #tile-image {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Misc_KeyOrange.png");
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 .rail-tile--locked {

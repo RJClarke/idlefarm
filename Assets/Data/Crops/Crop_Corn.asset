@@ -14,13 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CropData
   cropName: Corn
   cropType: 2
-  description: Regrows after harvest. Great for long-term value.
+  description: Tall golden stalks. Thirsty, and a favorite of crows.
   seedSeconds: 45
   sproutSeconds: 90
   saplingSeconds: 190
   maxHP: 65
   harvestWindowSeconds: 70
   harvestValue: 20
+  coinValue: 1
+  seedBagSize: 20
+  seedBagBaseCost: 50
+  tier: 1
+  canBeCanned: 0
+  canneryTier: 1
+  jarFillColor: {r: 0.78, g: 0.28, b: 0.3, a: 1}
   canRegrow: 0
   regrowSeconds: 0
   plantPrefab: {fileID: 8146968038167197194, guid: 97d89bffd06bc2d43b83fabe1fa849d3, type: 3}
@@ -33,5 +40,10 @@ MonoBehaviour:
   rottingSprite: {fileID: 0}
   seedPacketSprite: {fileID: -1770643262615999758, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   cropSprite: {fileID: -7367598500121239406, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
-  moistureDepletionRate: 1
-  threatResistance: 1
+  moistureDepletionRate: 1.25
+  deerAppetite: 0.75
+  crowAppetite: 1.5
+  unlockCost: 1000
+  unlockFeatureFlag: composting_basics
+  isStarter: 0
+  compostMultiplier: 2

@@ -72,6 +72,7 @@ public static class OfflineRunContextBuilder
                 {
                     id = crop.cropName,
                     growSeconds = crop.TotalGrowthTime / (1f + Mathf.Max(0f, growthBonus)),
+                    regrowSeconds = crop.RegrowTime / (1f + Mathf.Max(0f, growthBonus)),
                     harvestWindowSeconds = crop.harvestWindowSeconds,
                     harvestValue = Mathf.RoundToInt(crop.harvestValue * (1f + sellBonus)),
                     coinValue = Mathf.Max(1, Mathf.RoundToInt(crop.coinValue * (1f + coinBonus))),

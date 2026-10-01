@@ -25,7 +25,7 @@ public class CompostBay : MonoBehaviour
     private void OnEnable()  => Plant.OnPlantDied += HandlePlantDied;
     private void OnDisable() => Plant.OnPlantDied -= HandlePlantDied;
 
-    private void HandlePlantDied(int zoneID, int cropTier, Vector3 worldPos)
+    private void HandlePlantDied(int zoneID, CropData crop, Vector3 worldPos)
     {
         if (compostBayData == null || EquipmentManager.Instance == null || CurrencyManager.Instance == null) return;
 
@@ -33,8 +33,12 @@ public class CompostBay : MonoBehaviour
         if (assigned != compostBayData) return; // bay not equipped on this zone
 
         float conversion = EquipmentManager.Instance.GetEffectiveWaterPower(compostBayData);
-        int yield = Mathf.Max(1, Mathf.RoundToInt(cropTier * conversion * FarmUpgrades.CompostMultiplier));
+        int cropTier = crop != null ? crop.tier : 1;
+        // "Great compost" crops (Corn) multiply the yield.
+        float cropMult = crop != null && crop.compostMultiplier > 0f ? crop.compostMultiplier : 1f;
+        int yield = Mathf.Max(1, Mathf.RoundToInt(cropTier * conversion * FarmUpgrades.CompostMultiplier * cropMult));
         CurrencyManager.Instance.AddCompost(yield);
         FloatingTextManager.ShowCompost(yield, worldPos);
+        OnboardingTutorials.OnCompostEarned(); // one-time how-to (new players)
     }
 }

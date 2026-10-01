@@ -14,15 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CropData
   cropName: Green Beans
   cropType: 9
-  description: Grown on supports, a stringy green bean.
-  seedSeconds: 60
-  sproutSeconds: 75
-  saplingSeconds: 140
-  maxHP: 80
-  harvestWindowSeconds: 50
-  harvestValue: 25
+  description: Quick to crop and quick to come back. Tender vines, and deer can't
+    get enough of them.
+  seedSeconds: 30
+  sproutSeconds: 45
+  saplingSeconds: 110
+  maxHP: 60
+  harvestWindowSeconds: 40
+  harvestValue: 12
+  coinValue: 1
+  seedBagSize: 20
+  seedBagBaseCost: 50
+  tier: 1
+  canBeCanned: 0
+  canneryTier: 1
+  jarFillColor: {r: 0.78, g: 0.28, b: 0.3, a: 1}
   canRegrow: 1
-  regrowSeconds: 0
+  regrowSeconds: 120
   plantPrefab: {fileID: 8146968038167197194, guid: 97d89bffd06bc2d43b83fabe1fa849d3, type: 3}
   seedSprite: {fileID: -469012787259855548, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   sproutSprite: {fileID: -4143670234373046720, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
@@ -33,5 +41,10 @@ MonoBehaviour:
   rottingSprite: {fileID: 0}
   seedPacketSprite: {fileID: -215958242341156383, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   cropSprite: {fileID: -267039659, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
-  moistureDepletionRate: 1
-  threatResistance: 1
+  moistureDepletionRate: 0.9
+  deerAppetite: 1.75
+  crowAppetite: 0.5
+  unlockCost: 250
+  unlockFeatureFlag: 
+  isStarter: 0
+  compostMultiplier: 1

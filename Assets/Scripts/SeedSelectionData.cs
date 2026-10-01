@@ -78,6 +78,41 @@ public class SeedSelectionData
     /// </summary>
     public bool HasAnyAssignment() => zoneAssignments.Count > 0;
 
+    /// <summary>A run may start once at least one field has a crop: with seed progression a farm can
+    /// own fewer crops than it has fields, and those fields simply sit empty that run.</summary>
+    public bool CanStartRun() => zoneAssignments.Count > 0;
+
+    /// <summary>How many fields currently grow this crop.</summary>
+    public int CountCrop(string cropName)
+    {
+        int n = 0;
+        foreach (var kvp in zoneAssignments) if (kvp.Value == cropName) n++;
+        return n;
+    }
+
+    /// <summary>Clears fields (highest field first) until no crop is planted in more fields than
+    /// <paramref name="allowed"/> says. Returns true if anything changed; caller saves.</summary>
+    public bool TrimToAllowed(System.Func<string, int> allowed)
+    {
+        bool changed = false;
+        for (int z = 4; z >= 1; z--)
+        {
+            if (!zoneAssignments.TryGetValue(z, out string crop)) continue;
+            if (CountCrop(crop) > allowed(crop)) { zoneAssignments.Remove(z); changed = true; }
+        }
+        return changed;
+    }
+
+    /// <summary>Clears every field whose crop matches <paramref name="remove"/> (e.g. crops the player
+    /// doesn't own). Returns true if anything changed; caller saves.</summary>
+    public bool RemoveCropsWhere(System.Func<string, bool> remove)
+    {
+        var doomed = new List<int>();
+        foreach (var kvp in zoneAssignments) if (remove(kvp.Value)) doomed.Add(kvp.Key);
+        foreach (int z in doomed) zoneAssignments.Remove(z);
+        return doomed.Count > 0;
+    }
+
     /// <summary>
     /// Check if all unlocked zones have assignments
     /// </summary>

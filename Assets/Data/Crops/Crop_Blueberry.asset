@@ -14,21 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CropData
   cropName: Blueberry
   cropType: 6
-  description: Beautiful bushy blueberry bushes
-  seedSeconds: 60
-  sproutSeconds: 75
-  saplingSeconds: 140
-  maxHP: 80
-  harvestWindowSeconds: 50
-  harvestValue: 25
+  description: Slow to settle in, then fruits again and again. Shallow roots drink
+    a lot, and birds adore the berries.
+  seedSeconds: 90
+  sproutSeconds: 120
+  saplingSeconds: 240
+  maxHP: 100
+  harvestWindowSeconds: 70
+  harvestValue: 30
   coinValue: 1
   seedBagSize: 20
   seedBagBaseCost: 50
   tier: 1
   canBeCanned: 1
   canneryTier: 2
+  jarFillColor: {r: 0.31, g: 0.3, b: 0.62, a: 1}
   canRegrow: 1
-  regrowSeconds: 0
+  regrowSeconds: 150
   plantPrefab: {fileID: 8146968038167197194, guid: 97d89bffd06bc2d43b83fabe1fa849d3, type: 3}
   seedSprite: {fileID: 6862725416986578267, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   sproutSprite: {fileID: -757609084400568426, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
@@ -39,5 +41,10 @@ MonoBehaviour:
   rottingSprite: {fileID: 0}
   seedPacketSprite: {fileID: -8425725622617219983, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   cropSprite: {fileID: 7547656520941787949, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
-  moistureDepletionRate: 1
-  threatResistance: 1
+  moistureDepletionRate: 1.4
+  deerAppetite: 0.5
+  crowAppetite: 1.75
+  unlockCost: 5000
+  unlockFeatureFlag: 
+  isStarter: 0
+  compostMultiplier: 1

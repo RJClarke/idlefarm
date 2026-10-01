@@ -14,15 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CropData
   cropName: Red Pepper
   cropType: 2
-  description: Crisp, green peppers.
-  seedSeconds: 60
-  sproutSeconds: 75
-  saplingSeconds: 140
-  maxHP: 80
-  harvestWindowSeconds: 50
+  description: A green pepper left to ripen. Too hot for deer, but crows can't resist
+    the bright red fruit.
+  seedSeconds: 50
+  sproutSeconds: 90
+  saplingSeconds: 220
+  maxHP: 110
+  harvestWindowSeconds: 80
   harvestValue: 25
+  coinValue: 1
+  seedBagSize: 20
+  seedBagBaseCost: 50
+  tier: 1
+  canBeCanned: 0
+  canneryTier: 1
+  jarFillColor: {r: 0.78, g: 0.28, b: 0.3, a: 1}
   canRegrow: 1
-  regrowSeconds: 0
+  regrowSeconds: 180
   plantPrefab: {fileID: 8146968038167197194, guid: 97d89bffd06bc2d43b83fabe1fa849d3, type: 3}
   seedSprite: {fileID: 5453929798641431608, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   sproutSprite: {fileID: -3750409946025607185, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
@@ -34,4 +42,9 @@ MonoBehaviour:
   seedPacketSprite: {fileID: 3802846706208534244, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   cropSprite: {fileID: -6777633012209802092, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   moistureDepletionRate: 1
-  threatResistance: 1
+  deerAppetite: 0.25
+  crowAppetite: 1.5
+  unlockCost: 1500
+  unlockFeatureFlag: 
+  isStarter: 0
+  compostMultiplier: 1

@@ -32,6 +32,7 @@ public class Plant : MonoBehaviour
 
     // Properties
     public GrowthStage CurrentStage => currentStage;
+    public float StageTimer => stageTimer;
     public CropData CropData => cropData;
     public float CurrentHP => currentHP;
     public bool IsHarvestable => currentStage == GrowthStage.Harvestable;
@@ -57,11 +58,16 @@ public class Plant : MonoBehaviour
         parentTile = tile;
         
         currentStage = GrowthStage.Seed;
-        float hpBonus = ResearchManager.Instance != null ? ResearchManager.Instance.GetBonus(Research.StatKey.CropHp) : 0f;
-        currentHP = crop.maxHP * (1f + hpBonus);
+        currentHP = CropStats.Health(crop).total; // shared with the Almanac
         stageTimer = crop.GetStageTime(currentStage);
         // Head Start (farm upgrade): newly planted crops begin partway into the first stage.
         stageTimer *= (1f - FarmUpgrades.HeadStartFraction);
+        // Planting Lv 25 capstone: some seeds skip the seed stage entirely and start as a sprout.
+        if (FarmSkillsManager.RollInstantSprout())
+        {
+            currentStage = GrowthStage.Sprout;
+            stageTimer = crop.GetStageTime(GrowthStage.Sprout);
+        }
         isGrowing = true;
 
         currentMoisture = 100f;
@@ -121,14 +127,8 @@ public class Plant : MonoBehaviour
             baseSpeed = 1.0f + bonus;
         }
 
-        float researchBonus = ResearchManager.Instance != null
-            ? ResearchManager.Instance.GetBonus(Research.StatKey.CropGrowthSpeed)
-            : 0f;
-        float plantingBonus = FarmSkillsManager.Instance != null
-            ? FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Planting)
-            : 0f;
-        // Growth Rate (farm upgrade) stacks multiplicatively on top of research/moisture/Barn Planting.
-        return baseSpeed * (1f + researchBonus) * (1f + plantingBonus) * FarmUpgrades.GrowthMultiplier;
+        // Research x Barn Planting x Growth Rate upgrade — shared with the Almanac's "Grows in".
+        return baseSpeed * CropStats.GrowthSpeedMultiplier();
     }
 
     private void UpdateMoisture(float deltaTime)
@@ -136,21 +136,9 @@ public class Plant : MonoBehaviour
         if (GameConstants.Instance == null) return;
 
         float depletionRate = GameConstants.Instance.baseMoistureDepletionRate;
-        depletionRate *= cropData.moistureDepletionRate;
-
-        // SoilWaterEfficiency: each level reduces depletion (water lasts longer).
-        if (ResearchManager.Instance != null)
-        {
-            float soilBonus = ResearchManager.Instance.GetBonus(Research.StatKey.SoilWaterEfficiency);
-            depletionRate /= Mathf.Max(0.01f, 1f + soilBonus);
-        }
-
-        // Water Retention (farm upgrade): water lasts longer still.
-        depletionRate /= Mathf.Max(0.01f, FarmUpgrades.MoistureRetentionDivisor);
-
-        // Barn Watering: each level reduces depletion further (moisture lasts longer).
-        if (FarmSkillsManager.Instance != null)
-            depletionRate /= Mathf.Max(0.01f, 1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Watering));
+        // Crop thirst / SoilWaterEfficiency research / Water Retention upgrade / Barn Watering —
+        // shared with the Almanac's "Water use".
+        depletionRate *= CropStats.ThirstTotal(cropData);
 
         currentMoisture -= depletionRate * deltaTime;
         // Water Capacity (farm upgrade) raises the ceiling above 100; depletion never lifts moisture,
@@ -290,27 +278,21 @@ public class Plant : MonoBehaviour
             return;
         }
 
-        int harvestValue = cropData.harvestValue;
+        int startValue = cropData.harvestValue;
         if (GameConstants.Instance != null)
-            harvestValue = GameConstants.Instance.CalculateHarvestValue(cropData.harvestValue, isRotting);
-
-        if (ResearchManager.Instance != null)
-        {
-            float sellBonus =
-                ResearchManager.Instance.GetBonus(Research.StatKey.CropBonusSellAmount)
-                + ResearchManager.Instance.GetBonus(Research.StatKey.SoilQuality)
-                + ResearchManager.Instance.GetBonus(Research.StatKey.HelperHarvestEfficiency);
-            harvestValue = Mathf.RoundToInt(harvestValue * (1f + sellBonus));
-        }
+            startValue = GameConstants.Instance.CalculateHarvestValue(cropData.harvestValue, isRotting);
 
         // Farm upgrades: Fertilizer A × Soil Quality × Zone Level (multiplicative), plus a
         // Bountiful Harvest crit roll that doubles the whole yield (cash AND coins) for this harvest.
         int zone = parentTile != null ? parentTile.ZoneID : 1;
-        bool bountiful = Random.value < FarmUpgrades.BountifulChance;
-        if (FarmSkillsManager.Instance != null)
-            harvestValue = Mathf.RoundToInt(harvestValue * (1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Harvesting)));
-        harvestValue = Mathf.RoundToInt(harvestValue * FarmUpgrades.CashYieldMultiplier(zone));
+        // Harvesting skill milestones (Lv 5-20) stack their double-pay chance onto Bountiful.
+        bool bountiful = Random.value < FarmUpgrades.BountifulChance + FarmSkillsManager.MilestoneChanceOf(FarmSkillTrack.Harvesting);
+        // Harvesting Lv 25 capstone: a rare golden harvest multiplies the whole payout.
+        int goldenMultiplier = FarmSkillsManager.RollGoldenMultiplier();
+        // Research sell bonuses x Barn Harvesting x cash-yield upgrades — shared with the Almanac.
+        int harvestValue = Mathf.RoundToInt(CropStats.Money(cropData, zone, startValue).total);
         if (bountiful) harvestValue *= 2;
+        harvestValue *= goldenMultiplier;
 
         // Cannery intake (Pantry Economy §4a): a diverted harvest becomes jar progress
         // instead of cash + banked coins. Stats/refund/regrow below are unaffected.
@@ -334,21 +316,18 @@ public class Plant : MonoBehaviour
         {
             CurrencyManager.Instance.AddMoney(harvestValue);
             FloatingTextManager.ShowMoney(harvestValue, transform.position);
+            if (goldenMultiplier > 1)
+                FloatingTextManager.ShowText("Golden!", new Color(1f, 0.82f, 0.2f), transform.position + Vector3.up * 0.8f);
         }
 
         // Bank permanent coins for this harvest (the "keep" currency). Scaled by coin research.
         int coinGain = 0;
         if (paidOut && CurrencyManager.Instance != null && cropData.coinValue > 0)
         {
-            coinGain = cropData.coinValue;
-            if (ResearchManager.Instance != null)
-            {
-                float coinBonus = ResearchManager.Instance.GetBonus(Research.StatKey.CropBonusCoinAmount);
-                coinGain = Mathf.RoundToInt(coinGain * (1f + coinBonus));
-            }
-            // Farm upgrades: Fertilizer B × Soil Quality × Zone Level, doubled on a Bountiful crit.
-            coinGain = Mathf.RoundToInt(coinGain * FarmUpgrades.CoinYieldMultiplier(zone));
+            // Coin research x coin-yield upgrades (shared with the Almanac), doubled on a Bountiful crit.
+            coinGain = Mathf.RoundToInt(CropStats.Coins(cropData, zone).total);
             if (bountiful) coinGain *= 2;
+            coinGain *= goldenMultiplier;
             coinGain = Mathf.Max(1, coinGain);
             CurrencyManager.Instance.AddCoins(coinGain);
             // Stagger 0.35s after the cash pop and nudge up so both numbers stay readable.
@@ -366,8 +345,9 @@ public class Plant : MonoBehaviour
                 paidOut ? coinGain : 0);
 
         // Seed Refund (farm upgrade): chance to hand back a seed, easing the fuel/bankruptcy pressure.
+        // Planting skill milestones (Lv 5-20) stack their free-seed chance onto it.
         if (SeedInventory.Instance != null && cropData != null
-            && Random.value < FarmUpgrades.SeedRefundChance)
+            && Random.value < FarmUpgrades.SeedRefundChance + FarmSkillsManager.MilestoneChanceOf(FarmSkillTrack.Planting))
         {
             SeedInventory.Instance.RefundSeed(cropData, 1);
         }
@@ -384,8 +364,10 @@ public class Plant : MonoBehaviour
 
     private void StartRegrowth()
     {
-        currentStage = GrowthStage.Seed;
-        stageTimer = cropData.regrowSeconds > 0 ? cropData.regrowSeconds : cropData.GetStageTime(GrowthStage.Seed);
+        OnboardingTutorials.OnFirstRegrow(); // one-time "it grows back" teach (new players)
+        // The plant is already established: it ripens again from the sapling stage, never from seed.
+        currentStage = GrowthStage.Sapling;
+        stageTimer = cropData.RegrowTime;
         isGrowing = true;
 
         currentMoisture = 100f;
@@ -464,10 +446,10 @@ public class Plant : MonoBehaviour
     /// <summary>
     /// Fired exactly when a plant's lifecycle ends WITHOUT being harvested
     /// (dry-out, rot, lightning/wind/threat damage). Compost Bay listens to this
-    /// to credit compost for the dying crop. zoneID = plant's zone; cropTier = crop.tier;
-    /// worldPos = position of the dying plant (for VFX).
+    /// to credit compost for the dying crop. zoneID = plant's zone; crop = the dying crop (its tier and
+    /// compost multiplier set the yield); worldPos = position of the dying plant (for VFX).
     /// </summary>
-    public static event System.Action<int, int, Vector3> OnPlantDied;
+    public static event System.Action<int, CropData, Vector3> OnPlantDied;
 
     /// <summary>
     /// Plant dies. Cause string is used for debug logging only.
@@ -481,7 +463,7 @@ public class Plant : MonoBehaviour
             RunStats.Instance.AddPlantDeath(parentTile != null ? parentTile.ZoneID : -1, cropData, cause);
 
         if (parentTile != null && cropData != null)
-            OnPlantDied?.Invoke(parentTile.ZoneID, cropData.tier, transform.position);
+            OnPlantDied?.Invoke(parentTile.ZoneID, cropData, transform.position);
 
         RemovePlant();
     }

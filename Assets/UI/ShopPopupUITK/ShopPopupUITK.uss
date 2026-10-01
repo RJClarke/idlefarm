@@ -227,6 +227,17 @@
     opacity: 0.55;
 }
 
+/* ── State: Masked (seed packet not discovered yet) — a dark mystery row ── */
+.market-row--masked {
+    background-color: rgb(120, 96, 66);
+    border-color: rgba(54, 32, 14, 0.6);
+}
+.market-row--masked .market-row-title,
+.market-row--masked .market-row-desc,
+.market-row--masked .market-row-status {
+    color: rgb(245, 230, 200);
+}
+
 /* ─── Scrollbar ─── */
 
 .rows-list .unity-scroller--vertical {

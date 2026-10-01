@@ -18,6 +18,10 @@ public class SeedSelectionPopup : MonoBehaviour
     [Tooltip("All equipment shown in the bottom rail. Locked items render disabled.")]
     [SerializeField] private EquipmentData[] availableEquipment;
 
+    /// <summary>Every crop and equipment piece the game offers — the Farmer's Almanac lists these.</summary>
+    public CropDatabase Crops => cropDatabase;
+    public EquipmentData[] Equipment => availableEquipment;
+
     // ── Events kept identical to the old API ────────────────────
     public event Action OnSelectionSaved;
     public event Action OnCancelled;
@@ -70,7 +74,11 @@ public class SeedSelectionPopup : MonoBehaviour
             popupRoot.style.display = DisplayStyle.None;
         }
         if (root != null) root.pickingMode = PickingMode.Ignore;
+        CropOwnership.OnOwnershipChanged -= OnOwnershipChanged;
+        CropOwnership.OnOwnershipChanged += OnOwnershipChanged;
     }
+
+    private void OnDisable() => CropOwnership.OnOwnershipChanged -= OnOwnershipChanged;
 
     private void CacheElements()
     {
@@ -114,7 +122,7 @@ public class SeedSelectionPopup : MonoBehaviour
         isOpen = true;
         selectedZoneID = -1;
 
-        selectionData = SeedSelectionData.Load();
+        selectionData = LoadOwnedSelection();
         LoadEquipmentAssignments();
         ScrubLockedZoneAssignments();
 
@@ -128,7 +136,13 @@ public class SeedSelectionPopup : MonoBehaviour
             popupRoot.style.display = DisplayStyle.Flex;
             popupRoot.schedule.Execute(() => popupRoot.AddToClassList("open")).StartingIn(0);
         }
+        OnboardingTutorials.OnSeedPickerOpened();
     }
+
+    public bool IsOpen => isOpen;
+
+    /// <summary>The popup's card, for tutorial spotlighting.</summary>
+    public VisualElement Frame => popupFrame;
 
     public void Hide()
     {
@@ -148,20 +162,30 @@ public class SeedSelectionPopup : MonoBehaviour
 
     public bool IsReadyToRun()
     {
-        if (selectionData == null) selectionData = SeedSelectionData.Load();
-        return selectionData.AreAllUnlockedZonesFilled();
+        selectionData = LoadOwnedSelection();
+        return selectionData.CanStartRun();
     }
 
     /// <summary>True if the player has at least one crop equipped to any field.</summary>
     public bool HasAnyCropEquipped()
     {
-        var data = SeedSelectionData.Load();
+        var data = LoadOwnedSelection();
         return data != null && data.HasAnyAssignment();
+    }
+
+    // Old saves (and any crop not owned) must never plant an unowned crop.
+    private SeedSelectionData LoadOwnedSelection()
+    {
+        SeedSelectionData data = SeedSelectionData.Load();
+        // Each crop grows in at most as many fields as its packets (0 for crops not owned).
+        if (cropDatabase != null && data.TrimToAllowed(name => CropOwnership.Packets(cropDatabase.GetCropByName(name))))
+            data.Save();
+        return data;
     }
 
     public Dictionary<int, CropData> LoadAndApplySavedSelections()
     {
-        selectionData = SeedSelectionData.Load();
+        selectionData = LoadOwnedSelection();
         LoadEquipmentAssignments();
         ApplyEquipmentToManager();
         return selectionData.ToZoneSeedDictionary(cropDatabase);
@@ -236,6 +260,10 @@ public class SeedSelectionPopup : MonoBehaviour
             {
                 if (cropImage != null) cropImage.style.backgroundImage = StyleKeyword.None;
             }
+            // One crop per field: once every owned crop is placed, an empty field points to Hazel.
+            Label placeholder = container.Q<Label>("crop-placeholder");
+            if (placeholder != null)
+                placeholder.text = unlocked && assignedCrop == null && AllOwnedCropsAssigned() ? "More seeds at Hazel's" : "Tap a seed";
         }
 
         // Equipment slot
@@ -281,10 +309,11 @@ public class SeedSelectionPopup : MonoBehaviour
 
         foreach (VisualElement old in seedRailTiles) old.RemoveFromHierarchy();
         seedRailTiles.Clear();
+        seedRail.Q("hazel-tile")?.RemoveFromHierarchy(); // rebuilt below; never stack a second one
 
-        foreach (CropData crop in cropDatabase.allCrops)
+        // Owned crops only, in allCrops order (the one fixed crop order) — never re-sorted.
+        foreach (CropData crop in CropOwnership.Owned(cropDatabase))
         {
-            if (crop == null) continue;
             TemplateContainer tile = seedTileTemplate.Instantiate();
             VisualElement tileRoot = tile.Q(className: "rail-tile") ?? tile.contentContainer;
             VisualElement img = tile.Q<VisualElement>("tile-image");
@@ -299,27 +328,63 @@ public class SeedSelectionPopup : MonoBehaviour
 
             CropData captured = crop;
             if (btn != null) btn.clicked += () => OnSeedTileClicked(captured);
+            tileRoot.Add(AlmanacPopupUITK.InfoBadge(AlmanacKind.Crop, crop.cropName)); // "what's this crop good at?"
 
             seedRail.Add(tile);
             seedRailTiles.Add(tile);
         }
 
+        seedRail.Add(BuildHazelTile());
         RefreshSeedRailStates();
+    }
+
+    // Trailing rail tile: where to get more seeds. Same template as a seed tile; the key icon comes
+    // from USS (.rail-tile--hazel), not an emoji (invisible on Android).
+    private VisualElement BuildHazelTile()
+    {
+        TemplateContainer tile = seedTileTemplate.Instantiate();
+        tile.name = "hazel-tile";
+        VisualElement tileRoot = tile.Q(className: "rail-tile") ?? tile.contentContainer;
+        tileRoot.AddToClassList("rail-tile--hazel");
+        Label label = tile.Q<Label>("tile-label");
+        if (label != null) label.text = "Buy more";
+        Button btn = tile.Q<Button>() ?? tileRoot as Button;
+        if (btn != null) btn.clicked += OpenPlantsStall;
+        return tile;
+    }
+
+    /// <summary>Closes the picker and opens Hazel's stall at the Market.</summary>
+    public void OpenPlantsStall()
+    {
+        Hide();
+        var pan = FindFirstObjectByType<CameraPanController>();
+        if (pan != null && pan.CurrentLocation != CameraPanController.Location.Market) pan.PanTo(CameraPanController.Location.Market);
+        ShopPopupUITK.TryOpen(ShopPopupUITK.Section.Plants);
+    }
+
+    private void OnOwnershipChanged() { if (isOpen) { BuildSeedRail(); RefreshAllFieldTiles(); } }
+
+    private bool HasPacketsLeft(CropData c) => selectionData.CountCrop(c.cropName) < CropOwnership.Packets(c);
+
+    private bool AllOwnedCropsAssigned()
+    {
+        foreach (CropData c in CropOwnership.Owned(cropDatabase))
+            if (HasPacketsLeft(c)) return false;
+        return true;
     }
 
     private void RefreshSeedRailStates()
     {
         if (cropDatabase == null) return;
         int i = 0;
-        foreach (CropData crop in cropDatabase.allCrops)
+        foreach (CropData crop in CropOwnership.Owned(cropDatabase))
         {
-            if (crop == null) continue;
             if (i >= seedRailTiles.Count) break;
             VisualElement tile = seedRailTiles[i++];
             VisualElement tileRoot = tile.Q(className: "rail-tile") ?? tile;
             tileRoot.RemoveFromClassList("rail-tile--assigned");
             tileRoot.RemoveFromClassList("rail-tile--locked");
-            if (selectionData.IsCropAssigned(crop.cropName))
+            if (!HasPacketsLeft(crop)) // every packet of it is planted
                 tileRoot.AddToClassList("rail-tile--assigned");
         }
     }
@@ -352,6 +417,7 @@ public class SeedSelectionPopup : MonoBehaviour
                     img.style.backgroundImage = StyleKeyword.None;
             }
             if (label != null) label.text = eq.displayName;
+            if (eq.IsUnlocked()) tileRoot.Add(AlmanacPopupUITK.InfoBadge(AlmanacKind.Equipment, eq.equipmentID));
 
             EquipmentData captured = eq;
             if (btn != null) btn.clicked += () => OnEquipmentTileClicked(captured);
@@ -397,8 +463,8 @@ public class SeedSelectionPopup : MonoBehaviour
 
     private void OnSeedTileClicked(CropData crop)
     {
-        if (crop == null) return;
-        if (selectionData.IsCropAssigned(crop.cropName)) return;
+        if (crop == null || !CropOwnership.IsOwned(crop)) return;
+        if (!HasPacketsLeft(crop)) return; // one field per packet
 
         int targetZone = selectedZoneID > 0 ? selectedZoneID : selectionData.GetFirstEmptyZone();
         if (targetZone <= 0 || !selectionData.IsZoneUnlocked(targetZone)) return;
@@ -441,6 +507,7 @@ public class SeedSelectionPopup : MonoBehaviour
     {
         Hide();
         OnCancelled?.Invoke();
+        OnboardingTutorials.OnSeedPickerCancelled();
     }
 
     private void OnSaveClicked()
@@ -451,6 +518,7 @@ public class SeedSelectionPopup : MonoBehaviour
         ApplyEquipmentToManager();
         OnSelectionSaved?.Invoke();
         Hide();
+        OnboardingTutorials.OnSeedsSaved(HasAnyCropEquipped());
         Debug.Log("Field configuration saved");
     }
 

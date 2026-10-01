@@ -176,6 +176,19 @@ public class UpgradeManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Sets a permanent level directly, without spending Coins or blocking during a run. Used by
+    /// callers that handle their own payment (CropOwnership: seeds can be bought on a mid-run
+    /// Market trip; ownership only matters at seed selection). Fires OnUpgradePurchased so shop UIs refresh.
+    /// </summary>
+    public void GrantPermanentLevel(string upgradeID, int level)
+    {
+        if (string.IsNullOrEmpty(upgradeID)) return;
+        if (level <= 0) permanentLevels.Remove(upgradeID);
+        else permanentLevels[upgradeID] = level;
+        OnUpgradePurchased?.Invoke(upgradeID);
+    }
+
+    /// <summary>
     /// Purchase temporary upgrade with Money (during run)
     /// </summary>
     public bool PurchaseTemporaryUpgrade(string upgradeID, int moneyCost, int maxLevel = int.MaxValue)

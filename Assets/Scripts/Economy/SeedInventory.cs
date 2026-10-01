@@ -80,7 +80,11 @@ public class SeedInventory : MonoBehaviour
 
         if (SeedsRemaining(crop) <= 0)
         {
-            if (!TryBuyBag(crop, worldPos)) return false;
+            if (!TryBuyBag(crop, worldPos))
+            {
+                OnboardingTutorials.OnOutOfSeedMoney(); // one-time teach (new players)
+                return false;
+            }
         }
 
         _seeds[crop] = SeedsRemaining(crop) - 1;

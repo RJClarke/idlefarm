@@ -27,6 +27,7 @@ MonoBehaviour:
   tier: 1
   canBeCanned: 1
   canneryTier: 1
+  jarFillColor: {r: 0.83, g: 0.2, b: 0.26, a: 1}
   canRegrow: 1
   regrowSeconds: 0
   plantPrefab: {fileID: 8146968038167197194, guid: 97d89bffd06bc2d43b83fabe1fa849d3, type: 3}
@@ -40,4 +41,9 @@ MonoBehaviour:
   seedPacketSprite: {fileID: 2196587850673688242, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   cropSprite: {fileID: -5415401139211786194, guid: d5be38aaa5d9838489645c20dbb518c4, type: 3}
   moistureDepletionRate: 1
-  threatResistance: 1
+  deerAppetite: 1
+  crowAppetite: 1.5
+  unlockCost: 2500
+  unlockFeatureFlag: cannery_unlocked
+  isStarter: 0
+  compostMultiplier: 1

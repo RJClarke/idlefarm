@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: CropDatabase
   m_EditorClassIdentifier: Assembly-CSharp::CropDatabase
   allCrops:
-  - {fileID: 11400000, guid: 599dcc7392388f44e8843b4f73d24c46, type: 2}
-  - {fileID: 11400000, guid: e576b6472e8d2f1499f854fc6f246aa9, type: 2}
   - {fileID: 11400000, guid: 054488f738e218441998922c61a2d911, type: 2}
-  - {fileID: 11400000, guid: e68fb3bfddaae894da1a1c054e5a53bd, type: 2}
-  - {fileID: 11400000, guid: 2401bfdb6627c11408438d468d477259, type: 2}
-  - {fileID: 11400000, guid: b615cd3c16d74c24985492d488d3b8f8, type: 2}
-  - {fileID: 11400000, guid: cc274cf29515c254488e4d3fa21d4d15, type: 2}
-  startingCrops:
   - {fileID: 11400000, guid: 599dcc7392388f44e8843b4f73d24c46, type: 2}
+  - {fileID: 11400000, guid: debbc4950dd7c834cb7e7f99f1a031cd, type: 2}
   - {fileID: 11400000, guid: e576b6472e8d2f1499f854fc6f246aa9, type: 2}
+  - {fileID: 11400000, guid: baf50166bc8262a4da60283258d6093d, type: 2}
+  - {fileID: 11400000, guid: cc274cf29515c254488e4d3fa21d4d15, type: 2}
+  - {fileID: 11400000, guid: b615cd3c16d74c24985492d488d3b8f8, type: 2}
+  - {fileID: 11400000, guid: 2401bfdb6627c11408438d468d477259, type: 2}
+  - {fileID: 11400000, guid: e68fb3bfddaae894da1a1c054e5a53bd, type: 2}
+  startingCrops:
+  - {fileID: 11400000, guid: 054488f738e218441998922c61a2d911, type: 2}

@@ -105,7 +105,12 @@ public static class OfflineRunSimulator
                         r.zones[z].moneyEarned += crop.harvestValue;
                         r.zones[z].coinsBanked += crop.coinValue;
                         AddHarvest(r, crop.id);
-                        occupied[z].RemoveAt(i);
+                        // Regrowers stay in the ground and ripen again after regrowSeconds; the rest
+                        // are pulled and replanted from seed.
+                        if (crop.regrowSeconds > 0f)
+                            occupied[z][i] = Mathf.Max(0f, crop.growSeconds - crop.regrowSeconds);
+                        else
+                            occupied[z].RemoveAt(i);
                     }
                 }
             }

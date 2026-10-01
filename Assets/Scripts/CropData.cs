@@ -66,12 +66,19 @@ public class CropData : ScriptableObject
     [Range(1, 3)]
     public int canneryTier = 1;
 
+    [Tooltip("Colour of the preserve inside the Cannery jar as it fills up. Ignored unless canBeCanned.")]
+    public Color jarFillColor = new Color(0.78f, 0.28f, 0.30f, 1f);
+
     [Header("Regrowth")]
     [Tooltip("Does this crop regrow after harvest, or is it removed?")]
     public bool canRegrow = false;
     
-    [Tooltip("Time (seconds) to regrow from Seed â†’ Harvestable again (only if canRegrow = true)")]
+    [Tooltip("Seconds from one harvest to the next (only if canRegrow). A harvested plant restarts at the " +
+             "sapling stage; 0 = use the sapling stage's own length.")]
     public float regrowSeconds = 0f;
+
+    /// <summary>Harvest-to-harvest time for a regrowing crop (0 if it doesn't regrow).</summary>
+    public float RegrowTime => CropTraits.RegrowSeconds(canRegrow, regrowSeconds, saplingSeconds);
 
     [Header("Visuals")]
     [Tooltip("Plant prefab to instantiate when planting this crop")]
@@ -105,14 +112,32 @@ public class CropData : ScriptableObject
     [Tooltip("Crop item sprite (just the crop itself, not the plant - e.g., an ear of corn, a blueberry). For future use in inventory/UI.")]
     public Sprite cropSprite;
 
-    [Header("Advanced Properties (Future Use)")]
-    [Tooltip("Moisture depletion rate modifier (1.0 = normal, 0.5 = slower, 2.0 = faster)")]
+    [Header("Personality (shown in the Almanac)")]
+    [Tooltip("Thirst: how fast this crop dries its soil (1.0 = normal, 0.5 = slower, 2.0 = faster).")]
     [Range(0.5f, 2f)]
     public float moistureDepletionRate = 1f;
-    
-    [Tooltip("Base threat resistance (higher = less damage from threats)")]
+
+    [Tooltip("Deer appetite: multiplier on deer bite damage to this crop (0.25 = too spicy, 1 = normal, 1.5 = loves it).")]
     [Range(0f, 2f)]
-    public float threatResistance = 1f;
+    public float deerAppetite = 1f;
+
+    [Tooltip("Crow appetite: multiplier on crow peck damage to this crop.")]
+    [Range(0f, 2f)]
+    public float crowAppetite = 1f;
+
+    [Header("Seed Progression (Hazel's stall)")]
+    [Tooltip("Coins to buy this crop's seed packet at Hazel's stall. Ignored for the starter.")]
+    public int unlockCost = 100;
+    [Tooltip("Optional research feature flag. While it's locked the packet is MASKED in the stall (a mystery) and its Almanac page is locked.")]
+    public string unlockFeatureFlag = "";
+    [Tooltip("The free starter crop (Radish). Always owned.")]
+    public bool isStarter;
+    [Tooltip("Compost Bay yield multiplier when this crop is lost. 2 = 'Great compost' (Corn).")]
+    public float compostMultiplier = 1f;
+
+    /// <summary>Damage multiplier a pest applies to this crop.</summary>
+    public float PestAppetite(AnimalThreatType pest) =>
+        pest == AnimalThreatType.Deer ? deerAppetite : crowAppetite;
 
     /// <summary>
     /// Calculate total growth time from Seed â†’ Harvestable

@@ -9,6 +9,7 @@ public struct SimCrop
 {
     public string id;                  // stable lookup key (caller uses CropData.cropName)
     public float growSeconds;          // seed -> harvestable (CropData.TotalGrowthTime)
+    public float regrowSeconds;        // harvest -> next harvest for regrowers (CropData.RegrowTime); 0 = replanted
     public float harvestWindowSeconds; // 100%-value window after maturing
     public int harvestValue;           // money per harvest
     public int coinValue;              // coins banked per harvest

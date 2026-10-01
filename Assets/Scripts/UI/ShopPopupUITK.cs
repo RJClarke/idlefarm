@@ -16,6 +16,8 @@ public class ShopPopupUITK : MonoBehaviour
 
     [Header("Data")]
     [SerializeField] private UnlockData[] unlocks;
+    [Tooltip("Plants section: every crop's seed packet comes from here, in allCrops order. Falls back to the seed picker's database when empty.")]
+    [SerializeField] private CropDatabase cropDatabase;
 
     [Header("Templates")]
     [SerializeField] private VisualTreeAsset rowTemplate;
@@ -102,6 +104,7 @@ public class ShopPopupUITK : MonoBehaviour
             ResearchManager.Instance.OnFeatureFlagUnlocked += OnFeatureFlagUnlocked;
             any = true;
         }
+        CropOwnership.OnOwnershipChanged += OnOwnershipChanged;
         eventsSubscribed = any;
     }
 
@@ -119,10 +122,23 @@ public class ShopPopupUITK : MonoBehaviour
         }
         if (ResearchManager.Instance != null)
             ResearchManager.Instance.OnFeatureFlagUnlocked -= OnFeatureFlagUnlocked;
+        CropOwnership.OnOwnershipChanged -= OnOwnershipChanged;
         eventsSubscribed = false;
     }
 
     private void OnFeatureFlagUnlocked(string _) => MarkDirty();
+    private void OnOwnershipChanged() => MarkDirty();
+
+    private bool AnyExtraPacketAvailable()
+    {
+        if (Crops == null) return false;
+        foreach (CropData c in Crops.allCrops)
+            if (c != null && CropOwnership.IsOwned(c) && CropOwnership.CanAddPacket(c)) return true;
+        return false;
+    }
+
+    private CropDatabase Crops =>
+        cropDatabase != null ? cropDatabase : (SeedSelectionPopup.Instance != null ? SeedSelectionPopup.Instance.Crops : null);
 
     private void OnUpgradeChanged(string _) => MarkDirty();
     private void OnCurrencyChanged(int _) => MarkDirty();
@@ -175,6 +191,12 @@ public class ShopPopupUITK : MonoBehaviour
             popupRoot.schedule.Execute(() => popupRoot.AddToClassList("open")).StartingIn(0);
         }
         Refresh();
+        if (section == Section.Plants)
+        {
+            OnboardingTutorials.OnMenuOpened("tip_seed_stall"); // one-time how-to (new players)
+            // Once a crop can take a 2nd packet (more fields than packets), explain why you'd want one.
+            if (AnyExtraPacketAvailable()) OnboardingTutorials.OnMenuOpened("tip_extra_packet");
+        }
     }
 
     public void Close()
@@ -195,6 +217,13 @@ public class ShopPopupUITK : MonoBehaviour
     {
         if (rowsList == null || rowTemplate == null) return;
         rowsList.Clear();
+        if (section == Section.Plants && Crops != null)
+        {
+            // All crops, always in allCrops order (the one fixed crop order) — never re-sorted by state.
+            foreach (CropData crop in Crops.allCrops)
+                if (crop != null) SpawnCropRow(rowsList, crop);
+            return;
+        }
         if (unlocks == null) return;
         for (int i = 0; i < unlocks.Length; i++)
         {
@@ -258,7 +287,7 @@ public class ShopPopupUITK : MonoBehaviour
         {
             rowRoot.AddToClassList("market-row--owned");
             if (descLabel != null)   descLabel.text   = data.unlockedMessage;
-            if (statusLabel != null) statusLabel.text = "✓ Purchased";
+            if (statusLabel != null) statusLabel.text = "Purchased";
             if (costLabel != null)   costLabel.text   = "";
         }
         else if (purchasable)
@@ -273,7 +302,7 @@ public class ShopPopupUITK : MonoBehaviour
             rowRoot.AddToClassList("market-row--cant-afford");
             string missing = prereqsOk ? null : data.GetMissingPrerequisites();
             if (descLabel != null)   descLabel.text   = string.IsNullOrEmpty(missing) ? data.lockedDescription : $"Requires: {missing}";
-            if (statusLabel != null) statusLabel.text = "🔒 LOCKED";
+            if (statusLabel != null) statusLabel.text = "LOCKED";
             if (costLabel != null)   costLabel.text   = FormatCoinCost(data.coinCost);
         }
 
@@ -288,6 +317,97 @@ public class ShopPopupUITK : MonoBehaviour
             });
             WirePressedFeedback(rowRoot, "market-row--pressed");
         }
+    }
+
+    private void SpawnCropRow(VisualElement parent, CropData crop)
+    {
+        TemplateContainer rowContainer = rowTemplate.Instantiate();
+        parent.Add(rowContainer);
+
+        VisualElement rowRoot = rowContainer.Q(className: "market-row") ?? rowContainer.contentContainer;
+        VisualElement iconImg = rowContainer.Q<VisualElement>("row-icon");
+        Label iconFallback    = rowContainer.Q<Label>("row-icon-fallback");
+        Label titleLabel      = rowContainer.Q<Label>("row-title");
+        Label descLabel       = rowContainer.Q<Label>("row-desc");
+        Label statusLabel     = rowContainer.Q<Label>("row-status");
+        Label costLabel       = rowContainer.Q<Label>("row-cost");
+
+        SeedState state = CropOwnership.StateOf(crop);
+        bool masked = state == SeedState.Masked;
+
+        if (iconFallback != null) iconFallback.style.display = DisplayStyle.None;
+        if (iconImg != null)
+        {
+            iconImg.style.display = DisplayStyle.Flex;
+            if (crop.seedPacketSprite != null) iconImg.style.backgroundImage = new StyleBackground(crop.seedPacketSprite);
+            // Masked: a dark silhouette — you can tell there's a packet, not which one.
+            iconImg.style.unityBackgroundImageTintColor = masked ? new Color(0f, 0f, 0f, 0.8f) : Color.white;
+        }
+        if (titleLabel != null) titleLabel.text = masked ? "???" : crop.cropName;
+
+        rowRoot.RemoveFromClassList("market-row--owned");
+        rowRoot.RemoveFromClassList("market-row--buy");
+        rowRoot.RemoveFromClassList("market-row--cant-afford");
+        rowRoot.RemoveFromClassList("market-row--masked");
+
+        switch (state)
+        {
+            case SeedState.Owned:
+            {
+                // Owned: extra packets let this crop grow in more fields at once (one per field max).
+                int packets = CropOwnership.Packets(crop);
+                int fields = CropOwnership.FieldsOwned();
+                string owned = packets == 1 ? "1 packet" : $"{packets} packets";
+                if (CropOwnership.CanAddPacket(crop))
+                {
+                    int price = CropOwnership.NextPacketPrice(crop);
+                    bool canAffordPacket = CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(price);
+                    rowRoot.AddToClassList(canAffordPacket ? "market-row--buy" : "market-row--cant-afford");
+                    if (descLabel != null)   descLabel.text   = $"You have {owned}. Another lets it grow in {packets + 1} fields at once.";
+                    if (statusLabel != null) statusLabel.text = "+1 PACKET";
+                    if (costLabel != null)   costLabel.text   = FormatCoinCost(price);
+                    if (canAffordPacket)
+                    {
+                        CropData captured = crop;
+                        rowRoot.RegisterCallback<ClickEvent>(_ => CropOwnership.TryBuy(captured));
+                        WirePressedFeedback(rowRoot, "market-row--pressed");
+                    }
+                }
+                else
+                {
+                    rowRoot.AddToClassList("market-row--owned");
+                    if (descLabel != null)
+                        descLabel.text = packets >= SeedShopRules.MaxPackets || packets < fields
+                            ? crop.description
+                            : $"You have {owned} - one per field. Buy more fields for more.";
+                    if (statusLabel != null) statusLabel.text = packets > 1 ? $"Owned x{packets}" : "Owned";
+                    if (costLabel != null)   costLabel.text   = "";
+                }
+                break;
+            }
+            case SeedState.Masked:
+                rowRoot.AddToClassList("market-row--masked");
+                if (descLabel != null)   descLabel.text   = SeedShopRules.MaskedHint;
+                if (statusLabel != null) statusLabel.text = "LOCKED";
+                if (costLabel != null)   costLabel.text   = "";
+                break;
+            default:
+                bool canAfford = CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(crop.unlockCost);
+                rowRoot.AddToClassList(canAfford ? "market-row--buy" : "market-row--cant-afford");
+                if (descLabel != null)   descLabel.text   = crop.description;
+                if (statusLabel != null) statusLabel.text = canAfford ? "BUY" : "LOCKED";
+                if (costLabel != null)   costLabel.text   = FormatCoinCost(crop.unlockCost);
+                if (canAfford)
+                {
+                    CropData captured = crop;
+                    rowRoot.RegisterCallback<ClickEvent>(_ => CropOwnership.TryBuy(captured));
+                    WirePressedFeedback(rowRoot, "market-row--pressed");
+                }
+                break;
+        }
+
+        // "What's this crop good at?" — owned and priced rows only; a masked row reveals nothing.
+        if (!masked) rowRoot.Add(AlmanacPopupUITK.InfoBadge(AlmanacKind.Crop, crop.cropName, topLeft: true));
     }
 
     private static void WirePressedFeedback(VisualElement ve, string pressedClass)

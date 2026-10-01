@@ -21,10 +21,14 @@ public class HelperManager : MonoBehaviour
 
     [Header("Planting Configuration")]
     [Tooltip("Seed type for each zone (Zone 1-4) - OPTIONAL: Overridden by popup selection at runtime")]
+    // Legacy Inspector test seeds — no longer read (GetSeedForZone has no fallback). Kept so the scene's
+    // serialized values don't churn; safe to delete with a scene edit.
+#pragma warning disable 0414
     [SerializeField] private CropData zone1Seed;
     [SerializeField] private CropData zone2Seed;
     [SerializeField] private CropData zone3Seed;
     [SerializeField] private CropData zone4Seed;
+#pragma warning restore 0414
 
     public enum PlantingStrategy
     {
@@ -728,27 +732,34 @@ public class HelperManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Get seed type configured for a zone
-    /// MODIFIED: Check runtime dictionary first, fall back to inspector fields
+    /// Seed chosen for a zone this run, or null when the field was left empty. No fallback to the
+    /// Inspector test seeds: with seed progression an empty field must stay empty, never plant a
+    /// crop the player doesn't own.
     /// </summary>
-    public CropData GetSeedForZone(int zoneID)
+    public CropData GetSeedForZone(int zoneID) =>
+        currentZoneSeeds.TryGetValue(zoneID, out CropData seed) ? seed : null;
+
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+    /// <summary>Dev (PlayModeBridge): plant this crop in a zone from now on, this run only.</summary>
+    public string DevSetZoneSeed(int zoneID, string cropName)
     {
-        // Check runtime configuration first (from popup)
-        if (currentZoneSeeds.ContainsKey(zoneID))
-        {
-            return currentZoneSeeds[zoneID];
-        }
-        
-        // Fall back to inspector configuration (for backwards compatibility/testing)
-        switch (zoneID)
-        {
-            case 1: return zone1Seed;
-            case 2: return zone2Seed;
-            case 3: return zone3Seed;
-            case 4: return zone4Seed;
-            default: return null;
-        }
+        foreach (CropData c in Resources.FindObjectsOfTypeAll<CropData>())
+            if (c.cropName == cropName) { currentZoneSeeds[zoneID] = c; return $"zone {zoneID} -> {cropName}"; }
+        return $"no crop named {cropName}";
     }
+
+    /// <summary>Dev (PlayModeBridge): one line per plant in a zone - crop, stage, seconds left.</summary>
+    public string DevZoneReport(int zoneID)
+    {
+        var sb = new System.Text.StringBuilder();
+        foreach (SoilTile t in FarmGrid.Instance.GetZoneTiles(zoneID))
+        {
+            Plant p = t != null && t.CurrentPlant != null ? t.CurrentPlant.GetComponent<Plant>() : null;
+            sb.Append(p == null ? $"{t?.State}; " : $"{p.CropData.cropName} {p.CurrentStage} {p.StageTimer:0}s; ");
+        }
+        return sb.ToString();
+    }
+#endif
 
     /// <summary>
     /// Clean up completed or invalid tasks
