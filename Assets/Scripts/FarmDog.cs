@@ -25,15 +25,16 @@ public class FarmDog : AnimalDefender
     protected override int VictoryOffset => BARK_OFFSET;
     protected override string LogName => "FarmDog";
 
-    protected override float SpeedMultiplier =>
-        ResearchManager.Instance != null
-            ? 1f + ResearchManager.Instance.GetBonus(Research.StatKey.DogEfficiency)
-            : 1f;
+    // Split by source so the Almanac can show where each bonus came from.
+    public static float ResearchSpeedFactor =>
+        ResearchManager.Instance != null ? 1f + ResearchManager.Instance.GetBonus(Research.StatKey.DogEfficiency) : 1f;
+    public static float ResearchCooldownDivisor =>
+        ResearchManager.Instance != null ? 1f + ResearchManager.Instance.GetBonus(Research.StatKey.DogCooldown) : 1f;
 
-    protected override float CooldownDivisor =>
-        ResearchManager.Instance != null
-            ? 1f + ResearchManager.Instance.GetBonus(Research.StatKey.DogCooldown)
-            : 1f;
+    // Research track × Ranching Lv 25 capstone (1 until maxed).
+    protected override float SpeedMultiplier => ResearchSpeedFactor * FarmSkillsManager.DogSpeedMultiplier;
+
+    protected override float CooldownDivisor => ResearchCooldownDivisor;
 
     protected override void RecordChase(AnimalThreat threat)
     {

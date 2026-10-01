@@ -16,6 +16,12 @@ public class Cow : MonoBehaviour
     [Tooltip("Compost lump per eaten crop at L0 Run Yield.")]
     [SerializeField] private int baseLumpPerEat = 15;
 
+    // Almanac read-outs.
+    public float WalkSpeed => walkSpeed;
+    public float MinEatInterval => minIntervalSecs;
+    public float MaxEatInterval => maxIntervalSecs;
+    public int BaseCompostPerEat => baseLumpPerEat;
+
     private Coroutine loop;
     private AnimalVisual animalVisual;
 

@@ -44,6 +44,8 @@ public class FarmGrid : MonoBehaviour
 
     // Exposes tile size for threat system grazing radius calculations
     public float TileSize => tileSize;
+    /// <summary>World units from one tile's centre to the next (tile + gap); converts speeds to tiles.</summary>
+    public float TilePitch => tileSize + gapBetweenTiles;
 
     private void Awake()
     {

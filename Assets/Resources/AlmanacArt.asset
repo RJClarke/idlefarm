@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd391a77cf87d964bbb447bb0aa52458, type: 3}
+  m_Name: AlmanacArt
+  m_EditorClassIdentifier: Assembly-CSharp::AlmanacArt
+  titleFont: {fileID: 11400000, guid: a09af222286edb04696b2d61f639ab89, type: 2}
+  tabOff: {fileID: 3596160088656384895, guid: abae6ad5e77e8aa498ff4ddd608c7a4b, type: 3}
+  tabOn: {fileID: -3189890118001483501, guid: 686d1272981ff4948aeb026256bd3343, type: 3}
+  tabSlice: 4
+  page: {fileID: -7211825177943894780, guid: b15dd972ca0d9be499ca8dbb44942cfc, type: 3}
+  pageSlice: 3
+  deerIcon: {fileID: -794085626426664694, guid: 6ad4784e39ee2cb4785375cace3d1db6, type: 3}
+  crowIcon: {fileID: -7252073867116909430, guid: dbe3f6284c6506846ae277c0f5948bff, type: 3}

@@ -25,19 +25,18 @@ public class BarnPopupUITK : MonoBehaviour
         ("Processing", new Color(0.60f, 0.35f, 0.75f)), // purple
     };
 
-    private static readonly string[] TierFlavor =
+    // Plain-language "what does this skill do" for the info badge, plus the noun its percentage
+    // applies to. The actual numbers come live from FarmSkillsManager.GetPerPoint, so retuning
+    // the manager never leaves this text stale.
+    private static readonly (string effect, string unit)[] TrackInfo =
     {
-        "double-harvest chance", "free-seed chance", "sprinkler radius +1", "2x whirlpools",
-        "double wood knockdown", "second-egg chance", "double-jar chance",
-    };
-
-    // What each point actually buys, shown right on the row — mirrors FarmSkillsManager's
-    // per-point values exactly (harvestingPerPoint=0.04, plantingPerPoint=0.02, etc.); update
-    // both together if those tuning values ever change.
-    private static readonly string[] TrackBonusText =
-    {
-        "+4%/lvl Money", "+2%/lvl Growth", "+3%/lvl Moisture", "+2%/lvl Faster Bites",
-        "+2%/lvl Wood", "+3%/lvl Egg Value", "+2%/lvl Speed",
+        ("Your crops sell for more money.",        "more money"),
+        ("Your crops grow faster.",                "faster growing"),
+        ("Watered soil stays wet longer.",         "longer-lasting water"),
+        ("Fish bite sooner.",                      "shorter wait for a bite"),
+        ("You get more wood from every chop.",     "more wood"),
+        ("Eggs sell for more.",                    "more egg value"),
+        ("The Cannery and Smokehouse cook faster.", "faster cooking"),
     };
 
     private static readonly Color RenownColor = new Color(0.78f, 0.35f, 0.85f);
@@ -73,6 +72,17 @@ public class BarnPopupUITK : MonoBehaviour
     [Tooltip("Pixel font for the farm-name title — same UITK TextCore FontAsset as the catch toast (Fonts/UITK SDF/CayetanoRoundBold Pixel). Falls back to the default font when unassigned.")]
     [SerializeField] private UnityEngine.TextCore.Text.FontAsset titleFont;
 
+    // Board art shared with other code-built boards (the Farmer's Almanac reuses it so both match).
+    public Sprite BoardFrame => boardFrame;
+    public int FrameSlice => frameSlice;
+    public float FrameSliceScale => frameSliceScale;
+    public Color InteriorWash => interiorWash;
+    public Sprite BarTrack => barTrack;
+    public Sprite BarFill => barFill;
+    public Sprite CloseIcon => closeIcon;
+    public UnityEngine.TextCore.Text.FontAsset TitleFont => titleFont;
+    public PanelSettings SourcePanelSettings => sourcePanelSettings;
+
     private UIDocument document;
     private PanelSettings runtimePanelSettings;
     private VisualElement root;
@@ -82,10 +92,7 @@ public class BarnPopupUITK : MonoBehaviour
     private Label pointsLabel;
     private VisualElement renownFill;
     private Label renownLabel;
-    private VisualElement tooltip;
-    private Label tooltipLabel;
-    private VisualElement tooltipAnchor;
-    private IVisualElementScheduledItem tooltipHideTimer;
+    private FloatingTooltip tooltip;
     private bool isOpen;
     public bool IsOpen => isOpen;
 
@@ -153,6 +160,8 @@ public class BarnPopupUITK : MonoBehaviour
         UpdateTitle();
         BuildContent();
         popupRoot.style.display = DisplayStyle.Flex;
+        OnboardingTutorials.OnMenuOpened("tip_barn"); // one-time how-to (new players)
+        OnboardingTutorials.OnBarnOpened();             // then, with a point to spend, spotlight a "+"
     }
 
     public void Close()
@@ -251,6 +260,9 @@ public class BarnPopupUITK : MonoBehaviour
         header.style.flexDirection = FlexDirection.Row;
         header.style.justifyContent = Justify.SpaceBetween;
         header.style.alignItems = Align.Center;
+        // Never squeezed by the fixed-height card: a shrunk header let a long farm name wrap onto a
+        // second line that then drew underneath the Overall Farm Level bar.
+        header.style.flexShrink = 0;
         card.Add(header);
 
         // Farm name + a little house icon read as a single unit on the left. The title text is
@@ -259,6 +271,7 @@ public class BarnPopupUITK : MonoBehaviour
         titleGroup.style.flexDirection = FlexDirection.Row;
         titleGroup.style.alignItems = Align.Center;
         titleGroup.style.flexShrink = 1;
+        titleGroup.style.flexGrow = 1;
         header.Add(titleGroup);
 
         if (houseIcon != null)
@@ -276,8 +289,15 @@ public class BarnPopupUITK : MonoBehaviour
         titleLabel.style.fontSize = 46;
         titleLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
         titleLabel.style.color = TitleBrown;
-        titleLabel.style.whiteSpace = WhiteSpace.Normal;
+        // One line, trimmed with "..." if a name is ever too long. Wrapping measured the pixel font
+        // wrong: it broke after the first word and drew the rest underneath the Farm Level bar.
+        titleLabel.style.whiteSpace = WhiteSpace.NoWrap;
+        titleLabel.style.overflow = Overflow.Hidden;
+        titleLabel.style.textOverflow = TextOverflow.Ellipsis;
         titleLabel.style.flexShrink = 1;
+        // Take the whole row rather than the pixel font's own measured width, which comes out
+        // narrower than it draws (that's what clipped the name early).
+        titleLabel.style.flexGrow = 1;
         // Pixel font (same as the catch toast) so the farm name reads as a title, not body text.
         if (titleFont != null) titleLabel.style.unityFontDefinition = new StyleFontDefinition(titleFont);
         titleGroup.Add(titleLabel);
@@ -417,63 +437,21 @@ public class BarnPopupUITK : MonoBehaviour
         // Floating tooltip: added to popupRoot (not card) so it can float above the card edges
         // without being clipped, and positioned per-anchor in ShowTooltip below. Replaces the old
         // always-reserved description panel at the bottom of the card.
-        tooltip = new VisualElement { name = "barn-tooltip" };
-        tooltip.style.position = Position.Absolute;
-        tooltip.style.display = DisplayStyle.None;
-        tooltip.style.maxWidth = 440;
-        tooltip.style.paddingLeft = 22; tooltip.style.paddingRight = 22;
-        tooltip.style.paddingTop = 16; tooltip.style.paddingBottom = 16;
-        tooltip.style.backgroundColor = new Color(0.16f, 0.10f, 0.05f, 0.95f);
-        tooltip.style.borderTopLeftRadius = 14; tooltip.style.borderTopRightRadius = 14;
-        tooltip.style.borderBottomLeftRadius = 14; tooltip.style.borderBottomRightRadius = 14;
-        // Centers horizontally on the anchor and sits with its bottom edge at the anchor's top,
-        // without needing to pre-measure the tooltip's own size (percentages are relative to it).
-        tooltip.style.translate = new StyleTranslate(new Translate(Length.Percent(-50), Length.Percent(-100)));
-        tooltip.pickingMode = PickingMode.Ignore;
-        popupRoot.Add(tooltip);
-
-        tooltipLabel = new Label();
-        tooltipLabel.style.color = Color.white;
-        tooltipLabel.style.fontSize = 24;
-        tooltipLabel.style.whiteSpace = WhiteSpace.Normal;
-        tooltipLabel.style.unityTextAlign = TextAnchor.MiddleCenter;
-        tooltip.Add(tooltipLabel);
+        tooltip = new FloatingTooltip(popupRoot, "barn-tooltip");
     }
 
-    /// <summary>Shows (or, tapping the same anchor again, hides) a tooltip floating above `anchor`.
-    /// Auto-hides after a few seconds so it never needs its own close affordance.</summary>
-    private void ShowTooltip(VisualElement anchor, string text)
-    {
-        if (tooltip == null || popupRoot == null) return;
+    /// <summary>Shows (or, tapping the same anchor again, hides) the help bubble above `anchor`.</summary>
+    private void ShowTooltip(VisualElement anchor, string text) => tooltip?.Toggle(anchor, text);
 
-        if (tooltipAnchor == anchor && tooltip.style.display == DisplayStyle.Flex)
-        {
-            HideTooltip();
-            return;
-        }
+    private void HideTooltip() => tooltip?.Hide();
 
-        tooltipAnchor = anchor;
-        tooltipLabel.text = text;
-        tooltip.style.display = DisplayStyle.Flex;
-
-        Vector2 topCenterWorld = new Vector2(anchor.worldBound.center.x, anchor.worldBound.yMin);
-        Vector2 local = popupRoot.WorldToLocal(topCenterWorld);
-        tooltip.style.left = local.x;
-        tooltip.style.top = local.y - 10f;
-
-        tooltipHideTimer?.Pause();
-        tooltipHideTimer = tooltip.schedule.Execute(HideTooltip).StartingIn(3500);
-    }
-
-    private void HideTooltip()
-    {
-        if (tooltip == null) return;
-        tooltip.style.display = DisplayStyle.None;
-        tooltipAnchor = null;
-    }
+    /// <summary>The first track's "+" that can spend a point right now (null if none) — the Barn
+    /// "spend your point" tutorial spotlights it.</summary>
+    public VisualElement FirstSpendableButton { get; private set; }
 
     private void BuildContent()
     {
+        FirstSpendableButton = null;
         var fs = FarmSkillsManager.Instance;
         var rm = ReputationManager.Instance;
         if (fs == null || rm == null || tracksColumn == null) return;
@@ -533,8 +511,10 @@ public class BarnPopupUITK : MonoBehaviour
         infoBadge.style.flexShrink = 0;
         infoBadge.style.fontSize = 19;
         infoBadge.style.unityFontStyleAndWeight = FontStyle.BoldAndItalic;
-        infoBadge.style.color = InkBlack;
-        infoBadge.style.backgroundColor = Darken(meta.color, 0.85f);
+        // Every info badge shares one colour (defined with the Almanac's) so "i" reads as a single,
+        // recognisable "tap for details" control rather than part of each track's colour coding.
+        infoBadge.style.color = AlmanacPopupUITK.InfoBadgeText;
+        infoBadge.style.backgroundColor = AlmanacPopupUITK.InfoBadgeColor;
         infoBadge.style.borderTopWidth = 1; infoBadge.style.borderBottomWidth = 1;
         infoBadge.style.borderLeftWidth = 1; infoBadge.style.borderRightWidth = 1;
         infoBadge.style.borderTopColor = InkBlack; infoBadge.style.borderBottomColor = InkBlack;
@@ -543,8 +523,7 @@ public class BarnPopupUITK : MonoBehaviour
         infoBadge.style.borderBottomLeftRadius = 16; infoBadge.style.borderBottomRightRadius = 16;
         infoBadge.style.paddingLeft = 0; infoBadge.style.paddingRight = 0;
         infoBadge.style.paddingTop = 0; infoBadge.style.paddingBottom = 0;
-        string bonusText = TrackBonusText[(int)track];
-        infoBadge.clicked += () => ShowTooltip(infoBadge, $"{meta.name}\n{bonusText}");
+        infoBadge.clicked += () => ShowTooltip(infoBadge, BuildTrackInfoText(track));
         nameRow.Add(infoBadge);
 
         VisualElement tickRow = new VisualElement();
@@ -623,16 +602,74 @@ public class BarnPopupUITK : MonoBehaviour
         plusBtn.style.borderBottomLeftRadius = 10; plusBtn.style.borderBottomRightRadius = 10;
         plusBtn.SetEnabled(canLevel);
         tickRow.Add(plusBtn);
+        if (canLevel && FirstSpendableButton == null) FirstSpendableButton = plusBtn; // tutorial spotlight target
 
         return row;
+    }
+
+    /// <summary>Info-badge text: what the skill does in plain words, what one level adds, what the
+    /// player has right now, and what maxing it gives — no "/lvl" shorthand.</summary>
+    private static string BuildTrackInfoText(FarmSkillTrack track)
+    {
+        var fs = FarmSkillsManager.Instance;
+        var info = TrackInfo[(int)track];
+        int level = fs.GetLevel(track);
+        float perLevel = fs.GetPerPoint(track) * 100f;
+        return $"<b>{TrackMeta[(int)track].name}</b>\n{info.effect}\n\n"
+             + $"Each level: +{perLevel:0.#}% {info.unit}\n"
+             + $"You have now: +{perLevel * level:0.#}% (level {level})\n"
+             + $"At level {FarmSkillsCore.MaxLevel}: +{perLevel * FarmSkillsCore.MaxLevel:0.#}%";
     }
 
     private void OnTierClicked(FarmSkillTrack track, int tierLevel, VisualElement anchor)
     {
         var fs = FarmSkillsManager.Instance;
-        string flavor = TierFlavor[(int)track];
-        string status = fs.IsTierUnlocked(track, tierLevel) ? "Unlocked" : "Locked";
-        ShowTooltip(anchor, $"{TrackMeta[(int)track].name} Lv {tierLevel} ({status})\n{flavor}");
+        int level = fs.GetLevel(track);
+        string status = fs.IsTierUnlocked(track, tierLevel)
+            ? "Unlocked!"
+            : $"Reach level {tierLevel} to unlock (you're level {level}).";
+        ShowTooltip(anchor, $"<b>{TrackMeta[(int)track].name} - Level {tierLevel}</b>\n{DescribeMilestone(track, tierLevel)}\n\n{status}");
+    }
+
+    /// <summary>
+    /// Exactly what a milestone gives, with numbers read live from FarmSkillsManager so the text
+    /// always matches gameplay. Levels 5/10/15/20 grow one perk per track (the text names the
+    /// total at that milestone, not the increment); level 25 is the track's unique capstone.
+    /// </summary>
+    private static string DescribeMilestone(FarmSkillTrack track, int tierLevel)
+    {
+        var fs = FarmSkillsManager.Instance;
+        if (tierLevel >= FarmSkillsCore.MaxLevel)
+        {
+            return track switch
+            {
+                FarmSkillTrack.Harvesting => $"Golden crops: {fs.GoldenCropChanceValue * 100f:0.#}% chance a harvest pays {fs.GoldenCropMultiplierValue}x money and coins.",
+                FarmSkillTrack.Planting   => $"Head start: {fs.InstantSproutChanceValue * 100f:0.#}% chance a new seed starts as a sprout.",
+                FarmSkillTrack.Watering   => "Rain fully waters every crop.",
+                FarmSkillTrack.Fishing    => $"Rare fish (Bass and Pike) are {fs.RareFishMultiplierValue:0.#}x as likely.",
+                FarmSkillTrack.Forestry   => $"Trees regrow {fs.TreeRegrowMultiplierValue:0.#}x as fast.",
+                FarmSkillTrack.Ranching   => $"Your dog runs {(fs.DogSpeedMultiplierValue - 1f) * 100f:0.#}% faster.",
+                FarmSkillTrack.Processing => $"Cooking and smoking get an extra +{fs.ProcessingCapstoneSpeedValue * 100f:0.#}% speed.",
+                _ => string.Empty,
+            };
+        }
+
+        int steps = FarmSkillsCore.GrowingTiersReached(tierLevel);
+        float step = track == FarmSkillTrack.Watering ? fs.SprinklerReachStep : fs.MilestoneChanceStep;
+        float pct = steps * step * 100f;
+        string upFrom = steps > 1 ? $" (up from {(steps - 1) * step * 100f:0.#}%)" : string.Empty;
+        string perk = track switch
+        {
+            FarmSkillTrack.Harvesting => $"{pct:0.#}% chance a harvest pays double money and coins",
+            FarmSkillTrack.Planting   => $"{pct:0.#}% chance a harvest gives its seed back free",
+            FarmSkillTrack.Watering   => $"Sprinklers reach {pct:0.#}% farther",
+            FarmSkillTrack.Fishing    => $"{pct:0.#}% chance to catch 2 fish at once",
+            FarmSkillTrack.Forestry   => $"{pct:0.#}% chance a chop gives double wood",
+            FarmSkillTrack.Ranching   => $"{pct:0.#}% chance an egg counts double",
+            FarmSkillTrack.Processing => $"{pct:0.#}% chance a finished jar or smoked fish comes out as two",
+            _ => string.Empty,
+        };
+        return perk + upFrom + ".";
     }
 
     private void OnPlusClicked(FarmSkillTrack track)

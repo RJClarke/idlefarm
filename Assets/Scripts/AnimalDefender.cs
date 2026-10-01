@@ -45,6 +45,14 @@ public abstract class AnimalDefender : MonoBehaviour
     protected const int IDLE_OFFSET = 0;
     protected const int WALK_OFFSET = 4;
 
+    // ── Almanac read-outs (base values; bonuses are applied by the subclass hooks below) ──
+    public float BaseWalkSpeed => roamSpeed;
+    public float BaseRunSpeed => chaseSpeed;
+    public float BaseChaseCooldown => chaseCooldown;
+    public float RunSpeedMultiplier => SpeedMultiplier;
+    public float ChaseCooldownDivisor => CooldownDivisor;
+    public AnimalThreatType[] Chases => TargetTypes;
+
     // ── Subclass hooks ──────────────────────────────────────────────────────
 
     /// <summary>Threat types this animal will chase, in priority order.</summary>
