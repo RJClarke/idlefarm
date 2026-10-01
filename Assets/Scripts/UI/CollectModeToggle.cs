@@ -60,6 +60,9 @@ public class CollectModeToggle : MonoBehaviour
     private static readonly Color BaseFill = new Color(0.32f, 0.23f, 0.15f);
 
     private GameObject container;
+
+    /// <summary>The switch's panel, for tutorial spotlighting (null before BuildUI).</summary>
+    public RectTransform TargetRect => container != null ? (RectTransform)container.transform : null;
     private Image collectFill, sellFill;
     private TextMeshProUGUI collectLabel, sellLabel;
     private CameraPanController pan;

@@ -276,6 +276,15 @@
     margin-top: 0;
 }
 
+/* Branch icon; the sprite is assigned in code from Resources/Research/BranchIcons.
+   32px keeps the 16px source art on a clean 2x integer scale. */
+.picker-section__icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
 .picker-section__title {
     font-size: 28px;
     -unity-font-style: bold;
@@ -422,26 +431,150 @@
 
 .slot-card__active-timer {
     color: rgb(220, 195, 150);
-    font-size: 22px;
+    font-size: 32px;
     margin-top: 8px;
     -unity-text-align: middle-center;
 }
 
-.slot-card__cancel {
-    color: rgb(200, 110, 110);
-    font-size: 20px;
-    margin-top: 10px;
-    -unity-text-align: middle-center;
+/* The centre column of an active cell. Corner controls are absolute, so this stays centred. */
+.slot-card__active-body {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 62px;    /* clear the Auto toggle */
+    margin-bottom: 58px; /* clear Cancel / Speed Up */
 }
 
-/* Active slot boost indicator (Plan 2 — hidden by default) */
-.slot-card__boost {
-    color: rgb(240, 200, 120);
+/* ─── Active cell corner controls ─── */
+
+.slot-card__corner--pressed {
+    opacity: 0.6;
+}
+
+/* Top-left: Auto (repeat) toggle */
+.slot-card__auto {
+    position: absolute;
+    top: 16px;
+    left: 18px;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    background-color: rgba(0, 0, 0, 0.22);
+    border-color: rgba(255, 240, 210, 0.22);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.slot-card__auto-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Restart.png");
+    -unity-background-scale-mode: scale-to-fit;
+    opacity: 0.45;
+}
+
+.slot-card__auto-label {
     font-size: 20px;
-    margin-top: 6px;
     -unity-font-style: bold;
-    -unity-text-align: middle-center;
-    display: none;
+    color: rgba(255, 240, 210, 0.5);
 }
 
-.slot-card__boost--active { display: flex; }
+/* On state — green to match the research/compost family used elsewhere in this popup. */
+.slot-card__auto--on {
+    background-color: rgba(90, 150, 60, 0.35);
+    border-color: rgb(140, 200, 100);
+}
+
+.slot-card__auto--on .slot-card__auto-icon {
+    opacity: 1;
+}
+
+.slot-card__auto--on .slot-card__auto-label {
+    color: rgb(170, 225, 120);
+}
+
+/* Bottom-left: Cancel */
+.slot-card__cancel {
+    position: absolute;
+    bottom: 18px;
+    left: 14px;
+    color: rgb(200, 110, 110);
+    font-size: 22px;
+    -unity-text-align: middle-center;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+/* Bottom-right: compost speed-up chip */
+.slot-card__boost-chip {
+    position: absolute;
+    bottom: 16px;
+    right: 18px;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    background-color: rgba(0, 0, 0, 0.22);
+    border-color: rgba(255, 240, 210, 0.22);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.slot-card__boost-chip--active {
+    background-color: rgba(90, 150, 60, 0.35);
+    border-color: rgb(140, 200, 100);
+}
+
+.slot-card__compost-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Compost.png");
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.slot-card__boost-mult {
+    font-size: 22px;
+    -unity-font-style: bold;
+    color: rgb(200, 175, 135);
+}
+
+.slot-card__boost-chip--active .slot-card__boost-mult {
+    width: 38px;
+    -unity-text-align: middle-left;
+}
+
+.slot-card__boost-chip--active .slot-card__boost-mult {
+    color: rgb(170, 225, 120);
+}
+
+/* Real-world remaining time on the boost — quieter than the multiplier beside it.
+   Fixed width (fits "11h 59m 59s", the longest a 12hr token can show) so the pill
+   never resizes as it counts down. */
+.slot-card__boost-left {
+    font-size: 20px;
+    width: 148px;
+    margin-left: 8px;
+    -unity-text-align: middle-left;
+    color: rgba(255, 240, 210, 0.8);
+}

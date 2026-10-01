@@ -305,6 +305,9 @@ public class ThunderstormManager : MonoBehaviour
         float effective = amount;
         if (ResearchManager.Instance != null)
             effective *= 1f + ResearchManager.Instance.GetBonus(Research.StatKey.RainWatering);
+        // Watering Lv 25 capstone: rain tops every crop's moisture all the way up.
+        if (FarmSkillsManager.Capstone(FarmSkillTrack.Watering))
+            effective = Mathf.Max(effective, FarmUpgrades.MaxMoisture);
 
         foreach (SoilTile tile in FarmGrid.Instance.GetOccupiedTiles())
         {

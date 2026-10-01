@@ -135,6 +135,7 @@ public class FarmPopupUITK : MonoBehaviour
             popupRoot.schedule.Execute(() => popupRoot.AddToClassList("open")).StartingIn(0);
         }
         RefreshAll();
+        OnboardingTutorials.OnMenuOpened("tip_farm_upgrades"); // one-time how-to (new players)
     }
 
     public void Close()

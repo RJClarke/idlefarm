@@ -109,6 +109,7 @@ public class AnimalPopupUITK : MonoBehaviour
         }
         UpdateGemCount();
         RefreshList();
+        OnboardingTutorials.OnMenuOpened("tip_animals"); // one-time how-to (new players)
     }
 
     public void Close()
@@ -171,6 +172,7 @@ public class AnimalPopupUITK : MonoBehaviour
 
         if (nameLabel != null) nameLabel.text = animal.displayName;
         if (descLabel != null) descLabel.text = animal.description;
+        if (rowRoot != null) rowRoot.Add(AlmanacPopupUITK.InfoBadge(AlmanacKind.Animal, animal.animalID, topLeft: true));
 
         if (iconElem != null)
         {

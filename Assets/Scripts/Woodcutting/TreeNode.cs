@@ -104,7 +104,8 @@ public class TreeNode : MonoBehaviour
         // the tree resumes growing from sapling instead of freezing until real time catches up.
         if (plantedUtcTicks > now) plantedUtcTicks = now;
         double elapsed = (now - plantedUtcTicks) / (double)System.TimeSpan.TicksPerSecond;
-        return WoodcuttingMath.RegrowFraction(elapsed, data.growSeconds);
+        // Forestry Lv 25 capstone: trees regrow faster (multiplier is 1 otherwise).
+        return WoodcuttingMath.RegrowFraction(elapsed, data.growSeconds / FarmSkillsManager.TreeRegrowMultiplier);
     }
 
     private void ApplyGrowthVisual()
@@ -184,6 +185,9 @@ public class TreeNode : MonoBehaviour
         int swingWood = WoodcuttingMath.SwingWood(yield, hitsSoFar, needed);
         if (swingWood > 0 && FarmSkillsManager.Instance != null)
             swingWood = Mathf.RoundToInt(swingWood * (1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Forestry)));
+        // Forestry skill milestones (Lv 5-20): chance a chop knocks loose double wood.
+        if (swingWood > 0 && FarmSkillsManager.RollMilestone(FarmSkillTrack.Forestry))
+            swingWood *= 2;
         if (swingWood > 0)
         {
             if (CurrencyManager.Instance != null) CurrencyManager.Instance.AddWood(swingWood);

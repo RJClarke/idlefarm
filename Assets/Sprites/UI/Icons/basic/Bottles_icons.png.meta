@@ -1,0 +1,5863 @@
+fileFormatVersion: 2
+guid: de8cda1d86ce0d04ebae99ffe31c5a82
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6866920917857345020
+    second: Bottles_icons_0
+  - first:
+      213: -2001372950167125196
+    second: Bottles_icons_1
+  - first:
+      213: 5542172474853723064
+    second: Bottles_icons_2
+  - first:
+      213: -4105014352748516648
+    second: Bottles_icons_3
+  - first:
+      213: -1023816294390351439
+    second: Bottles_icons_4
+  - first:
+      213: 6492687875899341353
+    second: Bottles_icons_5
+  - first:
+      213: -7072199668602171387
+    second: Bottles_icons_6
+  - first:
+      213: 1938935391983156860
+    second: Bottles_icons_7
+  - first:
+      213: -6535180022207414447
+    second: Bottles_icons_8
+  - first:
+      213: -3960843346370619732
+    second: Bottles_icons_9
+  - first:
+      213: -4567556140790239937
+    second: Bottles_icons_10
+  - first:
+      213: 4089433562262440271
+    second: Bottles_icons_11
+  - first:
+      213: 5484324556903313879
+    second: Bottles_icons_12
+  - first:
+      213: -7519783475087061050
+    second: Bottles_icons_13
+  - first:
+      213: 7115661946569893806
+    second: Bottles_icons_14
+  - first:
+      213: -6737736839794105234
+    second: Bottles_icons_15
+  - first:
+      213: 2231574922309271020
+    second: Bottles_icons_16
+  - first:
+      213: -6836345860627140770
+    second: Bottles_icons_17
+  - first:
+      213: -6237321526490666391
+    second: Bottles_icons_18
+  - first:
+      213: 4700704376280486054
+    second: Bottles_icons_19
+  - first:
+      213: -6470965070454086250
+    second: Bottles_icons_20
+  - first:
+      213: 3551872820383354326
+    second: Bottles_icons_21
+  - first:
+      213: 8800339992081633459
+    second: Bottles_icons_22
+  - first:
+      213: 3170134990838520015
+    second: Bottles_icons_23
+  - first:
+      213: -1204958095575220880
+    second: Bottles_icons_24
+  - first:
+      213: 4960824083957999751
+    second: Bottles_icons_25
+  - first:
+      213: -8122408335666793637
+    second: Bottles_icons_26
+  - first:
+      213: -8966347361618255257
+    second: Bottles_icons_27
+  - first:
+      213: 3959055186808276289
+    second: Bottles_icons_28
+  - first:
+      213: 6118248839673851363
+    second: Bottles_icons_29
+  - first:
+      213: 2682309029212657916
+    second: Bottles_icons_30
+  - first:
+      213: 5582018637514309287
+    second: Bottles_icons_31
+  - first:
+      213: -4966210300282903673
+    second: Bottles_icons_32
+  - first:
+      213: 6563572009276406781
+    second: Bottles_icons_33
+  - first:
+      213: 1958122926626581776
+    second: Bottles_icons_34
+  - first:
+      213: -7859276594296707140
+    second: Bottles_icons_35
+  - first:
+      213: -8910631965596825959
+    second: Bottles_icons_36
+  - first:
+      213: 3214036244088755684
+    second: Bottles_icons_37
+  - first:
+      213: -607436049954812973
+    second: Bottles_icons_38
+  - first:
+      213: -5205125823295696630
+    second: Bottles_icons_39
+  - first:
+      213: -7087162855558890924
+    second: Bottles_icons_40
+  - first:
+      213: -6104944175026920600
+    second: Bottles_icons_41
+  - first:
+      213: -7650934114692995720
+    second: Bottles_icons_42
+  - first:
+      213: 3254622622214247248
+    second: Bottles_icons_43
+  - first:
+      213: -3079943970942599038
+    second: Bottles_icons_44
+  - first:
+      213: 892039267833435820
+    second: Bottles_icons_45
+  - first:
+      213: -8303913273346663126
+    second: Bottles_icons_46
+  - first:
+      213: -5055913084791101629
+    second: Bottles_icons_47
+  - first:
+      213: 7138580454368150500
+    second: Bottles_icons_48
+  - first:
+      213: -3384524908852519783
+    second: Bottles_icons_49
+  - first:
+      213: -3266066469262745455
+    second: Bottles_icons_50
+  - first:
+      213: -6434214573648515669
+    second: Bottles_icons_51
+  - first:
+      213: 5166984490914859791
+    second: Bottles_icons_52
+  - first:
+      213: -8853282091663540856
+    second: Bottles_icons_53
+  - first:
+      213: -1136752334569451531
+    second: Bottles_icons_54
+  - first:
+      213: 1195696288429228958
+    second: Bottles_icons_55
+  - first:
+      213: 8014723203624473440
+    second: Bottles_icons_56
+  - first:
+      213: 4227532939358400539
+    second: Bottles_icons_57
+  - first:
+      213: 6871063754291245416
+    second: Bottles_icons_58
+  - first:
+      213: 7278957510326217002
+    second: Bottles_icons_59
+  - first:
+      213: -5526335171367487254
+    second: Bottles_icons_60
+  - first:
+      213: -9212998497999856811
+    second: Bottles_icons_61
+  - first:
+      213: -5984712725269430097
+    second: Bottles_icons_62
+  - first:
+      213: -1454131016491666486
+    second: Bottles_icons_63
+  - first:
+      213: -2939486544619227362
+    second: Bottles_icons_64
+  - first:
+      213: 6052809238185843060
+    second: Bottles_icons_65
+  - first:
+      213: -9128779638194206102
+    second: Bottles_icons_66
+  - first:
+      213: 640958795127737187
+    second: Bottles_icons_67
+  - first:
+      213: -9160933324752126388
+    second: Bottles_icons_68
+  - first:
+      213: -5165122105311496355
+    second: Bottles_icons_69
+  - first:
+      213: -5535304508777996480
+    second: Bottles_icons_70
+  - first:
+      213: -8056272941953520903
+    second: Bottles_icons_71
+  - first:
+      213: 3834434204182748412
+    second: Bottles_icons_72
+  - first:
+      213: 1540923093698773031
+    second: Bottles_icons_73
+  - first:
+      213: -6148954286290630816
+    second: Bottles_icons_74
+  - first:
+      213: -7209997972325277367
+    second: Bottles_icons_75
+  - first:
+      213: 4542590706020982783
+    second: Bottles_icons_76
+  - first:
+      213: -2935278820162724166
+    second: Bottles_icons_77
+  - first:
+      213: -6800172005196216133
+    second: Bottles_icons_78
+  - first:
+      213: -5798269924137296339
+    second: Bottles_icons_79
+  - first:
+      213: -6364313943860617113
+    second: Bottles_icons_80
+  - first:
+      213: -6885846544397877723
+    second: Bottles_icons_81
+  - first:
+      213: 8662979533208916721
+    second: Bottles_icons_82
+  - first:
+      213: 5427136011338227003
+    second: Bottles_icons_83
+  - first:
+      213: 1339253463030617887
+    second: Bottles_icons_84
+  - first:
+      213: 2332130675290850956
+    second: Bottles_icons_85
+  - first:
+      213: -4415431919724002677
+    second: Bottles_icons_86
+  - first:
+      213: -7994898450412984899
+    second: Bottles_icons_87
+  - first:
+      213: -7063425700506059235
+    second: Bottles_icons_88
+  - first:
+      213: -476820782057059775
+    second: Bottles_icons_89
+  - first:
+      213: -7350919688323405546
+    second: Bottles_icons_90
+  - first:
+      213: -1946550747193510684
+    second: Bottles_icons_91
+  - first:
+      213: 8374821466402941203
+    second: Bottles_icons_92
+  - first:
+      213: 6180359100031807151
+    second: Bottles_icons_93
+  - first:
+      213: -7650837296367025292
+    second: Bottles_icons_94
+  - first:
+      213: -8974293190624828935
+    second: Bottles_icons_95
+  - first:
+      213: 964918055057053783
+    second: Bottles_icons_96
+  - first:
+      213: -7503267584756528350
+    second: Bottles_icons_97
+  - first:
+      213: 7857871789177154877
+    second: Bottles_icons_98
+  - first:
+      213: -3268658999229339561
+    second: Bottles_icons_99
+  - first:
+      213: -4393170335550464280
+    second: Bottles_icons_100
+  - first:
+      213: -8153648954558770350
+    second: Bottles_icons_101
+  - first:
+      213: -1362797356323556493
+    second: Bottles_icons_102
+  - first:
+      213: -5608820208934073133
+    second: Bottles_icons_103
+  - first:
+      213: 3125048373278389253
+    second: Bottles_icons_104
+  - first:
+      213: 6072583715953044179
+    second: Bottles_icons_105
+  - first:
+      213: -3050855466507077810
+    second: Bottles_icons_106
+  - first:
+      213: 537523799965290749
+    second: Bottles_icons_107
+  - first:
+      213: -699268809221428215
+    second: Bottles_icons_108
+  - first:
+      213: 6096771101536287496
+    second: Bottles_icons_109
+  - first:
+      213: -909706519442709518
+    second: Bottles_icons_110
+  - first:
+      213: -5454819089731928960
+    second: Bottles_icons_111
+  - first:
+      213: 1718907108702800510
+    second: Bottles_icons_112
+  - first:
+      213: 8625362839485450186
+    second: Bottles_icons_113
+  - first:
+      213: 6593828068904450571
+    second: Bottles_icons_114
+  - first:
+      213: 4940223112845109967
+    second: Bottles_icons_115
+  - first:
+      213: 4798012958166796790
+    second: Bottles_icons_116
+  - first:
+      213: 4105876631337180487
+    second: Bottles_icons_117
+  - first:
+      213: 1159754345834203551
+    second: Bottles_icons_118
+  - first:
+      213: -7313566304114640871
+    second: Bottles_icons_119
+  - first:
+      213: -8656076145973411531
+    second: Bottles_icons_120
+  - first:
+      213: -6925384480130383277
+    second: Bottles_icons_121
+  - first:
+      213: -611473099982579345
+    second: Bottles_icons_122
+  - first:
+      213: 6434506618153140962
+    second: Bottles_icons_123
+  - first:
+      213: -1049585801748160462
+    second: Bottles_icons_124
+  - first:
+      213: 8482175963376804989
+    second: Bottles_icons_125
+  - first:
+      213: -1146491031706821408
+    second: Bottles_icons_126
+  - first:
+      213: 8096663796865994099
+    second: Bottles_icons_127
+  - first:
+      213: -6181793950727546018
+    second: Bottles_icons_128
+  - first:
+      213: -6100201225415102682
+    second: Bottles_icons_129
+  - first:
+      213: -385310216800443614
+    second: Bottles_icons_130
+  - first:
+      213: -3933513654428765455
+    second: Bottles_icons_131
+  - first:
+      213: 2153110619415231945
+    second: Bottles_icons_132
+  - first:
+      213: 3289298107926578021
+    second: Bottles_icons_133
+  - first:
+      213: -4596854103445042205
+    second: Bottles_icons_134
+  - first:
+      213: 4523366341117032415
+    second: Bottles_icons_135
+  - first:
+      213: -6316990623337980696
+    second: Bottles_icons_136
+  - first:
+      213: -6404630746493218209
+    second: Bottles_icons_137
+  - first:
+      213: -8037727738517254231
+    second: Bottles_icons_138
+  - first:
+      213: 8078867742741293855
+    second: Bottles_icons_139
+  - first:
+      213: 8553132849973037560
+    second: Bottles_icons_140
+  - first:
+      213: 2008618319133811616
+    second: Bottles_icons_141
+  - first:
+      213: 3097155265240556187
+    second: Bottles_icons_142
+  - first:
+      213: 2786009015812951198
+    second: Bottles_icons_143
+  - first:
+      213: -8064670260080508661
+    second: Bottles_icons_144
+  - first:
+      213: -4329946524083963478
+    second: Bottles_icons_145
+  - first:
+      213: 6345040135949438438
+    second: Bottles_icons_146
+  - first:
+      213: -3407865005219015415
+    second: Bottles_icons_147
+  - first:
+      213: -7402846670297371620
+    second: Bottles_icons_148
+  - first:
+      213: 5934810615065440188
+    second: Bottles_icons_149
+  - first:
+      213: -7133954207308616234
+    second: Bottles_icons_150
+  - first:
+      213: -4666844057980277989
+    second: Bottles_icons_151
+  - first:
+      213: 6577170000430614889
+    second: Bottles_icons_152
+  - first:
+      213: -6895878039026565312
+    second: Bottles_icons_153
+  - first:
+      213: -2678363284595900487
+    second: Bottles_icons_154
+  - first:
+      213: -7286602766662355349
+    second: Bottles_icons_155
+  - first:
+      213: -3679453165903082759
+    second: Bottles_icons_156
+  - first:
+      213: -6779565913559098283
+    second: Bottles_icons_157
+  - first:
+      213: 5903424190985857443
+    second: Bottles_icons_158
+  - first:
+      213: -2664290706254917129
+    second: Bottles_icons_159
+  - first:
+      213: 108120320857950413
+    second: Bottles_icons_160
+  - first:
+      213: -9024022097223550117
+    second: Bottles_icons_161
+  - first:
+      213: -1610062718595051492
+    second: Bottles_icons_162
+  - first:
+      213: 3397572532062041199
+    second: Bottles_icons_163
+  - first:
+      213: -6329637662899218472
+    second: Bottles_icons_164
+  - first:
+      213: 7942358415949372560
+    second: Bottles_icons_165
+  - first:
+      213: -3896963489792745020
+    second: Bottles_icons_166
+  - first:
+      213: 687066837930406389
+    second: Bottles_icons_167
+  - first:
+      213: 8492358731848923674
+    second: Bottles_icons_168
+  - first:
+      213: 3954479850499788250
+    second: Bottles_icons_169
+  - first:
+      213: -1233096595050270958
+    second: Bottles_icons_170
+  - first:
+      213: 3836427697394743132
+    second: Bottles_icons_171
+  - first:
+      213: 1665693373472347555
+    second: Bottles_icons_172
+  - first:
+      213: 1320696656228929907
+    second: Bottles_icons_173
+  - first:
+      213: -419217946579169
+    second: Bottles_icons_174
+  - first:
+      213: -4048987788161890493
+    second: Bottles_icons_175
+  - first:
+      213: 4519457016676215382
+    second: Bottles_icons_176
+  - first:
+      213: -2810866990076348560
+    second: Bottles_icons_177
+  - first:
+      213: -8140837610242659125
+    second: Bottles_icons_178
+  - first:
+      213: -7885204725379415756
+    second: Bottles_icons_179
+  - first:
+      213: 7879192564327808641
+    second: Bottles_icons_180
+  - first:
+      213: 7083049445438622119
+    second: Bottles_icons_181
+  - first:
+      213: -2875130869357869118
+    second: Bottles_icons_182
+  - first:
+      213: -3098052518139988586
+    second: Bottles_icons_183
+  - first:
+      213: -3551586009843788535
+    second: Bottles_icons_184
+  - first:
+      213: -1574489327701836294
+    second: Bottles_icons_185
+  - first:
+      213: 3371142910425135443
+    second: Bottles_icons_186
+  - first:
+      213: -636512219350157570
+    second: Bottles_icons_187
+  - first:
+      213: 4594187115244330622
+    second: Bottles_icons_188
+  - first:
+      213: 2753068166015590390
+    second: Bottles_icons_189
+  - first:
+      213: 8532379110659867554
+    second: Bottles_icons_190
+  - first:
+      213: -7667479112523013269
+    second: Bottles_icons_191
+  - first:
+      213: 7150215791001322166
+    second: Bottles_icons_192
+  - first:
+      213: 3683382520076889538
+    second: Bottles_icons_193
+  - first:
+      213: -4049046570827773648
+    second: Bottles_icons_194
+  - first:
+      213: -1570469610462722060
+    second: Bottles_icons_195
+  - first:
+      213: -5393929973165653972
+    second: Bottles_icons_196
+  - first:
+      213: 1528815631594380136
+    second: Bottles_icons_197
+  - first:
+      213: 4901898616557432051
+    second: Bottles_icons_198
+  - first:
+      213: 4539567445607472474
+    second: Bottles_icons_199
+  - first:
+      213: 2072132751765404832
+    second: Bottles_icons_200
+  - first:
+      213: -8866329248173882122
+    second: Bottles_icons_201
+  - first:
+      213: 6830525444633588774
+    second: Bottles_icons_202
+  - first:
+      213: -6058655189579762982
+    second: Bottles_icons_203
+  - first:
+      213: 4138732451923897299
+    second: Bottles_icons_204
+  - first:
+      213: 1193399972621038215
+    second: Bottles_icons_205
+  - first:
+      213: -6225448972018009067
+    second: Bottles_icons_206
+  - first:
+      213: 1812899997560731684
+    second: Bottles_icons_207
+  - first:
+      213: -8994736515827301484
+    second: Bottles_icons_208
+  - first:
+      213: 4302840155043182458
+    second: Bottles_icons_209
+  - first:
+      213: 4190437847329989225
+    second: Bottles_icons_210
+  - first:
+      213: 5470001313399005822
+    second: Bottles_icons_211
+  - first:
+      213: -806456830714319871
+    second: Bottles_icons_212
+  - first:
+      213: 6165244364645264975
+    second: Bottles_icons_213
+  - first:
+      213: -6082624082672425498
+    second: Bottles_icons_214
+  - first:
+      213: -442012915683352820
+    second: Bottles_icons_215
+  - first:
+      213: -2856905763879977954
+    second: Bottles_icons_216
+  - first:
+      213: -23187559232815152
+    second: Bottles_icons_217
+  - first:
+      213: -5344770545240357352
+    second: Bottles_icons_218
+  - first:
+      213: 5899151681459470056
+    second: Bottles_icons_219
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bottles_icons_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402e966cecbc3b0a0800000000000000
+      internalID: -6866920917857345020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_1
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 295
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4338632d7e1b934e0800000000000000
+      internalID: -2001372950167125196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb8a9f8080c9ec40800000000000000
+      internalID: 5542172474853723064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_3
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 295
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8da6b8a023f0807c0800000000000000
+      internalID: -4105014352748516648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_4
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b93b91318caac1f0800000000000000
+      internalID: -1023816294390351439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_5
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 295
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a37703939aa1a50800000000000000
+      internalID: 6492687875899341353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_6
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500155c1fdf7add90800000000000000
+      internalID: -7072199668602171387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_7
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 295
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7eb691577b78ea10800000000000000
+      internalID: 1938935391983156860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_8
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ff81905606e45a0800000000000000
+      internalID: -6535180022207414447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_9
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 295
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca61c9046f14809c0800000000000000
+      internalID: -3960843346370619732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_10
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3d2b80d3e7cc90c0800000000000000
+      internalID: -4567556140790239937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_11
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 295
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f49863b782690c830800000000000000
+      internalID: 4089433562262440271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_12
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d17c27902c3c1c40800000000000000
+      internalID: 5484324556903313879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_13
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 295
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cf459b55cc54a790800000000000000
+      internalID: -7519783475087061050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_14
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea7201b07d8efb260800000000000000
+      internalID: 7115661946569893806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_15
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 295
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e646202da00ce72a0800000000000000
+      internalID: -6737736839794105234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_16
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cedf9e5819528fe10800000000000000
+      internalID: 2231574922309271020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_17
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 295
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f6b9709ab6021a0800000000000000
+      internalID: -6836345860627140770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_18
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a60af4e159079a0800000000000000
+      internalID: -6237321526490666391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_19
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 295
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a0925e89b14c3140800000000000000
+      internalID: 4700704376280486054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_20
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 289
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 695af959d838236a0800000000000000
+      internalID: -6470965070454086250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_21
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 295
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd8052f289ca4130800000000000000
+      internalID: 3551872820383354326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_22
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 257
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b090bab896112a70800000000000000
+      internalID: 8800339992081633459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_23
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 264
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc857f26af49efb20800000000000000
+      internalID: 3170134990838520015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_24
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 257
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07df1080ff0274fe0800000000000000
+      internalID: -1204958095575220880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_25
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 264
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 788e485883368d440800000000000000
+      internalID: 4960824083957999751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_26
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 257
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53b8ef27a8674f80800000000000000
+      internalID: -8122408335666793637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_27
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 264
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 762abf19492219380800000000000000
+      internalID: -8966347361618255257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_28
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 257
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14500e767b361f630800000000000000
+      internalID: 3959055186808276289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_29
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 264
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eda43067e268e450800000000000000
+      internalID: 6118248839673851363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_30
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 257
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf81b00c9d9793520800000000000000
+      internalID: 2682309029212657916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_31
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 264
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae76a24060577d40800000000000000
+      internalID: 5582018637514309287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_32
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 257
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78360c34b0a741bb0800000000000000
+      internalID: -4966210300282903673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_33
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 264
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfbfd9697fd761b50800000000000000
+      internalID: 6563572009276406781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_34
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 257
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01d202c5d66ac2b10800000000000000
+      internalID: 1958122926626581776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_35
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 264
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb72765e39d3ee290800000000000000
+      internalID: -7859276594296707140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_36
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 257
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9964c561073175480800000000000000
+      internalID: -8910631965596825959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_37
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 264
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e514207fec8a9c20800000000000000
+      internalID: 3214036244088755684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_38
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 257
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db4da28124f197f0800000000000000
+      internalID: -607436049954812973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_39
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 264
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a015f3344ada3c7b0800000000000000
+      internalID: -5205125823295696630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_40
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 257
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45ab119aee655ad90800000000000000
+      internalID: -7087162855558890924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_41
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 264
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8632ee14e91e64ba0800000000000000
+      internalID: -6104944175026920600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_42
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 257
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8756ec585fb62d590800000000000000
+      internalID: -7650934114692995720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_43
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 264
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 053d70bf70eba2d20800000000000000
+      internalID: 3254622622214247248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_44
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 225
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2804cd3d647d145d0800000000000000
+      internalID: -3079943970942599038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_45
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 231
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca659e4ecf8216c00800000000000000
+      internalID: 892039267833435820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_46
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 225
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d5588bfd292cc80800000000000000
+      internalID: -8303913273346663126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_47
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 231
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 347e6c536d9c5d9b0800000000000000
+      internalID: -5055913084791101629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_48
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 225
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e30927f915511360800000000000000
+      internalID: 7138580454368150500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_49
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 231
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99c52620780c701d0800000000000000
+      internalID: -3384524908852519783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_50
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 225
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 190a7ceb9d99ca2d0800000000000000
+      internalID: -3266066469262745455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_51
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 231
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bade9096fe315b6a0800000000000000
+      internalID: -6434214573648515669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_52
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 225
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0bcee4c401d4b740800000000000000
+      internalID: 5166984490914859791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_53
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 231
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d311628d2d22580800000000000000
+      internalID: -8853282091663540856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_54
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 225
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff446446c17930f0800000000000000
+      internalID: -1136752334569451531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_55
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 231
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93c3137077f79010800000000000000
+      internalID: 1195696288429228958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_56
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 225
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0631e153a440a3f60800000000000000
+      internalID: 8014723203624473440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_57
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 231
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1078b65fc63baa30800000000000000
+      internalID: 4227532939358400539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_58
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 225
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 861779f741cea5f50800000000000000
+      internalID: 6871063754291245416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_59
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 231
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29e7224a4d040560800000000000000
+      internalID: 7278957510326217002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_60
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 225
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae8b4e001738e43b0800000000000000
+      internalID: -5526335171367487254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_61
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 231
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55bd28abdaad42080800000000000000
+      internalID: -9212998497999856811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_62
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 225
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa04e871c7702fca0800000000000000
+      internalID: -5984712725269430097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_63
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 231
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac3f2297b83e1dbe0800000000000000
+      internalID: -1454131016491666486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_64
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 225
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e173eedcf88d437d0800000000000000
+      internalID: -2939486544619227362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_65
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 231
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4791547dee5eff350800000000000000
+      internalID: 6052809238185843060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_66
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 193
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a8d90194f005180800000000000000
+      internalID: -9128779638194206102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_67
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 199
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b4043d0a425e800800000000000000
+      internalID: 640958795127737187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_68
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 193
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4e7c178da3ddd080800000000000000
+      internalID: -9160933324752126388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_69
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 199
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57f36bafccc158b0800000000000000
+      internalID: -5165122105311496355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_70
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 193
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f5ba660e5ae23b0800000000000000
+      internalID: -5535304508777996480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_71
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 199
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fae449717e523090800000000000000
+      internalID: -8056272941953520903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_72
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 193
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfc9beec795a63530800000000000000
+      internalID: 3834434204182748412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_73
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 199
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7208c1ab365726510800000000000000
+      internalID: 1540923093698773031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_74
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 193
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0670889b7a68aaaa0800000000000000
+      internalID: -6148954286290630816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_75
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 199
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 941e34c5b01f0fb90800000000000000
+      internalID: -7209997972325277367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_76
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 193
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff1f50fd268a0f30800000000000000
+      internalID: 4542590706020982783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_77
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 199
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abe197ff67bc347d0800000000000000
+      internalID: -2935278820162724166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_78
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 193
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb849b2179fe0a1a0800000000000000
+      internalID: -6800172005196216133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_79
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 199
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2e17fb7938688fa0800000000000000
+      internalID: -5798269924137296339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_80
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 193
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7606f19003a6da7a0800000000000000
+      internalID: -6364313943860617113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_81
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 199
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e3057fc0f8070a0800000000000000
+      internalID: -6885846544397877723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_82
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 193
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f2956dacf5193870800000000000000
+      internalID: 8662979533208916721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_83
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 199
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3d9b87b27f015b40800000000000000
+      internalID: 5427136011338227003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_84
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 193
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f17d620ddebf59210800000000000000
+      internalID: 1339253463030617887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_85
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 199
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c86c0863e746d5020800000000000000
+      internalID: 2332130675290850956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_86
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 193
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b820eee101c39b2c0800000000000000
+      internalID: -4415431919724002677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_87
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 199
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db520d7d73a6c0190800000000000000
+      internalID: -7994898450412984899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_88
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 161
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1eb8ffbfbba9fd90800000000000000
+      internalID: -7063425700506059235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_89
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 168
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14a07f7660ef169f0800000000000000
+      internalID: -476820782057059775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_90
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 161
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 619ee058d794cf990800000000000000
+      internalID: -7350919688323405546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_91
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 168
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e47240a8667cf4e0800000000000000
+      internalID: -1946550747193510684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_92
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 161
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319634280c7593470800000000000000
+      internalID: 8374821466402941203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_93
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 168
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faeafb54bdb05c550800000000000000
+      internalID: 6180359100031807151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_94
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 161
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473cbbbc304c2d590800000000000000
+      internalID: -7650837296367025292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_95
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 168
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f1a99614e7e47380800000000000000
+      internalID: -8974293190624828935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_96
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 161
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7585905dbd3146d00800000000000000
+      internalID: 964918055057053783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_97
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 168
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b42ebb2e90fd790800000000000000
+      internalID: -7503267584756528350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_98
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 161
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3da77c62c4cc0d60800000000000000
+      internalID: 7857871789177154877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_99
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 168
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7582d0355f363a2d0800000000000000
+      internalID: -3268658999229339561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_100
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 161
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee1bb71bd25803c0800000000000000
+      internalID: -4393170335550464280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_101
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 168
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2531a48c97b68de80800000000000000
+      internalID: -8153648954558770350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_102
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 161
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3733e7b560f561de0800000000000000
+      internalID: -1362797356323556493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_103
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 168
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dcc37d9cb77922b0800000000000000
+      internalID: -5608820208934073133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_104
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 161
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504bb2330f66e5b20800000000000000
+      internalID: 3125048373278389253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_105
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 168
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dae33a37b6264450800000000000000
+      internalID: 6072583715953044179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_106
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 161
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4779c90e1f29a5d0800000000000000
+      internalID: -3050855466507077810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_107
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 168
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df0df335c0ba57700800000000000000
+      internalID: 537523799965290749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_108
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 161
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ca8df09b2bb46f0800000000000000
+      internalID: -699268809221428215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_109
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 168
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80bffe7c3051c9450800000000000000
+      internalID: 6096771101536287496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_110
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f3a2ca8db21063f0800000000000000
+      internalID: -909706519442709518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_111
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 135
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08c328250f69c44b0800000000000000
+      internalID: -5454819089731928960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_112
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7acf1088e8cad710800000000000000
+      internalID: 1718907108702800510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_113
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 135
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7826aadc173b770800000000000000
+      internalID: 8625362839485450186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_114
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0abc0d61bbf18b50800000000000000
+      internalID: 6593828068904450571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_115
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 135
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcaae482fb23f8440800000000000000
+      internalID: 4940223112845109967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_116
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f9c04f4d57f59240800000000000000
+      internalID: 4798012958166796790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_117
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 135
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74d1e66da010bf830800000000000000
+      internalID: 4105876631337180487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_118
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99c922de66481010800000000000000
+      internalID: 1159754345834203551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_119
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 135
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 918faf1023ef08a90800000000000000
+      internalID: -7313566304114640871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_120
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 531c58a6b907fd780800000000000000
+      internalID: -8656076145973411531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_121
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 135
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35243d0f18714ef90800000000000000
+      internalID: -6925384480130383277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_122
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f69d4dd847c9387f0800000000000000
+      internalID: -611473099982579345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_123
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 135
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e20bef7da5fb4950800000000000000
+      internalID: 6434506618153140962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_124
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230e185364f1f61f0800000000000000
+      internalID: -1049585801748160462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_125
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 135
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d746e63291eb6b570800000000000000
+      internalID: 8482175963376804989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_126
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec91f42b78d610f0800000000000000
+      internalID: -1146491031706821408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_127
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 135
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37d86f543d02d5070800000000000000
+      internalID: 8096663796865994099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_128
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5bd934872bd53aa0800000000000000
+      internalID: -6181793950727546018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_129
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 135
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62feab44e4bb75ba0800000000000000
+      internalID: -6100201225415102682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_130
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 129
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 223e747366a17aaf0800000000000000
+      internalID: -385310216800443614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_131
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 135
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f2ff940c2a5969c0800000000000000
+      internalID: -3933513654428765455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_132
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cdbd5063b261ed10800000000000000
+      internalID: 2153110619415231945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_133
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 103
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5630453a33fe5ad20800000000000000
+      internalID: 3289298107926578021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_134
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb8cdf4c81b430c0800000000000000
+      internalID: -4596854103445042205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_135
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 103
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd73d3fa8b936ce30800000000000000
+      internalID: 4523366341117032415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_136
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec57763f7a8558a0800000000000000
+      internalID: -6316990623337980696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_137
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 103
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f521abde44e2e17a0800000000000000
+      internalID: -6404630746493218209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_138
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af00602531447090800000000000000
+      internalID: -8037727738517254231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_139
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 103
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1be4798867ed1070800000000000000
+      internalID: 8078867742741293855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_140
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f90e57b205d2b670800000000000000
+      internalID: 8553132849973037560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_141
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 103
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3205918bb00eb10800000000000000
+      internalID: 2008618319133811616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_142
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b92e4e6ed4e4bfa20800000000000000
+      internalID: 3097155265240556187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_143
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 103
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9c01906074e9a620800000000000000
+      internalID: 2786009015812951198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_144
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b018e3d7029841090800000000000000
+      internalID: -8064670260080508661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_145
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 103
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa9b98fc390f8e3c0800000000000000
+      internalID: -4329946524083963478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_146
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6edccdcd26c1e0850800000000000000
+      internalID: 6345040135949438438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_147
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 103
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9059f6955d4d4b0d0800000000000000
+      internalID: -3407865005219015415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_148
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ced32ec2ec34990800000000000000
+      internalID: -7402846670297371620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_149
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 103
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf61387fceac5250800000000000000
+      internalID: 5934810615065440188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_150
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd677d127a1ffc90800000000000000
+      internalID: -7133954207308616234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_151
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 103
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b61f52e0a0c3fb0800000000000000
+      internalID: -4666844057980277989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_152
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 969c50f944dc64b50800000000000000
+      internalID: 6577170000430614889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_153
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 103
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f776d957bec40a0800000000000000
+      internalID: -6895878039026565312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_154
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 65
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf763288ca84dad0800000000000000
+      internalID: -2678363284595900487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_155
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 71
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6636b9c369c0ea90800000000000000
+      internalID: -7286602766662355349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_156
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 65
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa09a617d4ffecc0800000000000000
+      internalID: -3679453165903082759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_157
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 71
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55c96f6a8b42ae1a0800000000000000
+      internalID: -6779565913559098283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_158
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 65
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a9e826260d2de150800000000000000
+      internalID: 5903424190985857443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_159
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 71
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f11d4bf7b9860bd0800000000000000
+      internalID: -2664290706254917129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_160
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 65
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc84db5ebde108100800000000000000
+      internalID: 108120320857950413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_161
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 71
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5bf6b1c6bb34c280800000000000000
+      internalID: -9024022097223550117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_162
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 65
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c10da08ec78e7a9e0800000000000000
+      internalID: -1610062718595051492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_163
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 71
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f64be20873a962f20800000000000000
+      internalID: 3397572532062041199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_164
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 65
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d755f9d41c9828a0800000000000000
+      internalID: -6329637662899218472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_165
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 71
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09c1f7d16ece83e60800000000000000
+      internalID: 7942358415949372560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_166
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 65
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1ac306a543be9c0800000000000000
+      internalID: -3896963489792745020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_167
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 71
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f1facb16a3f88900800000000000000
+      internalID: 687066837930406389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_168
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 65
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1aba0da54bead570800000000000000
+      internalID: 8492358731848923674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_169
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 71
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: addca78e87221e630800000000000000
+      internalID: 3954479850499788250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_170
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 65
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21fe8461e2923eee0800000000000000
+      internalID: -1233096595050270958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_171
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 71
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c57fead1aaabd3530800000000000000
+      internalID: 3836427697394743132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_172
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 65
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a59a864c4bbd1710800000000000000
+      internalID: 1665693373472347555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_173
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 71
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 371529a8c9e045210800000000000000
+      internalID: 1320696656228929907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_174
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 65
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1fe53739b28efff0800000000000000
+      internalID: -419217946579169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_175
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 71
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34747b22f0b1fc7c0800000000000000
+      internalID: -4048987788161890493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_176
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ae1a8263658be30800000000000000
+      internalID: 4519457016676215382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_177
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 39
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077b0a97d5bcdf8d0800000000000000
+      internalID: -2810866990076348560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_178
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcca853535fe50f80800000000000000
+      internalID: -8140837610242659125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_179
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 39
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43147827410229290800000000000000
+      internalID: -7885204725379415756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_180
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e78a934e3885d60800000000000000
+      internalID: 7879192564327808641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_181
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 39
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a985e961fb0c4260800000000000000
+      internalID: 7083049445438622119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_182
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c70a2915bb7918d0800000000000000
+      internalID: -2875130869357869118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_183
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 39
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 695f2c026a18105d0800000000000000
+      internalID: -3098052518139988586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_184
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9059306575b36bec0800000000000000
+      internalID: -3551586009843788535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_185
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 39
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd30b76c4a462ae0800000000000000
+      internalID: -1574489327701836294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_186
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35977fead94b8ce20800000000000000
+      internalID: 3371142910425135443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_187
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 39
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef630764287aa27f0800000000000000
+      internalID: -636512219350157570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_188
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e90db17d4d1cf30800000000000000
+      internalID: 4594187115244330622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_189
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 39
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff9bcd19ecd43620800000000000000
+      internalID: 2753068166015590390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_190
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a348db3899196670800000000000000
+      internalID: 8532379110659867554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_191
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 39
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b63a6570f54a79590800000000000000
+      internalID: -7667479112523013269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_192
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b2c502e06baa3360800000000000000
+      internalID: 7150215791001322166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_193
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 39
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cde019f2e00e1330800000000000000
+      internalID: 3683382520076889538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_194
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0390ccab895eec7c0800000000000000
+      internalID: -4049046570827773648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_195
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 39
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7c2d1c532943ae0800000000000000
+      internalID: -1570469610462722060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_196
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 33
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2001268449e425b0800000000000000
+      internalID: -5393929973165653972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_197
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 39
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b5f3887b1773510800000000000000
+      internalID: 1528815631594380136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_198
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fc62e402da070440800000000000000
+      internalID: 4901898616557432051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_199
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d5c554a88cffe30800000000000000
+      internalID: 4539567445607472474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_200
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0acfd6452c1b1cc10800000000000000
+      internalID: 2072132751765404832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_201
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f480fc468874f480800000000000000
+      internalID: -8866329248173882122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_202
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 624f6a4c3b6eace50800000000000000
+      internalID: 6830525444633588774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_203
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad2758884355beba0800000000000000
+      internalID: -6058655189579762982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_204
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db2e41bc3bbf6930800000000000000
+      internalID: 4138732451923897299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_205
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 782b903c3fecf8010800000000000000
+      internalID: 1193399972621038215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_206
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51cbb8fc423ca99a0800000000000000
+      internalID: -6225448972018009067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_207
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428f9ef41f6b82910800000000000000
+      internalID: 1812899997560731684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_208
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49301e58bc64c2380800000000000000
+      internalID: -8994736515827301484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_209
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a77b2a6d252c6bb30800000000000000
+      internalID: 4302840155043182458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_210
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 962e47f250d672a30800000000000000
+      internalID: 4190437847329989225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_211
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e726116963959eb40800000000000000
+      internalID: 5470001313399005822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_212
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ce59609c3eec4f0800000000000000
+      internalID: -806456830714319871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_213
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4ee824b5195f8550800000000000000
+      internalID: 6165244364645264975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_214
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e5e21abf9d269ba0800000000000000
+      internalID: -6082624082672425498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_215
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f1f865897add9f0800000000000000
+      internalID: -442012915683352820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_216
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1cfa23285b3a58d0800000000000000
+      internalID: -2856905763879977954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_217
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df38b8a90f9daff0800000000000000
+      internalID: -23187559232815152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_218
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 1
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8164af4c18f83d5b0800000000000000
+      internalID: -5344770545240357352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bottles_icons_219
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 7
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee3a81033ffdd150800000000000000
+      internalID: 5899151681459470056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bottles_icons_0: -6866920917857345020
+      Bottles_icons_1: -2001372950167125196
+      Bottles_icons_10: -4567556140790239937
+      Bottles_icons_100: -4393170335550464280
+      Bottles_icons_101: -8153648954558770350
+      Bottles_icons_102: -1362797356323556493
+      Bottles_icons_103: -5608820208934073133
+      Bottles_icons_104: 3125048373278389253
+      Bottles_icons_105: 6072583715953044179
+      Bottles_icons_106: -3050855466507077810
+      Bottles_icons_107: 537523799965290749
+      Bottles_icons_108: -699268809221428215
+      Bottles_icons_109: 6096771101536287496
+      Bottles_icons_11: 4089433562262440271
+      Bottles_icons_110: -909706519442709518
+      Bottles_icons_111: -5454819089731928960
+      Bottles_icons_112: 1718907108702800510
+      Bottles_icons_113: 8625362839485450186
+      Bottles_icons_114: 6593828068904450571
+      Bottles_icons_115: 4940223112845109967
+      Bottles_icons_116: 4798012958166796790
+      Bottles_icons_117: 4105876631337180487
+      Bottles_icons_118: 1159754345834203551
+      Bottles_icons_119: -7313566304114640871
+      Bottles_icons_12: 5484324556903313879
+      Bottles_icons_120: -8656076145973411531
+      Bottles_icons_121: -6925384480130383277
+      Bottles_icons_122: -611473099982579345
+      Bottles_icons_123: 6434506618153140962
+      Bottles_icons_124: -1049585801748160462
+      Bottles_icons_125: 8482175963376804989
+      Bottles_icons_126: -1146491031706821408
+      Bottles_icons_127: 8096663796865994099
+      Bottles_icons_128: -6181793950727546018
+      Bottles_icons_129: -6100201225415102682
+      Bottles_icons_13: -7519783475087061050
+      Bottles_icons_130: -385310216800443614
+      Bottles_icons_131: -3933513654428765455
+      Bottles_icons_132: 2153110619415231945
+      Bottles_icons_133: 3289298107926578021
+      Bottles_icons_134: -4596854103445042205
+      Bottles_icons_135: 4523366341117032415
+      Bottles_icons_136: -6316990623337980696
+      Bottles_icons_137: -6404630746493218209
+      Bottles_icons_138: -8037727738517254231
+      Bottles_icons_139: 8078867742741293855
+      Bottles_icons_14: 7115661946569893806
+      Bottles_icons_140: 8553132849973037560
+      Bottles_icons_141: 2008618319133811616
+      Bottles_icons_142: 3097155265240556187
+      Bottles_icons_143: 2786009015812951198
+      Bottles_icons_144: -8064670260080508661
+      Bottles_icons_145: -4329946524083963478
+      Bottles_icons_146: 6345040135949438438
+      Bottles_icons_147: -3407865005219015415
+      Bottles_icons_148: -7402846670297371620
+      Bottles_icons_149: 5934810615065440188
+      Bottles_icons_15: -6737736839794105234
+      Bottles_icons_150: -7133954207308616234
+      Bottles_icons_151: -4666844057980277989
+      Bottles_icons_152: 6577170000430614889
+      Bottles_icons_153: -6895878039026565312
+      Bottles_icons_154: -2678363284595900487
+      Bottles_icons_155: -7286602766662355349
+      Bottles_icons_156: -3679453165903082759
+      Bottles_icons_157: -6779565913559098283
+      Bottles_icons_158: 5903424190985857443
+      Bottles_icons_159: -2664290706254917129
+      Bottles_icons_16: 2231574922309271020
+      Bottles_icons_160: 108120320857950413
+      Bottles_icons_161: -9024022097223550117
+      Bottles_icons_162: -1610062718595051492
+      Bottles_icons_163: 3397572532062041199
+      Bottles_icons_164: -6329637662899218472
+      Bottles_icons_165: 7942358415949372560
+      Bottles_icons_166: -3896963489792745020
+      Bottles_icons_167: 687066837930406389
+      Bottles_icons_168: 8492358731848923674
+      Bottles_icons_169: 3954479850499788250
+      Bottles_icons_17: -6836345860627140770
+      Bottles_icons_170: -1233096595050270958
+      Bottles_icons_171: 3836427697394743132
+      Bottles_icons_172: 1665693373472347555
+      Bottles_icons_173: 1320696656228929907
+      Bottles_icons_174: -419217946579169
+      Bottles_icons_175: -4048987788161890493
+      Bottles_icons_176: 4519457016676215382
+      Bottles_icons_177: -2810866990076348560
+      Bottles_icons_178: -8140837610242659125
+      Bottles_icons_179: -7885204725379415756
+      Bottles_icons_18: -6237321526490666391
+      Bottles_icons_180: 7879192564327808641
+      Bottles_icons_181: 7083049445438622119
+      Bottles_icons_182: -2875130869357869118
+      Bottles_icons_183: -3098052518139988586
+      Bottles_icons_184: -3551586009843788535
+      Bottles_icons_185: -1574489327701836294
+      Bottles_icons_186: 3371142910425135443
+      Bottles_icons_187: -636512219350157570
+      Bottles_icons_188: 4594187115244330622
+      Bottles_icons_189: 2753068166015590390
+      Bottles_icons_19: 4700704376280486054
+      Bottles_icons_190: 8532379110659867554
+      Bottles_icons_191: -7667479112523013269
+      Bottles_icons_192: 7150215791001322166
+      Bottles_icons_193: 3683382520076889538
+      Bottles_icons_194: -4049046570827773648
+      Bottles_icons_195: -1570469610462722060
+      Bottles_icons_196: -5393929973165653972
+      Bottles_icons_197: 1528815631594380136
+      Bottles_icons_198: 4901898616557432051
+      Bottles_icons_199: 4539567445607472474
+      Bottles_icons_2: 5542172474853723064
+      Bottles_icons_20: -6470965070454086250
+      Bottles_icons_200: 2072132751765404832
+      Bottles_icons_201: -8866329248173882122
+      Bottles_icons_202: 6830525444633588774
+      Bottles_icons_203: -6058655189579762982
+      Bottles_icons_204: 4138732451923897299
+      Bottles_icons_205: 1193399972621038215
+      Bottles_icons_206: -6225448972018009067
+      Bottles_icons_207: 1812899997560731684
+      Bottles_icons_208: -8994736515827301484
+      Bottles_icons_209: 4302840155043182458
+      Bottles_icons_21: 3551872820383354326
+      Bottles_icons_210: 4190437847329989225
+      Bottles_icons_211: 5470001313399005822
+      Bottles_icons_212: -806456830714319871
+      Bottles_icons_213: 6165244364645264975
+      Bottles_icons_214: -6082624082672425498
+      Bottles_icons_215: -442012915683352820
+      Bottles_icons_216: -2856905763879977954
+      Bottles_icons_217: -23187559232815152
+      Bottles_icons_218: -5344770545240357352
+      Bottles_icons_219: 5899151681459470056
+      Bottles_icons_22: 8800339992081633459
+      Bottles_icons_23: 3170134990838520015
+      Bottles_icons_24: -1204958095575220880
+      Bottles_icons_25: 4960824083957999751
+      Bottles_icons_26: -8122408335666793637
+      Bottles_icons_27: -8966347361618255257
+      Bottles_icons_28: 3959055186808276289
+      Bottles_icons_29: 6118248839673851363
+      Bottles_icons_3: -4105014352748516648
+      Bottles_icons_30: 2682309029212657916
+      Bottles_icons_31: 5582018637514309287
+      Bottles_icons_32: -4966210300282903673
+      Bottles_icons_33: 6563572009276406781
+      Bottles_icons_34: 1958122926626581776
+      Bottles_icons_35: -7859276594296707140
+      Bottles_icons_36: -8910631965596825959
+      Bottles_icons_37: 3214036244088755684
+      Bottles_icons_38: -607436049954812973
+      Bottles_icons_39: -5205125823295696630
+      Bottles_icons_4: -1023816294390351439
+      Bottles_icons_40: -7087162855558890924
+      Bottles_icons_41: -6104944175026920600
+      Bottles_icons_42: -7650934114692995720
+      Bottles_icons_43: 3254622622214247248
+      Bottles_icons_44: -3079943970942599038
+      Bottles_icons_45: 892039267833435820
+      Bottles_icons_46: -8303913273346663126
+      Bottles_icons_47: -5055913084791101629
+      Bottles_icons_48: 7138580454368150500
+      Bottles_icons_49: -3384524908852519783
+      Bottles_icons_5: 6492687875899341353
+      Bottles_icons_50: -3266066469262745455
+      Bottles_icons_51: -6434214573648515669
+      Bottles_icons_52: 5166984490914859791
+      Bottles_icons_53: -8853282091663540856
+      Bottles_icons_54: -1136752334569451531
+      Bottles_icons_55: 1195696288429228958
+      Bottles_icons_56: 8014723203624473440
+      Bottles_icons_57: 4227532939358400539
+      Bottles_icons_58: 6871063754291245416
+      Bottles_icons_59: 7278957510326217002
+      Bottles_icons_6: -7072199668602171387
+      Bottles_icons_60: -5526335171367487254
+      Bottles_icons_61: -9212998497999856811
+      Bottles_icons_62: -5984712725269430097
+      Bottles_icons_63: -1454131016491666486
+      Bottles_icons_64: -2939486544619227362
+      Bottles_icons_65: 6052809238185843060
+      Bottles_icons_66: -9128779638194206102
+      Bottles_icons_67: 640958795127737187
+      Bottles_icons_68: -9160933324752126388
+      Bottles_icons_69: -5165122105311496355
+      Bottles_icons_7: 1938935391983156860
+      Bottles_icons_70: -5535304508777996480
+      Bottles_icons_71: -8056272941953520903
+      Bottles_icons_72: 3834434204182748412
+      Bottles_icons_73: 1540923093698773031
+      Bottles_icons_74: -6148954286290630816
+      Bottles_icons_75: -7209997972325277367
+      Bottles_icons_76: 4542590706020982783
+      Bottles_icons_77: -2935278820162724166
+      Bottles_icons_78: -6800172005196216133
+      Bottles_icons_79: -5798269924137296339
+      Bottles_icons_8: -6535180022207414447
+      Bottles_icons_80: -6364313943860617113
+      Bottles_icons_81: -6885846544397877723
+      Bottles_icons_82: 8662979533208916721
+      Bottles_icons_83: 5427136011338227003
+      Bottles_icons_84: 1339253463030617887
+      Bottles_icons_85: 2332130675290850956
+      Bottles_icons_86: -4415431919724002677
+      Bottles_icons_87: -7994898450412984899
+      Bottles_icons_88: -7063425700506059235
+      Bottles_icons_89: -476820782057059775
+      Bottles_icons_9: -3960843346370619732
+      Bottles_icons_90: -7350919688323405546
+      Bottles_icons_91: -1946550747193510684
+      Bottles_icons_92: 8374821466402941203
+      Bottles_icons_93: 6180359100031807151
+      Bottles_icons_94: -7650837296367025292
+      Bottles_icons_95: -8974293190624828935
+      Bottles_icons_96: 964918055057053783
+      Bottles_icons_97: -7503267584756528350
+      Bottles_icons_98: 7857871789177154877
+      Bottles_icons_99: -3268658999229339561
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

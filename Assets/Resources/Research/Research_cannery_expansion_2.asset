@@ -26,7 +26,7 @@ MonoBehaviour:
   prerequisiteResearchID: cannery_expansion_1
   requiredUnlockID: 
   requiredAnimalID: 
-  binaryFixedCost: 90000
-  binaryFixedDurationSecs: 1209600
+  binaryFixedCost: 24000
+  binaryFixedDurationSecs: 432000
   unlocksSlotIndex: -1
   unlocksFeatureID: cannery_expansion_2

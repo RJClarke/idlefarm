@@ -6,36 +6,48 @@
         <ui:VisualElement name="popup-container" class="popup-container">
             <ui:VisualElement name="header" class="header">
                 <ui:Label name="header-title" text="Cannery" class="header-title" />
+                <ui:VisualElement name="wood-strip" class="wood-strip">
+                    <ui:VisualElement class="wood-strip-icon" />
+                    <ui:Label name="wood-value" text="0" class="wood-strip-value" />
+                </ui:VisualElement>
                 <ui:Button name="close-button" class="close-button" text="X" />
             </ui:VisualElement>
             <ui:VisualElement name="body" class="body">
+                <ui:VisualElement name="firebox-panel" class="firebox-panel">
+                    <ui:VisualElement name="firebox-hearth" class="firebox-hearth">
+                        <ui:VisualElement name="firebox-glow" class="firebox-glow" picking-mode="Ignore" />
+                        <ui:Label name="firebox-hint" text="Tap to add logs" class="firebox-hint" picking-mode="Ignore" />
+                        <ui:VisualElement name="firebox-firerow" class="firebox-firerow" picking-mode="Ignore" />
+                        <ui:VisualElement name="firebox-logbed" class="firebox-logbed" picking-mode="Ignore" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="fuel-bar" class="fuel-bar">
+                        <ui:VisualElement name="fuel-fill" class="fuel-fill" />
+                    </ui:VisualElement>
+                    <ui:Label name="fuel-text" text="Fuel: 0" class="fuel-text" />
+                    <ui:VisualElement name="fuel-buttons" class="stack-row">
+                        <ui:Button name="stoke-button" text="Stoke to finish" class="sell-btn sell-btn--cash" />
+                        <ui:Button name="fill-button" text="Fill furnace" class="sell-btn sell-btn--cash" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement name="crop-strip" class="crop-strip" />
+
                 <ui:VisualElement name="intake-row" class="intake-row">
                     <ui:VisualElement name="intake-text-col" class="intake-text-col">
                         <ui:Label name="intake-label" text="Harvest Intake" class="intake-label" />
-                        <ui:Label name="intake-desc" text="Harvested crops that can be canned go straight into the Cannery." class="intake-desc" />
+                        <ui:Label name="intake-desc" text="Cannable crops go straight into jars as you harvest." class="intake-desc" />
                     </ui:VisualElement>
                     <ui:Button name="intake-toggle" class="intake-toggle">
                         <ui:VisualElement name="intake-knob" class="intake-knob" />
                     </ui:Button>
                 </ui:VisualElement>
-                <ui:Label name="fuel-title" text="🔥 Firebox" class="section-title" />
-                <ui:VisualElement name="fuel-bar" class="fuel-bar">
-                    <ui:VisualElement name="fuel-fill" class="fuel-fill" />
-                </ui:VisualElement>
-                <ui:VisualElement name="fuel-text-row" class="fuel-text-row">
-                    <ui:VisualElement class="wood-icon" />
-                    <ui:Label name="fuel-text" text="Fuel: 0" class="fuel-text" />
-                </ui:VisualElement>
-                <ui:VisualElement name="fuel-buttons" class="stack-row">
-                    <ui:Button name="stoke-button" text="Stoke to finish" class="sell-btn sell-btn--cash" />
-                    <ui:Button name="fill-button" text="Fill furnace" class="sell-btn sell-btn--cash" />
-                </ui:VisualElement>
-                <ui:Label name="slots-title" text="Jars" class="section-title" />
-                <ui:ScrollView name="slots-list" class="slots-list" />
-                <ui:Label name="shelf-title" text="Ready Shelf" class="section-title" />
-                <ui:ScrollView name="shelf-list" class="shelf-list" />
-                <ui:Button name="sell-all" text="Sell All" class="sell-btn sell-btn--gold" />
+
+                <ui:ScrollView name="jars-scroll" class="jars-scroll">
+                    <ui:VisualElement name="jars-grid" class="jars-grid" />
+                </ui:ScrollView>
+                <ui:Label name="grid-hint" text="" class="grid-hint" />
             </ui:VisualElement>
+            <ui:VisualElement name="fx-layer" class="fx-layer" picking-mode="Ignore" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

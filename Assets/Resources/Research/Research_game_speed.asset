@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: game_speed
   displayName: Game Speed Multiplier
-  description: +0.9x per level. Maxes at 10.0x.
+  description: +0.25x per level. Maxes at 3.5x.
   branchID: meta
   tier: 1
   targetStatKey: game_speed
-  bonusPerLevel: 0.9
+  bonusPerLevel: 0.25
   baseCostCoins: 1000
   baseDurationSecs: 3600
   timeDifficulty: 1

@@ -36,6 +36,18 @@ public static class FishingMath
     }
 
     /// <summary>
+    /// Copy of <paramref name="weights"/> with every tier above the first (the rare fish) multiplied
+    /// by <paramref name="rareMultiplier"/> — the Fishing skill's level-25 perk. Input is untouched.
+    /// </summary>
+    public static float[] ScaleRareWeights(float[] weights, float rareMultiplier)
+    {
+        if (weights == null) return null;
+        float[] scaled = (float[])weights.Clone();
+        for (int i = 1; i < scaled.Length; i++) scaled[i] *= rareMultiplier;
+        return scaled;
+    }
+
+    /// <summary>
     /// Reel taps to bring a cast back to shore: scales linearly with cast power so a long cast is
     /// more work than a short one (spec — reel effort scales with distance). Clamped to
     /// [minTaps, maxTaps] and never below 1, so a line is always retrievable.

@@ -39,7 +39,8 @@ public class InventoryPopupUITK : MonoBehaviour
     {
         "zone-icon--empty", "inv-icon--compost", "inv-icon--wood", "inv-icon--eggs",
         "inv-icon--jars", "inv-icon--fish-perch", "inv-icon--fish-bass",
-        "inv-icon--fish-pike", "inv-icon--smoked"
+        "inv-icon--fish-pike", "inv-icon--fish-perch-smoked",
+        "inv-icon--fish-bass-smoked", "inv-icon--fish-pike-smoked"
     };
 
     [Header("Data")]
@@ -265,7 +266,7 @@ public class InventoryPopupUITK : MonoBehaviour
             // Controls stay visible-but-disabled: they are what teaches the interaction.
             ApplyIcon(zoneIcon, null, "zone-icon--empty");
             if (zoneTitle != null)   zoneTitle.text = "Tap an item to sell it";
-            if (zoneConfirm != null) { zoneConfirm.text = "Sell for Gold"; zoneConfirm.SetEnabled(false); }
+            if (zoneConfirm != null) { zoneConfirm.text = "Sell for Coins"; zoneConfirm.SetEnabled(false); }
             return;
         }
 
@@ -275,7 +276,7 @@ public class InventoryPopupUITK : MonoBehaviour
         int n = WoodcuttingMath.ResolveStackAmount(stackMode, e.Held);
         if (zoneConfirm != null)
         {
-            zoneConfirm.text = n > 0 ? $"Sell {n:N0} for {e.Payout(n):N0} Gold" : "Sell for Gold";
+            zoneConfirm.text = n > 0 ? $"Sell {n:N0} for {e.Payout(n):N0} Coins" : "Sell for Coins";
             zoneConfirm.SetEnabled(n > 0);
         }
     }
@@ -303,13 +304,15 @@ public class InventoryPopupUITK : MonoBehaviour
             if (!string.IsNullOrEmpty(c)) el.AddToClassList(c);
     }
 
-    private static string FishIconClass(int tier)
+    // Smoked rows use the dedicated cured art rather than a tint over the raw sprite, matching
+    // the Smokehouse panel.
+    private static string FishIconClass(int tier, bool smoked = false)
     {
         switch (tier)
         {
-            case 1:  return "inv-icon--fish-perch";
-            case 2:  return "inv-icon--fish-bass";
-            default: return "inv-icon--fish-pike";
+            case 1:  return smoked ? "inv-icon--fish-perch-smoked" : "inv-icon--fish-perch";
+            case 2:  return smoked ? "inv-icon--fish-bass-smoked"  : "inv-icon--fish-bass";
+            default: return smoked ? "inv-icon--fish-pike-smoked"  : "inv-icon--fish-pike";
         }
     }
 
@@ -432,12 +435,12 @@ public class InventoryPopupUITK : MonoBehaviour
                         AddSellRow(new SellEntry
                         {
                             Id = "fish:smoked:" + t, Name = FishTiers.SmokedName(t),
-                            IconClass = FishIconClass(t) + " inv-icon--smoked", Held = smoked,
+                            IconClass = FishIconClass(t, true), Held = smoked,
                             Payout = n => smokedValue * n,
                             Sell = n => { for (int i = 0; i < n; i++) if (!smoke.TrySellSmoked(t)) break; }
                         });
                     else
-                        AddPlainRow(FishIconClass(t) + " inv-icon--smoked", FishTiers.SmokedName(t),
+                        AddPlainRow(FishIconClass(t, true), FishTiers.SmokedName(t),
                                     smoked.ToString("N0"), smoked <= 0);
                 }
             }

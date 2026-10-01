@@ -77,8 +77,13 @@ namespace Research
         // Processing (Pantry Economy Phase 3).
         public const string CanneryUnlocked = "cannery_unlocked";         // "Preserving" → Cannery in Carpenter stock
         public const string SmokehouseUnlocked = "smokehouse_unlocked";   // "Smoking"    → Smokehouse in Carpenter stock
-        public const string CanneryExpansion1 = "cannery_expansion_1";    // +2 purchasable Cannery slots (→22)
-        public const string CanneryExpansion2 = "cannery_expansion_2";    // +2 purchasable Cannery slots (→24)
-        public const string SmokehouseExpansion1 = "smokehouse_expansion_1"; // +2 purchasable Smokehouse slots (→8)
+        // One research per gated cell: each flag adds exactly ONE purchasable slot, so the rack
+        // fills in one jar/rack-slot at a time rather than two at once.
+        public const string CanneryExpansion1 = "cannery_expansion_1";    // +1 purchasable Cannery slot (→21)
+        public const string CanneryExpansion2 = "cannery_expansion_2";    // +1 (→22)
+        public const string CanneryExpansion3 = "cannery_expansion_3";    // +1 (→23)
+        public const string CanneryExpansion4 = "cannery_expansion_4";    // +1 (→24)
+        public const string SmokehouseExpansion1 = "smokehouse_expansion_1"; // +1 purchasable Smokehouse slot (→7)
+        public const string SmokehouseExpansion2 = "smokehouse_expansion_2"; // +1 (→8)
     }
 }

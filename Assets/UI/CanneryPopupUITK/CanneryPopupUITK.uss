@@ -1,4 +1,5 @@
-/* Cannery panel — center-card style cloned from WoodRackPopupUITK, plus firebox/slot/shelf styles. */
+/* Cannery panel — a rack of jars. Unlike the Smokehouse the cell has no card behind it:
+   the jar IS the cell, always present, filling with preserve as crops go in. */
 
 .popup-root {
     position: absolute;
@@ -24,10 +25,13 @@
     background-color: rgba(0, 0, 0, 0.55);
 }
 
+/* Wider and taller than the other panels — this one has 24 jars to show. */
 .popup-container {
-    width: 82%;
-    max-width: 760px;
+    width: 94%;
+    max-width: 1000px;
     min-width: 320px;
+    /* Always claim the height — the rack has 24 jars to breathe into. */
+    height: 94%;
     background-color: rgb(179, 154, 110);
     border-color: rgb(90, 55, 20);
     border-left-width: 3px;
@@ -54,6 +58,7 @@
     padding-bottom: 14px;
     padding-left: 24px;
     padding-right: 16px;
+    flex-shrink: 0;
     border-bottom-width: 2px;
     border-bottom-color: rgba(90, 55, 20, 0.4);
 }
@@ -63,6 +68,31 @@
     font-size: 36px;
     color: rgb(54, 32, 14);
 }
+
+.wood-strip {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-right: 14px;
+}
+
+.wood-strip-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgResources/Log.png");
+}
+
+.wood-strip-value {
+    font-size: 26px;
+    -unity-font-style: bold;
+    color: rgb(54, 32, 14);
+}
+
+.wood-strip-value--low { color: rgb(150, 40, 28); }
 
 .close-button {
     width: 56px;
@@ -84,54 +114,22 @@
 
 .body {
     flex-direction: column;
-    padding-left: 28px;
-    padding-right: 28px;
-    padding-top: 22px;
-    padding-bottom: 28px;
-}
-
-.wood-count {
-    -unity-font-style: bold;
-    font-size: 34px;
-    color: rgb(54, 32, 14);
-    -unity-text-align: middle-center;
-    margin-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 18px;
+    padding-bottom: 20px;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .stack-row {
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 22px;
-}
-
-.stack-btn {
-    width: 96px;
-    height: 62px;
-    margin-left: 8px;
-    margin-right: 8px;
-    font-size: 24px;
-    -unity-font-style: bold;
-    color: rgb(54, 32, 14);
-    background-color: rgb(255, 252, 245);
-    border-color: rgba(54, 32, 14, 0.35);
-    border-left-width: 3px;
-    border-right-width: 3px;
-    border-top-width: 3px;
-    border-bottom-width: 3px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
-
-.stack-btn--active {
-    background-color: rgb(120, 90, 45);
-    border-color: rgb(60, 38, 14);
-    color: rgb(255, 240, 210);
+    margin-bottom: 10px;
 }
 
 .sell-btn {
-    height: 78px;
+    height: 74px;
     font-size: 26px;
     -unity-font-style: bold;
     border-top-left-radius: 14px;
@@ -142,7 +140,7 @@
     border-right-width: 3px;
     border-top-width: 3px;
     border-bottom-width: 3px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .sell-btn--cash {
@@ -151,41 +149,195 @@
     color: rgb(28, 50, 20);
 }
 
-.sell-btn--gold {
-    background-color: rgb(224, 180, 70);
-    border-color: rgb(140, 100, 30);
-    color: rgb(70, 48, 12);
-}
-
 .sell-btn:disabled { opacity: 0.45; }
 
-.cash-hint {
-    font-size: 16px;
-    color: rgba(54, 32, 14, 0.8);
-    -unity-text-align: middle-center;
-    margin-bottom: 14px;
+/* ══ Firebox hearth (same build as the Smokehouse) ═══════════════════════ */
+
+.firebox-panel { flex-shrink: 0; margin-bottom: 4px; }
+
+.firebox-hearth {
+    height: 148px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 14px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.28);
+    border-color: rgba(0, 0, 0, 0.5);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    overflow: hidden;
 }
 
-/* ── Cannery additions ─────────────────────────────────────────── */
+.firebox-hearth:hover { background-color: rgba(0, 0, 0, 0.34); }
 
-.section-title {
-    -unity-font-style: bold;
-    font-size: 26px;
-    color: rgb(54, 32, 14);
-    margin-top: 12px;
+.firebox-glow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(224, 122, 41, 0.10);
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+.firebox-hearth--out .firebox-glow { opacity: 0; }
+
+.firebox-firerow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.firerow-tile {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.firebox-logbed {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 34px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.log-socket {
+    width: 46px;
+    height: 30px;
+    margin-left: 4px;
+    margin-right: 4px;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-color: rgba(0, 0, 0, 0.45);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.log-socket--filled {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgResources/Log.png");
+}
+
+.firebox-hint {
+    font-size: 19px;
+    color: rgba(255, 246, 230, 0.85);
+    -unity-text-align: middle-center;
+}
+
+.fuel-bar {
+    height: 18px;
+    flex-shrink: 0;
+    background-color: rgba(54, 32, 14, 0.35);
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+    overflow: hidden;
+}
+
+.fuel-fill {
+    height: 100%;
+    width: 0%;
+    background-color: rgb(224, 122, 41);
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+
+.fuel-text {
+    font-size: 19px;
+    color: rgb(70, 45, 20);
+    margin-top: 4px;
     margin-bottom: 6px;
 }
+
+/* ══ Crop strip ═══════════════════════════════════════════════════════════
+   The three cannable crops, bare like the Smokehouse fish. The small number is how
+   many units one tap dumps into a jar. */
+
+.crop-strip {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    flex-shrink: 0;
+    margin-bottom: 2px;
+}
+
+.crop-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+    transition: scale 0.08s ease-out;
+}
+
+.crop-item--pressed {
+    scale: 0.88 0.88;
+    opacity: 0.6;
+}
+
+/* Nothing to load, or nowhere to put it — a tap would do nothing, so it reads as off. */
+.crop-item--none { opacity: 0.32; }
+
+.crop-icon {
+    width: 88px;
+    height: 88px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.crop-count {
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: rgb(54, 32, 14);
+}
+
+/* Units-per-jar. Small on purpose — you learn it once. */
+.crop-batch {
+    font-size: 17px;
+    color: rgba(54, 32, 14, 0.7);
+}
+
+/* ══ Intake toggle ════════════════════════════════════════════════════════ */
 
 .intake-row {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    flex-shrink: 0;
+    margin-bottom: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
-/* Label + explanation stacked on the left, switch pinned right. */
 .intake-text-col {
     flex-direction: column;
     flex-grow: 1;
@@ -200,14 +352,12 @@
 }
 
 .intake-desc {
-    font-size: 15px;
-    color: rgba(54, 32, 14, 0.75);
+    font-size: 20px;
+    color: rgba(54, 32, 14, 0.85);
     white-space: normal;
     margin-top: 2px;
 }
 
-/* Switch: a rounded track with a sliding knob. Green + knob-right = ON; gray + knob-left = OFF, so
-   the state reads at a glance instead of an "ON"/"OFF" word. */
 .intake-toggle {
     width: 72px;
     height: 40px;
@@ -244,117 +394,330 @@
     justify-content: flex-start;
 }
 
-.fuel-bar {
-    height: 20px;
-    background-color: rgba(54, 32, 14, 0.35);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+/* ══ Jar rack ═════════════════════════════════════════════════════════════
+   Shelves of jars, packed tight. No cell card — the jar carries the whole cell. */
+
+.jars-scroll {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 220px;
+}
+
+.jars-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Fixed height with the jar pinned to the top, so every jar on a shelf lines up no matter
+   what its state puts underneath. Anything taller than the footer overlays the glass. */
+.jar-cell {
+    width: 112px;
+    height: 196px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 4px;
+    padding-top: 4px;
+    transition: scale 0.08s ease-out;
+}
+
+/* Uniform strip under the jar for timers, counts and buttons. */
+.jar-footer {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    bottom: 6px;
+    height: 74px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.jar-cell--pressed { scale: 0.94 0.94; }
+
+/* Locked cells get a card behind them for legibility, but keep their jar — padding stays
+   identical to an owned cell so the jar lands at exactly the same height. */
+.jar-cell--locked {
+    background-color: rgba(103, 64, 43, 0.9);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+/* Fade the glass right back so the price on top of it stays readable. */
+.jar-cell--locked .jar-glass { opacity: 0.28; }
+
+/* Unlock/Research sits on the cell's bottom edge, not floating mid-cell. */
+.jar-cell--locked .jar-footer { justify-content: flex-end; }
+
+/* The jar itself. The preserve fill is a child clipped to the glass interior, drawn
+   UNDER the bottle art so the glass outline and cork stay crisp on top. */
+.jar-figure {
+    width: 104px;
+    height: 104px;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    align-items: center;
     overflow: hidden;
 }
 
-.fuel-fill {
-    height: 100%;
-    width: 0%;
-    background-color: rgb(224, 122, 41);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+.jar-glass {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/House/Bottle_01.png");
 }
 
-.fuel-text-row {
-    flex-direction: row;
-    align-items: center;
-    margin-top: 4px;
-    margin-bottom: 6px;
+/* Interior of the 32x32 bottle sprite, measured from its pixels: body spans x 8..23 and
+   y 3..18, i.e. the middle 50% horizontally and 9%..59% vertically. Inset by ~1px so the
+   preserve sits inside the glass wall rather than painting over it. Drawn AFTER the glass
+   because the bottle art is opaque — a fill behind it would be invisible. */
+.jar-fill {
+    position: absolute;
+    left: 28%;
+    width: 44%;
+    bottom: 12%;
+    height: 0%;
+    background-color: rgba(0, 0, 0, 0);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 }
 
-/* Log icon — the shared "wood" glyph, so players read the firebox fuel as wood. */
-.wood-icon {
-    width: 26px;
-    height: 26px;
-    margin-right: 8px;
+.jar-status {
+    width: 34px;
+    height: 34px;
     flex-shrink: 0;
     -unity-background-scale-mode: scale-to-fit;
-    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgResources/Log.png");
 }
 
-.fuel-text {
-    font-size: 19px;
-    color: rgb(70, 45, 20);
+.jar-status--unlit {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Material_Dark_02.png");
 }
 
-.slots-list { max-height: 250px; }
-.shelf-list { max-height: 170px; }
-
-.slot-row, .shelf-row {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 4px;
-    background-color: rgba(255, 252, 245, 0.55);
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-.slot-row-label {
+.jar-label {
     font-size: 21px;
     -unity-font-style: bold;
-    color: rgb(54, 32, 14);
+    color: rgb(30, 20, 10);
+    -unity-text-align: middle-center;
 }
 
-.slot-row-state {
+.jar-label--paused {
+    color: rgb(123, 12, 12);
+}
+
+.jar-label--muted { color: rgba(54, 32, 14, 0.5); }
+
+.jar-collect {
+    width: 100%;
+    flex-shrink: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 0;
     font-size: 19px;
-    color: rgb(100, 70, 40);
-}
-
-.slot-row--empty .slot-row-label { color: rgba(54, 32, 14, 0.4); }
-.slot-row--cooking .slot-row-state { color: rgb(190, 90, 20); -unity-font-style: bold; }
-.slot-row--paused .slot-row-state { color: rgb(170, 45, 30); -unity-font-style: bold; }
-
-.shelf-sell-btn {
-    width: 140px;
-    height: 44px;
+    -unity-font-style: bold;
+    color: rgb(70, 48, 12);
     background-color: rgb(224, 180, 70);
     border-color: rgb(140, 100, 30);
     border-left-width: 2px;
     border-right-width: 2px;
     border-top-width: 2px;
     border-bottom-width: 2px;
-    color: rgb(70, 48, 12);
-    font-size: 19px;
-    -unity-font-style: bold;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
 
-.buy-slot-row {
+.jar-collect:hover { background-color: rgb(238, 196, 90); }
+.jar-collect:active { scale: 0.94 0.94; background-color: rgb(196, 150, 48); }
+
+.jar-cost {
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 4px;
-    background-color: rgba(120, 170, 90, 0.45);
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    justify-content: center;
 }
 
-.buy-slot-row--locked {
-    background-color: rgba(54, 32, 14, 0.15);
-    opacity: 0.75;
+/* Prices sit ON the empty glass — the locked cell has more to say than the footer holds,
+   and the jar must not shift down to make room. */
+/* Price sits over the faded glass, with the brown card behind carrying the contrast. */
+.jar-cost-overlay {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 34px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+.jar-cost-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.jar-cost-icon--coins {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgThings/Coins_Few.png");
+}
+
+.jar-cost-icon--wood {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgResources/Log.png");
+}
+
+.jar-cost-icon--research {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Misc_Books.png");
+}
+
+.jar-cost-text {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: rgb(12, 8, 4);
+    white-space: nowrap;
+}
+
+.jar-cost-text--unaffordable { color: rgb(104, 12, 10); }
+
+.jar-buy {
+    width: 100%;
+    flex-shrink: 0;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin: 0;
+    font-size: 17px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(103, 64, 43);
+    border-color: rgb(54, 32, 14);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.jar-buy:hover { background-color: rgb(124, 80, 55); }
+.jar-buy:active { scale: 0.94 0.94; background-color: rgb(78, 47, 31); }
+.jar-buy:disabled { opacity: 0.5; }
+
+.grid-hint {
+    font-size: 18px;
+    color: rgba(54, 32, 14, 0.75);
+    -unity-text-align: middle-center;
+    flex-shrink: 0;
+    margin-top: 4px;
+    white-space: normal;
+}
+
+/* ══ Collect burst ════════════════════════════════════════════════════════ */
+
+.fx-layer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.collect-fx {
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    opacity: 1;
+    translate: 0 0;
+    transition: translate 0.75s ease-out, opacity 0.75s ease-in, scale 0.75s ease-out;
+}
+
+.collect-fx--fly {
+    translate: 0 -90px;
+    opacity: 0;
+    scale: 1.25 1.25;
+}
+
+.collect-fx-icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/House/Bottle_01.png");
+}
+
+.collect-fx-label {
+    font-size: 30px;
+    -unity-font-style: bold;
+    color: rgb(255, 236, 170);
+    margin-left: 4px;
+}
+
+/* ══ Flame animation frames ═══════════════════════════════════════════════ */
+
+.flame--large-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_0"); }
+.flame--large-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_1"); }
+.flame--large-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_2"); }
+.flame--large-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_3"); }
+.flame--large-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_4"); }
+.flame--large-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_5"); }
+
+.flame--medium-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_0"); }
+.flame--medium-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_1"); }
+.flame--medium-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_2"); }
+.flame--medium-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_3"); }
+.flame--medium-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_4"); }
+.flame--medium-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_5"); }
+
+.flame--small-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_0"); }
+.flame--small-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_1"); }
+.flame--small-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_2"); }
+.flame--small-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_3"); }
+.flame--small-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_4"); }
+.flame--small-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_5"); }
+
+.flame--ember-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_0"); }
+.flame--ember-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_1"); }
+.flame--ember-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_2"); }
+.flame--ember-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_3"); }
+.flame--ember-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_4"); }
+.flame--ember-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_5"); }
+
+.firerow--roaring-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_0"); }
+.firerow--roaring-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_1"); }
+.firerow--roaring-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_2"); }
+.firerow--roaring-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_3"); }
+.firerow--roaring-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_4"); }
+.firerow--roaring-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_5"); }
+
+.firerow--strong-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_0"); }
+.firerow--strong-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_1"); }
+.firerow--strong-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_2"); }
+.firerow--strong-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_3"); }
+.firerow--strong-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_4"); }
+.firerow--strong-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_5"); }
+
+.firerow--low-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_0"); }
+.firerow--low-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_1"); }
+.firerow--low-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_2"); }
+.firerow--low-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_3"); }
+.firerow--low-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_4"); }
+.firerow--low-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_5"); }
+
+.firerow--embers-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_0"); }
+.firerow--embers-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_1"); }
+.firerow--embers-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_2"); }
+.firerow--embers-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_3"); }
+.firerow--embers-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_4"); }
+.firerow--embers-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_5"); }

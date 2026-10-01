@@ -25,7 +25,7 @@
                     <ui:Button name="stack-10" text="x10" class="stack-btn" />
                     <ui:Button name="stack-all" text="All" class="stack-btn" />
                 </ui:VisualElement>
-                <ui:Button name="zone-confirm" text="Sell for Gold" class="zone-confirm" />
+                <ui:Button name="zone-confirm" text="Sell for Coins" class="zone-confirm" />
             </ui:VisualElement>
 
             <ui:ScrollView name="inventory-list" class="inv-list" />

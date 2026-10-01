@@ -220,6 +220,8 @@ public abstract class AnimalThreat : MonoBehaviour
             if (hungerRemaining <= 0f) yield break;
 
             float damage = data.GetBiteDamage(plant.CurrentStage);
+            // Crop personality: pests eat what they love harder (and fill up on it faster).
+            if (plant.CropData != null) damage *= plant.CropData.PestAppetite(data.threatType);
             if (damage <= 0f) yield break;
 
             float hpBefore        = plant.CurrentHP;

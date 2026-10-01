@@ -28,6 +28,9 @@ public class ReadyJar
     public int value;
     public int tier;        // 1..3 — copied from the finishing slot (0 on legacy jars)
     public string sourceId; // slot.cropId — the crop/fish that produced this good
+    /// <summary>Slot this good came out of, so a UI can leave it parked in its own cell instead of
+    /// re-flowing the rack. -1 on legacy jars saved before this field existed.</summary>
+    public int slotIndex = -1;
 }
 
 /// <summary>Mutable state for one processing building (Cannery in Phase 1).</summary>
@@ -151,7 +154,7 @@ public static class ProcessingMath
                 s.cookSecondsRemaining -= step;
                 if (s.cookSecondsRemaining <= 1e-6)
                 {
-                    st.readyJars.Add(new ReadyJar { cropName = s.cropName, value = s.jarValue, tier = s.tier, sourceId = s.cropId });
+                    st.readyJars.Add(new ReadyJar { cropName = s.cropName, value = s.jarValue, tier = s.tier, sourceId = s.cropId, slotIndex = i });
                     finished++;
                     s.cropId = null; s.cropName = null; s.tier = 0;
                     s.unitsLoaded = 0; s.unitsRequired = 0;

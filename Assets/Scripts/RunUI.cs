@@ -22,6 +22,10 @@ public class RunUI : MonoBehaviour
     [Tooltip("If assigned, the speed-down (-) button shows this arrow sprite instead of a '-' glyph.")]
     [SerializeField] private Sprite speedDownArrow;
 
+    /// <summary>For tutorial spotlighting (OnboardingTutorials).</summary>
+    public RectTransform StartRunButtonRect => startRunButton != null ? (RectTransform)startRunButton.transform : null;
+    public RectTransform EquipFieldsButtonRect => equipFieldsButton != null ? (RectTransform)equipFieldsButton.transform : null;
+
     private bool hasShownInitialEquipment = false;
     private CameraPanController panController;
     private Button backToFarmButton;
@@ -232,10 +236,12 @@ public class RunUI : MonoBehaviour
         crt.anchorMax = new Vector2(0.5f, 0f);
         crt.pivot = new Vector2(0.5f, 1f);
         crt.anchoredPosition = new Vector2(0f, -34f);
-        crt.sizeDelta = new Vector2(300f, 48f);
+        // 380 keeps ~17px of air between the arrows and the 210px label pill.
+        crt.sizeDelta = new Vector2(380f, 48f);
 
-        speedDownBtn = CreateSpeedButton(container.transform, "-", 0f, 4f, () => OnSpeedStep(-1), speedDownArrow);
-        speedUpBtn   = CreateSpeedButton(container.transform, "+", 1f, -4f, () => OnSpeedStep(1), speedUpArrow);
+        // Tap steps one rung; hold jumps to the end of the ladder (handy for the 10/20/30× dev tiers).
+        speedDownBtn = CreateSpeedButton(container.transform, "-", 0f, 4f, -1, speedDownArrow);
+        speedUpBtn   = CreateSpeedButton(container.transform, "+", 1f, -4f, 1, speedUpArrow);
 
         // Center label with a dark pill behind it.
         var lblGO = new GameObject("SpeedLabel", typeof(RectTransform), typeof(Image));
@@ -247,25 +253,33 @@ public class RunUI : MonoBehaviour
         lrt.anchorMin = new Vector2(0.5f, 0.5f);
         lrt.anchorMax = new Vector2(0.5f, 0.5f);
         lrt.pivot = new Vector2(0.5f, 0.5f);
-        lrt.sizeDelta = new Vector2(150f, 44f);
+        // Wide enough for the longest label ("Speed 1.25×"); at 150px it wrapped onto two lines
+        // and spilled out of the pill.
+        lrt.sizeDelta = new Vector2(210f, 44f);
         lrt.anchoredPosition = Vector2.zero;
 
         var txtGO = new GameObject("text", typeof(RectTransform));
         txtGO.transform.SetParent(lblGO.transform, false);
         speedLabel = txtGO.AddComponent<TextMeshProUGUI>();
         speedLabel.alignment = TextAlignmentOptions.Center;
-        speedLabel.fontSize = 26;
         speedLabel.fontStyle = FontStyles.Bold;
         speedLabel.color = Color.white; // recolored per-tier in UpdateSpeedStepper
         speedLabel.raycastTarget = false;
+        // Never wrap; shrink instead if a label somehow still overruns the pill.
+        speedLabel.textWrappingMode = TextWrappingModes.NoWrap;
+        speedLabel.overflowMode = TextOverflowModes.Overflow;
+        speedLabel.enableAutoSizing = true;
+        speedLabel.fontSizeMin = 16f;
+        speedLabel.fontSizeMax = 26f;
         var trt = txtGO.GetComponent<RectTransform>();
         trt.anchorMin = Vector2.zero; trt.anchorMax = Vector2.one;
-        trt.offsetMin = Vector2.zero; trt.offsetMax = Vector2.zero;
+        // Small side padding so glyphs never touch the pill edge.
+        trt.offsetMin = new Vector2(10f, 0f); trt.offsetMax = new Vector2(-10f, 0f);
 
         UpdateSpeedStepper();
     }
 
-    private Button CreateSpeedButton(Transform parent, string glyph, float anchorX, float xOffset, System.Action onClick, Sprite icon = null)
+    private Button CreateSpeedButton(Transform parent, string glyph, float anchorX, float xOffset, int dir, Sprite icon = null)
     {
         var go = new GameObject("SpeedBtn", typeof(RectTransform), typeof(Image), typeof(Button));
         go.transform.SetParent(parent, false);
@@ -309,13 +323,30 @@ public class RunUI : MonoBehaviour
             trt.offsetMin = Vector2.zero; trt.offsetMax = Vector2.zero;
         }
 
-        go.GetComponent<Button>().onClick.AddListener(() => onClick());
+        // Tap/hold is driven by HoldRepeatButton rather than Button.onClick — onClick also fires on
+        // release, which would tack an extra step onto the end of every hold-to-jump.
+        var hold = go.AddComponent<HoldRepeatButton>();
+        int captured = dir;
+        hold.OnTap  = () => OnSpeedStep(captured);
+        hold.OnHold = () => OnSpeedJump(captured);
         return go.GetComponent<Button>();
     }
 
     private void OnSpeedStep(int dir)
     {
         if (!GameSpeedControl.Step(dir)) return;            // clamped — no wrap
+        ApplySpeedChange();
+    }
+
+    /// <summary>Long-press: jump straight to the fastest/slowest rung.</summary>
+    private void OnSpeedJump(int dir)
+    {
+        if (!GameSpeedControl.JumpToEnd(dir)) return;
+        ApplySpeedChange();
+    }
+
+    private void ApplySpeedChange()
+    {
         if (RunManager.Instance != null) RunManager.Instance.RefreshGameSpeed();
         UpdateSpeedStepper();
     }
@@ -326,7 +357,8 @@ public class RunUI : MonoBehaviour
         if (speedDownBtn != null) speedDownBtn.interactable = !GameSpeedControl.AtMin;
         if (speedUpBtn != null)   speedUpBtn.interactable = !GameSpeedControl.AtMax;
 
-        // Yellow pill + dark text on the dev-only 10/20/30× tiers; normal dark pill for 1–4×.
+        // Yellow pill + dark text once the rung is above what Game Speed research has unlocked —
+        // i.e. a DEV-only speed. Earned rungs get the normal dark pill.
         bool dev = GameSpeedControl.IsDevSpeed;
         if (speedLabelBg != null) speedLabelBg.color = dev ? new Color(0.95f, 0.82f, 0.15f, 0.95f) : new Color(0f, 0f, 0f, 0.5f);
         if (speedLabel != null)   speedLabel.color   = dev ? new Color(0.2f, 0.15f, 0f) : Color.white;
@@ -344,7 +376,10 @@ public class RunUI : MonoBehaviour
         }
 
         if (RunManager.Instance != null)
+        {
             RunManager.Instance.StartNewRun();
+            OnboardingTutorials.OnRunStarted();
+        }
     }
 
     /// <summary>Pops a brief "Choose your plants!" banner above the Equip Fields button.</summary>
@@ -393,6 +428,9 @@ public class RunUI : MonoBehaviour
         if (RunManager.Instance != null)
             RunManager.Instance.EndRun();
     }
+
+    /// <summary>Opens the seed picker exactly like the Field button (letters' "Choose Seeds" link).</summary>
+    public void OpenFieldPicker() => OnEquipFieldsClicked();
 
     private void OnEquipFieldsClicked()
     {

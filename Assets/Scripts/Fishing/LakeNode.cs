@@ -160,10 +160,14 @@ public class LakeNode : MonoBehaviour
     private void OnFishCaught(int tier)
     {
         Vector3 polePos = CastOrigin + Vector3.up * 0.6f;
-        FloatingTextManager.ShowText("+1 " + CurrencyIcons.Fish, new Color(0.35f, 0.6f, 0.95f), polePos);
+        int count = FishingManager.Instance != null ? FishingManager.Instance.LastCatchCount : 1;
+        FloatingTextManager.ShowText($"+{count} " + CurrencyIcons.Fish, new Color(0.35f, 0.6f, 0.95f), polePos);
         Color nameColor = FishNameColors[Mathf.Clamp(tier - 1, 0, FishNameColors.Length - 1)];
         string hex = ColorUtility.ToHtmlStringRGB(nameColor);
-        ToastManager.ShowCatch(FishIcon(tier), $"Caught a <color=#{hex}>{FishTiers.Name(tier)}</color>!");
+        string caught = count > 1
+            ? $"Double catch! 2 <color=#{hex}>{FishTiers.Name(tier)}</color>!"
+            : $"Caught a <color=#{hex}>{FishTiers.Name(tier)}</color>!";
+        ToastManager.ShowCatch(FishIcon(tier), caught);
     }
 
     // The consolation prize: a grey float over the pole + a bottom toast carrying the equipped

@@ -97,6 +97,7 @@ public class DailyRewardPopup : MonoBehaviour
             popupRoot.style.display = DisplayStyle.Flex;
             popupRoot.schedule.Execute(() => popupRoot.AddToClassList("open")).StartingIn(0);
         }
+        OnboardingTutorials.OnMenuOpened("tip_daily_rewards"); // one-time how-to (new players)
     }
 
     public void Hide()

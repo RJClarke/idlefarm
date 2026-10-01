@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: chicken_cooldown
   displayName: 'Chicken: Cooldown'
-  description: "+2.67% per level. Maxes at +66.7% (egg timer 20min \u2192 12min)."
+  description: +1.0% per level. Maxes at +25%.
   branchID: animals
   tier: 2
   targetStatKey: chicken_cooldown
-  bonusPerLevel: 0.0266667
+  bonusPerLevel: 0.01
   baseCostCoins: 50
   baseDurationSecs: 120
   timeDifficulty: 1

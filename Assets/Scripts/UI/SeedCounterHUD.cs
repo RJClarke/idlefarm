@@ -41,6 +41,21 @@ public class SeedCounterHUD : MonoBehaviour
 
     private readonly Dictionary<CropData, Bag> _bags = new Dictionary<CropData, Bag>();
 
+    /// <summary>First visible seed bag, for the out-of-money tutorial spotlight (null if none).</summary>
+    public RectTransform FirstBagRect
+    {
+        get
+        {
+            // The top-most visible bag (dictionary order isn't screen order), so a tip card placed
+            // above it covers the field, not the other bags.
+            RectTransform top = null;
+            foreach (var b in _bags.Values)
+                if (b.root != null && b.root.gameObject.activeInHierarchy
+                    && (top == null || b.root.position.y > top.position.y)) top = b.root;
+            return top;
+        }
+    }
+
     private void Awake()
     {
         _canvas = gameObject.AddComponent<Canvas>();

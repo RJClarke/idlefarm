@@ -259,10 +259,15 @@
 .inv-icon--jars       { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgThings/Jug_Orange.png"); }
 .inv-icon--fish-perch { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_Perch.png"); }
 .inv-icon--fish-bass  { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_BassGreen.png"); }
-.inv-icon--fish-pike  { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_GreenPike.png"); }
+/* Fish_PikeGreen (not Fish_GreenPike) — it is the fish the smoked variant was drawn from. */
+.inv-icon--fish-pike  { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_PikeGreen.png"); }
+
+/* Smoked variants use their own cured art (previously a brown tint over the raw sprite). */
+.inv-icon--fish-perch-smoked { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_Perch_Smoked.png"); }
+.inv-icon--fish-bass-smoked  { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_BassGreen_Smoked.png"); }
+.inv-icon--fish-pike-smoked  { background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_PikeGreen_Smoked.png"); }
 
 /* No smoked-fish art in the packs — an amber tint over the raw fish reads as cured. */
-.inv-icon--smoked { -unity-background-image-tint-color: rgb(188, 132, 74); }
 
 /* ─── Scrollbar (notebook handle) ───
    UITK builds the scroller from nested parts; hide the arrow buttons, drop the tracker, and

@@ -47,6 +47,25 @@ public class ResearchPopupUITK : MonoBehaviour
     private IVisualElementScheduledItem refreshTicker;
     public bool IsOpen => isOpen;
 
+    /// <summary>
+    /// Live handles into a rendered active cell. The once-a-second tick pokes these instead of
+    /// rebuilding the card — a card rebuilt mid-tap swallows the tap, and an active cell now
+    /// carries three of them (Auto, Cancel, Speed Up). Rebuilds happen only when the cell's
+    /// structure actually changes (see UpdateSlotLive).
+    /// </summary>
+    private class ActiveSlotView
+    {
+        public string researchID;
+        public int    level;
+        public bool   boosted;
+        public bool   autoRepeat;
+        public Label  timer;
+        public VisualElement fill;
+        public Label  boostLeft;
+    }
+
+    private readonly ActiveSlotView[] activeViews = new ActiveSlotView[ResearchManager.SlotCount];
+
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
@@ -184,6 +203,7 @@ public class ResearchPopupUITK : MonoBehaviour
         // Tick the popup once a second so countdowns update without waiting on events.
         refreshTicker?.Pause();
         refreshTicker = root.schedule.Execute(TickRefresh).Every(1000);
+        OnboardingTutorials.OnMenuOpened("tip_research"); // one-time how-to (new players)
     }
 
     public void Close()
@@ -203,10 +223,61 @@ public class ResearchPopupUITK : MonoBehaviour
         }).StartingIn(260);
     }
 
+    /// <summary>
+    /// Once-a-second heartbeat. Updates countdowns in place; only rebuilds a card when its
+    /// structure changed. Full rebuilds still happen event-driven via MarkDirty/Refresh.
+    /// </summary>
     private void TickRefresh()
     {
-        if (!isOpen) return;
-        Refresh();
+        if (!isOpen || root == null) return;
+        for (int i = 0; i < ResearchManager.SlotCount; i++) UpdateSlotLive(i);
+        if (picker != null && picker.style.display == DisplayStyle.Flex) UpdatePickerCoins();
+    }
+
+    private void UpdateSlotLive(int slotIndex)
+    {
+        ResearchManager mgr = ResearchManager.Instance;
+        if (mgr == null) return;
+
+        ActiveSlotView view = activeViews[slotIndex];
+        var state = mgr.GetSlot(slotIndex);
+        bool nowActive = mgr.IsSlotUnlocked(slotIndex) && state != null && !state.IsIdle;
+
+        // A cell that isn't (or has stopped being) an active research cell only needs a rebuild
+        // when that changed; locked/empty cells are refreshed by events, not by this tick.
+        if (view == null || !nowActive)
+        {
+            if (view != null || nowActive) RenderSlot(slotIndex);
+            return;
+        }
+
+        var rd = mgr.GetResearch(state.activeResearchID);
+        if (rd == null) { RenderSlot(slotIndex); return; }
+
+        bool boosted = state.HasActiveBoost(DateTime.UtcNow);
+        if (view.researchID != state.activeResearchID || view.level != state.currentLevel ||
+            view.boosted != boosted || view.autoRepeat != state.autoRepeat)
+        {
+            RenderSlot(slotIndex); // structure changed — pay for one rebuild, not one per second
+            return;
+        }
+
+        int nextLevel = state.currentLevel + 1;
+        float secsForLevel = mgr.GetSecondsForLevel(rd, nextLevel);
+        double elapsed = mgr.GetSlotElapsedSeconds(slotIndex);
+
+        if (view.timer != null)
+            view.timer.text = FormatActiveTimer(Math.Max(0, secsForLevel - elapsed));
+        if (view.fill != null)
+        {
+            float progress = secsForLevel <= 0 ? 0f : Mathf.Clamp01((float)(elapsed / secsForLevel));
+            view.fill.style.width = new StyleLength(new Length(progress * 100f, LengthUnit.Percent));
+        }
+        if (view.boostLeft != null)
+        {
+            double boostLeft = (state.boostExpiresUtcTicks - DateTime.UtcNow.Ticks) / (double)TimeSpan.TicksPerSecond;
+            view.boostLeft.text = FormatBoostRemaining(boostLeft);
+        }
     }
 
     private void Refresh()
@@ -231,9 +302,11 @@ public class ResearchPopupUITK : MonoBehaviour
         if (card == null) return;
 
         card.Clear();
+        activeViews[slotIndex] = null; // rebuilt below if this turns out to be an active cell
         card.RemoveFromClassList("slot-card--unlocked-empty");
         card.RemoveFromClassList("slot-card--locked");
         card.RemoveFromClassList("slot-card--affordable");
+        card.RemoveFromClassList("slot-card--active");
 
         ResearchManager mgr = ResearchManager.Instance;
         if (mgr == null) return;
@@ -294,19 +367,34 @@ public class ResearchPopupUITK : MonoBehaviour
         card.Add(statusLabel); card.Add(actionLabel);
     }
 
+    /// <summary>
+    /// Active cell layout: centred name/bar/countdown, with three corner controls pinned around it —
+    /// Auto (top-left), Cancel (bottom-left), Speed Up (bottom-right). The corners are absolutely
+    /// positioned so the centre column stays optically centred regardless of which are showing.
+    /// </summary>
     private void RenderActiveSlot(VisualElement card, int slotIndex, ResearchManager mgr, ResearchSlotState state)
     {
         var rd = mgr.GetResearch(state.activeResearchID);
         if (rd == null) { CancelSlotAndRefresh(slotIndex); return; }
 
-        Label nameLabel = new Label($"{rd.displayName} — {state.currentLevel + 1}/{rd.MaxLevel}");
-        nameLabel.AddToClassList("slot-card__active-name");
+        card.AddToClassList("slot-card--active");
 
         int nextLevel = state.currentLevel + 1;
         float secsForLevel = mgr.GetSecondsForLevel(rd, nextLevel);
-        double elapsed = (DateTime.UtcNow.Ticks - state.startUtcTicks) / (double)TimeSpan.TicksPerSecond;
+        // Boost-aware elapsed — a 2× slot earns 2 seconds of research per real second, so the
+        // countdown visibly drops in 2s steps. Raw wall-clock here would disagree with the tick
+        // that actually levels the research up.
+        double elapsed = mgr.GetSlotElapsedSeconds(slotIndex);
         float progress = secsForLevel <= 0 ? 0f : Mathf.Clamp01((float)(elapsed / secsForLevel));
         double remaining = Math.Max(0, secsForLevel - elapsed);
+
+        // ── Centre column ──
+        var body = new VisualElement();
+        body.AddToClassList("slot-card__active-body");
+        body.pickingMode = PickingMode.Ignore;
+
+        Label nameLabel = new Label($"{rd.displayName} — {nextLevel}/{rd.MaxLevel}");
+        nameLabel.AddToClassList("slot-card__active-name");
 
         VisualElement bar = new VisualElement(); bar.AddToClassList("slot-card__active-progress");
         VisualElement fill = new VisualElement(); fill.AddToClassList("slot-card__active-progress-fill");
@@ -316,38 +404,122 @@ public class ResearchPopupUITK : MonoBehaviour
         Label timer = new Label(FormatActiveTimer(remaining));
         timer.AddToClassList("slot-card__active-timer");
 
-        // Boost indicator (Plan 2 — element exists so Plan 2 can flip it on without re-touching this code)
-        Label boost = new Label();
-        boost.AddToClassList("slot-card__boost");
-        if (state.boostMultiplier > 1.0f && state.boostExpiresUtcTicks > DateTime.UtcNow.Ticks)
-        {
-            double boostLeft = (state.boostExpiresUtcTicks - DateTime.UtcNow.Ticks) / (double)TimeSpan.TicksPerSecond;
-            boost.text = $"{state.boostMultiplier:F0}x — {FormatRemaining(boostLeft)} left";
-            boost.AddToClassList("slot-card__boost--active");
-        }
+        body.Add(nameLabel); body.Add(bar); body.Add(timer);
 
-        Label boostBtn = new Label("⚡ Boost (Compost)");
-        boostBtn.AddToClassList("slot-card__cancel");
-        boostBtn.style.color = new StyleColor(new Color(0.55f, 0.78f, 0.39f));
-        int capturedSlotBoost = slotIndex;
-        boostBtn.RegisterCallback<ClickEvent>(e =>
+        // Handles the 1s tick writes to, so it never has to rebuild this card.
+        var view = new ActiveSlotView
         {
-            e.StopPropagation(); // don't bubble into the card's own click handling
-            if (CompostBoostModalUITK.Instance != null)
-                CompostBoostModalUITK.Instance.Open(capturedSlotBoost);
-        });
+            researchID = state.activeResearchID,
+            level      = state.currentLevel,
+            boosted    = state.HasActiveBoost(DateTime.UtcNow),
+            autoRepeat = state.autoRepeat,
+            timer      = timer,
+            fill       = fill,
+        };
 
-        Label cancel = new Label("Cancel ↩"); cancel.AddToClassList("slot-card__cancel");
-        int captured = slotIndex;
+        // ── Top-left: Auto (repeat) toggle ──
+        card.Add(BuildAutoToggle(slotIndex, state));
+
+        card.Add(body);
+
+        // ── Bottom-left: Cancel ──
+        Label cancel = new Label("Cancel");
+        cancel.AddToClassList("slot-card__cancel");
+        int capturedCancel = slotIndex;
         cancel.RegisterCallback<ClickEvent>(e =>
         {
             // Stop the bubble: cancelling idles the slot, and the card's dispatcher would read the
             // fresh idle state and immediately open the Select Research picker.
             e.StopPropagation();
-            CancelSlotAndRefresh(captured);
+            CancelSlotAndRefresh(capturedCancel);
         });
+        card.Add(cancel);
 
-        card.Add(nameLabel); card.Add(bar); card.Add(timer); card.Add(boost); card.Add(boostBtn); card.Add(cancel);
+        // ── Bottom-right: compost speed-up ──
+        card.Add(BuildBoostChip(slotIndex, state, view));
+
+        activeViews[slotIndex] = view;
+    }
+
+    /// <summary>Top-left repeat toggle. On = finishing a level rolls straight into the next one.</summary>
+    private VisualElement BuildAutoToggle(int slotIndex, ResearchSlotState state)
+    {
+        var auto = new VisualElement();
+        auto.AddToClassList("slot-card__auto");
+        if (state.autoRepeat) auto.AddToClassList("slot-card__auto--on");
+
+        var icon = new VisualElement();
+        icon.AddToClassList("slot-card__auto-icon");
+        icon.pickingMode = PickingMode.Ignore;
+
+        var label = new Label("Auto");
+        label.AddToClassList("slot-card__auto-label");
+        label.pickingMode = PickingMode.Ignore;
+
+        auto.Add(icon); auto.Add(label);
+
+        int captured = slotIndex;
+        auto.RegisterCallback<ClickEvent>(e =>
+        {
+            e.StopPropagation(); // don't bubble into the card's own click handling
+            var m = ResearchManager.Instance;
+            if (m == null) return;
+            m.SetAutoRepeat(captured, !m.GetAutoRepeat(captured));
+            Refresh();
+        });
+        WirePressedFeedback(auto, "slot-card__corner--pressed");
+        return auto;
+    }
+
+    /// <summary>
+    /// Bottom-right compost chip. Shows the live boost ("2x — 1h 21m 15s") when one is running,
+    /// otherwise invites a purchase. Either way it opens the compost menu for this slot.
+    /// </summary>
+    private VisualElement BuildBoostChip(int slotIndex, ResearchSlotState state, ActiveSlotView view)
+    {
+        var chip = new VisualElement();
+        chip.AddToClassList("slot-card__boost-chip");
+
+        var icon = new VisualElement();
+        icon.AddToClassList("slot-card__compost-icon");
+        icon.pickingMode = PickingMode.Ignore;
+        chip.Add(icon);
+
+        bool boosted = state.boostMultiplier > 1.0f && state.boostExpiresUtcTicks > DateTime.UtcNow.Ticks;
+        if (boosted)
+        {
+            chip.AddToClassList("slot-card__boost-chip--active");
+
+            var mult = new Label($"{state.boostMultiplier:F0}x");
+            mult.AddToClassList("slot-card__boost-mult");
+            mult.pickingMode = PickingMode.Ignore;
+
+            // Real-world time, so this one is NOT accelerated by the multiplier.
+            double boostLeft = (state.boostExpiresUtcTicks - DateTime.UtcNow.Ticks) / (double)TimeSpan.TicksPerSecond;
+            var left = new Label(FormatBoostRemaining(boostLeft));
+            left.AddToClassList("slot-card__boost-left");
+            left.pickingMode = PickingMode.Ignore;
+            if (view != null) view.boostLeft = left;
+
+            chip.Add(mult); chip.Add(left);
+        }
+        else
+        {
+            var label = new Label("Speed Up");
+            label.AddToClassList("slot-card__boost-mult");
+            label.pickingMode = PickingMode.Ignore;
+            chip.Add(label);
+        }
+
+        int captured = slotIndex;
+        chip.RegisterCallback<ClickEvent>(e =>
+        {
+            e.StopPropagation(); // don't bubble into the card's own click handling
+            if (CompostBoostModalUITK.Instance != null)
+                CompostBoostModalUITK.Instance.Open(captured);
+        });
+        WirePressedFeedback(chip, "slot-card__corner--pressed");
+        return chip;
     }
 
     private void CancelSlotAndRefresh(int slotIndex)
@@ -365,6 +537,24 @@ public class ResearchPopupUITK : MonoBehaviour
         return $"{secs:F0} sec";
     }
 
+    /// <summary>
+    /// Boost countdown — "1h 21m 15s", dropping the leading units once they're spent. This is
+    /// wall-clock time the player already paid compost for, so it always runs at 1×.
+    /// Trailing units are zero-padded so the text doesn't change width as it counts down (the
+    /// font isn't monospaced); the label also has a fixed width in USS to pin the chip.
+    /// </summary>
+    private static string FormatBoostRemaining(double secs)
+    {
+        if (secs < 0) secs = 0;
+        long total = (long)secs;
+        long hrs  = total / 3600; total -= hrs * 3600;
+        long mins = total / 60;   total -= mins * 60;
+        long s    = total;
+        if (hrs > 0)  return $"{hrs}h {mins:00}m {s:00}s";
+        if (mins > 0) return $"{mins}m {s:00}s";
+        return $"{s}s";
+    }
+
     /// <summary>Detailed "2d 14h 32m 15s" — used in active slot countdown. Always shows all four units.</summary>
     private static string FormatActiveTimer(double secs)
     {
@@ -374,7 +564,8 @@ public class ResearchPopupUITK : MonoBehaviour
         long hrs  = total / 3600;  total -= hrs  * 3600;
         long mins = total / 60;    total -= mins * 60;
         long s    = total;
-        return $"{days}d {hrs}h {mins}m {s}s";
+        // Zero-padded so a centred countdown doesn't shuffle sideways each second.
+        return $"{days}d {hrs:00}h {mins:00}m {s:00}s";
     }
 
     // ───────── Picker ─────────
@@ -414,7 +605,7 @@ public class ResearchPopupUITK : MonoBehaviour
         int fullCost = isMaxed ? 0 : mgr.GetCostForLevel(rd, nextLevel);
         float fullSecs = isMaxed ? 0f : mgr.GetSecondsForLevel(rd, nextLevel);
         float partial = isMaxed ? 0f : mgr.GetPartialSecs(researchID);
-        bool isPaidPaused = partial > 0f;
+        bool isPaidPaused = !isMaxed && mgr.IsPaid(researchID);
         int cost = isPaidPaused ? 0 : fullCost;
         float secs = Mathf.Max(0f, fullSecs - partial);
         bool canAfford = isPaidPaused || (CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(cost));
@@ -585,6 +776,17 @@ public class ResearchPopupUITK : MonoBehaviour
             first = false;
 
             string displayName = BranchDisplay.TryGetValue(branch, out var d) ? d : branch;
+
+            // Shared with the research toast, so the two can't show different art for a branch.
+            var branchIcon = ResearchBranchIcons.For(branch);
+            if (branchIcon != null)
+            {
+                var iconEl = new Image { sprite = branchIcon, scaleMode = ScaleMode.ScaleToFit };
+                iconEl.AddToClassList("picker-section__icon");
+                iconEl.pickingMode = PickingMode.Ignore;
+                section.Add(iconEl);
+            }
+
             var title = new Label(displayName); title.AddToClassList("picker-section__title");
             var count = new Label($"{byBranch[branch].Count} research"); count.AddToClassList("picker-section__count");
             section.Add(title); section.Add(count);
@@ -604,13 +806,13 @@ public class ResearchPopupUITK : MonoBehaviour
         int fullCost = isMaxed ? 0 : mgr.GetCostForLevel(rd, nextLevel);
         float fullSecs = isMaxed ? 0f : mgr.GetSecondsForLevel(rd, nextLevel);
         float partial = isMaxed ? 0f : mgr.GetPartialSecs(rd.researchID);
-        bool isPaidPaused = partial > 0f;
+        bool isPaidPaused = !isMaxed && mgr.IsPaid(rd.researchID);
         int cost = isPaidPaused ? 0 : fullCost; // already paid — resume free
         float secs = Mathf.Max(0f, fullSecs - partial);
         bool canAfford = !isMaxed && (isPaidPaused || (CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(cost)));
 
-        ResearchSlotState activeSlot = FindActiveSlotFor(rd.researchID);
-        bool isActive = activeSlot != null;
+        int activeSlotIndex = FindActiveSlotIndexFor(rd.researchID);
+        bool isActive = activeSlotIndex >= 0;
 
         var row = new VisualElement(); row.AddToClassList("picker-row");
 
@@ -653,8 +855,8 @@ public class ResearchPopupUITK : MonoBehaviour
             costLbl.AddToClassList("picker-row__cost--active");
             timeLbl.AddToClassList("picker-row__time--active");
             costLbl.text = "ACTIVE";
-            UpdateActiveRowTime(timeLbl, rd, activeSlot);
-            timeLbl.schedule.Execute(() => UpdateActiveRowTime(timeLbl, rd, activeSlot)).Every(1000);
+            UpdateActiveRowTime(timeLbl, rd, activeSlotIndex);
+            timeLbl.schedule.Execute(() => UpdateActiveRowTime(timeLbl, rd, activeSlotIndex)).Every(1000);
         }
         else if (isMaxed)
         {
@@ -720,24 +922,35 @@ public class ResearchPopupUITK : MonoBehaviour
 
     private ResearchSlotState FindActiveSlotFor(string researchID)
     {
+        int i = FindActiveSlotIndexFor(researchID);
+        return i >= 0 ? ResearchManager.Instance.GetSlot(i) : null;
+    }
+
+    /// <summary>Index of the slot currently researching this ID, or -1. Index (not the state object)
+    /// is what the live countdown needs, so it can re-read the slot each tick.</summary>
+    private int FindActiveSlotIndexFor(string researchID)
+    {
         var mgr = ResearchManager.Instance;
-        if (mgr == null || string.IsNullOrEmpty(researchID)) return null;
+        if (mgr == null || string.IsNullOrEmpty(researchID)) return -1;
         for (int i = 0; i < ResearchManager.SlotCount; i++)
         {
             var s = mgr.GetSlot(i);
-            if (s != null && !s.IsIdle && s.activeResearchID == researchID) return s;
+            if (s != null && !s.IsIdle && s.activeResearchID == researchID) return i;
         }
-        return null;
+        return -1;
     }
 
-    private void UpdateActiveRowTime(Label timeLbl, ResearchData rd, ResearchSlotState state)
+    private void UpdateActiveRowTime(Label timeLbl, ResearchData rd, int slotIndex)
     {
-        if (timeLbl == null || state == null || rd == null) return;
+        if (timeLbl == null || rd == null) return;
         var mgr = ResearchManager.Instance;
         if (mgr == null) return;
+        var state = mgr.GetSlot(slotIndex);
+        if (state == null || state.IsIdle) return;
         int nextLevel = state.currentLevel + 1;
         float secsForLevel = mgr.GetSecondsForLevel(rd, nextLevel);
-        double elapsed = (DateTime.UtcNow.Ticks - state.startUtcTicks) / (double)TimeSpan.TicksPerSecond;
+        // Same boost-aware elapsed the cell countdown uses — see RenderActiveSlot.
+        double elapsed = mgr.GetSlotElapsedSeconds(slotIndex);
         double remaining = Math.Max(0, secsForLevel - elapsed);
         bool boosted = state.boostMultiplier > 1.0f && state.boostExpiresUtcTicks > DateTime.UtcNow.Ticks;
         timeLbl.text = boosted

@@ -1,0 +1,4043 @@
+fileFormatVersion: 2
+guid: 6a74dee5170d1cb4b9104e6ce4175b73
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1229954865730779999
+    second: Treasure_Objects 1_0
+  - first:
+      213: 4156664243572811092
+    second: Treasure_Objects 1_1
+  - first:
+      213: 6487139755580602466
+    second: Treasure_Objects 1_2
+  - first:
+      213: 6120221876086781830
+    second: Treasure_Objects 1_3
+  - first:
+      213: -9063128700524467958
+    second: Treasure_Objects 1_4
+  - first:
+      213: -8555408154943447150
+    second: Treasure_Objects 1_5
+  - first:
+      213: 5040758117170088363
+    second: Treasure_Objects 1_6
+  - first:
+      213: -5211762623451663607
+    second: Treasure_Objects 1_7
+  - first:
+      213: -2902381965584048281
+    second: Treasure_Objects 1_8
+  - first:
+      213: 3209117370310737339
+    second: Treasure_Objects 1_9
+  - first:
+      213: 6225192724678334951
+    second: Treasure_Objects 1_10
+  - first:
+      213: 1592691205268504163
+    second: Treasure_Objects 1_11
+  - first:
+      213: -3515718134933582946
+    second: Treasure_Objects 1_12
+  - first:
+      213: 255707997863403662
+    second: Treasure_Objects 1_13
+  - first:
+      213: -6324693114605598377
+    second: Treasure_Objects 1_14
+  - first:
+      213: -7445172126715627211
+    second: Treasure_Objects 1_15
+  - first:
+      213: 6692491346182193075
+    second: Treasure_Objects 1_16
+  - first:
+      213: -4828025006817222693
+    second: Treasure_Objects 1_17
+  - first:
+      213: 1164361471936210252
+    second: Treasure_Objects 1_18
+  - first:
+      213: 668701244444672128
+    second: Treasure_Objects 1_19
+  - first:
+      213: -4051806030255511156
+    second: Treasure_Objects 1_20
+  - first:
+      213: 9098949612900132784
+    second: Treasure_Objects 1_21
+  - first:
+      213: 8518304124507540145
+    second: Treasure_Objects 1_22
+  - first:
+      213: -6360008183578581371
+    second: Treasure_Objects 1_23
+  - first:
+      213: -7691028434494996586
+    second: Treasure_Objects 1_24
+  - first:
+      213: -6985317456080938858
+    second: Treasure_Objects 1_25
+  - first:
+      213: 7726225569095536464
+    second: Treasure_Objects 1_26
+  - first:
+      213: 5556746670894706315
+    second: Treasure_Objects 1_27
+  - first:
+      213: 814774309511299987
+    second: Treasure_Objects 1_28
+  - first:
+      213: -7980561824817933866
+    second: Treasure_Objects 1_29
+  - first:
+      213: 3987752042589974208
+    second: Treasure_Objects 1_30
+  - first:
+      213: -8354665741784453033
+    second: Treasure_Objects 1_31
+  - first:
+      213: -7646321164891470272
+    second: Treasure_Objects 1_32
+  - first:
+      213: 1287803964928832256
+    second: Treasure_Objects 1_33
+  - first:
+      213: -8866438616074157136
+    second: Treasure_Objects 1_34
+  - first:
+      213: 868679347841294787
+    second: Treasure_Objects 1_35
+  - first:
+      213: 8517016214103104650
+    second: Treasure_Objects 1_36
+  - first:
+      213: 3721953606371399925
+    second: Treasure_Objects 1_37
+  - first:
+      213: 6365416765417108836
+    second: Treasure_Objects 1_38
+  - first:
+      213: 361492336701482960
+    second: Treasure_Objects 1_39
+  - first:
+      213: 5020152965616248940
+    second: Treasure_Objects 1_40
+  - first:
+      213: 1607316186860711458
+    second: Treasure_Objects 1_41
+  - first:
+      213: -7073035718561337900
+    second: Treasure_Objects 1_42
+  - first:
+      213: 1543155674608588670
+    second: Treasure_Objects 1_43
+  - first:
+      213: -4199624279198839626
+    second: Treasure_Objects 1_44
+  - first:
+      213: 7168538401877911917
+    second: Treasure_Objects 1_45
+  - first:
+      213: -4974875881521950426
+    second: Treasure_Objects 1_46
+  - first:
+      213: 6005051897459176422
+    second: Treasure_Objects 1_47
+  - first:
+      213: 6621628755643938467
+    second: Treasure_Objects 1_48
+  - first:
+      213: 2898994487445174082
+    second: Treasure_Objects 1_49
+  - first:
+      213: -4808585824937107557
+    second: Treasure_Objects 1_50
+  - first:
+      213: 8556437932321209117
+    second: Treasure_Objects 1_51
+  - first:
+      213: 7874621926108959038
+    second: Treasure_Objects 1_52
+  - first:
+      213: 4646400064155564003
+    second: Treasure_Objects 1_53
+  - first:
+      213: -904917503336472413
+    second: Treasure_Objects 1_54
+  - first:
+      213: -996075885306660364
+    second: Treasure_Objects 1_55
+  - first:
+      213: -2844966368606347431
+    second: Treasure_Objects 1_56
+  - first:
+      213: -4125476161258099884
+    second: Treasure_Objects 1_57
+  - first:
+      213: 7428786924406673249
+    second: Treasure_Objects 1_58
+  - first:
+      213: -7114110894561755207
+    second: Treasure_Objects 1_59
+  - first:
+      213: 6255329773829470514
+    second: Treasure_Objects 1_60
+  - first:
+      213: 7520546473038180359
+    second: Treasure_Objects 1_61
+  - first:
+      213: 1135954942074480508
+    second: Treasure_Objects 1_62
+  - first:
+      213: -6110105181464867070
+    second: Treasure_Objects 1_63
+  - first:
+      213: 383042246490563990
+    second: Treasure_Objects 1_64
+  - first:
+      213: -2734834566208135769
+    second: Treasure_Objects 1_65
+  - first:
+      213: -7215062505792526936
+    second: Treasure_Objects 1_66
+  - first:
+      213: 3866031106737734297
+    second: Treasure_Objects 1_67
+  - first:
+      213: -4727065687523960063
+    second: Treasure_Objects 1_68
+  - first:
+      213: -7168807783397613550
+    second: Treasure_Objects 1_69
+  - first:
+      213: -5283673843522658336
+    second: Treasure_Objects 1_70
+  - first:
+      213: -72646989730196993
+    second: Treasure_Objects 1_71
+  - first:
+      213: -1898758872823380392
+    second: Treasure_Objects 1_72
+  - first:
+      213: -7963487458688955166
+    second: Treasure_Objects 1_73
+  - first:
+      213: 5385141758579573762
+    second: Treasure_Objects 1_74
+  - first:
+      213: -3409045287113751612
+    second: Treasure_Objects 1_75
+  - first:
+      213: 7788935882053683562
+    second: Treasure_Objects 1_76
+  - first:
+      213: -3950201979132878046
+    second: Treasure_Objects 1_77
+  - first:
+      213: 716209063181740681
+    second: Treasure_Objects 1_78
+  - first:
+      213: 2973603635309221130
+    second: Treasure_Objects 1_79
+  - first:
+      213: 5712533909557183104
+    second: Treasure_Objects 1_80
+  - first:
+      213: 202868442372703935
+    second: Treasure_Objects 1_81
+  - first:
+      213: 3736434181680197299
+    second: Treasure_Objects 1_82
+  - first:
+      213: 4179399288539924850
+    second: Treasure_Objects 1_83
+  - first:
+      213: 4358138036851913762
+    second: Treasure_Objects 1_84
+  - first:
+      213: -911326584232284083
+    second: Treasure_Objects 1_85
+  - first:
+      213: 7390728351783277369
+    second: Treasure_Objects 1_86
+  - first:
+      213: -731538791210473057
+    second: Treasure_Objects 1_87
+  - first:
+      213: 1394206354156208027
+    second: Treasure_Objects 1_88
+  - first:
+      213: -2023135819941932364
+    second: Treasure_Objects 1_89
+  - first:
+      213: 3129323913612267049
+    second: Treasure_Objects 1_90
+  - first:
+      213: -60442292030296489
+    second: Treasure_Objects 1_91
+  - first:
+      213: -903284989081372899
+    second: Treasure_Objects 1_92
+  - first:
+      213: 6238087465596779510
+    second: Treasure_Objects 1_93
+  - first:
+      213: 7617350867606192735
+    second: Treasure_Objects 1_94
+  - first:
+      213: -1212741838186626458
+    second: Treasure_Objects 1_95
+  - first:
+      213: -7758730228074821816
+    second: Treasure_Objects 1_96
+  - first:
+      213: 6870397811109760363
+    second: Treasure_Objects 1_97
+  - first:
+      213: -287516032360982965
+    second: Treasure_Objects 1_98
+  - first:
+      213: 8734106187761913855
+    second: Treasure_Objects 1_99
+  - first:
+      213: 6430231797334544629
+    second: Treasure_Objects 1_100
+  - first:
+      213: -5511042721753382992
+    second: Treasure_Objects 1_101
+  - first:
+      213: -699033222572696875
+    second: Treasure_Objects 1_102
+  - first:
+      213: 4694658390457752727
+    second: Treasure_Objects 1_103
+  - first:
+      213: 6589131440369921281
+    second: Treasure_Objects 1_104
+  - first:
+      213: -3687164837298782127
+    second: Treasure_Objects 1_105
+  - first:
+      213: -502931974319891878
+    second: Treasure_Objects 1_106
+  - first:
+      213: 7970359656011740116
+    second: Treasure_Objects 1_107
+  - first:
+      213: 1027349079013513349
+    second: Treasure_Objects 1_108
+  - first:
+      213: -5835440016305878939
+    second: Treasure_Objects 1_109
+  - first:
+      213: 8017669966228251352
+    second: Treasure_Objects 1_110
+  - first:
+      213: -7680897932550041159
+    second: Treasure_Objects 1_111
+  - first:
+      213: 1444273940519479405
+    second: Treasure_Objects 1_112
+  - first:
+      213: -3508382483127926569
+    second: Treasure_Objects 1_113
+  - first:
+      213: -5852768804482916215
+    second: Treasure_Objects 1_114
+  - first:
+      213: 6685701998678113567
+    second: Treasure_Objects 1_115
+  - first:
+      213: 4042885834402921729
+    second: Treasure_Objects 1_116
+  - first:
+      213: 857849157785628083
+    second: Treasure_Objects 1_117
+  - first:
+      213: -8422492069893062336
+    second: Treasure_Objects 1_118
+  - first:
+      213: 3450997815382576785
+    second: Treasure_Objects 1_119
+  - first:
+      213: -4169162297597016985
+    second: Treasure_Objects 1_120
+  - first:
+      213: 4343539181325057685
+    second: Treasure_Objects 1_121
+  - first:
+      213: -4869204986429790330
+    second: Treasure_Objects 1_122
+  - first:
+      213: -730634306494663040
+    second: Treasure_Objects 1_123
+  - first:
+      213: -6423762038441433015
+    second: Treasure_Objects 1_124
+  - first:
+      213: -7315140557985581128
+    second: Treasure_Objects 1_125
+  - first:
+      213: -3345184792612044480
+    second: Treasure_Objects 1_126
+  - first:
+      213: -5941727109552662784
+    second: Treasure_Objects 1_127
+  - first:
+      213: 810069408390190389
+    second: Treasure_Objects 1_128
+  - first:
+      213: 8349042590043371056
+    second: Treasure_Objects 1_129
+  - first:
+      213: 6174062627874247196
+    second: Treasure_Objects 1_130
+  - first:
+      213: 7261366244356735013
+    second: Treasure_Objects 1_131
+  - first:
+      213: -7179724316200149566
+    second: Treasure_Objects 1_132
+  - first:
+      213: 829808400750395333
+    second: Treasure_Objects 1_133
+  - first:
+      213: 5014373810031174411
+    second: Treasure_Objects 1_134
+  - first:
+      213: -4161451117482304685
+    second: Treasure_Objects 1_135
+  - first:
+      213: -6461696444995158934
+    second: Treasure_Objects 1_136
+  - first:
+      213: 7352867992893489488
+    second: Treasure_Objects 1_137
+  - first:
+      213: -2415135173260537611
+    second: Treasure_Objects 1_138
+  - first:
+      213: 3535090093200103405
+    second: Treasure_Objects 1_139
+  - first:
+      213: -906420588125022635
+    second: Treasure_Objects 1_140
+  - first:
+      213: 6944912986404540626
+    second: Treasure_Objects 1_141
+  - first:
+      213: 2297415794357696159
+    second: Treasure_Objects 1_142
+  - first:
+      213: -9162576354418356973
+    second: Treasure_Objects 1_143
+  - first:
+      213: -7729609846412630094
+    second: Treasure_Objects 1_144
+  - first:
+      213: -6172652630191968387
+    second: Treasure_Objects 1_145
+  - first:
+      213: 8798725983679033938
+    second: Treasure_Objects 1_146
+  - first:
+      213: -6691787062011162439
+    second: Treasure_Objects 1_147
+  - first:
+      213: -8379698119201547835
+    second: Treasure_Objects 1_148
+  - first:
+      213: 2010919789725841788
+    second: Treasure_Objects 1_149
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Treasure_Objects 1_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 208
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a48a52f0925eeee0800000000000000
+      internalID: -1229954865730779999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 208
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 455a9b84b107fa930800000000000000
+      internalID: 4156664243572811092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 208
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26832b3cc33f60a50800000000000000
+      internalID: 6487139755580602466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_3
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 208
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6873ab6be556fe450800000000000000
+      internalID: 6120221876086781830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 208
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a096793277c493280800000000000000
+      internalID: -9063128700524467958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 208
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f9d109c95154980800000000000000
+      internalID: -8555408154943447150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 208
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba9079cecce54f540800000000000000
+      internalID: 5040758117170088363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 208
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 903718fc1891ca7b0800000000000000
+      internalID: -5211762623451663607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_8
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 208
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76fdcd2dafaa8b7d0800000000000000
+      internalID: -2902381965584048281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_9
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 209
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd38e3ee33198c20800000000000000
+      internalID: 3209117370310737339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_10
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 194
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e95cc4fcc3546650800000000000000
+      internalID: 6225192724678334951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_11
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 187
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36efae676306a1610800000000000000
+      internalID: 1592691205268504163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_12
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 193
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b82ecbbf8a53fc0800000000000000
+      internalID: -3515718134933582946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_13
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 186
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e80efdab1157c8300800000000000000
+      internalID: 255707997863403662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_14
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 194
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75903963f1d2a38a0800000000000000
+      internalID: -6324693114605598377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_15
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 187
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539b97f956f6da890800000000000000
+      internalID: -7445172126715627211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_16
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 194
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bfb097cb6180ec50800000000000000
+      internalID: 6692491346182193075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_17
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 186
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdfd4f516d86ffcb0800000000000000
+      internalID: -4828025006817222693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 193
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45a8e4f694a82010800000000000000
+      internalID: 1164361471936210252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_19
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 185
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0808cf72d34b74900800000000000000
+      internalID: 668701244444672128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_20
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 193
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89a5d302e715c7c0800000000000000
+      internalID: -4051806030255511156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_21
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 185
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b72712f676f54e70800000000000000
+      internalID: 9098949612900132784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_22
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 194
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba44062878173670800000000000000
+      internalID: 8518304124507540145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_23
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 187
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 586a839f046bcb7a0800000000000000
+      internalID: -6360008183578581371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_24
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 194
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f3f7c336af34590800000000000000
+      internalID: -7691028434494996586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_25
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 185
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 698d5f298ca2f0f90800000000000000
+      internalID: -6985317456080938858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 194
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05fca744831193b60800000000000000
+      internalID: 7726225569095536464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_27
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 187
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e638108a78d1d40800000000000000
+      internalID: 5556746670894706315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_28
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 194
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 393098aeae8ae4b00800000000000000
+      internalID: 814774309511299987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_29
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 187
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d11fab9d495f3190800000000000000
+      internalID: -7980561824817933866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_30
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 151
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cee9eeca57575730800000000000000
+      internalID: 3987752042589974208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_31
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 156
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750ffc3d5c34e0c80800000000000000
+      internalID: -8354665741784453033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_32
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 157
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 046c718996fc2e590800000000000000
+      internalID: -7646321164891470272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_33
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 151
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0033ced02e23fd110800000000000000
+      internalID: 1287803964928832256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_34
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 156
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b3081a1e0514f480800000000000000
+      internalID: -8866438616074157136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_35
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 157
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c16ccfa34b2e0c00800000000000000
+      internalID: 868679347841294787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_36
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 151
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c9bd32f15823670800000000000000
+      internalID: 8517016214103104650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_37
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 156
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f85042d51907a330800000000000000
+      internalID: 3721953606371399925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_38
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 157
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 465b00e92d0865850800000000000000
+      internalID: 6365416765417108836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_39
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 157
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d72e1e6d57440500800000000000000
+      internalID: 361492336701482960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_40
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 158
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c682ea9368a2ba540800000000000000
+      internalID: 5020152965616248940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_41
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 157
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e61975e855e4610800000000000000
+      internalID: 1607316186860711458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_42
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 158
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dd608f0d7787dd90800000000000000
+      internalID: -7073035718561337900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_43
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 157
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e775c2af8e36a6510800000000000000
+      internalID: 1543155674608588670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_44
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 158
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc4f38f7ffe7b5c0800000000000000
+      internalID: -4199624279198839626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_45
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 161
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d69edaa22b3cb7360800000000000000
+      internalID: 7168538401877911917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_46
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 162
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 621d9386eb0b5fab0800000000000000
+      internalID: -4974875881521950426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_47
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 145
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e3f6d572ea365350800000000000000
+      internalID: 6005051897459176422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_48
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 146
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a63ba63540c4eb50800000000000000
+      internalID: 6621628755643938467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_49
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 120
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2473cf5702c4b3820800000000000000
+      internalID: 2898994487445174082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_50
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 122
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9f15a05ba8744db0800000000000000
+      internalID: -4808585824937107557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_51
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 127
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1bfeaa27f29eb670800000000000000
+      internalID: 8556437932321209117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_52
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 120
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e311a369be6484d60800000000000000
+      internalID: 7874621926108959038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_53
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 122
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e7385c9d345b7040800000000000000
+      internalID: 4646400064155564003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_54
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 127
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a0a89e33561173f0800000000000000
+      internalID: -904917503336472413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_55
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 120
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f9b6fe724a3d22f0800000000000000
+      internalID: -996075885306660364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_56
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 122
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f19493926a488d0800000000000000
+      internalID: -2844966368606347431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_57
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 127
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b6edef94d5fb6c0800000000000000
+      internalID: -4125476161258099884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_58
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 129
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f835d295a581760800000000000000
+      internalID: 7428786924406673249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_59
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 128
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bff8e465d9954d90800000000000000
+      internalID: -7114110894561755207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_60
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 130
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 239b70289456fc650800000000000000
+      internalID: 6255329773829470514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_61
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 127
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700f142fb295e5860800000000000000
+      internalID: 7520546473038180359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_62
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 127
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c77e2335009b3cf00800000000000000
+      internalID: 1135954942074480508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_63
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 127
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f438ec5bb843ba0800000000000000
+      internalID: -6110105181464867070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_64
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 129
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 695a90cc4e6d05500800000000000000
+      internalID: 383042246490563990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_65
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 130
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ad54b9a37aeb0ad0800000000000000
+      internalID: -2734834566208135769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_66
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 97
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a52ff5c0e2fedb90800000000000000
+      internalID: -7215062505792526936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_67
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 98
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99286b7fec6e6a530800000000000000
+      internalID: 3866031106737734297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_68
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 99
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10b52316dc6166eb0800000000000000
+      internalID: -4727065687523960063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_69
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 97
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 210a78f8d47438c90800000000000000
+      internalID: -7168807783397613550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_70
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 98
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ef1fc722ae9ca6b0800000000000000
+      internalID: -5283673843522658336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_71
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 99
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff1512f92f7edfef0800000000000000
+      internalID: -72646989730196993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_72
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 97
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856cd3f7dd046a5e0800000000000000
+      internalID: -1898758872823380392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_73
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 98
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ec019349520c7190800000000000000
+      internalID: -7963487458688955166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_74
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 99
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2040241d5eddbba40800000000000000
+      internalID: 5385141758579573762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_75
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 108
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c38d5e8f53a0b0d0800000000000000
+      internalID: -3409045287113751612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_76
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 107
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a698a1ccaebd71c60800000000000000
+      internalID: 7788935882053683562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_77
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 109
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2236db2aa301e29c0800000000000000
+      internalID: -3950201979132878046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_78
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 107
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98aecdb295c70f900800000000000000
+      internalID: 716209063181740681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_79
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 107
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a059a6160cc544920800000000000000
+      internalID: 2973603635309221130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_80
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 106
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 082878e035ff64f40800000000000000
+      internalID: 5712533909557183104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_81
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 108
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb603c306cbb0d200800000000000000
+      internalID: 202868442372703935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_82
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 111
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3beecad771b7ad330800000000000000
+      internalID: 3736434181680197299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_83
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 100
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27941ff6285300a30800000000000000
+      internalID: 4179399288539924850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_84
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 100
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2243da044773b7c30800000000000000
+      internalID: 4358138036851913762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_85
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 100
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d40f670dc415a53f0800000000000000
+      internalID: -911326584232284083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_86
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 77
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93353773744219660800000000000000
+      internalID: 7390728351783277369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_87
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 76
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f992b72685d09d5f0800000000000000
+      internalID: -731538791210473057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_88
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 76
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9fb213da47395310800000000000000
+      internalID: 1394206354156208027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_89
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 77
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b21ef7d0b06ce3e0800000000000000
+      internalID: -2023135819941932364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_90
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 77
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92e8ef105879d6b20800000000000000
+      internalID: 3129323913612267049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_91
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 77
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75eaf1e3e04492ff0800000000000000
+      internalID: -60442292030296489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_92
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 76
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d17bcd69613e673f0800000000000000
+      internalID: -903284989081372899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_93
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 74
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb76b8cf73229650800000000000000
+      internalID: 6238087465596779510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_94
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 72
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f524e21714446b960800000000000000
+      internalID: 7617350867606192735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_95
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 72
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 662c1aa39b97b2fe0800000000000000
+      internalID: -1212741838186626458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_96
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 72
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 847c38f07f3735490800000000000000
+      internalID: -7758730228074821816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_97
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 71
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6d81d4886e885f50800000000000000
+      internalID: 6870397811109760363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_98
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 71
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b46d4ef11b9820cf0800000000000000
+      internalID: -287516032360982965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_99
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 72
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff07107d47c53970800000000000000
+      internalID: 8734106187761913855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_100
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 76
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f01c8730c5cc3950800000000000000
+      internalID: 6430231797334544629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_101
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 76
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf33e3e7d7d483b0800000000000000
+      internalID: -5511042721753382992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_102
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 76
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da9b5adcf88c46f0800000000000000
+      internalID: -699033222572696875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_103
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 75
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c9a09cee6c62140800000000000000
+      internalID: 4694658390457752727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_104
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 75
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10d6b91622c417b50800000000000000
+      internalID: 6589131440369921281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_105
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 75
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150ce7cad1f84dcc0800000000000000
+      internalID: -3687164837298782127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_106
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 51
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a1a74b80a3509f0800000000000000
+      internalID: -502931974319891878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_107
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 50
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d33facd0e76c9e60800000000000000
+      internalID: 7970359656011740116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_108
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 50
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 588dce25b80e14e00800000000000000
+      internalID: 1027349079013513349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_109
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 51
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5680dfff83a540fa0800000000000000
+      internalID: -5835440016305878939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_110
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 51
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d26a57da5c744f60800000000000000
+      internalID: 8017669966228251352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_111
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 51
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b192568608f76590800000000000000
+      internalID: -7680897932550041159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_112
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 51
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68640f2f771b0410800000000000000
+      internalID: 1444273940519479405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_113
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 49
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d005f448b8bf4fc0800000000000000
+      internalID: -3508382483127926569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_114
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 50
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 980ee4818c9c6cea0800000000000000
+      internalID: -5852768804482916215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_115
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 48
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1df351ab8268cc50800000000000000
+      internalID: 6685701998678113567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_116
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 48
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10d7b0b0f373b1830800000000000000
+      internalID: 4042885834402921729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_117
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bd2ea09341b7eb00800000000000000
+      internalID: 857849157785628083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_118
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 041ca72361c4d1b80800000000000000
+      internalID: -8422492069893062336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_119
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 49
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e078a9a3864ef20800000000000000
+      internalID: 3450997815382576785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_120
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 50
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76447c0caf82426c0800000000000000
+      internalID: -4169162297597016985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_121
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 50
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59efed25fd9574c30800000000000000
+      internalID: 4343539181325057685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_122
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 49
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 687aa4decdb1d6cb0800000000000000
+      internalID: -4869204986429790330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_123
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 50
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 086fba428f34cd5f0800000000000000
+      internalID: -730634306494663040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_124
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 50
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9482f09e5763ad6a0800000000000000
+      internalID: -6423762038441433015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_125
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 51
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b777377b666b7a90800000000000000
+      internalID: -7315140557985581128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_126
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 22
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 041025897248391d0800000000000000
+      internalID: -3345184792612044480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_127
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 16
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0071ecaacaeba8da0800000000000000
+      internalID: -5941727109552662784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_128
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 16
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5351282c5d1fd3b00800000000000000
+      internalID: 810069408390190389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_129
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 28
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03674222002cdd370800000000000000
+      internalID: 8349042590043371056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_130
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 23
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c12957b9f3daea550800000000000000
+      internalID: 6174062627874247196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_131
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 24
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52045ea702e85c460800000000000000
+      internalID: 7261366244356735013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_132
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 23
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cdd7a336ce7c5c90800000000000000
+      internalID: -7179724316200149566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_133
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 23
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cfbc5e0852148b00800000000000000
+      internalID: 829808400750395333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_134
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 23
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b032ee5b962a69540800000000000000
+      internalID: 5014373810031174411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_135
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 23
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35b9058c14e8f36c0800000000000000
+      internalID: -4161451117482304685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_136
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 23
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6cb8ad91517356a0800000000000000
+      internalID: -6461696444995158934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_137
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 28
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05181cc7b72aa0660800000000000000
+      internalID: 7352867992893489488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_138
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 28
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f011491b57bb7ed0800000000000000
+      internalID: -2415135173260537611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_139
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 28
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7d136c5b92f0130800000000000000
+      internalID: 3535090093200103405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_140
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55615bb074fbb63f0800000000000000
+      internalID: -906420588125022635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_141
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 0
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d0d3aeb099416060800000000000000
+      internalID: 6944912986404540626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_142
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f96ff042e7f02ef10800000000000000
+      internalID: 2297415794357696159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_143
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31d008fd95df7d080800000000000000
+      internalID: -9162576354418356973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_144
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 0
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b7a6344cc8eab490800000000000000
+      internalID: -7729609846412630094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_145
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 0
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7fe68f0325565aa0800000000000000
+      internalID: -6172652630191968387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_146
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 0
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 252303d1aaa5b1a70800000000000000
+      internalID: 8798725983679033938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_147
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b015482f1ff123a0800000000000000
+      internalID: -6691787062011162439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_148
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 0
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c99bf745f455bb80800000000000000
+      internalID: -8379698119201547835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treasure_Objects 1_149
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 1
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79796af4e838eb10800000000000000
+      internalID: 2010919789725841788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Treasure_Objects 1_0: -1229954865730779999
+      Treasure_Objects 1_1: 4156664243572811092
+      Treasure_Objects 1_10: 6225192724678334951
+      Treasure_Objects 1_100: 6430231797334544629
+      Treasure_Objects 1_101: -5511042721753382992
+      Treasure_Objects 1_102: -699033222572696875
+      Treasure_Objects 1_103: 4694658390457752727
+      Treasure_Objects 1_104: 6589131440369921281
+      Treasure_Objects 1_105: -3687164837298782127
+      Treasure_Objects 1_106: -502931974319891878
+      Treasure_Objects 1_107: 7970359656011740116
+      Treasure_Objects 1_108: 1027349079013513349
+      Treasure_Objects 1_109: -5835440016305878939
+      Treasure_Objects 1_11: 1592691205268504163
+      Treasure_Objects 1_110: 8017669966228251352
+      Treasure_Objects 1_111: -7680897932550041159
+      Treasure_Objects 1_112: 1444273940519479405
+      Treasure_Objects 1_113: -3508382483127926569
+      Treasure_Objects 1_114: -5852768804482916215
+      Treasure_Objects 1_115: 6685701998678113567
+      Treasure_Objects 1_116: 4042885834402921729
+      Treasure_Objects 1_117: 857849157785628083
+      Treasure_Objects 1_118: -8422492069893062336
+      Treasure_Objects 1_119: 3450997815382576785
+      Treasure_Objects 1_12: -3515718134933582946
+      Treasure_Objects 1_120: -4169162297597016985
+      Treasure_Objects 1_121: 4343539181325057685
+      Treasure_Objects 1_122: -4869204986429790330
+      Treasure_Objects 1_123: -730634306494663040
+      Treasure_Objects 1_124: -6423762038441433015
+      Treasure_Objects 1_125: -7315140557985581128
+      Treasure_Objects 1_126: -3345184792612044480
+      Treasure_Objects 1_127: -5941727109552662784
+      Treasure_Objects 1_128: 810069408390190389
+      Treasure_Objects 1_129: 8349042590043371056
+      Treasure_Objects 1_13: 255707997863403662
+      Treasure_Objects 1_130: 6174062627874247196
+      Treasure_Objects 1_131: 7261366244356735013
+      Treasure_Objects 1_132: -7179724316200149566
+      Treasure_Objects 1_133: 829808400750395333
+      Treasure_Objects 1_134: 5014373810031174411
+      Treasure_Objects 1_135: -4161451117482304685
+      Treasure_Objects 1_136: -6461696444995158934
+      Treasure_Objects 1_137: 7352867992893489488
+      Treasure_Objects 1_138: -2415135173260537611
+      Treasure_Objects 1_139: 3535090093200103405
+      Treasure_Objects 1_14: -6324693114605598377
+      Treasure_Objects 1_140: -906420588125022635
+      Treasure_Objects 1_141: 6944912986404540626
+      Treasure_Objects 1_142: 2297415794357696159
+      Treasure_Objects 1_143: -9162576354418356973
+      Treasure_Objects 1_144: -7729609846412630094
+      Treasure_Objects 1_145: -6172652630191968387
+      Treasure_Objects 1_146: 8798725983679033938
+      Treasure_Objects 1_147: -6691787062011162439
+      Treasure_Objects 1_148: -8379698119201547835
+      Treasure_Objects 1_149: 2010919789725841788
+      Treasure_Objects 1_15: -7445172126715627211
+      Treasure_Objects 1_16: 6692491346182193075
+      Treasure_Objects 1_17: -4828025006817222693
+      Treasure_Objects 1_18: 1164361471936210252
+      Treasure_Objects 1_19: 668701244444672128
+      Treasure_Objects 1_2: 6487139755580602466
+      Treasure_Objects 1_20: -4051806030255511156
+      Treasure_Objects 1_21: 9098949612900132784
+      Treasure_Objects 1_22: 8518304124507540145
+      Treasure_Objects 1_23: -6360008183578581371
+      Treasure_Objects 1_24: -7691028434494996586
+      Treasure_Objects 1_25: -6985317456080938858
+      Treasure_Objects 1_26: 7726225569095536464
+      Treasure_Objects 1_27: 5556746670894706315
+      Treasure_Objects 1_28: 814774309511299987
+      Treasure_Objects 1_29: -7980561824817933866
+      Treasure_Objects 1_3: 6120221876086781830
+      Treasure_Objects 1_30: 3987752042589974208
+      Treasure_Objects 1_31: -8354665741784453033
+      Treasure_Objects 1_32: -7646321164891470272
+      Treasure_Objects 1_33: 1287803964928832256
+      Treasure_Objects 1_34: -8866438616074157136
+      Treasure_Objects 1_35: 868679347841294787
+      Treasure_Objects 1_36: 8517016214103104650
+      Treasure_Objects 1_37: 3721953606371399925
+      Treasure_Objects 1_38: 6365416765417108836
+      Treasure_Objects 1_39: 361492336701482960
+      Treasure_Objects 1_4: -9063128700524467958
+      Treasure_Objects 1_40: 5020152965616248940
+      Treasure_Objects 1_41: 1607316186860711458
+      Treasure_Objects 1_42: -7073035718561337900
+      Treasure_Objects 1_43: 1543155674608588670
+      Treasure_Objects 1_44: -4199624279198839626
+      Treasure_Objects 1_45: 7168538401877911917
+      Treasure_Objects 1_46: -4974875881521950426
+      Treasure_Objects 1_47: 6005051897459176422
+      Treasure_Objects 1_48: 6621628755643938467
+      Treasure_Objects 1_49: 2898994487445174082
+      Treasure_Objects 1_5: -8555408154943447150
+      Treasure_Objects 1_50: -4808585824937107557
+      Treasure_Objects 1_51: 8556437932321209117
+      Treasure_Objects 1_52: 7874621926108959038
+      Treasure_Objects 1_53: 4646400064155564003
+      Treasure_Objects 1_54: -904917503336472413
+      Treasure_Objects 1_55: -996075885306660364
+      Treasure_Objects 1_56: -2844966368606347431
+      Treasure_Objects 1_57: -4125476161258099884
+      Treasure_Objects 1_58: 7428786924406673249
+      Treasure_Objects 1_59: -7114110894561755207
+      Treasure_Objects 1_6: 5040758117170088363
+      Treasure_Objects 1_60: 6255329773829470514
+      Treasure_Objects 1_61: 7520546473038180359
+      Treasure_Objects 1_62: 1135954942074480508
+      Treasure_Objects 1_63: -6110105181464867070
+      Treasure_Objects 1_64: 383042246490563990
+      Treasure_Objects 1_65: -2734834566208135769
+      Treasure_Objects 1_66: -7215062505792526936
+      Treasure_Objects 1_67: 3866031106737734297
+      Treasure_Objects 1_68: -4727065687523960063
+      Treasure_Objects 1_69: -7168807783397613550
+      Treasure_Objects 1_7: -5211762623451663607
+      Treasure_Objects 1_70: -5283673843522658336
+      Treasure_Objects 1_71: -72646989730196993
+      Treasure_Objects 1_72: -1898758872823380392
+      Treasure_Objects 1_73: -7963487458688955166
+      Treasure_Objects 1_74: 5385141758579573762
+      Treasure_Objects 1_75: -3409045287113751612
+      Treasure_Objects 1_76: 7788935882053683562
+      Treasure_Objects 1_77: -3950201979132878046
+      Treasure_Objects 1_78: 716209063181740681
+      Treasure_Objects 1_79: 2973603635309221130
+      Treasure_Objects 1_8: -2902381965584048281
+      Treasure_Objects 1_80: 5712533909557183104
+      Treasure_Objects 1_81: 202868442372703935
+      Treasure_Objects 1_82: 3736434181680197299
+      Treasure_Objects 1_83: 4179399288539924850
+      Treasure_Objects 1_84: 4358138036851913762
+      Treasure_Objects 1_85: -911326584232284083
+      Treasure_Objects 1_86: 7390728351783277369
+      Treasure_Objects 1_87: -731538791210473057
+      Treasure_Objects 1_88: 1394206354156208027
+      Treasure_Objects 1_89: -2023135819941932364
+      Treasure_Objects 1_9: 3209117370310737339
+      Treasure_Objects 1_90: 3129323913612267049
+      Treasure_Objects 1_91: -60442292030296489
+      Treasure_Objects 1_92: -903284989081372899
+      Treasure_Objects 1_93: 6238087465596779510
+      Treasure_Objects 1_94: 7617350867606192735
+      Treasure_Objects 1_95: -1212741838186626458
+      Treasure_Objects 1_96: -7758730228074821816
+      Treasure_Objects 1_97: 6870397811109760363
+      Treasure_Objects 1_98: -287516032360982965
+      Treasure_Objects 1_99: 8734106187761913855
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

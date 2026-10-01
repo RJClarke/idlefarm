@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Research_smokehouse_expansion_1
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: smokehouse_expansion_1
-  displayName: Smokehouse Expansion
-  description: "Smokehouse Expansion \u2014 one-time unlock."
+  displayName: Smokehouse Expansion I
+  description: "Smokehouse Expansion I \u2014 one-time unlock."
   branchID: equipment
   tier: 0
   targetStatKey: 
@@ -26,7 +26,7 @@ MonoBehaviour:
   prerequisiteResearchID: smokehouse_unlocked
   requiredUnlockID: 
   requiredAnimalID: 
-  binaryFixedCost: 40000
-  binaryFixedDurationSecs: 604800
+  binaryFixedCost: 5000
+  binaryFixedDurationSecs: 172800
   unlocksSlotIndex: -1
   unlocksFeatureID: smokehouse_expansion_1

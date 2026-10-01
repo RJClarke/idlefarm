@@ -205,9 +205,10 @@ public class NewContentTracker : MonoBehaviour
             .Where(n => !string.IsNullOrEmpty(n))
             .ToList();
 
+        // No emoji: UITK text renders them invisible on Android — the toast's icon carries it.
         string headline = newEquipNames.Count > 0
-            ? $"\U0001F513 {newEquipNames[0]} Unlocked!"
-            : "\U0001F513 New Research Available";
+            ? $"{newEquipNames[0]} Unlocked!"
+            : "New Research Available";
 
         var parts = new List<string>();
         if (newEquipNames.Count > 0)

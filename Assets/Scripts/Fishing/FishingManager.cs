@@ -77,6 +77,8 @@ public class FishingManager : MonoBehaviour
     public event Action OnChanged;             // durable: state/pole change, load
     public event Action<int> OnPoleLevelChanged; // Carpenter UI refresh (mirrors OnAxeLevelChanged)
     public event Action<int> OnCatch;            // fired with the caught tier when a fish is banked
+    /// <summary>How many fish the most recent Collect banked (2 on a Fishing-skill double catch).</summary>
+    public int LastCatchCount { get; private set; } = 1;
     public event Action OnEmptyReel;             // line reached shore with no fish on it
 
     public bool HasPole => hasPole;
@@ -124,7 +126,9 @@ public class FishingManager : MonoBehaviour
 
     private void TransitionToBite()
     {
-        pendingTier = FishingMath.RollFishTier(CurrentTier().weights, UnityEngine.Random.value);
+        // Fishing Lv 25 capstone: rare fish weights scaled up (identity otherwise).
+        float[] weights = FishingMath.ScaleRareWeights(CurrentTier().weights, FarmSkillsManager.RareFishMultiplier);
+        pendingTier = FishingMath.RollFishTier(weights, UnityEngine.Random.value);
         caughtFromHotspot = inHotspot;
         state = CastState.Bite;
         Debug.Log($"[Fishing] Bite: {FishTiers.Name(pendingTier)} on the line.");
@@ -233,10 +237,13 @@ public class FishingManager : MonoBehaviour
     {
         if (state != CastState.Bite) return 0;
         int tier = pendingTier;
-        if (PantryManager.Instance != null) PantryManager.Instance.AddRaw(tier);
+        // Fishing skill milestones (Lv 5-20): chance the line comes up with two fish.
+        LastCatchCount = FarmSkillsManager.RollMilestone(FarmSkillTrack.Fishing) ? 2 : 1;
+        if (PantryManager.Instance != null)
+            for (int i = 0; i < LastCatchCount; i++) PantryManager.Instance.AddRaw(tier);
         ClearLine();
         state = CastState.Idle;
-        Debug.Log($"[Fishing] Collected {FishTiers.Name(tier)}.");
+        Debug.Log($"[Fishing] Collected {LastCatchCount}x {FishTiers.Name(tier)}.");
         OnCatch?.Invoke(tier);
         OnChanged?.Invoke();
         return tier;

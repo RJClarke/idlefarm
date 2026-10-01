@@ -17,7 +17,8 @@ public class SmokehouseManager : MonoBehaviour
     public static SmokehouseManager Instance { get; private set; }
 
     [Header("Firebox Tuning (spec §2)")]
-    [SerializeField] private float baseBurnPerHour = 5f;
+    [Tooltip("Wood burned per hour with nothing cooking — idling the fire is meant to hurt.")]
+    [SerializeField] private float baseBurnPerHour = 15f;
     [SerializeField] private float perSlotBurnPerHour = 20f;
     [SerializeField] private int furnaceCapacity = 1600;
 
@@ -37,11 +38,15 @@ public class SmokehouseManager : MonoBehaviour
     [SerializeField] private int[] slotCoinCosts = { 600, 1500, 4000, 9000, 18000 };
     [SerializeField] private int[] slotWoodCosts = { 120, 300, 700, 1400, 2600 };
     [Tooltip("Purchasable slots added per unlocked expansion research (Phase 3).")]
-    [SerializeField] private int slotsPerExpansion = 2;
+    [SerializeField] private int slotsPerExpansion = 1;
 
     [Header("Fuel Efficiency Research (spec §6)")]
     [Tooltip("Max fraction of per-slot burn that efficiency research can remove (keeps demand alive).")]
     [SerializeField] private float maxBurnReduction = 0.40f;
+
+    [Header("UI")]
+    [Tooltip("Icon shown on the bottom \"ready\" toast. A missing icon just renders text only.")]
+    [SerializeField] private Sprite readyIcon;
 
     private readonly ProcessingState state = new ProcessingState();
     private long lastSimUtcTicks;
@@ -68,6 +73,7 @@ public class SmokehouseManager : MonoBehaviour
         if (rm == null) return 0;
         int n = 0;
         if (rm.IsFeatureUnlocked(Research.FeatureFlag.SmokehouseExpansion1)) n++;
+        if (rm.IsFeatureUnlocked(Research.FeatureFlag.SmokehouseExpansion2)) n++;
         return n;
     }
 
@@ -85,7 +91,7 @@ public class SmokehouseManager : MonoBehaviour
     // Barn Processing: each level shortens smoke time (spec §4.2 — speed, not burn rate). Applied
     // to required cook time at slot-load, not to Update()'s burn simulation.
     private static float BarnProcessingSpeedMultiplier()
-        => FarmSkillsManager.Instance != null ? 1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Processing) : 1f;
+        => FarmSkillsManager.ProcessingSpeedMultiplier; // per-level bonus + Lv 25 capstone
 
     private static int TierIdx(int tier) => Mathf.Clamp(tier, 1, FishTiers.Count) - 1;
 
@@ -121,12 +127,13 @@ public class SmokehouseManager : MonoBehaviour
         if (elapsed < 0) { lastSimUtcTicks = now; return; }
         if (elapsed < 0.25) return;
         lastSimUtcTicks = now;
-        ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, EffectivePerSlotBurn());
-        int drained = DrainFinishedToPantry();
-        if (drained > 0)
+        int finished = ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, EffectivePerSlotBurn());
+        if (finished > 0)
         {
-            Debug.Log($"[Smokehouse] {drained} fish finished smoking.");
-            ToastManager.Show("Smoked fish ready!", "Visit the Smokehouse to sell.");
+            Debug.Log($"[Smokehouse] {finished} fish finished smoking.");
+            // Bottom plank toast, matching fish catches — gathering/processing events read as
+            // world events down there, while the top parchment is for progression notices.
+            ToastManager.ShowCatch(readyIcon, "Smoked fish ready!");
             OnChanged?.Invoke();
         }
     }
@@ -141,15 +148,62 @@ public class SmokehouseManager : MonoBehaviour
         state.slots = next;
     }
 
-    /// <summary>Move every finished good out of the scratch shelf into Pantry smoked counts.</summary>
+    /// <summary>Move every finished good out of the ready shelf into Pantry smoked counts.</summary>
     private int DrainFinishedToPantry()
     {
         if (state.readyJars.Count == 0) return 0;
         int n = state.readyJars.Count;
         if (PantryManager.Instance != null)
             for (int i = 0; i < n; i++)
-                PantryManager.Instance.AddSmoked(state.readyJars[i].tier);
+                BankSmoked(state.readyJars[i].tier);
         state.readyJars.Clear();
+        return n;
+    }
+
+    /// <summary>Bank one finished fish into the Pantry — two on a Processing-skill double batch.</summary>
+    private static void BankSmoked(int tier)
+    {
+        PantryManager.Instance.AddSmoked(tier);
+        if (FarmSkillsManager.RollMilestone(FarmSkillTrack.Processing))
+            PantryManager.Instance.AddSmoked(tier);
+    }
+
+    // ── Ready shelf (collected by tapping a finished cell in the smoker grid) ──
+
+    /// <summary>Finished fish waiting to be collected out of the smoker.</summary>
+    public int ReadyCount => state.readyJars.Count;
+
+    /// <summary>The finished fish at <paramref name="index"/>, or null if out of range.</summary>
+    public ReadyJar ReadyAt(int index)
+        => index >= 0 && index < state.readyJars.Count ? state.readyJars[index] : null;
+
+    /// <summary>
+    /// Ready-shelf index of the finished fish still parked in <paramref name="slotIndex"/>, or -1.
+    /// A finished fish keeps the cell it cooked in until collected — the rack never re-flows.
+    /// </summary>
+    public int ReadyIndexForSlot(int slotIndex)
+    {
+        for (int i = 0; i < state.readyJars.Count; i++)
+            if (state.readyJars[i] != null && state.readyJars[i].slotIndex == slotIndex) return i;
+        return -1;
+    }
+
+    /// <summary>Bank one finished fish into the Pantry, freeing its cell.</summary>
+    public bool TryCollect(int index)
+    {
+        if (index < 0 || index >= state.readyJars.Count) return false;
+        if (PantryManager.Instance == null) return false;
+        BankSmoked(state.readyJars[index].tier);
+        state.readyJars.RemoveAt(index);
+        OnChanged?.Invoke();
+        return true;
+    }
+
+    /// <summary>Bank every finished fish at once. Returns how many were collected.</summary>
+    public int CollectAll()
+    {
+        int n = DrainFinishedToPantry();
+        if (n > 0) OnChanged?.Invoke();
         return n;
     }
 
@@ -161,9 +215,11 @@ public class SmokehouseManager : MonoBehaviour
         if (!IsBuilt || PantryManager.Instance == null) return false;
         if (PantryManager.Instance.GetRaw(tier) <= 0) return false;
 
+        // Skip cells still holding an uncollected fish — they look occupied to the player and
+        // must not be silently overwritten.
         int idx = -1;
         for (int i = 0; i < state.slots.Length; i++)
-            if (ProcessingMath.SlotIsEmpty(state.slots[i])) { idx = i; break; }
+            if (ProcessingMath.SlotIsEmpty(state.slots[i]) && ReadyIndexForSlot(i) < 0) { idx = i; break; }
         if (idx < 0) return false;
 
         if (!PantryManager.Instance.SpendRaw(tier)) return false;
@@ -206,6 +262,23 @@ public class SmokehouseManager : MonoBehaviour
     // ── Slot purchase (in-building, spec §5) ─────────────────────────────
 
     private int NextSlotCostIndex() => SlotsOwned - startingSlots;
+
+    /// <summary>Coin price of the slot at <paramref name="slotIndex"/>, so locked cells can each show
+    /// their own price instead of only the next one. Clamps to the last entry past the table.</summary>
+    public int SlotCoinCostAt(int slotIndex)
+    {
+        int i = slotIndex - startingSlots;
+        if (i < 0 || slotCoinCosts.Length == 0) return int.MaxValue;
+        return slotCoinCosts[Mathf.Min(i, slotCoinCosts.Length - 1)];
+    }
+
+    /// <summary>Wood price of the slot at <paramref name="slotIndex"/>. See <see cref="SlotCoinCostAt"/>.</summary>
+    public int SlotWoodCostAt(int slotIndex)
+    {
+        int i = slotIndex - startingSlots;
+        if (i < 0 || slotWoodCosts.Length == 0) return int.MaxValue;
+        return slotWoodCosts[Mathf.Min(i, slotWoodCosts.Length - 1)];
+    }
 
     public int NextSlotCoinCost()
     {
@@ -269,9 +342,9 @@ public class SmokehouseManager : MonoBehaviour
 
     public void CaptureTo(GameData d)
     {
-        DrainFinishedToPantry(); // never persist the transient shelf
         d.smokehouseFuelWood = state.fuelWood;
         d.smokehouseSlots = state.slots;
+        d.smokehouseReadyJars = state.readyJars.ToArray(); // uncollected fish keep their cell
         d.smokehouseLastSimUtcTicks = lastSimUtcTicks != 0 ? lastSimUtcTicks : DateTime.UtcNow.Ticks;
     }
 
@@ -282,16 +355,20 @@ public class SmokehouseManager : MonoBehaviour
         for (int i = 0; i < state.slots.Length; i++)
             if (state.slots[i] == null) state.slots[i] = new ProcessingSlot();
         EnsureSlotArray(startingSlots);
+
+        // Pre-shelf saves have no array; those runs already banked their fish into the Pantry.
         state.readyJars.Clear();
+        if (d.smokehouseReadyJars != null)
+            for (int i = 0; i < d.smokehouseReadyJars.Length; i++)
+                if (d.smokehouseReadyJars[i] != null) state.readyJars.Add(d.smokehouseReadyJars[i]);
 
         long now = DateTime.UtcNow.Ticks;
         if (IsBuilt && d.smokehouseLastSimUtcTicks > 0 && now > d.smokehouseLastSimUtcTicks)
         {
             double elapsed = (now - d.smokehouseLastSimUtcTicks) / (double)TimeSpan.TicksPerSecond;
-            ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, EffectivePerSlotBurn());
-            int drained = DrainFinishedToPantry();
-            if (drained > 0)
-                ToastManager.Show($"{drained} fish finished smoking while you were away!", "Visit the Smokehouse to sell.");
+            int finished = ProcessingMath.Simulate(state, elapsed, baseBurnPerHour, EffectivePerSlotBurn());
+            if (finished > 0)
+                ToastManager.ShowCatch(readyIcon, $"{finished} fish finished smoking while you were away!");
         }
         lastSimUtcTicks = now;
         OnChanged?.Invoke();

@@ -44,6 +44,16 @@ public class RunManager : MonoBehaviour
     public int LastRunRealSeconds { get; private set; }       // real wall-clock
     public int BestRunSeconds => PlayerPrefs.GetInt("best_run_seconds", 0);
 
+    /// <summary>Runs finished on this install (PlayerPrefs, like best_run_seconds). Drives the
+    /// "after your Nth run" onboarding letters; incremented just before OnRunEnded fires.</summary>
+    public int RunsCompleted => PlayerPrefs.GetInt("runs_completed", 0);
+
+    private static void CountCompletedRun()
+    {
+        PlayerPrefs.SetInt("runs_completed", PlayerPrefs.GetInt("runs_completed", 0) + 1);
+        PlayerPrefs.Save();
+    }
+
     private void Awake()
     {
         // Singleton pattern
@@ -92,7 +102,7 @@ public class RunManager : MonoBehaviour
         {
             if (!SeedSelectionPopup.Instance.IsReadyToRun())
             {
-                Debug.LogWarning("Not all zones configured! Open Equip Fields first.");
+                Debug.LogWarning("No crops chosen! Open Equip Fields and pick at least one.");
                 return;
             }
 
@@ -174,9 +184,7 @@ public class RunManager : MonoBehaviour
         if (lastOnlineUtcTicks > 0 && lastOnlineUtcTicks < nowTicks)
         {
             double offlineSecs = (nowTicks - lastOnlineUtcTicks) / (double)TimeSpan.TicksPerSecond;
-            float maxSpeed = 1f + (ResearchManager.Instance != null
-                ? ResearchManager.Instance.GetBonus(Research.StatKey.GameSpeed)
-                : 0f);
+            float maxSpeed = GameSpeedControl.UnlockedMax; // assume they'd have run at their fastest unlocked rung
             double offlineTotal = offlineSecs * Mathf.Max(1f, maxSpeed);
             currentRunDuration += (float)offlineTotal;
             Debug.Log($"=== Offline credit: +{offlineTotal:F0}s total (offline={offlineSecs:F0}s × {maxSpeed:F2}× max speed) ===");
@@ -198,14 +206,12 @@ public class RunManager : MonoBehaviour
 
     private void ApplyGameSpeedScale()
     {
-        // Apply Game Speed Multiplier research bonus to Time.timeScale.
+        // baseGameSpeed is the normalized "1×"; the stepper's rung IS the speed the player sees.
+        // Game Speed research does NOT multiply in here — it raises GameSpeedControl.UnlockedMax,
+        // so finishing a level unlocks a faster rung rather than silently speeding up the game.
         // ResearchManager.Tick uses unscaledDeltaTime so research timers are unaffected.
         // Animal passives use UtcNow so they're also unaffected. Game Speed only touches in-run mechanics.
-        float gameSpeedBonus = ResearchManager.Instance != null
-            ? ResearchManager.Instance.GetBonus(Research.StatKey.GameSpeed)
-            : 0f;
-        // baseGameSpeed is the normalized "1×". Research (1 + bonus) and the speed stepper multiply on top.
-        Time.timeScale = BaseGameSpeed * (1f + gameSpeedBonus) * GameSpeedControl.Multiplier;
+        Time.timeScale = BaseGameSpeed * GameSpeedControl.Multiplier;
     }
 
     /// <summary>The tunable normalized base speed (GameConstants), shown as "1×" to the player.</summary>
@@ -262,6 +268,7 @@ public class RunManager : MonoBehaviour
             RunStats.Instance.SetCoinsSaved(coinsEarned);
 
         // Notify other systems that run has ended
+        CountCompletedRun();
         OnRunEnded?.Invoke();
 
         // Show stats popup (UITK ledger)
@@ -316,6 +323,7 @@ public class RunManager : MonoBehaviour
         LastRunRealSeconds = realSeconds;
         LastRunEndedBankrupt = true;
 
+        CountCompletedRun();
         OnRunEnded?.Invoke();
 
         Debug.Log($"=== OFFLINE RUN ENDED (bankrupt) — survived {FormatTime(survivedSeconds)} ===");

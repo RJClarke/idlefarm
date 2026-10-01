@@ -146,9 +146,7 @@ public class AnimalManager : MonoBehaviour
         Cow cow = activeVisualInstance != null ? activeVisualInstance.GetComponent<Cow>() : null;
         if (cow == null) return 0;
 
-        float maxSpeed = 1f + (ResearchManager.Instance != null
-            ? ResearchManager.Instance.GetBonus(Research.StatKey.GameSpeed)
-            : 0f);
+        float maxSpeed = GameSpeedControl.UnlockedMax; // highest rung research has unlocked
         double inGameSeconds = offlineSeconds * Mathf.Max(1f, maxSpeed);
 
         int amount = cow.EstimateOfflineEatingCompost(inGameSeconds);
@@ -314,16 +312,27 @@ public class AnimalManager : MonoBehaviour
         return Mathf.Clamp01((float)(elapsedMinutes / effectiveCooldown));
     }
 
+    /// <summary>Research stat that shortens this animal's gift cooldown (null if none). Shared with the Almanac.</summary>
+    public static string CooldownResearchKey(AnimalData a) => a == null ? null : a.animalID switch
+    {
+        "chicken" => Research.StatKey.ChickenCooldown,
+        "rooster" => Research.StatKey.RoosterCooldown,
+        _ => null
+    };
+
+    /// <summary>Research stat that raises this animal's gift reward (null if none). Shared with the Almanac.</summary>
+    public static string RewardResearchKey(AnimalData a) => a == null ? null : a.animalID switch
+    {
+        "chicken" => Research.StatKey.ChickenEfficiency,
+        "rooster" => Research.StatKey.RoosterEfficiency,
+        _ => null
+    };
+
     private static float EffectiveCooldownMinutes(AnimalData a)
     {
         if (a == null) return 1f;
         if (ResearchManager.Instance == null) return a.cooldownMinutes;
-        string key = a.animalID switch
-        {
-            "chicken" => Research.StatKey.ChickenCooldown,
-            "rooster" => Research.StatKey.RoosterCooldown,
-            _ => null
-        };
+        string key = CooldownResearchKey(a);
         if (string.IsNullOrEmpty(key)) return a.cooldownMinutes;
         float bonus = ResearchManager.Instance.GetBonus(key);
         return a.cooldownMinutes / Mathf.Max(0.01f, 1f + bonus);
@@ -332,12 +341,7 @@ public class AnimalManager : MonoBehaviour
     private static int EffectiveReward(AnimalData a, int baseReward)
     {
         if (a == null || ResearchManager.Instance == null) return baseReward;
-        string key = a.animalID switch
-        {
-            "chicken" => Research.StatKey.ChickenEfficiency,
-            "rooster" => Research.StatKey.RoosterEfficiency,
-            _ => null
-        };
+        string key = RewardResearchKey(a);
         if (string.IsNullOrEmpty(key)) return baseReward;
         float bonus = ResearchManager.Instance.GetBonus(key);
         return Mathf.RoundToInt(baseReward * (1f + bonus));
@@ -348,12 +352,7 @@ public class AnimalManager : MonoBehaviour
     private static double EffectiveRewardExact(AnimalData a, int baseReward)
     {
         if (a == null || ResearchManager.Instance == null) return baseReward;
-        string key = a.animalID switch
-        {
-            "chicken" => Research.StatKey.ChickenEfficiency,
-            "rooster" => Research.StatKey.RoosterEfficiency,
-            _ => null
-        };
+        string key = RewardResearchKey(a);
         if (string.IsNullOrEmpty(key)) return baseReward;
         return baseReward * (1.0 + ResearchManager.Instance.GetBonus(key));
     }
@@ -389,18 +388,22 @@ public class AnimalManager : MonoBehaviour
         {
             // Collect mode (Reputation Phase 1): bank the egg as an inventory item instead of
             // coins. Full egg stack falls back to the normal coin payout.
+            // Ranching skill milestones (Lv 5-20): chance the egg counts double.
+            bool doubleEgg = FarmSkillsManager.RollMilestone(FarmSkillTrack.Ranching);
+            int eggsBanked = 0;
             if (ItemInventoryManager.Instance != null && ItemInventoryManager.Instance.CollectMode
-                && ItemInventoryManager.Instance.AddEggs(1, out _) > 0)
+                && (eggsBanked = ItemInventoryManager.Instance.AddEggs(doubleEgg ? 2 : 1, out _)) > 0)
             {
-                Debug.Log("Claimed egg into inventory (+1 egg)");
+                Debug.Log($"Claimed egg into inventory (+{eggsBanked} egg)");
                 if (visual != null) visual.RemoveEgg();
-                FloatingTextManager.ShowText("+1 Egg", new Color(0.55f, 0.8f, 0.35f), rewardWorldPos);
+                FloatingTextManager.ShowText(eggsBanked > 1 ? $"+{eggsBanked} Eggs" : "+1 Egg", new Color(0.55f, 0.8f, 0.35f), rewardWorldPos);
             }
             else
             {
                 int reward = EffectiveReward(equipped, equipped.rewardCoins);
                 if (FarmSkillsManager.Instance != null)
                     reward = Mathf.RoundToInt(reward * (1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Ranching)));
+                if (doubleEgg) reward *= 2;
                 CurrencyManager.Instance.AddCoins(reward);
                 Debug.Log($"Claimed egg! +{reward} coins");
                 if (visual != null) visual.RemoveEgg();

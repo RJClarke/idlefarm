@@ -151,6 +151,7 @@ public class WoodRackPopupUITK : MonoBehaviour
             popupRoot.schedule.Execute(() => popupRoot.AddToClassList("open")).StartingIn(0);
         }
         Refresh();
+        OnboardingTutorials.OnMenuOpened("tip_wood_rack"); // one-time how-to (new players)
     }
 
     public void Close()
@@ -207,7 +208,7 @@ public class WoodRackPopupUITK : MonoBehaviour
         SetStackActive(stackAll, stackMode == WoodcuttingMath.StackMode.All);
 
         if (sellGold != null)
-            sellGold.text = $"Sell for Gold  +{WoodcuttingMath.SellValue(amount, goldPricePerWood)}";
+            sellGold.text = $"Sell for Coins  +{WoodcuttingMath.SellValue(amount, goldPricePerWood)}";
 
         if (sellCash != null)
         {

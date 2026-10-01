@@ -64,6 +64,34 @@
     color: rgb(54, 32, 14);
 }
 
+/* Wood on hand, in the title bar — this panel spends wood, so the balance belongs
+   where you can see it before pressing a button. Mirrors the Inventory currency strip. */
+.wood-strip {
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-right: 14px;
+}
+
+.wood-strip-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgResources/Log.png");
+}
+
+.wood-strip-value {
+    font-size: 26px;
+    -unity-font-style: bold;
+    color: rgb(54, 32, 14);
+}
+
+/* Wood is the constraint the whole building runs on — call it out when it runs dry. */
+.wood-strip-value--low { color: rgb(150, 40, 28); }
+
 .close-button {
     width: 56px;
     height: 56px;
@@ -165,22 +193,6 @@
 .slots-list { max-height: 220px; }
 .shelf-list { max-height: 170px; }
 
-.slot-row, .shelf-row {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 4px;
-    background-color: rgba(255, 252, 245, 0.55);
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
 .slot-row-label {
     font-size: 21px;
     -unity-font-style: bold;
@@ -190,31 +202,6 @@
 .slot-row-state {
     font-size: 19px;
     color: rgb(100, 70, 40);
-}
-
-.slot-row--empty .slot-row-label { color: rgba(54, 32, 14, 0.4); }
-.slot-row--cooking .slot-row-state { color: rgb(190, 90, 20); -unity-font-style: bold; }
-.slot-row--paused .slot-row-state { color: rgb(170, 45, 30); -unity-font-style: bold; }
-
-.buy-slot-row {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 4px;
-    background-color: rgba(120, 170, 90, 0.45);
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-.buy-slot-row--locked {
-    background-color: rgba(54, 32, 14, 0.15);
-    opacity: 0.75;
 }
 
 /* ── Smokehouse fish rows ─────────────────────────────────────────── */
@@ -247,8 +234,20 @@
 .fish-icon--bass {
     background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_BassGreen.png");
 }
+/* Fish_PikeGreen (not Fish_GreenPike) — it is the fish the smoked variant was drawn from. */
 .fish-icon--pike {
-    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_GreenPike.png");
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_PikeGreen.png");
+}
+
+/* Smoked variants — same fish, browned/cured art, so the shelf reads as a different good. */
+.fish-icon--perch-smoked {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_Perch_Smoked.png");
+}
+.fish-icon--bass-smoked {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_BassGreen_Smoked.png");
+}
+.fish-icon--pike-smoked {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/Fishing/Fish_PikeGreen_Smoked.png");
 }
 .fish-row-label {
     color: rgb(238, 232, 220);
@@ -272,3 +271,464 @@
 }
 .fish-btn--smoke { background-color: rgb(198, 156, 109); }
 .fish-btn:disabled { opacity: 0.4; }
+
+/* ══ Firebox hearth ═══════════════════════════════════════════════════════
+   The fire is the thing the whole building depends on, so it gets a real hearth
+   instead of a progress bar: a live flame sitting on a bed of log sockets that
+   empty as the fuel burns down. Tapping the hearth fills the furnace. */
+
+.firebox-panel {
+    margin-bottom: 8px;
+}
+
+.firebox-hearth {
+    height: 148px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 14px;
+    margin-bottom: 12px;
+    background-color: rgba(0, 0, 0, 0.28);
+    border-color: rgba(0, 0, 0, 0.5);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    overflow: hidden;
+}
+
+.firebox-hearth:hover { background-color: rgba(0, 0, 0, 0.34); }
+
+/* Warm wash over the whole hearth while the fire is alive. Full-bleed on purpose — a
+   partial-height rectangle reads as a rendering seam, not as glow. */
+.firebox-glow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(224, 122, 41, 0.10);
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+.firebox-hearth--out .firebox-glow { opacity: 0; }
+
+/* Full-width bed of fire: the FireRow sheet is a seamless 32px tile, so the row is built
+   from repeated tiles that all animate on the same frame and get clipped by the hearth.
+   Pinned to the hearth floor — fire burns up off the ground, it doesn't float. Drawn after
+   the log bed so the flames pass in front of the logs. */
+.firebox-firerow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.firerow-tile {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+/* Log bed: one socket per sixth of furnace capacity. Filled = a log, empty = a
+   dark hole, which is the "somewhere to put logs" affordance. Sits on the floor with
+   the fire, just high enough that the log tops read through the flames. */
+.firebox-logbed {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 34px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.log-socket {
+    width: 46px;
+    height: 30px;
+    margin-left: 4px;
+    margin-right: 4px;
+    -unity-background-scale-mode: scale-to-fit;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-color: rgba(0, 0, 0, 0.45);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.log-socket--filled {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgResources/Log.png");
+}
+
+.firebox-hint {
+    font-size: 19px;
+    color: rgba(255, 246, 230, 0.85);
+    -unity-text-align: middle-center;
+}
+
+/* ══ Raw fish strip ═══════════════════════════════════════════════════════
+   Every fish is always listed so the set reads as a checklist. Tap one to load it
+   into the smoker; selling happens in the Inventory, not here. */
+
+.raw-strip {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-bottom: 6px;
+}
+
+/* Bare fish — no card behind them. The icon and its count are the whole control. */
+.raw-fish {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 18px;
+    padding-right: 18px;
+    transition: scale 0.08s ease-out;
+}
+
+/* Press feedback. Driven by a class from pointer-down/up rather than :active — UITK only
+   grants the active pseudo-state to real controls, so a bare VisualElement never gets it. */
+.raw-fish--pressed {
+    scale: 0.88 0.88;
+    opacity: 0.6;
+}
+
+/* Nothing to load reads as unavailable rather than absent. */
+.raw-fish--none { opacity: 0.32; }
+
+.raw-fish-icon {
+    width: 104px;
+    height: 104px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.raw-fish-count {
+    font-size: 26px;
+    -unity-font-style: bold;
+    color: rgb(54, 32, 14);
+    margin-top: 2px;
+}
+
+/* ══ Smoker slot grid ═════════════════════════════════════════════════════
+   4 across, one cell per slot up to the building's hard cap. Geometry from the
+   Figma component (75x90 @ r8, 32px fish, 20px status icon) scaled 2x to match
+   this panel's type scale. */
+
+.slots-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 4px;
+}
+
+.slot-cell {
+    width: 150px;
+    height: 192px;
+    margin: 9px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.5);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+/* Locked cells read as unbuilt structure, not as an empty rack. */
+.slot-cell--locked {
+    background-color: rgba(103, 64, 43, 0.8);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    justify-content: space-between;
+}
+
+.slot-cell--empty { justify-content: center; }
+.slot-cell--ready { background-color: rgba(0, 0, 0, 0.28); }
+
+.cell-fish {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+/* Status glyph under the fish: live flame while burning, cold coal when the fire is out. */
+.cell-status {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.cell-status--unlit {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Material_Dark_02.png");
+}
+
+.cell-timer {
+    font-size: 25px;
+    -unity-font-style: bold;
+    color: rgb(20, 16, 10);
+    -unity-text-align: middle-center;
+}
+
+/* Paused reads as a warning, not as a countdown you can trust. */
+.cell-timer--paused {
+    color: rgb(123, 12, 12);
+    -unity-font-style: bold;
+}
+
+/* Dark on the tan panel — white washed out against the cell's light background. */
+.cell-empty-label {
+    font-size: 20px;
+    color: rgba(54, 32, 14, 0.55);
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.cell-lock {
+    width: 32px;
+    height: 38px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: url("project://database/Assets/Sprites/UI/UI_TravelBook/UI_TravelBook_ButtonLocked01a.png");
+}
+
+/* Slots cost coins AND wood, which is one pair more than the mock had room for, so the
+   two prices stack instead of fighting for the cell's 114px of inner width. */
+.cell-cost-row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cell-cost-line {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell-cost-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 4px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.cell-cost-icon--coins {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgThings/Coins_Few.png");
+}
+
+.cell-cost-icon--research {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Misc_Books.png");
+}
+
+.cell-cost-icon--wood {
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Cute/RpgResources/Log.png");
+}
+
+.cell-cost-text {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+}
+
+.cell-cost-text--short { font-size: 17px; }
+
+.cell-btn {
+    width: 100%;
+    flex-shrink: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 0;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(103, 64, 43);
+    border-color: rgb(54, 32, 14);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.cell-btn--collect {
+    background-color: rgb(224, 180, 70);
+    border-color: rgb(140, 100, 30);
+    color: rgb(70, 48, 12);
+    -unity-font-style: bold;
+}
+
+.cell-btn:hover { background-color: rgb(124, 80, 55); }
+.cell-btn--collect:hover { background-color: rgb(238, 196, 90); }
+
+/* Press feedback — without this a tap on an affordable Unlock looks like nothing happened. */
+.cell-btn:active {
+    scale: 0.94 0.94;
+    background-color: rgb(78, 47, 31);
+    color: rgb(255, 236, 210);
+}
+
+.cell-btn--collect:active {
+    background-color: rgb(196, 150, 48);
+    color: rgb(52, 34, 6);
+}
+
+.cell-btn:disabled { opacity: 0.45; }
+
+/* A price you can't meet is the usual reason Unlock does nothing — say so in the price. */
+.cell-cost-text--unaffordable { color: rgb(255, 158, 148); }
+
+.grid-hint {
+    font-size: 19px;
+    color: rgba(54, 32, 14, 0.75);
+    -unity-text-align: middle-center;
+    margin-top: 4px;
+    margin-bottom: 6px;
+    white-space: normal;
+}
+
+/* ══ Collect burst ════════════════════════════════════════════════════════
+   A "+1" with the thing you just collected, lifting out of the cell it came from.
+   House rule: collecting anything should show what you got and where it came from. */
+
+.fx-layer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.collect-fx {
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    opacity: 1;
+    translate: 0 0;
+    transition: translate 0.75s ease-out, opacity 0.75s ease-in, scale 0.75s ease-out;
+}
+
+.collect-fx--fly {
+    translate: 0 -90px;
+    opacity: 0;
+    scale: 1.25 1.25;
+}
+
+.collect-fx-icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.collect-fx-label {
+    font-size: 30px;
+    -unity-font-style: bold;
+    color: rgb(255, 236, 170);
+    margin-left: 4px;
+}
+
+/* ══ Flame animation frames ═══════════════════════════════════════════════
+   UITK has no sprite animation, so each frame is a class and the C# cycles them.
+   Four sizes = how long the fuel lasts against the work left, so a big flame
+   literally means "there is enough wood to finish this". */
+
+.flame--large-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_0"); }
+.flame--large-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_1"); }
+.flame--large-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_2"); }
+.flame--large-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_3"); }
+.flame--large-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_4"); }
+.flame--large-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Large.png#Flame_Large_5"); }
+
+.flame--medium-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_0"); }
+.flame--medium-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_1"); }
+.flame--medium-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_2"); }
+.flame--medium-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_3"); }
+.flame--medium-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_4"); }
+.flame--medium-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Medium.png#Flame_Medium_5"); }
+
+.flame--small-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_0"); }
+.flame--small-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_1"); }
+.flame--small-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_2"); }
+.flame--small-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_3"); }
+.flame--small-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_4"); }
+.flame--small-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Small.png#Flame_Small_5"); }
+
+.flame--ember-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_0"); }
+.flame--ember-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_1"); }
+.flame--ember-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_2"); }
+.flame--ember-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_3"); }
+.flame--ember-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_4"); }
+.flame--ember-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/Flame/Flame_Ember.png#Flame_Ember_5"); }
+
+/* Hearth uses the tiling FireRow sheets — four intensities for how full the furnace is. */
+.firerow--roaring-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_0"); }
+.firerow--roaring-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_1"); }
+.firerow--roaring-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_2"); }
+.firerow--roaring-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_3"); }
+.firerow--roaring-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_4"); }
+.firerow--roaring-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Roaring.png#FireRow_Roaring_5"); }
+
+.firerow--strong-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_0"); }
+.firerow--strong-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_1"); }
+.firerow--strong-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_2"); }
+.firerow--strong-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_3"); }
+.firerow--strong-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_4"); }
+.firerow--strong-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Strong.png#FireRow_Strong_5"); }
+
+.firerow--low-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_0"); }
+.firerow--low-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_1"); }
+.firerow--low-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_2"); }
+.firerow--low-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_3"); }
+.firerow--low-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_4"); }
+.firerow--low-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Low.png#FireRow_Low_5"); }
+
+.firerow--embers-0 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_0"); }
+.firerow--embers-1 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_1"); }
+.firerow--embers-2 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_2"); }
+.firerow--embers-3 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_3"); }
+.firerow--embers-4 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_4"); }
+.firerow--embers-5 { background-image: url("project://database/Assets/Sprites/Environment/Fire/FireRow/FireRow_Embers.png#FireRow_Embers_5"); }

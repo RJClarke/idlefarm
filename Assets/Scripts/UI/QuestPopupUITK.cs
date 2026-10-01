@@ -129,6 +129,7 @@ public class QuestPopupUITK : MonoBehaviour
         }
         RefreshAll();
         StartLivePolling();
+        OnboardingTutorials.OnMenuOpened("tip_quests"); // one-time how-to (new players)
     }
 
     public void Close()

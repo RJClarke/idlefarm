@@ -34,12 +34,33 @@ public class ToastManager : MonoBehaviour
     [Tooltip("Pixel font for the catch toast text (a UITK TextCore FontAsset from Fonts/UITK SDF).")]
     [SerializeField] private UnityEngine.TextCore.Text.FontAsset catchFont;
 
+    [Header("Top Toast (parchment notice)")]
+    [Tooltip("9-sliced parchment panel for the top toasts (Panel_Parchment_9Slice, border 5). " +
+             "Falls back to the old flat dark card if unset.")]
+    [SerializeField] private Sprite topBackground;
+    [Tooltip("Pixel font for toast text. Falls back to the catch font when unset, so both " +
+             "toast styles share one typeface without extra scene wiring.")]
+    [SerializeField] private UnityEngine.TextCore.Text.FontAsset toastFont;
+    [Tooltip("Default icon for ToastKind.Success when the caller supplies none.")]
+    [SerializeField] private Sprite successIcon;
+    [Tooltip("Default icon for ToastKind.Unlock when the caller supplies none.")]
+    [SerializeField] private Sprite unlockIcon;
+
     private const int MAX_VISIBLE = 3;
     private const float IN_SEC = 0.25f;    // slide/fade in
     private const float HOLD_SEC = 2.2f;   // time fully visible
     private const float OUT_SEC = 0.3f;    // slide/fade out
     private const float HIDDEN_Y = -130f;  // translateY percent when off-screen (above)
     private const int TOAST_SORT_ORDER = 2000;
+
+    // Parchment ink. Cream is a light field, so text is dark walnut rather than an accent
+    // colour — gold on cream is illegible, the same finding recorded on the catch toast below.
+    private static readonly Color INK = new Color32(0x3E, 0x2A, 0x16, 0xFF);
+    private static readonly Color INK_MUTED = new Color32(0x6E, 0x56, 0x34, 0xFF);
+    // Panel_Parchment_9Slice: 48x40 with a uniform 5px frame. Every border band is a solid run
+    // along its stretch axis and the centre is one flat colour, so this slices without artifacts.
+    private const int TOP_SLICE = 5;
+    private const float TOP_SLICE_SCALE = 3f;
 
     private UIDocument document;
     private PanelSettings runtimePanelSettings;
@@ -53,7 +74,11 @@ public class ToastManager : MonoBehaviour
         public string title;
         public string subtitle;
         public ToastKind kind;
+        public Sprite icon;
     }
+
+    /// <summary>Text font for both toast styles; <see cref="catchFont"/> is the legacy fallback.</summary>
+    private UnityEngine.TextCore.Text.FontAsset Font => toastFont != null ? toastFont : catchFont;
 
     private void Awake()
     {
@@ -103,15 +128,20 @@ public class ToastManager : MonoBehaviour
 
     public static void Show(string message, ToastKind kind = ToastKind.Success) => Show(message, null, kind);
 
-    public static void Show(string title, string subtitle, ToastKind kind = ToastKind.Success)
+    /// <summary>
+    /// Queue a top parchment notice. <paramref name="icon"/> is optional — when null the
+    /// per-kind default is used, and if that is unset too the toast renders text-only.
+    /// </summary>
+    public static void Show(string title, string subtitle, ToastKind kind = ToastKind.Success,
+                            Sprite icon = null)
     {
         if (Instance == null || string.IsNullOrEmpty(title)) return;
-        Instance.Enqueue(title, subtitle, kind);
+        Instance.Enqueue(title, subtitle, kind, icon);
     }
 
-    private void Enqueue(string title, string subtitle, ToastKind kind)
+    private void Enqueue(string title, string subtitle, ToastKind kind, Sprite icon)
     {
-        pending.Enqueue(new PendingToast { title = title, subtitle = subtitle, kind = kind });
+        pending.Enqueue(new PendingToast { title = title, subtitle = subtitle, kind = kind, icon = icon });
         Pump();
     }
 
@@ -123,7 +153,7 @@ public class ToastManager : MonoBehaviour
         while (visibleCount < MAX_VISIBLE && pending.Count > 0)
         {
             PendingToast p = pending.Dequeue();
-            SpawnToast(p.title, p.subtitle, p.kind);
+            SpawnToast(p.title, p.subtitle, p.kind, p.icon);
         }
     }
 
@@ -251,10 +281,10 @@ public class ToastManager : MonoBehaviour
         return toast;
     }
 
-    private void SpawnToast(string title, string subtitle, ToastKind kind)
+    private void SpawnToast(string title, string subtitle, ToastKind kind, Sprite icon)
     {
         visibleCount++;
-        VisualElement toast = BuildToastElement(title, subtitle, kind);
+        VisualElement toast = BuildToastElement(title, subtitle, kind, icon);
         stack.Insert(0, toast); // newest on top, older ones flow below
         StartCoroutine(ToastLifecycle(toast));
     }
@@ -287,44 +317,98 @@ public class ToastManager : MonoBehaviour
         el.style.translate = new Translate(0, Length.Percent(toY));
     }
 
-    private VisualElement BuildToastElement(string title, string subtitle, ToastKind kind)
+    /// <summary>
+    /// A parchment notice: icon on the left, title + detail to its right. The text pair lives in
+    /// a wrapping row, so short messages sit on one line and long ones drop the detail onto a
+    /// second line — no length special-casing. The toast hugs its content up to 95% width.
+    /// </summary>
+    private VisualElement BuildToastElement(string title, string subtitle, ToastKind kind, Sprite icon)
     {
         VisualElement toast = new VisualElement { name = "toast" };
         toast.pickingMode = PickingMode.Ignore;
-        toast.style.flexDirection = FlexDirection.Column;
-        toast.style.alignItems = Align.FlexStart;
-        toast.style.width = Length.Percent(95);
+        toast.style.flexDirection = FlexDirection.Row;
+        toast.style.alignItems = Align.Center;
+        toast.style.maxWidth = Length.Percent(95);
+        toast.style.minHeight = 88;
         toast.style.marginBottom = 10;
-        toast.style.paddingLeft = 24;
-        toast.style.paddingRight = 24;
-        toast.style.paddingTop = 16;
-        toast.style.paddingBottom = 16;
-        SetBorderRadius(toast, 24);
-        toast.style.backgroundColor = new Color(0.11f, 0.12f, 0.13f, 0.95f);
 
-        Color accent = AccentFor(kind);
-        SetBorderWidth(toast, 2);
-        SetBorderColor(toast, accent);
+        if (topBackground != null)
+        {
+            toast.style.backgroundImage = new StyleBackground(topBackground);
+            toast.style.unitySliceLeft = TOP_SLICE;
+            toast.style.unitySliceRight = TOP_SLICE;
+            toast.style.unitySliceTop = TOP_SLICE;
+            toast.style.unitySliceBottom = TOP_SLICE;
+            toast.style.unitySliceScale = TOP_SLICE_SCALE;
+            // Clear of the 15px scaled frame on every side.
+            toast.style.paddingLeft = 26;
+            toast.style.paddingRight = 32;
+            toast.style.paddingTop = 20;
+            toast.style.paddingBottom = 20;
+        }
+        else
+        {
+            // Fallback: the pre-parchment flat dark card, so a missing sprite degrades quietly.
+            SetBorderRadius(toast, 24);
+            toast.style.backgroundColor = new Color(0.11f, 0.12f, 0.13f, 0.95f);
+            SetBorderWidth(toast, 2);
+            SetBorderColor(toast, new Color(1f, 0.84f, 0f));
+            toast.style.paddingLeft = 24;
+            toast.style.paddingRight = 24;
+            toast.style.paddingTop = 16;
+            toast.style.paddingBottom = 16;
+        }
+
+        bool onParchment = topBackground != null;
+        Color titleColor = onParchment ? INK : new Color(1f, 0.84f, 0f);
+        Color subColor = onParchment ? INK_MUTED : new Color(1f, 1f, 1f, 0.82f);
+
+        Sprite shown = icon != null ? icon : DefaultIconFor(kind);
+        if (shown != null)
+        {
+            Image img = new Image { sprite = shown, scaleMode = ScaleMode.ScaleToFit };
+            img.pickingMode = PickingMode.Ignore;
+            img.style.width = 48;
+            img.style.height = 48;
+            img.style.flexShrink = 0;
+            img.style.marginRight = 16;
+            toast.Add(img);
+        }
+
+        // A wrap container reports its intrinsic width as its widest child rather than the sum,
+        // so an auto-width toast can hug to less than its own text. With wrapping labels that
+        // showed up as the title splitting and short words breaking mid-character ("Hors/e").
+        // The labels are therefore NoWrap — they can only break *between* title and subtitle,
+        // never inside a word — and the container keeps its full content width.
+        VisualElement text = new VisualElement { name = "toast-text" };
+        text.pickingMode = PickingMode.Ignore;
+        text.style.flexDirection = FlexDirection.Row;
+        text.style.flexWrap = Wrap.Wrap;
+        text.style.alignItems = Align.Center;
+        text.style.flexShrink = 0;
+        toast.Add(text);
 
         Label titleLabel = new Label(title);
         titleLabel.pickingMode = PickingMode.Ignore;
-        titleLabel.style.color = accent;
-        titleLabel.style.fontSize = 36;
+        titleLabel.style.color = titleColor;
+        titleLabel.style.fontSize = 34;
         titleLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
-        titleLabel.style.whiteSpace = WhiteSpace.Normal;
+        titleLabel.style.whiteSpace = WhiteSpace.NoWrap;
         titleLabel.style.unityTextAlign = TextAnchor.MiddleLeft;
-        toast.Add(titleLabel);
+        if (Font != null) titleLabel.style.unityFontDefinition = new StyleFontDefinition(Font);
+        text.Add(titleLabel);
 
         if (!string.IsNullOrEmpty(subtitle))
         {
             Label subLabel = new Label(subtitle);
             subLabel.pickingMode = PickingMode.Ignore;
-            subLabel.style.color = new Color(1f, 1f, 1f, 0.82f);
-            subLabel.style.fontSize = 27;
-            subLabel.style.whiteSpace = WhiteSpace.Normal;
+            subLabel.style.color = subColor;
+            subLabel.style.fontSize = 28;
+            subLabel.style.whiteSpace = WhiteSpace.NoWrap;
             subLabel.style.unityTextAlign = TextAnchor.MiddleLeft;
-            subLabel.style.marginTop = 3;
-            toast.Add(subLabel);
+            subLabel.style.marginLeft = 16; // gap when inline; harmless once wrapped
+            if (Font != null) subLabel.style.unityFontDefinition = new StyleFontDefinition(Font);
+            text.Add(subLabel);
         }
 
         // Start hidden + nudged up; the lifecycle coroutine animates it into place.
@@ -333,10 +417,14 @@ public class ToastManager : MonoBehaviour
         return toast;
     }
 
-    private static Color AccentFor(ToastKind kind) => kind switch
+    /// <summary>
+    /// Per-kind fallback icon. Toast <em>kind</em> is now carried by the icon rather than by an
+    /// accent colour, since coloured text is unreadable on the cream parchment.
+    /// </summary>
+    private Sprite DefaultIconFor(ToastKind kind) => kind switch
     {
-        ToastKind.Unlock => new Color(0.44f, 0.79f, 0.39f),  // green
-        _                => new Color(1f, 0.84f, 0f),         // gold
+        ToastKind.Unlock => unlockIcon,
+        _                => successIcon,
     };
 
     private static void SetBorderRadius(VisualElement el, float r)
@@ -381,17 +469,21 @@ public class ToastManager : MonoBehaviour
             AnimalManager.Instance.OnAnimalUnlocked -= OnAnimalUnlocked;
     }
 
+    // Emoji are deliberately absent from these titles — they render invisible in UITK text on
+    // Android. The sprite icon carries that meaning instead.
+
     private void OnResearchLeveledUp(string researchID, int newLevel)
     {
         var rd = ResearchManager.Instance != null ? ResearchManager.Instance.GetResearch(researchID) : null;
         string name = rd != null && !string.IsNullOrEmpty(rd.displayName) ? rd.displayName : researchID;
-        Show("✨ Research Complete", $"{name} Level {newLevel}", ToastKind.Success);
+        Sprite branchIcon = rd != null ? Research.ResearchBranchIcons.For(rd.branchID) : null;
+        Show("Research Complete", $"{name} Level {newLevel}", ToastKind.Success, branchIcon);
     }
 
     private void OnAnimalUnlocked(string animalID)
     {
         var data = AnimalManager.Instance != null ? AnimalManager.Instance.GetAnimalData(animalID) : null;
         string name = data != null && !string.IsNullOrEmpty(data.displayName) ? data.displayName : animalID;
-        Show("\U0001F513 New Unlock!", name, ToastKind.Unlock);
+        Show("New Unlock!", name, ToastKind.Unlock, Research.ResearchBranchIcons.For("animals"));
     }
 }

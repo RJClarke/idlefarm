@@ -84,9 +84,14 @@ public static class ResearchCatalogGenerator
         // Processing buildings (Pantry Economy Phase 3) — kickoff, slot expansions, fuel efficiency.
         CreateBinary("cannery_unlocked",       "Preserving",             "equipment", featureID:FeatureFlag.CanneryUnlocked,    cost:6000,  days:3);
         CreateBinary("smokehouse_unlocked",    "Smoking",                "equipment", featureID:FeatureFlag.SmokehouseUnlocked, cost:6000,  days:3);
-        CreateBinary("cannery_expansion_1",    "Cannery Expansion I",    "equipment", featureID:FeatureFlag.CanneryExpansion1,   cost:40000, days:7,  prereqID:"cannery_unlocked");
-        CreateBinary("cannery_expansion_2",    "Cannery Expansion II",   "equipment", featureID:FeatureFlag.CanneryExpansion2,   cost:90000, days:14, prereqID:"cannery_expansion_1");
-        CreateBinary("smokehouse_expansion_1", "Smokehouse Expansion",   "equipment", featureID:FeatureFlag.SmokehouseExpansion1, cost:40000, days:7,  prereqID:"smokehouse_unlocked");
+        // One research per gated cell, chained, starting cheap so the first extra jar/rack slot is
+        // an early goal rather than a late-game wall.
+        CreateBinary("cannery_expansion_1",    "Cannery Expansion I",    "equipment", featureID:FeatureFlag.CanneryExpansion1,   cost:6000,   days:2,  prereqID:"cannery_unlocked");
+        CreateBinary("cannery_expansion_2",    "Cannery Expansion II",   "equipment", featureID:FeatureFlag.CanneryExpansion2,   cost:24000,  days:5,  prereqID:"cannery_expansion_1");
+        CreateBinary("cannery_expansion_3",    "Cannery Expansion III",  "equipment", featureID:FeatureFlag.CanneryExpansion3,   cost:60000,  days:9,  prereqID:"cannery_expansion_2");
+        CreateBinary("cannery_expansion_4",    "Cannery Expansion IV",   "equipment", featureID:FeatureFlag.CanneryExpansion4,   cost:120000, days:14, prereqID:"cannery_expansion_3");
+        CreateBinary("smokehouse_expansion_1", "Smokehouse Expansion I", "equipment", featureID:FeatureFlag.SmokehouseExpansion1, cost:5000,  days:2,  prereqID:"smokehouse_unlocked");
+        CreateBinary("smokehouse_expansion_2", "Smokehouse Expansion II","equipment", featureID:FeatureFlag.SmokehouseExpansion2, cost:20000, days:5,  prereqID:"smokehouse_expansion_1");
         CreateStd("cannery_burn_efficiency",    "Cannery: Fuel Efficiency",    StatKey.CanneryBurnEfficiency,    ResearchTier.Tier25, "equipment", 0.010f, prereqID:"cannery_unlocked");
         CreateStd("smokehouse_burn_efficiency", "Smokehouse: Fuel Efficiency", StatKey.SmokehouseBurnEfficiency, ResearchTier.Tier25, "equipment", 0.010f, prereqID:"smokehouse_unlocked");
 

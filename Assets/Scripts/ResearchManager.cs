@@ -49,6 +49,11 @@ public class ResearchManager : MonoBehaviour
     private readonly Dictionary<string, int> levelsByResearchID = new Dictionary<string, int>();
     // researchID -> seconds accumulated toward the next level (cost already paid). 0 = fresh.
     private readonly Dictionary<string, float> partialSecsByResearchID = new Dictionary<string, float>();
+    // researchIDs whose in-progress level is already paid for. Survives cancel, cleared on level-up.
+    // Kept apart from partialSecsByResearchID: cancelling with under a second elapsed — or any
+    // binary research, which never recorded partials at all — leaves 0 seconds but the coins are
+    // gone, so "partial > 0" was the wrong test for "already paid".
+    private readonly HashSet<string> paidResearchIDs = new HashSet<string>();
 
     public event Action<int> OnSlotUnlocked;              // slotIndex
     public event Action<int> OnSlotStateChanged;          // slotIndex — assigned/cancelled
@@ -159,12 +164,13 @@ public class ResearchManager : MonoBehaviour
 
         float partial = GetPartialSecs(researchID);
 
-        if (partial <= 0f)
+        if (!IsPaid(researchID))
         {
             // Fresh start — pay L+1 cost
             int nextLevel = curLevel + 1;
             int cost = GetCostForLevel(rd, nextLevel);
             if (CurrencyManager.Instance == null || !CurrencyManager.Instance.SpendCoins(cost)) return false;
+            paidResearchIDs.Add(researchID);
         }
         // else: resume paid-but-paused — no charge. partial seconds count as elapsed.
 
@@ -182,16 +188,25 @@ public class ResearchManager : MonoBehaviour
         return partialSecsByResearchID.TryGetValue(researchID, out var s) ? s : 0f;
     }
 
+    /// <summary>
+    /// True when this research's in-progress level has already been paid for — so assigning it
+    /// resumes free. Set on purchase, cleared on level-up; deliberately survives CancelResearch.
+    /// </summary>
+    public bool IsPaid(string researchID) =>
+        !string.IsNullOrEmpty(researchID) && paidResearchIDs.Contains(researchID);
+
     public void CancelResearch(int slotIndex)
     {
         if (!IsValidSlot(slotIndex)) return;
         var s = slots[slotIndex];
 
         // Preserve progress toward the in-progress level so re-assigning later doesn't charge again.
+        // Binary research is included: it used to be skipped here, which meant cancelling one
+        // (e.g. Preserving at 6000 coins) recorded nothing and the next assign charged full price.
         if (!s.IsIdle)
         {
             var rd = GetResearch(s.activeResearchID);
-            if (rd != null && !rd.IsBinary && s.currentLevel < rd.MaxLevel)
+            if (rd != null && s.currentLevel < rd.MaxLevel)
             {
                 int nextLevel = s.currentLevel + 1;
                 float secsForLevel = GetSecondsForLevel(rd, nextLevel);
@@ -205,6 +220,7 @@ public class ResearchManager : MonoBehaviour
         s.currentLevel = 0;
         s.startUtcTicks = 0;
         s.boostExpiresUtcTicks = 0;
+        s.boostStartUtcTicks = 0;
         s.boostMultiplier = 1.0f;
         OnSlotStateChanged?.Invoke(slotIndex);
     }
@@ -225,6 +241,7 @@ public class ResearchManager : MonoBehaviour
         if (!CurrencyManager.Instance.SpendCompost(compostCost)) return false;
 
         s.boostMultiplier = multiplier;
+        s.boostStartUtcTicks   = DateTime.UtcNow.Ticks; // applies forward only, never retroactively
         s.boostExpiresUtcTicks = DateTime.UtcNow.Ticks + (long)(durationSecs * TimeSpan.TicksPerSecond);
         OnSlotStateChanged?.Invoke(slotIndex);
         return true;
@@ -259,8 +276,37 @@ public class ResearchManager : MonoBehaviour
         if (!CurrencyManager.Instance.SpendCompost(s.autoBuyCost)) return;
 
         s.boostMultiplier = s.autoBuyMultiplier;
+        s.boostStartUtcTicks   = DateTime.UtcNow.Ticks;
         s.boostExpiresUtcTicks = DateTime.UtcNow.Ticks + (long)(s.autoBuyDurationSecs * TimeSpan.TicksPerSecond);
         OnSlotStateChanged?.Invoke(slotIndex);
+    }
+
+    /// <summary>
+    /// Toggle "Auto" for a slot: when on, finishing a level immediately pays for and starts the
+    /// next level of the same research. Sticky — deliberately NOT cleared by CancelResearch, so the
+    /// setting carries to whatever the player assigns to this slot next.
+    /// </summary>
+    public void SetAutoRepeat(int slotIndex, bool on)
+    {
+        if (!IsValidSlot(slotIndex)) return;
+        var s = slots[slotIndex];
+        if (s.autoRepeat == on) return;
+        s.autoRepeat = on;
+        OnSlotStateChanged?.Invoke(slotIndex);
+    }
+
+    public bool GetAutoRepeat(int slotIndex) => IsValidSlot(slotIndex) && slots[slotIndex].autoRepeat;
+
+    /// <summary>
+    /// Seconds of research credited toward the in-progress level, INCLUDING the compost boost
+    /// multiplier. UI reads this so a 2× slot visibly counts down twice as fast; the raw
+    /// wall-clock delta would under-report progress and disagree with when the level actually pops.
+    /// </summary>
+    public double GetSlotElapsedSeconds(int slotIndex)
+    {
+        var s = GetSlot(slotIndex);
+        if (s == null || s.IsIdle) return 0d;
+        return ComputeElapsedSeconds(s, DateTime.UtcNow.Ticks);
     }
 
     public int GetCurrentLevel(string researchID)
@@ -273,6 +319,14 @@ public class ResearchManager : MonoBehaviour
     {
         var rd = GetResearch(researchID);
         return rd != null && rd.IsBinary && GetCurrentLevel(researchID) >= 1;
+    }
+
+    /// <summary>Dev/testing: unlock a research feature flag directly (fires OnFeatureFlagUnlocked like
+    /// finishing the research would — letters, masked seed packets and shops all react).</summary>
+    public void DevUnlockFeature(string featureID)
+    {
+        if (!string.IsNullOrEmpty(featureID) && featureFlags.Add(featureID))
+            OnFeatureFlagUnlocked?.Invoke(featureID);
     }
 
     public bool IsFeatureUnlocked(string featureID) => !string.IsNullOrEmpty(featureID) && featureFlags.Contains(featureID);
@@ -339,11 +393,16 @@ public class ResearchManager : MonoBehaviour
                 s.currentLevel = nextLevel;
                 levelsByResearchID[rd.researchID] = nextLevel;
                 partialSecsByResearchID.Remove(rd.researchID); // partial only applies to the level we just finished
+                paidResearchIDs.Remove(rd.researchID);         // ditto — the NEXT level isn't paid yet
                 long consumedTicks = (long)(secs * TimeSpan.TicksPerSecond);
                 s.startUtcTicks += consumedTicks;
                 OnResearchLeveledUp?.Invoke(rd.researchID, nextLevel);
 
                 if (nextLevel >= rd.MaxLevel) { OnResearchCompleted(rd, i); break; }
+
+                // Auto off: the level the player paid for is finished — stop here and let them
+                // pick what's next. Auto on: roll straight into the following level below.
+                if (!s.autoRepeat) { CancelResearch(i); break; }
 
                 // Auto-charge next level — if player can't afford, pause at current level.
                 int nextCost = GetCostForLevel(rd, nextLevel + 1);
@@ -354,6 +413,7 @@ public class ResearchManager : MonoBehaviour
                     break;
                 }
                 CurrencyManager.Instance.SpendCoins(nextCost);
+                paidResearchIDs.Add(rd.researchID); // auto-repeat bought it — a cancel must not lose it
             }
         }
     }
@@ -365,8 +425,14 @@ public class ResearchManager : MonoBehaviour
         double secs = deltaTicks / (double)TimeSpan.TicksPerSecond;
         if (s.boostExpiresUtcTicks > s.startUtcTicks && s.boostMultiplier > 1.0f)
         {
+            // Credit the multiplier only for the part of the boost window that has actually run:
+            // from whenever the boost started (never earlier than this level's anchor) until now.
+            // boostStartUtcTicks == 0 means a pre-existing save, so fall back to the level anchor.
+            long boostStart = s.boostStartUtcTicks > 0
+                ? Math.Max(s.startUtcTicks, s.boostStartUtcTicks)
+                : s.startUtcTicks;
             long boostEnd = Math.Min(nowTicks, s.boostExpiresUtcTicks);
-            long boostTicks = Math.Max(0, boostEnd - s.startUtcTicks);
+            long boostTicks = Math.Max(0, boostEnd - boostStart);
             double boostSecs = boostTicks / (double)TimeSpan.TicksPerSecond;
             secs += boostSecs * (s.boostMultiplier - 1.0);
         }
@@ -429,9 +495,11 @@ public class ResearchManager : MonoBehaviour
     public string[] GetFeatureFlagsForSave() => featureFlags.ToArray();
     public ResearchLevelEntry[] GetLevelsForSave()
     {
-        // Union of researchIDs across levels + partials so partial-only entries persist too.
+        // Union of researchIDs across levels + partials + paid flags, so an entry that is only
+        // "paid, nothing elapsed" still persists.
         var ids = new HashSet<string>(levelsByResearchID.Keys);
         foreach (var k in partialSecsByResearchID.Keys) ids.Add(k);
+        foreach (var k in paidResearchIDs) ids.Add(k);
         var result = new ResearchLevelEntry[ids.Count];
         int i = 0;
         foreach (var id in ids)
@@ -441,6 +509,7 @@ public class ResearchManager : MonoBehaviour
                 researchID = id,
                 level = levelsByResearchID.TryGetValue(id, out var lvl) ? lvl : 0,
                 partialSecs = partialSecsByResearchID.TryGetValue(id, out var p) ? p : 0f,
+                paid = paidResearchIDs.Contains(id),
             };
         }
         return result;
@@ -465,6 +534,7 @@ public class ResearchManager : MonoBehaviour
             s.currentLevel = newLevel;
             levelsByResearchID[rd.researchID] = newLevel;
             partialSecsByResearchID.Remove(rd.researchID);
+            paidResearchIDs.Remove(rd.researchID);
             OnResearchLeveledUp?.Invoke(rd.researchID, newLevel);
 
             if (newLevel >= rd.MaxLevel)
@@ -500,12 +570,16 @@ public class ResearchManager : MonoBehaviour
 
         levelsByResearchID.Clear();
         partialSecsByResearchID.Clear();
+        paidResearchIDs.Clear();
         if (levels != null)
             foreach (var e in levels)
             {
                 if (string.IsNullOrEmpty(e.researchID)) continue;
                 if (e.level > 0) levelsByResearchID[e.researchID] = e.level;
                 if (e.partialSecs > 0f) partialSecsByResearchID[e.researchID] = e.partialSecs;
+                // Saves written before `paid` existed fall back to the old inference, so an
+                // in-flight partial isn't re-charged after upgrading.
+                if (e.paid || e.partialSecs > 0f) paidResearchIDs.Add(e.researchID);
             }
 
         // Snapshot levels before catch-up so the welcome-back modal can show deltas.
@@ -576,6 +650,8 @@ public class ResearchManager : MonoBehaviour
             if (CurrencyManager.Instance == null || !CurrencyManager.Instance.SpendCompost(totalCost)) continue;
 
             s.boostMultiplier = s.autoBuyMultiplier;
+            // The renewed windows run contiguously from where the last boost lapsed.
+            s.boostStartUtcTicks    = s.boostExpiresUtcTicks;
             s.boostExpiresUtcTicks += (long)(renewals * s.autoBuyDurationSecs * TimeSpan.TicksPerSecond);
             slotReport.autoBuyRenewals = renewals;
             report.compostSpentOnAutoBuy += totalCost;
@@ -610,10 +686,12 @@ public class ResearchManager : MonoBehaviour
             currentLevel = src.currentLevel,
             startUtcTicks = src.startUtcTicks,
             boostExpiresUtcTicks = src.boostExpiresUtcTicks,
+            boostStartUtcTicks = src.boostStartUtcTicks,
             boostMultiplier = src.boostMultiplier <= 0 ? 1f : src.boostMultiplier,
             autoBuyMultiplier = src.autoBuyMultiplier,
             autoBuyDurationSecs = src.autoBuyDurationSecs,
-            autoBuyCost = src.autoBuyCost
+            autoBuyCost = src.autoBuyCost,
+            autoRepeat = src.autoRepeat
         };
     }
 
@@ -623,6 +701,8 @@ public class ResearchManager : MonoBehaviour
     {
         for (int i = 0; i < SlotCount; i++) { slotUnlocked[i] = false; CancelResearch(i); }
         levelsByResearchID.Clear();
+        partialSecsByResearchID.Clear();
+        paidResearchIDs.Clear();
         featureFlags.Clear();
         for (int i = 0; i < SlotCount; i++) PlayerPrefs.SetInt("research_slot_unlocked_" + i, 0);
         PlayerPrefs.Save();

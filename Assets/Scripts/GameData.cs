@@ -88,9 +88,11 @@ public class GameData
     public int fishingReelTapsRemaining;  // taps left before the bobber reaches shore
 
     // Smokehouse (Pantry Economy Phase 2). Built-flag in BuildingState (PlayerPrefs); firebox here.
-    // Finished smoked fish are drained into Pantry counts, so no ready-shelf is persisted.
+    // Finished fish wait on the ready shelf until collected from the smoker grid, so unlike
+    // Phase 2 the shelf IS persisted (mirrors canneryReadyJars). Null on pre-existing saves.
     public double smokehouseFuelWood;
     public CannerySlot[] smokehouseSlots;
+    public ReadyJar[] smokehouseReadyJars;
     public long smokehouseLastSimUtcTicks;
 
     // Wall-clock anchor for offline-progress catch-up. Set on every save; read on load
@@ -171,6 +173,7 @@ public class GameData
         pantryRawFish = new int[FishTiers.Count];
         pantrySmokedFish = new int[FishTiers.Count];
         smokehouseSlots = new CannerySlot[0];
+        smokehouseReadyJars = new ReadyJar[0];
         cropStacks = new ItemStackEntry[0];
         repSlots = new RequestSlotSave[0];
         farmSkillLevels = new int[0];
@@ -226,6 +229,11 @@ public class ResearchLevelEntry
     public string researchID;
     public int level;
     public float partialSecs; // seconds already accumulated toward the next level (cost already paid)
+    // The in-progress level's coin cost has been paid. Tracked separately from partialSecs because
+    // a cancel with <1s elapsed (or any binary research) leaves 0 partial seconds but the coins are
+    // still spent — inferring "paid" from partialSecs > 0 silently ate them. Absent in older saves
+    // (defaults false), which just means the next assign re-charges as it did before.
+    public bool paid;
 }
 
 /// <summary>

@@ -29,6 +29,10 @@ public class ThreatWaveManager : MonoBehaviour
     [SerializeField] private AnimalThreatData deerData;
     [SerializeField] private AnimalThreatData crowData;
 
+    /// <summary>Pest definitions, for the Farmer's Almanac.</summary>
+    public AnimalThreatData DeerData => deerData;
+    public AnimalThreatData CrowData => crowData;
+
     [Header("Wave Timing")]
     [Tooltip("Seconds per wave interval.")]
     [SerializeField] private float waveIntervalSeconds = 60f;

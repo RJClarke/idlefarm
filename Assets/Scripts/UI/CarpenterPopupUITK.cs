@@ -22,7 +22,7 @@ public class CarpenterPopupUITK : MonoBehaviour
     [SerializeField] private string canneryTitle = "Build Cannery";
     [TextArea]
     [SerializeField] private string canneryDescription =
-        "A wood-fired kettle house. Divert harvests into jars, keep the fire stoked, sell preserves for Gold.";
+        "A wood-fired kettle house. Divert harvests into jars, keep the fire stoked, sell preserves for Coins.";
     [SerializeField] private int canneryCoinCost = 800;
     [SerializeField] private int canneryWoodCost = 300;
 

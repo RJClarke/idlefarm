@@ -22,7 +22,7 @@
                     <ui:Label name="cash-hint" text="Start a run to sell for Cash" class="cash-hint" />
                     <ui:VisualElement name="sell-row" class="sell-row">
                         <ui:Button name="sell-cash" text="Sell for Cash" class="sell-btn sell-btn--cash" />
-                        <ui:Button name="sell-gold" text="Sell for Gold" class="sell-btn sell-btn--gold" />
+                        <ui:Button name="sell-gold" text="Sell for Coins" class="sell-btn sell-btn--gold" />
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
