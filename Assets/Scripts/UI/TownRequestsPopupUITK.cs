@@ -158,6 +158,7 @@ public class TownRequestsPopupUITK : MonoBehaviour
         root.pickingMode = PickingMode.Position;
         BuildSlots();
         popupRoot.style.display = DisplayStyle.Flex;
+        OnboardingTutorials.OnMenuOpened("tip_town_requests"); // one-time how-to (new players)
     }
 
     public void Close()
@@ -438,6 +439,7 @@ public class TownRequestsPopupUITK : MonoBehaviour
         skipBtn.style.borderTopLeftRadius = 10; skipBtn.style.borderTopRightRadius = 10;
         skipBtn.style.borderBottomLeftRadius = 10; skipBtn.style.borderBottomRightRadius = 10;
         buttons.Add(skipBtn);
+        if (request.isWelcomeBasket) skipBtn.style.display = DisplayStyle.None; // tutorial request: no skipping
 
         Label skipLabel = new Label($"Skip  {skipCost}");
         skipLabel.style.fontSize = 18;
@@ -747,8 +749,8 @@ public class TownRequestsPopupUITK : MonoBehaviour
         if (itemId == "egg") return eggIcon;
         if (itemId.StartsWith("fish_")) return fishIcon;
 
-        if (cropDatabase != null && cropDatabase.startingCrops != null)
-            foreach (CropData crop in cropDatabase.startingCrops)
+        if (cropDatabase != null && cropDatabase.allCrops != null)
+            foreach (CropData crop in cropDatabase.allCrops)
                 if (crop != null && crop.cropName == itemId)
                     return crop.cropSprite != null ? crop.cropSprite : crop.harvestableSprite;
         return null;

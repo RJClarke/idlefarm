@@ -11,7 +11,7 @@
                 </ui:VisualElement>
                 <ui:Label name="error" text="" class="fnp-error" />
                 <ui:VisualElement name="button-row" class="fnp-button-row">
-                    <ui:Button name="dice-button" text="🎲" class="fnp-dice" />
+                    <ui:Button name="dice-button" text="Random" class="fnp-dice" />
                     <ui:Button name="save-button" text="Save" class="fnp-save" />
                 </ui:VisualElement>
             </ui:VisualElement>

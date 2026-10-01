@@ -17,6 +17,12 @@ public class TutorialStep
     public string eventId;                 // required when advance == GameEvent
     public Func<Rect?> getTargetScreenRect;
     public float spotlightPadding = 14f;   // screen px added around the target rect
+    /// <summary>Optional perceived dim for this step (0-1); null = the manager's default. How-to
+    /// tips over an open menu use a lighter dim so the menu they explain stays readable.</summary>
+    public float? dimOpacity;
+    /// <summary>Untargeted steps only: sit the card at the bottom of the screen instead of the
+    /// middle, so a how-to tip about an open menu doesn't cover the menu it's explaining.</summary>
+    public bool cardAtBottom;
 }
 
 /// <summary>

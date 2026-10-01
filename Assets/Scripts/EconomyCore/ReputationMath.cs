@@ -12,6 +12,11 @@ public static class ReputationMath
     /// <summary>Rep cost of the Nth lifetime point (1-based).</summary>
     public static int PointCost(int pointNumber) => BaseCost + CostPerPoint * Mathf.Max(1, pointNumber);
 
+    /// <summary>Rep that exactly completes the next Barn point — the Welcome basket's reward, so a
+    /// new player's first delivery always ends with a point to spend.</summary>
+    public static int WelcomeBasketReward(int barProgress, int pointsEarned) =>
+        Mathf.Max(1, PointCost(pointsEarned + 1) - Mathf.Max(0, barProgress));
+
     /// <summary>
     /// Applies a rep gain to the bar, awarding as many points as it covers. Extra progress
     /// beyond the last point carries forward as <paramref name="barAfter"/>.

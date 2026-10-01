@@ -1,9 +1,11 @@
 .inbox-root { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
 .inbox-backdrop { position: absolute; top:0; left:0; right:0; bottom:0;
-    background-color: rgba(0,0,0,0.6); }
+    background-color: rgba(0,0,0,0.8); }
 /* Shares the tan card + brown border chrome of the other modals (Wood Rack, Research),
    while keeping its own letter/scroll flavor. */
-.inbox-card { position: absolute; left: 40px; right: 40px; top: 300px; bottom: 300px;
+/* Sized to its content (capped) and anchored near the top, instead of fixed top/bottom
+   insets that stretched into a huge mostly-empty card on tall phones. */
+.inbox-card { position: absolute; left: 40px; right: 40px; top: 260px; min-height: 480px; max-height: 75%;
     background-color: rgb(179,154,110);
     border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px;
     border-left-color: rgb(90,55,20); border-right-color: rgb(90,55,20);
@@ -15,7 +17,7 @@
     -unity-text-align: middle-center; color: rgb(54,32,14); }
 .inbox-title-icon { width: 48px; height: 48px; margin-right: 10px;
     -unity-background-scale-mode: scale-to-fit;
-    background-image: url("project://database/Assets/Sprites/UI/Icons/Raven/Misc_ScrollGreen.png"); }
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Letter.png"); }
 
 /* Obvious back button: a labelled brown pill, not a faint glyph. */
 .inbox-back { width: auto; height: 56px; padding-left: 20px; padding-right: 22px;
@@ -30,9 +32,20 @@
     background-image: url("project://database/Assets/Sprites/UI/UI_Wood/UI_Wood_Cross_Medium.png"); }
 .inbox-close:hover { opacity: 0.85; }
 .inbox-list { flex-grow: 1; }
+/* A slim walnut scrollbar instead of Unity's default grey one with arrow buttons: still says
+   "there's more mail below", but in the card's own browns. */
+.inbox-list .unity-scroller--vertical { width: 10px; margin-left: 6px; border-width: 0;
+    background-color: rgba(0,0,0,0); }
+.inbox-list .unity-scroller__low-button,
+.inbox-list .unity-scroller__high-button { display: none; }
+.inbox-list .unity-scroller--vertical .unity-base-slider__tracker { border-width: 0; border-radius: 5px;
+    background-color: rgba(90,55,20,0.18); }
+.inbox-list .unity-scroller--vertical .unity-base-slider__dragger { border-width: 0; border-radius: 5px;
+    left: 0; right: 0; width: 10px; background-color: rgb(120,90,45); }
 .inbox-row { flex-direction: row; align-items: center; padding: 16px;
     background-color: rgb(255,250,238); border-radius: 14px; margin-bottom: 10px; }
-.inbox-row-unread { border-left-width: 6px; border-left-color: rgb(220,80,80); }
+/* Unread is shown by the row's red dot alone — no accent stripe. */
+.inbox-row-unread { }
 .inbox-row-text { flex-grow: 1; }
 .inbox-row-sender { font-size: 22px; color: rgb(120,100,80); }
 .inbox-row-subject { font-size: 28px; color: rgb(50,40,30); -unity-font-style: bold;
@@ -48,10 +61,9 @@
     margin-bottom: 10px; white-space: normal; }
 .inbox-body { font-size: 26px; color: rgb(60,50,40); white-space: normal; }
 
-/* Enclosed items — inset from the message so a list of rewards reads as separate from the text. */
-.inbox-items { margin-top: 18px; margin-left: 14px; padding: 12px 16px;
-    background-color: rgba(90,55,20,0.12); border-radius: 12px;
-    border-left-width: 4px; border-left-color: rgb(120,90,45); }
+/* Enclosed items — a soft tinted panel so the rewards read as separate from the letter text. */
+.inbox-items { margin-top: 18px; padding: 12px 16px;
+    background-color: rgba(90,55,20,0.12); border-radius: 12px; }
 .inbox-items-title { font-size: 20px; -unity-font-style: bold; color: rgb(90,68,38);
     margin-bottom: 8px; }
 .inbox-items-list { flex-direction: column; }
@@ -63,13 +75,16 @@
 .inbox-item-icon--compost { background-color: rgb(112,150,100); }
 .inbox-item-label { font-size: 26px; -unity-font-style: bold; color: rgb(54,32,14); }
 
-.inbox-claim { font-size: 30px; height: 80px; margin-top: 18px; border-radius: 16px;
+.inbox-claim { font-size: 30px; height: 80px; margin-top: 18px; border-radius: 16px; border-width: 0;
     background-color: rgb(230,180,60); color: rgb(70,48,12); -unity-font-style: bold; }
 .inbox-claim:hover { background-color: rgb(240,192,74); }
 /* Claimed: browned-out but fully readable (dark brown pill, cream text) — not a gray-on-white blur. */
 .inbox-claim--claimed { background-color: rgb(120,90,45); color: rgb(255,240,210); opacity: 1; }
 .inbox-claim--claimed:hover { background-color: rgb(120,90,45); }
-.inbox-cta { font-size: 30px; height: 80px; margin-top: 12px; border-radius: 16px;
-    background-color: rgb(110,160,210); color: white; -unity-font-style: bold; }
+/* Letter call-to-action: deep walnut pill with cream text, from the same browns as Back and the
+   claimed state (a shade darker so it still reads as the live action next to "Items Claimed"). */
+.inbox-cta { font-size: 30px; height: 80px; margin-top: 12px; border-radius: 16px; border-width: 0;
+    background-color: rgb(92,58,24); color: rgb(255,240,210); -unity-font-style: bold; }
+.inbox-cta:hover { background-color: rgb(112,73,32); }
 .inbox-empty { font-size: 26px; color: rgb(120,105,90); -unity-text-align: middle-center;
     margin-top: 40px; white-space: normal; }

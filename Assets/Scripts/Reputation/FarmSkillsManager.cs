@@ -18,6 +18,26 @@ public class FarmSkillsManager : MonoBehaviour
     [SerializeField] private float ranchingPerPoint = 0.03f;    // +3% egg value
     [SerializeField] private float processingPerPoint = 0.02f;  // +2% cook/smoke speed
 
+    [Header("Milestone perks (levels 5/10/15/20 grow one perk; 25 is a capstone)")]
+    [Tooltip("Chance added per 5/10/15/20 milestone for every chance-based growing perk (double harvest, free seed, double catch, double wood, double egg, double batch).")]
+    [SerializeField] private float milestoneChanceStep = 0.05f;
+    [Tooltip("Watering's growing perk: extra sprinkler reach per milestone (0.10 = 10% farther).")]
+    [SerializeField] private float sprinklerReachStep = 0.10f;
+    [Tooltip("Harvesting Lv 25: chance a harvest is golden.")]
+    [SerializeField] private float goldenCropChance = 0.02f;
+    [Tooltip("Harvesting Lv 25: money + coin multiplier on a golden harvest.")]
+    [SerializeField] private int goldenCropMultiplier = 10;
+    [Tooltip("Planting Lv 25: chance a newly planted seed skips straight to the sprout stage.")]
+    [SerializeField] private float instantSproutChance = 0.10f;
+    [Tooltip("Fishing Lv 25: multiplier on rare-fish (Bass, Pike) catch weights.")]
+    [SerializeField] private float rareFishMultiplier = 2f;
+    [Tooltip("Forestry Lv 25: tree regrow speed multiplier.")]
+    [SerializeField] private float treeRegrowMultiplier = 2f;
+    [Tooltip("Ranching Lv 25: dog movement speed multiplier.")]
+    [SerializeField] private float dogSpeedMultiplier = 1.5f;
+    [Tooltip("Processing Lv 25: extra cook/smoke speed on top of the per-level bonus.")]
+    [SerializeField] private float processingCapstoneSpeed = 0.25f;
+
     private static readonly int[] TierLevels = { 5, 10, 15, 20, 25 };
 
     private readonly FarmSkillsCore core = new FarmSkillsCore();
@@ -37,21 +57,82 @@ public class FarmSkillsManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public float GetBonus(FarmSkillTrack track)
+    /// <summary>The bonus a single level adds (e.g. 0.04 = +4%). Exposed so the Barn UI reads the
+    /// live tuning values instead of keeping a hand-copied duplicate.</summary>
+    public float GetPerPoint(FarmSkillTrack track) => track switch
     {
-        float perPoint = track switch
-        {
-            FarmSkillTrack.Harvesting => harvestingPerPoint,
-            FarmSkillTrack.Planting => plantingPerPoint,
-            FarmSkillTrack.Watering => wateringPerPoint,
-            FarmSkillTrack.Fishing => fishingPerPoint,
-            FarmSkillTrack.Forestry => forestryPerPoint,
-            FarmSkillTrack.Ranching => ranchingPerPoint,
-            FarmSkillTrack.Processing => processingPerPoint,
-            _ => 0f,
-        };
-        return core.GetLevel(track) * perPoint;
+        FarmSkillTrack.Harvesting => harvestingPerPoint,
+        FarmSkillTrack.Planting => plantingPerPoint,
+        FarmSkillTrack.Watering => wateringPerPoint,
+        FarmSkillTrack.Fishing => fishingPerPoint,
+        FarmSkillTrack.Forestry => forestryPerPoint,
+        FarmSkillTrack.Ranching => ranchingPerPoint,
+        FarmSkillTrack.Processing => processingPerPoint,
+        _ => 0f,
+    };
+
+    public float GetBonus(FarmSkillTrack track) => core.GetLevel(track) * GetPerPoint(track);
+
+    // ── Milestone perks ─────────────────────────────────────────────────
+    // Every track's 5/10/15/20 milestones grow one perk; level 25 adds a capstone. Watering's
+    // growing perk is a reach multiplier, the rest are chances. Gameplay reads these via the
+    // static helpers below so call sites stay one-liners and are null-safe without a manager.
+
+    public float MilestoneChanceStep => milestoneChanceStep;
+    public float SprinklerReachStep => sprinklerReachStep;
+    public float GoldenCropChanceValue => goldenCropChance;
+    public int GoldenCropMultiplierValue => goldenCropMultiplier;
+    public float InstantSproutChanceValue => instantSproutChance;
+    public float RareFishMultiplierValue => rareFishMultiplier;
+    public float TreeRegrowMultiplierValue => treeRegrowMultiplier;
+    public float DogSpeedMultiplierValue => dogSpeedMultiplier;
+    public float ProcessingCapstoneSpeedValue => processingCapstoneSpeed;
+
+    public bool HasCapstone(FarmSkillTrack track) => FarmSkillsCore.HasCapstone(core.GetLevel(track));
+
+    /// <summary>The track's growing-perk chance at its current level (0 before level 5).</summary>
+    public float MilestoneChance(FarmSkillTrack track)
+        => FarmSkillsCore.GrowingTiersReached(core.GetLevel(track)) * milestoneChanceStep;
+
+    /// <summary>One roll against the track's growing-perk chance. False when no manager exists.</summary>
+    public static bool RollMilestone(FarmSkillTrack track)
+    {
+        if (Instance == null) return false;
+        float chance = Instance.MilestoneChance(track);
+        return chance > 0f && UnityEngine.Random.value < chance;
     }
+
+    /// <summary>Growing-perk chance for a track, 0 without a manager (for stacking onto another chance).</summary>
+    public static float MilestoneChanceOf(FarmSkillTrack track)
+        => Instance != null ? Instance.MilestoneChance(track) : 0f;
+
+    /// <summary>Watering: sprinkler radius multiplier (1.0 before level 5, 1.4 at level 20+).</summary>
+    public static float SprinklerReachMultiplier
+        => Instance != null
+            ? 1f + FarmSkillsCore.GrowingTiersReached(Instance.core.GetLevel(FarmSkillTrack.Watering)) * Instance.sprinklerReachStep
+            : 1f;
+
+    public static bool Capstone(FarmSkillTrack track) => Instance != null && Instance.HasCapstone(track);
+
+    /// <summary>Harvesting Lv 25: 1 normally, the golden multiplier on a lucky roll.</summary>
+    public static int RollGoldenMultiplier()
+        => Capstone(FarmSkillTrack.Harvesting) && UnityEngine.Random.value < Instance.goldenCropChance
+            ? Mathf.Max(1, Instance.goldenCropMultiplier) : 1;
+
+    /// <summary>Planting Lv 25: true when a new seed should skip straight to sprout.</summary>
+    public static bool RollInstantSprout()
+        => Capstone(FarmSkillTrack.Planting) && UnityEngine.Random.value < Instance.instantSproutChance;
+
+    public static float RareFishMultiplier => Capstone(FarmSkillTrack.Fishing) ? Instance.rareFishMultiplier : 1f;
+    public static float TreeRegrowMultiplier => Capstone(FarmSkillTrack.Forestry) ? Mathf.Max(0.01f, Instance.treeRegrowMultiplier) : 1f;
+    public static float DogSpeedMultiplier => Capstone(FarmSkillTrack.Ranching) ? Instance.dogSpeedMultiplier : 1f;
+
+    /// <summary>Processing: full cook-speed multiplier — per-level bonus plus the Lv 25 capstone.</summary>
+    public static float ProcessingSpeedMultiplier
+        => Instance != null
+            ? 1f + Instance.GetBonus(FarmSkillTrack.Processing)
+                 + (Instance.HasCapstone(FarmSkillTrack.Processing) ? Instance.processingCapstoneSpeed : 0f)
+            : 1f;
 
     public bool TryLevelUp(FarmSkillTrack track)
     {

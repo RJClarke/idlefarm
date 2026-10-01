@@ -11,6 +11,15 @@ public enum FarmSkillTrack { Harvesting, Planting, Watering, Fishing, Forestry, 
 public class FarmSkillsCore
 {
     public const int MaxLevel = 25;
+    /// <summary>Milestones sit every 5 levels: 5/10/15/20 grow one perk, 25 is the capstone.</summary>
+    public const int TierInterval = 5;
+    public const int GrowingTierCount = 4;
+
+    /// <summary>How many of the 5/10/15/20 milestones a track at <paramref name="level"/> has reached (0-4).</summary>
+    public static int GrowingTiersReached(int level) => Mathf.Clamp(level / TierInterval, 0, GrowingTierCount);
+
+    /// <summary>True once a track is maxed and its level-25 capstone perk is active.</summary>
+    public static bool HasCapstone(int level) => level >= MaxLevel;
     private static readonly int TrackCount = System.Enum.GetValues(typeof(FarmSkillTrack)).Length;
 
     private readonly int[] levels = new int[TrackCount];

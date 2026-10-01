@@ -28,6 +28,9 @@ public class TutorialManager : MonoBehaviour
     /// <summary>True while a sequence is showing. World-input pollers should early-out on this.</summary>
     public static bool IsActive => Instance != null && Instance.activeSequence != null;
 
+    /// <summary>Id of the running sequence, or null.</summary>
+    public static string ActiveId => Instance != null && Instance.activeSequence != null ? Instance.activeSequence.id : null;
+
     /// <summary>Fired with the sequence id when a sequence finishes its last step.</summary>
     public static event Action<string> OnSequenceCompleted;
 
@@ -178,6 +181,15 @@ public class TutorialManager : MonoBehaviour
     /// <summary>Has this tutorial already been completed? (For callers that want to skip setup.)</summary>
     public static bool IsCompleted(string id) => Instance != null && Instance.ledger.IsCompleted(id);
 
+    /// <summary>Dev tools: dismiss anything showing and forget every completion so all tutorials replay.</summary>
+    public static void DevResetAll()
+    {
+        if (Instance == null) return;
+        Instance.EndActive(markCompleted: false);
+        Instance.ledger.Clear();
+        if (SaveManager.Instance != null) SaveManager.Instance.SaveGame();
+    }
+
     // Save wiring (SaveManager): same shape as NewContentTracker's seenContentIds.
     public string[] GetCompletedForSave() => ledger.GetForSave();
     public void LoadState(string[] completedIds) => ledger.LoadState(completedIds);
@@ -280,7 +292,7 @@ public class TutorialManager : MonoBehaviour
     private void BuildStepElements(TutorialStep step)
     {
         root.Clear();
-        Color dim = new Color(0f, 0f, 0f, dimOpacity);
+        Color dim = new Color(0f, 0f, 0f, PerceivedDimAlpha(step.dimOpacity ?? dimOpacity));
 
         stripTop = MakeStrip(dim);
         stripBottom = MakeStrip(dim);
@@ -352,6 +364,19 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The project renders in Linear color space, so UI alpha blends in linear light: a 70% black
+    /// overlay only darkens the screen by ~40% as the eye sees it (measured on the farm grass).
+    /// Convert the designer-facing "how much darker it should look" into the linear alpha that
+    /// actually produces it: visible brightness f = 1 - perceived, needs (1 - a) = f^2.2.
+    /// </summary>
+    private static float PerceivedDimAlpha(float perceived)
+    {
+        if (QualitySettings.activeColorSpace != ColorSpace.Linear) return perceived;
+        float remaining = Mathf.Clamp01(1f - perceived);
+        return 1f - Mathf.Pow(remaining, 2.2f);
+    }
+
     private VisualElement MakeStrip(Color dim)
     {
         var strip = new VisualElement();
@@ -377,7 +402,10 @@ public class TutorialManager : MonoBehaviour
             card.style.width = w;
             card.style.left = (panelW - w) / 2f;
             card.style.top = StyleKeyword.Auto;
-            card.style.bottom = panelH * 0.45f;
+            // Menu tips sit just above the bottom edge (clear of a phone's home-indicator inset),
+            // below the popup, rather than across the middle of it.
+            float safeBottom = Screen.height > 0 ? Screen.safeArea.yMin / Screen.height * panelH : 0f;
+            card.style.bottom = step.cardAtBottom ? safeBottom + panelH * 0.025f : panelH * 0.45f;
             return;
         }
 
@@ -395,8 +423,10 @@ public class TutorialManager : MonoBehaviour
         frame.style.display = DisplayStyle.Flex;
         SetRect(frame, hole.xMin, hole.yMin, hole.width, hole.height);
 
-        // Card above or below the hole, whichever half has more room; arrow points at the hole.
-        bool below = hole.center.y < panelH * 0.5f;
+        // Card above or below the hole, whichever side has more room; arrow points at the hole.
+        float spaceAbove = hole.yMin - HOLE_GAP;
+        float spaceBelow = panelH - hole.yMax - HOLE_GAP;
+        bool below = spaceBelow >= spaceAbove;
         float cardW = panelW * TOOLTIP_WIDTH_FRAC;
         float cardX = Mathf.Clamp(hole.center.x - cardW / 2f, panelW * 0.02f, panelW * 0.98f - cardW);
         float arrowX = Mathf.Clamp(hole.center.x - ARROW_HALF, cardX + 30f, cardX + cardW - 30f - ARROW_HALF * 2f);
@@ -405,6 +435,19 @@ public class TutorialManager : MonoBehaviour
         card.style.left = cardX;
         arrow.style.display = DisplayStyle.Flex;
         arrow.style.left = arrowX;
+
+        // A big spotlight (a whole popup) can leave no room either side — pin the card to the top
+        // edge over the target instead of pushing it off-screen. The card isn't pickable, so taps
+        // still reach the spotlighted control underneath it.
+        float cardH = card.resolvedStyle.height;
+        if (float.IsNaN(cardH) || cardH <= 0f) cardH = 240f;
+        if (Mathf.Max(spaceAbove, spaceBelow) < cardH + panelH * 0.02f)
+        {
+            arrow.style.display = DisplayStyle.None;
+            card.style.bottom = StyleKeyword.Auto;
+            card.style.top = panelH * 0.03f;
+            return;
+        }
 
         if (below)
         {

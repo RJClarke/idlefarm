@@ -57,6 +57,39 @@ public class FarmSkillsCoreTests
         Assert.AreEqual(3, core2.TotalLevels);
     }
 
+    [TestCase(0, 0)]
+    [TestCase(4, 0)]
+    [TestCase(5, 1)]
+    [TestCase(9, 1)]
+    [TestCase(10, 2)]
+    [TestCase(15, 3)]
+    [TestCase(20, 4)]
+    [TestCase(24, 4)]
+    [TestCase(25, 4)] // 25 is the capstone, not a fifth growing step
+    public void GrowingTiersReached_CountsMilestones5Through20(int level, int expected)
+    {
+        Assert.AreEqual(expected, FarmSkillsCore.GrowingTiersReached(level));
+    }
+
+    [Test]
+    public void HasCapstone_OnlyAtMaxLevel()
+    {
+        Assert.IsFalse(FarmSkillsCore.HasCapstone(24));
+        Assert.IsTrue(FarmSkillsCore.HasCapstone(25));
+    }
+
+    [Test]
+    public void ScaleRareWeights_MultipliesAllButFirstTier_WithoutMutatingInput()
+    {
+        float[] weights = { 98f, 1.9f, 0.1f };
+        float[] scaled = FishingMath.ScaleRareWeights(weights, 2f);
+        Assert.AreEqual(98f, scaled[0], 1e-5f);
+        Assert.AreEqual(3.8f, scaled[1], 1e-5f);
+        Assert.AreEqual(0.2f, scaled[2], 1e-5f);
+        Assert.AreEqual(1.9f, weights[1], 1e-5f);
+        Assert.IsNull(FishingMath.ScaleRareWeights(null, 2f));
+    }
+
     [Test]
     public void Import_NullOrShortArray_IsSafe()
     {

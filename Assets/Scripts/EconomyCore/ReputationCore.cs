@@ -21,6 +21,8 @@ public class DeliveryRequest
     public int repReward;
     public string requesterName;
     public string flavorText;
+    /// <summary>A new player's first, fixed request (8 Radish from the Mayor). Pinned; can't be skipped.</summary>
+    public bool isWelcomeBasket;
 }
 
 /// <summary>

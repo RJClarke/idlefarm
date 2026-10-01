@@ -71,7 +71,12 @@ public class InboxPopupUITK : MonoBehaviour
     }
 
     public void Open() { isOpen = true; if (popupRoot != null) popupRoot.style.display = DisplayStyle.Flex; ShowList(); }
-    public void Close() { isOpen = false; if (popupRoot != null) popupRoot.style.display = DisplayStyle.None; }
+    public void Close()
+    {
+        isOpen = false;
+        if (popupRoot != null) popupRoot.style.display = DisplayStyle.None;
+        OnboardingTutorials.OnInboxClosed();
+    }
 
     private void OnInboxChanged()
     {
@@ -132,7 +137,6 @@ public class InboxPopupUITK : MonoBehaviour
         if (def == null) return;
 
         currentLetterId = letterId;
-        mgr.MarkRead(letterId);
 
         if (backButton != null) backButton.style.display = DisplayStyle.Flex;
         if (headerTitle != null) headerTitle.text = "";
@@ -172,6 +176,11 @@ public class InboxPopupUITK : MonoBehaviour
             ctaButton.style.display = def.ctaKind != CtaKind.None ? DisplayStyle.Flex : DisplayStyle.None;
             ctaButton.text = CtaLabel(def.ctaKind);
         }
+
+        // Mark read LAST: it fires OnInboxChanged, and while the detail view was still hidden that
+        // handler rebuilt the list — which clears currentLetterId, so on a letter's first open
+        // Claim and the call-to-action silently did nothing until it was reopened.
+        mgr.MarkRead(letterId);
     }
 
     // Renders the letter's reward(s) into the inset "Enclosed" list. One reward today, but built as a
@@ -221,14 +230,29 @@ public class InboxPopupUITK : MonoBehaviour
     private void OnCta()
     {
         var def = InboxManager.Instance?.GetDef(currentLetterId);
+        Debug.Log($"[Inbox] CTA pressed on '{currentLetterId}' -> {(def != null ? def.ctaKind.ToString() : "no letter")}");
         if (def == null) return;
         switch (def.ctaKind)
         {
             case CtaKind.OpenEquipment: EquipmentPopupUITK.Instance?.Open(); Close(); break;
             case CtaKind.OpenResearch:  ResearchPopupUITK.Instance?.Open();  Close(); break;
             case CtaKind.OpenShop:      EquipmentPopupUITK.Instance?.Open(); Close(); break;
+            case CtaKind.OpenFarmUpgrades: Close(); FarmPopupUITK.Instance?.Open(); break;
+            case CtaKind.OpenCarpenter:    Close(); PanTo(CameraPanController.Location.Market); CarpenterPopupUITK.Instance?.Open(); break;
+            case CtaKind.OpenBarn:         Close(); BarnPopupUITK.Instance?.Open(); break;
+            case CtaKind.OpenAnimals:      Close(); AnimalPopupUITK.Instance?.Open(); break;
+            case CtaKind.OpenFieldPicker:  Close(); FindFirstObjectByType<RunUI>()?.OpenFieldPicker(); break;
+            case CtaKind.OpenMarket:       Close(); PanTo(CameraPanController.Location.Market); break;
+            case CtaKind.OpenTownRequests: Close(); PanTo(CameraPanController.Location.Market); TownRequestsPopupUITK.Instance?.Open(); break;
+            case CtaKind.OpenPlantsShop:   Close(); PanTo(CameraPanController.Location.Market); ShopPopupUITK.TryOpen(ShopPopupUITK.Section.Plants); break;
             default: Debug.Log($"[Inbox] CTA {def.ctaKind} not wired."); break;
         }
+    }
+
+    private static void PanTo(CameraPanController.Location location)
+    {
+        var pan = FindFirstObjectByType<CameraPanController>();
+        if (pan != null && pan.CurrentLocation != location) pan.PanTo(location);
     }
 
     private static string CtaLabel(CtaKind kind)
@@ -238,6 +262,14 @@ public class InboxPopupUITK : MonoBehaviour
             case CtaKind.OpenEquipment: return "Go to Equipment";
             case CtaKind.OpenResearch:  return "Go to Research";
             case CtaKind.OpenShop:      return "Go to Shop";
+            case CtaKind.OpenFarmUpgrades: return "See Farm Upgrades";
+            case CtaKind.OpenCarpenter:    return "Visit Harry's Shop";
+            case CtaKind.OpenBarn:         return "Open the Barn";
+            case CtaKind.OpenAnimals:      return "See Animals";
+            case CtaKind.OpenFieldPicker:  return "Choose Seeds";
+            case CtaKind.OpenMarket:       return "Go to Market";
+            case CtaKind.OpenTownRequests: return "See Requests";
+            case CtaKind.OpenPlantsShop:   return "Visit Hazel's Stall";
             default: return "Go";
         }
     }

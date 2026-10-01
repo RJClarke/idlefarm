@@ -18,6 +18,7 @@ public class ReputationManager : MonoBehaviour
 
     public event Action OnChanged;
     public event Action<int> OnPointsAwarded;
+    public event Action OnRequestFulfilled; // one Town Request delivered
 
     public int BarProgress => core.BarProgress;
     public int PointsEarned => core.PointsEarned;
@@ -41,8 +42,31 @@ public class ReputationManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public const string BoardIntroLetterFlag = "letter:town_board_intro";
+    public const string WelcomeBasketFlag = "first_request_done";
+
+    // A new player's first request after the board letter: 8 Radish (the one crop every farm owns),
+    // from the Mayor, worth exactly one Barn point. Pinned to slot 0 until delivered; can't be skipped.
+    private void EnsureWelcomeBasket()
+    {
+        var nm = NarrativeManager.Instance;
+        if (nm == null || !nm.HasFired(BoardIntroLetterFlag) || nm.HasFired(WelcomeBasketFlag)) return;
+        DeliveryRequest current = core.GetSlotRequest(0);
+        if (current != null && current.isWelcomeBasket) return;
+        core.SetSlotRequest(0, new DeliveryRequest
+        {
+            items = new[] { new DeliveryLineItem { itemId = "Radish", count = 8 } },
+            repReward = ReputationMath.WelcomeBasketReward(core.BarProgress, core.PointsEarned),
+            requesterName = "Mayor Bramble",
+            flavorText = "A welcome basket for the new families in town. Radishes, if you can spare them!",
+            isWelcomeBasket = true,
+        });
+        OnChanged?.Invoke();
+    }
+
     private void Update()
     {
+        EnsureWelcomeBasket();
         long now = DateTime.UtcNow.Ticks;
         for (int slot = 0; slot < 3; slot++)
         {
@@ -58,9 +82,11 @@ public class ReputationManager : MonoBehaviour
         if (!DeliveryService.TryFulfill(request)) return false;
 
         core.OnFulfilled(slot, DateTime.UtcNow.Ticks, CooldownTicks);
+        if (request.isWelcomeBasket) NarrativeManager.Instance?.MarkFired(WelcomeBasketFlag);
         int awarded = core.AddRep(request.repReward);
         Debug.Log($"[Reputation] Fulfilled slot {slot} (+{request.repReward} rep)");
         OnChanged?.Invoke();
+        OnRequestFulfilled?.Invoke();
         if (awarded > 0) OnPointsAwarded?.Invoke(awarded);
         return true;
     }
@@ -83,6 +109,7 @@ public class ReputationManager : MonoBehaviour
     {
         DeliveryRequest request = core.GetSlotRequest(slot);
         if (request == null) return false;
+        if (request.isWelcomeBasket) return false; // the tutorial request can't be skipped
         int cost = core.NextSkipCost();
         if (CurrencyManager.Instance == null || !CurrencyManager.Instance.SpendGems(cost)) return false;
 
@@ -165,12 +192,11 @@ public class ReputationManager : MonoBehaviour
         return IsCropUnlocked(id);
     }
 
+    // Requests only ask for crops the farm can actually grow.
     private bool IsCropUnlocked(string cropName)
     {
-        if (cropDatabase == null || cropDatabase.startingCrops == null) return false;
-        foreach (CropData crop in cropDatabase.startingCrops)
-            if (crop != null && crop.cropName == cropName) return true;
-        return false;
+        CropData crop = cropDatabase != null ? cropDatabase.GetCropByName(cropName) : null;
+        return crop != null && CropOwnership.IsOwned(crop);
     }
 
     private void RollFromTemplates(int slot)
@@ -214,7 +240,7 @@ public class ReputationManager : MonoBehaviour
                     break;
                 case RequestItemKind.AnyUnlockedCrop:
                     if (cropDatabase != null)
-                        foreach (CropData crop in cropDatabase.startingCrops)
+                        foreach (CropData crop in CropOwnership.Owned(cropDatabase))
                             if (crop != null)
                                 options.Add(new RequestItemOption { itemId = crop.cropName, minCount = t.minCount, maxCount = t.maxCount, weight = t.weight });
                     break;

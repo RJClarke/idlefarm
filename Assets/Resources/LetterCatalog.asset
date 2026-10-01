@@ -16,27 +16,739 @@ MonoBehaviour:
   - id: welcome
     triggerFeatureFlag: 
     triggerAnimalId: 
+    triggerEvent: 
+    newPlayersOnly: 0
     senderName: Mayor Bramble
     senderPortrait: {fileID: 0}
     subject: Welcome to {farmName}!
-    body: "Dear {farmName},\n\nWord travels fast \u2014 a brand-new farm in the valley!
-      We're a friendly bunch 'round here, so check your mailbox often; folks love
-      to write. Here's a little something to help you get started.\n\n\u2014 Mayor
-      Bramble"
+    body: 'Dear {farmName},
+
+
+      Welcome to the valley! This old farm has sat
+      quiet for years, and we''re all so glad someone is bringing it back to life.
+
+
+      I''ve
+      left a sack of radish seeds in your shed. They''re quick to grow and hard to
+      get wrong - just the thing for a first harvest. Choose a field, and your helpers
+      will plant, water and harvest for you.
+
+
+      Every harvest earns Money to
+      buy more seeds, plus Coins you get to keep. Hazel at the seed stall in the
+      Market has more kinds when you''re ready - here''s a little something toward
+      your first packet.
+
+
+      - Mayor Bramble'
     rewardKind: 1
-    rewardAmount: 100
+    rewardAmount: 50
     ctaKind: 0
     ctaArg: 
   - id: compost_bay_unlock
     triggerFeatureFlag: composting_basics
     triggerAnimalId: 
+    triggerEvent: 
+    newPlayersOnly: 0
     senderName: Pippa the Tinker
     senderPortrait: {fileID: 0}
     subject: You can build a Compost Bay!
-    body: "Hey {farmName}!\n\nHeard you've been reading up on composting. Good news
-      \u2014 I can put together a Compost Bay for you now. Swing by the shop and
-      grab one; your soil will thank you.\n\n\u2014 Pippa"
+    body: 'Hey {farmName}!
+
+
+      Heard you''ve been reading up on composting. Good
+      news - I can put together a Compost Bay for you now. Swing by the shop and
+      grab one; your soil will thank you.
+
+
+      Oh! And ask Hazel about corn. Those
+      big stalks make twice the compost when a plant doesn''t make it.
+
+
+      -
+      Pippa'
     rewardKind: 0
     rewardAmount: 0
     ctaKind: 1
     ctaArg: 
+  - id: first_run_done
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: run_ended:1
+    newPlayersOnly: 1
+    senderName: Mayor Bramble
+    senderPortrait: {fileID: 0}
+    subject: Your first harvest!
+    body: 'Dear {farmName},
+
+
+      What a sight - crops growing on that old farm
+      again! The whole town is talking.
+
+
+      Those Coins you earned are yours
+      to keep. Spend them on farm upgrades and your next run will go even further.
+      If you''re not sure where to start, a bigger field is never a bad idea.
+
+
+      -
+      Mayor Bramble'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 4
+    ctaArg: 
+  - id: axe_offer
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: run_ended:2
+    newPlayersOnly: 1
+    senderName: Harry the Carpenter
+    senderPortrait: {fileID: 0}
+    subject: Those trees won't chop themselves
+    body: 'Howdy {farmName},
+
+
+      Harry here, the carpenter down at the market.
+      Noticed the woods behind your place are getting mighty overgrown. That timber''s
+      yours for the taking!
+
+
+      Come see me and I''ll set you up with an axe.
+      Wood sells at the rack, and a good builder always needs more of it.
+
+
+      -
+      Harry'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 5
+    ctaArg: 
+  - id: first_tree
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: tree_felled
+    newPlayersOnly: 1
+    senderName: Harry the Carpenter
+    senderPortrait: {fileID: 0}
+    subject: Timber!
+    body: '{farmName},
+
+
+      Heard that one fall from here! Nice swing.
+
+
+      Your
+      wood stacks up on the rack by the woods. Sell some for Coins, but hang on to
+      a pile, too. Before long you''ll want it for fuel, and I''ll have buildings
+      to put up for you.
+
+
+      - Harry'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 0
+    ctaArg: 
+  - id: pole_offer
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: run_ended:3|axe_bought
+    newPlayersOnly: 1
+    senderName: Old Finch
+    senderPortrait: {fileID: 0}
+    subject: The fish are biting
+    body: 'Well now, {farmName}.
+
+
+      That lake past your farm is full of perch,
+      and nobody''s cast a line in it for years. Shame, that.
+
+
+      Harry keeps
+      a fishing pole or two in his shop. Get yourself one and come down to the water.
+      Patience is the whole trick of it.
+
+
+      - Old Finch'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 5
+    ctaArg: 
+  - id: first_fish
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: fish_caught
+    newPlayersOnly: 1
+    senderName: Old Finch
+    senderPortrait: {fileID: 0}
+    subject: Your first catch
+    body: 'Ha! Knew you had it in you, {farmName}.
+
+
+      Here''s something an old
+      fisherman will tell you for free: watch for the whirlpools. That''s where the
+      fish gather, and a line cast there gets a bite much quicker.
+
+
+      - Old
+      Finch'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 0
+    ctaArg: 
+  - id: cannery_unlock
+    triggerFeatureFlag: cannery_unlocked
+    triggerAnimalId: 
+    triggerEvent: 
+    newPlayersOnly: 0
+    senderName: Marta
+    senderPortrait: {fileID: 0}
+    subject: Jam season!
+    body: 'Hello {farmName}!
+
+
+      Marta here, from the jam stall. Word is you''ve
+      been learning to preserve, and I couldn''t be happier!
+
+
+      Have Harry build
+      you a Cannery. Your crops can go into jars instead of being sold, and a good
+      jar is worth far more than the fruit it came from.
+
+
+      Hazel''s got strawberry
+      seeds in now, too - they make the quickest jam there is!
+
+
+      Save me a
+      jar of strawberry?
+
+
+      - Marta'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 5
+    ctaArg: 
+  - id: smokehouse_unlock
+    triggerFeatureFlag: smokehouse_unlocked
+    triggerAnimalId: 
+    triggerEvent: 
+    newPlayersOnly: 0
+    senderName: Old Finch
+    senderPortrait: {fileID: 0}
+    subject: A proper smokehouse
+    body: '{farmName},
+
+
+      So you''ve learned the old smoking ways. Good. Raw
+      fish sells, but smoked fish? That''s worth several times as much.
+
+
+      Harry
+      can build you a Smokehouse near the lake. Keep the fire fed with wood and the
+      fish will do the rest.
+
+
+      - Old Finch'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 5
+    ctaArg: 
+  - id: cannery_built
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: built:building_cannery_built
+    newPlayersOnly: 0
+    senderName: Harry the Carpenter
+    senderPortrait: {fileID: 0}
+    subject: Your Cannery is ready
+    body: '{farmName},
+
+
+      All built, and sturdy as they come! Load your Cannery
+      up with crops, then keep the firebox stocked with wood.
+
+
+      If the fire
+      goes out, nothing spoils. The jars just wait for you.
+
+
+      - Harry'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 0
+    ctaArg: 
+  - id: smokehouse_built
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: built:building_smokehouse_built
+    newPlayersOnly: 0
+    senderName: Harry the Carpenter
+    senderPortrait: {fileID: 0}
+    subject: Your Smokehouse is ready
+    body: '{farmName},
+
+
+      Smokehouse is up! Old Finch already came by to inspect
+      the chimney.
+
+
+      Put raw fish in the smoker and keep the fire fed with
+      wood. If it burns out, the fish just wait.
+
+
+      - Harry'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 0
+    ctaArg: 
+  - id: first_request
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: town_request_done
+    newPlayersOnly: 1
+    senderName: Mayor Bramble
+    senderPortrait: {fileID: 0}
+    subject: The town is grateful
+    body: 'Dear {farmName},
+
+
+      Word gets around fast in a town this size, and
+      folks are singing your praises! Every request you fill earns you Reputation.
+
+
+      Fill
+      the Reputation bar and you''ll earn a point to spend at your Barn, making your
+      whole farm better at what it does.
+
+
+      - Mayor Bramble'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 6
+    ctaArg: 
+  - id: first_animal
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: animal_unlocked
+    newPlayersOnly: 1
+    senderName: Mayor Bramble
+    senderPortrait: {fileID: 0}
+    subject: A new friend on the farm
+    body: 'Dear {farmName},
+
+
+      I hear you''ve got some company out there! Animals
+      do more than keep you company - each one changes how your farm runs.
+
+
+      Open
+      your animals menu to put your new friend to work.
+
+
+      - Mayor Bramble'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 7
+    ctaArg: 
+  - id: field_two
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: upgrade:zone_unlock_2
+    newPlayersOnly: 1
+    senderName: Mayor Bramble
+    senderPortrait: {fileID: 0}
+    subject: More room to grow
+    body: 'Dear {farmName},
+
+
+      A second field! You''re turning that old place
+      into a real farm.
+
+
+      Don''t forget to pick seeds for it before your next
+      run - an empty field grows nothing.
+
+
+      And a little secret from someone
+      who''s watched plenty of farms grow: a helper can only be in one place at a
+      time. If your new field is slow to get going, a second pair of hands works
+      wonders. A quicker helper or a sprinkler helps too - less time hauling water
+      means more time planting!
+
+
+      - Mayor Bramble'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 8
+    ctaArg: 
+  - id: long_run_1h
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: run_survived:1h
+    newPlayersOnly: 1
+    senderName: Mayor Bramble
+    senderPortrait: {fileID: 0}
+    subject: The talk of the valley
+    body: 'Dear {farmName},
+
+
+      A whole hour of harvests without a break! Folks
+      in town can hardly believe it.
+
+
+      Please accept this small token from
+      all of us. Keep it up!
+
+
+      - Mayor Bramble'
+    rewardKind: 2
+    rewardAmount: 25
+    ctaKind: 0
+    ctaArg: 
+  - id: long_run_3h
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: run_survived:3h
+    newPlayersOnly: 1
+    senderName: Mayor Bramble
+    senderPortrait: {fileID: 0}
+    subject: A farm to be proud of
+    body: 'Dear {farmName},
+
+
+      Three whole hours! Travelers are stopping in
+      town just to ask about your farm.
+
+
+      The council voted, and this gift
+      is from all of us. Well earned.
+
+
+      - Mayor Bramble'
+    rewardKind: 2
+    rewardAmount: 50
+    ctaKind: 0
+    ctaArg: 
+  - id: seed_stall_intro
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: run_ended:1
+    newPlayersOnly: 1
+    senderName: Hazel
+    senderPortrait: {fileID: 0}
+    subject: Fresh seeds at my stall
+    body: 'Hi {farmName}!
+
+
+      Hazel here - I run the seed stall at the Market.
+      Saw your radishes come up. Lovely work!
+
+
+      When you''re ready to try something
+      new, come see me. Carrots are next to nothing, and they sell for nearly twice
+      as much.
+
+
+      Once you buy a packet, that crop is yours to plant every run
+      after.
+
+
+      - Hazel'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 11
+    ctaArg: 
+  - id: regrow_bought
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: seed_bought:regrow
+    newPlayersOnly: 1
+    senderName: Hazel
+    senderPortrait: {fileID: 0}
+    subject: These ones keep giving
+    body: 'Hi {farmName}!
+
+
+      Good choice! That one''s a regrower. Pick it, and
+      as long as the plant survives, it grows back and gives you another harvest
+      - no new seed needed.
+
+
+      Keep it watered and keep the pests off, and it''ll
+      pay for itself many times over.
+
+
+      - Hazel'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 0
+    ctaArg: 
+  - id: town_board_intro
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: run_ended:4
+    newPlayersOnly: 1
+    senderName: Mayor Bramble
+    senderPortrait: {fileID: 0}
+    subject: The town could use a hand
+    body: 'Dear {farmName},
+
+
+      Word''s getting around about your farm! A few
+      of us in town could use a hand now and then, so we post what we need on the
+      community board by the Market.
+
+
+      Help out, and folks won''t forget it.
+      Every delivery earns you Reputation, and a good name in this valley opens doors
+      - your Barn will show you how.
+
+
+      I''ve pinned the first request myself.
+
+
+      -
+      Mayor Bramble'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 10
+    ctaArg: 
+  - id: extra_packets
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: upgrade:zone_unlock_2
+    newPlayersOnly: 1
+    senderName: Hazel
+    senderPortrait: {fileID: 0}
+    subject: One crop, two fields?
+    body: 'Hi {farmName}!
+
+
+      A second field - congratulations! You can plant
+      a different crop in each field, or double down on one.
+
+
+      Every packet
+      you own lets a crop grow in one field. Want corn in both fields to pile up
+      compost, or radishes everywhere to fill a big order? Pick up a second packet
+      at my stall.
+
+
+      Mixing crops spreads your luck - deer and crows each have
+      their favorites!
+
+
+      - Hazel'
+    rewardKind: 0
+    rewardAmount: 0
+    ctaKind: 11
+    ctaArg: 
+  cast:
+  - id: mayor
+    displayName: Mayor Bramble
+    role: Mayor of the valley town, and the player's first friend.
+    voice: Warm, proud, a touch formal. Speaks for the whole town and celebrates
+      milestones, sometimes with a small gift. Opens "Dear {farmName}," and signs
+      "- Mayor Bramble".
+    portrait: {fileID: 0}
+  - id: pippa
+    displayName: Pippa the Tinker
+    role: Inventor who builds gadgets for farms (Compost Bay, equipment).
+    voice: Excitable and quick, loves a clever contraption. Opens "Hey {farmName}!"
+      and signs "- Pippa".
+    portrait: {fileID: 0}
+  - id: harry
+    displayName: Harry the Carpenter
+    role: 'Runs the carpenter''s shop at the market: tools (axe, fishing pole) and
+      buildings.'
+    voice: Friendly, plainspoken tradesman with a folksy streak ("Howdy", "mighty").
+      Practical advice about wood and building. Signs "- Harry".
+    portrait: {fileID: 0}
+  - id: finch
+    displayName: Old Finch
+    role: Retired fisherman who knows every inch of the lake. Also posts Town Requests.
+    voice: Slow, dry, few words; fond of the lake and of patience. Opens "Well now,"
+      or just the farm name. Signs "- Old Finch".
+    portrait: {fileID: 0}
+  - id: marta
+    displayName: Marta
+    role: Runs the jam stall; the town's preserves expert. Also posts Town Requests.
+    voice: Cheerful, chatty and food-obsessed; always angling for a jar. Opens "Hello
+      {farmName}!" and signs "- Marta".
+    portrait: {fileID: 0}
+  - id: pip
+    displayName: Pip
+    role: Kid with a picky pet rabbit. Posts Town Requests (no mail yet).
+    voice: Eager and a little dramatic about the rabbit.
+    portrait: {fileID: 0}
+  - id: hazel
+    displayName: Hazel
+    role: Runs the seed stall at the Market. Sells every crop's seed packet.
+    voice: Warm, practical, loves a bargain and a good tip about what grows well.
+      Opens "Hi {farmName}!" and signs "- Hazel".
+    portrait: {fileID: 0}
+  tips:
+  - id: onboarding_mailbox
+    text: Mail arrives here. Tap to read your welcome letter from the Mayor.
+    when: 'First session 1/5: right after naming the farm (spotlights the mailbox)'
+  - id: onboarding_field
+    text: The Mayor's seeds are waiting in your shed. Tap here to choose what to
+      plant.
+    when: 'First session 2/5: closing the mailbox after the welcome letter (spotlights
+      Field)'
+  - id: onboarding_pick_seeds
+    text: Tap a seed to plant it in your field, then tap Save.
+    when: 'First session 3/5: seed picker open (spotlights the whole picker)'
+  - id: onboarding_start_run
+    text: Your helpers will plant, water and harvest for you. Tap Start Run and watch
+      your farm grow!
+    when: 'First session 4/5: after saving seeds (spotlights Start Run)'
+  - id: onboarding_money_note
+    text: 'Each harvest earns Money to buy more seeds during this run.
+
+
+      Coins
+      are yours to keep, even after the run ends. Spend them to grow your farm!'
+    when: 'First session 5/5: the first run starts'
+  - id: tip_out_of_money
+    text: You're out of Money for seeds! Every harvest earns more, but seed bags
+      cost more the longer a run goes. When you can't buy seeds and nothing is growing,
+      the run ends.
+    when: 'Any run: first time a helper can''t afford a seed bag (points at the seed
+      counter)'
+  - id: tip_farm_upgrades
+    text: Spend your Coins here to make every run better. A bigger field is a great
+      first buy!
+    when: First time the Farm upgrades menu opens
+  - id: tip_quests
+    text: Finish daily quests to earn Gems. New quests arrive every day.
+    when: First time the Quests menu opens
+  - id: tip_daily_rewards
+    text: Come back every day for a gift. Collect every day of the week for a bonus!
+    when: First time the daily rewards calendar opens
+  - id: tip_market
+    text: Welcome to the market! Look around - shops here sell seeds, tools and buildings.
+      Check the notice board for townsfolk who need a hand.
+    when: First arrival at the Market
+  - id: tip_woods_no_axe
+    text: These trees are yours to chop, but you'll need an axe first. Harry the
+      Carpenter sells one at the market.
+    when: First arrival at the Woods without an axe
+  - id: tip_woods
+    text: Tap a tree to swing your axe. Each chop knocks loose some wood, and chopped
+      trees grow back over time.
+    when: First arrival at the Woods with an axe
+  - id: tip_wood_rack
+    text: Your wood piles up here. Sell it for Coins, or save it to fuel your buildings
+      later.
+    when: First time the Wood Rack opens
+  - id: tip_lake
+    text: Press and hold to aim your cast, then let go to throw. When a fish bites,
+      tap or hold to reel it in. Whirlpools hold extra fish!
+    when: First arrival at the Lake with a fishing pole
+  - id: tip_first_catch
+    text: Nice catch! Fish go to your pantry. Sell them raw, or smoke them in a Smokehouse
+      for much more.
+    when: First fish caught
+  - id: tip_smokehouse
+    text: Load raw fish into the smoker, then keep the fire burning with wood. If
+      the fire goes out, nothing spoils - smoking just pauses.
+    when: First time the Smokehouse opens
+  - id: tip_cannery
+    text: During a run, some harvested crops go into your jars instead of being sold.
+      Keep the firebox full of wood and they'll become preserves worth far more.
+    when: First time the Cannery opens
+  - id: tip_compost
+    text: Your Compost Bay turned a lost crop into compost! Spend compost to speed
+      up research.
+    when: First compost earned
+  - id: tip_research
+    text: Pick a topic to study. Research finishes over real time, even while you're
+      away, and gives your farm permanent boosts.
+    when: First time Research opens
+  - id: tip_animals
+    text: Animals change how your farm plays. Unlock them with Gems from quests and
+      daily gifts, then equip one for your runs.
+    when: First time the Animals menu opens
+  - id: tip_town_requests
+    text: Townsfolk post what they need here. Deliveries earn Reputation, and a full
+      bar gives you a point to spend at your Barn. Switch to Collect during a run
+      to keep harvests for requests.
+    when: First time the Town Requests board opens
+  - id: tip_barn
+    text: Spend skill points to make your farm better at what it does. Tap a numbered
+      milestone to see what it unlocks.
+    when: First time the Barn (Farm Level) opens
+  - id: tip_collect_sell
+    text: Sell turns each harvest into Money right away, to keep your run going.
+      Collect keeps harvests as items, for town requests and your jars.
+    when: First run after the town-board letter (points at the Collect / Sell switch)
+  - id: tip_almanac
+    text: Everything you've discovered is written down here. Tap any page to see
+      its numbers, including how much your upgrades have added.
+    when: First time the Farmer's Almanac opens
+  - id: almanac_crop_radish
+    text: In and out of the ground before pests notice. Tiny payout, lightning fast.
+    when: 'Almanac: Radish page'
+  - id: almanac_crop_carrot
+    text: Buried where crows can't reach - but deer will dig for them.
+    when: 'Almanac: Carrot page'
+  - id: almanac_crop_corn
+    text: Tall stalks shrug off deer, and the harvest waits a while for you. Crows
+      can't resist it.
+    when: 'Almanac: Corn page'
+  - id: almanac_crop_tomato
+    text: Sturdy vines that keep on giving. Thirsty, though, and deer know where
+      to find them.
+    when: 'Almanac: Tomato page'
+  - id: almanac_crop_strawberry
+    text: Every bird in the valley knows when these are ripe. Makes the quickest
+      jam at the Cannery.
+    when: 'Almanac: Strawberry page'
+  - id: almanac_crop_blueberry
+    text: Slow to settle in, then fruits again and again. Thirsty, and a crow's favourite
+      - but deer mostly leave it be.
+    when: 'Almanac: Blueberry page'
+  - id: almanac_crop_green_beans
+    text: Quick to crop and quick to grow back. Tender, though, and deer can't get
+      enough of them.
+    when: 'Almanac: Green Beans page'
+  - id: almanac_crop_green_pepper
+    text: Tough and long-lived. Crows ignore the green fruit, but deer nibble the
+      leaves - plant it where crows are the problem.
+    when: 'Almanac: Green Pepper page'
+  - id: almanac_crop_red_pepper
+    text: The green pepper's twin, left to ripen. Too hot for deer, but crows can't
+      resist the red - plant it where deer are the problem.
+    when: 'Almanac: Red Pepper page'
+  - id: almanac_pest_deer
+    text: Deer wander in from the woods and graze on your fields. They go easy on
+      seeds but hit young plants hardest. Fences keep them out, and a dog will chase
+      them off.
+    when: 'Almanac: Deer page'
+  - id: almanac_pest_crow
+    text: Crows swoop down and peck at your crops - fresh seeds and ripe berries
+      most of all. A scarecrow scares them off.
+    when: 'Almanac: Crows page'
+  - id: tip_seed_stall
+    text: Buy a seed packet once and that crop is yours to plant every run. The mystery
+      packets are still waiting to be discovered!
+    when: First time Hazel's seed stall opens
+  - id: tip_regrow
+    text: This crop regrows! As long as the plant survives after it's picked, it
+      grows more - no new seed needed.
+    when: First regrowing crop harvested in a run
+  - id: tip_barn_spend
+    text: You have a point to spend! Tap + to level up a skill. Each level makes
+      your farm a little better at that job.
+    when: Barn opened with a skill point to spend (points at a + button)
+  - id: tip_extra_packet
+    text: Each packet lets a crop grow in one field. Buy another to plant it in more
+      fields at once - great for going all-in on compost, jam or a big town order.
+    when: Hazel's stall opened once a crop can take a 2nd packet (more fields than
+      packets)
+  - id: tip_idle_field
+    text: This field is still waiting its turn - your helper has its hands full with
+      your other crops! Another helper, a speedier one, or a sprinkler would lend
+      a hand.
+    when: A run where a field with a crop chosen is still bare after a few minutes

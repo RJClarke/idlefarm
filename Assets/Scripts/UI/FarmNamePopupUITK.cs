@@ -106,6 +106,9 @@ public class FarmNamePopupUITK : MonoBehaviour
             && NarrativeManager.Instance.MarkFired("onboarding_named"))
         {
             InboxManager.Instance?.Deliver("welcome");
+            Close();
+            OnboardingTutorials.OnFirstRunNamed(); // enrol in onboarding + point at the letter
+            return;
         }
         Close();
     }

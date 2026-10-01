@@ -11,6 +11,7 @@ public class InboxButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI unreadCountLabel; // optional count inside the dot
 
     private Button button;
+    private InboxManager subscribedTo;
 
     private void Awake() { button = GetComponent<Button>(); }
 
@@ -21,20 +22,32 @@ public class InboxButton : MonoBehaviour
             Image dotImage = notificationDot.GetComponent<Image>();
             if (dotImage != null && dotImage.sprite == null) dotImage.sprite = BuildCircleSprite(64);
         }
+        // InboxManager runs at execution order 1100, so on scene load this button's OnEnable
+        // fires before InboxManager.Awake sets Instance — catch up here, after every Awake.
+        Subscribe();
+        Refresh();
     }
 
     private void OnEnable()
     {
         button = button != null ? button : GetComponent<Button>();
         button.onClick.AddListener(OnClick);
-        if (InboxManager.Instance != null) InboxManager.Instance.OnInboxChanged += Refresh;
+        Subscribe();
         Refresh();
     }
 
     private void OnDisable()
     {
         button.onClick.RemoveListener(OnClick);
-        if (InboxManager.Instance != null) InboxManager.Instance.OnInboxChanged -= Refresh;
+        if (subscribedTo != null) subscribedTo.OnInboxChanged -= Refresh;
+        subscribedTo = null;
+    }
+
+    private void Subscribe()
+    {
+        if (subscribedTo != null || InboxManager.Instance == null) return;
+        subscribedTo = InboxManager.Instance;
+        subscribedTo.OnInboxChanged += Refresh;
     }
 
     private void OnClick() { InboxPopupUITK.Instance?.Open(); }

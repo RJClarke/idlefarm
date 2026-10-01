@@ -92,6 +92,9 @@ public class TutorialLedger
         completed.Add(id);
     }
 
+    /// <summary>Dev-tools replay: forget completions so the tutorials show again.</summary>
+    public void Clear() => completed.Clear();
+
     public string[] GetForSave() => completed.OrderBy(s => s).ToArray();
 
     public void LoadState(string[] ids)

@@ -2,16 +2,18 @@
     position: absolute;
     left: 0; right: 0; top: 0; bottom: 0;
     align-items: center;
-    justify-content: center;
+    /* Upper part of the screen: on phones the keyboard covers the bottom ~40% while typing. */
+    justify-content: flex-start;
 }
 
 .fnp-backdrop {
     position: absolute;
     left: 0; right: 0; top: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.55);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .fnp-frame {
+    margin-top: 240px;
     width: 74%;
     max-width: 680px;
     min-width: 360px;
@@ -94,10 +96,13 @@
     margin-top: 24px;
 }
 
+/* Text, not the dice emoji: emoji render invisible on Android. */
 .fnp-dice {
-    width: 84px;
     height: 84px;
-    font-size: 38px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 30px;
+    -unity-font-definition: url("project://database/Assets/Fonts/UITK SDF/Munro Pixel.asset");
     margin-right: 16px;
     border-radius: 14px;
     background-color: rgb(214, 198, 168);
