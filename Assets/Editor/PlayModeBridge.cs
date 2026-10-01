@@ -62,14 +62,45 @@ public static class PlayModeBridge
     private static string OpenPopup(string typeName)
     {
         if (!EditorApplication.isPlaying) return "NOT PLAYING";
+        // "Type" calls Open() (or Show() if there's no Open); "Type.Method" calls that method;
+        // "Type.Method|a|b" passes arguments (converted to the parameter types). Instance methods go
+        // through the type's static Instance; static methods are called directly.
+        string[] argText = new string[0];
+        int bar = typeName.IndexOf('|');
+        if (bar > 0) { argText = typeName.Substring(bar + 1).Split('|'); typeName = typeName.Substring(0, bar); }
+        string methodName = null;
+        int dot = typeName.IndexOf('.');
+        if (dot > 0) { methodName = typeName.Substring(dot + 1); typeName = typeName.Substring(0, dot); }
         System.Type type = System.Type.GetType(typeName + ", Assembly-CSharp");
         if (type == null) return "TYPE NOT FOUND: " + typeName;
-        System.Reflection.PropertyInfo instanceProp = type.GetProperty("Instance", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
-        object instance = instanceProp != null ? instanceProp.GetValue(null) : null;
-        if (instance == null) return "INSTANCE NULL: " + typeName;
-        System.Reflection.MethodInfo openMethod = type.GetMethod("Open", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance);
-        if (openMethod == null) return "NO Open() ON: " + typeName;
-        openMethod.Invoke(instance, null);
-        return "OK: " + typeName + ".Open()";
+
+        var flags = System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Static;
+        // Matches the argument count; trailing optional parameters take their defaults.
+        System.Reflection.MethodInfo Find(string n) => System.Linq.Enumerable.FirstOrDefault(type.GetMethods(flags), m =>
+        {
+            var ps = m.GetParameters();
+            if (m.Name != n || ps.Length < argText.Length) return false;
+            for (int i = argText.Length; i < ps.Length; i++) if (!ps[i].IsOptional && !ps[i].IsOut) return false;
+            return true;
+        });
+        System.Reflection.MethodInfo method = methodName != null ? Find(methodName) : Find("Open") ?? Find("Show");
+        if (method == null) return "NO " + (methodName ?? "Open/Show") + "(" + argText.Length + " args) ON: " + typeName;
+
+        object instance = null;
+        if (!method.IsStatic)
+        {
+            System.Reflection.PropertyInfo instanceProp = type.GetProperty("Instance", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static);
+            instance = instanceProp != null ? instanceProp.GetValue(null) : null;
+            if (instance == null) return "INSTANCE NULL: " + typeName;
+        }
+        var ps2 = method.GetParameters();
+        object[] args = new object[ps2.Length];
+        for (int i = 0; i < ps2.Length; i++)
+            args[i] = i < argText.Length
+                ? (ps2[i].ParameterType.IsEnum ? System.Enum.Parse(ps2[i].ParameterType, argText[i])
+                   : System.Convert.ChangeType(argText[i], ps2[i].ParameterType, System.Globalization.CultureInfo.InvariantCulture))
+                : (ps2[i].IsOut ? null : ps2[i].DefaultValue);
+        object ret = method.Invoke(instance, args);
+        return "OK: " + typeName + "." + method.Name + "(" + string.Join(", ", argText) + ")" + (ret != null ? " -> " + ret : "");
     }
 }

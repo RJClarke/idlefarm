@@ -80,7 +80,7 @@ public class DevToolsSetup : MonoBehaviour
         drawerRT.anchorMax = new Vector2(1, 1);
         drawerRT.pivot = new Vector2(1, 1);
         drawerRT.anchoredPosition = new Vector2(-MARGIN, -(MARGIN + CURRENCY_CLEARANCE + COLLECT_TOGGLE_CLEARANCE + TOGGLE_HEIGHT + 6f));
-        drawerRT.sizeDelta = new Vector2(DRAWER_WIDTH, 470f + 4f * (BTN_HEIGHT + 6f)); // +2 tutorial buttons, +2 skill-point buttons
+        drawerRT.sizeDelta = new Vector2(DRAWER_WIDTH, 470f + 6f * (BTN_HEIGHT + 6f)); // +2 tutorial, +2 skill-point, +1 grant-fish, +1 grant-wood
 
         drawerGO.GetComponent<Image>().color = new Color(0.08f, 0.08f, 0.08f, 0.72f);
 
@@ -130,6 +130,11 @@ public class DevToolsSetup : MonoBehaviour
         GameObject tutorialEventGO = CreatePillButton("TestTutorialEventButton", "Tutorial: Fire Event", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         tutorialEventGO.GetComponent<Button>().onClick.AddListener(() => TutorialManager.Notify("demo_event"));
 
+        // Opts this save into onboarding and replays every tutorial step, how-to tip and onboarding
+        // letter (they're normally only for farms named after onboarding shipped).
+        GameObject replayOnboardingGO = CreatePillButton("ReplayOnboardingButton", "Replay Onboarding", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        replayOnboardingGO.GetComponent<Button>().onClick.AddListener(OnboardingTutorials.DevReplayAll);
+
         // Barn skill points (ReputationManager.UnspentPoints, spent via FarmSkillsManager.TryLevelUp).
         GameObject grantSkillGO = CreatePillButton("GrantSkillPointsButton", "+25 Skill Points", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         grantSkillGO.GetComponent<Button>().onClick.AddListener(() => {
@@ -139,6 +144,26 @@ public class DevToolsSetup : MonoBehaviour
         GameObject resetSkillGO = CreatePillButton("ResetSkillsButton", "Reset Farm Skills", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
         resetSkillGO.GetComponent<Button>().onClick.AddListener(() => {
             if (FarmSkillsManager.Instance != null) FarmSkillsManager.Instance.DevResetAllSkills();
+        });
+
+        // Fishing is slow to grind, so stock the Pantry directly when testing the Smokehouse.
+        GameObject grantFishGO = CreatePillButton("GrantFishButton", "+3 of Each Raw Fish", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        grantFishGO.GetComponent<Button>().onClick.AddListener(() => {
+            var pantry = PantryManager.Instance;
+            if (pantry == null) { Debug.LogWarning("[DevTools] No PantryManager."); return; }
+            for (int tier = 1; tier <= FishTiers.Count; tier++)
+                for (int n = 0; n < 3; n++) pantry.AddRaw(tier);
+            Debug.Log($"[DevTools] Raw fish now {pantry.GetRaw(1)}/{pantry.GetRaw(2)}/{pantry.GetRaw(3)}.");
+        });
+
+        // Wood is the gate on Smokehouse/Cannery fuel, axe and rod upgrades — chopping for it by
+        // hand makes those slow to reach when testing. Clamps to CurrencyManager.maxWood (1000).
+        GameObject grantWoodGO = CreatePillButton("GrantWoodButton", "+500 Wood", btnBg, btnText, BTN_FONT, BTN_HEIGHT);
+        grantWoodGO.GetComponent<Button>().onClick.AddListener(() => {
+            var cm = CurrencyManager.Instance;
+            if (cm == null) { Debug.LogWarning("[DevTools] No CurrencyManager."); return; }
+            cm.AddWood(500);
+            Debug.Log($"[DevTools] Wood now {cm.Wood}/{cm.MaxWood}.");
         });
 
         // (Game speed — including 10/20/30× — lives on the stepper under the run timer now.)
@@ -293,6 +318,7 @@ public class DevToolsSetup : MonoBehaviour
                     if (s == null) continue;
                     if (s.startUtcTicks > 0)        s.startUtcTicks        -= offsetTicks;
                     if (s.boostExpiresUtcTicks > 0) s.boostExpiresUtcTicks -= offsetTicks;
+                    if (s.boostStartUtcTicks > 0)   s.boostStartUtcTicks   -= offsetTicks;
                 }
             }
 
