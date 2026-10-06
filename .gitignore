@@ -37,3 +37,11 @@ debug.log
 # NOTE: Assets/Screenshots/ is intentionally TRACKED — kept as a marketing/dev archive.
 Assets/_Recovery/
 .utmp/
+
+# Python bytecode (balance tools)
+__pycache__/
+*.pyc
+
+# Unity crash-recovery scene backups
+/Assets/_Recovery/
+/Assets/_Recovery.meta
