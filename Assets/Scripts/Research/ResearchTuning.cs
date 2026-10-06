@@ -21,6 +21,10 @@ namespace Research
         [Tooltip("How often ResearchManager polls real-time elapsed and applies level-ups.")]
         public float tickIntervalSecs = 1.0f;
 
+        [Header("Gem Finish-Now")]
+        [Tooltip("Gems per hour of research left to finish a level instantly (spec 2026-10-05 §7). 20 => a day costs 480.")]
+        public float gemsPerHourToFinish = 20f;
+
         [Header("Branches (display order)")]
         public string[] branchOrder = new[] { "soil", "helper", "plant", "animals", "equipment", "weather", "meta" };
     }

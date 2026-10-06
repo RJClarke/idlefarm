@@ -180,6 +180,13 @@ public class TutorialManager : MonoBehaviour
 
     /// <summary>Has this tutorial already been completed? (For callers that want to skip setup.)</summary>
     public static bool IsCompleted(string id) => Instance != null && Instance.ledger.IsCompleted(id);
+    /// <summary>Ends the running sequence as completed if it is <paramref name="id"/> — the player did the
+    /// thing it points at by another route (e.g. claimed the Free Gift from the Store mid-spotlight).</summary>
+    public static void CompleteIfActive(string id)
+    {
+        if (Instance != null && ActiveId == id) Instance.EndActive(markCompleted: true);
+    }
+
 
     /// <summary>Dev tools: dismiss anything showing and forget every completion so all tutorials replay.</summary>
     public static void DevResetAll()

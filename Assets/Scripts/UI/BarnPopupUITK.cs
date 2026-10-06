@@ -286,8 +286,8 @@ public class BarnPopupUITK : MonoBehaviour
         }
 
         titleLabel = new Label("Barn");
-        titleLabel.style.fontSize = 46;
-        titleLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
+        titleLabel.style.fontSize = 41; // Munro Pixel 41's bake size: off-size pixel fonts smear
+        titleLabel.style.unityFontStyleAndWeight = FontStyle.Normal;
         titleLabel.style.color = TitleBrown;
         // One line, trimmed with "..." if a name is ever too long. Wrapping measured the pixel font
         // wrong: it broke after the first word and drew the rest underneath the Farm Level bar.
@@ -375,19 +375,13 @@ public class BarnPopupUITK : MonoBehaviour
         renownNotches.style.justifyContent = Justify.SpaceBetween;
         renownNotches.style.marginBottom = 20;
         int[] renownMilestones = { 10, 25, 50, 100, 175 };
-        string[] renownDesc =
-        {
-            "Reward not yet implemented.",
-            "Silo: increases inventory space. (Not yet implemented.)",
-            "Reward not yet implemented.",
-            "Reward not yet implemented.",
-            "Reward not yet implemented.",
-        };
         for (int i = 0; i < renownMilestones.Length; i++)
         {
             int threshold = renownMilestones[i];
-            string desc = renownDesc[i];
-            Button notch = new Button { text = threshold.ToString() };
+            // The town's Free Gift chest grows with Farm Level; each milestone shows its coins.
+            string gift = $"Free Gift: {FreeGiftManager.CoinsAtLevel(threshold):N0} coins.";
+            string desc = threshold == 25 ? "Silo: increases inventory space. (Not yet implemented.)\n" + gift : gift;
+            Button notch = new Button { text = threshold.ToString(), name = $"renown-notch-{threshold}" };
             notch.style.fontSize = 21;
             notch.style.height = 46;
             notch.style.minWidth = 52;

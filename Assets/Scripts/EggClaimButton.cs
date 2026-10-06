@@ -116,7 +116,7 @@ public class EggClaimButton : MonoBehaviour
         LeanTween.scale(gameObject, Vector3.one * targetScale, 0.2f).setEaseOutBack();
     }
 
-    private static Sprite BuildCircleSprite(int size)
+    internal static Sprite BuildCircleSprite(int size)
     {
         Texture2D tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
         tex.filterMode = FilterMode.Bilinear;

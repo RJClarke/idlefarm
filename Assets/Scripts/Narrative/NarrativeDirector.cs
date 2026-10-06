@@ -6,7 +6,8 @@ using UnityEngine;
 ///
 /// Event ids (LetterDef.triggerEvent) raised here:
 ///   run_ended:N · run_survived:1h / 3h · tree_felled · axe_bought · pole_bought · fish_caught ·
-///   animal_unlocked · upgrade:&lt;upgradeId&gt; · built:&lt;BuildingState key&gt; · town_request_done
+///   animal_unlocked · upgrade:&lt;upgradeId&gt; · built:&lt;BuildingState key&gt; · town_request_done ·
+///   welcome_basket_done (raised by ReputationManager: the Free Gift chest unlocks)
 /// Research unlocks still use LetterDef.triggerFeatureFlag, animals triggerAnimalId.
 /// Also forwards camera arrivals and first catches to OnboardingTutorials for how-to tips.</summary>
 [DefaultExecutionOrder(1200)] // after NarrativeManager/InboxManager (1100)

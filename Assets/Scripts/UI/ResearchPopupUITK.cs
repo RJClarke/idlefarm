@@ -62,7 +62,14 @@ public class ResearchPopupUITK : MonoBehaviour
         public Label  timer;
         public VisualElement fill;
         public Label  boostLeft;
+        public VisualElement gemChip;   // top-right gem Finish-now
+        public Label  gemCost;
     }
+
+    // Gem Finish-now confirm: the first tap arms the chip ("Confirm N gems?"); a second tap within this window spends.
+    private const float FinishConfirmWindow = 3f;
+    private int armedFinishSlot = -1;
+    private float armedFinishAt;
 
     private readonly ActiveSlotView[] activeViews = new ActiveSlotView[ResearchManager.SlotCount];
 
@@ -278,6 +285,7 @@ public class ResearchPopupUITK : MonoBehaviour
             double boostLeft = (state.boostExpiresUtcTicks - DateTime.UtcNow.Ticks) / (double)TimeSpan.TicksPerSecond;
             view.boostLeft.text = FormatBoostRemaining(boostLeft);
         }
+        RefreshFinishChip(slotIndex, view);
     }
 
     private void Refresh()
@@ -420,6 +428,9 @@ public class ResearchPopupUITK : MonoBehaviour
         // ── Top-left: Auto (repeat) toggle ──
         card.Add(BuildAutoToggle(slotIndex, state));
 
+        // ── Top-right: gem Finish-now ──
+        card.Add(BuildFinishChip(slotIndex, view));
+
         card.Add(body);
 
         // ── Bottom-left: Cancel ──
@@ -520,6 +531,73 @@ public class ResearchPopupUITK : MonoBehaviour
         });
         WirePressedFeedback(chip, "slot-card__corner--pressed");
         return chip;
+    }
+
+    /// <summary>Top-right purple chip: gem icon + the live cost to finish this level now. Tap once to arm
+    /// ("Confirm N gems?"), tap again within 3s to spend — a stray tap never spends gems.</summary>
+    private VisualElement BuildFinishChip(int slotIndex, ActiveSlotView view)
+    {
+        var chip = new VisualElement { name = $"finish-chip-{slotIndex}" };
+        chip.AddToClassList("slot-card__gem-chip");
+
+        var icon = new VisualElement();
+        icon.AddToClassList("slot-card__gem-icon");
+        icon.pickingMode = PickingMode.Ignore;
+        var cost = new Label();
+        cost.AddToClassList("slot-card__gem-cost");
+        cost.pickingMode = PickingMode.Ignore;
+        chip.Add(icon); chip.Add(cost);
+
+        view.gemChip = chip;
+        view.gemCost = cost;
+        RefreshFinishChip(slotIndex, view);
+
+        int captured = slotIndex;
+        chip.RegisterCallback<ClickEvent>(e =>
+        {
+            e.StopPropagation(); // don't bubble into the card's own click handling
+            OnFinishChipClicked(captured);
+        });
+        WirePressedFeedback(chip, "slot-card__corner--pressed");
+        return chip;
+    }
+
+    private void OnFinishChipClicked(int slotIndex)
+    {
+        ResearchManager mgr = ResearchManager.Instance;
+        if (mgr == null) return;
+        int cost = mgr.GetFinishGemCost(slotIndex);
+        if (cost <= 0) return;
+        int gems = CurrencyManager.Instance != null ? CurrencyManager.Instance.Gems : 0;
+        if (gems < cost)
+        {
+            ToastManager.Show("Not enough gems.", null, ToastManager.ToastKind.Success, MonetizationUI.ChestIcon);
+            return;
+        }
+        if (armedFinishSlot != slotIndex || Time.unscaledTime - armedFinishAt > FinishConfirmWindow)
+        {
+            armedFinishSlot = slotIndex;
+            armedFinishAt = Time.unscaledTime;
+            if (activeViews[slotIndex] != null) RefreshFinishChip(slotIndex, activeViews[slotIndex]);
+            return;
+        }
+        armedFinishSlot = -1;
+        if (mgr.TryFinishWithGems(slotIndex)) Refresh();
+    }
+
+    /// <summary>Live cost / armed state / affordability, written by the 1s tick (never a rebuild).</summary>
+    private void RefreshFinishChip(int slotIndex, ActiveSlotView view)
+    {
+        if (view?.gemChip == null) return;
+        ResearchManager mgr = ResearchManager.Instance;
+        int cost = mgr != null ? mgr.GetFinishGemCost(slotIndex) : 0;
+        int gems = CurrencyManager.Instance != null ? CurrencyManager.Instance.Gems : 0;
+        bool armed = armedFinishSlot == slotIndex && Time.unscaledTime - armedFinishAt <= FinishConfirmWindow;
+        if (!armed && armedFinishSlot == slotIndex) armedFinishSlot = -1;
+        view.gemChip.style.display = cost > 0 ? DisplayStyle.Flex : DisplayStyle.None;
+        view.gemCost.text = armed ? StoreCopy.ConfirmGems(cost) : cost.ToString("N0");
+        view.gemChip.EnableInClassList("slot-card__gem-chip--armed", armed);
+        view.gemChip.EnableInClassList("slot-card__gem-chip--short", gems < cost);
     }
 
     private void CancelSlotAndRefresh(int slotIndex)

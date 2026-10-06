@@ -578,3 +578,54 @@
     -unity-text-align: middle-left;
     color: rgba(255, 240, 210, 0.8);
 }
+
+/* Top-right: gem Finish-now — the purple twin of the green compost chip (bottom-right). */
+.slot-card__gem-chip {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 14px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    background-color: rgba(140, 70, 210, 0.35);
+    border-color: rgb(190, 130, 255);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.slot-card__gem-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    background-image: url("project://database/Assets/Sprites/UI/Icons/Icons_Essential/Gem.png");
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.slot-card__gem-cost {
+    font-size: 22px;
+    -unity-font-style: bold;
+    color: rgb(225, 195, 255);
+}
+
+/* Armed (waiting for the confirming second tap): brighter fill. */
+.slot-card__gem-chip--armed {
+    background-color: rgba(150, 80, 230, 0.75);
+}
+
+.slot-card__gem-chip--armed .slot-card__gem-cost {
+    color: rgb(255, 255, 255);
+}
+
+/* Can't afford: dimmed, like a disabled compost row. */
+.slot-card__gem-chip--short {
+    opacity: 0.5;
+}

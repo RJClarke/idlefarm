@@ -1,0 +1,355 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f07a208f0ca0b4bb00b41c9d19468b, type: 3}
+  m_Name: SkinCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::SkinCatalogSO
+  skins:
+  - id: chicken_brown
+    displayName: Brown Hen
+    target: chicken
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Chicken_Brown_32x32.png
+    gemPrice: 1000
+    setId: 
+    sortOrder: 1
+    texture: {fileID: 2800000, guid: a4f09b773227b2b47b3c72614843c112, type: 3}
+    sprite: {fileID: 0}
+  - id: chicken_brown2
+    displayName: Russet Hen
+    target: chicken
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Chicken_Brown_2_32x32.png
+    gemPrice: 1000
+    setId: 
+    sortOrder: 2
+    texture: {fileID: 2800000, guid: a9a32c9932c7d0f4e8283d1619c6cfde, type: 3}
+    sprite: {fileID: 0}
+  - id: chicken_gray
+    displayName: Gray Hen
+    target: chicken
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Chicken_Gray_32x32.png
+    gemPrice: 1000
+    setId: 
+    sortOrder: 3
+    texture: {fileID: 2800000, guid: 55dd806124d795a4987017269bec69ab, type: 3}
+    sprite: {fileID: 0}
+  - id: chicken_blackbrown
+    displayName: Speckled Hen
+    target: chicken
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Chicken_Black_and_Brown_32x32.png
+    gemPrice: 1500
+    setId: 
+    sortOrder: 4
+    texture: {fileID: 2800000, guid: 2332c1b9794030743bb0278ac09d86c1, type: 3}
+    sprite: {fileID: 0}
+  - id: chicken_yellow
+    displayName: Buttercup Hen
+    target: chicken
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Chicken_Yellow_32x32.png
+    gemPrice: 1500
+    setId: 
+    sortOrder: 5
+    texture: {fileID: 2800000, guid: 5c798e5cbf33ee94ea7a2c162b52a49f, type: 3}
+    sprite: {fileID: 0}
+  - id: chicken_golden
+    displayName: Golden Hen
+    target: chicken
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Chicken_Golden_32x32.png
+    gemPrice: 0
+    setId: set_golden_farm
+    sortOrder: 6
+    texture: {fileID: 2800000, guid: 719cebd5249b9b846b9c297b79f8d12b, type: 3}
+    sprite: {fileID: 0}
+  - id: rooster_white
+    displayName: White Rooster
+    target: rooster
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Rooster_White_32x32.png
+    gemPrice: 1000
+    setId: 
+    sortOrder: 1
+    texture: {fileID: 2800000, guid: fafcb0c783fbe9745a32a423b1a7f662, type: 3}
+    sprite: {fileID: 0}
+  - id: rooster_brown
+    displayName: Brown Rooster
+    target: rooster
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Rooster_Brown_32x32.png
+    gemPrice: 1000
+    setId: 
+    sortOrder: 2
+    texture: {fileID: 2800000, guid: 22793230b58687642a00b17defc3be64, type: 3}
+    sprite: {fileID: 0}
+  - id: rooster_brown2
+    displayName: Russet Rooster
+    target: rooster
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Rooster_Brown_2_32x32.png
+    gemPrice: 1000
+    setId: 
+    sortOrder: 3
+    texture: {fileID: 2800000, guid: 2ae53740b06cd9446be8e4a2e6c256bc, type: 3}
+    sprite: {fileID: 0}
+  - id: rooster_blackbrown
+    displayName: Speckled Rooster
+    target: rooster
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Rooster_Black_and_Brown_32x32.png
+    gemPrice: 1500
+    setId: 
+    sortOrder: 4
+    texture: {fileID: 2800000, guid: 32688dfcb22d1744e8bf4cecd9081f60, type: 3}
+    sprite: {fileID: 0}
+  - id: rooster_yellow
+    displayName: Buttercup Rooster
+    target: rooster
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Rooster_Yellow_32x32.png
+    gemPrice: 1500
+    setId: 
+    sortOrder: 5
+    texture: {fileID: 2800000, guid: 0316eb937b4344e4f810e47186a25ff9, type: 3}
+    sprite: {fileID: 0}
+  - id: rooster_golden
+    displayName: Golden Rooster
+    target: rooster
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Chickens_and_Roosters_32x32/Rooster_Golden_32x32.png
+    gemPrice: 0
+    setId: set_golden_farm
+    sortOrder: 6
+    texture: {fileID: 2800000, guid: 1933927509d361444985308ff06e5392, type: 3}
+    sprite: {fileID: 0}
+  - id: cow_caramel
+    displayName: Caramel Cow
+    target: cow
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Cows_32x32/Cow_Caramel_32x32.png
+    gemPrice: 1000
+    setId: 
+    sortOrder: 1
+    texture: {fileID: 2800000, guid: 3fda6a7b32e0ee64e8f1db22bbc06dc8, type: 3}
+    sprite: {fileID: 0}
+  - id: cow_big_white
+    displayName: Big White Cow
+    target: cow
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Cows_32x32/Cow_Big_White_32x32.png
+    gemPrice: 1500
+    setId: 
+    sortOrder: 2
+    texture: {fileID: 2800000, guid: 0f2a53e6c488d024ea92c16a5ac2659b, type: 3}
+    sprite: {fileID: 0}
+  - id: cow_big_black
+    displayName: Big Black Cow
+    target: cow
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Cows_32x32/Cow_Big_Black_32x32.png
+    gemPrice: 1500
+    setId: 
+    sortOrder: 3
+    texture: {fileID: 2800000, guid: cb94f2d24369c4547b6d68aac05c2d1c, type: 3}
+    sprite: {fileID: 0}
+  - id: cow_big_caramel
+    displayName: Big Caramel Cow
+    target: cow
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Cows_32x32/Cow_Big_Caramel_32x32.png
+    gemPrice: 1500
+    setId: 
+    sortOrder: 4
+    texture: {fileID: 2800000, guid: bbeb47b5be55378409ff4819630efca7, type: 3}
+    sprite: {fileID: 0}
+  - id: pig_light
+    displayName: Light Pink Pig
+    target: pig
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Pigs_32x32/Pig_Pink_Light_32x32.png
+    gemPrice: 1000
+    setId: 
+    sortOrder: 1
+    texture: {fileID: 2800000, guid: 9b492334cd645684d9adfe1e2024bbd7, type: 3}
+    sprite: {fileID: 0}
+  - id: pig_pinkbrown
+    displayName: Patchy Pig
+    target: pig
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Pigs_32x32/Pig_Pink_and_Brown_32x32.png
+    gemPrice: 1000
+    setId: 
+    sortOrder: 2
+    texture: {fileID: 2800000, guid: 571698c100245af4bbc39dd3b8e8799b, type: 3}
+    sprite: {fileID: 0}
+  - id: pig_spotted_pink
+    displayName: Spotted Pig
+    target: pig
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Pigs_32x32/Pig_Spotted_Pink_32x32.png
+    gemPrice: 1500
+    setId: 
+    sortOrder: 3
+    texture: {fileID: 2800000, guid: 96e325c1c5aff014da59553e9da3a2e9, type: 3}
+    sprite: {fileID: 0}
+  - id: pig_spotted_gray
+    displayName: Gray Spotted Pig
+    target: pig
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Pigs_32x32/Pig_Spotted_Gray_32x32.png
+    gemPrice: 1500
+    setId: 
+    sortOrder: 4
+    texture: {fileID: 2800000, guid: acb5be24d8e6d0946a2d35a96b13df95, type: 3}
+    sprite: {fileID: 0}
+  - id: dog_shepherd_dark
+    displayName: Dark Shepherd
+    target: farm_dog
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Dogs_32x32/Dog_German_Shepherd_Dark_Brown_32x32.png
+    gemPrice: 1000
+    setId: 
+    sortOrder: 1
+    texture: {fileID: 2800000, guid: 4fd84f6241584e64992eb3f6fdb9cc7f, type: 3}
+    sprite: {fileID: 0}
+  - id: dog_shepherd_gray
+    displayName: Gray Shepherd
+    target: farm_dog
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Dogs_32x32/Dog_German_Shepherd_Gray_32x32.png
+    gemPrice: 1000
+    setId: 
+    sortOrder: 2
+    texture: {fileID: 2800000, guid: 6d9277cc822a4904db80eec4b216e802, type: 3}
+    sprite: {fileID: 0}
+  - id: dog_lab_brown
+    displayName: Brown Lab
+    target: farm_dog
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Dogs_32x32/Dog_Labrador_Brown_32x32.png
+    gemPrice: 0
+    setId: set_puppy_pack
+    sortOrder: 3
+    texture: {fileID: 2800000, guid: e47ce8295a874c44ca30b5ec9915de61, type: 3}
+    sprite: {fileID: 0}
+  - id: dog_lab_dark
+    displayName: Chocolate Lab
+    target: farm_dog
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Dogs_32x32/Dog_Labrador_Dark_Brown_32x32.png
+    gemPrice: 0
+    setId: set_puppy_pack
+    sortOrder: 4
+    texture: {fileID: 2800000, guid: c53e592d8fb38b944ae021beace3f7e7, type: 3}
+    sprite: {fileID: 0}
+  - id: dog_lab_white
+    displayName: White Lab
+    target: farm_dog
+    kind: 0
+    assetPath: Assets/Sprites/Animals/Dogs_32x32/Dog_Labrador_White_32x32.png
+    gemPrice: 0
+    setId: set_puppy_pack
+    sortOrder: 5
+    texture: {fileID: 2800000, guid: c525ba011139dba4d8b661c786903ad2, type: 3}
+    sprite: {fileID: 0}
+  - id: house_cottage
+    displayName: Cottage
+    target: farmhouse
+    kind: 1
+    assetPath: Assets/Sprites/Buildings/Farmer_House_1_32x32.png
+    gemPrice: 2000
+    setId: 
+    sortOrder: 1
+    texture: {fileID: 0}
+    sprite: {fileID: -4258249190109649264, guid: 0b17190fdb2001d4082fcc709539e1a9, type: 3}
+  - id: house_steel_barn
+    displayName: Steel Barn
+    target: farmhouse
+    kind: 1
+    assetPath: Assets/Sprites/Buildings/Barn_Small_32x32.png
+    gemPrice: 2500
+    setId: 
+    sortOrder: 2
+    texture: {fileID: 0}
+    sprite: {fileID: 4104984988269287952, guid: d433ee86cb2540b4b8dd1127d46e2ce2, type: 3}
+  - id: house_red_barn
+    displayName: Red Barn
+    target: farmhouse
+    kind: 1
+    assetPath: Assets/Sprites/Buildings/Hayloft/Full/Hayloft_Red_Full_32x32.png
+    gemPrice: 2500
+    setId: 
+    sortOrder: 3
+    texture: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 4e8fab627deef314683124ae6f493680, type: 3}
+  - id: house_green_barn
+    displayName: Green Barn
+    target: farmhouse
+    kind: 1
+    assetPath: Assets/Sprites/Buildings/Hayloft/Full/Hayloft_Green_Full_32x32.png
+    gemPrice: 2500
+    setId: 
+    sortOrder: 4
+    texture: {fileID: 0}
+    sprite: {fileID: 21300000, guid: b62bffb77f1d8e24fb30794a32c54b6d, type: 3}
+  - id: house_grey_barn
+    displayName: Grey Barn
+    target: farmhouse
+    kind: 1
+    assetPath: Assets/Sprites/Buildings/Hayloft/Full/Hayloft_Grey_Full_32x32.png
+    gemPrice: 2500
+    setId: 
+    sortOrder: 5
+    texture: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 13e2e886cf213df4b9f0202282ac9198, type: 3}
+  - id: house_ranch
+    displayName: Ranch House
+    target: farmhouse
+    kind: 1
+    assetPath: Assets/Sprites/Buildings/Additional Houses/24_Additional_Houses_One_Story_House_32x32.png
+    gemPrice: 3000
+    setId: 
+    sortOrder: 6
+    texture: {fileID: 0}
+    sprite: {fileID: 4839063665071490963, guid: f0c2bb6f0723ffd43999f13b45f2861d, type: 3}
+  - id: house_manor
+    displayName: Country Manor
+    target: farmhouse
+    kind: 1
+    assetPath: Assets/Sprites/Buildings/Additional Houses/24_Additional_Houses_Country_House_32x32.png
+    gemPrice: 3500
+    setId: 
+    sortOrder: 7
+    texture: {fileID: 0}
+    sprite: {fileID: -6653182551907895712, guid: 792d890a59927ab4bb9a310fba0e855c, type: 3}
+  - id: house_lodge
+    displayName: Mountain Lodge
+    target: farmhouse
+    kind: 1
+    assetPath: Assets/Sprites/Buildings/Additional Houses/24_Additional_Houses_Japanese_House_32x32.png
+    gemPrice: 3500
+    setId: 
+    sortOrder: 8
+    texture: {fileID: 0}
+    sprite: {fileID: -5815547722149206874, guid: 0d0b3eb4cb1b6d04db5bcbcf43038c9e, type: 3}
+  - id: house_yellow_barn
+    displayName: Golden Barn
+    target: farmhouse
+    kind: 1
+    assetPath: Assets/Sprites/Buildings/Hayloft/Full/Hayloft_Yellow_Full_32x32.png
+    gemPrice: 0
+    setId: set_golden_farm
+    sortOrder: 9
+    texture: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 6c436f46ca273ec43837c7bc6e6367a7, type: 3}

@@ -25,6 +25,18 @@ public class GameData
     public string lastEggClaimTime;
     public string lastCompostClaimTime;
 
+    // Free Gift chest (monetization v1). Zero values = a fresh, ready gift on old saves.
+    public long giftLastClaimUtcTicks;
+    public string giftClaimsTodayDate;
+    public int giftClaimsToday;
+    public int giftLifetimeAdClaims;
+    public bool passPitchShown;
+    public bool farmersPassOwned;
+    public string[] deliveredTransactionIds;
+    public string[] ownedProductIds;   // permanent purchases other than the pass (sets, starter, boosts)
+    public string[] ownedSkinIds;
+    public string[] equippedSkins;     // "target=skinId"
+
     // Daily quests
     public ActiveQuest[] activeQuests;
     public int questsCompletedThisWeek;
@@ -102,6 +114,9 @@ public class GameData
     // Permanent upgrade levels (UpgradeManager). Flat array because JsonUtility can't
     // serialize Dictionary directly. Defaults to empty for new saves.
     public UpgradeLevelEntry[] permanentUpgradeLevels;
+
+    // Pre-Tilled Soil marks ("zone:x:y"), in purchase order. Count tracks the "pre_till" level.
+    public string[] preTilledTiles = new string[0];
 
     // Purchased helper upgrades (HelperUpgradeManager). One entry per purchased ID.
     public string[] purchasedHelperUpgradeIDs;

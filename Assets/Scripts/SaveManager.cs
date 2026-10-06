@@ -118,6 +118,7 @@ public class SaveManager : MonoBehaviour
         data.permanentUpgradeLevels = UpgradeManager.Instance != null
             ? UpgradeManager.Instance.GetPermanentLevelsForSave()
             : new UpgradeLevelEntry[0];
+        data.preTilledTiles = PreTilledSoil.ToSave();
         data.purchasedHelperUpgradeIDs = HelperUpgradeManager.Instance != null
             ? HelperUpgradeManager.Instance.GetPurchasedIDsForSave()
             : new string[0];
@@ -161,6 +162,9 @@ public class SaveManager : MonoBehaviour
         if (ItemInventoryManager.Instance != null) ItemInventoryManager.Instance.CaptureTo(data);
         if (ReputationManager.Instance != null) ReputationManager.Instance.CaptureTo(data);
         if (FarmSkillsManager.Instance != null) FarmSkillsManager.Instance.CaptureTo(data);
+        if (FreeGiftManager.Instance != null) FreeGiftManager.Instance.CaptureTo(data);
+        if (StoreManager.Instance != null) StoreManager.Instance.CaptureTo(data);
+        if (SkinManager.Instance != null) SkinManager.Instance.CaptureTo(data);
 
         // Convert to JSON
         string json = JsonUtility.ToJson(data, true); // true = pretty print for debugging
@@ -260,6 +264,12 @@ public class SaveManager : MonoBehaviour
                     ReputationManager.Instance.LoadFrom(data);
                 if (FarmSkillsManager.Instance != null)
                     FarmSkillsManager.Instance.LoadFrom(data);
+                if (FreeGiftManager.Instance != null)
+                    FreeGiftManager.Instance.LoadFrom(data);
+                if (SkinManager.Instance != null)      // before Store: a restored set grants into a loaded core
+                    SkinManager.Instance.LoadFrom(data);
+                if (StoreManager.Instance != null)
+                    StoreManager.Instance.LoadFrom(data);
 
                 if (AnimalManager.Instance != null)
                 {
@@ -290,6 +300,8 @@ public class SaveManager : MonoBehaviour
 
                 if (UpgradeManager.Instance != null)
                     UpgradeManager.Instance.LoadPermanentLevels(data.permanentUpgradeLevels);
+                // After the levels: FarmGrid reconciles these marks against the "pre_till" level.
+                PreTilledSoil.Load(data.preTilledTiles);
 
                 if (HelperUpgradeManager.Instance != null)
                     HelperUpgradeManager.Instance.LoadState(data.purchasedHelperUpgradeIDs);

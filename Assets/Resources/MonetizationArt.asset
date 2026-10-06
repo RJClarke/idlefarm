@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4a366a672fdef46ba248e1864bd827, type: 3}
+  m_Name: MonetizationArt
+  m_EditorClassIdentifier: Assembly-CSharp::MonetizationArt
+  chestClosed: {fileID: 21300000, guid: ac257ec7ef555774ab97ab29bc4518f7, type: 3}
+  chestOpen: {fileID: 21300000, guid: 9244c4b5cb8be8d46866e18c3cce3bcc, type: 3}
+  gemIcon: {fileID: 21300000, guid: 6098d915f15824347ba88eb65c524b6b, type: 3}
+  coinIcon: {fileID: -3338749442709606003, guid: 9e033c87f353b0447a63d7435fade76c, type: 3}
+  passArt: {fileID: 21300000, guid: 65801cb7d3fc33a4ca76718478f6a4bc, type: 3}
+  numberFont: {fileID: 11400000, guid: 80079cbe713e9134f8092e8cdbef4ef0, type: 2}

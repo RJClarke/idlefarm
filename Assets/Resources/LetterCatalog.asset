@@ -43,6 +43,7 @@ MonoBehaviour:
       - Mayor Bramble'
     rewardKind: 1
     rewardAmount: 50
+    giftSeed: Radish
     ctaKind: 0
     ctaArg: 
   - id: compost_bay_unlock
@@ -69,6 +70,7 @@ MonoBehaviour:
       Pippa'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 1
     ctaArg: 
   - id: first_run_done
@@ -95,6 +97,7 @@ MonoBehaviour:
       Mayor Bramble'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 4
     ctaArg: 
   - id: axe_offer
@@ -121,6 +124,7 @@ MonoBehaviour:
       Harry'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 5
     ctaArg: 
   - id: first_tree
@@ -146,6 +150,7 @@ MonoBehaviour:
       - Harry'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 0
     ctaArg: 
   - id: pole_offer
@@ -171,6 +176,7 @@ MonoBehaviour:
       - Old Finch'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 5
     ctaArg: 
   - id: first_fish
@@ -193,6 +199,7 @@ MonoBehaviour:
       Finch'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 0
     ctaArg: 
   - id: cannery_unlock
@@ -226,6 +233,7 @@ MonoBehaviour:
       - Marta'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 5
     ctaArg: 
   - id: smokehouse_unlock
@@ -251,6 +259,7 @@ MonoBehaviour:
       - Old Finch'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 5
     ctaArg: 
   - id: cannery_built
@@ -275,6 +284,7 @@ MonoBehaviour:
       - Harry'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 0
     ctaArg: 
   - id: smokehouse_built
@@ -299,6 +309,7 @@ MonoBehaviour:
       - Harry'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 0
     ctaArg: 
   - id: first_request
@@ -324,6 +335,7 @@ MonoBehaviour:
       - Mayor Bramble'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 6
     ctaArg: 
   - id: first_animal
@@ -348,6 +360,7 @@ MonoBehaviour:
       - Mayor Bramble'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 7
     ctaArg: 
   - id: field_two
@@ -379,6 +392,7 @@ MonoBehaviour:
       - Mayor Bramble'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 8
     ctaArg: 
   - id: long_run_1h
@@ -403,6 +417,7 @@ MonoBehaviour:
       - Mayor Bramble'
     rewardKind: 2
     rewardAmount: 25
+    giftSeed: 
     ctaKind: 0
     ctaArg: 
   - id: long_run_3h
@@ -427,6 +442,7 @@ MonoBehaviour:
       - Mayor Bramble'
     rewardKind: 2
     rewardAmount: 50
+    giftSeed: 
     ctaKind: 0
     ctaArg: 
   - id: seed_stall_intro
@@ -456,6 +472,7 @@ MonoBehaviour:
       - Hazel'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 11
     ctaArg: 
   - id: regrow_bought
@@ -481,6 +498,7 @@ MonoBehaviour:
       - Hazel'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 0
     ctaArg: 
   - id: town_board_intro
@@ -511,6 +529,7 @@ MonoBehaviour:
       Mayor Bramble'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 10
     ctaArg: 
   - id: extra_packets
@@ -541,7 +560,29 @@ MonoBehaviour:
       - Hazel'
     rewardKind: 0
     rewardAmount: 0
+    giftSeed: 
     ctaKind: 11
+    ctaArg: 
+  - id: town_gift
+    triggerFeatureFlag: 
+    triggerAnimalId: 
+    triggerEvent: welcome_basket_done
+    newPlayersOnly: 0
+    senderName: Mayor Bramble
+    senderPortrait: {fileID: 0}
+    subject: A little thank-you
+    body: 'Dear {farmName},
+
+
+      The whole town loved your basket. We''ll leave
+      a little something at your farm now and then.
+
+
+      - Mayor Bramble'
+    rewardKind: 0
+    rewardAmount: 0
+    giftSeed: 
+    ctaKind: 0
     ctaArg: 
   cast:
   - id: mayor
@@ -624,7 +665,8 @@ MonoBehaviour:
     text: Finish daily quests to earn Gems. New quests arrive every day.
     when: First time the Quests menu opens
   - id: tip_daily_rewards
-    text: Come back every day for a gift. Collect every day of the week for a bonus!
+    text: Every visit moves you one gift along the week, and each gift is bigger
+      than the last. Collect all 7 for a bonus!
     when: First time the daily rewards calendar opens
   - id: tip_market
     text: Welcome to the market! Look around - shops here sell seeds, tools and buildings.
@@ -752,3 +794,6 @@ MonoBehaviour:
       your other crops! Another helper, a speedier one, or a sprinkler would lend
       a hand.
     when: A run where a field with a crop chosen is still bare after a few minutes
+  - id: tip_town_gift
+    text: A gift every 30 minutes. This one's on us!
+    when: Free Gift chest first unlocks (after the Welcome Basket letter is read)

@@ -126,6 +126,10 @@ public static class NarrativeDefaults
             senderName = Mayor, subject = "A farm to be proud of",
             body = "Dear {farmName},\n\nThree whole hours! Travelers are stopping in town just to ask about your farm.\n\nThe council voted, and this gift is from all of us. Well earned.\n\n- Mayor Bramble",
             rewardKind = RewardKind.Gems, rewardAmount = 50 },
+
+        new LetterDef { id = "town_gift", triggerEvent = "welcome_basket_done",
+            senderName = Mayor, subject = "A little thank-you",
+            body = "Dear {farmName},\n\nThe whole town loved your basket. We'll leave a little something at your farm now and then.\n\n- Mayor Bramble" },
     };
 
     public static TipDef[] Tips => new[]
@@ -150,7 +154,7 @@ public static class NarrativeDefaults
         new TipDef { id = "tip_quests", when = "First time the Quests menu opens",
             text = "Finish daily quests to earn Gems. New quests arrive every day." },
         new TipDef { id = "tip_daily_rewards", when = "First time the daily rewards calendar opens",
-            text = "Come back every day for a gift. Collect every day of the week for a bonus!" },
+            text = "Every visit moves you one gift along the week, and each gift is bigger than the last. Collect all 7 for a bonus!" },
         new TipDef { id = "tip_market", when = "First arrival at the Market",
             text = "Welcome to the market! Look around - shops here sell seeds, tools and buildings. Check the notice board for townsfolk who need a hand." },
         new TipDef { id = "tip_woods_no_axe", when = "First arrival at the Woods without an axe",
@@ -216,5 +220,7 @@ public static class NarrativeDefaults
             text = "Deer wander in from the woods and graze on your fields. They go easy on seeds but hit young plants hardest. Fences keep them out, and a dog will chase them off." },
         new TipDef { id = "almanac_pest_crow", when = "Almanac: Crows page",
             text = "Crows swoop down and peck at your crops - fresh seeds and ripe berries most of all. A scarecrow scares them off." },
+        new TipDef { id = "tip_town_gift", when = "Free Gift chest first unlocks (after the Welcome Basket letter is read)",
+            text = "A gift every 30 minutes. This one's on us!" },
     };
 }

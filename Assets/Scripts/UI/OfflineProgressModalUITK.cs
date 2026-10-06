@@ -8,6 +8,9 @@ public class OfflineProgressModalUITK : MonoBehaviour
 {
     public static OfflineProgressModalUITK Instance { get; private set; }
 
+    /// <summary>True while the welcome-back modal is on screen (spotlight tips wait for it).</summary>
+    public bool IsOpen => modalRoot != null && modalRoot.style.display.value != DisplayStyle.None;
+
     private const float LoadDurationSecs = 1.5f;
 
     // Green tint for the "(+N)" research gain only — the "before → after" part stays regular menu

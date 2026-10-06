@@ -28,7 +28,7 @@ public class ResearchManager : MonoBehaviour
     [SerializeField] private SlotDefinition[] slotDefs = new SlotDefinition[SlotCount]
     {
         new SlotDefinition { unlockType = SlotUnlockType.Coins, costAmount = 100 },
-        new SlotDefinition { unlockType = SlotUnlockType.Gems,  costAmount = 100 },
+        new SlotDefinition { unlockType = SlotUnlockType.Gems,  costAmount = 200 },
         new SlotDefinition { unlockType = SlotUnlockType.Research, requiredResearchID = "slot_3_unlock" },
         new SlotDefinition { unlockType = SlotUnlockType.Research, requiredResearchID = "slot_4_unlock" },
     };
@@ -314,6 +314,36 @@ public class ResearchManager : MonoBehaviour
         if (string.IsNullOrEmpty(researchID)) return 0;
         return levelsByResearchID.TryGetValue(researchID, out var lvl) ? lvl : 0;
     }
+    /// <summary>Seconds left on the slot's current level (boost-aware); 0 for idle/paused/unknown.</summary>
+    public double GetSecondsRemaining(int slotIndex)
+    {
+        if (!IsValidSlot(slotIndex)) return 0;
+        var s = slots[slotIndex];
+        if (s == null || s.IsIdle || s.startUtcTicks <= 0) return 0;
+        var rd = GetResearch(s.activeResearchID);
+        if (rd == null || s.currentLevel >= rd.MaxLevel) return 0;
+        float secs = GetSecondsForLevel(rd, s.currentLevel + 1);
+        return Math.Max(0, secs - ComputeElapsedSeconds(s, DateTime.UtcNow.Ticks));
+    }
+
+    /// <summary>Gems to finish the slot's current level now (0 = nothing to finish).</summary>
+    public int GetFinishGemCost(int slotIndex) =>
+        ResearchGemPrice.GemsToFinish(GetSecondsRemaining(slotIndex), tuning != null ? tuning.gemsPerHourToFinish : 20f);
+
+    /// <summary>Spend gems to complete the current level now: shifts the level's start back by the time left so
+    /// the normal Tick path levels it up (auto-repeat, unlocks and events all unchanged).</summary>
+    public bool TryFinishWithGems(int slotIndex)
+    {
+        int cost = GetFinishGemCost(slotIndex);
+        if (cost <= 0 || CurrencyManager.Instance == null || !CurrencyManager.Instance.SpendGems(cost)) return false;
+        double remaining = GetSecondsRemaining(slotIndex);
+        slots[slotIndex].startUtcTicks -= (long)Math.Ceiling(remaining * TimeSpan.TicksPerSecond) + TimeSpan.TicksPerMillisecond;
+        Debug.Log($"[Research] Finished slot {slotIndex} now for {cost} gems ({remaining:F0}s left)");
+        Tick();
+        OnSlotStateChanged?.Invoke(slotIndex);
+        return true;
+    }
+
 
     public bool IsBinaryComplete(string researchID)
     {

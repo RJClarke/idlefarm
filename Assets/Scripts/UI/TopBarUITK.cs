@@ -20,6 +20,7 @@ public class TopBarUITK : MonoBehaviour
     private Label compostLabel;
 
     private bool subscribed;
+    private bool gemsRowWired;
 
     private void Awake()
     {
@@ -43,12 +44,36 @@ public class TopBarUITK : MonoBehaviour
         if (document == null) document = GetComponent<UIDocument>();
         root = document != null ? document.rootVisualElement : null;
         if (root == null) return;
-        // Root must let scene clicks through; row children are also picking-mode="Ignore" in UXML.
+        // Root lets scene clicks through around the pills; the currency rows themselves are
+        // picking-mode="Position" in UXML so a tap ON a pill can't fall through to the world
+        // (it used to reel in the fishing line).
         root.pickingMode = PickingMode.Ignore;
         moneyLabel   = root.Q<Label>("money-value");
         coinsLabel   = root.Q<Label>("coins-value");
         gemsLabel    = root.Q<Label>("gems-value");
         compostLabel = root.Q<Label>("compost-value");
+
+        // Tapping the gem counter opens the Store (guarded: OnEnable re-runs Cache).
+        VisualElement gemsRow = root.Q<VisualElement>("row-gems");
+        if (gemsRow != null && !gemsRowWired)
+        {
+            gemsRow.RegisterCallback<ClickEvent>(_ => StorePopupUITK.Open());
+            gemsRowWired = true;
+        }
+    }
+
+    /// <summary>Centre of a currency row ("row-gems", "row-coins") as 0..1 of the screen from the
+    /// top-left, so another panel can fly a reward into it whatever its own scale.</summary>
+    public bool TryGetRowCenterNormalized(string rowName, out Vector2 normalized)
+    {
+        normalized = default;
+        if (root == null) return false;
+        VisualElement row = root.Q<VisualElement>(rowName);
+        Rect panel = root.worldBound;
+        if (row == null || panel.width <= 0f || panel.height <= 0f) return false;
+        Vector2 c = row.worldBound.center;
+        normalized = new Vector2((c.x - panel.x) / panel.width, (c.y - panel.y) / panel.height);
+        return true;
     }
 
     private void TrySubscribe()

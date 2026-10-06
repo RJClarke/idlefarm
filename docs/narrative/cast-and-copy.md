@@ -1,6 +1,6 @@
 # Cast & Copy
 
-_Generated 2026-09-30 17:07 from `Assets/Resources/LetterCatalog.asset` — don't edit this file by hand, it gets overwritten._
+_Generated 2026-10-05 00:27 from `Assets/Resources/LetterCatalog.asset` — don't edit this file by hand, it gets overwritten._
 
 **To change copy:** select `LetterCatalog` in the Project window and edit it in the Inspector (Cast / Letters / Tips), then run **Farm Game > Narrative > Write Copy Reference** to refresh this page. Or just ask Claude.
 
@@ -10,7 +10,7 @@ _Generated 2026-09-30 17:07 from `Assets/Resources/LetterCatalog.asset` — don'
 
 | Character | Who they are | Letters |
 |---|---|---|
-| **Mayor Bramble** | Mayor of the valley town, and the player's first friend. | 8 |
+| **Mayor Bramble** | Mayor of the valley town, and the player's first friend. | 9 |
 | **Pippa the Tinker** | Inventor who builds gadgets for farms (Compost Bay, equipment). | 1 |
 | **Harry the Carpenter** | Runs the carpenter's shop at the market: tools (axe, fishing pole) and buildings. | 4 |
 | **Old Finch** | Retired fisherman who knows every inch of the lake. Also posts Town Requests. | 3 |
@@ -22,7 +22,7 @@ _Generated 2026-09-30 17:07 from `Assets/Resources/LetterCatalog.asset` — don'
 
 | Letter | From | Arrives when | Gift | Button |
 |---|---|---|---|---|
-| Welcome to {farmName}! | Mayor Bramble | sent directly by code (e.g. right after naming the farm) | 50 Coins | — |
+| Welcome to {farmName}! | Mayor Bramble | sent directly by code (e.g. right after naming the farm) | Radish seed packet + 50 Coins | — |
 | You can build a Compost Bay! | Pippa the Tinker | research unlocks `composting_basics` | — | Go to Equipment |
 | Your first harvest! | Mayor Bramble | run #1 ends _(new farms only)_ | — | See Farm Upgrades |
 | Those trees won't chop themselves | Harry the Carpenter | run #2 ends _(new farms only)_ | — | Visit Harry's Shop |
@@ -42,6 +42,7 @@ _Generated 2026-09-30 17:07 from `Assets/Resources/LetterCatalog.asset` — don'
 | These ones keep giving | Hazel | the first regrowing crop is bought _(new farms only)_ | — | — |
 | The town could use a hand | Mayor Bramble | run #4 ends _(new farms only)_ | — | See Requests |
 | One crop, two fields? | Hazel | Field 2 is bought _(new farms only)_ | — | Visit Hazel's Stall |
+| A little thank-you | Mayor Bramble | `welcome_basket_done` | — | — |
 
 ## Letters by character
 
@@ -53,7 +54,7 @@ _Generated 2026-09-30 17:07 from `Assets/Resources/LetterCatalog.asset` — don'
 #### "Welcome to {farmName}!"  `welcome`
 
 - **Arrives:** sent directly by code (e.g. right after naming the farm)
-- **Gift:** 50 Coins
+- **Gift:** Radish seed packet + 50 Coins
 
 > Dear {farmName},
 >
@@ -157,6 +158,16 @@ _Generated 2026-09-30 17:07 from `Assets/Resources/LetterCatalog.asset` — don'
 > Help out, and folks won't forget it. Every delivery earns you Reputation, and a good name in this valley opens doors - your Barn will show you how.
 >
 > I've pinned the first request myself.
+>
+> - Mayor Bramble
+
+#### "A little thank-you"  `town_gift`
+
+- **Arrives:** `welcome_basket_done`
+
+> Dear {farmName},
+>
+> The whole town loved your basket. We'll leave a little something at your farm now and then.
 >
 > - Mayor Bramble
 
@@ -363,7 +374,7 @@ Shown by the spotlight overlay, once each, only on farms named after onboarding 
 | Any run: first time a helper can't afford a seed bag (points at the seed counter) | You're out of Money for seeds! Every harvest earns more, but seed bags cost more the longer a run goes. When you can't buy seeds and nothing is growing, the run ends. | `tip_out_of_money` |
 | First time the Farm upgrades menu opens | Spend your Coins here to make every run better. A bigger field is a great first buy! | `tip_farm_upgrades` |
 | First time the Quests menu opens | Finish daily quests to earn Gems. New quests arrive every day. | `tip_quests` |
-| First time the daily rewards calendar opens | Come back every day for a gift. Collect every day of the week for a bonus! | `tip_daily_rewards` |
+| First time the daily rewards calendar opens | Every visit moves you one gift along the week, and each gift is bigger than the last. Collect all 7 for a bonus! | `tip_daily_rewards` |
 | First arrival at the Market | Welcome to the market! Look around - shops here sell seeds, tools and buildings. Check the notice board for townsfolk who need a hand. | `tip_market` |
 | First arrival at the Woods without an axe | These trees are yours to chop, but you'll need an axe first. Harry the Carpenter sells one at the market. | `tip_woods_no_axe` |
 | First arrival at the Woods with an axe | Tap a tree to swing your axe. Each chop knocks loose some wood, and chopped trees grow back over time. | `tip_woods` |
@@ -384,6 +395,7 @@ Shown by the spotlight overlay, once each, only on farms named after onboarding 
 | Barn opened with a skill point to spend (points at a + button) | You have a point to spend! Tap + to level up a skill. Each level makes your farm a little better at that job. | `tip_barn_spend` |
 | Hazel's stall opened once a crop can take a 2nd packet (more fields than packets) | Each packet lets a crop grow in one field. Buy another to plant it in more fields at once - great for going all-in on compost, jam or a big town order. | `tip_extra_packet` |
 | A run where a field with a crop chosen is still bare after a few minutes | This field is still waiting its turn - your helper has its hands full with your other crops! Another helper, a speedier one, or a sprinkler would lend a hand. | `tip_idle_field` |
+| Free Gift chest first unlocks (after the Welcome Basket letter is read) | A gift every 30 minutes. This one's on us! | `tip_town_gift` |
 
 ## Farmer's Almanac pages
 

@@ -84,6 +84,7 @@ public static class OnboardingTutorials
     /// <summary>InboxPopupUITK.Close: after reading the Mayor's letter, show where to plant.</summary>
     public static void OnInboxClosed()
     {
+        FreeGiftManager.Instance?.TryShowIntro(); // all players, not just new ones
         if (IsNewPlayer && Done(MailboxIntroId)) TryFieldIntro();
     }
 

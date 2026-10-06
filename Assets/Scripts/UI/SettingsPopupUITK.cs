@@ -177,6 +177,13 @@ public class SettingsPopupUITK : MonoBehaviour
                 Close();
                 FarmNamePopupUITK.Instance?.Open(isFirstRun: false);
             });
+
+        SpawnButtonRow(rows, "Store", "Gems and the Farmer's Pass", "Open",
+            () =>
+            {
+                Close();
+                StorePopupUITK.Open();
+            });
     }
 
     private void BuildDevSection()
@@ -195,6 +202,19 @@ public class SettingsPopupUITK : MonoBehaviour
             {
                 if (CurrencyManager.Instance != null) CurrencyManager.Instance.AddGems(1_000);
             });
+
+        SpawnButtonRow(rows, "Free Gift: Ready Now", "Skip the 30-min cooldown", "Ready",
+            () => FreeGiftManager.Instance?.DevMakeReady());
+        SpawnButtonRow(rows, "Free Gift: Reset", "Clear claims, daily count and pitch", "Reset",
+            () => FreeGiftManager.Instance?.DevResetGift());
+        SpawnButtonRow(rows, "Reset Store Purchases", "Forget pass, sets and boosts here and in the test store", "Reset",
+            () => StoreManager.Instance?.DevResetPass());
+        SpawnButtonRow(rows, "Reset Skins", "Forget every owned skin and go back to Classic", "Reset",
+            () => SkinManager.Instance?.DevResetSkins());
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+        SpawnToggleRow(rows, "Test Ads: No Fill", "Pretend no ad is available",
+            FakeAdService.SimulateNoFill, v => FakeAdService.SimulateNoFill = v);
+#endif
 
         SpawnButtonRow(rows, "Grant $", "+10,000 run money (only during a run)", "+10k",
             () =>

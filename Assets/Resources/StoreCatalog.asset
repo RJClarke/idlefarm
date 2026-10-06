@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9066367cde22334182a9127deb2732a, type: 3}
+  m_Name: StoreCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::StoreCatalogSO
+  products:
+  - id: farmers_pass
+    displayName: Farmer's Pass
+    kind: 1
+    section: 0
+    gems: 500
+    fallbackPrice: $9.99
+    description: No ads. Ever.
+    ribbon: 
+    comingSoon: 0
+    icon: {fileID: 21300000, guid: ac257ec7ef555774ab97ab29bc4518f7, type: 3}
+    grantsSkinIds: []
+  - id: gems_handful
+    displayName: Handful
+    kind: 0
+    section: 1
+    gems: 100
+    fallbackPrice: $0.99
+    description: 
+    ribbon: 
+    comingSoon: 0
+    icon: {fileID: 21300000, guid: 6098d915f15824347ba88eb65c524b6b, type: 3}
+    grantsSkinIds: []
+  - id: gems_pouch
+    displayName: Pouch
+    kind: 0
+    section: 1
+    gems: 550
+    fallbackPrice: $4.99
+    description: 
+    ribbon: +10%
+    comingSoon: 0
+    icon: {fileID: 21300000, guid: 6098d915f15824347ba88eb65c524b6b, type: 3}
+    grantsSkinIds: []
+  - id: gems_sack
+    displayName: Sack
+    kind: 0
+    section: 1
+    gems: 1200
+    fallbackPrice: $9.99
+    description: 
+    ribbon: +20%
+    comingSoon: 0
+    icon: {fileID: 21300000, guid: 6098d915f15824347ba88eb65c524b6b, type: 3}
+    grantsSkinIds: []
+  - id: gems_chest
+    displayName: Chest
+    kind: 0
+    section: 1
+    gems: 2600
+    fallbackPrice: $19.99
+    description: 
+    ribbon: +30%
+    comingSoon: 0
+    icon: {fileID: 21300000, guid: 6098d915f15824347ba88eb65c524b6b, type: 3}
+    grantsSkinIds: []
+  - id: gems_vault
+    displayName: Vault
+    kind: 0
+    section: 1
+    gems: 7000
+    fallbackPrice: $49.99
+    description: 
+    ribbon: +40%
+    comingSoon: 0
+    icon: {fileID: 21300000, guid: 6098d915f15824347ba88eb65c524b6b, type: 3}
+    grantsSkinIds: []
+  - id: soon_farm_themes
+    displayName: Farm Themes
+    kind: 1
+    section: 2
+    gems: 0
+    fallbackPrice: 
+    description: A whole new feel.
+    ribbon: 
+    comingSoon: 1
+    icon: {fileID: 0}
+    grantsSkinIds: []
+  - id: set_golden_farm
+    displayName: Golden Farm Set
+    kind: 1
+    section: 3
+    gems: 0
+    fallbackPrice: $4.99
+    description: Golden hen, golden rooster and a golden barn.
+    ribbon: Set
+    comingSoon: 0
+    icon: {fileID: 0}
+    grantsSkinIds:
+    - chicken_golden
+    - rooster_golden
+    - house_yellow_barn
+  - id: set_puppy_pack
+    displayName: Puppy Pack
+    kind: 1
+    section: 3
+    gems: 0
+    fallbackPrice: $2.99
+    description: Three Labradors for your farm dog.
+    ribbon: Set
+    comingSoon: 0
+    icon: {fileID: 0}
+    grantsSkinIds:
+    - dog_lab_brown
+    - dog_lab_dark
+    - dog_lab_white
+  - id: bundle_starter
+    displayName: Starter Bundle
+    kind: 1
+    section: 3
+    gems: 800
+    fallbackPrice: $2.99
+    description: 800 gems and the Cottage farmhouse.
+    ribbon: Once
+    comingSoon: 0
+    icon: {fileID: 21300000, guid: ac257ec7ef555774ab97ab29bc4518f7, type: 3}
+    grantsSkinIds:
+    - house_cottage
+  - id: boost_harvest_blessing
+    displayName: Harvest Blessing
+    kind: 1
+    section: 4
+    gems: 0
+    fallbackPrice: $9.99
+    description: +25% Coins from every harvest, forever.
+    ribbon: 
+    comingSoon: 0
+    icon: {fileID: 21300000, guid: cc3309145442a7e428e48e8c4fa28166, type: 3}
+    grantsSkinIds: []

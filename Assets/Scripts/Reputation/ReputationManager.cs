@@ -82,7 +82,11 @@ public class ReputationManager : MonoBehaviour
         if (!DeliveryService.TryFulfill(request)) return false;
 
         core.OnFulfilled(slot, DateTime.UtcNow.Ticks, CooldownTicks);
-        if (request.isWelcomeBasket) NarrativeManager.Instance?.MarkFired(WelcomeBasketFlag);
+        if (request.isWelcomeBasket)
+        {
+            NarrativeManager.Instance?.MarkFired(WelcomeBasketFlag);
+            NarrativeDirector.Raise(FreeGiftManager.UnlockEvent); // the town's thank-you letter: the Free Gift unlocks
+        }
         int awarded = core.AddRep(request.repReward);
         Debug.Log($"[Reputation] Fulfilled slot {slot} (+{request.repReward} rep)");
         OnChanged?.Invoke();

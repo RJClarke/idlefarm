@@ -328,6 +328,7 @@ public class Plant : MonoBehaviour
             coinGain = Mathf.RoundToInt(CropStats.Coins(cropData, zone).total);
             if (bountiful) coinGain *= 2;
             coinGain *= goldenMultiplier;
+            coinGain = Mathf.RoundToInt(coinGain * StoreManager.HarvestCoinMultiplier); // Harvest Blessing (Store)
             coinGain = Mathf.Max(1, coinGain);
             CurrencyManager.Instance.AddCoins(coinGain);
             // Stagger 0.35s after the cash pop and nudge up so both numbers stay readable.

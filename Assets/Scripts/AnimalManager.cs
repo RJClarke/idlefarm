@@ -460,6 +460,7 @@ public class AnimalManager : MonoBehaviour
     // ── Visual Spawning ──────────────────────────────
 
     private void SpawnAnimalVisual(AnimalData data)
+        SkinSwapper.Attach(activeVisualInstance, data.animalID); // equipped colour variant (Store skins)
     {
         if (data.visualPrefab == null)
         {

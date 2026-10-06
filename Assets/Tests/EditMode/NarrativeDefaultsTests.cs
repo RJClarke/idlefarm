@@ -70,4 +70,17 @@ public class NarrativeDefaultsTests
         foreach (var l in NarrativeDefaults.Letters) StringAssert.DoesNotContain(" Gold", l.body, l.id);
         foreach (var t in NarrativeDefaults.Tips) StringAssert.DoesNotContain(" Gold", t.text, t.id);
     }
+
+    [Test]
+    public void TownGift_LetterAndTip_Exist()
+    {
+        var letter = NarrativeDefaults.Letters.FirstOrDefault(l => l.id == "town_gift");
+        Assert.IsNotNull(letter);
+        Assert.AreEqual("welcome_basket_done", letter.triggerEvent);
+        Assert.AreEqual("A little thank-you", letter.subject);
+        Assert.IsFalse(letter.newPlayersOnly);
+        var tip = NarrativeDefaults.Tips.FirstOrDefault(t => t.id == "tip_town_gift");
+        Assert.IsNotNull(tip);
+        Assert.AreEqual("A gift every 30 minutes. This one's on us!", tip.text);
+    }
 }
