@@ -197,6 +197,10 @@ public class QuestPopupUITK : MonoBehaviour
         }
 
         if (needsRebuild) RefreshAll();
+
+        // Keep both countdowns ticking while the popup stays open.
+        RefreshWeeklyCountLabel();
+        RefreshFooter();
     }
 
     private void OnQuestStateChanged()
@@ -218,8 +222,7 @@ public class QuestPopupUITK : MonoBehaviour
         int completed = QuestManager.Instance.QuestsCompletedThisWeek;
         bool[] claimed = QuestManager.Instance.WeeklyMilestonesClaimed;
 
-        if (weeklyCountLabel != null)
-            weeklyCountLabel.text = $"{completed} / 40 quests · resets Sun";
+        RefreshWeeklyCountLabel();
 
         if (weeklyProgressFill != null)
             weeklyProgressFill.style.width = new Length(Mathf.Clamp01(completed / 40f) * 100f, LengthUnit.Percent);
@@ -414,13 +417,16 @@ public class QuestPopupUITK : MonoBehaviour
     private void RefreshFooter()
     {
         if (QuestManager.Instance == null || footerText == null) return;
-        DateTime nextDrop = QuestManager.Instance.GetNextDropTimeUtc();
-        TimeSpan remaining = nextDrop - DateTime.UtcNow;
-        if (remaining < TimeSpan.Zero) remaining = TimeSpan.Zero;
-        int hours = (int)remaining.TotalHours;
-        int minutes = remaining.Minutes;
-        string timeStr = hours > 0 ? $"{hours}h {minutes}m" : $"{minutes}m";
-        footerText.text = $"Next drop in {timeStr}  ·  {QuestManager.Instance.ActiveQuestCount}/10 slots";
+        TimeSpan remaining = QuestManager.Instance.GetNextDropTimeUtc() - DateTime.UtcNow;
+        footerText.text = $"Next drop in {QuestSchedule.FormatCountdown(remaining)}  ·  {QuestManager.Instance.ActiveQuestCount}/10 slots";
+    }
+
+    // "N / 40 quests · resets in 2d 5h 12m": counts down to the Sunday reset while the popup is open.
+    private void RefreshWeeklyCountLabel()
+    {
+        if (QuestManager.Instance == null || weeklyCountLabel == null) return;
+        TimeSpan untilReset = QuestSchedule.NextWeekResetUtc(DateTime.UtcNow) - DateTime.UtcNow;
+        weeklyCountLabel.text = $"{QuestManager.Instance.QuestsCompletedThisWeek} / 40 quests · resets in {QuestSchedule.FormatCountdown(untilReset)}";
     }
 
     private void OnClaimClicked(string questID, VisualElement row, Button claimButton, int coinReward)

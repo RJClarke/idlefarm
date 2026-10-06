@@ -158,6 +158,7 @@ public class CanneryManager : MonoBehaviour
     /// if diverted (caller must then SKIP the normal cash+coin payouts). Value basis is the
     /// crop's BASE harvestValue — deterministic, unaffected by in-run multipliers (knob choice).
     /// </summary>
+
     public bool TryIntake(CropData crop)
     {
         // Only crops explicitly flagged as cannable are diverted; the rest pay out normally.

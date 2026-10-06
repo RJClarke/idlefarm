@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd391a77cf87d964bbb447bb0aa52458, type: 3}
   m_Name: AlmanacArt
   m_EditorClassIdentifier: Assembly-CSharp::AlmanacArt
-  titleFont: {fileID: 11400000, guid: a09af222286edb04696b2d61f639ab89, type: 2}
+  titleFont: {fileID: 11400000, guid: 80079cbe713e9134f8092e8cdbef4ef0, type: 2}
+  tabFont: {fileID: 11400000, guid: 4ed9a6acd1dd96648a6800878d80c351, type: 2}
   tabOff: {fileID: 3596160088656384895, guid: abae6ad5e77e8aa498ff4ddd608c7a4b, type: 3}
   tabOn: {fileID: -3189890118001483501, guid: 686d1272981ff4948aeb026256bd3343, type: 3}
   tabSlice: 4

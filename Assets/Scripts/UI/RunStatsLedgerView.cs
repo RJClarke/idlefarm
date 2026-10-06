@@ -27,6 +27,7 @@ public static class RunStatsLedgerView
         Row(econ, "Coins banked", "+" + d.coinsBanked.ToString("N0"), "coins", "coins");
         if (d.compostGained > 0) Row(econ, "Compost gained", "+" + d.compostGained.ToString("N0"), "pos", "compost");
         Row(econ, "Total harvested", d.totalHarvested.ToString("N0"), "total");
+        if (d.collectPausedWhileAway) Row(econ, "Collect pauses while you're away", "sold", "dim");
         if (d.offlineTaxApplied) Row(econ, "after 30% offline tax", "applied", "dim");
 
         // Fields — 2x2 zone cards mirroring the farm.
@@ -43,22 +44,14 @@ public static class RunStatsLedgerView
             Row(none, "Nothing planted", "0", "dim");
         }
 
-        // Animals — small sprite icon rows; live full view only.
-        if (!compact && (d.hasDefender || d.hasCow))
+        // Animals — small sprite icon rows, one group per animal (also in the light recap, so a
+        // welcome-back shows what your animal got up to while you were away).
+        if (d.animals.Count > 0)
         {
             var animals = Section(container, "Animals");
-            if (d.hasDefender)
-            {
-                IconRow(animals, d.defenderSprite, d.defenderName + " — deer chased off", d.deerChasedByDefender.ToString());
-                // Only the goose goes after crows; hide the line for defenders that never do.
-                if (d.crowsChasedByDefender > 0)
-                    IconRow(animals, d.defenderSprite, d.defenderName + " — crows chased off", d.crowsChasedByDefender.ToString());
-            }
-            if (d.hasCow)
-            {
-                IconRow(animals, d.cowSprite, "Cow — plants eaten", d.plantsEatenByCow.ToString());
-                IconRow(animals, d.cowSprite, "Cow — compost gained", "+" + d.compostFromCow.ToString("N0"), "compost");
-            }
+            foreach (LedgerAnimal a in d.animals)
+                foreach (var line in a.lines)
+                    IconRow(animals, a.sprite, a.name + " — " + line.label, line.value, line.mod);
         }
     }
 

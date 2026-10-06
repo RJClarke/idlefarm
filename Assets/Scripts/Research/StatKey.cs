@@ -9,6 +9,7 @@ namespace Research
         // Soil
         public const string SoilWaterEfficiency = "soil_water_efficiency";
         public const string SoilQuality = "soil_quality";
+        public const string SoilStayTilled = "soil_stay_tilled"; // +seconds before idle tilled soil goes fallow
 
         // Helper
         public const string HelperTillSpeed = "helper_till_speed";
@@ -33,6 +34,7 @@ namespace Research
         public const string RoosterEfficiency = "rooster_efficiency";
         public const string CowPassiveCompost = "cow_passive_compost";
         public const string CowRunYield = "cow_run_yield";
+        public const string HorsePlowSpeed = "horse_plow_speed";
 
         // Equipment — values intentionally match EquipmentData.*UpgradeID so a single
         // GetBonus(upgradeID) call in EquipmentManager picks them up.

@@ -233,14 +233,16 @@ public static class AlmanacCatalog
         // Flags: an animal can do both (the goose lays an egg AND chases pests), so check each.
         if (a.abilityType.HasFlag(AnimalAbilityType.PassiveTimer))
         {
-            e.pills.Add(AlmanacPills.Simple(a.rewardGems > 0 ? PillKind.GivesGems : PillKind.GivesCoins));
-            e.stats.Add(new StatLine("Gift every", a.cooldownMinutes * 60f, StatFormat.Seconds)
+            // Coin gifts are eggs (chicken, goose); the rooster's Gems are just a gift.
+            bool eggs = a.rewardGems <= 0;
+            e.pills.Add(AlmanacPills.Simple(eggs ? PillKind.LaysEggs : PillKind.GivesGems));
+            e.stats.Add(new StatLine(eggs ? "Lays an egg every" : "Gift every", a.cooldownMinutes * 60f, StatFormat.Seconds)
                 .Divide(CropStats.FromResearch, Mathf.Max(0.01f, 1f + Res(AnimalManager.CooldownResearchKey(a)))));
             if (a.rewardGems > 0)
                 e.stats.Add(new StatLine("Gems per gift", a.rewardGems, StatFormat.Number)
                     .Multiply(CropStats.FromResearch, 1f + Res(AnimalManager.RewardResearchKey(a))));
             else
-                e.stats.Add(new StatLine("Coins per gift", a.rewardCoins, StatFormat.Coins)
+                e.stats.Add(new StatLine("Coins per egg", a.rewardCoins, StatFormat.Coins)
                     .Multiply(CropStats.FromResearch, 1f + Res(AnimalManager.RewardResearchKey(a)), roundToInt: true)
                     .Multiply(CropStats.FromSkills, 1f + (FarmSkillsManager.Instance != null ? FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Ranching) : 0f), roundToInt: true));
         }
@@ -291,6 +293,16 @@ public static class AlmanacCatalog
                 .Multiply(CropStats.FromResearch, 1f + res(Research.StatKey.CowRunYield), roundToInt: true)
                 .Multiply(CropStats.FromUpgrades, FarmUpgrades.CompostMultiplier, roundToInt: true));
             e.notes.Add($"During a run she eats a ripe crop every {cow.MinEatInterval:0}-{cow.MaxEatInterval:0}s and turns it into compost.");
+        }
+        else if (visual != null && visual.GetComponent<Horse>() is Horse horse)
+        {
+            float research = 1f + res(Research.StatKey.HorsePlowSpeed);
+            e.stats.Add(new StatLine("Plow speed", Tiles(horse.PlowSpeed), StatFormat.Speed)
+                .Multiply(CropStats.FromResearch, research));
+            e.stats.Add(new StatLine("Walk speed (lining up)", Tiles(horse.TravelSpeed), StatFormat.Speed)
+                .Multiply(CropStats.FromResearch, research));
+            e.notes.Add("During a run he plows untilled soil row by row, snaking back and forth across the fields, " +
+                        "and comes back to re-till any plot that was left unplanted too long.");
         }
         else
         {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Research_soil_quality
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: soil_quality
-  displayName: 'Soil: Quality'
+  displayName: Soil Quality
   description: +0.5% per level. Maxes at +50%.
   branchID: soil
   tier: 4

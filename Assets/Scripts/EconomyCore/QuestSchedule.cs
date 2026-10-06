@@ -12,8 +12,8 @@ using System.Collections.Generic;
 /// identically on every platform.
 ///
 /// Dropping true DST costs nothing observable: no player-facing string ever shows an absolute
-/// clock time. The quest popup shows a relative countdown ("Next drop in 3h 24m") and a bare day
-/// name ("resets Sun"), so a one-hour seasonal drift is invisible. What the fixed offset buys is
+/// clock time. The quest popup shows only relative countdowns ("Next drop in 3h 24m", "resets in
+/// 2d 5h 12m"), so a one-hour seasonal drift is invisible. What the fixed offset buys is
 /// that drops are the same real-world instant for everybody, which keeps a synchronised event
 /// possible later and means changing the device timezone cannot manufacture extra drops.
 ///
@@ -77,5 +77,18 @@ public static class QuestSchedule
     {
         DateTime g = ToGameTime(nowUtc);
         return ToUtc(g.Date.AddDays(-(int)g.DayOfWeek));
+    }
+
+    /// <summary>When the milestone week next resets: the coming Sunday 00:00 game time, always
+    /// STRICTLY after <paramref name="nowUtc"/> (on the boundary itself it's a week away).</summary>
+    public static DateTime NextWeekResetUtc(DateTime nowUtc) => WeekStartUtc(nowUtc).AddDays(7);
+
+    /// <summary>Compact countdown for UI: "2d 5h 12m", "5h 3m", "45m". Negative reads "0m".</summary>
+    public static string FormatCountdown(TimeSpan remaining)
+    {
+        if (remaining < TimeSpan.Zero) remaining = TimeSpan.Zero;
+        if (remaining.Days > 0) return $"{remaining.Days}d {remaining.Hours}h {remaining.Minutes}m";
+        if (remaining.Hours > 0) return $"{remaining.Hours}h {remaining.Minutes}m";
+        return $"{remaining.Minutes}m";
     }
 }

@@ -53,6 +53,9 @@ public abstract class AnimalDefender : MonoBehaviour
     public float ChaseCooldownDivisor => CooldownDivisor;
     public AnimalThreatType[] Chases => TargetTypes;
 
+    /// <summary>This animal's id for per-animal run stats.</summary>
+    protected string AnimalId => animalVisual != null && animalVisual.Data != null ? animalVisual.Data.animalID : LogName;
+
     // ── Subclass hooks ──────────────────────────────────────────────────────
 
     /// <summary>Threat types this animal will chase, in priority order.</summary>

@@ -267,6 +267,11 @@ public class LakeNode : MonoBehaviour
         var fm = FishingManager.Instance;
         if (fm == null || !CanInteract()) return;
 
+        // A press on a building, sign or anything else clickable belongs to that thing, not the
+        // line: only the open lake view (bare ground or the water itself) reels. The whole press
+        // is ignored, so holding on the Smokehouse can't start a continuous reel either.
+        if (justPressed && PointerHitsOtherClickable(screenPos)) return;
+
         if (justPressed)
         {
             // Yank immediately on touch — no hold delay before the line responds.
@@ -361,6 +366,18 @@ public class LakeNode : MonoBehaviour
         if (cam == null || hitCollider == null) return false;
         Vector3 world = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, -cam.transform.position.z));
         return Physics2D.OverlapPoint(world) == hitCollider;
+    }
+
+    /// <summary>True when a collider other than the lake's water is under the pointer. World props
+    /// (Smokehouse, Cannery, ...) treat the collider <see cref="Physics2D.OverlapPoint"/> returns as
+    /// "clicked", so this mirrors exactly what they'd react to.</summary>
+    private bool PointerHitsOtherClickable(Vector2 screenPos)
+    {
+        Camera cam = Camera.main;
+        if (cam == null) return false;
+        Vector3 world = cam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, -cam.transform.position.z));
+        Collider2D hit = Physics2D.OverlapPoint(world);
+        return hit != null && hit != hitCollider && hit != ownCollider;
     }
 
     private void CancelPress()

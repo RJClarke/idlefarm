@@ -10,6 +10,11 @@ public struct SimCrop
     public string id;                  // stable lookup key (caller uses CropData.cropName)
     public float growSeconds;          // seed -> harvestable (CropData.TotalGrowthTime)
     public float regrowSeconds;        // harvest -> next harvest for regrowers (CropData.RegrowTime); 0 = replanted
+    // How hard each cause hits THIS crop vs an average one (pest appetite / health, thirst).
+    // Unset = an average crop (x1).
+    public float? deerLoss;
+    public float? crowLoss;
+    public float? dryLoss;
     public float harvestWindowSeconds; // 100%-value window after maturing
     public int harvestValue;           // money per harvest
     public int coinValue;              // coins banked per harvest
@@ -18,11 +23,25 @@ public struct SimCrop
     public int tier;                   // compost tier (1 = base)
 }
 
+/// <summary>What the equipped animal does during an away-run. All zero = no run behaviour
+/// (no animal, or one that only gives gifts, which wait to be tapped like in play).</summary>
+public struct SimAnimal
+{
+    public float chaseCooldownSeconds; // > 0: a guard (dog, goose) that chases one pest per rest
+    public bool chasesDeer;
+    public bool chasesCrows;
+    public float eatIntervalSeconds;   // > 0: a grazer (cow) that eats one ripe crop per interval
+    public int compostPerEat;
+}
+
 public struct SimZone
 {
     public SimCrop crop;
     public int tileCount;
     public int zoneId;   // FarmGrid ZoneID this sim zone mirrors (per-zone stat attribution)
+    /// <summary>Compost per plant lost in this field (0 = no Compost Bay here). Null keeps the
+    /// original rule of the crop's tier for every loss.</summary>
+    public int? compostPerLoss;
 }
 
 /// <summary>Per-zone slice of an OfflineRunResult (harvests, worth, losses by cause).</summary>
@@ -45,6 +64,10 @@ public class OfflineSimContext
     public float maxGameSpeed = 1f;    // 1 + GameSpeed research bonus (>= 1)
     public List<SimZone> zones = new List<SimZone>();
 
+    // Every harvest is sold while away: collecting (Collect mode, Cannery jars, eggs) needs an
+    // active run, so the only thing gathered besides Money and Coins is compost.
+    public SimAnimal animal;
+
     // Resolved 0..1 research/equipment bonuses (caller computes from live state):
     public float seedBagDiscount;      // StatKey.SeedBagDiscount
     public float seedBagSizeBonus;     // StatKey.SeedBagSize
@@ -64,6 +87,8 @@ public class OfflineRunResult
     public float finalFarmSeconds;
 
     public Dictionary<string, int> harvestedByCropId = new Dictionary<string, int>();
+    /// <summary>What the equipped animal did (see SimAnimal). Its compost is also in compostGained.</summary>
+    public int animalDeerChased, animalCrowsChased, animalPlantsEaten, animalCompost;
     public int eatenByDeer;
     public int eatenByCrows;
     public int struckByLightning;
@@ -128,6 +153,9 @@ public class OfflineSimTuning
     // base loss reductions when the matching equipment is equipped (scaled by effectiveness research)
     public float fenceDeerReduction = 0.5f;
     public float dogDeerReduction = 0.3f;
+    // The goose chases deer AND crows, a step slower than the dog (cooldown 18s vs 12s).
+    public float gooseDeerReduction = 0.2f;
+    public float gooseCrowReduction = 0.2f;
     public float scarecrowCrowReduction = 0.5f;
     public float sprinklerDryReduction = 0.5f;
 }

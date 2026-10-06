@@ -33,6 +33,13 @@ public class LetterDef
     [Header("Reward (optional)")]
     public RewardKind rewardKind = RewardKind.None;
     public int rewardAmount;
+    [Tooltip("Crop name (e.g. \"Radish\") of a seed packet enclosed with the letter. Shown in the Enclosed list; claiming grants the crop if the player doesn't own it yet.")]
+    public string giftSeed;
+
+    public bool HasCurrencyReward => rewardKind != RewardKind.None && rewardAmount > 0;
+    public bool HasGiftSeed => !string.IsNullOrEmpty(giftSeed);
+    /// <summary>True when the letter encloses anything to claim.</summary>
+    public bool HasReward => HasCurrencyReward || HasGiftSeed;
 
     [Header("Call to action (optional)")]
     public CtaKind ctaKind = CtaKind.None;

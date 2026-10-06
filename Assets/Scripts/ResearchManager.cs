@@ -195,7 +195,12 @@ public class ResearchManager : MonoBehaviour
     public bool IsPaid(string researchID) =>
         !string.IsNullOrEmpty(researchID) && paidResearchIDs.Contains(researchID);
 
-    public void CancelResearch(int slotIndex)
+    public void CancelResearch(int slotIndex) => CancelResearch(slotIndex, keepProgress: true);
+
+    /// <param name="keepProgress">False when a level has just FINISHED with Auto off: the time past
+    /// the finish line belongs to no paid level, so it is dropped. Keeping it banked a full unpaid
+    /// level after time away (the research sat at 00h00m00s, then "Resume" finished it free).</param>
+    private void CancelResearch(int slotIndex, bool keepProgress)
     {
         if (!IsValidSlot(slotIndex)) return;
         var s = slots[slotIndex];
@@ -203,7 +208,7 @@ public class ResearchManager : MonoBehaviour
         // Preserve progress toward the in-progress level so re-assigning later doesn't charge again.
         // Binary research is included: it used to be skipped here, which meant cancelling one
         // (e.g. Preserving at 6000 coins) recorded nothing and the next assign charged full price.
-        if (!s.IsIdle)
+        if (keepProgress && !s.IsIdle)
         {
             var rd = GetResearch(s.activeResearchID);
             if (rd != null && s.currentLevel < rd.MaxLevel)
@@ -309,11 +314,6 @@ public class ResearchManager : MonoBehaviour
         return ComputeElapsedSeconds(s, DateTime.UtcNow.Ticks);
     }
 
-    public int GetCurrentLevel(string researchID)
-    {
-        if (string.IsNullOrEmpty(researchID)) return 0;
-        return levelsByResearchID.TryGetValue(researchID, out var lvl) ? lvl : 0;
-    }
     /// <summary>Seconds left on the slot's current level (boost-aware); 0 for idle/paused/unknown.</summary>
     public double GetSecondsRemaining(int slotIndex)
     {
@@ -344,6 +344,11 @@ public class ResearchManager : MonoBehaviour
         return true;
     }
 
+    public int GetCurrentLevel(string researchID)
+    {
+        if (string.IsNullOrEmpty(researchID)) return 0;
+        return levelsByResearchID.TryGetValue(researchID, out var lvl) ? lvl : 0;
+    }
 
     public bool IsBinaryComplete(string researchID)
     {
@@ -357,6 +362,20 @@ public class ResearchManager : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(featureID) && featureFlags.Add(featureID))
             OnFeatureFlagUnlocked?.Invoke(featureID);
+    }
+
+    /// <summary>Dev/testing (balance bench): every research at this fraction of its max level
+    /// (rounded up, so 1-level unlocks still finish), with the slot and feature unlocks.</summary>
+    public void DevSetAll(float fraction)
+    {
+        foreach (var rd in catalog.Values)
+        {
+            levelsByResearchID[rd.researchID] = Mathf.CeilToInt(rd.MaxLevel * Mathf.Clamp01(fraction));
+            if (!rd.IsBinary) continue;
+            if (rd.unlocksSlotIndex >= 0 && rd.unlocksSlotIndex < SlotCount) UnlockSlotInternal(rd.unlocksSlotIndex);
+            if (!string.IsNullOrEmpty(rd.unlocksFeatureID) && featureFlags.Add(rd.unlocksFeatureID))
+                OnFeatureFlagUnlocked?.Invoke(rd.unlocksFeatureID);
+        }
     }
 
     public bool IsFeatureUnlocked(string featureID) => !string.IsNullOrEmpty(featureID) && featureFlags.Contains(featureID);
@@ -373,7 +392,7 @@ public class ResearchManager : MonoBehaviour
         // Apply Research Speed bonus globally (divide duration by 1 + bonus)
         float rsBonus = GetBonus(StatKey.ResearchSpeed);
         float scaled = baseSecs * Mathf.Pow(levelOneIndexed, p) / Mathf.Max(0.01f, 1f + rsBonus);
-        return scaled;
+        return scaled * ResearchMath.EarlyLevelMultiplier(levelOneIndexed, rd.earlyLevels, rd.earlyMultiplier);
     }
 
     public int GetCostForLevel(ResearchData rd, int levelOneIndexed)
@@ -383,7 +402,8 @@ public class ResearchManager : MonoBehaviour
         float p = tuning != null ? tuning.pCost : 2.0f;
         float costMul = tuning != null ? tuning.costMultiplier : 0.25f;
         float baseCost = rd.baseCostCoins * rd.costDifficulty * costMul;
-        return Mathf.CeilToInt(baseCost * Mathf.Pow(levelOneIndexed, p));
+        float early = ResearchMath.EarlyLevelMultiplier(levelOneIndexed, rd.earlyLevels, rd.earlyMultiplier);
+        return Mathf.CeilToInt(baseCost * Mathf.Pow(levelOneIndexed, p) * early);
     }
 
     // ───────── Tick (real-time level-ups) ─────────
@@ -432,7 +452,7 @@ public class ResearchManager : MonoBehaviour
 
                 // Auto off: the level the player paid for is finished — stop here and let them
                 // pick what's next. Auto on: roll straight into the following level below.
-                if (!s.autoRepeat) { CancelResearch(i); break; }
+                if (!s.autoRepeat) { CancelResearch(i, keepProgress: false); break; }
 
                 // Auto-charge next level — if player can't afford, pause at current level.
                 int nextCost = GetCostForLevel(rd, nextLevel + 1);
@@ -606,10 +626,12 @@ public class ResearchManager : MonoBehaviour
             {
                 if (string.IsNullOrEmpty(e.researchID)) continue;
                 if (e.level > 0) levelsByResearchID[e.researchID] = e.level;
+                // Progress only means something on a level that was paid for. Unpaid partials came
+                // from Auto-off overflow (see CancelResearch keepProgress) and are dropped; the old
+                // "partial > 0 means paid" fallback for pre-`paid` saves is what made them free.
+                if (!e.paid) continue;
+                paidResearchIDs.Add(e.researchID);
                 if (e.partialSecs > 0f) partialSecsByResearchID[e.researchID] = e.partialSecs;
-                // Saves written before `paid` existed fall back to the old inference, so an
-                // in-flight partial isn't re-charged after upgrading.
-                if (e.paid || e.partialSecs > 0f) paidResearchIDs.Add(e.researchID);
             }
 
         // Snapshot levels before catch-up so the welcome-back modal can show deltas.

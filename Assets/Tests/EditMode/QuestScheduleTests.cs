@@ -137,4 +137,36 @@ public class QuestScheduleTests
         DateTime after = QuestSchedule.WeekStartUtc(new DateTime(2026, 7, 26, 7, 0, 0, DateTimeKind.Utc));
         Assert.AreEqual(TimeSpan.FromDays(7), after - before);
     }
+
+    [Test]
+    public void NextWeekResetUtc_IsTheComingSunday0600Utc()
+    {
+        // Thursday 2026-07-30 13:00 UTC -> the next reset is Sunday 2026-08-02 06:00 UTC.
+        DateTime reset = QuestSchedule.NextWeekResetUtc(new DateTime(2026, 7, 30, 13, 0, 0, DateTimeKind.Utc));
+        Assert.AreEqual(new DateTime(2026, 8, 2, 6, 0, 0, DateTimeKind.Utc), reset);
+    }
+
+    [Test]
+    public void NextWeekResetUtc_IsStrictlyInTheFutureOnTheBoundary()
+    {
+        // Exactly at a reset instant, the countdown must point at the NEXT week, not read 0m.
+        DateTime boundary = new DateTime(2026, 8, 2, 6, 0, 0, DateTimeKind.Utc);
+        Assert.AreEqual(boundary.AddDays(7), QuestSchedule.NextWeekResetUtc(boundary));
+    }
+
+    [TestCase(0, 0, 0, 30, "0m")]
+    [TestCase(0, 0, 45, 0, "45m")]
+    [TestCase(0, 5, 3, 0, "5h 3m")]
+    [TestCase(2, 5, 12, 0, "2d 5h 12m")]
+    [TestCase(6, 0, 0, 0, "6d 0h 0m")]
+    public void FormatCountdown_ShowsDaysHoursMinutes(int d, int h, int m, int s, string expected)
+    {
+        Assert.AreEqual(expected, QuestSchedule.FormatCountdown(new TimeSpan(d, h, m, s)));
+    }
+
+    [Test]
+    public void FormatCountdown_ClampsNegativeToZero()
+    {
+        Assert.AreEqual("0m", QuestSchedule.FormatCountdown(TimeSpan.FromMinutes(-5)));
+    }
 }

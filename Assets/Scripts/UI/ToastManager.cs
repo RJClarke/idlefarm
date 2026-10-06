@@ -41,6 +41,12 @@ public class ToastManager : MonoBehaviour
     [Tooltip("Pixel font for toast text. Falls back to the catch font when unset, so both " +
              "toast styles share one typeface without extra scene wiring.")]
     [SerializeField] private UnityEngine.TextCore.Text.FontAsset toastFont;
+    [Tooltip("Title AND subtitle size in px. Keep it the font's bake size (Munro Pixel 41) or strokes go " +
+             "uneven. One size for both: a smaller subtitle lost whole strokes whenever the view was scaled " +
+             "down (e.g. a shrunk editor Game view), so the subtitle differs by colour only.")]
+    [SerializeField] private int toastFontSize = 41;
+    [Tooltip("Faux bold. Leave off for pixel fonts: it thickens strokes unevenly.")]
+    [SerializeField] private bool toastTitleBold = false;
     [Tooltip("Default icon for ToastKind.Success when the caller supplies none.")]
     [SerializeField] private Sprite successIcon;
     [Tooltip("Default icon for ToastKind.Unlock when the caller supplies none.")]
@@ -56,7 +62,7 @@ public class ToastManager : MonoBehaviour
     // Parchment ink. Cream is a light field, so text is dark walnut rather than an accent
     // colour — gold on cream is illegible, the same finding recorded on the catch toast below.
     private static readonly Color INK = new Color32(0x3E, 0x2A, 0x16, 0xFF);
-    private static readonly Color INK_MUTED = new Color32(0x6E, 0x56, 0x34, 0xFF);
+    private static readonly Color INK_MUTED = new Color32(0x5E, 0x45, 0x26, 0xFF); // dark enough to read on cream
     // Panel_Parchment_9Slice: 48x40 with a uniform 5px frame. Every border band is a solid run
     // along its stretch axis and the centre is one flat colour, so this slices without artifacts.
     private const int TOP_SLICE = 5;
@@ -138,6 +144,23 @@ public class ToastManager : MonoBehaviour
         if (Instance == null || string.IsNullOrEmpty(title)) return;
         Instance.Enqueue(title, subtitle, kind, icon);
     }
+
+#if UNITY_EDITOR
+    /// <summary>Dev preview (PlayModeBridge): a bottom catch toast with no icon.</summary>
+    public static void DevShowCatch(string message) => ShowCatch(null, message);
+
+    /// <summary>Dev preview (PlayModeBridge): swap the top-toast font by asset name from
+    /// Fonts/UITK SDF at a size, turn faux bold off, and show a sample. Play-session only.</summary>
+    public static string DevPreviewFont(string fontName, int size)
+    {
+        if (Instance == null) return "no ToastManager";
+        Instance.toastFont = UnityEditor.AssetDatabase.LoadAssetAtPath<UnityEngine.TextCore.Text.FontAsset>($"Assets/Fonts/UITK SDF/{fontName}.asset");
+        Instance.toastFontSize = size;
+        Instance.toastTitleBold = false;
+        Show("Research Complete", "Water Speed Level 2", ToastKind.Success);
+        return $"font={Instance.toastFont?.name}";
+    }
+#endif
 
     private void Enqueue(string title, string subtitle, ToastKind kind, Sprite icon)
     {
@@ -269,8 +292,8 @@ public class ToastManager : MonoBehaviour
         Label text = new Label(message);
         text.pickingMode = PickingMode.Ignore;
         text.style.color = (Color)new Color32(0x3E, 0x2A, 0x16, 0xFF);
-        text.style.fontSize = 30;
-        text.style.unityFontStyleAndWeight = FontStyle.Bold;
+        text.style.fontSize = 31; // Munro Pixel 31's bake size: off-size pixel fonts smear
+        text.style.unityFontStyleAndWeight = FontStyle.Normal;
         text.style.unityTextAlign = TextAnchor.MiddleLeft;
         if (catchFont != null)
             text.style.unityFontDefinition = new StyleFontDefinition(catchFont);
@@ -391,8 +414,8 @@ public class ToastManager : MonoBehaviour
         Label titleLabel = new Label(title);
         titleLabel.pickingMode = PickingMode.Ignore;
         titleLabel.style.color = titleColor;
-        titleLabel.style.fontSize = 34;
-        titleLabel.style.unityFontStyleAndWeight = FontStyle.Bold;
+        titleLabel.style.fontSize = toastFontSize;
+        titleLabel.style.unityFontStyleAndWeight = toastTitleBold ? FontStyle.Bold : FontStyle.Normal;
         titleLabel.style.whiteSpace = WhiteSpace.NoWrap;
         titleLabel.style.unityTextAlign = TextAnchor.MiddleLeft;
         if (Font != null) titleLabel.style.unityFontDefinition = new StyleFontDefinition(Font);
@@ -403,7 +426,7 @@ public class ToastManager : MonoBehaviour
             Label subLabel = new Label(subtitle);
             subLabel.pickingMode = PickingMode.Ignore;
             subLabel.style.color = subColor;
-            subLabel.style.fontSize = 28;
+            subLabel.style.fontSize = toastFontSize;
             subLabel.style.whiteSpace = WhiteSpace.NoWrap;
             subLabel.style.unityTextAlign = TextAnchor.MiddleLeft;
             subLabel.style.marginLeft = 16; // gap when inline; harmless once wrapped

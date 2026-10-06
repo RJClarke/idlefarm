@@ -38,6 +38,6 @@ public class FarmDog : AnimalDefender
 
     protected override void RecordChase(AnimalThreat threat)
     {
-        if (RunStats.Instance != null) RunStats.Instance.AddDeerChasedByAnimal();
+        if (RunStats.Instance != null) RunStats.Instance.AddChase(AnimalId, AnimalThreatType.Deer);
     }
 }

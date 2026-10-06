@@ -8,6 +8,8 @@ public class SoilTile : MonoBehaviour
 {
     [Header("Tile State")]
     [SerializeField] private TileState currentState = TileState.Untilled;
+    [Tooltip("Pre-Tilled Soil (Farm upgrade): this tile starts every run tilled. It can still go " +
+             "fallow mid-run like any other tile.")]
     [SerializeField] private bool isPermanentlyTilled = false;
 
     [Header("Zone Info")]
@@ -37,6 +39,11 @@ public class SoilTile : MonoBehaviour
     private GameObject currentPlant;
     private Plant plantComponent;
 
+    // Fallow decay: seconds (scaled run time) this tile has sat tilled but empty. FarmGrid drives it
+    // during runs; at its threshold the tile reverts to untilled and must be tilled again.
+    private float fallowTimer;
+    private float fallowTint; // 0..1 how far the soil colour has slid back toward untilled
+
     // Reserved by equipment (e.g. a sprinkler sitting on the zone's center tile). A blocked tile
     // can't be tilled or planted, so it never gets worked/watered/harvested by helpers and stays
     // clear for the equipment to remain visible. Recomputed each run by FarmGrid.
@@ -52,6 +59,7 @@ public class SoilTile : MonoBehaviour
     public GameObject CurrentPlant => currentPlant;
     public bool CanPlant => currentState == TileState.Tilled && !IsOccupied && !isBlocked;
     public bool IsBlocked => isBlocked;
+    public float FallowTimer => fallowTimer;
 
     /// <summary>Reserve/unreserve this tile (e.g. for a sprinkler). Blocked tiles can't be tilled or planted.</summary>
     public void SetBlocked(bool blocked) => isBlocked = blocked;
@@ -197,17 +205,9 @@ public class SoilTile : MonoBehaviour
             return false;
         }
 
-        if (isPermanentlyTilled)
-        {
-            currentState = TileState.Tilled;
-            UpdateBaseVisuals();
-            return true;
-        }
-
         if (CurrencyManager.Instance != null && CurrencyManager.Instance.SpendMoney(cost))
         {
-            currentState = TileState.Tilled;
-            UpdateBaseVisuals();
+            SetTilled();
             if (RunStats.Instance != null) RunStats.Instance.AddTileTilled();
             return true;
         }
@@ -222,15 +222,8 @@ public class SoilTile : MonoBehaviour
     {
         if (isBlocked) return false;
         if (currentState == TileState.Tilled) return false;
-        if (isPermanentlyTilled)
-        {
-            currentState = TileState.Tilled;
-            UpdateBaseVisuals();
-            return true;
-        }
 
-        currentState = TileState.Tilled;
-        UpdateBaseVisuals();
+        SetTilled();
         if (RunStats.Instance != null) RunStats.Instance.AddTileTilled();
         return true;
     }
@@ -248,12 +241,69 @@ public class SoilTile : MonoBehaviour
         if (CurrencyManager.Instance != null && CurrencyManager.Instance.SpendCoins(cost))
         {
             isPermanentlyTilled = true;
-            currentState = TileState.Tilled;
-            UpdateBaseVisuals();
+            SetTilled();
             return true;
         }
 
         return false;
+    }
+
+    /// <summary>
+    /// Mark/unmark this tile as Pre-Tilled (Farm upgrade). Between runs the soil flips immediately so
+    /// the purchase is visible on the home farm; during a run only the flag changes (next run uses it).
+    /// </summary>
+    public void SetPreTilled(bool preTilled, bool applyNow)
+    {
+        isPermanentlyTilled = preTilled;
+        if (!applyNow || IsOccupied) return;
+        if (preTilled) SetTilled();
+        else if (currentState == TileState.Tilled) Untill();
+    }
+
+    /// <summary>
+    /// Advance fallow decay by <paramref name="dt"/> (call only while the tile is tilled and empty).
+    /// The soil colour slides back toward untilled over the last <paramref name="warnFraction"/> of
+    /// the window. Returns true once the timer reaches <paramref name="fallowSeconds"/>; the caller
+    /// decides whether to <see cref="Untill"/> (it holds the tile while a helper is coming to plant).
+    /// </summary>
+    public bool TickFallow(float dt, float fallowSeconds, float warnFraction)
+    {
+        fallowTimer = Mathf.Min(fallowTimer + dt, fallowSeconds);
+        float t = fallowSeconds <= 0f ? 1f : fallowTimer / fallowSeconds;
+        float warnStart = 1f - Mathf.Clamp01(warnFraction);
+        float tint = warnStart >= 1f ? 0f : Mathf.Clamp01((t - warnStart) / (1f - warnStart));
+        if (!Mathf.Approximately(tint, fallowTint))
+        {
+            fallowTint = tint;
+            UpdateBaseVisuals();
+        }
+        return fallowTimer >= fallowSeconds;
+    }
+
+    /// <summary>Stop fallow decay (tile got planted/worked) and restore the full tilled colour.</summary>
+    public void ResetFallow()
+    {
+        if (fallowTimer == 0f && fallowTint == 0f) return;
+        fallowTimer = 0f;
+        fallowTint = 0f;
+        UpdateBaseVisuals();
+    }
+
+    /// <summary>The tile went fallow (or was trampled): back to untilled, must be tilled again.</summary>
+    public void Untill()
+    {
+        currentState = TileState.Untilled;
+        fallowTimer = 0f;
+        fallowTint = 0f;
+        UpdateBaseVisuals();
+    }
+
+    private void SetTilled()
+    {
+        currentState = TileState.Tilled;
+        fallowTimer = 0f;
+        fallowTint = 0f;
+        UpdateBaseVisuals();
     }
 
     /// <summary>
@@ -277,6 +327,8 @@ public class SoilTile : MonoBehaviour
             plantComponent = null;
         }
 
+        fallowTimer = 0f;
+        fallowTint = 0f;
         UpdateBaseVisuals();
         HideMoistureOverlay();
     }
@@ -299,6 +351,7 @@ public class SoilTile : MonoBehaviour
 
         GameObject newPlant = Instantiate(plantPrefab, transform.position, Quaternion.identity, transform);
         currentPlant = newPlant;
+        ResetFallow();
 
         // Get Plant component reference
         plantComponent = newPlant.GetComponent<Plant>();
@@ -351,7 +404,8 @@ public class SoilTile : MonoBehaviour
                 baseSpriteRenderer.color = untilledColor;
                 break;
             case TileState.Tilled:
-                baseSpriteRenderer.color = tilledColor;
+                // Going fallow: slide back toward the untilled colour as the decay window runs out.
+                baseSpriteRenderer.color = Color.Lerp(tilledColor, untilledColor, fallowTint);
                 break;
         }
     }

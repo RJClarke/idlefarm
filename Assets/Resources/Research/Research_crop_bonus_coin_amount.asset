@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Research_crop_bonus_coin_amount
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: crop_bonus_coin_amount
-  displayName: 'Plant: Bonus Coin Yield'
+  displayName: Bonus Coin Yield
   description: +0.5% per level. Maxes at +50%.
   branchID: plant
   tier: 4

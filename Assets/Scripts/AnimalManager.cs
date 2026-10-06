@@ -131,32 +131,6 @@ public class AnimalManager : MonoBehaviour
         return LastOfflineCompostGain;
     }
 
-    /// <summary>
-    /// If a run was active (continued offline), estimate + award the compost the equipped cow
-    /// would have earned by eating crops over the offline window, credited at max game speed
-    /// (matching the run timer's offline model). Returns the awarded amount for the welcome-back modal.
-    /// </summary>
-    public int RunOfflineCowEatingCatchUp(double offlineSeconds)
-    {
-        if (offlineSeconds <= 0) return 0;
-        if (RunManager.Instance == null || !RunManager.Instance.IsRunActive) return 0; // only a continued offline run
-        AnimalData equipped = GetEquippedAnimal();
-        if (equipped == null || equipped.animalID != "cow") return 0;
-
-        Cow cow = activeVisualInstance != null ? activeVisualInstance.GetComponent<Cow>() : null;
-        if (cow == null) return 0;
-
-        float maxSpeed = GameSpeedControl.UnlockedMax; // highest rung research has unlocked
-        double inGameSeconds = offlineSeconds * Mathf.Max(1f, maxSpeed);
-
-        int amount = cow.EstimateOfflineEatingCompost(inGameSeconds);
-        if (amount > 0 && CurrencyManager.Instance != null)
-        {
-            CurrencyManager.Instance.AddCompost(amount);
-            Debug.Log($"Offline cow grazing: +{amount} compost (~{inGameSeconds:F0}s in-game)");
-        }
-        return amount;
-    }
 
     public string GetLastCompostTimeISO() =>
         lastCompostTickUtc == DateTime.MinValue ? "" : lastCompostTickUtc.ToString("o");
@@ -359,6 +333,13 @@ public class AnimalManager : MonoBehaviour
 
     public void ClaimEgg() => ClaimPassiveReward(); // legacy alias
 
+    /// <summary>Count a tapped egg/gem toward this run's animal stats (only during a run).</summary>
+    private static void RecordGiftForRun(AnimalData a, int eggs, int gems, int coins)
+    {
+        if (a == null || RunStats.Instance == null || RunManager.Instance == null || !RunManager.Instance.IsRunActive) return;
+        RunStats.Instance.AddAnimalGift(a.animalID, eggs, gems, coins);
+    }
+
     public void ClaimPassiveReward()
     {
         AnimalData equipped = GetEquippedAnimal();
@@ -380,6 +361,7 @@ public class AnimalManager : MonoBehaviour
             int reward = (int)System.Math.Floor(total);
             gemRewardCarry = total - reward;
             CurrencyManager.Instance.AddGems(reward);
+            RecordGiftForRun(equipped, 0, reward, 0);
             Debug.Log($"Claimed gems! +{reward} gems (carry {gemRewardCarry:F2})");
             if (visual != null) visual.RemoveGem();
             FloatingTextManager.ShowGems(reward, rewardWorldPos);
@@ -394,6 +376,7 @@ public class AnimalManager : MonoBehaviour
             if (ItemInventoryManager.Instance != null && ItemInventoryManager.Instance.CollectMode
                 && (eggsBanked = ItemInventoryManager.Instance.AddEggs(doubleEgg ? 2 : 1, out _)) > 0)
             {
+                RecordGiftForRun(equipped, eggsBanked, 0, 0);
                 Debug.Log($"Claimed egg into inventory (+{eggsBanked} egg)");
                 if (visual != null) visual.RemoveEgg();
                 FloatingTextManager.ShowText(eggsBanked > 1 ? $"+{eggsBanked} Eggs" : "+1 Egg", new Color(0.55f, 0.8f, 0.35f), rewardWorldPos);
@@ -405,6 +388,7 @@ public class AnimalManager : MonoBehaviour
                     reward = Mathf.RoundToInt(reward * (1f + FarmSkillsManager.Instance.GetBonus(FarmSkillTrack.Ranching)));
                 if (doubleEgg) reward *= 2;
                 CurrencyManager.Instance.AddCoins(reward);
+                RecordGiftForRun(equipped, doubleEgg ? 2 : 1, 0, reward);
                 Debug.Log($"Claimed egg! +{reward} coins");
                 if (visual != null) visual.RemoveEgg();
                 FloatingTextManager.ShowCoins(reward, rewardWorldPos);
@@ -460,7 +444,6 @@ public class AnimalManager : MonoBehaviour
     // ── Visual Spawning ──────────────────────────────
 
     private void SpawnAnimalVisual(AnimalData data)
-        SkinSwapper.Attach(activeVisualInstance, data.animalID); // equipped colour variant (Store skins)
     {
         if (data.visualPrefab == null)
         {
@@ -477,6 +460,7 @@ public class AnimalManager : MonoBehaviour
             visual = activeVisualInstance.AddComponent<AnimalVisual>();
         }
         visual.Initialize(data);
+        SkinSwapper.Attach(activeVisualInstance, data.animalID); // equipped colour variant (Store skins)
 
         // Rustle crops this animal brushes past (cow grazing, dog running through, etc.).
         if (activeVisualInstance.GetComponent<CropAgitator>() == null)

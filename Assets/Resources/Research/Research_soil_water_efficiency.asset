@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Research_soil_water_efficiency
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: soil_water_efficiency
-  displayName: 'Soil: Water Efficiency'
+  displayName: Moisture Retention
   description: +1.0% per level. Maxes at +25%.
   branchID: soil
   tier: 2

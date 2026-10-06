@@ -24,6 +24,7 @@ public static class FarmUpgradeKey
     public const string SoilQuality = "soil_quality";  // master multiplier to all crop output
     public const string CompostYield= "compost_yield"; // +% compost from crops/cow
     public const string SoilPrep    = "soil_prep";     // faster baseline tilling
+    public const string PreTill     = "pre_till";      // one more tile starts every run tilled (level = tile count)
 
     // Water
     public const string WaterRetention = "water_retention"; // slows dehydration rate

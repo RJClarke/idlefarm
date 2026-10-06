@@ -151,7 +151,7 @@ public class InboxPopupUITK : MonoBehaviour
             portrait.style.backgroundImage = def.senderPortrait != null
                 ? new StyleBackground(def.senderPortrait) : new StyleBackground();
 
-        bool hasReward = def.rewardKind != RewardKind.None && def.rewardAmount > 0;
+        bool hasReward = def.HasReward;
         var entry = FindEntry(letterId);
         bool claimed = entry != null && entry.claimed;
 
@@ -193,14 +193,28 @@ public class InboxPopupUITK : MonoBehaviour
 
         rewardItems.style.display = DisplayStyle.Flex;
 
+        if (def.HasGiftSeed)
+        {
+            CropData crop = CropOwnership.Find(def.giftSeed);
+            var icon = RewardItemRow($"{(crop != null ? crop.cropName : def.giftSeed)} seed packet");
+            Sprite packet = crop != null ? crop.seedPacketSprite : null;
+            if (packet != null) icon.style.backgroundImage = new StyleBackground(packet);
+        }
+        if (def.HasCurrencyReward)
+            RewardItemRow($"{def.rewardAmount:N0} {def.rewardKind}").AddToClassList(RewardIconClass(def.rewardKind));
+    }
+
+    // One "Enclosed" row: an icon and a label. Returns the icon so the caller can dress it.
+    private VisualElement RewardItemRow(string text)
+    {
         var itemRow = new VisualElement(); itemRow.AddToClassList("inbox-item");
         var icon = new VisualElement(); icon.AddToClassList("inbox-item-icon");
-        icon.AddToClassList(RewardIconClass(def.rewardKind));
         icon.pickingMode = PickingMode.Ignore;
-        var label = new Label($"{def.rewardAmount:N0} {def.rewardKind}");
+        var label = new Label(text);
         label.AddToClassList("inbox-item-label");
         itemRow.Add(icon); itemRow.Add(label);
         rewardItemsList.Add(itemRow);
+        return icon;
     }
 
     private static string RewardIconClass(RewardKind kind)

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Research_crop_bonus_sell_amount
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: crop_bonus_sell_amount
-  displayName: 'Plant: Bonus Sell Amount'
+  displayName: Bonus Sell Amount
   description: +0.5% per level. Maxes at +50%.
   branchID: plant
   tier: 4

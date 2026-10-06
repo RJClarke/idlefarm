@@ -40,6 +40,8 @@ public class TutorialManager : MonoBehaviour
 
     [Tooltip("Pixel font for tooltip text (UITK TextCore FontAsset from Fonts/UITK SDF).")]
     [SerializeField] private UnityEngine.TextCore.Text.FontAsset tooltipFont;
+    [Tooltip("Smaller bake of the tooltip font for the hint line (pixel fonts are only crisp at their bake size). Falls back to the tooltip font.")]
+    [SerializeField] private UnityEngine.TextCore.Text.FontAsset tooltipHintFont;
 
     [Range(0f, 1f)]
     [Tooltip("Dimmer strength. Design calls for 60-75% black.")]
@@ -178,8 +180,6 @@ public class TutorialManager : MonoBehaviour
         if (Instance != null) Instance.EndActive(markCompleted: false);
     }
 
-    /// <summary>Has this tutorial already been completed? (For callers that want to skip setup.)</summary>
-    public static bool IsCompleted(string id) => Instance != null && Instance.ledger.IsCompleted(id);
     /// <summary>Ends the running sequence as completed if it is <paramref name="id"/> — the player did the
     /// thing it points at by another route (e.g. claimed the Free Gift from the Store mid-spotlight).</summary>
     public static void CompleteIfActive(string id)
@@ -187,6 +187,8 @@ public class TutorialManager : MonoBehaviour
         if (Instance != null && ActiveId == id) Instance.EndActive(markCompleted: true);
     }
 
+    /// <summary>Has this tutorial already been completed? (For callers that want to skip setup.)</summary>
+    public static bool IsCompleted(string id) => Instance != null && Instance.ledger.IsCompleted(id);
 
     /// <summary>Dev tools: dismiss anything showing and forget every completion so all tutorials replay.</summary>
     public static void DevResetAll()
@@ -338,7 +340,7 @@ public class TutorialManager : MonoBehaviour
         cardText = new Label(step.text ?? "");
         cardText.pickingMode = PickingMode.Ignore;
         cardText.style.color = Color.white;
-        cardText.style.fontSize = 34;
+        cardText.style.fontSize = 31; // Munro Pixel 31's bake size
         cardText.style.whiteSpace = WhiteSpace.Normal;
         cardText.style.unityTextAlign = TextAnchor.MiddleCenter;
         ApplyFont(cardText);
@@ -347,10 +349,10 @@ public class TutorialManager : MonoBehaviour
         cardHint = new Label(HintFor(step.advance));
         cardHint.pickingMode = PickingMode.Ignore;
         cardHint.style.color = new Color(1f, 1f, 1f, 0.55f);
-        cardHint.style.fontSize = 24;
+        cardHint.style.fontSize = 20; // Munro Pixel 20 (the hint uses the smaller bake)
         cardHint.style.marginTop = 10;
         cardHint.style.unityTextAlign = TextAnchor.MiddleCenter;
-        ApplyFont(cardHint);
+        ApplyFont(cardHint, tooltipHintFont);
         cardHint.style.display = string.IsNullOrEmpty(cardHint.text) ? DisplayStyle.None : DisplayStyle.Flex;
         card.Add(cardHint);
         root.Add(card);
@@ -484,11 +486,12 @@ public class TutorialManager : MonoBehaviour
     /// <summary>A runtime-created PanelSettings has no theme, so Labels have NO default font and
     /// render nothing. Prefer the assigned pixel font; otherwise fall back to the engine's
     /// built-in font so text always shows (same gotcha class as project_uitoolkit_gotchas).</summary>
-    private void ApplyFont(Label label)
+    private void ApplyFont(Label label, UnityEngine.TextCore.Text.FontAsset preferred = null)
     {
-        if (tooltipFont != null)
+        var font = preferred != null ? preferred : tooltipFont;
+        if (font != null)
         {
-            label.style.unityFontDefinition = new StyleFontDefinition(tooltipFont);
+            label.style.unityFontDefinition = new StyleFontDefinition(font);
             return;
         }
         Font builtin = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");

@@ -20,6 +20,9 @@ using UnityEngine.UIElements;
 ///   Temp/ui_pick.request        body "x,y"         → what a tap at that screen point would hit,
 ///                                                    per UITK panel (top sort order first) + uGUI
 ///   Temp/ui_tap.request         body "x,y"         → tap whatever is under that screen point
+///   Temp/mouse_press.request    body "x,y[,secs]"  → a REAL Input System mouse press (down, held
+///                                                    `secs`, default 0.12, then up) — what world-space
+///                                                    handlers reading Mouse.current actually see
 ///   Temp/refresh.request        (empty)            → AssetDatabase.Refresh + script recompile, even
 ///                                                    while the editor window is unfocused (edit mode)
 ///   Temp/menu.request           body "Farm Game/Narrative/Seed Missing Copy" → run an editor menu item
@@ -35,6 +38,7 @@ public static class UIDriveBridge
     private const string ClickRequest = "Temp/ui_click.request";
     private const string PickRequest = "Temp/ui_pick.request";
     private const string TapRequest = "Temp/ui_tap.request";
+    private const string MouseRequest = "Temp/mouse_press.request";
     private const string AssetStringRequest = "Temp/asset_string.request";
     private const string RefreshRequest = "Temp/refresh.request";
     private const string PressRequest = "Temp/ui_press.request";
@@ -48,6 +52,7 @@ public static class UIDriveBridge
 
     private static void Poll()
     {
+        TickMouseRelease(); // every editor tick, not the 1s poll, so short holds stay short
         if (EditorApplication.timeSinceStartup < nextPoll) return;
         nextPoll = EditorApplication.timeSinceStartup + 1.0;
 
@@ -71,6 +76,7 @@ public static class UIDriveBridge
             else if (File.Exists(PickRequest)) result = Pick(Consume(PickRequest));
             else if (File.Exists(TapRequest)) result = Tap(Consume(TapRequest));
             else if (File.Exists(PressRequest)) result = Press(Consume(PressRequest));
+            else if (File.Exists(MouseRequest)) result = MousePress(Consume(MouseRequest));
             else if (File.Exists(ScrollRequest)) result = Scroll(Consume(ScrollRequest));
             else if (File.Exists(AssetStringRequest)) result = SetAssetString(Consume(AssetStringRequest, trim: false));
             else if (File.Exists(MenuRequest))
@@ -82,6 +88,36 @@ public static class UIDriveBridge
         catch (System.Exception e) { result = "ERROR: " + e; }
         if (result != null) File.WriteAllText(ResultPath, result);
     }
+
+    // ── Real mouse press (Input System) ────────────────────────────
+
+    private static double mouseReleaseAt = -1;
+    private static Vector2 mousePos;
+
+    private static string MousePress(string body)
+    {
+        if (!EditorApplication.isPlaying) return "NOT PLAYING";
+        if (UnityEngine.InputSystem.Mouse.current == null) return "NO MOUSE";
+        string[] p = body.Split(',');
+        var inv = System.Globalization.CultureInfo.InvariantCulture;
+        mousePos = new Vector2(float.Parse(p[0], inv), float.Parse(p[1], inv)); // bottom-left origin px
+        double hold = p.Length > 2 ? double.Parse(p[2], inv) : 0.12;
+        QueueMouse(mousePos, false); // move there first so the press lands at the point
+        QueueMouse(mousePos, true);
+        mouseReleaseAt = EditorApplication.timeSinceStartup + hold;
+        return $"OK: mouse down at {mousePos}, release in {hold:0.##}s";
+    }
+
+    private static void TickMouseRelease()
+    {
+        if (mouseReleaseAt < 0 || EditorApplication.timeSinceStartup < mouseReleaseAt) return;
+        mouseReleaseAt = -1;
+        if (EditorApplication.isPlaying && UnityEngine.InputSystem.Mouse.current != null) QueueMouse(mousePos, false);
+    }
+
+    private static void QueueMouse(Vector2 pos, bool down) =>
+        UnityEngine.InputSystem.InputSystem.QueueStateEvent(UnityEngine.InputSystem.Mouse.current,
+            new UnityEngine.InputSystem.LowLevel.MouseState { position = pos, buttons = (ushort)(down ? 1 : 0) });
 
     private static string Consume(string path, bool trim = true)
     {
@@ -171,17 +207,22 @@ public static class UIDriveBridge
         if (!EditorApplication.isPlaying) return "NOT PLAYING";
         string[] parts = body.Split(',');
         if (parts.Length < 3) return "ERROR: need name,x,y";
+        // Several popups reuse names like "section-list"; scroll the one that can actually scroll
+        // (the open popup), not just the first match.
+        ScrollView best = null;
+        Vector2 max = Vector2.zero;
         foreach (UIDocument doc in Object.FindObjectsByType<UIDocument>(FindObjectsSortMode.None))
         {
             if (!(doc.rootVisualElement?.Q<VisualElement>(parts[0].Trim()) is ScrollView sv)) continue;
-            Vector2 max = new Vector2(
+            Vector2 m = new Vector2(
                 Mathf.Max(0f, sv.contentContainer.layout.width - sv.contentViewport.layout.width),
                 Mathf.Max(0f, sv.contentContainer.layout.height - sv.contentViewport.layout.height));
-            float Axis(string v, float end) => v.Trim() == "end" ? end : float.Parse(v.Trim());
-            sv.scrollOffset = new Vector2(Axis(parts[1], max.x), Axis(parts[2], max.y));
-            return $"OK: '{parts[0].Trim()}' offset {sv.scrollOffset} (max {max})";
+            if (best == null || m.sqrMagnitude > max.sqrMagnitude) { best = sv; max = m; }
         }
-        return "SCROLLVIEW NOT FOUND: " + parts[0];
+        if (best == null) return "SCROLLVIEW NOT FOUND: " + parts[0];
+        float Axis(string v, float end) => v.Trim() == "end" ? end : float.Parse(v.Trim());
+        best.scrollOffset = new Vector2(Axis(parts[1], max.x), Axis(parts[2], max.y));
+        return $"OK: '{parts[0].Trim()}' offset {best.scrollOffset} (max {max})";
     }
 
     // ── Click ──────────────────────────────────────────────────────

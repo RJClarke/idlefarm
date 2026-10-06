@@ -38,26 +38,30 @@ public static class ResearchCatalogGenerator
             AssetDatabase.DeleteAsset(p);
         }
 
-        // Soil (2)
-        CreateStd("soil_water_efficiency",    "Soil: Water Efficiency",        StatKey.SoilWaterEfficiency,   ResearchTier.Tier25,           "soil",   0.010f, t:1.5f, c:2.0f);
-        CreateStd("soil_quality",             "Soil: Quality",                 StatKey.SoilQuality,           ResearchTier.Tier100Absurd,    "soil",   0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
+        // Soil (3)
+        // Stay Tilled: +0.5s per level before idle tilled soil goes fallow (40s base → 90s at L100).
+        // Fast start — the first 25 levels are a tenth of the normal cost/time (≈15h, ≈7k coins in
+        // total), easing back to the standard curve by L50: a cheap early chip-away with good returns.
+        CreateStd("soil_stay_tilled",         "Stay Tilled",             StatKey.SoilStayTilled,        ResearchTier.Tier100Standard,  "soil",   0.5f, unit:"s", earlyLevels:25, earlyMul:0.1f);
+        CreateStd("soil_water_efficiency",    "Moisture Retention",        StatKey.SoilWaterEfficiency,   ResearchTier.Tier25,           "soil",   0.010f, t:1.5f, c:2.0f);
+        CreateStd("soil_quality",             "Soil Quality",                 StatKey.SoilQuality,           ResearchTier.Tier100Absurd,    "soil",   0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
 
         // Helper (7)
-        CreateStd("helper_till_speed",        "Helper: Till Speed",            StatKey.HelperTillSpeed,       ResearchTier.Tier100Standard,  "helper", 0.005f);
-        CreateStd("helper_water_speed",       "Helper: Water Speed",           StatKey.HelperWaterSpeed,      ResearchTier.Tier100Standard,  "helper", 0.005f);
-        CreateStd("helper_water_efficiency",  "Helper: Water Efficiency",      StatKey.HelperWaterEfficiency, ResearchTier.Tier25,           "helper", 0.010f);
-        CreateStd("helper_plant_speed",       "Helper: Plant Seeding Speed",   StatKey.HelperPlantSpeed,      ResearchTier.Tier100Standard,  "helper", 0.005f);
-        CreateStd("helper_harvest_speed",     "Helper: Harvest Speed",         StatKey.HelperHarvestSpeed,    ResearchTier.Tier100Standard,  "helper", 0.005f);
-        CreateStd("helper_harvest_efficiency","Helper: Harvest Efficiency",    StatKey.HelperHarvestEfficiency,ResearchTier.Tier100Absurd,   "helper", 0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
+        CreateStd("helper_till_speed",        "Till Speed",            StatKey.HelperTillSpeed,       ResearchTier.Tier100Standard,  "helper", 0.005f);
+        CreateStd("helper_water_speed",       "Water Speed",           StatKey.HelperWaterSpeed,      ResearchTier.Tier100Standard,  "helper", 0.005f);
+        CreateStd("helper_water_efficiency",  "Water Efficiency",      StatKey.HelperWaterEfficiency, ResearchTier.Tier25,           "helper", 0.010f);
+        CreateStd("helper_plant_speed",       "Planting Speed",   StatKey.HelperPlantSpeed,      ResearchTier.Tier100Standard,  "helper", 0.005f);
+        CreateStd("helper_harvest_speed",     "Harvest Speed",         StatKey.HelperHarvestSpeed,    ResearchTier.Tier100Standard,  "helper", 0.005f);
+        CreateStd("helper_harvest_efficiency","Harvest Efficiency",    StatKey.HelperHarvestEfficiency,ResearchTier.Tier100Absurd,   "helper", 0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
         CreateBinary("max_water_heals",       "Max Water Heals Plant HP",      "helper", featureID:FeatureFlag.MaxWaterHealsPlant, cost:5000, days:3);
 
         // Plant (6)
-        CreateStd("crop_hp",                  "Plant: Hit Points",             StatKey.CropHp,                ResearchTier.Tier25,           "plant",  0.010f);
-        CreateStd("crop_growth_speed",        "Plant: Growth Speed",           StatKey.CropGrowthSpeed,       ResearchTier.Tier100Standard,  "plant",  0.005f, t:1.5f, c:2.0f);
-        CreateStd("crop_bonus_sell_amount",   "Plant: Bonus Sell Amount",      StatKey.CropBonusSellAmount,   ResearchTier.Tier100Absurd,    "plant",  0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
-        CreateStd("crop_bonus_coin_amount",   "Plant: Bonus Coin Yield",       StatKey.CropBonusCoinAmount,   ResearchTier.Tier100Absurd,    "plant",  0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
-        CreateStd("seed_bag_size",            "Plant: Bigger Seed Bags",       StatKey.SeedBagSize,           ResearchTier.Tier25,           "plant",  0.010f);
-        CreateStd("seed_bag_discount",        "Plant: Bulk Seed Discount",     StatKey.SeedBagDiscount,       ResearchTier.Tier25,           "plant",  0.010f);
+        CreateStd("crop_hp",                  "Hit Points",             StatKey.CropHp,                ResearchTier.Tier25,           "plant",  0.010f);
+        CreateStd("crop_growth_speed",        "Growth Speed",           StatKey.CropGrowthSpeed,       ResearchTier.Tier100Standard,  "plant",  0.005f, t:1.5f, c:2.0f);
+        CreateStd("crop_bonus_sell_amount",   "Bonus Sell Amount",      StatKey.CropBonusSellAmount,   ResearchTier.Tier100Absurd,    "plant",  0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
+        CreateStd("crop_bonus_coin_amount",   "Bonus Coin Yield",       StatKey.CropBonusCoinAmount,   ResearchTier.Tier100Absurd,    "plant",  0.005f, t:1.2f, c:3.0f, baseSecs:360f, baseCoins:150f);
+        CreateStd("seed_bag_size",            "Bigger Seed Bags",       StatKey.SeedBagSize,           ResearchTier.Tier25,           "plant",  0.010f);
+        CreateStd("seed_bag_discount",        "Bulk Seed Discount",     StatKey.SeedBagDiscount,       ResearchTier.Tier25,           "plant",  0.010f);
 
         // Animals (8 — gated by ownership)
         CreateStd("chicken_cooldown",   "Chicken: Cooldown",   StatKey.ChickenCooldown,   ResearchTier.Tier25, "animals", 0.010f, animalID:"chicken");
@@ -68,6 +72,7 @@ public static class ResearchCatalogGenerator
         CreateStd("rooster_efficiency", "Rooster: Efficiency", StatKey.RoosterEfficiency, ResearchTier.Tier25, "animals", 0.010f, animalID:"rooster");
         CreateStd("cow_passive_compost","Cow: Passive Compost Rate", StatKey.CowPassiveCompost, ResearchTier.Tier100Standard, "animals", 0.005f, animalID:"cow");
         CreateStd("cow_run_yield",      "Cow: Run Yield",            StatKey.CowRunYield,       ResearchTier.Tier25,          "animals", 0.010f, animalID:"cow");
+        CreateStd("horse_plow_speed",   "Horse: Plow Speed",         StatKey.HorsePlowSpeed,    ResearchTier.Tier25,          "animals", 0.010f, animalID:"horse");
 
         // Equipment (9 — Compost Bay deferred to Plan 2)
         CreateStd("scarecrow_aoe",          "Scarecrow: AoE",           StatKey.ScarecrowAoe,           ResearchTier.Tier100Standard, "equipment", 0.005f, t:0.8f, c:0.8f, unlockID:"scarecrow_unlock");
@@ -119,12 +124,16 @@ public static class ResearchCatalogGenerator
         float bonusPerLevel,
         float t = 1.0f, float c = 1.0f,
         float baseSecs = 120f, float baseCoins = 50f,
-        string prereqID = "", string unlockID = "", string animalID = "")
+        string prereqID = "", string unlockID = "", string animalID = "",
+        string unit = "%", int earlyLevels = 0, float earlyMul = 1f)
     {
         var so = ScriptableObject.CreateInstance<ResearchData>();
         so.researchID         = id;
         so.displayName        = displayName;
-        so.description        = AutoDescription(bonusPerLevel, tier);
+        so.description        = AutoDescription(bonusPerLevel, tier, unit);
+        so.bonusUnit          = unit;
+        so.earlyLevels        = earlyLevels;
+        so.earlyMultiplier    = earlyMul;
         so.branchID           = branch;
         so.tier               = tier;
         so.targetStatKey      = statKey;
@@ -139,11 +148,14 @@ public static class ResearchCatalogGenerator
         Save(so, id);
     }
 
-    private static string AutoDescription(float bonusPerLevel, ResearchTier tier)
+    private static string AutoDescription(float bonusPerLevel, ResearchTier tier, string unit = "%")
     {
         int max = tier.MaxLevel();
         if (Mathf.Approximately(bonusPerLevel, 0f)) return "One-time unlock.";
         float maxBonus = bonusPerLevel * max;
+        // Flat-unit stats (e.g. seconds) read as raw amounts.
+        if (unit != "%")
+            return $"+{bonusPerLevel:0.##}{unit} per level. Maxes at +{maxBonus:0.##}{unit}.";
         // Game Speed reads in "multiplier" units (0.9/lvl → +900% at L10)
         if (bonusPerLevel >= 0.5f)
             return $"+{bonusPerLevel:F1}x per level. Maxes at {1f + maxBonus:F1}x.";

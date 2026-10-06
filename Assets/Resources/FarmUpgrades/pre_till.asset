@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe86e4a4a1429b7458444ea8c6074b78, type: 3}
+  m_Name: pre_till
+  m_EditorClassIdentifier: IdleFarm.EconomyCore::FarmUpgradeData
+  upgradeID: pre_till
+  displayName: Pre-Tilled Soil
+  subtext: One more plot starts every run already tilled.
+  icon: "\U0001F7EB"
+  section: 0
+  effectKey: pre_till
+  zoneTarget: 0
+  maxLevel: 100
+  isHighCap: 0
+  baseCoinCost: 10
+  coinGrowthPerLevel: 1.04
+  coinBreakpointEvery: 0
+  coinBreakpointMultiplier: 1
+  baseMoneyCost: 5000
+  moneyGrowthPerLevel: 1.12
+  moneyBreakpointEvery: 0
+  moneyBreakpointMultiplier: 1
+  bonusPerLevel: 1
+  bonusUnit: tiles

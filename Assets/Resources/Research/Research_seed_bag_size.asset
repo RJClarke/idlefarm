@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Research_seed_bag_size
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: seed_bag_size
-  displayName: 'Plant: Bigger Seed Bags'
+  displayName: Bigger Seed Bags
   description: +1.0% per level. Maxes at +25%.
   branchID: plant
   tier: 2

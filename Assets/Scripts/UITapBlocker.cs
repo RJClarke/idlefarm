@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 /// <summary>
@@ -22,6 +23,7 @@ using UnityEngine.UIElements;
 public static class UITapBlocker
 {
     private static readonly List<IPanel> panels = new List<IPanel>();
+    private static readonly List<Graphic> hudGraphics = new List<Graphic>();
     private static float nextPanelRefresh;
 
     /// <summary>True when a menu/overlay is drawn over this screen position (bottom-left origin).</summary>
@@ -32,6 +34,7 @@ public static class UITapBlocker
             return true;
 
         RefreshPanels();
+        if (OverVisibleHudGraphic(screenPos)) return true;
         for (int i = 0; i < panels.Count; i++)
         {
             IPanel panel = panels[i];
@@ -42,12 +45,43 @@ public static class UITapBlocker
         return false;
     }
 
+    /// <summary>A visible screen-space uGUI graphic under the point: the HUD's labels and pills
+    /// (Speed, currencies) don't take raycasts, so the EventSystem test misses them, yet they are
+    /// clearly "on the HUD" and a tap there must not reach the world behind. Full-screen graphics
+    /// (fades, overlays) are skipped so an invisible layer can't swallow every tap.</summary>
+    private static bool OverVisibleHudGraphic(Vector2 screenPos)
+    {
+        float screenArea = (float)Screen.width * Screen.height;
+        for (int i = 0; i < hudGraphics.Count; i++)
+        {
+            Graphic g = hudGraphics[i];
+            if (g == null || !g.isActiveAndEnabled || g.color.a < 0.05f) continue;
+            if (g.canvasRenderer.GetInheritedAlpha() < 0.05f || g.canvasRenderer.cull) continue;
+            Canvas c = g.canvas;
+            Camera cam = c != null && c.renderMode == RenderMode.ScreenSpaceCamera ? c.worldCamera : null;
+            RectTransform rt = g.rectTransform;
+            if (!RectTransformUtility.RectangleContainsScreenPoint(rt, screenPos, cam)) continue;
+            Rect r = rt.rect;
+            Vector3 scale = rt.lossyScale;
+            if (r.width * scale.x * r.height * scale.y > screenArea * 0.5f) continue;
+            return true;
+        }
+        return false;
+    }
+
     // Panels change rarely (only as UIDocuments enable/disable), so rebuild the cache on a short
     // interval to keep per-frame "held"-state polling cheap.
     private static void RefreshPanels()
     {
         if (panels.Count > 0 && Time.unscaledTime < nextPanelRefresh) return;
         nextPanelRefresh = Time.unscaledTime + 0.5f;
+
+        hudGraphics.Clear();
+        foreach (var g in Object.FindObjectsByType<Graphic>(FindObjectsSortMode.None))
+        {
+            Canvas c = g.canvas;
+            if (c != null && c.renderMode != RenderMode.WorldSpace) hudGraphics.Add(g);
+        }
 
         panels.Clear();
         var docs = Object.FindObjectsByType<UIDocument>(FindObjectsSortMode.None);

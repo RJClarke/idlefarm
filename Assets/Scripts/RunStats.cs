@@ -33,11 +33,17 @@ public class RunStats : MonoBehaviour
     public int MoneyEarned { get; private set; }
     public int CoinsSaved { get; private set; }
     public int CoinsBanked { get; private set; }
-    // "ByDog" is historical — any equipped defender animal (dog, goose) feeds these.
-    public int DeerChasedByDog { get; private set; }
-    public int CrowsChasedByAnimal { get; private set; }
-    public int PlantsEatenByCow { get; private set; }
-    public int CompostFromCow { get; private set; }
+    /// <summary>What each animal did this run, keyed by animalID. Several can appear when the
+    /// equipped animal is swapped mid-run; each keeps its own numbers.</summary>
+    public class AnimalTally { public int deerChased, crowsChased, plantsEaten, compost, eggs, gems, giftCoins, tilesPlowed; }
+    public readonly Dictionary<string, AnimalTally> AnimalTallies = new Dictionary<string, AnimalTally>();
+
+    public AnimalTally Tally(string animalId)
+    {
+        string key = string.IsNullOrEmpty(animalId) ? "unknown" : animalId;
+        if (!AnimalTallies.TryGetValue(key, out var t)) AnimalTallies[key] = t = new AnimalTally();
+        return t;
+    }
 
     /// <summary>Per-zone breakdown for the run-stats zone cards. Keyed by FarmGrid ZoneID.</summary>
     public class ZoneStats
@@ -97,10 +103,7 @@ public class RunStats : MonoBehaviour
         MoneyEarned = 0;
         CoinsSaved = 0;
         CoinsBanked = 0;
-        DeerChasedByDog = 0;
-        CrowsChasedByAnimal = 0;
-        PlantsEatenByCow = 0;
-        CompostFromCow = 0;
+        AnimalTallies.Clear();
         zoneStats.Clear();
     }
 
@@ -156,14 +159,28 @@ public class RunStats : MonoBehaviour
     }
 
     public void AddSprinklerWatered(int zoneId) => Zone(zoneId).wateredBySprinkler++;
-    public void AddDeerChasedByAnimal() => DeerChasedByDog++;
-    public void AddDeerChasedByDog() => AddDeerChasedByAnimal(); // legacy alias
-    public void AddCrowChasedByAnimal() => CrowsChasedByAnimal++;
-
-    public void AddCowEat(int compostLump)
+    public void AddChase(string animalId, AnimalThreatType pest)
     {
-        PlantsEatenByCow++;
-        CompostFromCow += compostLump;
+        if (pest == AnimalThreatType.Crow) Tally(animalId).crowsChased++;
+        else Tally(animalId).deerChased++;
+    }
+
+    /// <summary>An egg or gem tapped during the run (eggs sold for Coins count their Coins too).</summary>
+    public void AddAnimalGift(string animalId, int eggs, int gems, int coins)
+    {
+        var t = Tally(animalId);
+        t.eggs += eggs;
+        t.gems += gems;
+        t.giftCoins += coins;
+    }
+
+    public void AddAnimalPlow(string animalId) => Tally(animalId).tilesPlowed++;
+
+    public void AddAnimalEat(string animalId, int compostLump)
+    {
+        var t = Tally(animalId);
+        t.plantsEaten++;
+        t.compost += compostLump;
     }
 
     /// <summary>
@@ -201,6 +218,15 @@ public class RunStats : MonoBehaviour
             outcome.result.eatenByDeer, outcome.result.eatenByCrows, outcome.result.struckByLightning,
             outcome.result.driedUp, outcome.result.rotted,
             outcome.result.seedsPlanted, outcome.result.moneyEarned, outcome.taxedCoins);
+
+        if (outcome.animal != null)
+        {
+            var t = Tally(outcome.animal.animalID);
+            t.deerChased = outcome.result.animalDeerChased;
+            t.crowsChased = outcome.result.animalCrowsChased;
+            t.plantsEaten = outcome.result.animalPlantsEaten;
+            t.compost = outcome.result.animalCompost;
+        }
 
         foreach (var zs in outcome.result.zones)
         {

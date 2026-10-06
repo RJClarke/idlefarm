@@ -56,6 +56,7 @@ public static class OfflineRunSimulator
         float now = farmStart;
 
         int money = ctx.startMoney;
+        float chaseBudget = 0f, eatBudget = 0f; // fractional animal actions carried across ticks
 
         // Per-zone occupied tiles: each entry is a tile's growth progress (seconds since planted).
         var occupied = new List<float>[ctx.zones.Count];
@@ -89,6 +90,10 @@ public static class OfflineRunSimulator
                 for (int i = 0; i < occupied[z].Count; i++)
                     occupied[z][i] += dt;
 
+            // 1b. the equipped animal: a guard chases one pest per rest while its pests are about;
+            //     a grazer eats one ripe crop per interval (before the helpers can pick it).
+            AnimalTick(ctx.animal, dt, deer, crows, ctx, occupied, r, ref chaseBudget, ref eatBudget);
+
             // 2. harvest matured tiles still inside their window
             for (int z = 0; z < ctx.zones.Count; z++)
             {
@@ -98,13 +103,13 @@ public static class OfflineRunSimulator
                     float p = occupied[z][i];
                     if (p >= crop.growSeconds && p <= crop.growSeconds + crop.harvestWindowSeconds)
                     {
+                        r.zones[z].harvested++;
+                        AddHarvest(r, crop.id);
                         money += crop.harvestValue;
                         r.moneyEarned += crop.harvestValue;
                         r.coinsBanked += crop.coinValue;
-                        r.zones[z].harvested++;
                         r.zones[z].moneyEarned += crop.harvestValue;
                         r.zones[z].coinsBanked += crop.coinValue;
-                        AddHarvest(r, crop.id);
                         // Regrowers stay in the ground and ripen again after regrowSeconds; the rest
                         // are pulled and replanted from seed.
                         if (crop.regrowSeconds > 0f)
@@ -153,24 +158,25 @@ public static class OfflineRunSimulator
                 }
 
                 accDeer[z] += deer * t.baseHunger * hungerMult * t.deerPlantsPerHungerSecond * dt
-                              * (1f - ctx.deerLossReduction);
+                              * (1f - ctx.deerLossReduction) * Mathf.Max(0f, crop.deerLoss ?? 1f);
                 accCrow[z] += crows * t.crowBaseHunger * hungerMult * t.crowPlantsPerHungerSecond * dt
-                              * (1f - ctx.crowLossReduction);
+                              * (1f - ctx.crowLossReduction) * Mathf.Max(0f, crop.crowLoss ?? 1f);
                 if (lightning)
                     accLight[z] += (dt / t.lightningStrikeInterval) * t.lightningPlantsPerStrike
                                    * (1f - ctx.lightningLossReduction);
-                accDry[z] += growing * t.dryFractionPerSecond * dt * (1f - ctx.dryLossReduction);
+                accDry[z] += growing * t.dryFractionPerSecond * dt * (1f - ctx.dryLossReduction) * Mathf.Max(0f, crop.dryLoss ?? 1f);
 
                 int overWindow = 0;
                 for (int i = 0; i < occupied[z].Count; i++)
                     if (occupied[z][i] > crop.growSeconds + crop.harvestWindowSeconds) overWindow++;
                 accRot[z] += overWindow * t.rotFractionPerSecond * dt;
 
-                int nDeer  = TakeWhole(ref accDeer[z],  occupied[z], ref r.compostGained, crop.tier);
-                int nCrow  = TakeWhole(ref accCrow[z],  occupied[z], ref r.compostGained, crop.tier);
-                int nLight = TakeWhole(ref accLight[z], occupied[z], ref r.compostGained, crop.tier);
-                int nDry   = TakeWhole(ref accDry[z],   occupied[z], ref r.compostGained, crop.tier);
-                int nRot   = TakeWhole(ref accRot[z],   occupied[z], ref r.compostGained, crop.tier);
+                int compost = ctx.zones[z].compostPerLoss ?? Mathf.Max(1, crop.tier);
+                int nDeer  = TakeWhole(ref accDeer[z],  occupied[z], ref r.compostGained, compost);
+                int nCrow  = TakeWhole(ref accCrow[z],  occupied[z], ref r.compostGained, compost);
+                int nLight = TakeWhole(ref accLight[z], occupied[z], ref r.compostGained, compost);
+                int nDry   = TakeWhole(ref accDry[z],   occupied[z], ref r.compostGained, compost);
+                int nRot   = TakeWhole(ref accRot[z],   occupied[z], ref r.compostGained, compost);
                 r.eatenByDeer += nDeer;             r.zones[z].eatenByDeer += nDeer;
                 r.eatenByCrows += nCrow;            r.zones[z].eatenByCrows += nCrow;
                 r.struckByLightning += nLight;      r.zones[z].struckByLightning += nLight;
@@ -194,6 +200,47 @@ public static class OfflineRunSimulator
         return r;
     }
 
+    private static void AnimalTick(SimAnimal a, float dt, int deer, int crows, OfflineSimContext ctx,
+                                   List<float>[] occupied, OfflineRunResult r, ref float chaseBudget, ref float eatBudget)
+    {
+        bool deerAbout = a.chasesDeer && deer > 0, crowsAbout = a.chasesCrows && crows > 0;
+        if (a.chaseCooldownSeconds > 0f && (deerAbout || crowsAbout))
+        {
+            chaseBudget += dt / a.chaseCooldownSeconds;
+            while (chaseBudget >= 1f)
+            {
+                chaseBudget -= 1f;
+                // With both pests about, split the chases in proportion to how many of each there are.
+                bool chaseDeer = deerAbout && (!crowsAbout || r.animalDeerChased * crows <= r.animalCrowsChased * deer);
+                if (chaseDeer) r.animalDeerChased++;
+                else r.animalCrowsChased++;
+            }
+        }
+
+        if (a.eatIntervalSeconds > 0f)
+        {
+            eatBudget += dt / a.eatIntervalSeconds;
+            while (eatBudget >= 1f)
+            {
+                eatBudget -= 1f;
+                // Nothing ripe yet: stay hungry and eat the next crop that ripens.
+                if (!EatOneRipe(ctx, occupied)) { eatBudget = 1f; break; }
+                r.animalPlantsEaten++;
+                r.animalCompost += a.compostPerEat;
+                r.compostGained += a.compostPerEat;
+            }
+        }
+    }
+
+    /// <summary>Removes one ripe plant (the grazer ate it). False if nothing is ripe.</summary>
+    private static bool EatOneRipe(OfflineSimContext ctx, List<float>[] occupied)
+    {
+        for (int z = 0; z < ctx.zones.Count; z++)
+            for (int i = 0; i < occupied[z].Count; i++)
+                if (occupied[z][i] >= ctx.zones[z].crop.growSeconds) { occupied[z].RemoveAt(i); return true; }
+        return false;
+    }
+
     private static void AddHarvest(OfflineRunResult r, string id)
     {
         r.harvestedByCropId.TryGetValue(id, out int n);
@@ -204,14 +251,14 @@ public static class OfflineRunSimulator
     /// Removes floor(acc) tiles (capped by what's available), decrements the accumulator by the number
     /// actually removed (keeping the sub-1 remainder for next tick), adds compost, and returns the count.
     /// </summary>
-    private static int TakeWhole(ref float acc, List<float> tiles, ref int compost, int tier)
+    private static int TakeWhole(ref float acc, List<float> tiles, ref int compost, int compostPerLoss)
     {
         int want = Mathf.FloorToInt(acc);
         int removed = 0;
         while (removed < want && tiles.Count > 0)
         {
             tiles.RemoveAt(tiles.Count - 1);
-            compost += Mathf.Max(1, tier);
+            compost += Mathf.Max(0, compostPerLoss);
             removed++;
         }
         acc -= removed;

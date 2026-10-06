@@ -8,7 +8,7 @@ public enum PillKind
     Regrows, QuickGrower, SlowGrower, Cannable, GreatCompost, Sturdy, Fragile, Thirsty, DroughtHardy,
     DeerDamage, CrowDamage,   // crop pages: how hard each pest hits this crop ("Deer | 175%")
     Deer, Crow,               // equipment/animal pages: which pest it deals with
-    Guard, GivesCoins, GivesGems, WatersCrops, MakesCompost,
+    Guard, LaysEggs, GivesGems, WatersCrops, MakesCompost,
 }
 
 /// <summary>One pill. <see cref="value"/> is only set on the two-part pest-damage pills.</summary>
@@ -76,7 +76,7 @@ public static class AlmanacPills
         PillKind.DeerDamage or PillKind.Deer => "Deer",
         PillKind.CrowDamage or PillKind.Crow => "Crow",
         PillKind.Guard => "Guard",
-        PillKind.GivesCoins => "Gives Coins",
+        PillKind.LaysEggs => "Lays eggs",
         PillKind.GivesGems => "Gives Gems",
         PillKind.WatersCrops => "Waters crops",
         PillKind.MakesCompost => "Compost",
@@ -122,8 +122,8 @@ public static class AlmanacPills
                 return "Crow: this keeps crows off your crops.";
             case PillKind.Guard:
                 return "Guard: protects your crops from the pests shown next to it.";
-            case PillKind.GivesCoins:
-                return "Gives Coins: leaves you a gift of Coins on a timer while it's your equipped animal.";
+            case PillKind.LaysEggs:
+                return "Lays eggs: drops an egg on a timer while it's your equipped animal. On Sell it pays out Coins; on Collect it's kept for town requests.";
             case PillKind.GivesGems:
                 return "Gives Gems: leaves you a gift of Gems on a timer while it's your equipped animal.";
             case PillKind.WatersCrops:

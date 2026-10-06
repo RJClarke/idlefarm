@@ -107,7 +107,7 @@ public static class NarrativeCopyTool
                 sb.AppendLine($"#### \"{l.subject}\"  `{l.id}`");
                 sb.AppendLine();
                 sb.AppendLine($"- **Arrives:** {When(l)}");
-                if (l.rewardKind != RewardKind.None && l.rewardAmount > 0) sb.AppendLine($"- **Gift:** {Gift(l)}");
+                if (l.HasReward) sb.AppendLine($"- **Gift:** {Gift(l)}");
                 if (l.ctaKind != CtaKind.None) sb.AppendLine($"- **Button:** {Button(l.ctaKind)}");
                 sb.AppendLine();
                 foreach (string line in (l.body ?? "").Replace("\r", "").Split('\n'))
@@ -148,8 +148,14 @@ public static class NarrativeCopyTool
 
     private static string Cell(string s) => (s ?? "").Replace("\r", "").Replace("\n\n", " / ").Replace("\n", " ").Replace("|", "\\|");
 
-    private static string Gift(LetterDef l) =>
-        l.rewardKind == RewardKind.None || l.rewardAmount <= 0 ? "—" : $"{l.rewardAmount} {l.rewardKind}";
+    private static string Gift(LetterDef l)
+    {
+        if (!l.HasReward) return "—";
+        var parts = new List<string>();
+        if (l.HasGiftSeed) parts.Add($"{l.giftSeed} seed packet");
+        if (l.HasCurrencyReward) parts.Add($"{l.rewardAmount} {l.rewardKind}");
+        return string.Join(" + ", parts);
+    }
 
     private static string Button(CtaKind k) => k switch
     {

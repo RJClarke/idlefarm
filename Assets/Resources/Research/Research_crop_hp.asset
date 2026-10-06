@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Research_crop_hp
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: crop_hp
-  displayName: 'Plant: Hit Points'
+  displayName: Hit Points
   description: +1.0% per level. Maxes at +25%.
   branchID: plant
   tier: 2

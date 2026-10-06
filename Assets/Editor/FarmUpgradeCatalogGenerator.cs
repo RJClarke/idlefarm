@@ -47,6 +47,14 @@ public static class FarmUpgradeCatalogGenerator
             maxLevel: 25, bonusPerLevel: 0.02f,
             baseCoin: 80, coinGrowth: 1.12f);
 
+        // Level = number of tiles that start every run already tilled. The real cap is the number
+        // of unlocked tiles (FarmGrid.PreTillRemaining); 100 = 4 zones × a full 5×5 plot.
+        // Cheap and gentle on purpose, no breakpoints: all 100 tiles ≈ 12k Coins total.
+        Create("pre_till", "Pre-Tilled Soil", "One more plot starts every run already tilled.", "🟫",
+            FarmUpgradeSection.Soil, FarmUpgradeKey.PreTill,
+            maxLevel: 100, bonusPerLevel: 1f, unit: "tiles",
+            baseCoin: 10, coinGrowth: 1.04f, coinBpEvery: 0, coinBpMult: 1f);
+
         // ───────── Water ─────────
         Create("water_retention", "Water Retention", "Soil dries out more slowly.", "💧",
             FarmUpgradeSection.Water, FarmUpgradeKey.WaterRetention,

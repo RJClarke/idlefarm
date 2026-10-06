@@ -221,7 +221,9 @@ public class FarmPopupUITK : MonoBehaviour
             foreach (var d in items)
             {
                 if (d.upgradeID == "compost_yield" && !compostUnlocked) continue;
-                grid.Add(BuildUpgradeCard(d, inRun));
+                grid.Add(d.upgradeID == PreTilledSoil.UpgradeID
+                    ? BuildPreTillCard(d, inRun)
+                    : BuildUpgradeCard(d, inRun));
             }
 
             sectionList.Add(section);
@@ -303,6 +305,91 @@ public class FarmPopupUITK : MonoBehaviour
                     UpgradeManager.Instance.PurchaseTemporaryUpgrade(id, capturedCost, capturedMax);
                 else
                     UpgradeManager.Instance.PurchasePermanentUpgrade(id, capturedCost, capturedMax);
+            });
+            WirePressedFeedback(card, "fu-card--pressed");
+        }
+
+        return card;
+    }
+
+    /// <summary>
+    /// Pre-Tilled Soil card. Unlike the stat tracks, its cap is the number of unlocked tiles (it
+    /// re-enables when a zone or plot-size upgrade adds more), each level marks one real tile, and
+    /// it's Coins-only between runs — there is no temporary in-run version.
+    /// </summary>
+    private VisualElement BuildPreTillCard(FarmUpgradeData d, bool inRun)
+    {
+        var card = new VisualElement();
+        card.AddToClassList("fu-card");
+
+        var head = new VisualElement();
+        head.AddToClassList("fu-card-head");
+        var lvlTag = new Label();
+        lvlTag.AddToClassList("fu-card-lvl");
+        head.Add(lvlTag);
+        card.Add(head);
+
+        var nameLabel = new Label(d.displayName);
+        nameLabel.AddToClassList("fu-card-name");
+        card.Add(nameLabel);
+
+        var sub = new Label(d.subtext);
+        sub.AddToClassList("fu-card-sub");
+        card.Add(sub);
+
+        var footer = new VisualElement();
+        footer.AddToClassList("fu-card-footer");
+        card.Add(footer);
+        var footerBonus = new Label();
+        footer.Add(footerBonus);
+
+        int level = SafePermLevel(d.upgradeID);
+        int owned = PreTilledSoil.Count;
+        int total = FarmGrid.Instance != null ? FarmGrid.Instance.UnlockedTileCount : owned;
+        int remaining = FarmGrid.Instance != null ? FarmGrid.Instance.PreTillRemaining : 0;
+        int cap = Mathf.Min(d.maxLevel, level + remaining);
+
+        footerBonus.text = $"{owned}/{total} tiles";
+
+        if (remaining <= 0 || level >= cap)
+        {
+            // Every unlocked tile is pre-tilled. More land (zone / plot size) re-opens the card.
+            card.AddToClassList("fu-card--maxed");
+            lvlTag.text = "MAX";
+            return card;
+        }
+
+        lvlTag.text = $"Lv {level}";
+
+        if (inRun)
+        {
+            card.AddToClassList("fu-card--cant-afford");
+            footerBonus.text = "Between runs";
+            return card;
+        }
+
+        int cost = d.GetCoinCostInt(level + 1);
+        bool canAfford = CurrencyManager.Instance != null && CurrencyManager.Instance.CanAffordCoins(cost);
+
+        var costChip = new VisualElement();
+        costChip.AddToClassList("fu-card-footer__cost");
+        var costIcon = new VisualElement();
+        costIcon.AddToClassList("currency-icon");
+        costIcon.AddToClassList("currency-icon--coin");
+        costChip.Add(costIcon);
+        costChip.Add(new Label(FormatCoinCost(cost)));
+        footer.Add(costChip);
+
+        card.AddToClassList(canAfford ? "fu-card--buy" : "fu-card--cant-afford");
+
+        if (canAfford)
+        {
+            string id = d.upgradeID;
+            card.RegisterCallback<ClickEvent>(_ =>
+            {
+                // FarmGrid hears OnUpgradePurchased and marks the next logical tile.
+                if (UpgradeManager.Instance != null)
+                    UpgradeManager.Instance.PurchasePermanentUpgrade(id, cost, cap);
             });
             WirePressedFeedback(card, "fu-card--pressed");
         }

@@ -240,6 +240,19 @@ public class HelperManager : MonoBehaviour
     }
 
     /// <summary>
+    /// True while a helper has claimed (is walking to / performing) a Plant task on this tile.
+    /// FarmGrid holds such tiles from going fallow so the helper never arrives to bare dirt.
+    /// </summary>
+    public bool IsPlantClaimed(SoilTile tile)
+    {
+        foreach (HelperTask task in pendingTasks)
+            if (task != null && task.IsClaimed && !task.IsCompleted
+                && task.Type == HelperTask.TaskType.Plant && task.TargetTile == tile)
+                return true;
+        return false;
+    }
+
+    /// <summary>
     /// MODIFIED: Set zone seeds for this run (called from RunManager after popup confirmation)
     /// </summary>
     public void SetZoneSeeds(Dictionary<int, CropData> zoneSeeds)
@@ -714,7 +727,7 @@ public class HelperManager : MonoBehaviour
     /// on this — only new till/plant work is, so helpers stop expanding into zones you can't afford
     /// but keep tending what's already growing.
     /// </summary>
-    private bool ZoneIsWorkable(int zoneID)
+    public bool ZoneIsWorkable(int zoneID)
     {
         CropData seed = GetSeedForZone(zoneID);
         if (seed == null) return false;

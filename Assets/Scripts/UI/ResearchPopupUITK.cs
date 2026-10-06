@@ -38,7 +38,7 @@ public class ResearchPopupUITK : MonoBehaviour
             { "animals",   "Animals" },
             { "equipment", "Equipment" },
             { "weather",   "Weather" },
-            { "meta",      "Meta" },
+            { "meta",      "Farmstead" }, // research speed, slots, offline progress, composting basics
         };
 
     private bool isOpen;
@@ -994,8 +994,7 @@ public class ResearchPopupUITK : MonoBehaviour
         if (isMaxed) return "";
         if (rd.IsBinary || rd.bonusPerLevel <= 0f)
             return string.IsNullOrEmpty(rd.description) ? "" : rd.description;
-        float pct = rd.bonusPerLevel * 100f;
-        return $"Upgrade to Level {nextLevel}: +{pct.ToString("0.##")}%";
+        return $"Upgrade to Level {nextLevel}: {ResearchMath.FormatBonus(rd.bonusPerLevel, rd.bonusUnit)}";
     }
 
     private ResearchSlotState FindActiveSlotFor(string researchID)

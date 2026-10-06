@@ -8,6 +8,7 @@ public class AnimalVisual : MonoBehaviour
     private const float TapPadding = 0.3f;
 
     private AnimalData data;
+    public AnimalData Data => data;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private bool animatorHasAnimState;

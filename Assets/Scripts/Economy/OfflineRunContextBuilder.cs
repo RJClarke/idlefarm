@@ -10,6 +10,11 @@ public class OfflineRunOutcome
     public int taxedResumeMoney;  // floor(result.finalMoney  * (1 - effectiveTax))
     public int compostGranted;    // untaxed
     public Dictionary<CropData, int> harvestedByCrop = new Dictionary<CropData, int>();
+    /// <summary>The equipped animal the away-run simulated (null if none does anything during a run).</summary>
+    public AnimalData animal;
+    /// <summary>Collect was switched on when the player left: it pauses while away, so the
+    /// welcome-back popup says why the harvests were sold.</summary>
+    public bool collectPausedWhileAway;
     /// <summary>Sim crop id (CropData.cropName) → CropData, for mapping per-zone results back.</summary>
     public Dictionary<string, CropData> cropById = new Dictionary<string, CropData>();
 }
@@ -54,31 +59,40 @@ public static class OfflineRunContextBuilder
             seedBagSizeBonus = Bonus(StatKey.SeedBagSize),
         };
 
-        // zones + CropData -> SimCrop (bake yield/coin/growth research into the SimCrop values)
-        float sellBonus = Bonus(StatKey.CropBonusSellAmount);
-        float coinBonus = Bonus(StatKey.CropBonusCoinAmount);
-        float growthBonus = Bonus(StatKey.CropGrowthSpeed);
+        // zones + CropData -> SimCrop. Payouts, growth and health use the same CropStats maths as
+        // play (Research, Barn skills, farm upgrades per field); random bonuses use their average.
+        float luck = (1f + Mathf.Clamp01(FarmUpgrades.BountifulChance + FarmSkillsManager.MilestoneChanceOf(FarmSkillTrack.Harvesting)))
+                     * FarmSkillsManager.GoldenExpectedMultiplier;
         var cropById = new Dictionary<string, CropData>();
         foreach (var kv in seeds)
         {
             CropData crop = kv.Value;
             if (crop == null) continue;
             cropById[crop.cropName] = crop;
+            int zone = kv.Key;
+            // Pest damage scales with appetite and lands on the crop's health; the loss rates were
+            // tuned on average crops, so both are taken relative to that average.
+            float hpFactor = AverageCropHp / Mathf.Max(1f, CropStats.Health(crop).total);
             ctx.zones.Add(new SimZone
             {
-                zoneId = kv.Key,
+                zoneId = zone,
                 tileCount = FarmGrid.Instance.TileCountPerZone,
+                compostPerLoss = CompostPerLoss(zone, crop),
                 crop = new SimCrop
                 {
                     id = crop.cropName,
-                    growSeconds = crop.TotalGrowthTime / (1f + Mathf.Max(0f, growthBonus)),
-                    regrowSeconds = crop.RegrowTime / (1f + Mathf.Max(0f, growthBonus)),
+                    growSeconds = CropStats.StageSeconds(crop, GrowthStage.Seed) + CropStats.StageSeconds(crop, GrowthStage.Sprout)
+                                  + CropStats.StageSeconds(crop, GrowthStage.Sapling),
+                    regrowSeconds = crop.canRegrow ? CropStats.RegrowSeconds(crop) : 0f,
                     harvestWindowSeconds = crop.harvestWindowSeconds,
-                    harvestValue = Mathf.RoundToInt(crop.harvestValue * (1f + sellBonus)),
-                    coinValue = Mathf.Max(1, Mathf.RoundToInt(crop.coinValue * (1f + coinBonus))),
+                    harvestValue = Mathf.RoundToInt(CropStats.Money(crop, zone).total * luck),
+                    coinValue = Mathf.Max(1, Mathf.RoundToInt(CropStats.Coins(crop, zone).total * luck)),
                     bagBaseCost = crop.seedBagBaseCost,
                     bagSize = crop.seedBagSize,
                     tier = crop.tier,
+                    deerLoss = crop.deerAppetite * hpFactor,
+                    crowLoss = crop.crowAppetite * hpFactor,
+                    dryLoss = crop.moistureDepletionRate, // water research/upgrades are already in dryLossReduction
                 }
             });
         }
@@ -86,6 +100,7 @@ public static class OfflineRunContextBuilder
 
         // mitigation: scan equipped assignments + research effectiveness, stack per cause
         ResolveMitigation(ctx, tuning, seeds);
+        AnimalData animal = ResolveAnimal(ctx);
 
         var result = OfflineRunSimulator.Simulate(ctx);
 
@@ -100,7 +115,57 @@ public static class OfflineRunContextBuilder
         outcome.cropById = cropById;
         foreach (var kv in result.harvestedByCropId)
             if (cropById.TryGetValue(kv.Key, out var c)) outcome.harvestedByCrop[c] = kv.Value;
+        outcome.animal = animal;
+        outcome.collectPausedWhileAway = ItemInventoryManager.Instance != null && ItemInventoryManager.Instance.CollectMode;
         return outcome;
+    }
+
+    /// <summary>Health of a typical crop when the loss rates were tuned (most crops sat at 78-80).</summary>
+    private const float AverageCropHp = 80f;
+
+    /// <summary>Compost per plant lost in this field: only a field with a Compost Bay makes any,
+    /// with the same formula as CompostBay (tier x bay power x upgrades x the crop's own bonus).</summary>
+    private static int CompostPerLoss(int zone, CropData crop)
+    {
+        EquipmentData eq = EquipmentManager.Instance != null ? EquipmentManager.Instance.GetAssignment(zone) : null;
+        if (eq == null || string.IsNullOrEmpty(eq.equipmentID) || !eq.equipmentID.Contains("compost")) return 0;
+        float conversion = EquipmentManager.Instance.GetEffectiveWaterPower(eq);
+        float cropMult = crop.compostMultiplier > 0f ? crop.compostMultiplier : 1f;
+        return Mathf.Max(1, Mathf.RoundToInt(crop.tier * conversion * FarmUpgrades.CompostMultiplier * cropMult));
+    }
+
+    /// <summary>What the equipped animal does during the away-run: a guard's chases (rest time
+    /// with the same Research bonuses as play) or the cow's grazing (same compost per crop).
+    /// Gift animals do nothing here - their eggs wait to be tapped, like in play.</summary>
+    private static AnimalData ResolveAnimal(OfflineSimContext ctx)
+    {
+        AnimalData a = AnimalManager.Instance != null ? AnimalManager.Instance.GetEquippedAnimal() : null;
+        if (a == null || a.visualPrefab == null) return null;
+
+        var guard = a.visualPrefab.GetComponent<AnimalDefender>();
+        if (guard != null)
+        {
+            ctx.animal = new SimAnimal
+            {
+                chaseCooldownSeconds = guard.BaseChaseCooldown / Mathf.Max(0.01f, guard.ChaseCooldownDivisor),
+                chasesDeer = System.Array.IndexOf(guard.Chases, AnimalThreatType.Deer) >= 0,
+                chasesCrows = System.Array.IndexOf(guard.Chases, AnimalThreatType.Crow) >= 0,
+            };
+            return a;
+        }
+
+        var cow = a.visualPrefab.GetComponent<Cow>();
+        if (cow != null)
+        {
+            int lump = Mathf.RoundToInt(cow.BaseCompostPerEat * (1f + Bonus(StatKey.CowRunYield)));
+            ctx.animal = new SimAnimal
+            {
+                eatIntervalSeconds = (cow.MinEatInterval + cow.MaxEatInterval) * 0.5f,
+                compostPerEat = Mathf.RoundToInt(lump * FarmUpgrades.CompostMultiplier),
+            };
+            return a;
+        }
+        return null;
     }
 
     private static float Bonus(string key)
@@ -143,12 +208,17 @@ public static class OfflineRunContextBuilder
                 else if (eq.equipmentType == EquipmentType.Sprinkler) hasSprinkler = true;
             }
 
-        bool hasDog = Object.FindFirstObjectByType<FarmDog>() != null; // FarmDog has no singleton; scan scene
+        bool hasDog = Object.FindFirstObjectByType<FarmDog>() != null; // no singletons; scan the scene
+        bool hasGoose = Object.FindFirstObjectByType<FarmGoose>() != null;
 
         float deer = OfflineMitigation.Stack(
-            OfflineMitigation.Reduction(hasFence, t.fenceDeerReduction, Bonus(StatKey.FenceEffectiveness)),
-            OfflineMitigation.Reduction(hasDog,   t.dogDeerReduction,   Bonus(StatKey.DogEfficiency)));
-        float crow = OfflineMitigation.Reduction(hasScarecrow, t.scarecrowCrowReduction, Bonus(StatKey.ScarecrowEffectiveness));
+            OfflineMitigation.Stack(
+                OfflineMitigation.Reduction(hasFence, t.fenceDeerReduction, Bonus(StatKey.FenceEffectiveness)),
+                OfflineMitigation.Reduction(hasDog,   t.dogDeerReduction,   Bonus(StatKey.DogEfficiency))),
+            OfflineMitigation.Reduction(hasGoose, t.gooseDeerReduction, 0f));
+        float crow = OfflineMitigation.Stack(
+            OfflineMitigation.Reduction(hasScarecrow, t.scarecrowCrowReduction, Bonus(StatKey.ScarecrowEffectiveness)),
+            OfflineMitigation.Reduction(hasGoose, t.gooseCrowReduction, 0f));
         float dry = OfflineMitigation.Stack(
             OfflineMitigation.Reduction(hasSprinkler, t.sprinklerDryReduction, Bonus(StatKey.SprinklerEffectiveness)),
             Mathf.Clamp01(Bonus(StatKey.SoilWaterEfficiency) + Bonus(StatKey.HelperWaterEfficiency)));

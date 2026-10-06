@@ -77,4 +77,21 @@ public static class CropOwnership
         else NarrativeDirector.Raise("packet_bought");
         return true;
     }
+
+    /// <summary>A gifted packet (e.g. enclosed with a letter): owns the crop for free. A crop already
+    /// owned (the starter always is) keeps its packets — gifts never stack extra fields.</summary>
+    public static void GrantFirstPacket(CropData crop)
+    {
+        if (crop == null || IsOwned(crop) || UpgradeManager.Instance == null) return;
+        UpgradeManager.Instance.GrantPermanentLevel(SeedShopRules.OwnershipKey(crop.cropName), 1);
+        Debug.Log($"[Seeds] Gifted {crop.cropName} packet");
+        OnOwnershipChanged?.Invoke();
+    }
+
+    /// <summary>The crop with this name from the scene's crop list, or null.</summary>
+    public static CropData Find(string cropName)
+    {
+        var db = SeedSelectionPopup.Instance != null ? SeedSelectionPopup.Instance.Crops : null;
+        return db != null ? db.GetCropByName(cropName) : null;
+    }
 }

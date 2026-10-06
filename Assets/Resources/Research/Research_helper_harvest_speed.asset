@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Research_helper_harvest_speed
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: helper_harvest_speed
-  displayName: 'Helper: Harvest Speed'
+  displayName: Harvest Speed
   description: +0.5% per level. Maxes at +50%.
   branchID: helper
   tier: 3

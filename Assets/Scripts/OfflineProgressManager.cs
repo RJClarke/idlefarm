@@ -93,7 +93,7 @@ public class OfflineProgressManager : MonoBehaviour
         if (AnimalManager.Instance != null)
         {
             cowCompost = AnimalManager.Instance.RunOfflineCompostCatchUp();
-            cowCompost += AnimalManager.Instance.RunOfflineCowEatingCatchUp(gap.TotalSeconds);
+            // A cow's crop-eating while away is part of the away-run simulation (needs an active run).
         }
         var researchReport = ResearchManager.Instance != null ? ResearchManager.Instance.LastOfflineReport : null;
 

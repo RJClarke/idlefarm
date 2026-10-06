@@ -56,15 +56,19 @@ public class InboxManager : MonoBehaviour
     public bool ClaimReward(string letterId)
     {
         var def = GetDef(letterId);
-        if (def == null || def.rewardKind == RewardKind.None || def.rewardAmount <= 0) return false;
+        if (def == null || !def.HasReward) return false;
         if (!model.Claim(letterId)) return false; // already claimed
 
-        switch (def.rewardKind)
+        if (def.HasCurrencyReward)
         {
-            case RewardKind.Coins:   CurrencyManager.Instance?.AddCoins(def.rewardAmount); break;
-            case RewardKind.Gems:    CurrencyManager.Instance?.AddGems(def.rewardAmount); break;
-            case RewardKind.Compost: CurrencyManager.Instance?.AddCompost(def.rewardAmount); break;
+            switch (def.rewardKind)
+            {
+                case RewardKind.Coins:   CurrencyManager.Instance?.AddCoins(def.rewardAmount); break;
+                case RewardKind.Gems:    CurrencyManager.Instance?.AddGems(def.rewardAmount); break;
+                case RewardKind.Compost: CurrencyManager.Instance?.AddCompost(def.rewardAmount); break;
+            }
         }
+        if (def.HasGiftSeed) CropOwnership.GrantFirstPacket(CropOwnership.Find(def.giftSeed));
         SaveManager.Instance?.SaveGame();
         OnInboxChanged?.Invoke();
         return true;

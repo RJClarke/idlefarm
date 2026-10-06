@@ -2,20 +2,21 @@ using UnityEngine;
 using System;
 
 /// <summary>
-/// Manages daily login rewards on a weekly calendar (Sunday–Saturday).
-/// Each day has an escalating coin reward. Claim only today's reward.
-/// Missed days are gone. Claiming all 7 in a week grants a bonus.
-/// Week resets automatically on Sunday.
+/// Daily login rewards as a weekly progress track (week runs Sunday–Saturday).
+/// One claim per calendar day; each claim earns the NEXT step on the track, so the Nth claim of
+/// the week pays reward N whatever weekday it lands on. Three visits = steps 1–3; all seven =
+/// the whole track plus the weekly bonus. Missing a day doesn't skip a step, it just leaves
+/// fewer days to finish the track before the Sunday reset.
 /// </summary>
 public class DailyRewardManager : MonoBehaviour
 {
     public static DailyRewardManager Instance { get; private set; }
 
-    [Header("Daily Rewards (Sun–Sat)")]
+    [Header("Daily Rewards (claim 1–7 of the week, in order)")]
     [SerializeField] private int[] dailyRewards = new int[] { 10, 20, 30, 50, 75, 100, 150 };
     [SerializeField] private int weeklyBonusReward = 500;
 
-    [Header("Daily Gem Rewards (Sun–Sat)")]
+    [Header("Daily Gem Rewards (claim 1–7 of the week, in order)")]
     [SerializeField] private int[] dailyGemRewards = new int[] { 0, 1, 0, 2, 0, 1, 0 };
     [SerializeField] private int weeklyGemBonus = 10;
 
@@ -23,7 +24,8 @@ public class DailyRewardManager : MonoBehaviour
     private const string PREF_WEEK_START = "daily_reward_week_start";
     private const string PREF_CLAIMED_DAYS = "daily_reward_claimed_days";
 
-    // Runtime state
+    // Runtime state. claimedDays is per WEEKDAY (0=Sun) and only answers "claimed today?";
+    // the reward track is indexed by how many days have been claimed (ClaimedCount).
     private DateTime currentWeekStart;
     private bool[] claimedDays = new bool[7];
 
@@ -73,6 +75,35 @@ public class DailyRewardManager : MonoBehaviour
     /// </summary>
     public bool EarnedWeeklyBonus => ClaimedCount >= 7;
 
+    /// <summary>Days left this week on which a claim can still happen (today counts if unclaimed).</summary>
+    public int ClaimDaysLeft
+    {
+        get
+        {
+            int today = GetTodayIndex();
+            return 6 - today + (claimedDays[today] ? 0 : 1);
+        }
+    }
+
+    /// <summary>How far along the 7-step track this week can still get.</summary>
+    public int ReachableCount => Mathf.Min(7, ClaimedCount + ClaimDaysLeft);
+
+    /// <summary>The weekly bonus is still possible (every remaining day would need a claim).</summary>
+    public bool WeeklyBonusReachable => ReachableCount >= 7;
+
+    /// <summary>Label for step <paramref name="slot"/> (0-based) on the week's reward track.</summary>
+    public string GetSlotName(int slot) => "Day " + (slot + 1);
+
+    /// <summary>Display status of step <paramref name="slot"/> (0-based) on the reward track:
+    /// earned, claimable now, still ahead this week, or out of reach before the reset.</summary>
+    public DayStatus GetSlotStatus(int slot)
+    {
+        int claimed = ClaimedCount;
+        if (slot < claimed) return DayStatus.Claimed;
+        if (slot == claimed && CanClaimToday) return DayStatus.Available;
+        return slot < ReachableCount ? DayStatus.Upcoming : DayStatus.Missed;
+    }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -99,35 +130,6 @@ public class DailyRewardManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Get the day name for a given index.
-    /// </summary>
-    public string GetDayName(int index)
-    {
-        string[] names = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
-        if (index >= 0 && index < 7) return names[index];
-        return "???";
-    }
-
-    /// <summary>
-    /// Get the status of a day for display purposes.
-    /// </summary>
-    public DayStatus GetDayStatus(int dayIndex)
-    {
-        int today = GetTodayIndex();
-
-        if (claimedDays[dayIndex])
-            return DayStatus.Claimed;
-
-        if (dayIndex == today)
-            return DayStatus.Available;
-
-        if (dayIndex < today)
-            return DayStatus.Missed;
-
-        return DayStatus.Upcoming;
-    }
-
-    /// <summary>
     /// Attempt to claim today's reward.
     /// </summary>
     public bool ClaimToday()
@@ -135,19 +137,20 @@ public class DailyRewardManager : MonoBehaviour
         if (!CanClaimToday) return false;
 
         int todayIndex = GetTodayIndex();
-        int reward = dailyRewards[todayIndex];
+        int step = ClaimedCount; // this claim earns the next step on the track, not today's weekday
+        int reward = step < dailyRewards.Length ? dailyRewards[step] : 0;
 
         // Grant coins
         if (CurrencyManager.Instance != null)
             CurrencyManager.Instance.AddCoins(reward);
 
         // Grant gems
-        int gemReward = dailyGemRewards[todayIndex];
+        int gemReward = GetDailyGemReward(step);
         if (gemReward > 0 && CurrencyManager.Instance != null)
             CurrencyManager.Instance.AddGems(gemReward);
 
         claimedDays[todayIndex] = true;
-        Debug.Log($"[Daily] Claimed day {GetDayName(todayIndex)} reward: {reward} coins" + (gemReward > 0 ? $", {gemReward} gems" : ""));
+        Debug.Log($"[Daily] Claimed {GetSlotName(step)} of the week: {reward} coins" + (gemReward > 0 ? $", {gemReward} gems" : ""));
 
         // Check for weekly bonus
         if (EarnedWeeklyBonus)
@@ -260,6 +263,6 @@ public enum DayStatus
 {
     Claimed,    // Already collected
     Available,  // Today — can claim
-    Missed,     // Past day, not claimed
-    Upcoming    // Future day
+    Missed,     // Out of reach: not enough days left this week to get here
+    Upcoming    // Still ahead this week
 }

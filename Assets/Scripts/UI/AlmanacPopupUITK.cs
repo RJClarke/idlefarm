@@ -141,6 +141,7 @@ public class AlmanacPopupUITK : MonoBehaviour
     {
         art = AlmanacArt.Instance;
         var titleFont = art != null && art.titleFont != null ? art.titleFont : barn.TitleFont;
+        var tabFont = art != null && art.tabFont != null ? art.tabFont : titleFont;
 
         popupRoot = new VisualElement { name = "almanac-root" };
         Fill(popupRoot);
@@ -199,7 +200,7 @@ public class AlmanacPopupUITK : MonoBehaviour
 
         var title = new Label("Farmer's Almanac");
         title.style.flexGrow = 1; title.style.flexShrink = 1;
-        title.style.fontSize = 46;
+        title.style.fontSize = 41; // Munro Pixel 41's bake size
         title.style.color = TitleBrown;
         // Pixel font drawn as-is: faux bold smears a pixel face into mush.
         title.style.unityFontStyleAndWeight = FontStyle.Normal;
@@ -225,17 +226,17 @@ public class AlmanacPopupUITK : MonoBehaviour
         card.Add(listView);
 
         tabRow = Row();
-        tabRow.style.marginTop = 32; // room to breathe between the title and the tabs
+        tabRow.style.marginTop = 48; // room to breathe between the title and the tabs
         listView.Add(tabRow);
         foreach (var (kind, label) in Tabs)
         {
             var tab = new Button(() => ShowList(kind)) { text = label, userData = kind };
             tab.style.flexGrow = 1; tab.style.flexBasis = 0;
-            tab.style.height = 64; tab.style.fontSize = 24;
+            tab.style.height = 64; tab.style.fontSize = 31; // Munro Pixel 31's bake size
             tab.style.paddingBottom = 8; // the sprite's inset sits above centre (thick bottom rim)
             tab.style.marginLeft = 4; tab.style.marginRight = 4;
             tab.style.whiteSpace = WhiteSpace.NoWrap;
-            if (titleFont != null) tab.style.unityFontDefinition = new StyleFontDefinition(titleFont);
+            if (tabFont != null) tab.style.unityFontDefinition = new StyleFontDefinition(tabFont);
             NoBorder(tab);
             if (art != null && art.tabOff != null) Slice(tab, art.tabSlice);
             else { Radius(tab, 12); tab.style.unityFontStyleAndWeight = FontStyle.Bold; }
@@ -245,7 +246,7 @@ public class AlmanacPopupUITK : MonoBehaviour
         gridScroll = new ScrollView(ScrollViewMode.Vertical);
         gridScroll.style.flexGrow = 1;
         StyleScrollbar(gridScroll);
-        gridScroll.style.marginTop = 32;
+        gridScroll.style.marginTop = 48;
         listView.Add(gridScroll);
         grid = new VisualElement();
         grid.style.flexDirection = FlexDirection.Row;
@@ -498,7 +499,7 @@ public class AlmanacPopupUITK : MonoBehaviour
         PillKind.GreatCompost or PillKind.MakesCompost => Hex(0x5a4122),
         PillKind.Deer or PillKind.DeerDamage => Hex(0x7a4a22),
         PillKind.Crow or PillKind.CrowDamage => Hex(0x3a3a3e),
-        PillKind.GivesCoins => Hex(0xa07514),
+        PillKind.LaysEggs => Hex(0xa07514),
         PillKind.GivesGems => Hex(0x6a3fa0),
         PillKind.Guard => Hex(0x4a5a2a),
         PillKind.WatersCrops => Hex(0x2e6fae),
@@ -518,16 +519,29 @@ public class AlmanacPopupUITK : MonoBehaviour
         chip.style.flexDirection = FlexDirection.Row;
         chip.style.marginRight = 8; chip.style.marginBottom = 8;
         chip.style.flexShrink = 0;
-        chip.style.overflow = Overflow.Hidden;
-        Radius(chip, 16);
-
-        chip.Add(PillPart(p.label, PillColor(p.kind)));
-        if (!string.IsNullOrEmpty(p.value))
-            chip.Add(PillPart(p.value, AlmanacPills.Heat(p) > 0 ? PillHot : AlmanacPills.Heat(p) < 0 ? PillCool : ChipFill));
+        // Round each part's outer corners itself: a rounded parent doesn't clip its children.
+        bool split = !string.IsNullOrEmpty(p.value);
+        var name = PillPart(p.label, PillColor(p.kind));
+        PillCorners(name, left: true, right: !split);
+        chip.Add(name);
+        if (split)
+        {
+            var value = PillPart(p.value, AlmanacPills.Heat(p) > 0 ? PillHot : AlmanacPills.Heat(p) < 0 ? PillCool : ChipFill);
+            PillCorners(value, left: false, right: true);
+            chip.Add(value);
+        }
 
         string help = AlmanacPills.Help(p);
         chip.RegisterCallback<ClickEvent>(evt => { tooltip?.Toggle(chip, help); evt.StopPropagation(); });
         return chip;
+    }
+
+    private const float PillRadius = 16f;
+
+    private static void PillCorners(VisualElement v, bool left, bool right)
+    {
+        v.style.borderTopLeftRadius = left ? PillRadius : 0; v.style.borderBottomLeftRadius = left ? PillRadius : 0;
+        v.style.borderTopRightRadius = right ? PillRadius : 0; v.style.borderBottomRightRadius = right ? PillRadius : 0;
     }
 
     private static Label PillPart(string text, Color fill)

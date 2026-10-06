@@ -148,11 +148,11 @@ public class DailyRewardPopup : MonoBehaviour
         }
 
         int[] rewards = DailyRewardManager.Instance.DailyRewards;
-        int todayIndex = DailyRewardManager.Instance.GetTodayIndex();
 
+        // Cells are steps on the week's track (Day 1..7 = 1st..7th claim), not weekdays.
         for (int i = 0; i < 7; i++)
         {
-            DayStatus status = DailyRewardManager.Instance.GetDayStatus(i);
+            DayStatus status = DailyRewardManager.Instance.GetSlotStatus(i);
             int reward = (i < rewards.Length) ? rewards[i] : 0;
             int gem = DailyRewardManager.Instance.GetDailyGemReward(i);
 
@@ -164,7 +164,7 @@ public class DailyRewardPopup : MonoBehaviour
             Label gemAmount  = cell.Q<Label>("gem-amount");
             Label statusLbl  = cell.Q<Label>("status-label");
 
-            if (dayName != null) dayName.text = DailyRewardManager.Instance.GetDayName(i);
+            if (dayName != null) dayName.text = DailyRewardManager.Instance.GetSlotName(i);
             if (coinAmount != null) coinAmount.text = reward.ToString();
             if (gemAmount != null)
             {
@@ -203,8 +203,9 @@ public class DailyRewardPopup : MonoBehaviour
                     pressTarget.RegisterCallback<PointerLeaveEvent>(_ => pressTarget.RemoveFromClassList("day-cell--pressed"));
                     break;
                 case DayStatus.Missed:
+                    // Not enough days left this week to reach this step.
                     cellRoot.AddToClassList("day-cell--missed");
-                    if (statusLbl != null) statusLbl.text = "Missed";
+                    if (statusLbl != null) statusLbl.text = "";
                     break;
                 case DayStatus.Upcoming:
                     cellRoot.AddToClassList("day-cell--upcoming");
@@ -222,9 +223,13 @@ public class DailyRewardPopup : MonoBehaviour
             int weeklyGemBonus = DailyRewardManager.Instance.WeeklyGemBonus;
             int bonus = DailyRewardManager.Instance.WeeklyBonusReward;
             string gemSuffix = weeklyGemBonus > 0 ? $" & +{weeklyGemBonus} gems" : "";
-            weeklyBonusLabel.text = DailyRewardManager.Instance.EarnedWeeklyBonus
-                ? $"<color=#A56A1E>Weekly Bonus Earned! +{bonus} Coins{gemSuffix}</color>"
-                : $"Claim all 7 days for +{bonus} bonus coins{gemSuffix} ({claimed}/7)";
+            var mgr = DailyRewardManager.Instance;
+            if (mgr.EarnedWeeklyBonus)
+                weeklyBonusLabel.text = $"<color=#A56A1E>Weekly Bonus Earned! +{bonus} Coins{gemSuffix}</color>";
+            else if (mgr.WeeklyBonusReachable)
+                weeklyBonusLabel.text = $"Claim every day this week for +{bonus} bonus coins{gemSuffix} ({claimed}/7)";
+            else
+                weeklyBonusLabel.text = $"{claimed}/7 this week. Claim all 7 next week for +{bonus} bonus coins{gemSuffix}";
         }
     }
 }

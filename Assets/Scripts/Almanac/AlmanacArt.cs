@@ -7,8 +7,10 @@ using UnityEngine;
 /// </summary>
 public class AlmanacArt : ScriptableObject
 {
-    [Tooltip("Pixel font for the \"Farmer's Almanac\" title and the tabs (UITK TextCore FontAsset).")]
+    [Tooltip("Pixel font for the \"Farmer's Almanac\" title (UITK TextCore FontAsset), drawn at its bake size.")]
     public UnityEngine.TextCore.Text.FontAsset titleFont;
+    [Tooltip("Pixel font for the tabs. Falls back to the title font.")]
+    public UnityEngine.TextCore.Text.FontAsset tabFont;
 
     [Header("Tabs (9-sliced)")]
     public Sprite tabOff;

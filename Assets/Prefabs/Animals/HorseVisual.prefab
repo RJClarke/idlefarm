@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2882707354212053910}
   - component: {fileID: 7588535233886130386}
   - component: {fileID: 5047156977753795155}
+  - component: {fileID: 8164022951730415362}
   m_Layer: 0
   m_Name: HorseVisual
   m_TagString: Untagged
@@ -131,3 +132,20 @@ MonoBehaviour:
   eggSprite: {fileID: 0}
   eggScale: 0.8
   gemSprite: {fileID: 0}
+--- !u!114 &8164022951730415362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634830360863180926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a5a15c0e654714a6340a91c0ec33f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Horse
+  plowSpeed: 1.2
+  travelSpeed: 2.2
+  noticeDelay: 1
+  hitchOffset: {x: 0, y: 0.9, z: 0}
+  scanInterval: 0.25

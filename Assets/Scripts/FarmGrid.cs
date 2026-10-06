@@ -27,6 +27,17 @@ public class FarmGrid : MonoBehaviour
     [SerializeField] private int tempTillCost = 10; // Money cost per tile (temporary)
     [SerializeField] private int permTillCost = 50; // Coin cost per tile (permanent)
 
+    [Header("Fallow Soil")]
+    [Tooltip("Seconds (run time, so Game Speed applies) a tilled tile may sit unplanted before it " +
+             "goes fallow and must be tilled again. Held while a helper is on the way to plant it.")]
+    [SerializeField] private float fallowSeconds = 40f;
+    [Tooltip("Last fraction of the fallow window over which the soil colour fades back toward untilled.")]
+    [Range(0f, 1f)] [SerializeField] private float fallowWarnFraction = 0.5f;
+
+    /// <summary>Effective window: base + the "Stay Tilled" research (Soil branch) (+0.5s per level).</summary>
+    public float FallowSeconds => fallowSeconds
+        + (ResearchManager.Instance != null ? ResearchManager.Instance.GetBonus(Research.StatKey.SoilStayTilled) : 0f);
+
     // Public accessors for other systems to check costs
     public int TempTillCost => tempTillCost;
     public int PermTillCost => permTillCost;
@@ -63,6 +74,8 @@ public class FarmGrid : MonoBehaviour
         ApplyUpgrades();
         
         CreateAllZones();
+        SyncPreTill();
+        PreTilledSoil.OnChanged += ApplyPreTillMarks;
 
         // Subscribe to run events
         if (RunManager.Instance != null)
@@ -88,6 +101,8 @@ public class FarmGrid : MonoBehaviour
 
     private void OnDestroy()
     {
+        PreTilledSoil.OnChanged -= ApplyPreTillMarks;
+
         // Unsubscribe from events
         if (RunManager.Instance != null)
         {
@@ -125,6 +140,10 @@ public class FarmGrid : MonoBehaviour
         {
             RegenerateGrid();
         }
+        else if (upgradeId == PreTilledSoil.UpgradeID)
+        {
+            SyncPreTill();
+        }
     }
 
     /// <summary>
@@ -154,6 +173,7 @@ public class FarmGrid : MonoBehaviour
 
         // Recreate zones
         CreateAllZones();
+        SyncPreTill(); // a bigger plot / new zone can absorb Pre-Tilled levels that were banked
 
         // Update camera
         NotifyCameraController();
@@ -336,7 +356,7 @@ public class FarmGrid : MonoBehaviour
                 SoilTile tile = tileObj.GetComponent<SoilTile>();
                 if (tile != null)
                 {
-                    tile.Initialize(zoneID, x, y);
+                    tile.Initialize(zoneID, x, y, PreTilledSoil.Contains(new TileKey(zoneID, x, y)));
                     zoneGrid[x, y] = tile;
                     allTiles.Add(tile);
                 }
@@ -563,6 +583,104 @@ public class FarmGrid : MonoBehaviour
     }
 
     // ─────────────────────────────────────────────────────────────────────────
+    // Fallow soil — tilled tiles left unplanted too long revert to untilled
+    // ─────────────────────────────────────────────────────────────────────────
+
+    private void Update()
+    {
+        if (RunManager.Instance == null || !RunManager.Instance.IsRunActive) return;
+
+        float dt = Time.deltaTime; // scaled: Game Speed advances fallow like everything else
+        if (dt <= 0f) return;
+        float window = FallowSeconds;
+
+        foreach (SoilTile tile in allTiles)
+        {
+            if (tile == null) continue;
+            bool idle = tile.State == TileState.Tilled && !tile.IsOccupied && !tile.IsBlocked
+                        && tile.gameObject.activeInHierarchy;
+            if (!idle)
+            {
+                tile.ResetFallow();
+                continue;
+            }
+
+            if (!tile.TickFallow(dt, window, fallowWarnFraction)) continue;
+
+            // A helper already walking over to plant it: hold the tile rather than yank it away.
+            if (HelperManager.Instance != null && HelperManager.Instance.IsPlantClaimed(tile)) continue;
+
+            tile.Untill();
+        }
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Pre-Tilled Soil (Farm upgrade "pre_till") — level = number of marked tiles
+    // ─────────────────────────────────────────────────────────────────────────
+
+    private bool IsZoneUnlocked(int zoneID)
+    {
+        if (zoneID == 1) return true;
+        return UpgradeManager.Instance != null
+            && UpgradeManager.Instance.GetPermanentLevel("zone_unlock_" + zoneID) > 0;
+    }
+
+    /// <summary>Every tile in an unlocked zone at the current plot size.</summary>
+    private List<TileKey> UnlockedTileKeys()
+    {
+        var keys = new List<TileKey>(allTiles.Count);
+        foreach (SoilTile tile in allTiles)
+            if (tile != null && IsZoneUnlocked(tile.ZoneID))
+                keys.Add(new TileKey(tile.ZoneID, tile.GridX, tile.GridY));
+        return keys;
+    }
+
+    /// <summary>Tiles a sprinkler currently sits on — pre-tilling those is wasted, so they go last.</summary>
+    private HashSet<TileKey> SprinklerTileKeys()
+    {
+        var keys = new HashSet<TileKey>();
+        if (EquipmentManager.Instance == null) return keys;
+        for (int z = 1; z <= 4; z++)
+        {
+            EquipmentData eq = EquipmentManager.Instance.GetAssignment(z);
+            if (eq == null || eq.equipmentType != EquipmentType.Sprinkler) continue;
+            SoilTile c = GetCenterTile(z);
+            if (c != null) keys.Add(new TileKey(z, c.GridX, c.GridY));
+        }
+        return keys;
+    }
+
+    /// <summary>Unlocked tiles not yet Pre-Tilled. 0 = nothing left to buy until more land unlocks.</summary>
+    public int PreTillRemaining => PreTillPlanner.Remaining(UnlockedTileKeys(), PreTilledSoil.Lookup);
+
+    /// <summary>Unlocked tiles in total (the effective Pre-Tilled Soil cap right now).</summary>
+    public int UnlockedTileCount => UnlockedTileKeys().Count;
+
+    /// <summary>
+    /// Bring the Pre-Tilled marks in line with the owned "pre_till" level (a fresh purchase marks the
+    /// next logical tile; levels with no room stay banked until more tiles unlock), then apply them.
+    /// </summary>
+    private void SyncPreTill()
+    {
+        int level = UpgradeManager.Instance != null
+            ? UpgradeManager.Instance.GetPermanentLevel(PreTilledSoil.UpgradeID) : 0;
+        var unlocked = UnlockedTileKeys();
+        var avoid = SprinklerTileKeys();
+        PreTilledSoil.Edit(marks => PreTillPlanner.Reconcile(marks, level, unlocked, avoid));
+        ApplyPreTillMarks(); // idempotent; also covers Start, which runs before we subscribe to OnChanged
+    }
+
+    /// <summary>Push the mark list onto the live tiles (flips the soil immediately between runs).</summary>
+    private void ApplyPreTillMarks()
+    {
+        bool inRun = RunManager.Instance != null && RunManager.Instance.IsRunActive;
+        foreach (SoilTile tile in allTiles)
+        {
+            if (tile == null) continue;
+            bool marked = PreTilledSoil.Contains(new TileKey(tile.ZoneID, tile.GridX, tile.GridY));
+            if (marked != tile.IsPermanentlyTilled) tile.SetPreTilled(marked, applyNow: !inRun);
+        }
+    }
 
     /// <summary>
     /// Get all untilled tiles

@@ -33,10 +33,7 @@ public class FarmGoose : AnimalDefender
     protected override void RecordChase(AnimalThreat threat)
     {
         if (RunStats.Instance == null) return;
-        if (threat != null && threat.ThreatType == AnimalThreatType.Crow)
-            RunStats.Instance.AddCrowChasedByAnimal();
-        else
-            RunStats.Instance.AddDeerChasedByAnimal();
+        RunStats.Instance.AddChase(AnimalId, threat != null ? threat.ThreatType : AnimalThreatType.Deer);
     }
 
     private void Reset()

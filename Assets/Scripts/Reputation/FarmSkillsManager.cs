@@ -115,6 +115,12 @@ public class FarmSkillsManager : MonoBehaviour
     public static bool Capstone(FarmSkillTrack track) => Instance != null && Instance.HasCapstone(track);
 
     /// <summary>Harvesting Lv 25: 1 normally, the golden multiplier on a lucky roll.</summary>
+    /// <summary>Average payout multiplier from golden harvests (away-runs use the average, not a roll).</summary>
+    public static float GoldenExpectedMultiplier
+        => Capstone(FarmSkillTrack.Harvesting)
+            ? 1f + Instance.goldenCropChance * (Mathf.Max(1, Instance.goldenCropMultiplier) - 1)
+            : 1f;
+
     public static int RollGoldenMultiplier()
         => Capstone(FarmSkillTrack.Harvesting) && UnityEngine.Random.value < Instance.goldenCropChance
             ? Mathf.Max(1, Instance.goldenCropMultiplier) : 1;
@@ -153,6 +159,15 @@ public class FarmSkillsManager : MonoBehaviour
     }
 
     public void CaptureTo(GameData d) => d.farmSkillLevels = core.Export();
+    /// <summary>Dev/testing (balance bench): every Farm Level skill at this fraction of its max.</summary>
+    public void DevSetAll(float fraction)
+    {
+        var max = new int[System.Enum.GetValues(typeof(FarmSkillTrack)).Length];
+        for (int i = 0; i < max.Length; i++) max[i] = Mathf.CeilToInt(FarmSkillsCore.MaxLevel * Mathf.Clamp01(fraction));
+        core.Import(max);
+        OnChanged?.Invoke();
+    }
+
     public void LoadFrom(GameData d)
     {
         core.Import(d.farmSkillLevels);

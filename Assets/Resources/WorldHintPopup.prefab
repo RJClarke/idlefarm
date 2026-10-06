@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8d4b23ac1e4fa44803005b6e44ec28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldHintPopup
-  font: {fileID: 11400000, guid: bf4286e70d05d1c40bb4596a1fc19e16, type: 2}
+  font: {fileID: 11400000, guid: 2e2b17d1b6a5e1548b253f69a58ad20f, type: 2}
   fontSize: 28
   textColor: {r: 0.9411765, g: 0.9019608, b: 0.8392157, a: 1}
   boxFill: {r: 0.10980392, g: 0.06666667, b: 0.039215688, a: 0.9490196}

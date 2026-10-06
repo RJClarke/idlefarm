@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Research_helper_water_efficiency
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: helper_water_efficiency
-  displayName: 'Helper: Water Efficiency'
+  displayName: Water Efficiency
   description: +1.0% per level. Maxes at +25%.
   branchID: helper
   tier: 2

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AnimalData
   animalID: horse
   displayName: Horse
-  description: A steady old workhorse who wanders the pasture keeping an eye on the
-    place. No trade to ply just yet.
+  description: A steady old workhorse. During a run he pulls the plough, working
+    the fields row by row and re-tilling any soil left unplanted too long.
   animalEmoji: "\U0001F434"
   sortOrder: 5
   gemCost: 8000

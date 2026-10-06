@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Research_seed_bag_discount
   m_EditorClassIdentifier: Assembly-CSharp::Research.ResearchData
   researchID: seed_bag_discount
-  displayName: 'Plant: Bulk Seed Discount'
+  displayName: Bulk Seed Discount
   description: +1.0% per level. Maxes at +25%.
   branchID: plant
   tier: 2

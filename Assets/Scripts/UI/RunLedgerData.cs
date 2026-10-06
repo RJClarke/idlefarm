@@ -7,6 +7,14 @@ public struct LedgerCropRow { public Sprite sprite; public string name; public i
 
 /// <summary>One per-zone "field card" for the 2x2 Fields grid: the zone's crop, what it
 /// produced (with worth), its five loss causes, and stats for gear equipped on the zone.</summary>
+/// <summary>One animal in the run summary: its icon, name and what it did.</summary>
+public class LedgerAnimal
+{
+    public Sprite sprite;
+    public string name;
+    public readonly List<(string label, string value, string mod)> lines = new List<(string, string, string)>();
+}
+
 public class LedgerZoneCard
 {
     public int zoneId;
@@ -32,6 +40,8 @@ public class RunLedgerData
 
     public readonly List<LedgerCropRow> harvested = new List<LedgerCropRow>();
     public int totalHarvested;
+    /// <summary>Away-runs: Collect was on, but it pauses while away, so everything was sold.</summary>
+    public bool collectPausedWhileAway;
 
     public int eatenByDeer, eatenByCrows, struckByLightning, driedUp, rotted;
     public int deerRepelled, crowsRepelled;
@@ -40,11 +50,42 @@ public class RunLedgerData
     // Per-zone field cards (2x2 grid, ordered by zoneId to mirror the farm layout).
     public readonly List<LedgerZoneCard> zoneCards = new List<LedgerZoneCard>();
 
-    // Animals (live only; offline never simulates them).
-    // Whichever defender animal was equipped (dog chases deer; goose chases deer AND crows).
-    public bool hasDefender; public int deerChasedByDefender, crowsChasedByDefender;
-    public Sprite defenderSprite; public string defenderName;
-    public bool hasCow; public int plantsEatenByCow, compostFromCow; public Sprite cowSprite;
+    // Animals that did something during the run (several if one was swapped mid-run; an
+    // away-run only ever has the one equipped animal).
+    public readonly List<LedgerAnimal> animals = new List<LedgerAnimal>();
+
+    /// <summary>Rows for what this animal did during a run (null if it does nothing then).
+    /// Away-runs pass includeGifts=false: eggs and gems wait to be tapped, so none are collected.</summary>
+    public static LedgerAnimal AnimalRow(AnimalData a, RunStats.AnimalTally t, bool includeGifts = true)
+    {
+        if (a == null || a.visualPrefab == null) return null;
+        t = t ?? new RunStats.AnimalTally();
+        int deerChased = t.deerChased, crowsChased = t.crowsChased, plantsEaten = t.plantsEaten, compost = t.compost;
+        var row = new LedgerAnimal { sprite = a.iconSprite, name = a.displayName };
+        var guard = a.visualPrefab.GetComponent<AnimalDefender>();
+        if (guard != null)
+        {
+            if (System.Array.IndexOf(guard.Chases, AnimalThreatType.Deer) >= 0) row.lines.Add(("deer chased off", deerChased.ToString("N0"), null));
+            if (System.Array.IndexOf(guard.Chases, AnimalThreatType.Crow) >= 0) row.lines.Add(("crows chased off", crowsChased.ToString("N0"), null));
+        }
+        if (a.visualPrefab.GetComponent<Cow>() != null)
+        {
+            row.lines.Add(("plants eaten", plantsEaten.ToString("N0"), null));
+            row.lines.Add(("compost gained", "+" + compost.ToString("N0"), "compost"));
+        }
+        if (a.visualPrefab.GetComponent<Horse>() != null)
+            row.lines.Add(("tiles plowed", t.tilesPlowed.ToString("N0"), null));
+        if (includeGifts && a.abilityType.HasFlag(AnimalAbilityType.PassiveTimer))
+        {
+            if (a.rewardGems > 0) row.lines.Add(("gems collected", "+" + t.gems.ToString("N0"), null));
+            else
+            {
+                row.lines.Add(("eggs collected", t.eggs.ToString("N0"), null));
+                if (t.giftCoins > 0) row.lines.Add(("Coins from eggs", "+" + t.giftCoins.ToString("N0"), "coins"));
+            }
+        }
+        return row.lines.Count > 0 ? row : null;
+    }
 
     /// <summary>Build from the just-ended live run (RunStats + RunManager).</summary>
     public static RunLedgerData FromCurrentRun()
@@ -97,29 +138,21 @@ public class RunLedgerData
                 d.zoneCards.Add(card);
             }
 
-            // Animals: show the equipped animal even at zero, plus anything that recorded counts.
-            string equippedAnimal = AnimalManager.Instance != null ? AnimalManager.Instance.GetEquippedAnimalID() : null;
-            d.deerChasedByDefender = rs.DeerChasedByDog;
-            d.crowsChasedByDefender = rs.CrowsChasedByAnimal;
-            AnimalData defender = AnimalManager.Instance != null ? AnimalManager.Instance.GetEquippedAnimal() : null;
-            bool defenderEquipped = defender != null && defender.abilityType.HasFlag(AnimalAbilityType.RunDefender);
-            d.hasDefender = defenderEquipped || rs.DeerChasedByDog > 0 || rs.CrowsChasedByAnimal > 0;
-            d.defenderName = defenderEquipped ? defender.displayName : "Dog";
-            d.defenderSprite = defenderEquipped ? defender.iconSprite : null;
-            d.plantsEatenByCow = rs.PlantsEatenByCow;
-            d.compostFromCow = rs.CompostFromCow;
-            d.hasCow = rs.PlantsEatenByCow > 0 || rs.CompostFromCow > 0 || equippedAnimal == "cow";
-            if (d.compostGained == 0) d.compostGained = rs.CompostFromCow; // Economy line, live path
-            if (AnimalManager.Instance != null)
+            // Animals: the equipped one (even at zero) plus every animal that did something this run.
+            string equippedId = AnimalManager.Instance != null ? AnimalManager.Instance.GetEquippedAnimalID() : null;
+            var ids = new List<string>(rs.AnimalTallies.Keys);
+            if (!string.IsNullOrEmpty(equippedId) && !ids.Contains(equippedId)) ids.Insert(0, equippedId);
+            int animalCompost = 0;
+            foreach (string id in ids)
             {
-                var cow = AnimalManager.Instance.GetAnimalData("cow");
-                d.cowSprite = cow != null ? cow.iconSprite : null;
-                if (d.defenderSprite == null)
-                {
-                    var dog = AnimalManager.Instance.GetAnimalData("farm_dog");
-                    d.defenderSprite = dog != null ? dog.iconSprite : null;
-                }
+                rs.AnimalTallies.TryGetValue(id, out var t);
+                t = t ?? new RunStats.AnimalTally();
+                animalCompost += t.compost;
+                AnimalData a = AnimalManager.Instance != null ? AnimalManager.Instance.GetAnimalData(id) : null;
+                LedgerAnimal row = AnimalRow(a, t);
+                if (row != null) d.animals.Add(row);
             }
+            if (d.compostGained == 0) d.compostGained = animalCompost; // Economy line, live path
         }
         return d;
     }
@@ -162,6 +195,14 @@ public class RunLedgerData
         d.rotted = o.result.rotted;
         foreach (var kv in o.harvestedByCrop) AddCrop(d, kv.Key, kv.Value);
         d.totalHarvested = o.result.TotalHarvested;
+        d.collectPausedWhileAway = o.collectPausedWhileAway;
+        var tally = new RunStats.AnimalTally
+        {
+            deerChased = o.result.animalDeerChased, crowsChased = o.result.animalCrowsChased,
+            plantsEaten = o.result.animalPlantsEaten, compost = o.result.animalCompost,
+        };
+        LedgerAnimal animal = AnimalRow(o.animal, tally, includeGifts: false);
+        if (animal != null) d.animals.Add(animal);
 
         // Per-zone cards from the sim's zone breakdown. Equipment/animal fields stay null/false —
         // the offline sim models them as loss-reduction only, never as counted events.

@@ -84,7 +84,7 @@ public static class AlmanacTools
     private const string ArtPath = "Assets/Resources/AlmanacArt.asset";
     private const string BookDir = "Assets/Sprites/UI/UI_Book/UI_NoteBook_";
 
-    /// <summary>Creates or refreshes the Almanac's art asset: Wellbutrin title font, notebook tab
+    /// <summary>Creates or refreshes the Almanac's art asset: Munro title and tab fonts, notebook tab
     /// sprites (Toggle01a off / 01b on), a paper page (Frame09a), and deer/crow portraits taken from
     /// the first frame of their idle animations. Also sets those UI sprites to Point filtering so the
     /// pixel art stays crisp when 9-sliced up. Idempotent.</summary>
@@ -98,7 +98,8 @@ public static class AlmanacTools
             AssetDatabase.CreateAsset(art, ArtPath);
         }
 
-        art.titleFont = AssetDatabase.LoadAssetAtPath<UnityEngine.TextCore.Text.FontAsset>("Assets/Fonts/UITK SDF/Wellbutrin Pixel.asset");
+        art.titleFont = AssetDatabase.LoadAssetAtPath<UnityEngine.TextCore.Text.FontAsset>("Assets/Fonts/UITK SDF/Munro Pixel 41.asset");
+        art.tabFont = AssetDatabase.LoadAssetAtPath<UnityEngine.TextCore.Text.FontAsset>("Assets/Fonts/UITK SDF/Munro Pixel 31.asset");
         art.tabOff = PixelSprite(BookDir + "Toggle01a.png");
         art.tabOn = PixelSprite(BookDir + "Toggle01b.png");
         art.tabSlice = 4;
